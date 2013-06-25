@@ -10,7 +10,7 @@ Cloud from 0 to 100's documentation!
    :maxdepth: 2
 
    example
-
+   cloud-example
 
 
 .. comment::
