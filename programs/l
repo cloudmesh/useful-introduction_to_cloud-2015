@@ -1,0 +1,7 @@
+nova delete c13227f4-d864-41b7-af0e-aae828002831 
+nova delete e21817f2-5fe8-436d-8261-1e722cdc093b 
+nova delete 073fa292-7b9b-4406-b4d0-073c9166a406 
+nova delete 1ea7c79f-4de6-4540-a334-9c31ceaa7201 
+nova delete 773d1596-8f89-471b-b8d2-d89c28d150f6 
+nova delete 0693957e-c593-4702-adb5-f6b0ec4ecd3f 
+
