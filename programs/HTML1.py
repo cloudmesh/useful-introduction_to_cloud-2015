@@ -2,37 +2,40 @@ import webbrowser
 import random
 import math
 
-def make_table(cols, list):
+class table:
 
-    table = "<table border=1>\n"
+	
+    def make_table(cols, list):
 
-    rows = int(math.ceil(len(list)/float(cols)))
+        table = "<table border=1>\n"
 
-    item = 0
-    for row in range(0,rows):
+    	rows = int(math.ceil(len(list)/float(cols)))
 
-        table = table + "  <tr>"
+    	item = 0
+    	for row in range(0,10):
+
+        	table = table + "  <tr>"
   
-        for col in range(0,cols):
-            value = ""
-            if item < len(list):
-                value = list[item]
-            table = table + "<td>{0}</td>".format(value)
-            item = item + 1
+        for col in range(0,10):
+            	    value = ""
+        if item < len(list):
+                	value = list[item]
+            		table = table + "<td>{0}</td>".format(value)
+            		item = item + 1
 
         table = table + "</tr>\n"
 
-    table = table + "</table>"
-
-    return table
+        table = table + "</table>" + "%i" % item
+        
+return table
 
 def write_table(filename, table):
-    f = open (filename, 'w')
+    f = open ('abc.html', 'w')
     print >>f, table
 
 def display_table(filename):
     handle = webbrowser.get()
-    handle.open(filename)
+    handle.open('abc.html')
 
 n = 91
 list = []
