@@ -7,43 +7,56 @@ class table:
 
     # self.filname
 
-    def __init__(self, filename):
-	    self.filename = filename
 
-    def display (self, cols, alist):
-        table = "<table border=1>\n"
-        rows = int(math.ceil(len(alist)/float(cols)))
+    #self.table
+
+    def __init__(self, filename, cols, alist):
+        self.filename = filename
+        self.cols = cols
+        self.alist = alist
+        self.table = ""
+
+    def generate (self):
+        self.table = "<table border=1>\n"
+        rows = int(math.ceil(len(self.alist)/float(self.cols)))
         item = 0
         for row in range(0,10):
-            table = table + "  <tr>"
-        for col in range(0,10):
-            value = ""
-        if item < len(alist):
-            value = alist[item]
-            table = table + "<td>{0}</td>".format(value)
-            item = item + 1
-            table = table + "</tr>\n"
-            table = table + "</table>" + "%i" % item
-        
-    def read(self,filename, table):
-        f = open ('abc.html', 'w')
-        print >>f, table
+            self.table = self.table + "  <tr>"
+            for col in range(0,10):
+                value = ""
+                if item < len(alist):
+                    value = alist[item]
+                    self.table = self.table + "<td>{0}</td>".format(value)
+                    item = item + 1
+            self.table = self.table + "</tr>\n"
+        self.table = self.table + "</table>" + "%i" % item
 
-    def write(self,filename):
+    def write(self):
+        f = open (self.filename, 'w')
+        print >>f, self.table
+        f.close() 
+
+    def display(self):
         handle = webbrowser.get()
-        handle.open('abc.html')
+        handle.open(self.filename)
+
+    def random(self,n):
+        self.random = ""
+        print random
         
 print 
 
 n=91
-alist = record()
-r.input()
-r.output()
-
+alist = []
 for i in range(0,n):
     alist.append(random.randint(1,10))
-print len(alist), alist
-filename = "abc.html"
-r = record(10,alist)
-r.input(filename, table)
-r.output(filename)
+
+t = table('abc.html', 10,alist)
+
+t.random(91)
+t.generate()
+t.write()
+t.display()
+
+
+
