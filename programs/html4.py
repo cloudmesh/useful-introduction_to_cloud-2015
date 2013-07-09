@@ -7,7 +7,7 @@ class table:
 
     # self.filname
 
-	def __init__(self, filename):
+    def __init__(self, filename):
 	    self.filename = filename
 
     def display (self, cols, list):
