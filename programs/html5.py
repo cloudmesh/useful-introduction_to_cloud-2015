@@ -6,16 +6,17 @@ import math
 class table:
 
     # self.filname
-
-
+    #self.alist
+    #self.cols
     #self.table
-
-    def __init__(self, filename, cols, alist):
+    #self.n
+    def __init__(self, filename, cols,n):
         self.filename = filename
         self.cols = cols
-        self.alist = alist
+        self.alist = []
         self.table = ""
-
+        self.n = n  
+        
     def generate (self):
         self.table = "<table border=1>\n"
         rows = int(math.ceil(len(self.alist)/float(self.cols)))
@@ -24,8 +25,8 @@ class table:
             self.table = self.table + "  <tr>"
             for col in range(0,10):
                 value = ""
-                if item < len(alist):
-                    value = alist[item]
+                if item < len(self.alist):
+                    value =self.alist[item]
                     self.table = self.table + "<td>{0}</td>".format(value)
                     item = item + 1
             self.table = self.table + "</tr>\n"
@@ -35,28 +36,35 @@ class table:
         f = open (self.filename, 'w')
         print >>f, self.table
         f.close() 
+        
+    def write(self):
+        f = open (self.filename, 'w')
+        print >>f, self.table
+        f.close() 
 
     def display(self):
         handle = webbrowser.get()
         handle.open(self.filename)
 
-    def random(self,n):
-        self.random = ""
-        print random
-        
-print 
+    def random(self):
+         
+        self.alist = []
+        for i in range(0,self.n):
+            self.alist.append(random.randint(1,10))
 
-n=91
-alist = []
-for i in range(0,n):
-    alist.append(random.randint(1,10))
+t = table('t.html', 10,91)
 
-t = table('abc.html', 10,alist)
-
-t.random(91)
+t.random()
 t.generate()
 t.write()
 t.display()
+
+w = table('t.html', 7,20)
+
+w.random()
+w.generate()
+w.write()
+w.display()
 
 
 
