@@ -17,6 +17,7 @@ class cloud:
                        "name":name.strip(),
                        "status":status.strip(),
                        "networks": networks.strip()}
+
     def table(self):
         table_s = ""
         table_s += "<table>\n"
