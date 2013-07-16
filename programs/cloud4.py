@@ -1,8 +1,7 @@
-import sys
-import json
-from sh import nova
-from sh import grep
 from pprint import pprint
+from sh import grep, nova
+import json
+import sys
 
 class cloud:
 
