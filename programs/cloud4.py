@@ -8,12 +8,9 @@ class cloud:
 
     def __init__(self):
         self.vms = {}
-        self.status = []
         
     def refresh(self):
-        lines = grep (nova("list"), "|").split("\n")[1:-1]
-        self.status = []
-        
+        lines = grep (nova("list"), "|").split("\n")[1:-1]        
         for line in lines:
             line = line[2:-2]
             (id, name, status, networks) = line.split("|")
@@ -21,12 +18,24 @@ class cloud:
                        "name":name.strip(),
                        "status":status.strip(),
                        "networks": networks.strip()}
-
-    def get_status(self):
-        self.status = []
+    def table(self):
+        table_s = ""
+        table_s += "<table>\n"
+        table_s += "<tr><th>"
+        table_s +=  "<th></th>".join(self.vms[self.vms.keys()[0]].keys())
+        table_s += "</th></tr>\n"
         for vm in self.vms:
-            self.status.append(self.vms[vm]["status"])
-        return self.status
+            table_s += "<tr><td>"
+            table_s +=  "<td></td>".join(self.vms[vm].values())
+            table_s += "</td></tr>\n"
+        table_s += "</table>\n"
+        return table_s
+    
+    def status(self):
+        status_list = []
+        for vm in self.vms:
+            status_list.append(self.vms[vm]["status"])
+        return status_list
 
     def __str__(self):
         return json.dumps(self.vms, indent=4)
@@ -36,6 +45,7 @@ if  __name__ == '__main__':
     c = cloud ()
     c.refresh()
 
-    print c.get_status()
+    print c.status()
     print c
+    print c.table()
 
