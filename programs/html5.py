@@ -6,11 +6,11 @@ import os
 class table:
 
     # self.filname
-    #self.alist
-    #self.cols
-    #self.table
-    #self.n
-    def __init__(self, filename, cols,n):
+    # self.alist
+    # self.cols
+    # self.table
+    # self.n
+    def __init__(self, filename, cols, n):
         self.filename = filename
         self.cols = cols
         self.alist = []
@@ -19,14 +19,14 @@ class table:
         
     def generate (self):
         self.table = "<table border=1>\n"
-        rows = int(math.ceil(len(self.alist)/float(self.cols)))
+        rows = int(math.ceil(len(self.alist) / float(self.cols)))
         item = 0
-        for row in range(0,10):
+        for row in range(0, 10):
             self.table = self.table + "  <tr>"
-            for col in range(0,10):
+            for col in range(0, 10):
                 value = ""
                 if item < len(self.alist):
-                    value =self.alist[item]
+                    value = self.alist[item]
                     self.table = self.table + "<td>{0}</td>".format(value)
                     item = item + 1
             self.table = self.table + "</tr>\n"
@@ -36,8 +36,7 @@ class table:
         f = open (self.filename, "a")
         print >>f, self.table
         f.close() 
-        
-    
+            
 
     def display(self):
         handle = webbrowser.get()
@@ -48,6 +47,7 @@ class table:
         self.alist = []
         for i in range(0,self.n):
             self.alist.append(random.randint(1,10))
+
 filename = 't.html'
 os.remove(filename)
 

@@ -14,7 +14,7 @@ for y in (5,0,-1):
 	print(y)
 for x in (0,6):
 	print(x, '', end='')
-Sum=0
+sum=0
 for y in (5,0,-1):
 	sum+=y
 for x in (0,6):
