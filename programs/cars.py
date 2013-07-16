@@ -4,4 +4,4 @@ class transportation:
 	trucks = 30
 	passengers = {}
 
-	def 
+

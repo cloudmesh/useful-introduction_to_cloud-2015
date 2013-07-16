@@ -30,13 +30,13 @@ class icecream_machine:
     milk = 10
     flavor = {}
 
-    def add_flavor(self,name, amount):
+    def add_flavor(self, name, amount):
         self.flavor[name] = amount
 
-    def remove_flavor(self,name):
+    def remove_flavor(self, name):
         del self.flavor[name]
 
-    def add_milk(self,amount):
+    def add_milk(self, amount):
         self.milk = self.milk + amount
 
     def get_icecream(self, flavor):
@@ -48,15 +48,15 @@ class icecream_machine:
     def flavors(self):
         return self.flavor
 
-machine= icecream_machine()
+machine = icecream_machine()
 machine.add_milk(100)
-#machine.milk = 1000
+# machine.milk = 1000
 
 print machine.milk
 
-machine.add_flavor("tiny",10)
-machine.add_flavor("large",30)
-machine.add_flavor("medium",20)
+machine.add_flavor("tiny", 10)
+machine.add_flavor("large", 30)
+machine.add_flavor("medium", 20)
 
 print machine.flavors()
 

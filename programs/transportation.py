@@ -3,11 +3,11 @@ class transportation:
 	passengers = {}
         fleet = {}
 
-	def add_vehicle (self,kind, noof):
+	def add_vehicle (self, kind, noof):
             """ this function add a vihicle of a certain kind to the fleet"""
 	    print "todo"
 
-	def set_passengers(self,kind, amount):
+	def set_passengers(self, kind, amount):
         	self.fleet[kind] = amount
 
 	
@@ -25,11 +25,11 @@ class transportation:
 station = transportation()
 
 
-station.set_passengers("truck",50)
-station.set_passengers("convertible",25)
-station.set_passengers("bus",80)
+station.set_passengers("truck", 50)
+station.set_passengers("convertible", 25)
+station.set_passengers("bus", 80)
 
-station.add_vehicle  ("truck",10)
+station.add_vehicle  ("truck", 10)
 
 station.add_vehicle ("convertible", 2)
 

@@ -2,10 +2,10 @@ table = "<table border=1>\n"
 
 item = 1
 
-for row in range(0,10):
+for row in range(0, 10):
     table = table + "  <tr>"
 
-    for col in range(0,10):
+    for col in range(0, 10):
         table = table + "<td>"
         if item <= 97:
             table = table + "%i" % item
@@ -17,7 +17,7 @@ for row in range(0,10):
 table = table + "</table>"
 
 f = open ('abc.html', 'w')
-print >>f, table
+print >> f, table
 
 import webbrowser
 handle = webbrowser.get()

@@ -7,8 +7,8 @@ class table:
 
     # self.filname
 
-	def __init__(self, filename):
-	    self.filename = filename
+    def __init__(self, filename):
+        self.filename = filename
 
     def display (self, cols, list):
         table = "<table border=1>\n"

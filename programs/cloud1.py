@@ -6,7 +6,7 @@ print 70 * "-"
 a = nova("list")
 print a
 print 70 * "-"
-b = grep(a,"|")
+b = grep(a, "|")
 print b
 print 70 * "-"
 c = b.split("\n")

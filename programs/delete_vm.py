@@ -1,8 +1,7 @@
-import sys
-#from sh import nova 
+# from sh import nova 
 
 simulator = False
-#simulator = True
+# simulator = True
 
 
 if simulator:
@@ -13,14 +12,14 @@ else:
 
 
 
-n= 10000
+n = 10000
 length = len (str(n))
 print length
 
-name  = "{0}-{1:0" + str(length) + "d}"
+name = "{0}-{1:0" + str(length) + "d}"
 
 
-for index in range(1,n+1):
+for index in range(1, n + 1):
     print "DELETE VM", index, name.format("dmoney4454", index)
-    print nova ("delete", 
+    print nova ("delete",
                 name.format("dmoney4454", index))
