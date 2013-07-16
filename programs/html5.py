@@ -1,7 +1,7 @@
 import webbrowser
 import random
 import math
-
+import os
 
 class table:
 
@@ -33,14 +33,11 @@ class table:
         self.table = self.table + "</table>" + "%i" % item
 
     def write(self):
-        f = open (self.filename, 'w')
+        f = open (self.filename, "a")
         print >>f, self.table
         f.close() 
         
-    def write(self):
-        f = open (self.filename, 'w')
-        print >>f, self.table
-        f.close() 
+    
 
     def display(self):
         handle = webbrowser.get()
@@ -51,15 +48,17 @@ class table:
         self.alist = []
         for i in range(0,self.n):
             self.alist.append(random.randint(1,10))
+filename = 't.html'
+os.remove(filename)
 
-t = table('t.html', 10,91)
+t = table(filename, 10,91)
 
 t.random()
 t.generate()
 t.write()
 t.display()
 
-w = table('t.html', 7,20)
+w = table(filename, 7,20)
 
 w.random()
 w.generate()
