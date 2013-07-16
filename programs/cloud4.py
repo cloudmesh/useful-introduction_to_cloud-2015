@@ -102,8 +102,9 @@ class cloud:
 
     def delete(self,name):
         results = nova ("delete", name)
+        return results
 
-    def  start_n (slef, name, n):
+    def  start_n (self, name, n):
        """fill this out"""
        length = len (str(n))
        name_format = "{0}-{1:0" + str(length) + "d}"
@@ -130,6 +131,7 @@ class cloud:
                        name_format.format(name, index))
 
     def commandline(self):
+        
         # write out the commands
         # commnd:
         # s 1  starts vm with index 1
@@ -140,8 +142,8 @@ class cloud:
 
         # bonus
 
-        # s 2, 10  starts 10 vms starting from index 2
-        # d 2, 10  starts 10 vms starting from index 2
+        # s 2 10  starts 10 vms starting from index 2
+        # d 2 10  starts 10 vms starting from index 2
 
         while True:
             line = raw_input("cloud> ")
@@ -150,6 +152,42 @@ class cloud:
             else:
                 print "you typed", line
                 ##### do all the programming here
+                if line.startswith("v"):
+                    self.refresh()
+                    self.display(["status", "name", "id"], "dmoney")
+                else:
+                    command = line.split(" ")
+                    print command
+                    if command[0] == "d":
+                        if len(command) == 2:
+                            print "start", command
+                            name = command[1]
+                            result = self.delete(name)
+                            print result
+
+                        elif len(command) == 3:
+                            print "delete", command
+                            name = command[1]
+                            n = int(command[2])
+                            self.delete_n(name,n)
+
+                        else:
+                            print " wrong number of arguments"
+                    elif command[0] == "s":
+                        if len(command) == 2:
+                            print "excute", command
+                            name = command[1]
+                            result = self.start(name)
+                            print result
+                        elif len(command) == 3:
+                            print "bleep", command
+                            name = command[1]
+                            n = int(command[2])
+                            self.start_n(name,n)
+                        else:
+                            print " wrong number of arguments"
+
+
         pass
 
 if  __name__ == '__main__':
@@ -195,7 +233,7 @@ if  __name__ == '__main__':
     c.display(["status", "name", "id"], "dmoney")
 
 
-#    c.start(name)
+#    
 
 
 #    c.refresh()
