@@ -21,11 +21,11 @@ class cloud:
         table_s = ""
         table_s += "<table>\n"
         table_s += "<tr><th>"
-        table_s +=  "<th></th>".join(self.vms[self.vms.keys()[0]].keys())
+        table_s += "<th></th>".join(self.vms[self.vms.keys()[0]].keys())
         table_s += "</th></tr>\n"
         for vm in self.vms:
             table_s += "<tr><td>"
-            table_s +=  "<td></td>".join(self.vms[vm].values())
+            table_s += "<td></td>".join(self.vms[vm].values())
             table_s += "</td></tr>\n"
         table_s += "</table>\n"
         return table_s
