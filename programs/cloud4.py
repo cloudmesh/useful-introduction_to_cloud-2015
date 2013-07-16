@@ -29,15 +29,13 @@ class cloud:
         return self.status
 
     def __str__(self):
-        return json.dumps(self.vms,indent=4)
+        return json.dumps(self.vms, indent=4)
+    
+if  __name__ == '__main__':
 
-def main():
     c = cloud ()
     c.refresh()
 
-    pprint(c.get_status())
-    pprint(c)
-
-if  __name__ =='__main__':
-    main()
+    print c.get_status()
+    print c
 
