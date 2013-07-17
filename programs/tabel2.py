@@ -11,21 +11,19 @@ class table:
 
         rows = int(math.ceil(len(list) / float(cols)))
 
-        item = 0
-    for row in range(0, 10):
+     	item = 0
+      	for row in range(0, 10):
 
-        table = table + "  <tr>"
+        	table = table + "  <tr>"
   
-        for col in range(0, 10):
-            value = ""
-            if item < len(list):
-                value = list[item]
-                table = table + "<td>{0}</td>".format(value)
-                item = item + 1
+        	for col in range(0, 10):
+        		if item < len(list):
+					value = list[item]
+                 	table = table + "<td>{0}</td>".format(value)
+                  	item = item + 1
+			table = table + "</tr>\n"
 
-                table = table + "</tr>\n"
-
-                table = table + "</table>" + "%i" % item
+		table = table + "</table>" + "%i" % item
         
    
 
