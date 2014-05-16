@@ -5,5 +5,8 @@ html: clean
 clean:
 	cd doc; make clean
 
-view:
+chrome:
 	cd doc/build/html; google-chrome index.html
+
+view:
+	cd doc/build/html; open index.html
