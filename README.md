@@ -1,11 +1,4 @@
-Purpose
-===========
+Intodution to Python
+========================
 
-This repo is for Derek Morris so he can save the excerises and examples that have been developed for him by Gregor
-
-Thanks----Derek
-
-He
-=======
-test
-
+This directory contains code and documentation to learn elementary python
