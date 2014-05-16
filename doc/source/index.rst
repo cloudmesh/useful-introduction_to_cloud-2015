@@ -13,6 +13,15 @@ Cloud from 0 to 100's documentation!
    example
    cloud-example
 
+Notebooks
+======================================================================
+
+.. toctree::
+   :glob:
+
+   notebook/*
+  
+
 Programs
 ======================================================================
 
@@ -21,6 +30,7 @@ Programs
 
    programs
 
+   
 
 .. comment::
 

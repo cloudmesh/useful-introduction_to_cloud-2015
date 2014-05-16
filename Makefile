@@ -1,4 +1,5 @@
 html: clean
+	cd notebook; ./convert
 	cd doc; make html
 
 

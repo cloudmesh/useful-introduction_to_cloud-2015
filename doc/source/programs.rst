@@ -47,7 +47,7 @@ icecream.py
 
 programs.py
 ----------------------------------------------------------------------
-.. include:: ../../programs.py
+.. include:: ../../programs/programs.py
    :literal:
 
 start_vm.py
