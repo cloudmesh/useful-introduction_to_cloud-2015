@@ -13,6 +13,14 @@ Cloud from 0 to 100's documentation!
    example
    cloud-example
 
+Programs
+======================================================================
+
+.. toctree::
+   :maxdepth: 2
+
+   programs
+
 
 .. comment::
 
