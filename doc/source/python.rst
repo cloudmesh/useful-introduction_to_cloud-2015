@@ -9,37 +9,7 @@ and here is one that you can do on a web browser in case you have not installed 
 
 * http://www.afterhoursprogramming.com/tutorial/Python/Introduction/
 
-Terminal
-===================================================================
 
-* http://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/
-
-
-OS Specific
-===================================================================
-
-Linux
-----------------------------------------------------------------------
-
-OS X
-----------------------------------------------------------------------
-
-::
-
-   uname -a
-   Darwin pro-2013.local 12.3.0 Darwin Kernel Version 12.3.0: Sun Jan 6 22:37:10 PST 2013; root:xnu-2050.22.13~1/RELEASE_X86_64 x86_64
-
-::
-
-   >>> python
-   Python 2.7.2 (default, Oct 11 2012, 20:14:37) 
-   [GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
-
-
-Windows
-----------------------------------------------------------------------
-
-todo
 
 Lanaguage Features
 ==================================================================
@@ -54,13 +24,14 @@ Comments
 -----------------------------------------------------------------
 
 Simple comment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. runblock:: pycon
 
    >>> # this is a comment
 
 Multiline Comment with "
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
    """ 
@@ -68,7 +39,7 @@ Multiline Comment with "
    """
 
 Multiline Comment with '
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
    '''
@@ -83,7 +54,7 @@ Variables
    ... print flavor
 
 Changing the variable Value
------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. runblock:: pycon
 
    >>> flavor = "large"
@@ -100,13 +71,33 @@ List
 
 
 
-For Loop
+For Loop 
 -----------------------------------------------------------------
 .. runblock:: pycon
 
     >>> list = [1, 2, 3, 4, 5, 6]
     ... for element in list:
     ...   print element
+
+
+.. runblock:: pycon
+
+   >>> flavors = ['tiny', 'medium', 'large']
+   ... for flavor in flavors:
+   ...   print flavor
+
+If Condition
+-----------------------------------------------------------------
+.. runblock:: pycon
+
+   >>> flavor = "tiny"
+   ... if flavor == "tiny":
+   ...    print("vanilla has a tiny flavor")
+   ... elif flavor == "large":
+   ...    print("large flavor")
+   ... else:
+   ...    print("this flavor I do not like")
+
 
 Arithmetic Operators
 -----------------------------------------------------------------
@@ -119,8 +110,12 @@ Arithmetic Operators
     ... print sum(list)/len(list)
     ... print sum(list)/float(len(list))
 
+Functions
+----------------------------------------------------------------------
+
 Function to do calculations
------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. runblock:: pycon
 
     >>> def f(x,y):
@@ -131,7 +126,8 @@ Function to do calculations
 
 
 Functions for String Manipulation
------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. runblock:: pycon
 
     >>> def name(firstname, lastname):
@@ -143,36 +139,15 @@ Functions for String Manipulation
     ... print name('Gregor', 'von Laszewski')
     ... print reversename('Gregor', 'von Laszewski')
 
-If Condition
------------------------------------------------------------------
-.. runblock:: pycon
 
-   >>> flavor = "tiny"
-   ... if flavor -- "tiny":
-   ...    print("vanilla has a tiny flavor")
-   ... elif flavor -- "large":
-   ...    print("chocolate has a large flavor")
-   ... else:
-   ...    print("other flavors I do not like")
-
-For
-------------------------------------------------------------------
-.. runblock:: pycon
-
-   ... flavors = ['tiny', 'medium', 'large']
-   ... for flavor in flavors:
-   ...   print flavor
-
-Local
-===================================================================
-::
-
-   $ man python
 
 Ecosystem
 ===================================================================
 
-.. todo:: mind the virtualenv
+virtualenv
+----------------------------------------------------------------------
+
+.. todo:: virtualenv
 
 pypi
 ----------------------------------------------------------------------
@@ -196,7 +171,7 @@ If all goes well the package will be installed.
 github
 ----------------------------------------------------------------------
 
-todo
+.. todo:: github
 
 Excersises
 ==================
@@ -215,6 +190,6 @@ her is the task i like you to do to reinforce the learning experience once you a
 
 #. read up on classes we will cover this in more detail  next week.
 
-  #.	we will create an icecream machine that produces icecream in with tiny flavor, medium flavor and large flavor. 
-  #.     in addition the icecream cone will be wrapped into some paper  that has an image on it. Images will be Penguin, Apple, Emperor, King
+#.	we will create an icecream machine that produces icecream in with tiny flavor, medium flavor and large flavor. 
+#.     in addition the icecream cone will be wrapped into some paper  that has an image on it. Images will be Penguin, Apple, Emperor, King
 

@@ -47,39 +47,4 @@ FOR
     ...    print i
 
 
-DOES NOT WORK EXAMPLE
-===================
-
-::
-
-    list = [10,1,2,3,4,5,6]
-    result = 0
-    for i in list:
-        result = result + i
-    print result
-
-
-Will print out 
-30 something
-
-
-
-Shell commands
-===========
-
-::
-
-  ls         # Give a simple listing of files.
-  cp         # Copy files.
-  mv         # Move or rename files.
-  rm         # Remove files.  
-  rm -r      # Remove entire directory subtree.
-  cd         # Change directories.
-  pwd        # Print working directory.
-  cat        # Lists a file or files sequentially.
-  more       # Displays a file a screenfull at a time.
-  pg         # Variant on "more".
-  mkdir      # Make a directory.
-  rmdir      # Remove a directory.
-
 

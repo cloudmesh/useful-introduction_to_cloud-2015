@@ -3,12 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Cloud from 0 to 100's documentation!
+Programming for the Cloud 
 ===============================================
 
 .. toctree::
-   :maxdepth: 2
-
+   :maxdepth: -1
+    
+   shell
    python
    example
    cloud-example

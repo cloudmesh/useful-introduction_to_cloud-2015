@@ -1,5 +1,6 @@
 html: clean
-	cd notebook; ./convert
+	mkdir -p doc/source/notebook
+	cd notebook; ../bin/convert
 	cd doc; make html
 
 
