@@ -9,6 +9,7 @@ Cloud from 0 to 100's documentation!
 .. toctree::
    :maxdepth: 2
 
+   python
    example
    cloud-example
 
