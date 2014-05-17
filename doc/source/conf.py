@@ -38,6 +38,8 @@ extensions = ['sphinx.ext.autodoc',
 
 extensions.append('sphinxcontrib.autorun')
 
+todo_include_todos=True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -134,8 +136,9 @@ html_theme_options = {
 
     # HTML navbar class (Default: "navbar") to attach to <div> element.
     # For black navbar, do "navbar navbar-inverse"
-    'navbar_class': "navbar",
-
+    #'navbar_class': "navbar",
+    'navbar_class': "navbar navbar-inverse",
+    
     # Fix navigation bar to top of page?
     # Values: "true" (default) or "false"
     'navbar_fixed_top': "true",
@@ -150,7 +153,7 @@ html_theme_options = {
     # such as "amelia" or "cosmo".
     #
     # Note that this is served off CDN, so won't be available offline.
-    'bootswatch_theme': "cosmo",
+    #'bootswatch_theme': "cosmo",
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
