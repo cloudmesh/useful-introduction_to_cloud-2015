@@ -1,0 +1,13 @@
+#! /usr/bin/env python
+
+import glob
+from sh import ipython
+from sh import mv 
+import sys
+import os
+
+for filename in glob.glob("*.ipynb"):
+	ipython("nbconvert",  "--to=rst", filename)
+	(base, postfix) = os.path.basename(filename).split(".")
+	rst_file = base + ".rst"
+	mv(rst_file, "../doc/source/notebook/{0}".format(rst_file))	
