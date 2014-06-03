@@ -1,6 +1,13 @@
 Resources in the internet
 ======================================================================
 
+
+* http://ivory.idyll.org/articles/advanced-swc/
+
+* http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
+
+* http://www.youtube.com/watch?v=0vJJlVBVTFg
+
 The following have been found useful by previous students. However there may be much better resources out there.
 
 * http://www.korokithakis.net/tutorials/python/

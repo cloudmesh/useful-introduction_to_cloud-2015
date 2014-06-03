@@ -16,8 +16,6 @@ else:
     from sh import nova 
 
 
-
-
 class cloud:
 
     
