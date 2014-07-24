@@ -69,3 +69,26 @@ Ready Made Example
 ----------------------------------------------------------------------
 A ready made example for you is contained in the directory ``management/django/forms1``. Please cd into the directory.
 
+In this directory you will find a Makefile that you can use to execute the 
+above steps. To start the server you can say:: 
+
+	make start
+
+To view the web pages, say::
+
+	make view
+.. note::
+	After clicking on http://127.0.0.1.8000/, go to http://127.0.0.1.8000/admin
+	then type ../index in the URL. 
+
+In case you need to recreate the server please say::
+
+	make create
+
+To cleanup you say::
+
+	make clean
+
+To stop the server please say::
+
+	make stop
