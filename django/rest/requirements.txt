@@ -1,0 +1,10 @@
+django
+djangorestframework
+markdown      
+#django-filter # does not install
+pyyaml
+django-oauth2-provider
+django-guardian
+django-filter
+defusedxml
+django-rest-swagger

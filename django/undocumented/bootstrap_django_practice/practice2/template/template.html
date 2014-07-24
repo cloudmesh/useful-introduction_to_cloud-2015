@@ -1,0 +1,14 @@
+<table>
+<tr>
+  <th>author</th>
+  <th>title</th>
+  <th>publication year</th>
+</tr>
+{% for b in obj %}
+<tr>
+  <td>{{ b.author }}</td>
+  <td>{{ b.title }}</td>
+  <td>{{ b.publication_year }}</td>
+</tr>
+{% endfor %}
+</table>

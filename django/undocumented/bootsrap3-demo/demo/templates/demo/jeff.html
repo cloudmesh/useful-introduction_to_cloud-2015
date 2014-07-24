@@ -1,0 +1,18 @@
+{% extends 'demo/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}
+    Jeff
+{% endblock %}
+
+{% block content %}
+
+
+Hello Jeff you are awsome!
+
+    {% bootstrap_button 'button' size='lg' %}
+
+    {% bootstrap_alert "Something went wrong" alert_type='danger' %}
+
+{% endblock %}

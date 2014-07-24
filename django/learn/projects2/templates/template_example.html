@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+	
+{% block content %}
+<h1> Project Management</h1> 
+    <table style="width:500px">
+    <tr>
+        <th>project_title</th>
+	<th>project_id</th>
+	<th>project_pi</th>
+	<th>project_description</th>
+    </tr>
+    <tr>
+       {% for attribute in project %}
+            <th> {{ project }} </th>
+       {% endfor %}
+     </tr>
+    </table>
+{% endblock %}
+
+ 
