@@ -10,7 +10,7 @@ Tasks
    :maxdepth: 2
 
    shell
-
+   parallel
 
    python
    rst
