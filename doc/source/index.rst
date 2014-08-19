@@ -9,9 +9,9 @@ Tasks
 .. toctree::
    :maxdepth: 2
 
-   tasks
-   todo
    shell
+
+
    python
    rst
 
@@ -23,6 +23,16 @@ Notebooks
    :glob:
 
    notebook/*
+
+Unstructured Notes
+======================================================================
+
+.. toctree::
+   :maxdepth: 2
+
+   tasks
+   todo
+
 
  
 
