@@ -1,13 +1,21 @@
-Introdution to Python
-========================
+Introdution to Cloud Computing
+================================
 
-This directory contains code and documentation to learn elementary python
+This directory contains code and documentation to learn elementary cloud computing concepts. 
+We focus on the following topics:
+
+1. Shell Tools to Conduct Elementary Distributed Computing
+2. Essential Python for Cloud Computing
+3. Essential iPython for Cloud Computing
+
+Obtaining the documentation
+==============================
 
 To check out the code you can use one of two methods. 
 If you do not have full access to the repository (which is for most the case):
 You can do::
 
-  git clone https://github.com/cloudmesh/introduction_to_python.git
+  git clone https://github.com/cloudmesh/introduction_to_cloud_computing.git
 
 Otherwise, if you are a developer you can use::
 
@@ -32,5 +40,5 @@ You can add new notebooks by adding them into the ipython notebooks::
 
 folder. TO contribute your notebook, you can create a pull request. This is done as follows::
 
-   PLEASE DESCRIBE HOW TO DO THAT
+   TODO: please describe how to do that
  
