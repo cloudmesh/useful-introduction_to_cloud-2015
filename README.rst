@@ -21,6 +21,11 @@ Otherwise, if you are a developer you can use::
 
   git clone git@github.com:cloudmesh/introduction_to_python.git
 
+Prior to you being able to create the documentation, you do have to
+install pandoc:
+
+* http://johnmacfarlane.net/pandoc/installing.html
+
 You can create the documentation as follows::
 
   make html
