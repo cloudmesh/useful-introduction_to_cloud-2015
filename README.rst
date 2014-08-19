@@ -26,6 +26,11 @@ install pandoc:
 
 * http://johnmacfarlane.net/pandoc/installing.html
 
+Quick setup for Ubuntu (tesetd for Ubuntu 14.04.1)
+
+* sudo apt-get install python-dev git python-pip pandoc
+* pip install -r requirements.txt
+
 You can create the documentation as follows::
 
   make html
