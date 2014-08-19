@@ -1,3 +1,7 @@
+The documentation is available at
+
+* http://cloudmesh.github.io/introduction_to_cloud_computing.
+
 Introdution to Cloud Computing
 ================================
 
