@@ -1,3 +1,7 @@
+The documentation is available at
+
+* http://cloudmesh.github.io/introduction_to_cloud_computing.
+
 Introdution to Cloud Computing
 ================================
 
@@ -25,6 +29,11 @@ Prior to you being able to create the documentation, you do have to
 install pandoc:
 
 * http://johnmacfarlane.net/pandoc/installing.html
+
+Quick setup for Ubuntu (tesetd for Ubuntu 14.04.1)
+
+* sudo apt-get install python-dev git python-pip pandoc
+* pip install -r requirements.txt
 
 You can create the documentation as follows::
 
