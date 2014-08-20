@@ -101,17 +101,15 @@ security group. This only need to be done once for a project.
 Essentially you can do this from horizon or nova CLI. We can do this
 using cloudmesh too and use this method (We will simplify this step at
 a later phase in the project, but for now, you can do this from
-command line as). First identify the index of the cloud the VM is
-running from the cloudmesh.yaml, and make proper change of the
-file. We start by executing the command::
+command line).
 
-  python tests/test_compute.py
+First identify the index of the cloud in which the VM is
+running from the cloudmesh.yaml. The index is the sequential number
+of the cloud from cloudmesh->active list, counting starting from 0.
 
-.. todo:: next line is unclear, which setup? is this in the test_compute.p code?
-
-.. todo:: it is not clear what IDX is is it the cloud name sierra_openstack_havana?
-
-In setup, change the line::
+Then make proper change of the file test_compute.py under tests. In 
+the definition of the setup method in the above mentioned file, 
+modify the line::
 
   self.name = self.configuration.active()[IDX]
 
@@ -124,9 +122,12 @@ This will open the port 5000 so it is accessible from outside.
 NOTE:
 
 #. As you might be copying your yaml files into the cloud please
-   secure the VM and shut it down shut it down after using.
-
-.. todo:: how do you secure the VM?
+   secure the VM (following good security practice, including but 
+   not limited to proper ssh settings disallowing password authentication, 
+   securing the location of your private key as well as setting a 
+   passphrase, etc.). As this method targets the scenario for rapid 
+   dev and testing, it will be a good idea that shuting the vm down 
+   after using.
 
 #. As the server is not secured by HTTPS, remember not to use your
    real passwords that you use on other systems to login.
