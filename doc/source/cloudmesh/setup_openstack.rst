@@ -1,66 +1,142 @@
-Setup/Testing Cloudmesh in Cloud environment (vm in OpenStack)
-==================================================
-Setting up Cloudmesh on a VM is an especially convenient way during dev and testing. The following steps have been developped and tested on a VM running Ubuntu 14.01.1 on FutureGrid Sierra openstack.
+Setup Cloudmesh in an Openstack VM for Testing
+======================================================================
 
-- Get a working VM with public IP.
-- sudo apt-get update
-- sudo apt-get install git
-- git clone https://github.com/cloudmesh/cloudmesh.git
-- cd cloudmesh
-- ./install system
-- cd ~
-- virtualenv  --no-site-packages ~/ENV
-- source ~/ENV/bin/activate
-- cd cloudmesh
-- ./install requirements
-- ./install new
-- vi ~/.futuregrid/cloudmesh.yaml (Update your user profile, name, project data)
+Setting up Cloudmesh on a VM is an especially convenient way during
+development and testing. To do so, you can follow the steps to run
+cloudmesh in a VM running Ubuntu 14.01.1 on FutureGrid Sierra
+openstack. If you use a different cloud, you can adapt the
+instructions acordingly.
 
-  Alternatively you can copy your local working yaml files over.
-- vi ~/.futuregrid/cloudmesh_server.yaml
+First, you have to start a VM on the cloud and assign it a public
+IP. This can be done in multiple ways, using the commandline, vagrant,
+or the horizon GUI. Let us assume you have set it up via the GUI. Next
+you have to update the operating system while logging into the VM::
 
-  In cloudmesh->server->webui, make the following changes:
+  sudo apt-get update
+  sudo apt-get install git
+  sudo apt-get install emacs  
+
+To obtain cloudmesh you need to clone it from git hub and change to
+the cloudmesh directory::
+
+  cd ~
+  git clone https://github.com/cloudmesh/cloudmesh.git
+  cd cloudmesh
+
+To start the instalation of cloudmesh we first need to install a
+number of packages with::
+
+  ./install system
+
+We also recommend that you run virtualenv in python which you can
+enable with::
+
+  cd ~
+  virtualenv  --no-site-packages ~/ENV
+  source ~/ENV/bin/activate
+
+Now let us install cloudmesh into this virtualenv::
+
+  cd cloudmesh
+  ./install requirements
+  ./install new
+
+The last command will create a number of yaml files in a folder
+``.cloudmesh. 
+
+.. todo::  Users: currently the code still installs into .futuregrid please
+           change the name for .cloudmesh to .futuregrid for now.
+
+           Developers: lets simply change the cloudmesh code to use
+	   .cloudmesh instead of .futuregrid
+
+Now edit the file ``~/.cloudmesh/cloudmesh.yaml` either with emacs or
+vi::
+
+  emacs ~/.cloudmesh/cloudmesh.yaml
+
+or::
+
+  vi ~/.cloudmesh/cloudmesh.yaml
+
+In this file, update your user profile, name, project
+data. Alternatively, if you already have yaml files on for example
+india.yuturegrid.org you can copy your local working yaml files from
+that machine to th virtual machine.
+
+Next, edit the file `~/.futuregrid/cloudmesh_server.yaml`::
+
+  vi ~/.futuregrid/cloudmesh_server.yaml
+
+In the attribute cloudmesh->server->webui, make the following changes::
   
-  change host to: 0.0.0.0
-  
-  change browser to: False
+  host: 0.0.0.0
+  browser: False
     
-- ./install cloudmesh
-- fab mongo.boot
-- fab mongo.boot (call mongo.boot twice so the tables and security settings can be done properly)
-- fab user.mongo
-- fab server.start
+Next, install the cloudmesh server anad API with:: 
 
-Then the service should be available via:
-http://PUBLIC_IP_OF_THE_VM:5000
+  ./install cloudmesh
 
-To access the server, you will also need to first enable port 5000 for the VM. By default, you will add the port 5000 to the 'default' security group. This only need to be done once for a project.
+To run cloudmesh you will need to start a number of services that you
+can do with::
 
-Essentially you can do this from horizon or nova CLI. We can do this using cloudmesh too. We should have a GUI for this later, but for now, you can do this from command line as following:
+  fab mongo.boot
+  fab mongo.boot 
 
-- First identify the index of the cloud the VM is running from the cloudmesh.yaml, and make proper change of the file
+Please make sure to call `fab mongo.boot` twice so the tables and
+security settings are done properly. After this update the user data with::
 
-  tests/test_compute.py
+  fab user.mongo
+  fab server.start
 
-In setup, change the line:
+Then the cloudmesh service should be available via::
 
-self.name = self.configuration.active()[IDX]
+   http://PUBLIC_IP_OF_THE_VM:5000
 
-with proper IDX.
+To access the server, you will also need to first open the port 5000
+for the VM. By default, you will add the port 5000 to the 'default'
+security group. This only need to be done once for a project. 
 
-- And then run from within the tests directory:
+
+Essentially you can do this from horizon or nova CLI. We can do this
+using cloudmesh too and use this method (We will simplify this step at
+a later phase in the project, but for now, you can do this from
+command line as). First identify the index of the cloud the VM is
+running from the cloudmesh.yaml, and make proper change of the
+file. We start by executing the command::
+
+  python tests/test_compute.py
+
+.. todo:: next line is unclear, which setup? is this in the test_compute.p code?
+
+.. todo:: it is not clear what IDX is is it the cloud name sierra_openstack_havana?
+
+In setup, change the line::
+
+  self.name = self.configuration.active()[IDX]
+
+with proper IDX. And then run from within the tests directory::
 
   nosetests test_compute.py:Test.test_20_create_secgroup
 
-This should open the port 5000 so it's accessible from outside.
+This will open the port 5000 so it is accessible from outside.
 
 NOTE:
 
-1. As you might be copying your yaml files into the cloud please secure the VM, or shut it down after using.
+#. As you might be copying your yaml files into the cloud please
+   secure the VM and shut it down shut it down after using.
 
-2. As the server is not secured by HTTPS, remember not to use your real password to login.
+.. todo:: how do you secure the VM?
 
-3. This method intends for dev/tesing, and not recommended for real using.
+#. As the server is not secured by HTTPS, remember not to use your
+   real passwords that you use on other systems to login.
 
-Please refer to http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements for more information.
+#. This method is only intended for development and tesing, and not
+   recommended for real production use.
+
+More information about more sophisticated install instructions are
+provided at 
+
+* http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements
+
 
