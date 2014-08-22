@@ -40,6 +40,11 @@
   </head>
   <body>
 
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -49,7 +54,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><img src="_static/fg-logo-white-24x36.png">
+        <a class="navbar-brand" href="index.html"><img src="_static/cm-logo-24.png">
           Cloudmesh</a>
         <span class="navbar-text navbar-version pull-left"><b>2.0</b></span>
       </div>
@@ -121,17 +126,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="language.html#excersises">Excersises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programs.html">Code Listings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#boot-vm-sh">boot-vm.sh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#class-py">class.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#class2-py">class2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#cloud0-boot-vm-sh">cloud0-boot-vm.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#cloud0-delete-vm-py">cloud0-delete-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#cloud0-start-vm-py">cloud0-start-vm.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#cloud1-py">cloud1.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#cloud2-py">cloud2.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#cloud3-py">cloud3.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#cloud4-py">cloud4.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#delete-vm-py">delete_vm.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#icecream-py">icecream.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#programs-py">programs.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#start-vm-py">start_vm.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#start-vm-simulator-py">start_vm_simulator.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#junk-py">junk.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#tabel2-py">tabel2.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#table1-py">table1.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#table3-py">table3.py</a></li>
@@ -139,7 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="programs.html#table5-py">table5.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#table6-py">table6.py</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programs.html#table7-py">table7.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="programs.html#transportation-py">transportation.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="programs.html#table8-py">table8.py</a></li>
 </ul>
 </li>
 </ul>
@@ -149,6 +153,20 @@
 <li class="toctree-l2"><a class="reference internal" href="rst.html#exceltable">Exceltable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst.html#autorun">Autorun</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh/setup.html">Setup Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh/setup_openstack.html">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh/yaml.html">Creating the yaml file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -219,10 +237,72 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><h4>Site Contents</h4>
+
+<ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Just Enough Shell for the Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Processing of Shell Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Just Enough Python for the Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst.html">Just enough reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh/setup.html">Setup Cloudmesh</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebook/Hello_cloud.html">Hello Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook/gregor.html">Gregor</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Tasks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">ToDo</a></li>
+</ul>
+
+</ul>
+
+<h4>Page Contents</h4><ul>
+<li><a class="reference internal" href="#">ToDo</a></li>
+</ul>
+
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div id="sourcelink">
+  <a href="_sources/todo.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
       
   <div class="section" id="todo">
 <h1>ToDo<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">Todo</p>
+<p>Users: currently the code still installs into .futuregrid please
+change the name for .cloudmesh to .futuregrid for now.</p>
+<p class="last">Developers: lets simply change the cloudmesh code to use
+.cloudmesh instead of .futuregrid</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="cloudmesh/setup_openstack.html#index-0"><em>original entry</em></a> is located in  /private/tmp/introduction_to_cloud_computing/doc/source/cloudmesh/setup_openstack.rst, line 47.)</p>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="cloudmesh/yaml.html#index-0"><em>original entry</em></a> is located in  /private/tmp/introduction_to_cloud_computing/doc/source/cloudmesh/yaml.rst, line 80.)</p>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="cloudmesh/yaml.html#index-1"><em>original entry</em></a> is located in  /private/tmp/introduction_to_cloud_computing/doc/source/cloudmesh/yaml.rst, line 85.)</p>
+<div class="admonition-todo admonition">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro</p>
+</div>
+<p class="todo-source">(The <a class="reference internal" href="cloudmesh/yaml.html#index-2"><em>original entry</em></a> is located in  /private/tmp/introduction_to_cloud_computing/doc/source/cloudmesh/yaml.rst, line 90.)</p>
 <div class="admonition-todo admonition">
 <p class="first admonition-title">Todo</p>
 <p class="last">virtualenv</p>
