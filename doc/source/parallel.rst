@@ -1,4 +1,4 @@
-Parallel Processing of Shell Commands
+Parallel Shell Commands
 ======================================================================
 
 Traditionally system administrators and developers using parallel computing need tools to manage a significant number of machines. One of the requirements is to execute a command in parallel on many machines and gather its output. There are many tools that can achieve this task. We focus here on the introduction of the following tools:
@@ -9,7 +9,7 @@ Traditionally system administrators and developers using parallel computing need
    executing repeatedly commands with caching
 
 
-pdsh - Parallel Distributed Shell
+Parallel Distributed Shell (pdsh)
 ----------------------------------------------------------------------
 
 The parallel distributed shell (pdsh) is a shell command line program that allows the execution of commands not just on one computer but on a list of computers.
@@ -33,17 +33,14 @@ Furthermore, substitutions for the user and the hostname to login to the remote 
 executes the command hostname on all specified machines.
 
 
-Improvements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* ToDo: At this time we are not aware that pdsh is installed by
-  default on india. check with the systems group and have them
-  provide a documentation on how we activate it.
+.. todo:: At this time we are not aware that pdsh is installed by
+   default on india. check with the systems group and have them
+   provide a documentation on how we activate it.
 
 
 Fabric
 ----------------------------------------------------------------------
-
 
 Fabric is a Python command-line tool and library for assiting system
 administration tasks related to the execution of command via ssh. It
@@ -82,7 +79,7 @@ hosts, you can simply specify them as part of the -H argument::
   fab -H host0,host1,host2,host3 hostname
 
 
-Cloudmesh sequential and parallel
+Cloudmesh Parallel API
 ----------------------------------------------------------------------
 
 The previous commands are all developeed with a single user in mind,
