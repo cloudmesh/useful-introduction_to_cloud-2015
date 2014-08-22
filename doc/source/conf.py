@@ -169,7 +169,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "images/fg-logo-white-24x36.png"
+html_logo = "images/cm-logo-24.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -191,6 +191,20 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
+html_sidebars = {
+   '**': ['menu.html',
+             'localtoc.html',
+             #'relations.html',
+             'searchbox.html',
+             'sourcelink.html',
+            ],
+   'index': ['menu.html',
+             'localtoc.html',
+             #'relations.html',
+             'searchbox.html',
+             'sourcelink.html',
+            ],
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
