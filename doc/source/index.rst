@@ -12,7 +12,7 @@ Introduction to Cloud Computing
    shell
    parallel
 
-   python
+   python/python
    rst
 
    cloudmesh/setup

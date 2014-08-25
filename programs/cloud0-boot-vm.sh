@@ -1,4 +1,7 @@
 #! /bin/sh -x
+
+USERNAME=$USER
+
 nova boot --flavor m1.small \
-            --image "futuregrid/ubuntu-12.04" \
-            --key_name dmoney4454-key dmoney4454-001
+            --image "futuregrid/ubuntu-14.04" \
+            --key_name ~/.ssh/idrsa.pub $USERNAME-001

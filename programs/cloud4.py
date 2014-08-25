@@ -94,7 +94,7 @@ class cloud:
         result = nova ("boot", 
                        "--flavor", "m1.small", 
                        "--image", "futuregrid/ubuntu-12.04", 
-                       "--key_name", "dmoney4454-key", 
+                       "--key_name", "~/.ssh/id_rsa.pub", 
                        name)
         return result
 
@@ -114,10 +114,10 @@ class cloud:
                print nova ("boot",
                            "--flavor", "m1.small",
                            "--image", "futuregrid/ubuntu-12.04",
-                           "--key_name", "dmoney4454-key",
+                           "--key_name", "~/.ssh/id_rsa.pub",
                            name_format.format(name, index))
            except:
-               print "machine could not be started because of an error", name.format("dmoney4454", index)
+               print "machine could not be started because of an error", name.format(username, index)
 
     def delete_n(self,name,n):
        length = len (str(n))
@@ -152,7 +152,7 @@ class cloud:
                 ##### do all the programming here
                 if line.startswith("v"):
                     self.refresh()
-                    self.display(["status", "name", "id"], "dmoney")
+                    self.display(["status", "name", "id"], username)
                 else:
                     command = line.split(" ")
                     print command
@@ -201,7 +201,7 @@ if  __name__ == '__main__':
             "status": "ERROR", 
             "networks": "private=10.35.23.52", 
             "id": "59e5ee03-4e94-4265-8008-ba1d3b460ba7", 
-            "name": "dmoney4454-001"
+            "name": username + "001"
             }, 
         "e0926229-b252-4cac-93a8-2e614ef0a2cf ": {
             "status": "BUILDING", 
@@ -219,42 +219,42 @@ if  __name__ == '__main__':
 
     c.start_n(name,2)
     c.refresh()
-    c.display(["status", "name", "id"], "dmoney")
+    c.display(["status", "name", "id"], username)
     time.sleep(3)
     c.refresh()
-    c.display(["status", "name", "id"], "dmoney")
+    c.display(["status", "name", "id"], username)
 
 
     c.delete_n(name,2)
     time.sleep(10)
     c.refresh()
-    c.display(["status", "name", "id"], "dmoney")
+    c.display(["status", "name", "id"], username)
 
 
 #    
 
 
 #    c.refresh()
-#   c.display(["status", "name", "id"], "dmoney")
+#   c.display(["status", "name", "id"], username)
 #    time.sleep(1)
 
 #    c.refresh()
-#    c.display(["status", "name", "id"], "dmoney")
+#    c.display(["status", "name", "id"], username)
 #    time.sleep(1)
 
 #    c.refresh()
-#    c.display(["status", "name", "id"], "dmoney")
+#    c.display(["status", "name", "id"], username)
 #    time.sleep(1)
 
 #    c.delete(name)
 #    time.sleep(5)
 #    c.refresh()
-#    c.display(["status", "name", "id"], "dmoney")
+#    c.display(["status", "name", "id"], username)
 
-    #c.display()
+# c.display()
 
 
-    #print c.status()
-    #c.set(cloud_dict)
-    #print c
-    #print c.table(["status", "name"],"dmoney")
+# print c.status()
+# c.set(cloud_dict)
+# print c
+# print c.table(["status", "name"], username)
