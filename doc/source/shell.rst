@@ -1,4 +1,4 @@
-Just Enough Shell for the Cloud
+Shell
 ======================================================================
 
 Basic shell commands

@@ -13,17 +13,13 @@ Introduction to Cloud Computing
    parallel
 
    python/python
+   notebook/*
+
    rst
 
-   cloudmesh/setup
+   cloudmesh/cloudmesh
 
-Notebooks
-======================================================================
 
-.. toctree::
-   :glob:
-
-   notebook/*
 
 Unstructured Notes
 ======================================================================

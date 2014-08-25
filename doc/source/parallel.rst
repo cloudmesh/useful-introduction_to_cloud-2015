@@ -1,4 +1,4 @@
-Parallel Shell Commands
+Parallel Shell
 ======================================================================
 
 Traditionally system administrators and developers using parallel computing need tools to manage a significant number of machines. One of the requirements is to execute a command in parallel on many machines and gather its output. There are many tools that can achieve this task. We focus here on the introduction of the following tools:
