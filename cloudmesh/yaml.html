@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating the yaml file &mdash; my Cloudmesh Learning documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.1.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.1.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Learning',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
+    <link rel="up" title="Cloudmesh" href="cloudmesh.html" />
+    <link rel="next" title="Tasks" href="../tasks.html" />
+    <link rel="prev" title="Setup Cloudmesh in an Openstack VM for Testing" href="setup_openstack.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><img src="../_static/cm-logo-24.png">
+          my Cloudmesh</a>
+        <span class="navbar-text navbar-version pull-left"><b>Learning</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#basic-shell-commands">Basic shell commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#editors-that-work-in-a-terminal">Editors that work in a terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../parallel.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/ecosystem.html">Ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#virtualenv">virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#pypi">pypi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#github">github</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/ecosystem.html#python-resources">Python resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/language.html">Lanaguage Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#print">Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#simple-comment">Simple comment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#multiline-comment-with">Multiline Comment with &#8220;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#id1">Multiline Comment with &#8216;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#changing-the-variable-value">Changing the variable Value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#list">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#for-loop">For Loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#if-condition">If Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#function-to-do-calculations">Function to do calculations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#functions-for-string-manipulation">Functions for String Manipulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/language.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/programs.html">Code Listings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#booting-a-virtual-machine">Booting a virtual machine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-a-shell-command">Boot with  a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-python-calling-a-shell-command">Boot with python calling a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-cloudmesh">Boot with cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#deleting-virtual-machines">Deleting virtual machines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-a-shell-command">Delete with  a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-python-calling-a-shell-command">Delete with python calling a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-cloudmesh">Delete with cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#query-to-cloud">Query to Cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-flavors">List Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-images">List Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-virtual-machines">List Virtual machines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/programs.html#to-integarte">TO INTEGARTE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-delete-vm-py">cloud0-delete-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-start-vm-py">cloud0-start-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud1-py">cloud1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud2-py">cloud2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud3-py">cloud3.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud4-py">cloud4.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#junk-py">junk.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#tabel2-py">tabel2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table1-py">table1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table3-py">table3.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table4-py">table4.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table5-py">table5.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table6-py">table6.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table7-py">table7.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table8-py">table8.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="cloudmesh.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cloudmesh.html#setup">Setup</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Creating the yaml file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tasks.html">Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#longterm">Longterm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#learning">Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#programming">Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Creating the yaml file</a><ul>
+<li><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="setup_openstack.html" title="Previous Chapter: Setup Cloudmesh in an Openstack VM for Testing"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Setup Cloudmesh ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../tasks.html" title="Next Chapter: Tasks"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Tasks &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/cloudmesh/yaml.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><h4>Site Contents</h4>
+
+<ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cloudmesh.html">Cloudmesh</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tasks.html">Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo</a></li>
+</ul>
+
+</ul>
+
+<h4>Page Contents</h4><ul>
+<li><a class="reference internal" href="#">Creating the yaml file</a><ul>
+<li><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div id="sourcelink">
+  <a href="../_sources/cloudmesh/yaml.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="creating-the-yaml-file">
+<h1>Creating the yaml file<a class="headerlink" href="#creating-the-yaml-file" title="Permalink to this headline">¶</a></h1>
+<p>You must have installed cloudmesh as discussed in ??? and run:</p>
+<div class="highlight-python"><div class="highlight"><pre>./install/new
+</pre></div>
+</div>
+<p>This will create a ~/.cloudmesh directory with some basic yaml files that you will need to modify.</p>
+<div class="section" id="adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">
+<h2>Adding FutureGrid Openstack clouds on sierra and india to the yaml file<a class="headerlink" href="#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>For FutureGrid we have additionally provided a script that automatically creates some yaml files from the installation. In future FutureGrid will provide directly a yaml for cloudmesh so that this step is unnecessary. Before you can execute this command you maust make sure that you can log into india and sierra via ssh. Once you have verified this for example with:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh USERNAME@india.futuregrid.org hostname
+ssh USERNAME@sierra.futuregrid.org hostname
+</pre></div>
+</div>
+<p>Now create the yaml file while fetching some information from the remote machines:</p>
+<div class="highlight-python"><div class="highlight"><pre>./install rc fetch
+</pre></div>
+</div>
+<p>First it will ask you which username you have on futuregrid. The name may be different from your current local machine name. Please enter your name when you see:</p>
+<div class="highlight-python"><div class="highlight"><pre>Please enter your portal user id [default: flat]:
+</pre></div>
+</div>
+<p>After this you can update the yaml files with the data fetched from the india and sierra with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>./install rc fill
+</pre></div>
+</div>
+<p>The reason why we have separated the commands and not just created one
+command is to provide you with the ability to double check overwriting
+possibly an existing rc file.</p>
+</div>
+<div class="section" id="adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">
+<h2>Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file<a class="headerlink" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>We do not recommend adding these machines as they use the FG portal
+and password. However if you do so, we have placeholders in the yaml
+file for these clouds. In case you can not find them, simply copy the
+one from india and make approriate corrections.</p>
+</div>
+<div class="section" id="adding-hp-cloud-to-the-yaml-file">
+<h2>Adding HP cloud to the yaml file<a class="headerlink" href="#adding-hp-cloud-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>The cloud offerd from HP is an openstack cloud and contains the
+ability to conduct project and user based billing. As this cloud is
+openstack it behaves much the same as the once defined on India and
+Sierra. There may be differences based on the version.</p>
+<p>HP provides an interface to their cloud through horizon. The
+documentation for it can be found at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.hpcloud.com/hpcloudconsole">http://docs.hpcloud.com/hpcloudconsole</a></li>
+</ul>
+<p>To use the cloud you have to first create an account with HP, which
+will charge you real money for using their cloud. Make sure you
+understand what costs will be charged before you request thausends of
+virtual machines. Naturally this is avalid for any other commercial
+cloud also. The console for the HP cloud is avaliable at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.hpcloud.com/console">http://www.hpcloud.com/console</a></li>
+</ul>
+<p>Which will bring you to their horizon interface:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://horizon.hpcloud.com">https://horizon.hpcloud.com</a></li>
+</ul>
+<p>You can add your username and password into the cloudmesh.yaml in the
+.cloudmesh directory. It is that simple. However, presently the data
+is stored in cleartext which we will change in future. Thus if your
+would like to run cloudmesh we currently recommend running it on your
+own local machine. Make sure that the access to the yaml file is
+properly secured.</p>
+</div>
+<div class="section" id="adding-aws-to-the-yaml-file">
+<h2>Adding AWS to the yaml file<a class="headerlink" href="#adding-aws-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro</p>
+</div>
+</div>
+<div class="section" id="adding-azaure-to-the-yaml-file">
+<h2>Adding Azaure to the yaml file<a class="headerlink" href="#adding-azaure-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro</p>
+</div>
+</div>
+<div class="section" id="adding-devstack-to-the-yaml-file">
+<h2>Adding devstack to the yaml file<a class="headerlink" href="#adding-devstack-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro</p>
+</div>
+</div>
+<div class="section" id="adding-dreamhost-to-the-yaml-file">
+<h2>Adding dreamhost to the yaml file<a class="headerlink" href="#adding-dreamhost-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>Dreamhost provides an openstack cloud that can be accessed through the
+dreamhost panel at:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://panel.dreamhost.com/index.cgi">https://panel.dreamhost.com/index.cgi</a></li>
+</ul>
+<p>The Horizon interface is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://dashboard.dreamcompute.com">https://dashboard.dreamcompute.com</a></li>
+</ul>
+<p>If you are a customer of dreamhost, use your username and
+password that was send to you.</p>
+<p>To use cloudmesh, please add this username and password in the
+placeholder for dreamhost.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Gregor von Laszewski for FutureGrid.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

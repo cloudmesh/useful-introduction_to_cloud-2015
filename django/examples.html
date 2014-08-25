@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Example: Simple &mdash; my Cloudmesh Learning documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.1.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.1.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Learning',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><img src="../_static/cm-logo-24.png">
+          my Cloudmesh</a>
+        <span class="navbar-text navbar-version pull-left"><b>Learning</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#basic-shell-commands">Basic shell commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#editors-that-work-in-a-terminal">Editors that work in a terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../parallel.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/ecosystem.html">Ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#virtualenv">virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#pypi">pypi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#github">github</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/ecosystem.html#python-resources">Python resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/language.html">Lanaguage Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#print">Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#simple-comment">Simple comment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#multiline-comment-with">Multiline Comment with &#8220;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#id1">Multiline Comment with &#8216;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#changing-the-variable-value">Changing the variable Value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#list">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#for-loop">For Loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#if-condition">If Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#function-to-do-calculations">Function to do calculations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#functions-for-string-manipulation">Functions for String Manipulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/language.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/programs.html">Code Listings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#booting-a-virtual-machine">Booting a virtual machine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-a-shell-command">Boot with  a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-python-calling-a-shell-command">Boot with python calling a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-cloudmesh">Boot with cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#deleting-virtual-machines">Deleting virtual machines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-a-shell-command">Delete with  a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-python-calling-a-shell-command">Delete with python calling a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-cloudmesh">Delete with cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#query-to-cloud">Query to Cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-flavors">List Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-images">List Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-virtual-machines">List Virtual machines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/programs.html#to-integarte">TO INTEGARTE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-delete-vm-py">cloud0-delete-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-start-vm-py">cloud0-start-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud1-py">cloud1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud2-py">cloud2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud3-py">cloud3.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud4-py">cloud4.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#junk-py">junk.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#tabel2-py">tabel2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table1-py">table1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table3-py">table3.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table4-py">table4.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table5-py">table5.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table6-py">table6.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table7-py">table7.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table8-py">table8.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/cloudmesh.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cloudmesh/cloudmesh.html#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cloudmesh/setup_openstack.html">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cloudmesh/yaml.html">Creating the yaml file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tasks.html">Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#longterm">Longterm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#learning">Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#programming">Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Example: Simple</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#ready-made-example">Ready made example</a></li>
+<li><a class="reference internal" href="#tips">Tips</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/django/examples.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><h4>Site Contents</h4>
+
+<ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/cloudmesh.html">Cloudmesh</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tasks.html">Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo</a></li>
+</ul>
+
+</ul>
+
+<h4>Page Contents</h4><ul>
+<li><a class="reference internal" href="#">Example: Simple</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#ready-made-example">Ready made example</a></li>
+<li><a class="reference internal" href="#tips">Tips</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div id="sourcelink">
+  <a href="../_sources/django/examples.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="example-simple">
+<h1>Example: Simple<a class="headerlink" href="#example-simple" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This example demonstrates how to setup a very elementary Django
+application.</p>
+<p>To do this from scratch you have to execute the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>export PROJECT=simple
+mkdir $PROJECT
+django-admin.py startproject $PROJECT
+cd $PROJECT
+python manage.py syncdb
+python manage.py runserver
+</pre></div>
+</div>
+<p>To view the server open your web browser at:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://127.0.0.1:8000/admin
+</pre></div>
+</div>
+</div>
+<div class="section" id="ready-made-example">
+<h2>Ready made example<a class="headerlink" href="#ready-made-example" title="Permalink to this headline">¶</a></h2>
+<p>A ready made example for you is contained in the directory
+<tt class="docutils literal"><span class="pre">management/django/simple</span></tt>. Please cd into the directory.</p>
+<p>In this directory you will also find a Makefile that you can use to
+execute the above steps. To start the server, you can say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make start
+</pre></div>
+</div>
+<p>To view the web pages, say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make view
+</pre></div>
+</div>
+<p>In case you need to recreate the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make create
+</pre></div>
+</div>
+<p>To cleanup you say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make clean
+</pre></div>
+</div>
+<p>To stop the server please say:</p>
+<div class="highlight-python"><div class="highlight"><pre>make stop
+</pre></div>
+</div>
+<p>The steps are implicitly included in the makefile</p>
+<pre class="literal-block">
+PWD=`pwd`
+PROJECT=`basename \`pwd\``
+
+all:
+        echo $(PROJECT)
+
+create:
+        mkdir $(PROJECT)
+        cd $(PROJECT); django-admin.py startproject $(PROJECT)
+
+start:
+        python manage.py syncdb
+
+stop:
+        killall python
+
+view:
+        python manage.py runserver
+        open http://127.0.0.1:8000/admin
+
+clean:
+        rm *.sqlite3
+
+</pre>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>Tips for running</p>
+<p>start:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd django/simple/simple
+python manage.py syncdb
+python manage.py runserver
+</pre></div>
+</div>
+<p>View:</p>
+<div class="highlight-python"><div class="highlight"><pre>firefox http://127.0.0.1:8000/
+</pre></div>
+</div>
+<p>Cleanup:</p>
+<div class="highlight-python"><div class="highlight"><pre>rm db.sqlite3
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Gregor von Laszewski for FutureGrid.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
