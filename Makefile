@@ -95,7 +95,7 @@ clean:
 	rm -rf *.egg
 	find . -name "*~" -exec rm {} \;  
 	find . -name "*.pyc" -exec rm {} \;  
-	rm -rf build doc/build dist *.egg-info *~ #*
+	rm -rf build  dist *.egg-info *~ #*
 	cd doc; make clean
 	rm -rf *.egg-info
 	rm -rf *.log *.pid
@@ -110,9 +110,9 @@ uninstall:
 sphinx:
 	@echo "please use fab doc.html and fab doc.view instead"
 
-#	cd doc; make html
+#	cd docs; make html
 #ifeq ("$(shell uname)","Darwin")
-#	open doc/build/html/index.html
+#	open docs/build/html/index.html
 #endif
 
 #############################################################################
@@ -120,8 +120,13 @@ sphinx:
 ###############################################################################
 
 gh-pages:
-	git checkout gh-pages
-	make pages
+	cd docs/build/html && git add .  && git commit -m "site generated" && git push origin gh-pages	
+	git commit -a -m "build site"
+	git push origin master	
+
+view:
+	open docs/build/html/index.html
+
 
 ######################################################################
 # TAGGING
@@ -141,31 +146,4 @@ tag:
 	git push
 
 
-######################################################################
-# ONLY RUN ON GH-PAGES
-######################################################################
-
-PROJECT=`basename $(PWD)`
-DIR=/tmp/$(PROJECT)
-DOC=$(DIR)/doc
-
-pages: ghphtml ghpgit
-	echo done
-
-ghphtml:
-	cd /tmp
-	rm -rf $(DIR)
-	cd /tmp; git clone git://github.com/cloudmesh/$(PROJECT).git
-	cp $(DIR)/Makefile .
-	cd $(DOC); ls; make html
-	rm -fr _static
-	rm -fr _source
-	rm -fr *.html
-	cp -r $(DOC)/build/html/* .
-
-ghpgit:
-	git add . _sources _static   
-	git commit -a -m "updating the github pages"
-	git push
-	git checkout master
 

@@ -10,7 +10,7 @@ if sys.platform == 'darwin':
 @task
 def view():
     """view the documentation in a browser"""
-    local("{browser} doc/build/html/index.html".format(browser=browser))
+    local("{browser} docs/build/html/index.html".format(browser=browser))
 
 @task
 def html():
@@ -19,13 +19,13 @@ def html():
     # api()
     # man()
     """build the doc locally and view"""
-    local("cd doc; make html")
+    local("cd docs; make html")
 
 
 @task
 def gh():
     """deploy the documentation on gh-pages"""
-    local("rm -f doc/source/modules/*")
+    local("rm -f docs/source/modules/*")
     local("git checkout gh-pages")
     local("make pages")
 
@@ -33,7 +33,7 @@ def gh():
 def man():
     """deploy the documentation on gh-pages"""
     #TODO: match on "Commands"
-    local("cm man | grep -A10000 \"Commands\"  | sed \$d  > doc/source/man/man.rst")
+    local("cm man | grep -A10000 \"Commands\"  | sed \$d  > docs/source/man/man.rst")
 
 @task
 def api():
@@ -41,7 +41,7 @@ def api():
         print 70 * "="
         print "Building API Doc:", modulename 
         print 70 * "="        
-        local("sphinx-apidoc -f -o doc/source/api/{0} {0}".format(modulename))
+        local("sphinx-apidoc -f -o docs/source/api/{0} {0}".format(modulename))
 
 
 
