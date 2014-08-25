@@ -6,8 +6,8 @@ Description
 This is an example of out to setup a succesfully mongodb server
 
 
-* This same information and more can be obtained at 
-http://django-mongodb-engine.readthedocs.org/en/latest/index.html *
+* This same information and more can be obtained at
+  http://django-mongodb-engine.readthedocs.org/en/latest/index.html
 
 Make sure you are in virtualenv, if not do the following::
 	
@@ -16,7 +16,7 @@ Make sure you are in virtualenv, if not do the following::
 	source myproject/bin/activate
 	
 Now install ``Django-nonrel``, ``djangotoolbox``,
-& ``Django MongoDB Engine`` to your system::
+and ``Django MongoDB Engine`` to your system::
 	
 	pip install git+https://github.com/django-nonrel/django@nonrel-1.5
 	pip install git+https://github.com/django-nonrel/djangotoolbox
@@ -33,8 +33,8 @@ Then do a::
 	Site.objects.all()[0].id
 	u'your_number_here'
 	
-Now go into your project's ``settings.py`` file and go to the ``DATABASES ()``
-& ``SITE_ID`` function and add the following::
+Now go into your project's ``settings.py`` file and go to the
+``DATABASES ()`` and ``SITE_ID`` function and add the following::
 	
 	DATABASES = {
 		'default' : {
@@ -45,12 +45,13 @@ Now go into your project's ``settings.py`` file and go to the ``DATABASES ()``
 	............
 	SITE_ID = 'your_number_here'
 	
-Then run a ``python manage.py syncdb`` and a ``python manage.py runserver`` and 
-then you should be connected. 
+Then run a ``python manage.py syncdb`` and a ``python manage.py
+runserver`` and then you should be connected.
 
-*If you want the bootstrapped theme, do a ``pip install django-admin-bootstrapped``
-and add ``'django_admin_bootstrapped',`` before the ``django.contrib.admin``
-app in the ``INSTALLED _APPS`` list.
+* If you want the bootstrapped theme, do a ``pip install
+  django-admin-bootstrapped`` and add ``'django_admin_bootstrapped',``
+  before the ``django.contrib.admin`` app in the ``INSTALLED _APPS``
+  list.
 
 
 
@@ -68,8 +69,9 @@ execute the above steps. To start the server, you can say::
 To view the web pages, say::
 
   make view
-.. note::
-	After clicking on http://127.0.0.1.8000/, go to http://127.0.0.1.8000/admin
+
+.. note:: After clicking on http://127.0.0.1.8000/, go to
+          http://127.0.0.1.8000/admin
 
 In case you need to recreate the server please say::
 
