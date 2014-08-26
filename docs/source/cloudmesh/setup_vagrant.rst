@@ -73,3 +73,23 @@ Select one of the base image::
   ==> default: Checking if box 'ubuntu/trusty32' is up to date...
 
 Vagrant will be loaded.
+
+Vagrant ssh
+-----------
+
+Cloudmesh installed on a root account. You need to switch user account to a
+root once you sshed to the VM.
+
+::
+ 
+   vagrant ssh
+   sudo su -
+
+Virtualenv and cm
+-----------------
+
+::
+
+   source ~/ENV/bin/activate
+   cd cloudmesh
+   cm
