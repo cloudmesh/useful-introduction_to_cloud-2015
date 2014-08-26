@@ -89,6 +89,9 @@ root once you sshed to the VM.
 Virtualenv and cm
 -----------------
 
+Cloudmesh installed on Virtualenv. You need to enable the environment. `cm`
+Cloudmesh interactive shell is ready to use.
+
 ::
 
    source ~/ENV/bin/activate
