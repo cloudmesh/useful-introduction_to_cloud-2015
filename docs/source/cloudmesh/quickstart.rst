@@ -84,7 +84,7 @@ Command line tool can be tested by::
   +--------------------------+----------+
 
   cm> cloud on sierra
-  activate cloud 'sierra_openstack_grizzly'? (y/N) ('q' to discard) <- type Y
+  activate cloud 'sierra'? (y/N) ('q' to discard) <- type Y
 
   ...
 
