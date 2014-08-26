@@ -15,3 +15,6 @@ Cloudmesh can be setup and running on your local environment in single user mode
 
    setup_openstack
    yaml
+   setup_vagrant
+   quickstart
+
