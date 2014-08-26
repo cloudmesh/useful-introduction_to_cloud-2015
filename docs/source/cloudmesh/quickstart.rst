@@ -127,6 +127,6 @@ Commands only without description
   fab mongo.simple
   fab server.start
   cm cloud list
-  cm cloud on sierra
+  echo "y" | cm cloud on sierra
   cm flavor sierra --refresh
 
