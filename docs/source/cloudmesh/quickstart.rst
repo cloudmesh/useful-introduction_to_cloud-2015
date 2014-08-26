@@ -17,7 +17,7 @@ It is recommended in the CloudMesh installation::
 The following commands install required packages of CloudMesh::
 
   cd cloudmesh
-  ./install system
+  sudo ./install system
   ./install requirements
   ./install new
 
@@ -112,7 +112,7 @@ Commands only without description
   virtualenv ~/ENV
   source ~/ENV/bin/activate
   cd cloudmesh
-  ./install system
+  sudo ./install system
   ./install requirements
   ./install new
   ./install rc fetch
