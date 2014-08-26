@@ -13,8 +13,9 @@ Cloudmesh can be setup and running on your local environment in single user mode
 .. toctree::
    :maxdepth: -1
 
+   quickstart
    setup_openstack
    yaml
    setup_vagrant
-   quickstart
+   
 

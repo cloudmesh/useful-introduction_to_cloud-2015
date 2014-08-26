@@ -6,7 +6,7 @@ Quick Start on your desktop
 
 If you have git, the easy way to download CloudMesh is::
    
-  git clone https://github.com/cloudmesh/cloudmesh.git
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
 
 Using virtualenv, you have isolated spaces for python packages.
 It is recommended in the CloudMesh installation::
@@ -16,39 +16,39 @@ It is recommended in the CloudMesh installation::
 
 The following commands install required packages of CloudMesh::
 
-  cd cloudmesh
-  sudo ./install system
-  ./install requirements
-  ./install new
+  $ cd cloudmesh
+  $ sudo ./install system
+  $ ./install requirements
+  $ ./install new
 
 To get access to IaaS cloud platforms, you need to apply your credentials to
 cloudmesh by the following step::
 
-  ./install rc fetch
-  ./install rc fill
+  $ ./install rc fetch
+  $ ./install rc fill
 
 In the FutureGrid resources, you need SSH access to india.futuregrid.org,
 sierra.futuregrid.org with your private key. you can test ssh login like this::
 
-  ssh [username]@india.futuregrid.org
-  ssh [username]@sierra.futuregrid.org
+  $ ssh [username]@india.futuregrid.org
+  $ ssh [username]@sierra.futuregrid.org
 
 
 You install cloudmesh and mongodb database::
 
-  ./install cloudmesh
-  fab mongo.start
-  fab mongo.boot
-  fab user.mongo
-  fab mongo.simple
+  $ ./install cloudmesh
+  $ fab mongo.start
+  $ fab mongo.boot
+  $ fab user.mongo
+  $ fab mongo.simple
 
 Web interface can be started at http://127.0.0.1:5000 by::
 
-  fab server.start
+  $ fab server.start
 
 Command line tool can be tested by::
 
-  cm
+  $ cm
   
   ======================================================
   / ___| | ___  _   _  __| |_ __ ___   ___  ___| |__
@@ -104,7 +104,7 @@ Command line tool can be tested by::
 
 
 Commands only without description
----------------------------------
+----------------------------------------------------------------------
 
 ::
 
@@ -126,4 +126,21 @@ Commands only without description
   cm cloud list
   echo "y" | cm cloud on sierra
   cm flavor sierra --refresh
+
+One line install with curl
+----------------------------------------------------------------------
+
+
+This script can also be executed while getting it from our convenient
+instalation script repository. For ubuntu you can use::
+
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | sh
+
+However the script containes an important change. first it creates a
+directory called ~/github/cloudmesh and than cds into this directory
+to conduct the instalation from there. Furthermore, as you can see
+this script also creates a virtual env under the name ~/ENV
+
+If you co not like these names or have a conflict with the names,
+please download the script and modify accordingly.
 
