@@ -60,7 +60,7 @@ Provide your portal ID::
 Base Image
 ^^^^^^^^^^^
 
-Select one of the base image::
+Select one of the base images::
 
   ==================================
   Select base image to launch
