@@ -84,11 +84,8 @@ Command line tool can be tested by::
   +--------------------------+----------+
 
   cm> cloud on sierra
-  activate cloud 'sierra'? (y/N) ('q' to discard) <- type Y
-
   ...
-
-  ... cloud 'sierra' activated.
+  cloud 'sierra' activated.
 
   cm> flavor sierra --refresh
   ...
