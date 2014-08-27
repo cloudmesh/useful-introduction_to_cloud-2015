@@ -136,10 +136,15 @@ instalation script repository. For ubuntu you can use::
 
   $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | sh
 
-However the script containes an important change. first it creates a
-directory called ~/github/cloudmesh and than cds into this directory
-to conduct the instalation from there. Furthermore, as you can see
-this script also creates a virtual env under the name ~/ENV
+It will install cloudmesh in the directory where you started it from
+and place it in the directory::
+
+  cloudmesh
+
+It creates also a directory called ~/github/cloudmesh and than cds
+into this directory to conduct the instalation from
+there. Furthermore, as you can see this script also creates a virtual
+env under the name ~/ENV
 
 If you co not like these names or have a conflict with the names,
 please download the script and modify accordingly.
