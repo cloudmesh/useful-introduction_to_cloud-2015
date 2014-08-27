@@ -5,6 +5,7 @@ from sh import ipython
 from sh import mv 
 import sys
 import os
+from sh import mkdir
 
 for filename in glob.glob("notebook/*.ipynb"):
     print "CONVERT:", filename,
@@ -13,4 +14,5 @@ for filename in glob.glob("notebook/*.ipynb"):
     rst_file = base + ".rst"
     to_file = "docs/source/notebook/{0}".format(rst_file)
     print "->", to_file
+    mkdir("-p", "docs/source/notebook")
     mv(rst_file, "docs/source/notebook/{0}".format(rst_file))	
