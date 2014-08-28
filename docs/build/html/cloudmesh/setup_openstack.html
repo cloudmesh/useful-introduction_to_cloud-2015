@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Setup Cloudmesh in an Openstack VM for Testing &mdash; my Cloudmesh Learning documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.1.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.1.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Learning',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
+    <link rel="up" title="Cloudmesh" href="cloudmesh.html" />
+    <link rel="next" title="Creating the yaml file" href="yaml.html" />
+    <link rel="prev" title="Quick Start on your desktop" href="quickstart.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><img src="../_static/cm-logo-24.png">
+          my Cloudmesh</a>
+        <span class="navbar-text navbar-version pull-left"><b>Learning</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#basic-shell-commands">Basic shell commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#editors-that-work-in-a-terminal">Editors that work in a terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../parallel.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/ecosystem.html">Ecosystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#virtualenv">virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#pypi">pypi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/ecosystem.html#github">github</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/ecosystem.html#python-resources">Python resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/language.html">Lanaguage Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#print">Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#simple-comment">Simple comment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#multiline-comment-with">Multiline Comment with &#8220;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#id1">Multiline Comment with &#8216;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#changing-the-variable-value">Changing the variable Value</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#list">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#for-loop">For Loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#if-condition">If Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/language.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#function-to-do-calculations">Function to do calculations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/language.html#functions-for-string-manipulation">Functions for String Manipulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/language.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/programs.html">Code Listings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#booting-a-virtual-machine">Booting a virtual machine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-a-shell-command">Boot with  a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-python-calling-a-shell-command">Boot with python calling a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#boot-with-cloudmesh">Boot with cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#deleting-virtual-machines">Deleting virtual machines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-a-shell-command">Delete with  a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-python-calling-a-shell-command">Delete with python calling a shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#delete-with-cloudmesh">Delete with cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#query-to-cloud">Query to Cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-flavors">List Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-images">List Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#list-virtual-machines">List Virtual machines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/programs.html#to-integarte">TO INTEGARTE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-delete-vm-py">cloud0-delete-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud0-start-vm-py">cloud0-start-vm.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud1-py">cloud1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud2-py">cloud2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud3-py">cloud3.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#cloud4-py">cloud4.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#junk-py">junk.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#tabel2-py">tabel2.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table1-py">table1.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table3-py">table3.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table4-py">table4.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table5-py">table5.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table6-py">table6.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table7-py">table7.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/programs.html#table8-py">table8.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/000_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/000_hello_cloudmesh.html#version">Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/000_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/001_vm-sh.html">Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/004-cmshell-examples.html">Specifying a custom label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/010-command-vm-example.html">Shell command vm startup and deletion examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/010-command-vm-example.html#part1-preparation">Part1: Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#select-a-cloud-to-work-with">select a cloud to work with</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#activate-the-cloud">activate the cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#set-default-image">set default image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#set-default-flavor">set default flavor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/010-command-vm-example.html#part2-start-vm">Part2: Start VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#start-one-vm-on-the-selected-or-default-cloud-using-its-default-image-and-default-flavor">start one vm on the selected or default cloud using its default image and default flavor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#check-realtime-vm-status-of-the-cloud">check realtime vm status of the cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#delete-the-vm-cloud-india-delete-all-vms-of-cloud-india-force-no-user-confirmation">delete the vm (&#8211;cloud=india: delete all vms of cloud india, &#8211;force: no user confirmation)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/010-command-vm-example.html#part3-start-multiple-vms">Part3: Start multiple VMs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#using-option-count-count">using option &#8211;count=count</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/010-command-vm-example.html#part4-start-vms-on-different-clouds">Part4: Start VMs on different clouds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#activate-another-cloud">activate another cloud</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#start-vms-on-two-clouds-separately-users-may-specify-a-vm-group-by-using-option-group-group">start VMs on two clouds separately (users may specify a VM group by using option &#8211;group=group)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#check-realtime-vm-status-of-all-active-clouds">check realtime vm status of all active clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/010-command-vm-example.html#delete-vms-by-group">delete VMs by group</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/010-junk.html">bla bal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/010-junk.html#from-sh-import-ls">from sh import ls</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="cloudmesh.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cloudmesh.html#setup">Setup</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quick Start on your desktop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#commands-only-without-description">Commands only without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating the yaml file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-veewee-optional">Install Veewee (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-up">Vagrant up</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#futuregrid-portal-id">FutureGrid Portal ID</a></li>
+<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#base-image">Base Image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tasks.html">Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#longterm">Longterm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#learning">Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks.html#programming">Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="quickstart.html" title="Previous Chapter: Quick Start on your desktop"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Quick Start on y...</span>
+    </a>
+  </li>
+  <li>
+    <a href="yaml.html" title="Next Chapter: Creating the yaml file"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Creating the yam... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/cloudmesh/setup_openstack.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><h4>Site Contents</h4>
+
+<ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cloudmesh.html">Cloudmesh</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tasks.html">Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo</a></li>
+</ul>
+
+</ul>
+
+<h4>Page Contents</h4><ul>
+<li><a class="reference internal" href="#">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div id="sourcelink">
+  <a href="../_sources/cloudmesh/setup_openstack.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="setup-cloudmesh-in-an-openstack-vm-for-testing">
+<h1>Setup Cloudmesh in an Openstack VM for Testing<a class="headerlink" href="#setup-cloudmesh-in-an-openstack-vm-for-testing" title="Permalink to this headline">¶</a></h1>
+<p>Setting up Cloudmesh on a VM is an especially convenient way during
+development and testing. To do so, you can follow the steps to run
+cloudmesh in a VM running Ubuntu 14.01.1 on FutureGrid Sierra
+openstack. If you use a different cloud, you can adapt the
+instructions acordingly.</p>
+<p>First, you have to start a VM on the cloud and assign it a public
+IP. This can be done in multiple ways, using the commandline, vagrant,
+or the horizon GUI. Let us assume you have set it up via the GUI. Next
+you have to update the operating system while logging into the VM:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
+sudo apt-get install git
+sudo apt-get install emacs
+</pre></div>
+</div>
+<p>To obtain cloudmesh you need to clone it from git hub and change to
+the cloudmesh directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd ~
+git clone https://github.com/cloudmesh/cloudmesh.git
+cd cloudmesh
+</pre></div>
+</div>
+<p>To start the instalation of cloudmesh we first need to install a
+number of packages with:</p>
+<div class="highlight-python"><div class="highlight"><pre>./install system
+</pre></div>
+</div>
+<p>We also recommend that you run virtualenv in python which you can
+enable with:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd ~
+virtualenv  --no-site-packages ~/ENV
+source ~/ENV/bin/activate
+</pre></div>
+</div>
+<p>Now let us install cloudmesh into this virtualenv:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd cloudmesh
+./install requirements
+./install new
+</pre></div>
+</div>
+<p>The last command will create a number of yaml files in a folder
+<a href="#id1"><span class="problematic" id="id2">``</span></a>.cloudmesh.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p>Users: currently the code still installs into .futuregrid please
+change the name for .cloudmesh to .futuregrid for now.</p>
+<p class="last">Developers: lets simply change the cloudmesh code to use
+.cloudmesh instead of .futuregrid</p>
+</div>
+<p>Now edit the file <a href="#id3"><span class="problematic" id="id4">``</span></a>~/.cloudmesh/cloudmesh.yaml` either with emacs or
+vi:</p>
+<div class="highlight-python"><div class="highlight"><pre>emacs ~/.cloudmesh/cloudmesh.yaml
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre>vi ~/.cloudmesh/cloudmesh.yaml
+</pre></div>
+</div>
+<p>In this file, update your user profile, name, project
+data. Alternatively, if you already have yaml files on for example
+india.yuturegrid.org you can copy your local working yaml files from
+that machine to th virtual machine.</p>
+<p>Next, edit the file <cite>~/.futuregrid/cloudmesh_server.yaml</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>vi ~/.futuregrid/cloudmesh_server.yaml
+</pre></div>
+</div>
+<p>In the attribute cloudmesh-&gt;server-&gt;webui, make the following changes:</p>
+<div class="highlight-python"><div class="highlight"><pre>host: 0.0.0.0
+browser: False
+</pre></div>
+</div>
+<p>Next, install the cloudmesh server anad API with:</p>
+<div class="highlight-python"><div class="highlight"><pre>./install cloudmesh
+</pre></div>
+</div>
+<p>To run cloudmesh you will need to start a number of services that you
+can do with:</p>
+<div class="highlight-python"><div class="highlight"><pre>fab mongo.boot
+fab mongo.boot
+</pre></div>
+</div>
+<p>Please make sure to call <cite>fab mongo.boot</cite> twice so the tables and
+security settings are done properly. After this update the user data with:</p>
+<div class="highlight-python"><div class="highlight"><pre>fab user.mongo
+fab server.start
+</pre></div>
+</div>
+<p>Then the cloudmesh service should be available via:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
+</pre></div>
+</div>
+<p>To access the server, you will also need to first open the port 5000
+for the VM. By default, you will add the port 5000 to the &#8216;default&#8217;
+security group. This only need to be done once for a project.</p>
+<p>Essentially you can do this from horizon or nova CLI. We can do this
+using cloudmesh too and use this method (We will simplify this step at
+a later phase in the project, but for now, you can do this from
+command line).</p>
+<p>First identify the index of the cloud in which the VM is
+running from the cloudmesh.yaml. The index is the sequential number
+of the cloud from cloudmesh-&gt;active list, counting starting from 0.</p>
+<p>Then make proper change of the file test_compute.py under tests. In
+the definition of the setup method in the above mentioned file,
+modify the line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">active</span><span class="p">()[</span><span class="n">IDX</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>with proper IDX. And then run from within the tests directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>nosetests test_compute.py:Test.test_20_create_secgroup
+</pre></div>
+</div>
+<p>This will open the port 5000 so it is accessible from outside.</p>
+<p>NOTE:</p>
+<ol class="arabic simple">
+<li>As you might be copying your yaml files into the cloud please
+secure the VM (following good security practice, including but
+not limited to proper ssh settings disallowing password authentication,
+securing the location of your private key as well as setting a
+passphrase, etc.). As this method targets the scenario for rapid
+dev and testing, it will be a good idea that shuting the vm down
+after using.</li>
+<li>As the server is not secured by HTTPS, remember not to use your
+real passwords that you use on other systems to login.</li>
+<li>This method is only intended for development and tesing, and not
+recommended for real production use.</li>
+</ol>
+<p>More information about more sophisticated install instructions are
+provided at</p>
+<ul class="simple">
+<li><a class="reference external" href="http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements">http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements</a></li>
+</ul>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Gregor von Laszewski for FutureGrid.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
