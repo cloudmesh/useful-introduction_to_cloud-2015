@@ -27,13 +27,14 @@ def html():
     notebook()
     local("cd docs; make html")
 
-
 @task
-def gh():
+def publish():
     """deploy the documentation on gh-pages"""
-    local("rm -f docs/source/modules/*")
-    local("git checkout gh-pages")
-    local("make pages")
+    #html()
+    local('cd docs/build/html && git add .  && git commit -m "site generated" && git push origin gh-pages')
+    local('git commit -a -m "build site"')
+    local("git push origin master")
+
 
 @task
 def man():
