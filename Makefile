@@ -7,35 +7,9 @@ all:
 	fab doc.html
 	fab doc.view
 
+view:
+	fab doc.view
 
-stats:
-	pep8 --statistics --filename *.py */*.py */*/*.py */*/*/*.py */*/*/*/*.py */*/*/*/*/*.py
-
-autopep8:
-	autopep8 -i */*.py
-	autopep8 -i */*/*.py
-	autopep8 -i */*/*/*.py
-	autopep8 -i */*/*/*/*.py
-	autopep8 -i */*/*/*/*/*.py
-	autopep8 -i */*/*/*/*/*/*.py
-
-######################################################################
-# GIT INTERFACES
-######################################################################
-push:
-	make -f Makefile clean
-	git commit -a 
-	git push
-
-pull:
-	git pull 
-
-gregor:
-	git config --global user.name "Gregor von Laszewski"
-	git config --global user.email laszewski@gmail.com
-
-git-ssh:
-	git remote set-url origin git@github.com:cloudmesh/$(BASENAME).git
 
 
 ######################################################################
@@ -103,29 +77,13 @@ clean:
 uninstall:
 	yes | pip uninstall cloudmesh
 
-#############################################################################
-# SPHINX DOC
-###############################################################################
-
-sphinx:
-	@echo "please use fab doc.html and fab doc.view instead"
-
-#	cd docs; make html
-#ifeq ("$(shell uname)","Darwin")
-#	open docs/build/html/index.html
-#endif
 
 #############################################################################
 # PUBLISH GIT HUB PAGES
 ###############################################################################
 
-gh-pages:
-	cd docs/build/html && git add .  && git commit -m "site generated" && git push origin gh-pages	
-	git commit -a -m "build site"
-	git push origin master	
-
-view:
-	open docs/build/html/index.html
+publish:
+	fab doc.publish
 
 
 ######################################################################

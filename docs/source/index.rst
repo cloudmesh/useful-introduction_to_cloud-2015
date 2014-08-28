@@ -9,26 +9,27 @@ Introduction to Cloud Computing
 .. toctree::
    :maxdepth: 2
 
+   about
    shell
    parallel
-
-   python/python
+   cloudmesh/cloudmesh
    notebooks
-
    rst
 
-   cloudmesh/cloudmesh
 
 
 
-Unstructured Notes
+
+Unfinished Documents
 ======================================================================
 
 .. toctree::
    :maxdepth: 2
 
+   python/python
    tasks
    todo
+   
 
 
  
