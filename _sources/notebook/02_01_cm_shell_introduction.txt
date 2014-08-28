@@ -1,0 +1,27 @@
+
+.. code:: python
+
+    import cloudmesh
+
+.. parsed-literal::
+
+    WARNING: cm not yet installed, skipping import
+
+
+.. code:: python
+
+    print cloudmesh.shell("help")
+
+::
+
+
+    ---------------------------------------------------------------------------
+    AttributeError                            Traceback (most recent call last)
+
+    <ipython-input-2-6c719e0ab728> in <module>()
+    ----> 1 print cloudmesh.shell("help")
+    
+
+    AttributeError: 'module' object has no attribute 'shell'
+
+

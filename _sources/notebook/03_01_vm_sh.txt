@@ -2,9 +2,8 @@
 Provider
 ========
 
-.. code:: python
+**IMPORTANT:** THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT
 
-    IMPORTANT: THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT
 .. todo:: get the cloud credentials form a yaml file
 
 .. todo:: use the information to start a VM

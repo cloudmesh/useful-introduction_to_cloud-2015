@@ -130,6 +130,9 @@ Commands only without description
 One line install with curl
 ----------------------------------------------------------------------
 
+.. error:: this method does not yet work 
+
+.. todo:: correct the documentation and the install script
 
 This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use::

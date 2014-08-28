@@ -1,0 +1,137 @@
+
+Cloudmesh Shell
+===============
+
+Initialization
+--------------
+
+.. code:: python
+
+    import cloudmesh
+Activating Clouds
+-----------------
+
+In order for cloudmesh to work with multiple coulds, we need to find out
+first which clouds are available. Users can add their own clouds later
+which we describe in the registration section.
+
+Let us inspect what is already available by invoking the list command
+
+.. code:: python
+
+    print cloudmesh.shell("cloud list")
+As you see we see a number of clouds, but none of them is already
+active. Thus we need to first activate a cloud. We assume that you have
+an account on FutureGrid. Let us activate the cloud india.
+
+.. code:: python
+
+    print cloudmesh.shell("cloud on india")
+We also have a conveniet interactive selector, that however dooes not
+work with ipython::
+
+::
+
+    print cloudmesh.shell("cloud on")
+
+activate the cloud
+~~~~~~~~~~~~~~~~~~
+
+.. todo:: gregor, activate cloud
+
+set default image
+~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("list image --refresh")
+.. code:: python
+
+    print cloudmesh.shell("cloud set image --image=futuregrid/ubuntu-14.04")
+set default flavor
+~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("list flavor --refresh")
+.. code:: python
+
+    print cloudmesh.shell("cloud set flavor --flavorid=2")
+Part2: Start VM
+---------------
+
+start one vm on the selected or default cloud using its default image and default flavor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("vm start")
+check realtime vm status of the cloud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("list vm --refresh")
+delete the vm (--cloud=india: delete all vms of cloud india, --force: no user confirmation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("vm delete --cloud=india --force")
+.. code:: python
+
+    print cloudmesh.shell("list vm --refresh")
+Part3: Start multiple VMs
+-------------------------
+
+using option --count=count
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("vm start --count=3")
+.. code:: python
+
+    print cloudmesh.shell("list vm --refresh")
+.. code:: python
+
+    print cloudmesh.shell("vm delete --cloud=india --force")
+.. code:: python
+
+    print cloudmesh.shell("list vm --refresh")
+Part4: Start VMs on different clouds
+------------------------------------
+
+activate another cloud
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("cloud on sierra")
+start VMs on two clouds separately (users may specify a VM group by using option --group=group)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("vm start --cloud=sierra --image=futuregrid/ubuntu-14.04 --flavor=m1.small --group=test")
+.. code:: python
+
+    print cloudmesh.shell("vm start --group=test")
+check realtime vm status of all active clouds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("list vm --all --refresh")
+delete VMs by group
+~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    print cloudmesh.shell("vm delete --cloud=sierra --group=test --force")
+.. code:: python
+
+    print cloudmesh.shell("vm delete --group=test --force")
+.. code:: python
+
+    print cloudmesh.shell("list vm --all --refresh")
