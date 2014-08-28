@@ -2,6 +2,15 @@
 Provider
 ========
 
+.. code:: python
+
+    IMPORTANT: THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT
+.. todo:: get the cloud credentials form a yaml file
+
+.. todo:: use the information to start a VM
+
+.. todo:: do this section later as we need flavors and images
+
 Sometimes it may be useful to have access to the nova shell command from
 within python. However, at times you may not actually want to use it but
 rather print just jte arguments while simulating a call to the shell
