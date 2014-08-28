@@ -37,22 +37,21 @@ Quick setup for Ubuntu (tesetd for Ubuntu 14.04.1)
 
 You can create the documentation as follows::
 
-  make html
+  fab doc.html
 
 To view the result on OSX use::
 
-  make view
+  fab doc.view
 
-On ubuntu say::
-
-  make chrome
   
 
 You can add new notebooks by adding them into the ipython notebooks::
 
   ./notbook 
 
-folder. TO contribute your notebook, you can create a pull request. This is done as follows::
+folder.  To see the notebooks, please say 
 
-   TODO: please describe how to do that
- 
+  ipython notebook
+
+
+
