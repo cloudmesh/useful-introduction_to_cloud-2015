@@ -8,6 +8,11 @@ if sys.platform == 'darwin':
     browser = "open"
 
 @task
+def clean():
+    local("rm -rf docs/build/html/notebook/*")
+    local("rm -rf docs/source/notebook/*")    
+
+@task
 def notebook():
     local("bin/convert")
     
@@ -23,7 +28,7 @@ def html():
     # api()
     # man()
     """build the doc locally and view"""
-    local("rm -f docs/build/html/notebook/*")
+    clean()
     notebook()
     local("cd docs; make html")
 
