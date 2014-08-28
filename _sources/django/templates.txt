@@ -15,8 +15,11 @@ Then, In project do the following::
 	cd exampleproject
 	texteditor settings.py
 	
-In the ``settings.py`` file go to ``TEMPLATE_DIRS ()``, ``TEMPLATE_LOADERS ()``,
-``STATIC_ROOT``, &``TEMPLATE_CONTEXT_PROCESSORS``functions and write the path to the templates folder you just created and add these parameters to ``TEMPLATE_LOADERS ()``::
+In the ``settings.py`` file go to ``TEMPLATE_DIRS ()``,
+``TEMPLATE_LOADERS ()``, ``STATIC_ROOT``,
+and ``TEMPLATE_CONTEXT_PROCESSORS``functions and write the path to the
+templates folder you just created and add these parameters to
+``TEMPLATE_LOADERS ()``::
 	
 	TEMPLATE_CONTEXT_PROCESSORS = (
 		'django.contrib.auth.context_processors.auth',
@@ -48,19 +51,19 @@ In this file, copy and paste the html from your desired template from the
 ``http://getbootstrap.com`` website or your own created html
 
 1) View the source code of your chosen template and click on the link below
-``<! -- Bootstrap core.css -->`` & ``<!-- Custom styles for this template -->``
+``<! -- Bootstrap core.css -->`` and ``<!-- Custom styles for this template -->``
 
 2) After clicking on both of these links - right-click on the page of the code 
 and choose ``save as`` and save files to css folder in static directory 
 
-Repeat Steps 1 & 2 with the link at the bottom of the source code (Below
+Repeat Steps 1 and 2 with the link at the bottom of the source code (Below
 ``<!-- Placed at the end of the document so the pages load faster -->``)
 and save in js folder in static directory. 
 
 
 	
 Now go back to the ``base.html`` file and create the section ``{% block content %}``
-& ``{% endblock %}`` (for syntax go to www.djangobook.com/en/2.0/chapter04.html)
+and ``{% endblock %}`` (for syntax go to www.djangobook.com/en/2.0/chapter04.html)
 
 In the templates directory, create another html file and in the file do the 
 following::
@@ -93,7 +96,7 @@ Then finally do a ``python manage.py collectstatic`` and type yes to the prompt
 and then run ``python manage.py runserver``. 
 
 Ready Made Example (used css and js files from django-admin-bootstrapped)
-----------------------------------------------------------------------
+----------------------------------------------------------------------------------
 	
 A ready made example for you is contained in the directory
 ``management/django/templates1``. Please cd into the directory.
@@ -106,9 +109,9 @@ execute the above steps. To start the server, you can say::
 To view the web pages, say::
 
   make view
-.. note::
-	After clicking on http://127.0.0.1.8000/, go to http://127.0.0.1.8000/admin
-	then type ../index in the URL
+
+.. note:: After clicking on http://127.0.0.1.8000/, go to http://127.0.0.1.8000/admin
+   then type ../index in the URL
 
 In case you need to recreate the server please say::
 

@@ -13,7 +13,7 @@ Introduction to Cloud Computing
    parallel
 
    python/python
-   notebook/*
+   notebooks
 
    rst
 

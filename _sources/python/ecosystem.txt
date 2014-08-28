@@ -81,7 +81,7 @@ the following commands::
   $ git config --global user.name "John Doe"
   $ git config --global user.email johndoe@example.com
 
-YOu can set also the editor with
+You can set also the editor with::
 
   $ git config --global core.editor emacs
 
