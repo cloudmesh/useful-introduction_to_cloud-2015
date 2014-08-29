@@ -20,6 +20,29 @@ Let us inspect what is already available by invoking the list command
 .. code:: python
 
     print cloudmesh.shell("cloud list")
+
+.. parsed-literal::
+
+    +---------+----------+
+    | cloud   | active   |
+    +=========+==========+
+    | alamo   |          |
+    +---------+----------+
+    | aws     |          |
+    +---------+----------+
+    | azure   |          |
+    +---------+----------+
+    | hp      |          |
+    +---------+----------+
+    | hp_east |          |
+    +---------+----------+
+    | india   |          |
+    +---------+----------+
+    | sierra  |          |
+    +---------+----------+
+    
+
+
 As you see we have a number of clouds, but none of them is already
 active. Thus we need to first activate a cloud. We assume that you have
 an account on FutureGrid. Let us activate the cloud india
@@ -27,6 +50,17 @@ an account on FutureGrid. Let us activate the cloud india
 .. code:: python
 
     print cloudmesh.shell("cloud on india")
+
+.. parsed-literal::
+
+    * india
+    Refreshing gvonlasz servers india ->
+    Refresh time: 0.382435083389
+    Store time: 0.00305485725403
+    [92mcloud 'india' activated.[0m
+    
+
+
 We also have a conveniet interactive selector to select a cloud to work
 with, that however does not work with ipython
 
@@ -36,6 +70,34 @@ with, that however does not work with ipython
 
 or you may also input "cloud select india" to select a specific cloud
 india
+
+To check if the cloud was activated, simply use the list command again
+
+.. code:: python
+
+    print cloudmesh.shell("cloud list")
+
+.. parsed-literal::
+
+    +---------+----------+
+    | cloud   | active   |
+    +=========+==========+
+    | alamo   |          |
+    +---------+----------+
+    | aws     |          |
+    +---------+----------+
+    | azure   |          |
+    +---------+----------+
+    | hp      |          |
+    +---------+----------+
+    | hp_east |          |
+    +---------+----------+
+    | india   | True     |
+    +---------+----------+
+    | sierra  |          |
+    +---------+----------+
+    
+
 
 Starting VMs
 ------------

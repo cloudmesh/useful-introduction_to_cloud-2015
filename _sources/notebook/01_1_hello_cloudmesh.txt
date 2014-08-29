@@ -8,12 +8,6 @@ import the basic cloudmesh module.
 .. code:: python
 
     import cloudmesh
-
-.. parsed-literal::
-
-    HALLO
-
-
 Version
 -------
 

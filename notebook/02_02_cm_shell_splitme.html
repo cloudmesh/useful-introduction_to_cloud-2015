@@ -167,6 +167,34 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#login-nodes">Login Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#ssh-add">SSH Add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#ssh-config">SSH Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#filesystem-layout">Filesystem Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#message-passing-interface-mpi">Message Passing Interface (MPI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#mpi-libraries">MPI Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#compiling-mpi-applications">Compiling MPI Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#batch-jobs">Batch Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#job-management">Job Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-submission">Job Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-deletion">Job Deletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-monitoring">Job Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-output">Job Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#xray-hpc-services">Xray HPC Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#submitting-a-job-on-xray">Submitting a Job on xray</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#interactive-queues">Interactive Queues</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
@@ -227,14 +255,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../python/programs.html#to-integarte">TO INTEGARTE</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud0-delete-vm-py">cloud0-delete-vm.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud0-start-vm-py">cloud0-start-vm.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud1-py">cloud1.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud2-py">cloud2.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud3-py">cloud3.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud4-py">cloud4.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#junk-py">junk.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#tabel2-py">tabel2.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#table1-py">table1.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#table3-py">table3.py</a></li>
@@ -339,6 +364,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../cloudmesh/cloudmesh.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unfinished.html">Unfinished Documents</a></li>
 </ul>
@@ -396,10 +422,36 @@ which we describe in the registration section.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud list&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-python"><div class="highlight"><pre>+---------+----------+
+| cloud   | active   |
++=========+==========+
+| alamo   |          |
++---------+----------+
+| aws     |          |
++---------+----------+
+| azure   |          |
++---------+----------+
+| hp      |          |
++---------+----------+
+| hp_east |          |
++---------+----------+
+| india   |          |
++---------+----------+
+| sierra  |          |
++---------+----------+
+</pre></div>
+</div>
 <p>As you see we have a number of clouds, but none of them is already
 active. Thus we need to first activate a cloud. We assume that you have
 an account on FutureGrid. Let us activate the cloud india</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud on india&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>* india
+Refreshing gvonlasz servers india -&gt;
+Refresh time: 0.382435083389
+Store time: 0.00305485725403
+[92mcloud &#39;india&#39; activated.[0m
 </pre></div>
 </div>
 <p>We also have a conveniet interactive selector to select a cloud to work
@@ -409,6 +461,29 @@ with, that however does not work with ipython</p>
 </div>
 <p>or you may also input &#8220;cloud select india&#8221; to select a specific cloud
 india</p>
+<p>To check if the cloud was activated, simply use the list command again</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud list&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+---------+----------+
+| cloud   | active   |
++=========+==========+
+| alamo   |          |
++---------+----------+
+| aws     |          |
++---------+----------+
+| azure   |          |
++---------+----------+
+| hp      |          |
++---------+----------+
+| hp_east |          |
++---------+----------+
+| india   | True     |
++---------+----------+
+| sierra  |          |
++---------+----------+
+</pre></div>
+</div>
 </div>
 <div class="section" id="starting-vms">
 <h2>Starting VMs<a class="headerlink" href="#starting-vms" title="Permalink to this headline">¶</a></h2>

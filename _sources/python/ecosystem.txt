@@ -113,6 +113,3 @@ and here is one that you can do on a web browser in case you have not installed 
 
 * http://www.afterhoursprogramming.com/tutorial/Python/Introduction/
 
-The best way is to find your own resources and let us know which we
-shoudl add.
-

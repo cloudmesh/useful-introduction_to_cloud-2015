@@ -1,7 +1,3 @@
-.. Cloud from 0 to 100 documentation master file, created by
-   sphinx-quickstart on Tue Jun 25 16:50:40 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 Introduction to Cloud Computing
 ======================================================================
@@ -11,12 +7,13 @@ Introduction to Cloud Computing
    look directly at the source in github, please go to the above link.
 
 .. toctree::
-   :maxdepth: -1
+   :maxdepth: 3
 
    about
    shell
    parallel
    cloudmesh/cloudmesh
+   hpc
    rst
    unfinished
 

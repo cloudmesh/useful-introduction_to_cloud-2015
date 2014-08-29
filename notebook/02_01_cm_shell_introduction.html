@@ -167,6 +167,34 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#login-nodes">Login Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#ssh-add">SSH Add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#ssh-config">SSH Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#filesystem-layout">Filesystem Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#message-passing-interface-mpi">Message Passing Interface (MPI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#mpi-libraries">MPI Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#compiling-mpi-applications">Compiling MPI Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#batch-jobs">Batch Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#job-management">Job Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-submission">Job Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-deletion">Job Deletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-monitoring">Job Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#job-output">Job Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#xray-hpc-services">Xray HPC Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc.html#submitting-a-job-on-xray">Submitting a Job on xray</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc.html#interactive-queues">Interactive Queues</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
@@ -227,14 +255,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../python/programs.html#to-integarte">TO INTEGARTE</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud0-delete-vm-py">cloud0-delete-vm.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud0-start-vm-py">cloud0-start-vm.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud1-py">cloud1.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud2-py">cloud2.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud3-py">cloud3.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#cloud4-py">cloud4.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../python/programs.html#junk-py">junk.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#tabel2-py">tabel2.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#table1-py">table1.py</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../python/programs.html#table3-py">table3.py</a></li>
@@ -324,6 +349,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cloudmesh/cloudmesh.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unfinished.html">Unfinished Documents</a></li>
 </ul>
@@ -352,20 +378,27 @@
   <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>WARNING: cm not yet installed, skipping import
-</pre></div>
-</div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;help&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
+<div class="highlight-python"><div class="highlight"><pre>Documented commands (type help &lt;topic&gt;):
+========================================
+EOF       edit      help       label   plugins  register        user
+banner    exec      image      list    project  script          var
+clear     exp       info       man     py       security_group  verbose
+cloud     flavor    init       metric  q        storm           version
+defaults  graphviz  inventory  open    quit     timer           vm
+dot2      group     keys       pause   rain     use             web
 
-&lt;ipython-input-2-6c719e0ab728&gt; in &lt;module&gt;()
-----&gt; 1 print cloudmesh.shell(&quot;help&quot;)
+Gui Commands
+============
+web
 
-
-AttributeError: &#39;module&#39; object has no attribute &#39;shell&#39;
+Cloud Commands
+==============
+cloud     group  inventory  rain            storm  keys
+defaults  image  list       register        user   project
+flavor    init   metric     security_group  vm
 </pre></div>
 </div>
 

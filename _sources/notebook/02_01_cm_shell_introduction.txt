@@ -2,26 +2,31 @@
 .. code:: python
 
     import cloudmesh
-
-.. parsed-literal::
-
-    WARNING: cm not yet installed, skipping import
-
-
 .. code:: python
 
     print cloudmesh.shell("help")
 
-::
+.. parsed-literal::
 
-
-    ---------------------------------------------------------------------------
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-2-6c719e0ab728> in <module>()
-    ----> 1 print cloudmesh.shell("help")
     
-
-    AttributeError: 'module' object has no attribute 'shell'
-
+    Documented commands (type help <topic>):
+    ========================================
+    EOF       edit      help       label   plugins  register        user   
+    banner    exec      image      list    project  script          var    
+    clear     exp       info       man     py       security_group  verbose
+    cloud     flavor    init       metric  q        storm           version
+    defaults  graphviz  inventory  open    quit     timer           vm     
+    dot2      group     keys       pause   rain     use             web    
+    
+    Gui Commands
+    ============
+    web
+    
+    Cloud Commands
+    ==============
+    cloud     group  inventory  rain            storm  keys   
+    defaults  image  list       register        user   project
+    flavor    init   metric     security_group  vm   
+    
+    
 
