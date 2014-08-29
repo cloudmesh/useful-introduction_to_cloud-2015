@@ -6,6 +6,10 @@
 Introduction to Cloud Computing
 ======================================================================
 
+.. note:: This documentation is published at
+   http://cloudmesh.github.io/introduction_to_cloud_computing/. If you
+   look directly at the source in github, please go to the above link.
+
 .. toctree::
    :maxdepth: -1
 
@@ -13,24 +17,8 @@ Introduction to Cloud Computing
    shell
    parallel
    cloudmesh/cloudmesh
-   notebooks
    rst
-
-
-
-
-
-Unfinished Documents
-======================================================================
-
-.. toctree::
-   :maxdepth: 2
-
-   python/python
-   tasks
-   todo
-   
-
+   unfinished
 
  
 
