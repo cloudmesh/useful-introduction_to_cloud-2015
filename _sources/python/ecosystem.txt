@@ -14,11 +14,11 @@ found at::
 * http://virtualenv.readthedocs.org/
 
 The instalation is simple onece you have pip installed. If it is not
-installed you can say 
+installed you can say::
 
   $ easy_install pip
 
-After that you can install the virtual env with 
+After that you can install the virtual env with::
 
   $ pip install virtualenv
 

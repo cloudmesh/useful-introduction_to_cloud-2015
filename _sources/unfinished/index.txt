@@ -4,7 +4,8 @@ Unfinished Documents
 .. toctree::
    :maxdepth: 2
 
-   python/python
+   ../python/python
+   django/index
    tasks
    todo
    
