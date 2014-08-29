@@ -369,7 +369,7 @@ The lesson we learn is that clouds must make use of execution
 paralleleism as well as addressung reuse of repeated results.
 
 
-Exercise
+Exercises
 ----------------------------------------------------------------------
 
 #. Is pdsh installed? Where
