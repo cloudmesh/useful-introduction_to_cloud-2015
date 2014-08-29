@@ -7,15 +7,15 @@ Introduction to Cloud Computing
    look directly at the source in github, please go to the above link.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    about
    shell
    parallel
-   cloudmesh/cloudmesh
-   hpc
+   cloudmesh/index
+   hpc/index
    rst
-   unfinished
+   unfinished/index
 
  
 

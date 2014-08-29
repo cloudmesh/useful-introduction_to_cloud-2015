@@ -1,7 +1,7 @@
 Shell
 ======================================================================
 
-Basic shell commands
+Basic Shell Commands
 ----------------------------------------------------------------------
 
 A part of cloud computing experiences you may come across the use of
@@ -61,7 +61,7 @@ them at
   <http://files.fosswire.com/2007/08/fwunixref.pdf>`_
 
 
-Editors that work in a terminal
+Editors that Work in a Terminal
 ----------------------------------------------------------------------
 
 At time you may come across the situation where the only access you

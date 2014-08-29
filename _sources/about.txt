@@ -60,7 +60,7 @@ Data Topics
 * Develop a scalable distributed mongo db for our publication data,
   conduct performance comparisions for seraches
 
-Studnet Employment at IU
+Student Employment at IU
 ----------------------------------------------------------------------
 
 An independent study is also a precursor to gaining employment as a
@@ -77,3 +77,29 @@ employment we also recommend that students take an independednt study
 with Gregor. IN some cases this is mandatory to be considered. Thus
 plan your independent studies carefully.
 
+Contributing to the Manual
+----------------------------------------------------------------------
+
+If you have a good chapter that you like to integrate into this
+manual, please contact Gregor von Laszewski (laszewski@gmail.com).
+
+Suggestions include:
+
+* Development Ecosystem
+
+  * git
+  * virtualenv
+  * introduction to python 
+  * introduction to Javascript
+  * flask
+  * django (we have some material to start with)
+  * explain how to create commands in cm with cmd3
+
+* Cloud
+
+  * get an account on FutureGrid (possibly just a link)
+  * use nova client from the command shell
+  * python example on how to manage vms with cloud mesh API & shell
+  * IaaS Intro (pick your IaaS)
+  * PaaS Intro (pick your Platform)
+  
