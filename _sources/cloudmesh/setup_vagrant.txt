@@ -79,7 +79,7 @@ Vagrant ssh
 -----------
 
 Cloudmesh installed on a root account. You need to switch user account to a
-root once you sshed to the VM.
+root once you ssh to the VM.
 
 ::
  

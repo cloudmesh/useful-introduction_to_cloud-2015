@@ -1,8 +1,7 @@
 Quick Start on your desktop
 ============================
 
-- CloudMesh requires Python 2.7 or higher.
-- Ubuntu 14.04 and OSX tested.
+This quickstart is designed for Ubuntu 14.04 and OSX.
 
 If you have git, the easy way to download CloudMesh is::
    
@@ -145,7 +144,7 @@ and place it in the directory::
   cloudmesh
 
 It creates also a directory called ~/github/cloudmesh and than cds
-into this directory to conduct the instalation from
+into this directory to conduct the installation from
 there. Furthermore, as you can see this script also creates a virtual
 env under the name ~/ENV
 

@@ -1,7 +1,11 @@
 Parallel Shell
 ======================================================================
 
-Traditionally system administrators and developers using parallel computing need tools to manage a significant number of machines. One of the requirements is to execute a command in parallel on many machines and gather its output. There are many tools that can achieve this task. We focus here on the introduction of the following tools:
+Traditionally system administrators and developers using parallel
+computing need tools to manage a significant number of machines. One
+of the requirements is to execute a command in parallel on many
+machines and gather its output. There are many tools that can achieve
+this task. We focus here on the introduction of the following tools:
 
 #. pdsh - a parallel distributed shell
 #. fabric - python framework to execute commands on remote computers
@@ -12,13 +16,18 @@ Traditionally system administrators and developers using parallel computing need
 Parallel Distributed Shell (pdsh)
 ----------------------------------------------------------------------
 
-The parallel distributed shell (pdsh) is a shell command line program that allows the execution of commands not just on one computer but on a list of computers.
+The parallel distributed shell (pdsh) is a shell command line program
+that allows the execution of commands not just on one computer but on
+a list of computers.
 
 An online version of the manual pages is located at 
 
 * http://linux.die.net/man/1/pdsh
 
-An important feature is that the list of hosts can be specified in a convenient form that is also kwon as hostlists. This format allows you to define a list of hosts based on some abreviation. For example the string::
+An important feature is that the list of hosts can be specified in a
+convenient form that is also kwon as hostlists. This format allows you
+to define a list of hosts based on some abbreviation. For example the
+string::
 
   host[0-3]
 
@@ -26,7 +35,9 @@ will create a host list containing the hosts::
 
   host0, host1, host2, host3
 
-Furthermore, substitutions for the user and the hostname to login to the remote machine while leveraging ssh config files make this tool real easy to use. One such example::
+Furthermore, substitutions for the user and the hostname to login to
+the remote machine while leveraging ssh config files make this tool
+real easy to use. One such example::
 
   pdsh -R exec -w host[0-3] ssh -x -l %u %h hostname 
 
@@ -42,7 +53,7 @@ executes the command hostname on all specified machines.
 Fabric
 ----------------------------------------------------------------------
 
-Fabric is a Python command-line tool and library for assiting system
+Fabric is a Python command-line tool and library for assisting system
 administration tasks related to the execution of command via ssh. It
 includes the ability to execute commands on the local machine, but
 also on a remote machine. Due to the integration with Python function
@@ -56,11 +67,12 @@ is located at:
 * http://www.fabfile.org
 
 Similar to the previous command we like to start the command hostname
-on a number of machines. To install vfabric you simply say::
+on a number of machines. To install fabric you simply say::
 
    pip install fabric 
 
-in your virtualenv. Next, we define a file called fabfile.py with the following contents::
+in your virtualenv. Next, we define a file called fabfile.py with the
+following contents::
 
   from fabric.api import run
 
@@ -82,15 +94,15 @@ hosts, you can simply specify them as part of the -H argument::
 Cloudmesh Parallel API
 ----------------------------------------------------------------------
 
-The previous commands are all developeed with a single user in mind,
-i.e. a single user executes the command. Howeve in the age of
-cloudcomputing what would happen if thausends of users were to execute
+The previous commands are all developed with a single user in mind,
+i.e. a single user executes the command. However in the age of
+cloud computing what would happen if thousands of users were to execute
 the same task, or even when ten users execute the same task, but the
 task would take considerable compute time to calculate? The answer is
-obvious, we woudl waste valuable compute resources as we do not take
+obvious, we would waste valuable compute resources as we do not take
 into consideration that the same task may be run by multiple
-people. To overcome this challange we have started a simple
-demonstartion program in our cloudmesh repository to partially address
+people. To overcome this challenge we have started a simple
+demonstration program in our cloudmesh repository to partially address
 this issue.
 
 To do so we are at this time we are only focussing on the consecutive
@@ -104,7 +116,7 @@ We recognize that the example we provide is not a complete solution to
 our problem, but a step in the right direction. I also has the
 advantage of being relatively simple and introducing you to a number
 of tools and concepts that will become important when dealing with
-aparalelism in the cloud.
+parallelism in the cloud.
 
 Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,13 +131,13 @@ Requirements
 Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The code is located in the dicrectory::
+The code is located in the directory::
 
     cloudmesh_examples/example_mongo
 
-within the cloudmesh code you have cloened from github. The code
+within the cloudmesh code you have cloned from github. The code
 contains two python functions called Sequential and Parallel, that
-allow users to run commnads either sequentially or in parallel on a
+allow users to run commands either sequentially or in parallel on a
 number of hosts. The hosts can be specified in a yaml file located
 in::
 
@@ -164,12 +176,12 @@ The first command executes the task sequentially over the array given
 in the first parameter. The second one executes it in
 parallel. Instead of just presenting you with a bare bones program we
 present you with some additional features that are worth noting and
-may come in handy in future. THis includes the availability of a named
+may come in handy in future. This includes the availability of a named
 stopwatch and the ability to read configuration parameters easily from
-a yaml file. Sometimes it is allso nice to have very visible debug
-messages that we create with a banner function. Reults are often more
-readable when using the python pprint fucntion instead of just the
-print function. This is especially true when we print datastructures
+a yaml file. Sometimes it is also nice to have very visible debug
+messages that we create with a banner function. Results are often more
+readable when using the python pprint function instead of just the
+print function. This is especially true when we print data-structures
 such as arrays and dicts. Next we will present the program and explain
 a selected number of features by commenting them in the code. We
 assume you know by now elementary python.
@@ -200,7 +212,7 @@ assume you know by now elementary python.
    # find all hostnames from the config file 
    hosts = config.keys()
 
-   # find all creadentals (username, hostname) from the hosts in the
+   # find all credentials (username, hostname) from the hosts in the
    #  config file
    credentials = get_credentials(hosts)
 
@@ -208,7 +220,7 @@ assume you know by now elementary python.
    # create a stop watch
    watch = StopWatch()
 
-   # execute is a python function. It is eitehr Parallel or Sequential
+   # execute is a python function. It is either Parallel or Sequential
    # * modify 
    #    for execute in [Sequential]:
    #    for execute in [Parallel]:
@@ -304,7 +316,7 @@ After this you can start the program repeatedly with::
 
   $ python prg.py
 
-We are ommitting some of the output but at the end ist shoul look
+We are committing some of the output but at the end ist should look
 something like::
 
 
@@ -347,39 +359,39 @@ value::
    Sequential 0.00726103782654 s
    Parallel   0.000990867614746 s
 
-It is not surprising the the parallel result is even faster than the
-sequentail one as the information gathering even from reading it out
+It is not surprising the parallel result is even faster than the
+sequential one as the information gathering even from reading it out
 from the cache is done in parallel and no resource congestion exists
 at the scale we use for our example.
 
-Let us now compare the true time between sequentaial and parallel
+Let us now compare the true time between sequential and parallel
 execution. Simply modify the code in the * line and replace the loop accordingly::
 
   Sequential 12.681866169 s
   Parallel    6.51530909538 s
 
-Thus we see two interesting perfomance improvements
+Thus we see two interesting performance improvements
 
-First, the perfomance improvement for running the queries in
+First, the performance improvement for running the queries in
 parallel. Second, the improvement of retrieving the results from a
 cache. The later is important if we have many user on the system
 executing the same command. 
 
 The lesson we learn is that clouds must make use of execution
-paralleleism as well as addressung reuse of repeated results.
+parallelism as well as addressing reuse of repeated results.
 
 
 Exercises
 ----------------------------------------------------------------------
 
 #. Is pdsh installed? Where
-#. Return the hostname of the machines sierrs, india and foxtrot via
+#. Return the hostname of the machines sierra, india and foxtrot via
    the fabric command
 #. Execute the command qstat with fabric on sierra and india. If you
    have an account on bigred2, please try it also there 
 #. Run the cloudmesh Sequential and parallel program. Modify your
    cloudmesh file accordingly 
-#. Advanced: compare the performance of the cachebackend between
+#. Advanced: compare the performance of the cache backend between
    Mongodb and the use of RabbitMQ while switching RabbitMQ out with
    Redis in the Celery code.  
 #. Advanced: provide a documentation on how to run celery for this

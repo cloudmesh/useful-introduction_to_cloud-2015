@@ -5,15 +5,15 @@ virtualenv
 ----------------------------------------------------------------------
 
 Often you have your own computer and you do not like to change its
-environment to keep it in prestine condition. Python comes with amnay
-libraries that could for example conflict with libraries tha you have
+environment to keep it in prestine condition. Python comes with mnay
+libraries that could for example conflict with libraries that you have
 installed. To avoid this it is bets to work in an isolated python
-environment whil eusing virtualenv,. Documentation about it can be
+environment while using virtualenv,. Documentation about it can be
 found at::
 
 * http://virtualenv.readthedocs.org/
 
-The instalation is simple onece you have pip installed. If it is not
+The installation is simple once you have pip installed. If it is not
 installed you can say::
 
   $ easy_install pip
@@ -44,7 +44,7 @@ Python programming language containing a large number of packages
 installed with the program 'pip'.
 
 To do so you have to locate the <package_name> for example with the
-serach function in pypi and say on the commandline::
+search function in pypi and say on the commandline::
 
     pip install <package_name>
 
@@ -59,7 +59,7 @@ github
 ----------------------------------------------------------------------
 
 
-Github is a coderepository that allows the development of code in a
+Github is a code repository that allows the development of code in a
 distributed fashion. There are many good tutorials about github.
 
 Some of them can be found on the github Web page. An interactive
@@ -105,11 +105,13 @@ internet. Some resources that we found useful include:
 
 * http://www.youtube.com/watch?v=0vJJlVBVTFg
 
-The following have been found useful by previous students. However there may be much better resources out there.
+The following have been found useful by previous students. However
+there may be much better resources out there.
 
 * http://www.korokithakis.net/tutorials/python/
 
-and here is one that you can do on a web browser in case you have not installed python on your computer
+and here is one that you can do on a web browser in case you have not
+installed python on your computer
 
 * http://www.afterhoursprogramming.com/tutorial/Python/Introduction/
 
