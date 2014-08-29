@@ -163,7 +163,7 @@ For more details of using command cloud to set up a cloud
 .. code:: python
 
     print cloudmesh.shell("cloud -h")
-simple way to start a vm
+simple way to start a VM
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 After all setting up above, now you can start a VM simply by typing in
@@ -171,6 +171,23 @@ After all setting up above, now you can start a VM simply by typing in
 .. code:: python
 
     print cloudmesh.shell("vm start")
+set default VM name
+~~~~~~~~~~~~~~~~~~~
+
+If the user doesn't provide a name while starting VMs, cloudmesh will
+generate labels for them. The default form to name VMs is prefix\_index,
+where prefix is a string and index is an non-negative integer. If a
+index is used, the index value will be automatically added by one
+waiting to be used for next VM. To check your current prefix and index
+
+.. code:: python
+
+    print cloudmesh.shell("label")
+To change the prefix and/or reset index(e.g. to abc and 3)
+
+.. code:: python
+
+    print cloudmesh.shell("label --prefix=abc --id=3")
 Refreshing VM status
 --------------------
 
