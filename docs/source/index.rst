@@ -13,6 +13,8 @@ Introduction to Cloud Computing
    shell
    parallel
    cloudmesh/index
+   iaas/index
+   paas/index
    hpc/index
    rst
    unfinished/index
