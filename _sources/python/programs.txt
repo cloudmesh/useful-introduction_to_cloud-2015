@@ -14,12 +14,12 @@ Boot with  a shell command
 Boot with python calling a shell command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 Boot with cloudmesh
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 
 Deleting virtual machines
@@ -28,17 +28,17 @@ Deleting virtual machines
 Delete with  a shell command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 Delete with python calling a shell command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 Delete with cloudmesh
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 
 Query to Cloud
@@ -47,17 +47,17 @@ Query to Cloud
 List Flavors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 List Images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 List Virtual machines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Oliver
+.. todo:: Mark
 
 
 TO INTEGARTE

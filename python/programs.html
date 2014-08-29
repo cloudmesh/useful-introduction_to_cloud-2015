@@ -32,9 +32,6 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
-    <link rel="up" title="Python" href="python.html" />
-    <link rel="next" title="Tasks" href="../tasks.html" />
-    <link rel="prev" title="Lanaguage Features" href="language.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -75,19 +72,20 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul class="current">
+      aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../about.html#indepent-study-at-iu">Indepent Study at IU</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about.html#cloud-topics">Cloud Topics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about.html#data-topics">Data Topics</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../about.html#studnet-employment-at-iu">Studnet Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../shell.html#basic-shell-commands">Basic shell commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell.html#editors-that-work-in-a-terminal">Editors that work in a terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#basic-shell-commands">Basic Shell Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell.html#editors-that-work-in-a-terminal">Editors that Work in a Terminal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shell.html#exercises">Exercises</a></li>
 </ul>
 </li>
@@ -99,11 +97,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../parallel.html#code">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../parallel.html#exercise">Exercise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parallel.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/cloudmesh.html">Cloudmesh</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cloudmesh/cloudmesh.html#setup">Setup</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cloudmesh/setup.html">Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cloudmesh/quickstart.html">Quick Start on your desktop</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/quickstart.html#commands-only-without-description">Commands only without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
@@ -133,38 +131,66 @@
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../notebooks.html">Notebooks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../notebook/01_1_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/01_1_hello_cloudmesh.html#version">Version</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/01_1_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html">Cloudmesh Shell</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#initialization">Initialization</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#set-default-image">set default image</a></li>
-<li class="toctree-l6"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l6"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l6"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#simple-way-to-start-a-vm">simple way to start a vm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks.html">Notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/01_1_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/01_1_hello_cloudmesh.html#version">Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/01_1_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#refreshing-vm-status">Refreshing VM status</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#starting-multiple-vms">Starting multiple VMs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#deleting-vms">Deleting VMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html">Cloudmesh Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#starting-vms">Starting VMs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#set-default-image">set default image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#set-default-flavor">set default flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#set-default-cloud">set default cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#simple-way-to-start-a-vm">simple way to start a vm</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../notebook/02_03_cm_shell_boot.html">Cloudmesh Shell Boot</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../notebook/02_03_cm_shell_boot.html#start-vm">Start VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_02_cm_shell_splitme.html#deleting-vms">Deleting VMs</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../notebook/03_01_vm_sh.html">Provider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../notebook/03_02_cm_shell_notes.html">Specifying a custom label</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../notebook/03_03_junk.html">Load Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/02_03_cm_shell_boot.html">Cloudmesh Shell Boot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/02_03_cm_shell_boot.html#start-vm">Start VM</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/03_01_vm_sh.html">Provider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/03_02_cm_shell_notes.html">Specifying a custom label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/03_03_junk.html">Load Command</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hpc/index.html#login-nodes">Login Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#ssh-add">SSH Add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#ssh-config">SSH Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#filesystem-layout">Filesystem Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc/index.html#message-passing-interface-mpi">Message Passing Interface (MPI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#mpi-libraries">MPI Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#compiling-mpi-applications">Compiling MPI Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#batch-jobs">Batch Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc/index.html#job-management">Job Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#job-submission">Job Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#job-deletion">Job Deletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#job-monitoring">Job Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#job-output">Job Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc/index.html#xray-hpc-services">Xray HPC Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpc/index.html#submitting-a-job-on-xray">Submitting a Job on xray</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpc/index.html#interactive-queues">Interactive Queues</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
@@ -174,83 +200,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#todo">Todo</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../unfinished.html">Unfinished Documents</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ecosystem.html">Ecosystem</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ecosystem.html#virtualenv">virtualenv</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ecosystem.html#pypi">pypi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ecosystem.html#github">github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unfinished/index.html">Unfinished Documents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../unfinished/tasks.html">Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../unfinished/tasks.html#programming">Programming</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ecosystem.html#python-resources">Python resources</a></li>
-<li class="toctree-l3"><a class="reference internal" href="language.html">Lanaguage Features</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="language.html#print">Print</a></li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#comments">Comments</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="language.html#simple-comment">Simple comment</a></li>
-<li class="toctree-l5"><a class="reference internal" href="language.html#multiline-comment-with">Multiline Comment with &#8220;</a></li>
-<li class="toctree-l5"><a class="reference internal" href="language.html#id1">Multiline Comment with &#8216;</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#variables">Variables</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="language.html#changing-the-variable-value">Changing the variable Value</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#list">List</a></li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#for-loop">For Loop</a></li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#if-condition">If Condition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#arithmetic-operators">Arithmetic Operators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="language.html#functions">Functions</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="language.html#function-to-do-calculations">Function to do calculations</a></li>
-<li class="toctree-l5"><a class="reference internal" href="language.html#functions-for-string-manipulation">Functions for String Manipulation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="language.html#excersises">Excersises</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Code Listings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#booting-a-virtual-machine">Booting a virtual machine</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#boot-with-a-shell-command">Boot with  a shell command</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#boot-with-python-calling-a-shell-command">Boot with python calling a shell command</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#boot-with-cloudmesh">Boot with cloudmesh</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#deleting-virtual-machines">Deleting virtual machines</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#delete-with-a-shell-command">Delete with  a shell command</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#delete-with-python-calling-a-shell-command">Delete with python calling a shell command</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#delete-with-cloudmesh">Delete with cloudmesh</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#query-to-cloud">Query to Cloud</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#list-flavors">List Flavors</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#list-images">List Images</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#list-virtual-machines">List Virtual machines</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#to-integarte">TO INTEGARTE</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cloud0-satrt-vm-simulator-py">cloud0-satrt-vm-simulator.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cloud1-py">cloud1.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cloud2-py">cloud2.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cloud3-py">cloud3.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cloud4-py">cloud4.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tabel2-py">tabel2.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table1-py">table1.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table3-py">table3.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table4-py">table4.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table5-py">table5.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table6-py">table6.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table7-py">table7.py</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table8-py">table8.py</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../tasks.html">Tasks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tasks.html#longterm">Longterm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tasks.html#learning">Learning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tasks.html#programming">Programming</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../todo.html">ToDo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unfinished/todo.html">ToDo</a></li>
 </ul>
 </li>
 </ul>
@@ -309,14 +264,6 @@
             
               
                 
-  <li>
-    <a href="language.html" title="Previous Chapter: Lanaguage Features"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Lanaguage Featur...</span>
-    </a>
-  </li>
-  <li>
-    <a href="../tasks.html" title="Next Chapter: Tasks"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Tasks &raquo;</span>
-    </a>
-  </li>
               
             
             
@@ -351,13 +298,14 @@
   <h4 class="nav-header">Site Contents</h4>
 
   <ul class="nav nav-list">  
-    <ul class="current">
+    <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/cloudmesh.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../unfinished.html">Unfinished Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unfinished/index.html">Unfinished Documents</a></li>
 </ul>
 
   </ul>
@@ -436,14 +384,14 @@ nova boot --flavor m1.small \
 <h3>Boot with python calling a shell command<a class="headerlink" href="#boot-with-python-calling-a-shell-command" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 <div class="section" id="boot-with-cloudmesh">
 <h3>Boot with cloudmesh<a class="headerlink" href="#boot-with-cloudmesh" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-1">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 <div class="section" id="deleting-virtual-machines">
@@ -453,21 +401,21 @@ nova boot --flavor m1.small \
 <h3>Delete with  a shell command<a class="headerlink" href="#delete-with-a-shell-command" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-2">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 <div class="section" id="delete-with-python-calling-a-shell-command">
 <h3>Delete with python calling a shell command<a class="headerlink" href="#delete-with-python-calling-a-shell-command" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-3">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 <div class="section" id="delete-with-cloudmesh">
 <h3>Delete with cloudmesh<a class="headerlink" href="#delete-with-cloudmesh" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-4">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 </div>
@@ -477,21 +425,21 @@ nova boot --flavor m1.small \
 <h3>List Flavors<a class="headerlink" href="#list-flavors" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-5">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 <div class="section" id="list-images">
 <h3>List Images<a class="headerlink" href="#list-images" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-6">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 <div class="section" id="list-virtual-machines">
 <h3>List Virtual machines<a class="headerlink" href="#list-virtual-machines" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-7">
 <p class="first admonition-title">Todo</p>
-<p class="last">Oliver</p>
+<p class="last">Mark</p>
 </div>
 </div>
 </div>
