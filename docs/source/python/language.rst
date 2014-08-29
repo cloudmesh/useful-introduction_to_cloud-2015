@@ -23,7 +23,7 @@ Multiline Comment with "
 ::
 
    """ 
-   this is a multiline coment 
+   this is a multiline comment 
    """
 
 Multiline Comment with '
@@ -31,7 +31,7 @@ Multiline Comment with '
 ::
 
    '''
-   this is a multiline coment
+   this is a multiline comment
    '''
 
 Variables

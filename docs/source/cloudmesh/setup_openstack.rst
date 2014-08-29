@@ -4,8 +4,8 @@ Setup Cloudmesh in an Openstack VM for Testing
 Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
 cloudmesh in a VM running Ubuntu 14.01.1 on FutureGrid Sierra
-openstack. If you use a different cloud, you can adapt the
-instructions acordingly.
+Openstack. If you use a different cloud, you can adapt the
+instructions accordingly.
 
 First, you have to start a VM on the cloud and assign it a public
 IP. This can be done in multiple ways, using the commandline, vagrant,
@@ -23,7 +23,7 @@ the cloudmesh directory::
   git clone https://github.com/cloudmesh/cloudmesh.git
   cd cloudmesh
 
-To start the instalation of cloudmesh we first need to install a
+To start the installation of cloudmesh we first need to install a
 number of packages with::
 
   ./install system
@@ -126,13 +126,13 @@ NOTE:
    not limited to proper ssh settings disallowing password authentication, 
    securing the location of your private key as well as setting a 
    passphrase, etc.). As this method targets the scenario for rapid 
-   dev and testing, it will be a good idea that shuting the vm down 
+   dev and testing, it will be a good idea that shutting the vm down 
    after using.
 
 #. As the server is not secured by HTTPS, remember not to use your
    real passwords that you use on other systems to login.
 
-#. This method is only intended for development and tesing, and not
+#. This method is only intended for development and testing, and not
    recommended for real production use.
 
 More information about more sophisticated install instructions are

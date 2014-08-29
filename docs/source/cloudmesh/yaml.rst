@@ -6,26 +6,36 @@ You must have installed cloudmesh as discussed in ??? and run::
  ./install/new
 
 
-This will create a ~/.cloudmesh directory with some basic yaml files that you will need to modify.
+This will create a ~/.cloudmesh directory with some basic yaml files
+that you will need to modify.
 
 Adding FutureGrid Openstack clouds on sierra and india to the yaml file
 ----------------------------------------------------------------------
 
-For FutureGrid we have additionally provided a script that automatically creates some yaml files from the installation. In future FutureGrid will provide directly a yaml for cloudmesh so that this step is unnecessary. Before you can execute this command you maust make sure that you can log into india and sierra via ssh. Once you have verified this for example with::
+For FutureGrid we have additionally provided a script that
+automatically creates some yaml files from the installation. In future
+FutureGrid will provide directly a yaml for cloudmesh so that this
+step is unnecessary. Before you can execute this command you maust
+make sure that you can log into india and sierra via ssh. Once you
+have verified this for example with::
 
   ssh USERNAME@india.futuregrid.org hostname
   ssh USERNAME@sierra.futuregrid.org hostname
 
-Now create the yaml file while fetching some information from the remote machines::
+Now create the yaml file while fetching some information from the
+remote machines::
 
   ./install rc fetch
 
-First it will ask you which username you have on futuregrid. The name may be different from your current local machine name. Please enter your name when you see::
+First it will ask you which username you have on FutureGrid. The name
+may be different from your current local machine name. Please enter
+your name when you see::
 
 
   Please enter your portal user id [default: flat]: 
 
-After this you can update the yaml files with the data fetched from the india and sierra with the command::
+After this you can update the yaml files with the data fetched from
+the india and sierra with the command::
 
   ./install rc fill
 
@@ -39,14 +49,14 @@ Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file
 We do not recommend adding these machines as they use the FG portal
 and password. However if you do so, we have placeholders in the yaml
 file for these clouds. In case you can not find them, simply copy the
-one from india and make approriate corrections.
+one from india and make appropriate corrections.
 
 Adding HP cloud to the yaml file
 ----------------------------------------------------------------------
 
-The cloud offerd from HP is an openstack cloud and contains the
+The cloud offered from HP is an Openstack cloud and contains the
 ability to conduct project and user based billing. As this cloud is
-openstack it behaves much the same as the once defined on India and
+Openstack it behaves much the same as the once defined on India and
 Sierra. There may be differences based on the version. 
 
 HP provides an interface to their cloud through horizon. The
@@ -56,9 +66,9 @@ documentation for it can be found at:
 
 To use the cloud you have to first create an account with HP, which
 will charge you real money for using their cloud. Make sure you
-understand what costs will be charged before you request thausends of
-virtual machines. Naturally this is avalid for any other commercial
-cloud also. The console for the HP cloud is avaliable at:
+understand what costs will be charged before you request thousands of
+virtual machines. Naturally this is valid for any other commercial
+cloud also. The console for the HP cloud is available at:
 
 * http://www.hpcloud.com/console
 
@@ -92,7 +102,7 @@ Adding devstack to the yaml file
 Adding dreamhost to the yaml file
 ----------------------------------------------------------------------
 
-Dreamhost provides an openstack cloud that can be accessed through the
+Dreamhost provides an Openstack cloud that can be accessed through the
 dreamhost panel at:
 
 * https://panel.dreamhost.com/index.cgi
@@ -106,77 +116,4 @@ password that was send to you.
 
 To use cloudmesh, please add this username and password in the
 placeholder for dreamhost.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

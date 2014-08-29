@@ -17,18 +17,18 @@ contribution by contacting Gregor von Laszewski (laszewski@gmail.com).
 Indepent Study at IU
 ----------------------------------------------------------------------
 
-Gregor is also an Advjunct Associate Professor at Indiana University
+Gregor is also an Adjunct Associate Professor at Indiana University
 in the Computer Science Department and thus can supervise students to
-take independent studies. Independent studies provide an excelent
-oportunity to engage more intensely in projects related to cloud
+take independent studies. Independent studies provide an excellent
+opportunity to engage more intensely in projects related to cloud
 computing. Independent studies may not just include cloud computing
 activities but can also be done on other topics related to computer
 science. You can als propose your own topic and we can discuss if it
 is suitable. Almost all programming is done in Python, and Javascript.
 We accept a suitable small number of projects in Java if necessary as
 part of the topic. The topics are not listed by priority. One or more
-topic may be coverd in the independent study. We will discuss this in
-a meeting. The amout of work for a 3 hour independent study is the
+topic may be covered in the independent study. We will discuss this in
+a meeting. The amount of work for a 3 hour independent study is the
 same for a very demanding class in the departments. Expect 15-20 hours
 of work per week. Those with significant programming experience will
 have an easier time.
@@ -55,25 +55,25 @@ Cloud Topics
 Data Topics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Develop a program that solves name ambiguity in bibligraphic data by
+* Develop a program that solves name ambiguity in bibliographic data by
   investigating a social network graph
 * Develop a scalable distributed mongo db for our publication data,
-  conduct performance comparisions for seraches
+  conduct performance comparisons for searches
 
 Student Employment at IU
 ----------------------------------------------------------------------
 
 An independent study is also a precursor to gaining employment as a
 student with him at Indiana University with us. Students without
-significant programming experience will not be considered. Prefernec
+significant programming experience will not be considered. Preference
 is given to those that have strong background in python and
 Javascript. If you do not have such knowledge, we expect that you gain
-it as part of your independent study. In some cases exeptions are
-made, this may include students that have programmed siognificantly in
+it as part of your independent study. In some cases exceptions are
+made, this may include students that have programmed significantly in
 other projects.
 
 Employment is mostly done on an hourly rate. During the time of
-employment we also recommend that students take an independednt study
+employment we also recommend that students take an independent study
 with Gregor. IN some cases this is mandatory to be considered. Thus
 plan your independent studies carefully.
 
