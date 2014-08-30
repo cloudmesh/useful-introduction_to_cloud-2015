@@ -305,11 +305,11 @@ pbs-example.sh::
 References
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * Much of this information is copied from 
-    `The MyHadoop Instalation Instructions <https://portal.futuregrid.org/sites/default/files/myHadoop.pdf>`__ 
-  * A screnncast of a subset of the information presented her is
-    avalable at |video-hadoop|.
+* Much of this information is copied from `The MyHadoop Instalation Instructions <https://portal.futuregrid.org/sites/default/files/myHadoop.pdf>`__
+* A screnncast of a subset of the information presented her is
+  avalable at |video-hadoop|.
 
 
 .. |video-hadoop| replace:: |video-image| :youtube:`PC8h1CtVzH4`
 .. |video-image| image:: /images/glyphicons_402_youtube.png 
+

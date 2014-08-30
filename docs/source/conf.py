@@ -40,6 +40,14 @@ extensions.append('sphinxcontrib.autorun')
     
 todo_include_todos=True
 
+
+
+extlinks = {
+    'jira': ('https://jira.futuregrid.org/browse/%s','issue '),
+    'portal': ('https://portal.futuregrid.org/%s','https://portal.futuregrid.org/'),
+    'youtube': ('http://www.youtube.com/watch?v=%s',''),
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
