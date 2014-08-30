@@ -4,12 +4,19 @@
 Using Hadoop in FutureGrid
 **********************************************************************
 
+.. sidebar:: Screencast
+
+   A screnncast of a subset of the information presented her is
+   avalable at |video-hadoop|.
+
+
 We have various platforms that support Hadoop on FutureGrid. MyHadoop
 is probably the easiest solution offered for you. It provides the
 advantage that it is integrated into the queuing system and allows
 hadoop jobs to be run as batch job. This is of especial interest for
 classes that may run quickly out of resources if every students wants
 to run their hadoop application at the same time.
+
 
 .. _s-myhadoop:
 
