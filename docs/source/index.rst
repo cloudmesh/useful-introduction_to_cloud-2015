@@ -17,6 +17,8 @@ Introduction to Cloud Computing
    paas/index
    hpc/index
    rst
+   notebook/sh/*
+   notebook/mongo/*
    unfinished/index
 
  

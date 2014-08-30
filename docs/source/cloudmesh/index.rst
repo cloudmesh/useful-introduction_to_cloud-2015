@@ -6,5 +6,7 @@ Cloudmesh
    :maxdepth: -1
 
    setup
-   ../notebooks   
+   ../notebook/cloudmesh/cm/*   
+   ../notebook/cloudmesh/cloudmesh_shell/*   
+
 
