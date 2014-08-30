@@ -4,9 +4,10 @@ Cloudmesh
 
 .. toctree::
    :maxdepth: -1
+   :glob:
 
    setup
    ../notebook/cloudmesh/cm/*   
-   ../notebook/cloudmesh/cloudmesh_shell/*   
+   ../notebook/cloudmesh/shell/*   
 
 

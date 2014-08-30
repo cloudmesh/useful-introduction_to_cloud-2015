@@ -8,6 +8,7 @@ Introduction to Cloud Computing
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
    about
    shell
@@ -17,6 +18,7 @@ Introduction to Cloud Computing
    paas/index
    hpc/index
    rst
+
    notebook/sh/*
    notebook/mongo/*
    unfinished/index

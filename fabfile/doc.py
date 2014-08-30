@@ -10,11 +10,10 @@ if sys.platform == 'darwin':
 @task
 def clean():
     local("rm -rf docs/build/html/notebook/*")
-    #local("rm -rf docs/source/notebook/*")    
 
 @task
 def notebook():
-    local("cd doc/source/notebook && ipython notebook ")
+    local("cd docs/source/notebook && ipython notebook ")
     
 @task
 def convert():
