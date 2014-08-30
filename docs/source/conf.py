@@ -37,7 +37,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.viewcode']
 
 extensions.append('sphinxcontrib.autorun')
-
+    
 todo_include_todos=True
 
 # Add any paths that contain templates here, relative to this directory.
@@ -77,7 +77,7 @@ release = 'Learning'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['unfinished/*']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None

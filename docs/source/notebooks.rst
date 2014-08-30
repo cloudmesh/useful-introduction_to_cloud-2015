@@ -5,3 +5,5 @@ Notebooks
    :glob:
 
    notebook/*
+   notebook/cm/*
+ 

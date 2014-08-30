@@ -1,18 +1,30 @@
 #! /usr/bin/env python
 
 import glob
-from sh import ipython
-from sh import mv 
+import sh
+from sh import sh
 import sys
 import os
-from sh import mkdir
+from pprint import pprint
 
-for filename in glob.glob("notebook/*.ipynb"):
-    print "CONVERT:", filename,
-    ipython("nbconvert",  "--to=rst", filename)
-    (base, postfix) = os.path.basename(filename).split(".")
-    rst_file = base + ".rst"
-    to_file = "docs/source/notebook/{0}".format(rst_file)
-    print "->", to_file
-    mkdir("-p", "docs/source/notebook")
-    mv(rst_file, "docs/source/notebook/{0}".format(rst_file))	
+def find_files(ending=".ipynb"):
+    all_files = []
+    for root, dirs, files in os.walk("doc/source/notebook"):
+        for file in files:
+            if file.endswith(".ipynb"):
+                all_files.append(os.path.join(root, file))
+    return all_files
+
+files = find_files(".ipynb")
+
+for filename in files:
+    print "CONVERT   :", filename
+    data = {
+        'filename': filename,
+        'dirname': os.path.dirname(filename),
+        'basename': os.path.basename(filename)
+        }    
+    command  = "cd {dirname} ; ipython nbconvert --to=rst {basename}".format(**data)
+    os.system(command)
+
+    os.system("cp -rf notebook docs/source/")

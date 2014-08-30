@@ -17,8 +17,6 @@ to run their hadoop application at the same time.
 Running Hadoop as a Batch Job using MyHadoop
 ======================================================================
 
-|Hadoop-logo|
-
 MapReduce is a programming model developed by Google. Their
 definition of MapReduce is as follows:  "MapReduce is a programming
 model and an associated implementation for processing and generating
@@ -313,6 +311,5 @@ References
     avalable at |video-hadoop|.
 
 
-.. |Hadoop-logo| image:: images/hadoop-logo.jpg
 .. |video-hadoop| replace:: |video-image| :youtube:`PC8h1CtVzH4`
 .. |video-image| image:: /images/glyphicons_402_youtube.png 
