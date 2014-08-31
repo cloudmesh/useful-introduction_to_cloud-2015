@@ -87,7 +87,19 @@ properly secured.
 Adding AWS to the yaml file
 ----------------------------------------------------------------------
 
-.. todo:: Hyungro
+Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
+To configure Amazon EC2 on Cloudmesh, you need to provide the Secret Access
+Keys of your account. Amazon allows only to download the credentials via their
+web page, you need to go to the `Security Credentials
+<http://console.aws.amazon.com/iam/home?#security_credential>`_ page to get the
+credentials. You may use your existing AWS account or create a new AWS account.
+The Access Key is a pair of Access Key ID and Secret Access Key and these
+values should be replaced with *EC2_ACCESS_KEY* and *EC2_SECRET_KEY* fields in
+the yaml file. Cloudmesh identifies *cm_type: aws* as Amazon Web Services in
+the yaml file, you update the *aws* section with your security credentials.
+Note that Amazon offers commercial services, the access key identification and
+the secret key should be kept in a safe place to avoid any unexpected usage
+from someone who you didn't authorize. 
 
 Adding Azure to the yaml file
 ----------------------------------------------------------------------
