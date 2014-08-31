@@ -89,7 +89,7 @@ Adding AWS to the yaml file
 
 .. todo:: Hyungro
 
-Adding Azaure to the yaml file
+Adding Azure to the yaml file
 ----------------------------------------------------------------------
 
 .. todo:: Hyungro
