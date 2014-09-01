@@ -14,14 +14,17 @@ Introduction to Cloud Computing
    shell
    parallel
    cloudmesh/index
+
    iaas/index
    paas/index
    hpc/index
+
+
+
    rst
 
-   notebook/sh/*
-   notebook/mongo/*
    unfinished/index
+
 
  
 
