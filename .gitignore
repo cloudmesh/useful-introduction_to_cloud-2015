@@ -1,4 +1,4 @@
-*.doctree
+docs/build/doctrees/*
 .ipynb*
 *~
 .DS*
