@@ -9,7 +9,7 @@ Cloudmesh
    setup
 
    ../notebook/cloudmesh/cm/*   
-   ../notebook/sh/*
-   ../notebook/mongo/*
+   ../../notebook/sh/*
+   ../../notebook/mongo/*
 
 
