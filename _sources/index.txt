@@ -8,16 +8,23 @@ Introduction to Cloud Computing
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
    about
    shell
    parallel
    cloudmesh/index
+
    iaas/index
    paas/index
    hpc/index
+
+
+
    rst
+
    unfinished/index
+
 
  
 

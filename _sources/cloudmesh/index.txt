@@ -4,7 +4,12 @@ Cloudmesh
 
 .. toctree::
    :maxdepth: -1
+   :glob:
 
    setup
-   ../notebooks   
+
+   ../notebook/cloudmesh/cm/*   
+   ../../notebook/sh/*
+   ../../notebook/mongo/*
+
 
