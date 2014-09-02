@@ -160,37 +160,42 @@ command.
     +---------+----------+------------+
 
 
+Alternatively we can also say
+
+!echo "cloud list --column=active,label" \| cm
+
+iPython Alias and Rehash
+------------------------
+
+IPython provides the ability to ommit the ! by defining an alias to cm.
+We will use this feature and define a cm alias in python as follows. If
+you need debugging output you can also add the -v option fo the cm
+command in the alsias specification.
+
 .. code:: python
 
-    !echo "cloud list --column=active,label" | cm
+    alias cm (cm "%s")
+.. code:: python
+
+    cm version
 
 .. parsed-literal::
 
-    
-    ======================================================
-       ____ _                 _                     _     
-      / ___| | ___  _   _  __| |_ __ ___   ___  ___| |__  
-     | |   | |/ _ \| | | |/ _` | '_ ` _ \ / _ \/ __| '_ \ 
-     | |___| | (_) | |_| | (_| | | | | | |  __/\__ \ | | |
-      \____|_|\___/ \__,_|\__,_|_| |_| |_|\___||___/_| |_|
-    ======================================================
-                         Cloudmesh Shell
-    
-    cm> +---------+----------+------------+
-    | cloud   | active   | label      |
-    +=========+==========+============+
-    | alamo   |          | alamo      |
-    +---------+----------+------------+
-    | aws     |          | aws        |
-    +---------+----------+------------+
-    | azure   |          | waz        |
-    +---------+----------+------------+
-    | hp      |          | hpos       |
-    +---------+----------+------------+
-    | hp_east |          | hpeos      |
-    +---------+----------+------------+
-    | india   | True     | ios_havana |
-    +---------+----------+------------+
-    | sierra  |          | sos        |
-    +---------+----------+------------+
-    cm> 
+    1.0.4
+
+
+In addition to the direct spesification IPython has also a rehash
+function, that loads the commands found in the $PATH variable so you can
+aexecute the without !.
+
+.. code:: python
+
+    %rehashx
+.. code:: python
+
+    cm version
+
+.. parsed-literal::
+
+    1.0.4
+
