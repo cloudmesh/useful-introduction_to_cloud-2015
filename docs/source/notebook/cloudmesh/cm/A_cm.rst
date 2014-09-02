@@ -223,6 +223,11 @@ command.
     +---------+----------+------------+
 
 
+Let us now demonstrate a common error by not using proper quoting. This
+occurs when you use option flags with the command. Here our current
+parser is unable to distinguish between the options passed to cm and the
+options as used in the cm command.
+
 .. code:: python
 
     cm cloud list --column=active,label
@@ -233,12 +238,3 @@ command.
           cm [-q] help
           cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
 
-
-Alternatively we can also say
-
-``!echo "cloud list --column=active,label" | cm``
-
-IPython provides the ability to ommit the ! by defining an alias to cm.
-We will use this feature and define a cm alias in python as follows. If
-you need debugging output you can also add the -v option fo the cm
-command in the alsias specification.
