@@ -117,11 +117,14 @@ interface, please see the manual here: `Azure Cross-Platform Command-Line
 Interface
 <http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. Not like
 setting AWS to the yaml file, Azure credentials require that the X.509
-certificate stays in the .cloudmesh directory. Cloudmesh identified *cm_type:
-azure* as Microsoft Windows Azure in the yaml file, you update the *aws*
-section with your credentials. Note that Azure also offers commercial services,
-your subscription should be stored in a safe place to avoid any unexpected
-usage.
+certificate stays in the .cloudmesh directory. The *subscriptionid* field
+should be filled with your Azure subscription id. The valid X.509 certificate
+file (.pem) is also required to be stored with the filename
+*$HOME/.cloudmesh/azure_managementCertificate.pem*. Cloudmesh identifies
+*cm_type: azure* as Microsoft Windows Azure in the yaml file, you update the
+*aws* section with your credentials. Note that Azure also offers commercial
+services, your subscription should be stored in a safe place to avoid any
+unexpected usage.
 
 Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
