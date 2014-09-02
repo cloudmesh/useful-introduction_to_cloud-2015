@@ -1,21 +1,75 @@
 
-Calling **cm** in iPython or a shell
-====================================
+Cloudmesh ``cm`` Command
+========================
 
-In this section we use one of the build in features of iPython. It
-allows us to start command shell programs by putting the "!" at the
-beginning of the line. This allows us to start the command shell easily
-from iPython just as we would on a regular commandline.
+iPython Execution of shell commands
+-----------------------------------
 
-We will demonstrate this and also showcase how to pass parameters from a
-cm command to the cm shell.
+In this section we use one of the build in features of iPython. IPython
+provides various mechanisms to call programs within its shell. Onoe of
+the ways to do so it tou use the ! character at the beginning of a line
+to execute the command in the shell.
 
-Parameters
-----------
+However, there are more convenient ways to eliminate the ! sign at the
+beginning of a line. One way is to use the alias command, another is to
+use the %rehasx command.
+
+IPython Alias
+~~~~~~~~~~~~~
+
+With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters ar between "" so that they are properly set. Just execute the
+following lines.
 
 .. code:: python
 
-    !cm -h
+    alias cm cm "%s"
+Now let us test the command and lets print the version of cloudmesh cm
+
+.. code:: python
+
+    cm version
+
+.. parsed-literal::
+
+    1.0.4
+
+
+Python %rehashx
+~~~~~~~~~~~~~~~
+
+In addition to the direct spesification IPython has also a rehashx
+function, that loads the commands found in the $PATH variable so you can
+aexecute the without !.
+
+.. code:: python
+
+    %rehashx
+.. code:: python
+
+    cm version
+
+.. parsed-literal::
+
+    1.0.4
+
+
+We are using now one of the methods to call the cm commands in the
+nextfollowing sections.
+
+``cm`` Command
+--------------
+
+The ``cm`` command has a number of options that are useful to pass a
+script or a command directly into cm. Please however not that in some
+cases the command must be quoted to avoid confusion between flags used
+for cm and flags used for its subcommands. Let us invoce the -h flag to
+see whaich options cm has.
+
+.. code:: python
+
+    cm -h
 
 .. parsed-literal::
 
@@ -37,11 +91,18 @@ Parameters
 
 
 Help
-----
+~~~~
+
+Now let us execute the help command to see what other functions are
+supported. As cm is based on cmd3 that you can find in pypi it inherots
+a number of commands from cmd3. However, more importantly it also
+obtains a number of commands from cm itself. To more easily distingushe
+the categories of the cloud related commands we introduced two of them
+called GUI commands and cloud commands.
 
 .. code:: python
 
-    !cm help
+    cm help
 
 .. parsed-literal::
 
@@ -67,12 +128,25 @@ Help
     
 
 
-An example command: cloud list
-------------------------------
+Starting the Web broser
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To start the browser, simply type the command
+
+.. raw:: html
+
+   <pre>cm web</pre>
+
+
+
+
+
+Listing Clouds
+~~~~~~~~~~~~~~
 
 .. code:: python
 
-    !cm cloud list
+    cm cloud list
 
 .. parsed-literal::
 
@@ -91,7 +165,7 @@ An example command: cloud list
     +---------+----------+
     | india   | True     |
     +---------+----------+
-    | sierra  |          |
+    | sierra  | True     |
     +---------+----------+
 
 
@@ -101,7 +175,7 @@ list command.
 
 .. code:: python
 
-    !cm help cloud | head -n 10 
+    cm help cloud | head -n 10 
 
 .. parsed-literal::
 
@@ -126,18 +200,7 @@ command.
 
 .. code:: python
 
-    !cm cloud list --column=active,label
-
-.. parsed-literal::
-
-    Usage:
-          cm [-q] help
-          cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
-
-
-.. code:: python
-
-    !cm "cloud list --column=active,label"
+    cm "cloud list --column=active,label"
 
 .. parsed-literal::
 
@@ -156,46 +219,26 @@ command.
     +---------+----------+------------+
     | india   | True     | ios_havana |
     +---------+----------+------------+
-    | sierra  |          | sos        |
+    | sierra  | True     | sos        |
     +---------+----------+------------+
+
+
+.. code:: python
+
+    cm cloud list --column=active,label
+
+.. parsed-literal::
+
+    Usage:
+          cm [-q] help
+          cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
 
 
 Alternatively we can also say
 
-!echo "cloud list --column=active,label" \| cm
-
-iPython Alias and Rehash
-------------------------
+``!echo "cloud list --column=active,label" | cm``
 
 IPython provides the ability to ommit the ! by defining an alias to cm.
 We will use this feature and define a cm alias in python as follows. If
 you need debugging output you can also add the -v option fo the cm
 command in the alsias specification.
-
-.. code:: python
-
-    alias cm (cm "%s")
-.. code:: python
-
-    cm version
-
-.. parsed-literal::
-
-    1.0.4
-
-
-In addition to the direct spesification IPython has also a rehash
-function, that loads the commands found in the $PATH variable so you can
-aexecute the without !.
-
-.. code:: python
-
-    %rehashx
-.. code:: python
-
-    cm version
-
-.. parsed-literal::
-
-    1.0.4
-
