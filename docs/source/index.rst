@@ -19,8 +19,6 @@ Introduction to Cloud Computing
    paas/index
    hpc/index
 
-
-
    rst
 
    unfinished/index

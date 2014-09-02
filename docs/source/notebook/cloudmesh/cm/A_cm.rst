@@ -6,8 +6,8 @@ iPython Execution of shell commands
 -----------------------------------
 
 In this section we use one of the build in features of iPython. IPython
-provides various mechanisms to call programs within its shell. Onoe of
-the ways to do so it tou use the ! character at the beginning of a line
+provides various mechanisms to call programs within its shell. One of
+the ways to do so is to use the ! character at the beginning of a line
 to execute the command in the shell.
 
 However, there are more convenient ways to eliminate the ! sign at the
@@ -24,7 +24,7 @@ following lines.
 
 .. code:: python
 
-    alias cm cm "%s"
+    alias cm cm %s
 Now let us test the command and lets print the version of cloudmesh cm
 
 .. code:: python
@@ -39,9 +39,9 @@ Now let us test the command and lets print the version of cloudmesh cm
 Python %rehashx
 ~~~~~~~~~~~~~~~
 
-In addition to the direct spesification IPython has also a rehashx
+In addition to the direct specification IPython has also a rehashx
 function, that loads the commands found in the $PATH variable so you can
-aexecute the without !.
+execute the without !.
 
 .. code:: python
 
@@ -56,7 +56,7 @@ aexecute the without !.
 
 
 We are using now one of the methods to call the cm commands in the
-nextfollowing sections.
+following sections.
 
 ``cm`` Command
 --------------
@@ -64,8 +64,8 @@ nextfollowing sections.
 The ``cm`` command has a number of options that are useful to pass a
 script or a command directly into cm. Please however not that in some
 cases the command must be quoted to avoid confusion between flags used
-for cm and flags used for its subcommands. Let us invoce the -h flag to
-see whaich options cm has.
+for cm and flags used for its subcommands. Let us invoke the -h flag to
+see which options cm has.
 
 .. code:: python
 
@@ -83,7 +83,7 @@ see whaich options cm has.
           COMMAND                  A command to be executed
     
         Options:
-          --file=SCRIPT  -f  SCRIPT  Executes the scipt
+          --file=SCRIPT  -f  SCRIPT  Executes the script
           -i                 After start keep the shell interactive,
                              otherwise quit [default: False]
           -b                 surpress the printing of the banner [default: False]
@@ -94,9 +94,9 @@ Help
 ~~~~
 
 Now let us execute the help command to see what other functions are
-supported. As cm is based on cmd3 that you can find in pypi it inherots
+supported. As cm is based on cmd3 that you can find in pypi it inherits
 a number of commands from cmd3. However, more importantly it also
-obtains a number of commands from cm itself. To more easily distingushe
+obtains a number of commands from cm itself. To more easily distinguish
 the categories of the cloud related commands we introduced two of them
 called GUI commands and cloud commands.
 
@@ -128,8 +128,8 @@ called GUI commands and cloud commands.
     
 
 
-Starting the Web broser
-~~~~~~~~~~~~~~~~~~~~~~~
+Starting the Web Browser
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start the browser, simply type the command
 
@@ -226,7 +226,9 @@ command.
 Let us now demonstrate a common error by not using proper quoting. This
 occurs when you use option flags with the command. Here our current
 parser is unable to distinguish between the options passed to cm and the
-options as used in the cm command.
+options as used in the cm command. You see the usage message that we do
+not have a --column in the cm command. To avoid thie use the " " as
+previously shown.
 
 .. code:: python
 
