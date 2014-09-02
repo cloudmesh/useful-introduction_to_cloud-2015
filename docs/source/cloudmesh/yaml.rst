@@ -123,10 +123,11 @@ section with your credentials. Note that Azure also offers commercial services,
 your subscription should be stored in a safe place to avoid any unexpected
 usage.
 
-Adding devstack to the yaml file
+Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
 
-.. todo:: Hyungro
+DevStack offers an easy method to try out Openstack on your machine or in a virtual machine (VM). `DevStack <http://devstack.org>`_ provides a setup guide and configuration here: `Configuration <http://devstack.org/configuration.html>`_.
+
 
 Adding dreamhost to the yaml file
 ----------------------------------------------------------------------
