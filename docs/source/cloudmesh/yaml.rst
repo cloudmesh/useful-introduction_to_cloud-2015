@@ -87,17 +87,50 @@ properly secured.
 Adding AWS to the yaml file
 ----------------------------------------------------------------------
 
-.. todo:: Hyungro
+Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
+To configure Amazon EC2 on Cloudmesh, you need to provide the Secret Access
+Keys of your account. Amazon allows only to download the credentials via their
+web page, you need to go to the `Security Credentials
+<http://console.aws.amazon.com/iam/home?#security_credential>`_ page to get the
+credentials. You may use your existing AWS account or create a new AWS account.
+The Access Key is a pair of Access Key ID and Secret Access Key and these
+values should be replaced with *EC2_ACCESS_KEY* and *EC2_SECRET_KEY* fields in
+the yaml file. Cloudmesh identifies *cm_type: aws* as Amazon Web Services in
+the yaml file, you update the *aws* section with your security credentials.
+Note that Amazon offers commercial services, the access key identification and
+the secret key should be kept in a safe place to avoid any unexpected usage
+from someone who you didn't authorize. 
 
-Adding Azaure to the yaml file
+Adding Azure to the yaml file
 ----------------------------------------------------------------------
 
-.. todo:: Hyungro
+To connect Azure Virtual Machines to Cloudmesh, you need to provide Azure
+credentials to authenticate requrests in the yaml file. You can find the
+credentials on `Azure Management Portal <https://manage.windowsazure.com>`_
+which is a web interface to manage your account and Azure Virtual Machines.
+Also, you can find credentials by downloading the subscription file
+(.publishsettings) here: `http://go.microsoft.com/fwlink/?LinkId=254432
+<http://go.microsoft.com/fwlink/?LinkId=254432>`_. Once you download the file,
+you may need to import your subscription Id and valid X.509 certificate from
+the file by Azure Cross-Platform Command-Line Interface. About installing the
+interface, please see the manual here: `Azure Cross-Platform Command-Line
+Interface
+<http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. Not like
+setting AWS to the yaml file, Azure credentials require that the X.509
+certificate stays in the .cloudmesh directory. Cloudmesh identified *cm_type:
+azure* as Microsoft Windows Azure in the yaml file, you update the *aws*
+section with your credentials. Note that Azure also offers commercial services,
+your subscription should be stored in a safe place to avoid any unexpected
+usage.
 
-Adding devstack to the yaml file
+Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
 
-.. todo:: Hyungro
+DevStack offers an easy method to try out Openstack on your machine or in a
+virtual machine (VM). `DevStack <http://devstack.org>`_ provides a setup guide
+and configuration here: `Configuration
+<http://devstack.org/configuration.html>`_.
+
 
 Adding dreamhost to the yaml file
 ----------------------------------------------------------------------
