@@ -6,11 +6,11 @@ Cloudmesh
    :maxdepth: -1
    :glob:
 
-   setup
+   setup/index
+   cm/index
+   api/index
+   sh/index
+   shell/index
 
-   ../notebook/cloudmesh/cm/*   
-   ../notebook/cloudmesh/api/index
-   ../notebook/sh/*
-   ../notebook/mongo/*
-
+   veewee-requirements
 

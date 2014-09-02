@@ -104,34 +104,36 @@ from someone who you didn't authorize.
 Adding Azure to the yaml file
 ----------------------------------------------------------------------
 
-To connect Azure Virtual Machines to Cloudmesh, you need to provide Azure
-credentials to authenticate requrests in the yaml file. You can find the
-credentials on `Azure Management Portal <https://manage.windowsazure.com>`_
-which is a web interface to manage your account and Azure Virtual Machines.
-Also, you can find credentials by downloading the subscription file
-(.publishsettings) here: `http://go.microsoft.com/fwlink/?LinkId=254432
-<http://go.microsoft.com/fwlink/?LinkId=254432>`_. Once you download the file,
-you may need to import your subscription Id and valid X.509 certificate from
-the file by Azure Cross-Platform Command-Line Interface. About installing the
-interface, please see the manual here: `Azure Cross-Platform Command-Line
-Interface
-<http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. Not like
-setting AWS to the yaml file, Azure credentials require that the X.509
-certificate stays in the .cloudmesh directory. The *subscriptionid* field
-should be filled with your Azure subscription id. The valid X.509 certificate
-file (.pem) is also required to be stored with the filename
-*$HOME/.cloudmesh/azure_managementCertificate.pem*. Cloudmesh identifies
-*cm_type: azure* as Microsoft Windows Azure in the yaml file, you update the
-*aws* section with your credentials. Note that Azure also offers commercial
-services, your subscription should be stored in a safe place to avoid any
-unexpected usage.
+To connect Azure Virtual Machines to Cloudmesh, you need to provide
+Azure credentials to authenticate requrests in the yaml file. You can
+find the credentials on `Azure Management Portal
+<https://manage.windowsazure.com>`_ which is a web interface to manage
+your account and Azure Virtual Machines.  Also, you can find
+credentials by downloading the subscription file (.publishsettings)
+here: `http://go.microsoft.com/fwlink/?LinkId=254432
+<http://go.microsoft.com/fwlink/?LinkId=254432>`_. Once you download
+the file, you may need to import your subscription Id and valid X.509
+certificate from the file by Azure Cross-Platform Command-Line
+Interface. About installing the interface, please see the manual here:
+`Azure Cross-Platform Command-Line Interface
+<http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. Not
+like setting AWS to the yaml file, Azure credentials require that the
+X.509 certificate stays in the .cloudmesh directory. The
+*subscriptionid* field should be filled with your Azure
+subscription id. The valid X.509 certificate file (.pem) is also
+required to be stored with the filename
+*$HOME/.cloudmesh/azure_managementCertificate.pem*. Cloudmesh
+identifies *cm_type: azure* as Microsoft Windows Azure in the yaml
+file, you update the *aws* section with your credentials. Note that
+Azure also offers commercial services, your subscription should be
+stored in a safe place to avoid any unexpected usage.
 
 Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
 
-DevStack offers an easy method to try out Openstack on your machine or in a
-virtual machine (VM). `DevStack <http://devstack.org>`_ provides a setup guide
-and configuration here: `Configuration
+DevStack offers an easy method to try out Openstack on your machine or
+in a virtual machine (VM). `DevStack <http://devstack.org>`_ provides
+a setup guide and configuration here: `Configuration
 <http://devstack.org/configuration.html>`_.
 
 
@@ -147,8 +149,8 @@ The Horizon interface is located at
 
 * https://dashboard.dreamcompute.com
 
-If you are a customer of dreamhost, use your username and
-password that was send to you.
+If you are a customer of dreamhost, use your username and password
+that was send to you.
 
 To use cloudmesh, please add this username and password in the
 placeholder for dreamhost.

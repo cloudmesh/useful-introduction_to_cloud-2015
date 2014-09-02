@@ -12,7 +12,8 @@ For development and class users we recommend the local setup.
    :maxdepth: -1
 
    quickstart
-   setup_openstack
    yaml
+   setup_openstack
    setup_vagrant
+   setup_azure
 
