@@ -27,7 +27,7 @@ def execute_all(command, files):
           'basename': os.path.basename(filename)
           }    
     
-      _command  = "cd {dirname} ; {command} {basename}".format(**data)
+      _command  = "cd {dirname} ; {command} {basename} > /dev/null 2>&1".format(**data)
       print _command
       os.system(_command)
 

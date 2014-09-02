@@ -3,37 +3,44 @@ Quick Start on your desktop
 
 This quickstart is designed for Ubuntu 14.04 and OSX.
 
-If you have git, the easy way to download CloudMesh is::
-   
-  $ git clone https://github.com/cloudmesh/cloudmesh.git
-
-Using virtualenv, you have isolated spaces for python packages.
-It is recommended in the CloudMesh installation::
+We recommend that you use virtualenv to provide an isolated environmen
+t for cloudmesh. We assume you create one called ENV and activate it::
 
   virtualenv ~/ENV
   $ source ~/ENV/bin/activate
 
-The following commands install required packages of CloudMesh::
+Firts you need to download the code from github. We assume you have
+git installed::
+   
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+
+Next, you need to install a number of required packages with the
+following commands::
+
 
   $ cd cloudmesh
   $ sudo ./install system
   $ ./install requirements
-  $ ./install new
 
-To get access to IaaS cloud platforms, you need to apply your credentials to
-cloudmesh by the following step::
 
-  $ ./install rc fetch
-  $ ./install rc fill
 
-In the FutureGrid resources, you need SSH access to india.futuregrid.org,
-sierra.futuregrid.org with your private key. you can test ssh login like this::
+To get access to IaaS cloud platforms, you need to create loaclly a
+new user that has access to various clouds. In our case we assume you
+have an account on FutureGrid.  Please make sure you can login to
+india and sierrs::
 
   $ ssh [username]@india.futuregrid.org
   $ ssh [username]@sierra.futuregrid.org
 
+If this does not work, you may not have uploaded your public key to
+FutureGrid. Please do so now. Once this step is completed, you can
+create the configuration files as follows::
 
-You install cloudmesh and mongodb database::
+  $ ./install new
+  $ ./install rc fetch
+  $ ./install rc fill
+
+The next steps will deploy the futurgrid code prepare the databases::
 
   $ ./install cloudmesh
   $ fab mongo.start
@@ -41,11 +48,18 @@ You install cloudmesh and mongodb database::
   $ fab user.mongo
   $ fab mongo.simple
 
-Web interface can be started at http://127.0.0.1:5000 by::
+To start the cloudmesh services use::
 
   $ fab server.start
 
-Command line tool can be tested by::
+Now you cen test the services by visiting the Web interface at
+http://127.0.0.1:5000. We have a convenient shortcut for this by
+typing:: 
+
+  $ fab server.view
+
+Alternatively you can use the cloudmesh shell by invoking the cm
+command ina aterminal::
 
   $ cm
   
@@ -102,7 +116,7 @@ Command line tool can be tested by::
   +--------+------+--------------+---------+-------+--------+----------------------+
 
 
-Commands only without description
+Commands without description
 ----------------------------------------------------------------------
 
 ::
@@ -123,7 +137,7 @@ Commands only without description
   fab mongo.simple
   fab server.start
   cm cloud list
-  echo "y" | cm cloud on sierra
+  cm cloud on sierra
   cm flavor sierra --refresh
 
 One line install with curl
