@@ -18,7 +18,7 @@ Machine dependent uuid.
 
 .. parsed-literal::
 
-    UUID('7886b8f0-31db-11e4-951b-600308a5f9d2')
+    UUID('f040aaf5-3242-11e4-bd35-600308a5f9d2')
 
 
 
@@ -33,7 +33,7 @@ Random Uuid
 
 .. parsed-literal::
 
-    UUID('56de833b-e612-4223-a73f-0087163c0c83')
+    UUID('ac332de1-faef-4054-aae8-6f32eb15f982')
 
 
 
@@ -49,7 +49,7 @@ use the function get\_unique\_name instaed.
 
 .. parsed-literal::
 
-    UUID('5e1ebbfa-5d53-4099-9fa3-4c98fb83ce49')
+    UUID('e529ec9c-e40d-4e3b-b4db-4b46802bd4f6')
 
 
 
@@ -61,13 +61,10 @@ use the function get\_unique\_name instaed.
 
 .. parsed-literal::
 
-    174171799396821985787509117431189676732L
+    64005057163216856052777834181321712834L
 
 
 
-.. code:: python
-
-    uuid.uuid4().int
 Cloudmesh get\_unique\_name
 ---------------------------
 
@@ -83,7 +80,7 @@ we have a convenience function in cloudmesh.
 
 .. parsed-literal::
 
-    028d7f3d31dc11e496d4600308a5f9d2
+    f04729ee324211e49889600308a5f9d2
 
 
 As you can see it is just like the uuid function (currently uuid1 with
@@ -100,6 +97,6 @@ distinctions. However this is rarely needed.
 
 .. parsed-literal::
 
-    'gregor26fd703331de11e495d1600308a5f9d2'
+    'gregorf0487de3324211e4b177600308a5f9d2'
 
 

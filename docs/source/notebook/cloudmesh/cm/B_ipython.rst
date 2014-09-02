@@ -1,4 +1,7 @@
 
+IPython
+=======
+
 .. code:: python
 
     !echo "hallo"
@@ -10,36 +13,6 @@
 
 .. code:: python
 
-    !echo "hallo" ;
-
-.. parsed-literal::
-
-    hallo
-
-
-.. code:: python
-
-    print "a"
-
-.. parsed-literal::
-
-    a
-
-
-.. code:: python
-
-    print "a";
-
-.. parsed-literal::
-
-    a
-
-
-.. code:: python
-
-    a="hallo"
-.. code:: python
-
     !echo "$$EDITOR"
 
 .. parsed-literal::
@@ -49,28 +22,16 @@
 
 .. code:: python
 
+    a="Hallo"
+.. code:: python
+
     !echo "{a}"
 
 .. parsed-literal::
 
-    hallo
+    Hallo
 
 
-.. code:: python
-
-    1+1
-
-
-
-.. parsed-literal::
-
-    2
-
-
-
-.. code:: python
-
-    1+1;
 .. code:: python
 
     %%capture
@@ -117,3 +78,4 @@
     %%capture
     !cm help
 http://nbviewer.ipython.org/github/ipython/ipython/blob/1.x/examples/notebooks/Cell%20Magics.ipynb
+
