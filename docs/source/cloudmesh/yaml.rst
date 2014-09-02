@@ -104,7 +104,24 @@ from someone who you didn't authorize.
 Adding Azure to the yaml file
 ----------------------------------------------------------------------
 
-.. todo:: Hyungro
+To connect Azure Virtual Machines to Cloudmesh, you need to provide Azure
+credentials to authenticate requrests in the yaml file. You can find the
+credentials on `Azure Management Portal <https://manage.windowsazure.com>`_
+which is a web interface to manage your account and Azure Virtual Machines.
+Also, you can find credentials by downloading the subscription file
+(.publishsettings) here: `http://go.microsoft.com/fwlink/?LinkId=254432
+<http://go.microsoft.com/fwlink/?LinkId=254432>`_. Once you download the file,
+you may need to import your subscription Id and valid X.509 certificate from
+the file by Azure Cross-Platform Command-Line Interface. About installing the
+interface, please see the manual here: `Azure Cross-Platform Command-Line
+Interface
+<http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. Not like
+setting AWS to the yaml file, Azure credentials require that the X.509
+certificate stays in the .cloudmesh directory. Cloudmesh identified *cm_type:
+azure* as Microsoft Windows Azure in the yaml file, you update the *aws*
+section with your credentials. Note that Azure also offers commercial services,
+your subscription should be stored in a safe place to avoid any unexpected
+usage.
 
 Adding devstack to the yaml file
 ----------------------------------------------------------------------
