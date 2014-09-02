@@ -106,7 +106,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloudmesh</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="setup.html">Setup</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quick Start on your desktop</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="quickstart.html#commands-only-without-description">Commands only without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#commands-without-description">Commands without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 </ul>
 </li>
@@ -116,8 +116,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -136,19 +136,34 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook/cloudmesh/cm/cm.html">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/cm.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/cm.html#help">Help</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/cm.html#an-example-command-cloud-list">An example command: cloud list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#python-rehashx">Python %rehashx</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook/sh/01_1_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../notebook/sh/01_1_hello_cloudmesh.html#version">Version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../notebook/sh/01_1_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#help">Help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#starting-the-web-broser">Starting the Web broser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebook/cloudmesh/cm/A_cm.html#listing-clouds">Listing Clouds</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook/sh/03_01_vm_sh.html">Provider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebook/mongo/04_01_mongo.html">Mongo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/cloudmesh/cm/B_ipython.html">IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/cloudmesh/cm/D_uuid.html">UUIDs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/D_uuid.html#machine-dependent-uuid">Machine dependent uuid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/D_uuid.html#random-uuid">Random Uuid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/cloudmesh/cm/D_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/sh/A_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/sh/A_hello_cloudmesh.html#version">Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebook/sh/A_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/sh/B_vm_sh.html">Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebook/mongo/A_mongo.html">Mongo</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a><ul>
@@ -252,8 +267,8 @@
 <li><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li><a class="reference internal" href="#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li><a class="reference internal" href="#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li><a class="reference internal" href="#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li><a class="reference internal" href="#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -327,8 +342,8 @@
 <li><a class="reference internal" href="#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li><a class="reference internal" href="#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li><a class="reference internal" href="#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li><a class="reference internal" href="#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li><a class="reference internal" href="#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li><a class="reference internal" href="#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -428,24 +443,46 @@ properly secured.</p>
 </div>
 <div class="section" id="adding-aws-to-the-yaml-file">
 <h2>Adding AWS to the yaml file<a class="headerlink" href="#adding-aws-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro</p>
+<p>Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
+To configure Amazon EC2 on Cloudmesh, you need to provide the Secret Access
+Keys of your account. Amazon allows only to download the credentials via their
+web page, you need to go to the <a class="reference external" href="http://console.aws.amazon.com/iam/home?#security_credential">Security Credentials</a> page to get the
+credentials. You may use your existing AWS account or create a new AWS account.
+The Access Key is a pair of Access Key ID and Secret Access Key and these
+values should be replaced with <em>EC2_ACCESS_KEY</em> and <em>EC2_SECRET_KEY</em> fields in
+the yaml file. Cloudmesh identifies <em>cm_type: aws</em> as Amazon Web Services in
+the yaml file, you update the <em>aws</em> section with your security credentials.
+Note that Amazon offers commercial services, the access key identification and
+the secret key should be kept in a safe place to avoid any unexpected usage
+from someone who you didn&#8217;t authorize.</p>
 </div>
+<div class="section" id="adding-azure-to-the-yaml-file">
+<h2>Adding Azure to the yaml file<a class="headerlink" href="#adding-azure-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>To connect Azure Virtual Machines to Cloudmesh, you need to provide Azure
+credentials to authenticate requrests in the yaml file. You can find the
+credentials on <a class="reference external" href="https://manage.windowsazure.com">Azure Management Portal</a>
+which is a web interface to manage your account and Azure Virtual Machines.
+Also, you can find credentials by downloading the subscription file
+(.publishsettings) here: <a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=254432">http://go.microsoft.com/fwlink/?LinkId=254432</a>. Once you download the file,
+you may need to import your subscription Id and valid X.509 certificate from
+the file by Azure Cross-Platform Command-Line Interface. About installing the
+interface, please see the manual here: <a class="reference external" href="http://azure.microsoft.com/en-us/documentation/articles/xplat-cli">Azure Cross-Platform Command-Line
+Interface</a>. Not like
+setting AWS to the yaml file, Azure credentials require that the X.509
+certificate stays in the .cloudmesh directory. The <em>subscriptionid</em> field
+should be filled with your Azure subscription id. The valid X.509 certificate
+file (.pem) is also required to be stored with the filename
+<em>$HOME/.cloudmesh/azure_managementCertificate.pem</em>. Cloudmesh identifies
+<em>cm_type: azure</em> as Microsoft Windows Azure in the yaml file, you update the
+<em>aws</em> section with your credentials. Note that Azure also offers commercial
+services, your subscription should be stored in a safe place to avoid any
+unexpected usage.</p>
 </div>
-<div class="section" id="adding-azaure-to-the-yaml-file">
-<h2>Adding Azaure to the yaml file<a class="headerlink" href="#adding-azaure-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro</p>
-</div>
-</div>
-<div class="section" id="adding-devstack-to-the-yaml-file">
-<h2>Adding devstack to the yaml file<a class="headerlink" href="#adding-devstack-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro</p>
-</div>
+<div class="section" id="adding-devstack-to-the-yaml-file-tbd">
+<h2>Adding devstack to the yaml file (TBD)<a class="headerlink" href="#adding-devstack-to-the-yaml-file-tbd" title="Permalink to this headline">¶</a></h2>
+<p>DevStack offers an easy method to try out Openstack on your machine or in a
+virtual machine (VM). <a class="reference external" href="http://devstack.org">DevStack</a> provides a setup guide
+and configuration here: <a class="reference external" href="http://devstack.org/configuration.html">Configuration</a>.</p>
 </div>
 <div class="section" id="adding-dreamhost-to-the-yaml-file">
 <h2>Adding dreamhost to the yaml file<a class="headerlink" href="#adding-dreamhost-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>

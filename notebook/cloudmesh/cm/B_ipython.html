@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; my Cloudmesh Learning documentation</title>
+    <title>IPython &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -34,7 +34,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html" />
     <link rel="up" title="Cloudmesh" href="../../../cloudmesh/index.html" />
     <link rel="next" title="UUIDs" href="D_uuid.html" />
-    <link rel="prev" title="Calling cm in iPython or a shell" href="A_cm.html" />
+    <link rel="prev" title="Cloudmesh cm Command" href="A_cm.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -75,7 +75,7 @@
      href="../../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../about.html#indepent-study-at-iu">Indepent Study at IU</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../about.html#cloud-topics">Cloud Topics</a></li>
@@ -103,10 +103,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../parallel.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../cloudmesh/setup.html">Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../cloudmesh/quickstart.html">Quick Start on your desktop</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#commands-only-without-description">Commands only without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#commands-without-description">Commands without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 </ul>
 </li>
@@ -116,8 +116,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -136,13 +136,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="A_cm.html">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#help">Help</a></li>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#an-example-command-cloud-list">An example command: cloud list</a></li>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#ipython-alias-and-rehash">iPython Alias and Rehash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="A_cm.html#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#python-rehashx">Python %rehashx</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="A_cm.html#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#help">Help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#starting-the-web-broser">Starting the Web broser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">IPython</a></li>
 <li class="toctree-l2"><a class="reference internal" href="D_uuid.html">UUIDs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="D_uuid.html#machine-dependent-uuid">Machine dependent uuid.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="D_uuid.html#random-uuid">Random Uuid</a></li>
@@ -253,7 +261,8 @@
      href="#">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"
       role="menu"
-      aria-labelledby="dLabelLocalToc"><ul class="simple">
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">IPython</a></li>
 </ul>
 </ul>
 </li>
@@ -263,7 +272,7 @@
               
                 
   <li>
-    <a href="A_cm.html" title="Previous Chapter: Calling cm in iPython or a shell"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Calling cm in iP...</span>
+    <a href="A_cm.html" title="Previous Chapter: Cloudmesh cm Command"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Cloudmesh cm Com...</span>
     </a>
   </li>
   <li>
@@ -304,11 +313,11 @@
   <h4 class="nav-header">Site Contents</h4>
 
   <ul class="nav nav-list">  
-    <ul>
+    <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
@@ -318,7 +327,8 @@
   </ul>
 
 
-<h4 class="nav-header">Page Contents</h4><ul class="simple">
+<h4 class="nav-header">Page Contents</h4><ul>
+<li><a class="reference internal" href="#">IPython</a></li>
 </ul>
 
 <form action="../../../search.html" method="get">
@@ -336,31 +346,12 @@
       </div>
     <div class="col-md-9">
       
-  <div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;hallo&quot;
+  <div class="section" id="ipython">
+<h1>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h1>
+<div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;hallo&quot;
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">hallo</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;hallo&quot; ;
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">hallo</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;a&quot;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;a&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">=</span><span class="s">&quot;hallo&quot;</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;$$EDITOR&quot;
@@ -369,19 +360,13 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="n">emacs</span>
 </pre></div>
 </div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">=</span><span class="s">&quot;Hallo&quot;</span>
+</pre></div>
+</div>
 <div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;{a}&quot;
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">hallo</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="mi">2</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Hallo</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre>%%capture
@@ -422,6 +407,7 @@ flavor    init   metric     security_group  vm
 </pre></div>
 </div>
 <p><a class="reference external" href="http://nbviewer.ipython.org/github/ipython/ipython/blob/1.x/examples/notebooks/Cell%20Magics.ipynb">http://nbviewer.ipython.org/github/ipython/ipython/blob/1.x/examples/notebooks/Cell%20Magics.ipynb</a></p>
+</div>
 
 
     </div>

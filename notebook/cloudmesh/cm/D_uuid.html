@@ -34,7 +34,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html" />
     <link rel="up" title="Cloudmesh" href="../../../cloudmesh/index.html" />
     <link rel="next" title="Cloudmesh Initialization" href="../../sh/A_hello_cloudmesh.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="B_ipython.html" />
+    <link rel="prev" title="IPython" href="B_ipython.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -106,7 +106,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../cloudmesh/setup.html">Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../cloudmesh/quickstart.html">Quick Start on your desktop</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#commands-only-without-description">Commands only without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#commands-without-description">Commands without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 </ul>
 </li>
@@ -116,8 +116,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -136,13 +136,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="A_cm.html">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#help">Help</a></li>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#an-example-command-cloud-list">An example command: cloud list</a></li>
-<li class="toctree-l3"><a class="reference internal" href="A_cm.html#ipython-alias-and-rehash">iPython Alias and Rehash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="A_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="A_cm.html#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#python-rehashx">Python %rehashx</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="A_cm.html#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#help">Help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#starting-the-web-broser">Starting the Web broser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="A_cm.html#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="B_ipython.html">IPython</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">UUIDs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#machine-dependent-uuid">Machine dependent uuid.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#random-uuid">Random Uuid</a></li>
@@ -269,7 +277,7 @@
               
                 
   <li>
-    <a href="B_ipython.html" title="Previous Chapter: <no title>"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; <no title></span>
+    <a href="B_ipython.html" title="Previous Chapter: IPython"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; IPython</span>
     </a>
   </li>
   <li>
@@ -360,7 +368,7 @@
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;7886b8f0-31db-11e4-951b-600308a5f9d2&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;f040aaf5-3242-11e4-bd35-600308a5f9d2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -369,7 +377,7 @@
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;56de833b-e612-4223-a73f-0087163c0c83&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;ac332de1-faef-4054-aae8-6f32eb15f982&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>As in some cases we want to generate names that do not include special
@@ -378,16 +386,13 @@ use the function get_unique_name instaed.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">bytes</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;5e1ebbfa-5d53-4099-9fa3-4c98fb83ce49&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;e529ec9c-e40d-4e3b-b4db-4b46802bd4f6&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">int</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="il">174171799396821985787509117431189676732L</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">int</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="il">64005057163216856052777834181321712834L</span>
 </pre></div>
 </div>
 </div>
@@ -401,7 +406,7 @@ we have a convenience function in cloudmesh.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">get_unique_name</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>028d7f3d31dc11e496d4600308a5f9d2
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f04729ee324211e49889600308a5f9d2</span>
 </pre></div>
 </div>
 <p>As you can see it is just like the uuid function (currently uuid1 with
@@ -411,7 +416,7 @@ distinctions. However this is rarely needed.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">get_unique_name</span><span class="p">(</span><span class="s">&quot;gregor&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;gregor26fd703331de11e495d1600308a5f9d2&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;gregorf0487de3324211e4b177600308a5f9d2&#39;</span>
 </pre></div>
 </div>
 </div>

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Calling cm in iPython or a shell &mdash; my Cloudmesh Learning documentation</title>
+    <title>Cloudmesh cm Command &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -33,7 +33,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html" />
     <link rel="up" title="Cloudmesh" href="../../../cloudmesh/index.html" />
-    <link rel="next" title="&lt;no title&gt;" href="B_ipython.html" />
+    <link rel="next" title="IPython" href="B_ipython.html" />
     <link rel="prev" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" href="../../../cloudmesh/setup_vagrant.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -106,7 +106,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../cloudmesh/setup.html">Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../cloudmesh/quickstart.html">Quick Start on your desktop</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#commands-only-without-description">Commands only without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#commands-without-description">Commands without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 </ul>
 </li>
@@ -116,8 +116,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../cloudmesh/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -136,13 +136,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#help">Help</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#an-example-command-cloud-list">An example command: cloud list</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ipython-alias-and-rehash">iPython Alias and Rehash</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#help">Help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-the-web-broser">Starting the Web broser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="B_ipython.html">IPython</a></li>
 <li class="toctree-l2"><a class="reference internal" href="D_uuid.html">UUIDs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="D_uuid.html#machine-dependent-uuid">Machine dependent uuid.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="D_uuid.html#random-uuid">Random Uuid</a></li>
@@ -254,11 +262,18 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
+<li><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
 <li><a class="reference internal" href="#help">Help</a></li>
-<li><a class="reference internal" href="#an-example-command-cloud-list">An example command: cloud list</a></li>
-<li><a class="reference internal" href="#ipython-alias-and-rehash">iPython Alias and Rehash</a></li>
+<li><a class="reference internal" href="#starting-the-web-broser">Starting the Web broser</a></li>
+<li><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -274,7 +289,7 @@
     </a>
   </li>
   <li>
-    <a href="B_ipython.html" title="Next Chapter: <no title>"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm"><no title> &raquo;</span>
+    <a href="B_ipython.html" title="Next Chapter: IPython"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">IPython &raquo;</span>
     </a>
   </li>
               
@@ -326,11 +341,18 @@
 
 
 <h4 class="nav-header">Page Contents</h4><ul>
-<li><a class="reference internal" href="#">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
+<li><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
 <li><a class="reference internal" href="#help">Help</a></li>
-<li><a class="reference internal" href="#an-example-command-cloud-list">An example command: cloud list</a></li>
-<li><a class="reference internal" href="#ipython-alias-and-rehash">iPython Alias and Rehash</a></li>
+<li><a class="reference internal" href="#starting-the-web-broser">Starting the Web broser</a></li>
+<li><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -350,17 +372,60 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="calling-cm-in-ipython-or-a-shell">
-<h1>Calling <strong>cm</strong> in iPython or a shell<a class="headerlink" href="#calling-cm-in-ipython-or-a-shell" title="Permalink to this headline">¶</a></h1>
-<p>In this section we use one of the build in features of iPython. It
-allows us to start command shell programs by putting the &#8221;!&#8221; at the
-beginning of the line. This allows us to start the command shell easily
-from iPython just as we would on a regular commandline.</p>
-<p>We will demonstrate this and also showcase how to pass parameters from a
-cm command to the cm shell.</p>
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-python"><div class="highlight"><pre>!cm -h
+  <div class="section" id="cloudmesh-cm-command">
+<h1>Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command<a class="headerlink" href="#cloudmesh-cm-command" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ipython-execution-of-shell-commands">
+<h2>iPython Execution of shell commands<a class="headerlink" href="#ipython-execution-of-shell-commands" title="Permalink to this headline">¶</a></h2>
+<p>In this section we use one of the build in features of iPython. IPython
+provides various mechanisms to call programs within its shell. Onoe of
+the ways to do so it tou use the ! character at the beginning of a line
+to execute the command in the shell.</p>
+<p>However, there are more convenient ways to eliminate the ! sign at the
+beginning of a line. One way is to use the alias command, another is to
+use the %rehasx command.</p>
+<div class="section" id="ipython-alias">
+<h3>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h3>
+<p>With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters ar between &#8220;&#8221; so that they are properly set. Just execute the
+following lines.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm &quot;%s&quot;
+</pre></div>
+</div>
+<p>Now let us test the command and lets print the version of cloudmesh cm</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm version
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>1.0.4
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-rehashx">
+<h3>Python %rehashx<a class="headerlink" href="#python-rehashx" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the direct spesification IPython has also a rehashx
+function, that loads the commands found in the $PATH variable so you can
+aexecute the without !.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>%rehashx
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm version
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>1.0.4
+</pre></div>
+</div>
+<p>We are using now one of the methods to call the cm commands in the
+nextfollowing sections.</p>
+</div>
+</div>
+<div class="section" id="cm-command">
+<h2><tt class="docutils literal"><span class="pre">cm</span></tt> Command<a class="headerlink" href="#cm-command" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">cm</span></tt> command has a number of options that are useful to pass a
+script or a command directly into cm. Please however not that in some
+cases the command must be quoted to avoid confusion between flags used
+for cm and flags used for its subcommands. Let us invoce the -h flag to
+see whaich options cm has.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cm</span> <span class="o">-</span><span class="n">h</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>cm.
@@ -379,10 +444,15 @@ cm command to the cm shell.</p>
       -b                 surpress the printing of the banner [default: False]
 </pre></div>
 </div>
-</div>
 <div class="section" id="help">
-<h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-python"><div class="highlight"><pre>!cm help
+<h3>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h3>
+<p>Now let us execute the help command to see what other functions are
+supported. As cm is based on cmd3 that you can find in pypi it inherots
+a number of commands from cmd3. However, more importantly it also
+obtains a number of commands from cm itself. To more easily distingushe
+the categories of the cloud related commands we introduced two of them
+called GUI commands and cloud commands.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm help
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>Documented commands (type help &lt;topic&gt;):
@@ -406,9 +476,13 @@ flavor    init   metric     security_group  vm
 </pre></div>
 </div>
 </div>
-<div class="section" id="an-example-command-cloud-list">
-<h2>An example command: cloud list<a class="headerlink" href="#an-example-command-cloud-list" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-python"><div class="highlight"><pre>!cm cloud list
+<div class="section" id="starting-the-web-broser">
+<h3>Starting the Web broser<a class="headerlink" href="#starting-the-web-broser" title="Permalink to this headline">¶</a></h3>
+<p>To start the browser, simply type the command</p>
+<pre>cm web</pre></div>
+<div class="section" id="listing-clouds">
+<h3>Listing Clouds<a class="headerlink" href="#listing-clouds" title="Permalink to this headline">¶</a></h3>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>+---------+----------+
@@ -426,14 +500,14 @@ flavor    init   metric     security_group  vm
 +---------+----------+
 | india   | True     |
 +---------+----------+
-| sierra  |          |
+| sierra  | True     |
 +---------+----------+
 </pre></div>
 </div>
 <p>Let us inspect the parameters. To limit the output we just display the
 first 10 lines of the help/man page. We see the &#8211;column option in the
 list command.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>!cm help cloud | head -n 10
+<div class="code python highlight-python"><div class="highlight"><pre>cm help cloud | head -n 10
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>::
@@ -452,15 +526,7 @@ list command.</p>
 display some more useful information beyond to just document the active
 clouds. Let us also display the label. This is done with the following
 command.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>!cm cloud list --column=active,label
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>Usage:
-      cm [-q] help
-      cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre>!cm &quot;cloud list --column=active,label&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud list --column=active,label&quot;
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>+---------+----------+------------+
@@ -478,39 +544,22 @@ command.</p>
 +---------+----------+------------+
 | india   | True     | ios_havana |
 +---------+----------+------------+
-| sierra  |          | sos        |
+| sierra  | True     | sos        |
 +---------+----------+------------+
 </pre></div>
 </div>
-<p>Alternatively we can also say</p>
-<p>!echo &#8220;cloud list &#8211;column=active,label&#8221; | cm</p>
-</div>
-<div class="section" id="ipython-alias-and-rehash">
-<h2>iPython Alias and Rehash<a class="headerlink" href="#ipython-alias-and-rehash" title="Permalink to this headline">¶</a></h2>
-<p>IPython provides the ability to ommit the ! by defining an alias to cm.
-We will use this feature and define a cm alias in python as follows. If
-you need debugging output you can also add the -v option fo the cm
-command in the alsias specification.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>alias cm (cm &quot;%s&quot;)
+<p>Let us now demonstrate a common error by not using proper quoting. This
+occurs when you use option flags with the command. Here our current
+parser is unable to distinguish between the options passed to cm and the
+options as used in the cm command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list --column=active,label
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm version
+<div class="highlight-python"><div class="highlight"><pre>Usage:
+      cm [-q] help
+      cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>1.0.4
-</pre></div>
-</div>
-<p>In addition to the direct spesification IPython has also a rehash
-function, that loads the commands found in the $PATH variable so you can
-aexecute the without !.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>%rehashx
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm version
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>1.0.4
-</pre></div>
 </div>
 </div>
 </div>

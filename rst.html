@@ -104,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cloudmesh/index.html">Cloudmesh</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cloudmesh/setup.html">Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="cloudmesh/quickstart.html">Quick Start on your desktop</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="cloudmesh/quickstart.html#commands-only-without-description">Commands only without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/quickstart.html#commands-without-description">Commands without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 </ul>
 </li>
@@ -114,8 +114,8 @@
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-azaure-to-the-yaml-file">Adding Azaure to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-devstack-to-the-yaml-file">Adding devstack to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
@@ -134,19 +134,27 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="notebook/cloudmesh/cm/cm.html">Calling <strong>cm</strong> in iPython or a shell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/cm.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/cm.html#help">Help</a></li>
-<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/cm.html#an-example-command-cloud-list">An example command: cloud list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebook/cloudmesh/cm/A_cm.html">Calling <strong>cm</strong> in iPython or a shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/A_cm.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/A_cm.html#help">Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/A_cm.html#an-example-command-cloud-list">An example command: cloud list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/A_cm.html#ipython-alias-and-rehash">iPython Alias and Rehash</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="notebook/sh/01_1_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="notebook/sh/01_1_hello_cloudmesh.html#version">Version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="notebook/sh/01_1_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebook/cloudmesh/cm/B_ipython.html">IPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebook/cloudmesh/cm/D_uuid.html">UUIDs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/D_uuid.html#machine-dependent-uuid">Machine dependent uuid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/D_uuid.html#random-uuid">Random Uuid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebook/cloudmesh/cm/D_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="notebook/sh/03_01_vm_sh.html">Provider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebook/mongo/04_01_mongo.html">Mongo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebook/sh/A_hello_cloudmesh.html">Cloudmesh Initialization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebook/sh/A_hello_cloudmesh.html#version">Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebook/sh/A_hello_cloudmesh.html#generating-vm-names">Generating VM Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebook/sh/B_vm_sh.html">Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebook/mongo/A_mongo.html">Mongo</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="iaas/index.html">IaaS</a><ul>
@@ -345,7 +353,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Cheatcheat:</th><td class="field-body"><ul class="first last simple">
 <li><a class="reference external" href="http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf">http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf</a></li>
-<li>misses details on sections, listtable, exceltable, autorun, todo</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">http://docutils.sourceforge.net/docs/ref/rst/directives.html</a></li>
 </ul>
 </td>
 </tr>
@@ -361,6 +369,8 @@
 </div>
 <div class="section" id="sections">
 <h2>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
+<p>RST allows to specify a number of sections. You can do this with the
+various underlines:</p>
 <div class="highlight-python"><div class="highlight"><pre>*********************
 Chapter
 *********************
@@ -377,17 +387,47 @@ Paragraph
 </div>
 <div class="section" id="exceltable">
 <h2>Exceltable<a class="headerlink" href="#exceltable" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">excel table example</p>
-</div>
+<p>we have integrated Excel table from
+<a class="reference external" href="http://pythonhosted.org//sphinxcontrib-exceltable/">http://pythonhosted.org//sphinxcontrib-exceltable/</a> intou our sphinx
+allowing the definition of more elaborate tables specified in
+excel. Howere the most convenient way may be to use list-tables. The
+documentation to list tables can be found at
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table">http://docutils.sourceforge.net/docs/ref/rst/directives.html#list-table</a></p>
 </div>
 <div class="section" id="autorun">
 <h2>Autorun<a class="headerlink" href="#autorun" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">autorun example</p>
+<p>Autorun is an extension for <a href="#id1"><span class="problematic" id="id2">Sphinx_</span></a> that can execute the code from a
+runblock directive and attach the output of the execution to the document.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. runblock:: pycon
+
+    &gt;&gt;&gt; for i in range(3):
+    ...    print i
+</pre></div>
 </div>
+<p>Produces</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="k">print</span> <span class="n">i</span>
+<span class="gp">... </span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>Another example:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. runblock:: console
+
+    $ date
+</pre></div>
+</div>
+<p>Produces</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> date
+<span class="go">Tue Sep  2 07:56:14 EDT 2014</span>
+</pre></div>
+</div>
+<p>However, when it comes to excersises we do preferthe use of ipython
+notebooks as this allows us to present them also to users as self
+contained excersises.</p>
 </div>
 <div class="section" id="todo">
 <h2>Todo<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
@@ -395,7 +435,7 @@ Paragraph
 <div><div class="highlight-python"><div class="highlight"><pre>.. todo:: an example
 </pre></div>
 </div>
-<div class="admonition-todo admonition" id="index-3">
+<div class="admonition-todo admonition" id="index-1">
 <p class="first admonition-title">Todo</p>
 <p class="last">an example</p>
 </div>
