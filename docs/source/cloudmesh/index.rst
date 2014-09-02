@@ -9,8 +9,8 @@ Cloudmesh
    setup
 
    ../notebook/cloudmesh/cm/*   
+   ../notebook/cloudmesh/api/index
    ../notebook/sh/*
-   ../notebook/cloudmesh/api/*
    ../notebook/mongo/*
 
 
