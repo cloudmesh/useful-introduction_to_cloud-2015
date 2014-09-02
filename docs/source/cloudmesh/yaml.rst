@@ -126,7 +126,10 @@ usage.
 Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
 
-DevStack offers an easy method to try out Openstack on your machine or in a virtual machine (VM). `DevStack <http://devstack.org>`_ provides a setup guide and configuration here: `Configuration <http://devstack.org/configuration.html>`_.
+DevStack offers an easy method to try out Openstack on your machine or in a
+virtual machine (VM). `DevStack <http://devstack.org>`_ provides a setup guide
+and configuration here: `Configuration
+<http://devstack.org/configuration.html>`_.
 
 
 Adding dreamhost to the yaml file
