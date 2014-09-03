@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IPython &mdash; my Cloudmesh Learning documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.1.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.1.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Learning',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
+    <link rel="up" title="Cloudmesh cm" href="index.html" />
+    <link rel="next" title="Cloudmesh cm Command" href="_cm.html" />
+    <link rel="prev" title="Cloudmesh cm" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/cm-logo-24.png">
+          my Cloudmesh</a>
+        <span class="navbar-text navbar-version pull-left"><b>Learning</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#indepent-study-at-iu">Indepent Study at IU</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../about.html#cloud-topics">Cloud Topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../about.html#data-topics">Data Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../parallel.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../parallel.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../setup/quickstart.html">Quick Start on your desktop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/quickstart.html#commands-without-description">Commands without description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/yaml.html">Creating the yaml file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">Adding FutureGrid Openstack clouds on sierra and india to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_openstack.html">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_vagrant.html#install-veewee-optional">Install Veewee (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_vagrant.html#vagrant-up">Vagrant up</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../setup/setup_vagrant.html#futuregrid-portal-id">FutureGrid Portal ID</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../setup/setup_vagrant.html#base-image">Base Image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../setup/setup_azure.html">Adding Azure to the yaml file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#azure-account">Azure account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#download-credentials">Download credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#install-azure-cli">Install Azure CLI</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../setup/setup_azure.html#linux">Linux</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../setup/setup_azure.html#osx">OSX</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#import-credentials-via-azure-cli">Import Credentials via Azure CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#download-subscription-file-publishsettings">Download Subscription File (.publishsettings)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#place-x-509-certificate-on-cloudmesh">Place X.509 certificate on Cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#replace-subscription-id">Replace Subscription ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../setup/setup_azure.html#test-azure-virtual-machine">Test Azure Virtual Machine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">IPython</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#command-execution">Command Execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#surpressing-output">Surpressing output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_cm.html#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#python-rehashx">Python %rehashx</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_cm.html#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#help">Help</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#starting-the-web-browser">Starting the Web Browser</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/_hello.html">Cloudmesh API Initialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/_hello.html#version">Version</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/_uuid.html">Defining Names</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#uuids">UUIDs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#machine-dependent-uuid">Machine dependent uuid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#random-uuid">Random Uuid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#generating-vm-names">Generating VM names</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/_introduction.html">Cloudmesh Shell API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/_overview.html">Cloudmesh Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#starting-vms">Starting VMs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-image">set default image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-flavor">set default flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-cloud">set default cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-vm-name">set default VM name</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#deleting-vms">Deleting VMs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../iaas/openstack.html">OpenStack on FutureGrid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#login">Login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#setup-openstack-environment">Setup OpenStack Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#creating-the-novarc-file">Creating the novarc file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#list-flavors">List flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#list-images">List images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#key-management">Key management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#managing-security-groups">Managing security groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#booting-an-image">Booting an image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#list-running-images">List running images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#use-block-storage">Use block storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#set-up-external-access-to-your-instance">Set up external access to your instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#make-a-snapshot-of-an-instance">Make a snapshot of an instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#automate-some-initial-configuration">Automate some initial configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack">Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#delete-your-instance">Delete your instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#how-to-change-your-password">How to change your password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#things-to-do-when-you-need-euca2ools-or-ec2-interfaces">Things to do when you need Euca2ools or EC2 interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#horizon-gui">Horizon GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureGrid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../paas/hadoop.html#running-hadoop-as-a-batch-job-using-myhadoop">Running Hadoop as a Batch Job using MyHadoop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../paas/hadoop.html#myhadoop-on-futuregrid">myHadoop on FutureGrid</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#login-into-a-machine-tha-has-myhadoop-installed">Login into a machine tha has myHadoop installed</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#load-the-needed-modules">Load the needed modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#run-the-example">Run the Example</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#details-of-the-script">Details of the Script</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#submission-of-the-hadoop-job">Submission of the Hadoop job</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#persistent-mode">Persistent Mode</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#customizing-hadoop-settings">Customizing Hadoop Settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#using-a-different-installation-of-hadoop">Using a Different Installation of Hadoop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../paas/hadoop.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/index.html#login-nodes">Login Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#ssh-add">SSH Add</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#ssh-config">SSH Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#filesystem-layout">Filesystem Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/index.html#message-passing-interface-mpi">Message Passing Interface (MPI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#mpi-libraries">MPI Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#compiling-mpi-applications">Compiling MPI Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#batch-jobs">Batch Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/index.html#job-management">Job Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#job-submission">Job Submission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#job-deletion">Job Deletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#job-monitoring">Job Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#job-output">Job Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/index.html#xray-hpc-services">Xray HPC Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../hpc/index.html#submitting-a-job-on-xray">Submitting a Job on xray</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/index.html#interactive-queues">Interactive Queues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">IPython</a><ul>
+<li><a class="reference internal" href="#command-execution">Command Execution</a></li>
+<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+<li><a class="reference internal" href="#surpressing-output">Surpressing output</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: Cloudmesh cm"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Cloudmesh cm</span>
+    </a>
+  </li>
+  <li>
+    <a href="_cm.html" title="Next Chapter: Cloudmesh cm Command"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Cloudmesh cm Com... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/cloudmesh/cm/_ipython.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+  <h4 class="nav-header">Site Contents</h4>
+
+  <ul class="nav nav-list">  
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+</ul>
+
+  </ul>
+
+
+<h4 class="nav-header">Page Contents</h4><ul>
+<li><a class="reference internal" href="#">IPython</a><ul>
+<li><a class="reference internal" href="#command-execution">Command Execution</a></li>
+<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+<li><a class="reference internal" href="#surpressing-output">Surpressing output</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<div id="sourcelink">
+  <a href="../../_sources/cloudmesh/cm/_ipython.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="ipython">
+<h1>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h1>
+<p>IPython is a python command shell with notebook features that can be
+accessed through a browser. Throughout the material presented here we
+will be using IPython to present some of the demonstrations. This also
+allows you to try out the various excersises easily. We present here
+just a small set of features and recommend you to visit the IPython
+manaul for more information</p>
+<div class="section" id="command-execution">
+<h2>Command Execution<a class="headerlink" href="#command-execution" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-python"><div class="highlight"><pre>To execute a shell command you can specify the ! at the beginning of a line
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>  File &quot;&lt;ipython-input-3-feb23904b366&gt;&quot;, line 1
+    To execute a shell command you can specify the ! at the beginning of a line
+             ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;hallo&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">hallo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>Environment variables can be accessed with $$</p>
+<div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;$$EDITOR&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">emacs</span>
+</pre></div>
+</div>
+<p>Variables can be accessed by assigning values with = and by using them
+in { }</p>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">=</span><span class="s">&quot;Hallo&quot;</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;{a}&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Hallo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="surpressing-output">
+<h2>Surpressing output<a class="headerlink" href="#surpressing-output" title="Permalink to this headline">¶</a></h2>
+<p>Output can be surpressed while using the %%capture command. These
+commands are called magic functions in IPython. Many more magic
+functions are documented in the IPython manual</p>
+<div class="code python highlight-python"><div class="highlight"><pre>%%capture
+!echo &quot;You can not see me&quot;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>!echo &quot;You can see me&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>You can see me
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Gregor von Laszewski for FutureGrid.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
