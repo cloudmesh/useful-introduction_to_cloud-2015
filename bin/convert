@@ -8,11 +8,11 @@ import os
 from pprint import pprint
 from cloudmesh_common.util import banner
 
-def find_files(root, ending):
+def find_files(root, prefix="", ending=""):
     all_files = []
     for root, dirs, files in os.walk(root):
         for file in files:
-            if file.endswith(ending):
+            if file.endswith(ending) and file.startswith(prefix):
                 all_files.append(os.path.join(root, file))
     return all_files
 
@@ -31,14 +31,14 @@ def execute_all(command, files):
       print _command
       # os.system(_command)
 
-root = "docs/source/notebook"
+root = "docs/source"
 
 banner ("rm rst files")
-files = find_files(root, ".rst")
+files = find_files(root, "_", ".rst")
 execute_all("rm", files)
 
 banner ("convert ipython notebooks")
-files = find_files(root, ".ipynb")
+files = find_files(root, "", ".ipynb")
 execute_all("ipython nbconvert --to=rst", files)
       
 
