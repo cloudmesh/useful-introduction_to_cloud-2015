@@ -6,7 +6,7 @@ Cloudmesh cm
    :maxdepth: -1
    :glob:
 
-   _cm
    _ipython
-   _uuid
+   _cm
+
    

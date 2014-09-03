@@ -29,9 +29,49 @@ def execute_all(command, files):
     
       _command  = "cd {dirname} ; {command} {basename} > /dev/null 2>&1".format(**data)
       print _command
-      # os.system(_command)
+      os.system(_command)
 
 root = "docs/source"
+
+banner("notebooks")
+
+
+files = find_files(root, "", ".ipynb")
+
+f = open('docs/source/index_notebooks.rst', 'w')
+print >> f, ".. _notebooks:"
+print >> f
+print >> f,  70 * "*"
+print >> f, "Notebooks"
+print >> f,  70 * "*"
+print >> f
+
+print >> f, ".. note::"
+print >> f, "   In order to view the ipynb you must start the ipython server in the home directory with ipython notebook"
+
+
+print >> f
+print >> f, ".. csv-table:: Notebooks"
+print >> f, "   :header: RST, ipython, File"
+print >> f, "   :widths: 30,30, 30"
+print >> f
+
+for filename in files:
+    filename = filename.replace("docs/source/", "")
+    data = {
+        'filename': filename,
+        'dirname': os.path.dirname(filename),
+        'basename': os.path.basename(filename),
+        'prefix' : os.path.basename(filename).replace(".ipynb",""),
+        'ipython': 'http://localhost:8889/notebooks/' + filename
+        }
+    if ".ipynb_checkpoints" not in filename:
+        print >> f, "   `{prefix} <{dirname}/{prefix}.html>`__, " \
+            "`{prefix}.ipynb <{ipython}>`__, " \
+            "{filename}".format(**data)
+f.close()
+        
+
 
 banner ("rm rst files")
 files = find_files(root, "_", ".rst")
