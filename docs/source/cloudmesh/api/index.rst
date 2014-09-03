@@ -8,3 +8,4 @@ Cloudmesh API
 
    _hello
    _uuid
+   _load
