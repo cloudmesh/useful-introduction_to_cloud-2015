@@ -12,19 +12,8 @@ manaul for more information
 Command Execution
 -----------------
 
-.. code:: python
-
-    To execute a shell command you can specify the ! at the beginning of a line
-
-::
-
-
-      File "<ipython-input-3-feb23904b366>", line 1
-        To execute a shell command you can specify the ! at the beginning of a line
-                 ^
-    SyntaxError: invalid syntax
-
-
+To execute a shell command you can specify the ! at the beginning of a
+line
 
 .. code:: python
 

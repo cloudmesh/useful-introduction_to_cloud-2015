@@ -7,5 +7,4 @@ IPython
    :glob:
 
    _ipython
-
    
