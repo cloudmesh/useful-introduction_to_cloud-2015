@@ -36,6 +36,10 @@ def html():
     local("cd docs; make html")
 
 @task
+def fast():
+    local("cd docs; make html")
+        
+@task
 def publish():
     """deploy the documentation on gh-pages"""
     #html()

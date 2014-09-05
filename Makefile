@@ -7,6 +7,9 @@ all:
 	fab doc.html
 	fab doc.view
 
+fast:
+	fab doc.fast
+
 view:
 	fab doc.view
 
