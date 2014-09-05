@@ -180,13 +180,13 @@ image by giving its image name or image id
 
     * india
     Refreshing gvonlasz servers india ->
-    Refresh time: 0.343580961227
-    Store time: 0.00261402130127
+    Refresh time: 0.101712942123
+    Store time: 0.0334851741791
     * india
     Refreshing gvonlasz images india ->
-    Refresh time: 0.954330921173
-    Store time: 0.0129129886627
-    +---------------------+
+    Refresh time: 0.260214090347
+    Store time: 0.0410861968994
+    +--------------------------------------+
     images of cloud 'india'
     +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
     | name                                               | status   | id                                   |   type_id | iname    | location   | state     | updated              |   memory_mb |   fid |   vcpus |
@@ -242,6 +242,31 @@ image by giving its image name or image id
     | DaLiAna-vm2014d-SL64-A.vmdk                        | ACTIVE   | ff5bb4de-d7e9-4bfb-b42b-cec9ed8d2d08 |           |          |            |           | 2014-02-03T16:04:12Z |             |       |         |
     +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
     count: 25
+    +-------+
+    
+
+
+.. code:: python
+
+    print cloudmesh.shell("cloud")
+
+.. parsed-literal::
+
+    +--------------------------+--------+
+    | cloud                    | active |
+    +--------------------------+--------+
+    | alamo                    | True   |
+    | aws                      | True   |
+    | azure                    | True   |
+    | dreamhost                |        |
+    | hp                       |        |
+    | hp_east                  |        |
+    | india_eucalyptus         |        |
+    | india_openstack_havana   | True   |
+    | sierra_eucalyptus        |        |
+    | sierra_openstack_grizzly | True   |
+    +--------------------------+--------+
+    count: 10
     +-------+
     
 

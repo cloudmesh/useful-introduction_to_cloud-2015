@@ -1,0 +1,82 @@
+
+Cloudmesh API Quick Start
+=========================
+
+In python, Cloudmesh supports cloud management through simple steps.
+This page shows how to use Cloudmesh functions in python by introducing
+a few examples, e.g. launching or terminating vm instances.
+
+This is about
+*`m.py <https://github.com/cloudmesh/cloudmesh/blob/master/m.py>`__*
+script in cloudmesh.
+
+Import Cloudmesh
+----------------
+
+.. code:: python
+
+    import cloudmesh
+Choose a place to initialize
+----------------------------
+
+Cloudmesh provides *yaml* or *mongo* option where to load basic
+information. *yaml* relies on the yaml files in the $HOME/.cloudmesh
+directory, *mongo* retrieves information from the mongo database.
+
+.. code:: python
+
+    mesh = cloudmesh.mesh("mongo")
+Get a username
+--------------
+
+In most Cloudmesh functions, you need to provide a username to tell the
+server who is going to use cloud services.
+
+.. code:: python
+
+    username = cloudmesh.load().username()
+Activate the user account
+-------------------------
+
+With the activation, Cloudmesh is verified to connect IaaS cloud
+services.
+
+.. code:: python
+
+    mesh.activate(username)
+Get Flavors
+-----------
+
+Available flavors can be listed with the following function.
+
+.. code:: python
+
+    mesh.flavors(cm_user_id=username, clouds=["india"])
+refresh function updates the data from the IaaS cloud. The cached data
+in the mongo database will be updated.
+
+.. code:: python
+
+    mesh.refresh(username,types=['flavors'],names=["india"])
+Start VM
+--------
+
+A simple function *start* provides a quick launch of vm instances in
+cloudmesh.
+
+.. code:: python
+
+    result = mesh.start(cloud, username)
+Delete VM
+---------
+
+If you know the id of the virtual machine that you want to destroy,
+*delete* funcion in cloudmesh simply terminate the instance. This
+example deletes the vm that we just launched above by getting the id
+from the result dict.
+
+.. code:: python
+
+    server = result['server']['id']
+    mesh.delete(cloud, server, username)
+More examples follows soon, for example listing vm instances.

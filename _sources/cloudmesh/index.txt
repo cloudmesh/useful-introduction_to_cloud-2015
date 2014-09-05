@@ -6,6 +6,7 @@ Cloudmesh
    :maxdepth: -1
    :glob:
 
+   overview
    setup/index
    cm/index
    api/index

@@ -77,7 +77,7 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../about.html#indepent-study-at-iu">Indepent Study at IU</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../about.html#cloud-topics">Cloud Topics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../about.html#data-topics">Data Topics</a></li>
 </ul>
@@ -108,6 +108,21 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-main-components">Cloudmesh main components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-install-management">Cloudmesh Install Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-service-management">Cloudmesh Service Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-use-mode">Cloudmesh Use Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-baremetal">Cloudmesh Baremetal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-hpc">Cloudmesh HPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../setup/quickstart.html">Quick Start on your desktop</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../setup/quickstart.html#commands-without-description">Commands without description</a></li>
@@ -183,6 +198,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#generating-vm-names">Generating VM names</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/_load.html">Load Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/_load.html#api-for-cloudmesh-yaml">API for cloudmesh.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_load.html#api-for-cloudmesh-server-yaml">API for cloudmesh_server.yaml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_load.html#api-for-cloudmesh-launcher-yaml">API for cloudmesh_launcher.yaml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/_pbs.html">Batch Queues</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/_pbs.html#qstat">QStat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_pbs.html#qinfo">QInfo</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +412,7 @@
 
 <h4 class="nav-header">Notebooks</h4>
   <ul class="nav nav-list">
-    <li> <a href="index_notebooks.html"> List </a> </li>
+    <li> <a href="../../index_notebooks.html"> List </a> </li>
   </ul>
   
 <h4 class="nav-header">Page Contents</h4><ul>
@@ -566,13 +592,13 @@ image by giving its image name or image id</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>* india
 Refreshing gvonlasz servers india -&gt;
-Refresh time: 0.343580961227
-Store time: 0.00261402130127
+Refresh time: 0.101712942123
+Store time: 0.0334851741791
 * india
 Refreshing gvonlasz images india -&gt;
-Refresh time: 0.954330921173
-Store time: 0.0129129886627
-+---------------------+
+Refresh time: 0.260214090347
+Store time: 0.0410861968994
++--------------------------------------+
 images of cloud &#39;india&#39;
 +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
 | name                                               | status   | id                                   |   type_id | iname    | location   | state     | updated              |   memory_mb |   fid |   vcpus |
@@ -628,6 +654,27 @@ images of cloud &#39;india&#39;
 | DaLiAna-vm2014d-SL64-A.vmdk                        | ACTIVE   | ff5bb4de-d7e9-4bfb-b42b-cec9ed8d2d08 |           |          |            |           | 2014-02-03T16:04:12Z |             |       |         |
 +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
 count: 25
++-------+
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+--------------------------+--------+
+| cloud                    | active |
++--------------------------+--------+
+| alamo                    | True   |
+| aws                      | True   |
+| azure                    | True   |
+| dreamhost                |        |
+| hp                       |        |
+| hp_east                  |        |
+| india_eucalyptus         |        |
+| india_openstack_havana   | True   |
+| sierra_eucalyptus        |        |
+| sierra_openstack_grizzly | True   |
++--------------------------+--------+
+count: 10
 +-------+
 </pre></div>
 </div>

@@ -44,9 +44,7 @@ The next steps will deploy the futurgrid code prepare the databases::
 
   $ ./install cloudmesh
   $ fab mongo.start
-  $ fab mongo.boot
-  $ fab user.mongo
-  $ fab mongo.simple
+  $ fab mongo.reset
 
 To start the cloudmesh services use::
 

@@ -14,7 +14,7 @@ It is a pleasure if you can improve this material and potentially
 contribute your own section to it. You can coordinate your
 contribution by contacting Gregor von Laszewski (laszewski@gmail.com).
 
-Indepent Study at IU
+Independent Study at IU
 ----------------------------------------------------------------------
 
 Gregor is also an Adjunct Associate Professor at Indiana University

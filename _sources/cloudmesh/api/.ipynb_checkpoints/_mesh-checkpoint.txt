@@ -1,0 +1,60 @@
+
+.. code:: python
+
+    import cloudmesh
+.. code:: python
+
+    username = cloudmesh.load().username()
+.. code:: python
+
+    mesh = cloudmesh.mesh()
+.. code:: python
+
+    mesh.info()
+
+::
+
+
+    ---------------------------------------------------------------------------
+    AttributeError                            Traceback (most recent call last)
+
+    <ipython-input-23-94fc62f94976> in <module>()
+    ----> 1 mesh.info()
+    
+
+    AttributeError: cm_mongo instance has no attribute 'info'
+
+
+.. code:: python
+
+    mesh.activate(username)
+
+.. parsed-literal::
+
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:323:   INFO - Activating -> india
+    INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:Activating -> india
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:328:   INFO - Activation of cloud india and user gvonlasz Succeeded!
+    INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:Activation of cloud india and user gvonlasz Succeeded!
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:323:   INFO - Activating -> sierra
+    INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:Activating -> sierra
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:328:   INFO - Activation of cloud sierra and user gvonlasz Succeeded!
+    INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc:Activation of cloud sierra and user gvonlasz Succeeded!
+
+
+.. code:: python
+
+    mesh.refresh()
+
+::
+
+
+    ---------------------------------------------------------------------------
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-14-6a9ebadaeb63> in <module>()
+    ----> 1 mesh.refresh()
+    
+
+    TypeError: refresh() takes at least 2 arguments (1 given)
+
+
