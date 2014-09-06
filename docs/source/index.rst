@@ -12,6 +12,7 @@ Contents
    :glob:
 
    about
+   contact
    shell
    ipython/index
    parallel
