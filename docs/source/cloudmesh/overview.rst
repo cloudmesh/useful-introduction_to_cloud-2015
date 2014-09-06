@@ -51,24 +51,24 @@ Typo: there are two baremetal boxes in cloudmesh cor. one should be HPC
 
 This diagram highlights some important information which we describe next
 
-Cloudmesh main components
+Cloudmesh Main Components
 ----------------------------------------------------------------------
 
 The main cloudmesh component include:
 
-  * Cloudmesh Install Management: which allows to easily
-    install cloudmesh on a given operating system. This can also
-    include a virtual machine. 
-  * Cloudmesh Baremetal Management (currently part of core): which
-    allows the deployment of an os via bare metal through cloudmesh.
-    The important differentiation to other systems is that users can
-    be authorized to conduct bare metal provision based on service
-    policy descriptions. The user may not be the administrator of the
-    machine.
-  * Cloudmesh Core: which contains the major components to interface
-    with external subsystems to conduct bare matel provisioning,
-    interact with IaaS such as virtual machines, HPC queues, or the
-    bare metal provisioning services. 
+* Cloudmesh Install Management: which allows to easily
+  install cloudmesh on a given operating system. This can also
+  include a virtual machine. 
+* Cloudmesh Baremetal Management (currently part of core): which
+  allows the deployment of an os via bare metal through cloudmesh.
+  The important differentiation to other systems is that users can
+  be authorized to conduct bare metal provision based on service
+  policy descriptions. The user may not be the administrator of the
+  machine.
+* Cloudmesh Core: which contains the major components to interface
+  with external subsystems to conduct bare matel provisioning,
+  interact with IaaS such as virtual machines, HPC queues, or the
+  bare metal provisioning services. 
 
 Cloudmesh Install Management
 ----------------------------------------------------------------------
