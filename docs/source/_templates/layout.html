@@ -10,3 +10,41 @@
 
 {% endblock %}
 
+{% block footer %}
+<footer style="background-color:black;color:whilte;">
+<br>
+ <div class="container">
+   <div class="row">     
+     <div class="col-sm-4  ">
+     <h4 class="nav-header" style="color:white;">Cloudmesh</h4>
+     <ul>       
+       <li> <a href="index_notebooks.html"> IPython Notebooks </a> </li>       
+       <li> <a href="http://cloudmesh.github.io/cloudmesh/"> Manual </a> </li>
+       <li> <a href="https://github.com/cloudmesh/cloudmesh"> Code </a> </li>       
+       <li> <a href="http://cloudmesh.github.io"> Other Packages </a> </li>       
+     </ul>
+     <div style="color:white;">&copy; 2014 myCloudmesh.org</div>     
+   </div>
+
+    <div class="col-sm-4" style="font-size:small">
+
+      <h4 class="nav-header" style="color:white;">Site Contents</h4>
+
+      <ul class="nav nav-list">  
+	{{ toctree(maxdepth=1, collapse=False) }}
+      </ul>
+     </div>
+
+     
+     <div class="col-sm-4 ">
+       
+       <h4 class="nav-header" style="color:white;">Page Contents</h4>
+
+
+       {% include "localtoc.html"%}
+     </div>
+ </div>
+ </div>
+ <br>
+</footer>
+{% endblock %}

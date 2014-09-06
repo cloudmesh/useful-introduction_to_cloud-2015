@@ -64,7 +64,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'my Cloudmesh'
-copyright = u'2013, Gregor von Laszewski for FutureGrid'
+copyright = u'2013, Gregor von Laszewski for Cloudmesh'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
