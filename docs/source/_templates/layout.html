@@ -4,11 +4,29 @@
 {# set bootswatch_css_custom = ['_static/my-styles.css'] #}
 
 {% block header %}
+{{ super() }}
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+{% if pagename in ["index"] %}
 
+            <div class="row">
+                <div class="col-lg-12"  style="-webkit-font-smoothing: none; border:solid 1px #2d2d2d;  text-align:center; background:#575757; padding:100px 50px 100px 50px;  -moz-border-radius: 5px;  -webkit-border-radius: 5px; border-radius: 5px;background:-webkit-gradient(linear, 80% 20%, 10% 21%, from(#280A59), to(#005545))">
+		  <br>
+		  <br>
+		  <center style="color:white">
+		     <h1> Introduction to Cloud Computing
+                     <i class="fa fa-camera-retro"></i>
+   		   </h1>
+		  </center>
+		  <br>
+                </div>
+            </div>
+	
+{% endif %}
 {% endblock %}
+
+
 
 {% block footer %}
 <footer style="background-color:black;color:whilte;">
@@ -30,7 +48,8 @@
 
       <h4 class="nav-header" style="color:white;">Site Contents</h4>
 
-      <ul class="nav nav-list">  
+      <ul class="nav nav-list">
+	<li> <a href="toc.html"> Table of Contents </a> </li>	
 	{{ toctree(maxdepth=1, collapse=False) }}
       </ul>
      </div>
