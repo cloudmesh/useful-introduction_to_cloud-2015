@@ -157,11 +157,11 @@ and place it in the directory::
 
   cloudmesh
 
-It creates also a directory called ~/github/cloudmesh and than cds
+It creates also a directory called ~/github/cloudmesh and then cds
 into this directory to conduct the installation from
 there. Furthermore, as you can see this script also creates a virtual
 env under the name ~/ENV
 
-If you co not like these names or have a conflict with the names,
+If you do not like these names or have a conflict with the names,
 please download the script and modify accordingly.
 
