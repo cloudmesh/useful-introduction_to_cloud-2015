@@ -3,8 +3,8 @@ Quick Start on your desktop
 
 This quickstart is designed for Ubuntu 14.04 and OSX.
 
-We recommend that you use virtualenv to provide an isolated environmen
-t for cloudmesh. We assume you create one called ENV and activate it::
+We recommend that you use virtualenv to provide an isolated environment 
+for cloudmesh. We assume you create one called ENV and activate it::
 
   virtualenv ~/ENV
   $ source ~/ENV/bin/activate
@@ -44,7 +44,9 @@ The next steps will deploy the futurgrid code prepare the databases::
 
   $ ./install cloudmesh
   $ fab mongo.start
-  $ fab mongo.reset
+  $ fab mongo.boot
+  $ fab user.mongo
+  $ fab mongo.simple
 
 To start the cloudmesh services use::
 
