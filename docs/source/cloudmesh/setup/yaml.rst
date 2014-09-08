@@ -128,6 +128,8 @@ file, you update the *aws* section with your credentials. Note that
 Azure also offers commercial services, your subscription should be
 stored in a safe place to avoid any unexpected usage.
 
+.. include:: setup_azure.rst
+
 Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
 
