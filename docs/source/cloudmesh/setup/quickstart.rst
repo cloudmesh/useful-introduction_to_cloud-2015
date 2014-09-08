@@ -3,8 +3,8 @@ Quick Start on your desktop
 
 This quickstart is designed for Ubuntu 14.04 and OSX.
 
-We recommend that you use virtualenv to provide an isolated environmen
-t for cloudmesh. We assume you create one called ENV and activate it::
+We recommend that you use virtualenv to provide an isolated environment 
+for cloudmesh. We assume you create one called ENV and activate it::
 
   virtualenv ~/ENV
   $ source ~/ENV/bin/activate
@@ -44,7 +44,9 @@ The next steps will deploy the futurgrid code prepare the databases::
 
   $ ./install cloudmesh
   $ fab mongo.start
-  $ fab mongo.reset
+  $ fab mongo.boot
+  $ fab user.mongo
+  $ fab mongo.simple
 
 To start the cloudmesh services use::
 
@@ -141,25 +143,27 @@ Commands without description
 One line install with curl
 ----------------------------------------------------------------------
 
-.. error:: this method does not yet work 
+.. .. error:: this method does not yet work 
 
-.. todo:: correct the documentation and the install script
+.. .. todo:: correct the documentation and the install script
+
+.. development:: It may not work properly in some platforms. Please do step-by-step installation above in that case.
 
 This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use::
 
-  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | sh
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=[your Futuregrid portal id] sh
 
 It will install cloudmesh in the directory where you started it from
 and place it in the directory::
 
   cloudmesh
 
-It creates also a directory called ~/github/cloudmesh and than cds
+It creates also a directory called ~/github/cloudmesh and then cds
 into this directory to conduct the installation from
 there. Furthermore, as you can see this script also creates a virtual
 env under the name ~/ENV
 
-If you co not like these names or have a conflict with the names,
+If you do not like these names or have a conflict with the names,
 please download the script and modify accordingly.
 
