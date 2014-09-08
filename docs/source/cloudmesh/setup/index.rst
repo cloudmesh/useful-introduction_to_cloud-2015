@@ -1,5 +1,5 @@
 ********************************************************************** 
-Setup
+Cloudmesh Setup
 **********************************************************************
 
 Cloudmesh can be setup to on your local environment in single

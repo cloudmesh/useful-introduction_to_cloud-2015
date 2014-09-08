@@ -104,31 +104,120 @@ from someone who you didn't authorize.
 Adding Azure to the yaml file
 ----------------------------------------------------------------------
 
+Microsoft Windows Azure offers security credentials per a valid
+subscription on a user account. Based on the subscription id,
+chargeable usage is going to be applied to your bill. To authenticate
+requests to Azure, you need to configure your credentials for
+Cloudmesh. The following step-by-step tutorial explains the
+configuration of Azure credentials on Cloudmesh.
+
 To connect Azure Virtual Machines to Cloudmesh, you need to provide
 Azure credentials to authenticate requrests in the yaml file. You can
-find the credentials on `Azure Management Portal
-<https://manage.windowsazure.com>`_ which is a web interface to manage
-your account and Azure Virtual Machines.  Also, you can find
-credentials by downloading the subscription file (.publishsettings)
-here: `http://go.microsoft.com/fwlink/?LinkId=254432
-<http://go.microsoft.com/fwlink/?LinkId=254432>`_. Once you download
-the file, you may need to import your subscription Id and valid X.509
-certificate from the file by Azure Cross-Platform Command-Line
-Interface. About installing the interface, please see the manual here:
-`Azure Cross-Platform Command-Line Interface
-<http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. Not
-like setting AWS to the yaml file, Azure credentials require that the
-X.509 certificate stays in the .cloudmesh directory. The
-*subscriptionid* field should be filled with your Azure
-subscription id. The valid X.509 certificate file (.pem) is also
-required to be stored with the filename
-*$HOME/.cloudmesh/azure_managementCertificate.pem*. Cloudmesh
-identifies *cm_type: azure* as Microsoft Windows Azure in the yaml
-file, you update the *aws* section with your credentials. Note that
-Azure also offers commercial services, your subscription should be
-stored in a safe place to avoid any unexpected usage.
+find the credentials in the 
 
-.. include:: setup_azure.rst
+* `Azure Management Portal <https://manage.windowsazure.com>`_ 
+
+which is a web interface to manage your account and Azure Virtual
+Machines.  Also, you can find credentials by downloading the
+subscription file (.publishsettings) here:
+
+* `http://go.microsoft.com/fwlink/?LinkId=254432 <http://go.microsoft.com/fwlink/?LinkId=254432>`_.
+
+Once you download the file, you may need to import your subscription
+Id and valid X.509 certificate from the file with the help of the  Azure cross-platform
+command line interface. More information about the Azure CLI can be
+found in the Manual/article about the
+
+* `Azure Cross-Platform Command-Line Interface <http://azure.microsoft.com/en-us/documentation/articles/xplat-cli>`_. 
+
+The Azure credentials require that the X.509 certificate is placed in
+the `.cloudmesh` directory. The *subscriptionid* field should be filled
+with your Azure subscription id. The valid X.509 certificate file
+(.pem) must also be stored in the `.cloudmesh` directory. We store it
+under the name::
+
+  $HOME/.cloudmesh/azure_managementCertificate.pem
+
+Cloudmesh yaml file has an example non valid entry that you can change
+with your settings. it can be easily identified whle looking for the
+keyword azure in the `cloudmesh.yaml` file
+As Azure is a commercial service it is important that you properly
+secure the .cloudmesh directory and its yaml files. 
+
+.. todo:: describe briefly how to do that, use chmod go-rw ... chmod u+r ...
+
+Azure Quickstart
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Azure account
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+If you do not have an Azure account you can obtain one from Microsoft.
+Microsoft provides a free-trial for new account applicants. The
+Windows Azure site is located at 
+
+* `https://manage.windowsazure.com <https://manage.windowsazure.com>`_
+
+Download credentials
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Form ther you can download the::
+
+  .publishsettings
+
+
+Install Azure CLI
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Next you will need to install the Azure CLI. This is documented at 
+
+* http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/
+
+Here you find install instructions fror Linux but also a link to an
+OSX installer.
+
+Once the client is installed you can download the credentials
+
+Import Credentials via Azure CLI
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+::
+
+   $ azure account download
+   $ azure account import <.publishsettings file path>
+
+Download Subscription File (.publishsettings)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
+* http://go.microsoft.com/fwlink/?LinkId=254432
+
+Place X.509 certificate on Cloudmesh
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+::
+
+  $ cp -p ~/.azure/managementCertificate.pem ~/.cloudmesh/azure_managementCertificate.pem
+
+ Only the owner with read and write permission e.g. -rw-------
+
+.. todo:: explicitly describe how to do that , do not use the 755 or  other numbers use chmod go- ....
+
+Replace Subscription ID
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+::
+
+  $ azure service cert list
+
+provides your subscription id that just imported from the .publishsettings file.
+
+Now, you are ready to use Azure Virtual Machines on Cloudmesh.
+
+Test Azure Virtual Machine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+TBD
+
 
 Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
