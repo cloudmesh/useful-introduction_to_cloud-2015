@@ -6,8 +6,8 @@ Using Hadoop in FutureGrid
 
 .. sidebar:: Screencast
 
-   A screnncast of a subset of the information presented her is
-   avalable at |video-hadoop|.
+   A screenncast of a subset of the information presented her is
+   available at |video-hadoop|.
 
 
 We have various platforms that support Hadoop on FutureGrid. MyHadoop
@@ -312,9 +312,9 @@ pbs-example.sh::
 References
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Much of this information is copied from `The MyHadoop Instalation Instructions <https://portal.futuregrid.org/sites/default/files/myHadoop.pdf>`__
-* A screnncast of a subset of the information presented her is
-  avalable at |video-hadoop|.
+* Much of this information is copied from `The MyHadoop Installation Instructions <https://portal.futuregrid.org/sites/default/files/myHadoop.pdf>`__
+* A screenncast of a subset of the information presented her is
+  available at |video-hadoop|.
 
 
 .. |video-hadoop| replace:: |video-image| :youtube:`PC8h1CtVzH4`
