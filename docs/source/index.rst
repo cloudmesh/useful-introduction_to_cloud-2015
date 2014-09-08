@@ -24,6 +24,8 @@ Contents
 
    hardware/index
 
+   devops/index
+
    rst
 
    unfinished/index
