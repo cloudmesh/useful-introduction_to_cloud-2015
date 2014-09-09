@@ -36,7 +36,7 @@ library path::
   $ ./install cloudmesh
 
 
-.. note:: This step is optional
+.. note:: This step is optional but highly recommended for users.
 
    In case you have accounts on the IU machines yo ucan also obtain
    preconfigured cloud rc files from them. To test if you have an account
@@ -54,6 +54,19 @@ library path::
 
      $ cm-iu user fetch
      $ cm-iu user create
+
+  Other resources may require you also to manage keys
+
+As you will need at one point to login into virtual machines you will
+need a key that cloudmesh can use do to so. We assume you have a
+public key generated in your .ssh directory in the file 
+
+  ~/.ssh/idrsa.pub
+
+
+We will place this key in the configuration file with::
+
+  cm key add $USER-key -yaml ~/.ssh/idrsa.pub
 
 The next steps will deploy the cloudmesh databases::
 
