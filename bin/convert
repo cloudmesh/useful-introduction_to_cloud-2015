@@ -6,7 +6,7 @@ from sh import sh
 import sys
 import os
 from pprint import pprint
-from cloudmesh_common.util import banner
+from cloudmesh import banner
 
 def find_files(root, prefix="", ending=""):
     all_files = []

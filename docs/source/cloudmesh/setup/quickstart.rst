@@ -22,27 +22,41 @@ following commands::
   $ sudo ./install system
   $ ./install requirements
 
+.. todo:: on OSX you can ommit the sudo. 
 
 
 To get access to IaaS cloud platforms, you need to create loaclly a
-new user that has access to various clouds. In our case we assume you
-have an account on FutureGrid.  Please make sure you can login to
-india and sierrs::
-
-  $ ssh [username]@india.futuregrid.org
-  $ ssh [username]@sierra.futuregrid.org
-
-If this does not work, you may not have uploaded your public key to
-FutureGrid. Please do so now. Once this step is completed, you can
-create the configuration files as follows::
+new user that has access to various clouds. This can be done with::
 
   $ ./install new
-  $ ./install rc fetch
-  $ ./install rc fill
 
-The next steps will deploy the futurgrid code prepare the databases::
+The next steps will deploy the cloudmesh code into the virtualenv
+library path::
 
   $ ./install cloudmesh
+
+
+.. note:: This step is optional
+
+   In case you have accounts on the IU machines yo ucan also obtain
+   preconfigured cloud rc files from them. To test if you have an account
+   and have set it up correctly, please login to the machine india::
+
+     $ ssh [username]@india.futuregrid.org
+
+   If this does not work, you may not have uploaded your public key to
+   FutureGrid portal at
+
+   * https://portal.futuregrid.org/my/ssh-keys
+
+   Once this step is completed, you can
+   create the configuration files as follows::
+
+     $ cm-fg user fetch
+     $ cm-fg user create
+
+The next steps will deploy the cloudmesh databases::
+
   $ fab mongo.start
   $ fab mongo.boot
   $ fab user.mongo
