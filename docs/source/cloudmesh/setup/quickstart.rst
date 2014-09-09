@@ -22,7 +22,7 @@ following commands::
   $ sudo ./install system
   $ ./install requirements
 
-.. todo:: on OSX you can ommit the sudo. 
+.. note:: on OSX you can ommit the sudo. 
 
 
 To get access to IaaS cloud platforms, you need to create loaclly a
@@ -52,8 +52,8 @@ library path::
    Once this step is completed, you can
    create the configuration files as follows::
 
-     $ cm-fg user fetch
-     $ cm-fg user create
+     $ cm-iu user fetch
+     $ cm-iu user create
 
 The next steps will deploy the cloudmesh databases::
 
@@ -61,6 +61,10 @@ The next steps will deploy the cloudmesh databases::
   $ fab mongo.boot
   $ fab user.mongo
   $ fab mongo.simple
+
+Thes steps are conveniently wrapped into a single command::
+
+  $ fab mongo.reset
 
 To start the cloudmesh services use::
 
