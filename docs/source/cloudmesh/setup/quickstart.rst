@@ -75,7 +75,7 @@ The next steps will deploy the cloudmesh databases::
   $ fab user.mongo
   $ fab mongo.simple
 
-Thes steps are conveniently wrapped into a single command::
+These steps are conveniently wrapped into a single command::
 
   $ fab mongo.reset
 
@@ -159,9 +159,9 @@ Commands without description
   sudo ./install system
   ./install requirements
   ./install new
-  ./install rc fetch
-  ./install rc fill
   ./install cloudmesh
+  cm-iu user fetch
+  cm-iu user create  
   fab mongo.start
   fab mongo.boot
   fab user.mongo
