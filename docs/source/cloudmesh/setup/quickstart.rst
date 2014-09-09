@@ -55,7 +55,7 @@ library path::
      $ cm-iu user fetch
      $ cm-iu user create
 
-  Other resources may require you also to manage keys
+  Other resources may require you also to manage keys.
 
 As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
@@ -75,7 +75,7 @@ The next steps will deploy the cloudmesh databases::
   $ fab user.mongo
   $ fab mongo.simple
 
-These steps are conveniently wrapped into a single command::
+Thes steps are conveniently wrapped into a single command::
 
   $ fab mongo.reset
 
@@ -159,9 +159,9 @@ Commands without description
   sudo ./install system
   ./install requirements
   ./install new
+  ./install rc fetch
+  ./install rc fill
   ./install cloudmesh
-  cm-iu user fetch
-  cm-iu user create  
   fab mongo.start
   fab mongo.boot
   fab user.mongo
