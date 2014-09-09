@@ -125,7 +125,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../cloudmesh/overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cloudmesh/setup/index.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cloudmesh/setup/index.html">Cloudmesh Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../cloudmesh/setup/quickstart.html">Quick Start on your desktop</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/quickstart.html#commands-without-description">Commands without description</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
@@ -136,7 +136,20 @@
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-futuregrid-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-hp-cloud-to-the-yaml-file">Adding HP cloud to the yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-aws-to-the-yaml-file">Adding AWS to the yaml file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-azure-to-the-yaml-file">Adding Azure to the yaml file</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cloudmesh/setup/yaml.html#azure-quickstart">Azure Quickstart</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#azure-account">Azure account</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#download-credentials">Download credentials</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#install-azure-cli">Install Azure CLI</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#import-credentials-via-azure-cli">Import Credentials via Azure CLI</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#download-subscription-file-publishsettings">Download Subscription File (.publishsettings)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#place-x-509-certificate-on-cloudmesh">Place X.509 certificate on Cloudmesh</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#replace-subscription-id">Replace Subscription ID</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../cloudmesh/setup/yaml.html#test-azure-virtual-machine">Test Azure Virtual Machine</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
@@ -153,21 +166,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html">Adding Azure to the yaml file</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#azure-account">Azure account</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#download-credentials">Download credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#install-azure-cli">Install Azure CLI</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#linux">Linux</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#osx">OSX</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#import-credentials-via-azure-cli">Import Credentials via Azure CLI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#download-subscription-file-publishsettings">Download Subscription File (.publishsettings)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#place-x-509-certificate-on-cloudmesh">Place X.509 certificate on Cloudmesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#replace-subscription-id">Replace Subscription ID</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/setup_azure.html#test-azure-virtual-machine">Test Azure Virtual Machine</a></li>
 </ul>
 </li>
 </ul>
@@ -313,6 +311,30 @@
 <li class="toctree-l2"><a class="reference internal" href="../hpc/index.html#interactive-queues">Interactive Queues</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hardware/indiana.html">Hardware at Indiana University</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/indiana.html#compute-resources">Compute Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware/indiana.html#networks">Networks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devops/makefile.html">Makefile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../devops/makefile.html#practical-other-applications-of-make">Practical Other Applications of Make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../devops/makefile.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../devops/shell.html">Shell Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../devops/shell.html#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devops/configure.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
@@ -389,6 +411,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
 </ul>
 
@@ -478,6 +502,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
 </ul>
 

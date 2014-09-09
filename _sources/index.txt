@@ -22,6 +22,10 @@ Contents
    paas/index
    hpc/index
 
+   hardware/index
+
+   devops/index
+
    rst
 
    unfinished/index
