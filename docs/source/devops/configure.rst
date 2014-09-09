@@ -29,8 +29,9 @@ Excersises
 ======================================================================
 
 #. What is autoconf and auomake?
-#. Showcase the development of a Makefile.in for our Hello cloud
-    example.
+
+#. Showcase the development of a Makefile.in for our Hello cloud example.
+
 #. Use configure to deploy it 
 
 
