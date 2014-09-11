@@ -214,6 +214,29 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_pbs.html#qinfo">QInfo</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../api/_quickstart.html">Cloudmesh API Quick Start</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#import-cloudmesh">Import Cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#get-a-username">Get a username</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#activate-the-user-account">Activate the user account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#get-flavors">Get Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#start-vm">Start VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#delete-vm">Delete VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#vm-images">VM Images</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_quickstart.html#select-a-image">Select a image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_quickstart.html#select-a-flavor">Select a flavor</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_quickstart.html#need-a-help-for-the-function">Need a help for the function?</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#vitual-machine-name">Vitual Machine Name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#ssh-to-the-vm">SSH to the VM</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a><ul>
@@ -322,6 +345,22 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/makefile.html#practical-other-applications-of-make">Practical Other Applications of Make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/makefile.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/shell.html#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
@@ -408,6 +447,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 </ul>
 
@@ -462,28 +502,62 @@ $ sudo ./install system
 $ ./install requirements
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">on OSX you can ommit the sudo.</p>
+</div>
 <p>To get access to IaaS cloud platforms, you need to create loaclly a
-new user that has access to various clouds. In our case we assume you
-have an account on FutureGrid.  Please make sure you can login to
-india and sierrs:</p>
+new user that has access to various clouds. This can be done with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./install new
+</pre></div>
+</div>
+<p>The next steps will deploy the cloudmesh code into the virtualenv
+library path:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./install cloudmesh
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This step is optional but highly recommended for users.</p>
+<blockquote>
+<div><p>In case you have accounts on the IU machines yo ucan also obtain
+preconfigured cloud rc files from them. To test if you have an account
+and have set it up correctly, please login to the machine india:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh [username]@india.futuregrid.org
-$ ssh [username]@sierra.futuregrid.org
 </pre></div>
 </div>
 <p>If this does not work, you may not have uploaded your public key to
-FutureGrid. Please do so now. Once this step is completed, you can
+FutureGrid portal at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://portal.futuregrid.org/my/ssh-keys">https://portal.futuregrid.org/my/ssh-keys</a></li>
+</ul>
+<p>Once this step is completed, you can
 create the configuration files as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./install new
-$ ./install rc fetch
-$ ./install rc fill
+<div class="highlight-python"><div class="highlight"><pre>$ cm-iu user fetch
+$ cm-iu user create
 </pre></div>
 </div>
-<p>The next steps will deploy the futurgrid code prepare the databases:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./install cloudmesh
-$ fab mongo.start
+</div></blockquote>
+<p class="last">Other resources may require you also to manage keys.</p>
+</div>
+<p>As you will need at one point to login into virtual machines you will
+need a key that cloudmesh can use do to so. We assume you have a
+public key generated in your .ssh directory in the file</p>
+<blockquote>
+<div>~/.ssh/idrsa.pub</div></blockquote>
+<p>We will place this key in the configuration file with:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm key add $USER-key -yaml ~/.ssh/idrsa.pub
+</pre></div>
+</div>
+<p>The next steps will deploy the cloudmesh databases:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fab mongo.start
 $ fab mongo.boot
 $ fab user.mongo
 $ fab mongo.simple
+</pre></div>
+</div>
+<p>Thes steps are conveniently wrapped into a single command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ fab mongo.reset
 </pre></div>
 </div>
 <p>To start the cloudmesh services use:</p>
@@ -633,6 +707,7 @@ please download the script and modify accordingly.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 </ul>
 
