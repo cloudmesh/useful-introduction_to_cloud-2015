@@ -69,9 +69,9 @@ the cloudmesh.yaml file. Chhose your favorite editor::
 Change the values TBD that you find here with values that describe
 you. 
 
-.. todo:: cm "default username=<portalname>"
+.. todo:: Hyungro: cm "defaukt username=username <portalname>"
 
-.. todo:: cm "project fg101"  101 is just a placeholder use your real
+.. todo:: Hyungro: cm "project fg101"  101 is just a placeholder use your real
 	  project id
 
 
