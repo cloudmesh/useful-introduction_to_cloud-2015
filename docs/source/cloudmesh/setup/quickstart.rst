@@ -1,6 +1,11 @@
 Quick Start on your desktop
 ============================
 
+.. warning:: this tutorial is for the new FUtureSystems
+	  infrastructure. However at this time we stoll use
+	  FutureGrid. Please replace all occurences of FutureSystems
+	  with FutureGrid. 
+
 This quickstart is designed for Ubuntu 14.04 and OSX.
 
 We recommend that you use virtualenv to provide an isolated environment 
@@ -42,12 +47,12 @@ library path::
    preconfigured cloud rc files from them. To test if you have an account
    and have set it up correctly, please login to the machine india::
 
-     $ ssh [username]@india.futuregrid.org
+     $ ssh [username]@india.futuresystems.org
 
    If this does not work, you may not have uploaded your public key to
-   FutureGrid portal at
+   FutureSystems portal at
 
-   * https://portal.futuregrid.org/my/ssh-keys
+   * https://portal.futuresystems.org/my/ssh-keys
 
    Once this step is completed, you can
    create the configuration files as follows::
@@ -75,10 +80,13 @@ As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
 public key generated in your .ssh directory in the file::
 
-  ~/.ssh/idrsa.pub
+  ~/.ssh/id_rsa.pub
 
+If you do not have such a key, you can generate it with::
 
-We will place this key in the configuration file with::
+ ssh-keygen -t rsa -C $USER-key
+
+We add this key to the cloudmesh database with::
 
   cm "key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub"
 
@@ -157,6 +165,14 @@ command ina aterminal::
 Commands without description
 ----------------------------------------------------------------------
 
+
+This script assumes that you have a key in::
+
+  ~/.ssh/id_rsa.pub
+
+Which will be used to log into the VMs and the machines. THis key must
+be uploaded to the FutureSystems portal.
+
 ::
 
   git clone https://github.com/cloudmesh/cloudmesh.git
@@ -166,13 +182,10 @@ Commands without description
   sudo ./install system
   ./install requirements
   ./install new
-  ./install rc fetch
-  ./install rc fill
+  ./cm-iu rc fetch
+  ./cm-iu rc fill
   ./install cloudmesh
-  fab mongo.start
-  fab mongo.boot
-  fab user.mongo
-  fab mongo.simple
+  fab mongo.reset
   fab server.start
   cm cloud list
   cm cloud on sierra
@@ -190,7 +203,7 @@ One line install with curl
 This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use::
 
-  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=[your Futuregrid portal id] sh
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=[your Futuresystems portal id] sh
 
 It will install cloudmesh in the directory where you started it from
 and place it in the directory::
