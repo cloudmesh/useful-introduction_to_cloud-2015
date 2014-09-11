@@ -57,6 +57,22 @@ library path::
 
   Other resources may require you also to manage keys.
 
+At this time We like you to edit some information about yourself in
+the cloudmesh.yaml file. Chhose your favorite editor::
+
+  $ emacs ~/.cloudmesh/cloudmesh.yaml
+
+Change the values that you find here with values that describe
+you. Make sure to add the username for india (the same as the FG
+portal name) in hpc username. Also set the active project and the
+default project to your project.
+
+.. todo:: cm "default username=<portalname>"
+
+.. todo:: cm "project fg101"  101 is just a placeholder use your real
+	  project id
+
+
 As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
 public key generated in your .ssh directory in the file::
@@ -69,13 +85,6 @@ We will place this key in the configuration file with::
   cm "key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub"
 
 The next steps will deploy the cloudmesh databases::
-
-  $ fab mongo.start
-  $ fab mongo.boot
-  $ fab user.mongo
-  $ fab mongo.simple
-
-Thes steps are conveniently wrapped into a single command::
 
   $ fab mongo.reset
 
