@@ -59,14 +59,14 @@ library path::
 
 As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
-public key generated in your .ssh directory in the file 
+public key generated in your .ssh directory in the file::
 
   ~/.ssh/idrsa.pub
 
 
 We will place this key in the configuration file with::
 
-  cm key add $USER-key -yaml ~/.ssh/idrsa.pub
+  cm "key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub"
 
 The next steps will deploy the cloudmesh databases::
 
