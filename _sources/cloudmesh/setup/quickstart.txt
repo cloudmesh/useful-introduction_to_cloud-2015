@@ -29,7 +29,6 @@ following commands::
 
 .. note:: on OSX you can ommit the sudo. 
 
-
 To get access to IaaS cloud platforms, you need to create loaclly a
 new user that has access to various clouds. This can be done with::
 
@@ -142,23 +141,23 @@ command ina aterminal::
   | sierra                   |          |
   +--------------------------+----------+
 
-  cm> cloud on sierra
+  cm> cloud on india
   ...
-  cloud 'sierra' activated.
+  cloud 'india' activated.
 
-  cm> flavor sierra --refresh
+  cm> flavor india --refresh
   ...
   Refresh time: 0.190665006638
   Store time: 0.0578060150146
   +--------+------+--------------+---------+-------+--------+----------------------+
   | CLOUD  |   id | name         |   vcpus |   ram |   disk | cm_refresh           |
   |--------+------+--------------+---------+-------+--------+----------------------|
-  | sierra |    1 | m1.tiny      |       1 |   512 |      0 | 2014-08-26T01-15-20Z |
-  | sierra |    3 | m1.medium    |       2 |  4096 |     40 | 2014-08-26T01-15-20Z |
-  | sierra |    2 | m1.small     |       1 |  2048 |     20 | 2014-08-26T01-15-20Z |
-  | sierra |    4 | m1.large     |       4 |  8192 |     40 | 2014-08-26T01-15-20Z |
-  | sierra |    7 | m1.memmedium |       1 |  4096 |     20 | 2014-08-26T01-15-20Z |
-  | sierra |    6 | m1.memlarge  |       1 |  8192 |     20 | 2014-08-26T01-15-20Z |
+  | india |    1 | m1.tiny      |       1 |   512 |      0 | 2014-08-26T01-15-20Z |
+  | india |    3 | m1.medium    |       2 |  4096 |     40 | 2014-08-26T01-15-20Z |
+  | india |    2 | m1.small     |       1 |  2048 |     20 | 2014-08-26T01-15-20Z |
+  | india |    4 | m1.large     |       4 |  8192 |     40 | 2014-08-26T01-15-20Z |
+  | india |    7 | m1.memmedium |       1 |  4096 |     20 | 2014-08-26T01-15-20Z |
+  | india |    6 | m1.memlarge  |       1 |  8192 |     20 | 2014-08-26T01-15-20Z |
   +--------+------+--------------+---------+-------+--------+----------------------+
 
 
@@ -188,8 +187,8 @@ be uploaded to the FutureSystems portal.
   fab mongo.reset
   fab server.start
   cm cloud list
-  cm cloud on sierra
-  cm flavor sierra --refresh
+  cm cloud on india
+  cm flavor india --refresh
 
 One line install with curl
 ----------------------------------------------------------------------
