@@ -62,10 +62,8 @@ the cloudmesh.yaml file. Chhose your favorite editor::
 
   $ emacs ~/.cloudmesh/cloudmesh.yaml
 
-Change the values that you find here with values that describe
-you. Make sure to add the username for india (the same as the FG
-portal name) in hpc username. Also set the active project and the
-default project to your project.
+Change the values TBD that you find here with values that describe
+you. 
 
 .. todo:: cm "default username=<portalname>"
 
