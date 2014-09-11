@@ -10,4 +10,4 @@ Cloudmesh API
    _uuid
    _load
    _pbs
-   _quickstart
+   _vm_management

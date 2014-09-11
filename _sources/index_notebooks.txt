@@ -15,8 +15,8 @@ Notebooks
    `_load <cloudmesh/api/_load.html>`__, `_load.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_load.ipynb>`__, cloudmesh/api/_load.ipynb
    `_mesh <cloudmesh/api/_mesh.html>`__, `_mesh.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_mesh.ipynb>`__, cloudmesh/api/_mesh.ipynb
    `_pbs <cloudmesh/api/_pbs.html>`__, `_pbs.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__, cloudmesh/api/_pbs.ipynb
-   `_quickstart <cloudmesh/api/_quickstart.html>`__, `_quickstart.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_quickstart.ipynb>`__, cloudmesh/api/_quickstart.ipynb
    `_uuid <cloudmesh/api/_uuid.html>`__, `_uuid.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_uuid.ipynb>`__, cloudmesh/api/_uuid.ipynb
+   `_vm_management <cloudmesh/api/_vm_management.html>`__, `_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_vm_management.ipynb>`__, cloudmesh/api/_vm_management.ipynb
    `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
    `_introduction <cloudmesh/shell/_introduction.html>`__, `_introduction.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_introduction.ipynb>`__, cloudmesh/shell/_introduction.ipynb
    `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
