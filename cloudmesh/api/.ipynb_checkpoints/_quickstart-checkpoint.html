@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Batch Queues &mdash; my Cloudmesh Learning documentation</title>
+    <title>Cloudmesh VM API &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -378,9 +378,27 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Batch Queues</a><ul>
-<li><a class="reference internal" href="#qstat">QStat</a></li>
-<li><a class="reference internal" href="#qinfo">QInfo</a></li>
+<li><a class="reference internal" href="#">Cloudmesh VM API</a><ul>
+<li><a class="reference internal" href="#import-cloudmesh">Import Cloudmesh</a></li>
+<li><a class="reference internal" href="#choose-a-place-to-initialize">Choose a place to initialize</a></li>
+<li><a class="reference internal" href="#get-a-username">Get a username</a></li>
+<li><a class="reference internal" href="#activate-the-user-account">Activate the user account</a></li>
+<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li><a class="reference internal" href="#vm-images">VM Images</a><ul>
+<li><a class="reference internal" href="#select-a-image">Select a image</a></li>
+<li><a class="reference internal" href="#select-a-flavor">Select a flavor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
+<li><a class="reference internal" href="#need-a-help-for-the-function">Need a help for the function?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
+<li><a class="reference internal" href="#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
+<li><a class="reference internal" href="#ssh-to-the-vm">SSH to the VM</a></li>
 </ul>
 </li>
 </ul>
@@ -398,7 +416,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../../../_sources/cloudmesh/api/.ipynb_checkpoints/_pbs-checkpoint.txt"
+  <a href="../../../_sources/cloudmesh/api/.ipynb_checkpoints/_quickstart-checkpoint.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -448,9 +466,27 @@
   </ul>
   
 <h4 class="nav-header">Page Contents</h4><ul>
-<li><a class="reference internal" href="#">Batch Queues</a><ul>
-<li><a class="reference internal" href="#qstat">QStat</a></li>
-<li><a class="reference internal" href="#qinfo">QInfo</a></li>
+<li><a class="reference internal" href="#">Cloudmesh VM API</a><ul>
+<li><a class="reference internal" href="#import-cloudmesh">Import Cloudmesh</a></li>
+<li><a class="reference internal" href="#choose-a-place-to-initialize">Choose a place to initialize</a></li>
+<li><a class="reference internal" href="#get-a-username">Get a username</a></li>
+<li><a class="reference internal" href="#activate-the-user-account">Activate the user account</a></li>
+<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li><a class="reference internal" href="#vm-images">VM Images</a><ul>
+<li><a class="reference internal" href="#select-a-image">Select a image</a></li>
+<li><a class="reference internal" href="#select-a-flavor">Select a flavor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
+<li><a class="reference internal" href="#need-a-help-for-the-function">Need a help for the function?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
+<li><a class="reference internal" href="#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
+<li><a class="reference internal" href="#ssh-to-the-vm">SSH to the VM</a></li>
 </ul>
 </li>
 </ul>
@@ -463,102 +499,195 @@
   <input type="hidden" name="area" value="default" />
 </form>
 <div id="sourcelink">
-  <a href="../../../_sources/cloudmesh/api/.ipynb_checkpoints/_pbs-checkpoint.txt"
+  <a href="../../../_sources/cloudmesh/api/.ipynb_checkpoints/_quickstart-checkpoint.txt"
      rel="nofollow">Source</a>
 </div>
         </div>
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="batch-queues">
-<h1>Batch Queues<a class="headerlink" href="#batch-queues" title="Permalink to this headline">¶</a></h1>
-<p>Cloudmesh includes a convenient interface to PBS qstat. It is using an
-ssh command to connect to the login node on which to execute qstat. The
-result of the call is available as a dict and you can print it to
-inspect it closer.</p>
-<p>In addition cloudmesh has a customization that alloes resources in
-FUturegrid to be seperated by machine. This is necessary as the login
-node on india is also in control of the queues on a number of machines
-instead of just one.</p>
-<p>The username for FutureGrid is loaded from the configuration yaml file
-in the example</p>
+  <div class="section" id="cloudmesh-vm-api">
+<h1>Cloudmesh VM API<a class="headerlink" href="#cloudmesh-vm-api" title="Permalink to this headline">¶</a></h1>
+<p>Cloudmesh supports the simple management of heterogeneous virtual
+machines from a variety of cloud farmeworks, including Openstack, Azure,
+AWS, Eucalyptus and but also EC2 complient clouds. This page shows how
+to use Cloudmesh functions in python by introducing a few examples on
+how to launch end terminate instances via the API.</p>
+<div class="section" id="import-cloudmesh">
+<h2>Import Cloudmesh<a class="headerlink" href="#import-cloudmesh" title="Permalink to this headline">¶</a></h2>
+<p>A simple import allows you to enable all features of Cloudmesh in
+Python.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="choose-a-place-to-initialize">
+<h2>Choose a place to initialize<a class="headerlink" href="#choose-a-place-to-initialize" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh provides <em>yaml</em> or <em>mongo</em> option where to load basic
+information. <em>yaml</em> relies on the yaml files in the $HOME/.cloudmesh
+directory, <em>mongo</em> retrieves information from the mongo database.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s">&quot;mongo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-a-username">
+<h2>Get a username<a class="headerlink" href="#get-a-username" title="Permalink to this headline">¶</a></h2>
+<p>In most Cloudmesh functions, you need to provide a username to tell the
+server who is going to use cloud services.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">india</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">PBS</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">)</span>
-</pre></div>
 </div>
-<div class="section" id="qstat">
-<h2>QStat<a class="headerlink" href="#qstat" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">qstat</span> <span class="o">=</span> <span class="n">india</span><span class="o">.</span><span class="n">qstat</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Next, let us list the nuber of clusters managed with the india PBS
-deployment</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">qstat</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;echo.futuregrid.org&#39;</span><span class="p">,</span>
- <span class="s">&#39;india.futuregrid.org&#39;</span><span class="p">,</span>
- <span class="s">&#39;delta.futuregrid.org&#39;</span><span class="p">,</span>
- <span class="s">&#39;bravo.futuregrid.org&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">qstat</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">u&#39;1906163.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906085.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906155.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906160.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906164.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906161.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906086.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906088.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906084.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906162.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906087.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906154.i136&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">jobname</span> <span class="ow">in</span> <span class="n">qstat</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]:</span>
-    <span class="n">job</span> <span class="o">=</span> <span class="n">qstat</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">][</span><span class="n">jobname</span><span class="p">]</span>
-    <span class="k">print</span> <span class="n">jobname</span><span class="p">,</span> <span class="n">job</span><span class="p">[</span><span class="s">&quot;job_state&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>1906163.i136 H
-1906085.i136 R
-1906155.i136 R
-1906160.i136 H
-1906164.i136 H
-1906161.i136 H
-1906086.i136 R
-1906088.i136 R
-1906084.i136 R
-1906162.i136 H
-1906087.i136 R
-1906154.i136 Q
+<div class="section" id="activate-the-user-account">
+<h2>Activate the user account<a class="headerlink" href="#activate-the-user-account" title="Permalink to this headline">¶</a></h2>
+<p>With the activation, Cloudmesh is verified to connect IaaS cloud
+services.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="qinfo">
-<h2>QInfo<a class="headerlink" href="#qinfo" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">qinfo</span> <span class="o">=</span> <span class="n">india</span><span class="o">.</span><span class="n">qinfo</span><span class="p">()</span>
+<div class="section" id="get-flavors">
+<h2>Get Flavors<a class="headerlink" href="#get-flavors" title="Permalink to this headline">¶</a></h2>
+<p>Available flavors can be listed with the following function.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">flavors</span><span class="p">(</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">clouds</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;india&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>To list the queue names, simply print the keys.
+<p>refresh function updates the data from the IaaS cloud. The cached data
+in the mongo database will be updated.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;flavors&#39;</span><span class="p">],</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;india&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">qinfo</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</div>
+<div class="section" id="start-vm">
+<h2>Start VM<a class="headerlink" href="#start-vm" title="Permalink to this headline">¶</a></h2>
+<p>A simple function <em>start</em> provides a quick launch of vm instances in
+cloudmesh.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;reserved&#39;</span><span class="p">,</span> <span class="s">&#39;systest&#39;</span><span class="p">,</span> <span class="s">&#39;batch&#39;</span><span class="p">,</span> <span class="s">&#39;b534&#39;</span><span class="p">,</span> <span class="s">&#39;long&#39;</span><span class="p">,</span> <span class="s">&#39;interactive&#39;</span><span class="p">]</span>
+</div>
+<div class="section" id="delete-vm">
+<h2>Delete VM<a class="headerlink" href="#delete-vm" title="Permalink to this headline">¶</a></h2>
+<p>If you know the id of the virtual machine that you want to destroy,
+<em>delete</em> funcion in cloudmesh simply terminate the instance. This
+example deletes the vm that we just launched above by getting the id
+from the result dict.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">server</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;server&#39;</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>More information is available when you inspect the dict.</p>
+</div>
+<div class="section" id="vm-images">
+<h2>VM Images<a class="headerlink" href="#vm-images" title="Permalink to this headline">¶</a></h2>
+<p>The functions about vm images provide an available vm images on a
+selected cloud.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">images</span><span class="p">(</span><span class="n">clouds</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;india&#39;</span><span class="p">],</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="select-a-image">
+<h3>Select a image<a class="headerlink" href="#select-a-image" title="Permalink to this headline">¶</a></h3>
+<p>If you know the name of the vm image, you can specify the vm image to
+user it later. In this example, we choose Ubuntu trusty 14.04 image.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">image</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s">&#39;india&#39;</span><span class="p">,</span><span class="s">&#39;futuregrid/ubuntu-14.04&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="select-a-flavor">
+<h3>Select a flavor<a class="headerlink" href="#select-a-flavor" title="Permalink to this headline">¶</a></h3>
+<p>Flavor is also selectable. The selected image or flavor can be used to
+set a default image or a default flavor.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">flavor</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">flavor</span><span class="p">(</span><span class="s">&#39;india&#39;</span><span class="p">,</span> <span class="s">&#39;m1.small&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="set-a-default-flavor-or-image">
+<h2>Set a default flavor or image<a class="headerlink" href="#set-a-default-flavor-or-image" title="Permalink to this headline">¶</a></h2>
+<p>Each cloud must have a default image or a default flavor to launch vm
+instances in a simple step. default function provides a way to set
+default values for an image and a flavor. In this example, we use
+<em>image</em>, <em>flavor</em> variables which created from the examples above.</p>
+<div class="section" id="need-a-help-for-the-function">
+<h3>Need a help for the function?<a class="headerlink" href="#need-a-help-for-the-function" title="Permalink to this headline">¶</a></h3>
+<p>You can execute a cell with a function name and a single question mark
+(?) to see a short description of a function. A double question marks
+(??) provide a source code with a docstring of the function. Try
+<em>mesh.default?</em> or <em>mesh.default??</em></p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">defaults</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="s">&#39;india&#39;</span><span class="p">,</span> <span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">defaults</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="s">&#39;india&#39;</span><span class="p">,</span> <span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="n">flavor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="more-options-to-launch-a-vm-instance">
+<h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>
+<p>When you create a new VM instance, you can also choose multiple options
+such as a flavor, an image, or a key associated with the instance.
+<em>start()</em> function accepts keyword parameters as a user input of these
+options. To see a brief description of the function, try <em>mesh.start?</em>
+in the IPython Notebook cell.</p>
+<p>Available options are:</p>
+<ul class="simple">
+<li>prefix: The VM instance name starts with</li>
+<li>index: The number of vm instances (auto increment)</li>
+</ul>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="s">&quot;Taylor&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;hoho&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vitual-machine-name">
+<h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
+<p>In Cloudmesh, the default VM name consists of your username and an auto
+incremented number, for example, <em>alex_1</em>. Couple of functions allow
+you to manage or modify the VM name as you wish.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Alex_37&#39;</span>
+</pre></div>
+</div>
+<p>vmname() without parameters returns the current VM name that you can
+use. If you want to use a different name, you can specify <em>prefix=&#8217;&#8216;</em>
+and <em>idx=&#8217;&#8216;</em> as parameters.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="s">&quot;Brian&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Brian_10&#39;</span>
+</pre></div>
+</div>
+<p>vmname_next() returns a VM name with an increased index number.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname_next</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Brian_11&#39;</span>
+</pre></div>
+</div>
+<p>There are some tricks to update the index number in <em>vmname()</em> function.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="s">&quot;Alex&quot;</span><span class="p">,</span> <span class="s">&quot;+5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Alex_21&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="assign-a-public-ip-address-to-the-vm">
+<h2>Assign a public IP address to the VM<a class="headerlink" href="#assign-a-public-ip-address-to-the-vm" title="Permalink to this headline">¶</a></h2>
+<p>assign_public_ip() function obtains a public IP address and assign it
+to the VM.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">ip</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">assign_public_ip</span><span class="p">(</span><span class="s">&#39;india&#39;</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ssh-to-the-vm">
+<h2>SSH to the VM<a class="headerlink" href="#ssh-to-the-vm" title="Permalink to this headline">¶</a></h2>
+<p>Once you obtained the public ip address, you can execute a test command
+via SSH to the VM.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">ssh_vm_with_command</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="s">&quot;ls -al&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>More examples follows soon, for example listing vm instances.</p>
 </div>
 </div>
 
@@ -612,9 +741,27 @@ deployment</p>
 
 
        <ul>
-<li><a class="reference internal" href="#">Batch Queues</a><ul>
-<li><a class="reference internal" href="#qstat">QStat</a></li>
-<li><a class="reference internal" href="#qinfo">QInfo</a></li>
+<li><a class="reference internal" href="#">Cloudmesh VM API</a><ul>
+<li><a class="reference internal" href="#import-cloudmesh">Import Cloudmesh</a></li>
+<li><a class="reference internal" href="#choose-a-place-to-initialize">Choose a place to initialize</a></li>
+<li><a class="reference internal" href="#get-a-username">Get a username</a></li>
+<li><a class="reference internal" href="#activate-the-user-account">Activate the user account</a></li>
+<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li><a class="reference internal" href="#vm-images">VM Images</a><ul>
+<li><a class="reference internal" href="#select-a-image">Select a image</a></li>
+<li><a class="reference internal" href="#select-a-flavor">Select a flavor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
+<li><a class="reference internal" href="#need-a-help-for-the-function">Need a help for the function?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
+<li><a class="reference internal" href="#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
+<li><a class="reference internal" href="#ssh-to-the-vm">SSH to the VM</a></li>
 </ul>
 </li>
 </ul>

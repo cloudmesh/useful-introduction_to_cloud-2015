@@ -214,7 +214,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_pbs.html#qinfo">QInfo</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api/_quickstart.html">Cloudmesh API Quick Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/_quickstart.html">Cloudmesh VM API</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#import-cloudmesh">Import Cloudmesh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_quickstart.html#get-a-username">Get a username</a></li>
@@ -542,9 +542,10 @@ $ cm-iu user create
 </div>
 <p>As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
-public key generated in your .ssh directory in the file</p>
-<blockquote>
-<div>~/.ssh/idrsa.pub</div></blockquote>
+public key generated in your .ssh directory in the file:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/.ssh/idrsa.pub
+</pre></div>
+</div>
 <p>We will place this key in the configuration file with:</p>
 <div class="highlight-python"><div class="highlight"><pre>cm key add $USER-key -yaml ~/.ssh/idrsa.pub
 </pre></div>
