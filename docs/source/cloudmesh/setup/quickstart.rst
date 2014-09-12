@@ -2,8 +2,8 @@ Quick Start on your desktop
 ============================
 
 .. warning:: this tutorial is for the new FutureSystems
-	  infrastructure. However at this time we stoll use
-	  FutureGrid. Please replace all occurences of FutureSystems
+	  infrastructure. However at this time we still use
+	  FutureGrid. Please replace all occurrences of FutureSystems
 	  with FutureGrid. 
 
 This quickstart is designed for Ubuntu 14.04 and OSX.
@@ -14,7 +14,7 @@ for cloudmesh. We assume you create one called ENV and activate it::
   virtualenv ~/ENV
   $ source ~/ENV/bin/activate
 
-Firts you need to download the code from github. We assume you have
+First you need to download the code from github. We assume you have
 git installed::
    
   $ git clone https://github.com/cloudmesh/cloudmesh.git
@@ -27,9 +27,9 @@ following commands::
   $ sudo ./install system
   $ ./install requirements
 
-.. note:: on OSX you can ommit the sudo. 
+.. note:: on OSX you can omit the sudo. 
 
-To get access to IaaS cloud platforms, you need to create loaclly a
+To get access to IaaS cloud platforms, you need to create locally a
 new user that has access to various clouds. This can be done with::
 
   $ ./install new
@@ -42,8 +42,8 @@ library path::
 
 .. note:: This step is optional but highly recommended for users.
 
-   In case you have accounts on the IU machines yo ucan also obtain
-   preconfigured cloud rc files from them. To test if you have an account
+   In case you have accounts on the IU machines you can also obtain
+   pre-configured cloud rc files from them. To test if you have an account
    and have set it up correctly, please login to the machine india::
 
      $ ssh [username]@india.futuresystems.org
@@ -97,14 +97,14 @@ To start the cloudmesh services use::
 
   $ fab server.start
 
-Now you cen test the services by visiting the Web interface at
+Now you can test the services by visiting the web interface at
 http://127.0.0.1:5000. We have a convenient shortcut for this by
 typing:: 
 
   $ fab server.view
 
 Alternatively you can use the cloudmesh shell by invoking the cm
-command ina aterminal::
+command via a terminal::
 
   $ cm
   
@@ -169,7 +169,7 @@ This script assumes that you have a key in::
 
   ~/.ssh/id_rsa.pub
 
-Which will be used to log into the VMs and the machines. THis key must
+Which will be used to log into the VMs and the machines. This key must
 be uploaded to the FutureSystems portal.
 
 ::
