@@ -210,7 +210,7 @@ will show you each of the three different interfaces including:
 The examples focus on displaying information and managing virtual
 machines.
 
-A list of all `notebooks <../index_notebooks.html>`_ is available. The list
+A list of all `notebooks <../_index_notebooks.html>`_ is available. The list
 will be expanded, and we would be happy if you contribute to them with
 your own suggestions. If you think we need to show a particular
 feature, please let us know. We wil try to add it.

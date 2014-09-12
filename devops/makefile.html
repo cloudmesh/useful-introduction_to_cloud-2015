@@ -34,7 +34,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
     <link rel="up" title="DevOps" href="index.html" />
     <link rel="next" title="Shell Scripts" href="shell.html" />
-    <link rel="prev" title="History" href="history.html" />
+    <link rel="prev" title="Historical and Functionality Perspective" href="history.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -214,6 +214,29 @@
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_pbs.html#qinfo">QInfo</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../cloudmesh/api/_vm_management.html">Cloudmesh VM API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#import-cloudmesh">Import Cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#get-a-username">Get a username</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#activate-the-user-account">Activate the user account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#get-flavors">Get Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#start-vm">Start VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#delete-vm">Delete VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#vm-images">VM Images</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#select-a-image">Select a image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#need-a-help-for-the-function">Need a help for the function?</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#vitual-machine-name">Vitual Machine Name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/api/_vm_management.html#ssh-to-the-vm">SSH to the VM</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../cloudmesh/shell/index.html">Cloudmesh Shell</a><ul>
@@ -323,16 +346,19 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">DevOps</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="history.html">History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">Historical and Functionality Perspective</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Makefile</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#practical-other-applications-of-make">Practical Other Applications of Make</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="shell.html#excersises">Excersises:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shell.html#exercises">Exercises:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpm.html">Package Managers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
@@ -369,7 +395,7 @@
               
                 
   <li>
-    <a href="history.html" title="Previous Chapter: History"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; History</span>
+    <a href="history.html" title="Previous Chapter: Historical and Functionality Perspective"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Historical and F...</span>
     </a>
   </li>
   <li>
@@ -429,7 +455,7 @@
 
 <h4 class="nav-header">Notebooks</h4>
   <ul class="nav nav-list">
-    <li> <a href="../index_notebooks.html"> List </a> </li>
+    <li> <a href="../_index_notebooks.html"> List </a> </li>
   </ul>
   
 <h4 class="nav-header">Page Contents</h4><ul>
@@ -542,7 +568,7 @@ cloud.o and create the program hello with a Makefile</li>
      <div class="col-sm-4  ">
      <h4 class="nav-header" style="color:white;">Cloudmesh</h4>
      <ul>       
-       <li> <a href="index_notebooks.html"> IPython Notebooks </a> </li>       
+       <li> <a href="../_index_notebooks.html"> IPython Notebooks </a> </li>       
        <li> <a href="http://cloudmesh.github.io/cloudmesh/"> Manual </a> </li>
        <li> <a href="https://github.com/cloudmesh/cloudmesh"> Code </a> </li>       
        <li> <a href="http://cloudmesh.github.io"> Other Packages </a> </li>       
