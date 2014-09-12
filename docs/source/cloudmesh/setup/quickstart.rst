@@ -1,7 +1,7 @@
 Quick Start on your desktop
 ============================
 
-.. warning:: this tutorial is for the new FUtureSystems
+.. warning:: this tutorial is for the new FutureSystems
 	  infrastructure. However at this time we stoll use
 	  FutureGrid. Please replace all occurences of FutureSystems
 	  with FutureGrid. 
