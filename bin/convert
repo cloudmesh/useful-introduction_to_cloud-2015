@@ -3,6 +3,7 @@
 import glob
 import sh
 from sh import sh
+from sh import mv
 import sys
 import os
 from pprint import pprint
@@ -38,7 +39,7 @@ banner("notebooks")
 
 files = find_files(root, "", ".ipynb")
 
-f = open('docs/source/_index_notebooks.rst', 'w')
+f = open('docs/source/index_notebooks.rst', 'w')
 print >> f, ".. _notebooks:"
 print >> f
 print >> f,  70 * "*"
@@ -82,4 +83,4 @@ files = find_files(root, "", ".ipynb")
 execute_all("ipython nbconvert --to=rst", files)
       
 
-    
+mv ('docs/source/index_notebooks.rst', 'docs/source/_index_notebooks.rst')
