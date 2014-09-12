@@ -38,7 +38,7 @@ the cloudmesh directory::
 The first thing you have to do is to fix some ip addresses on india
 with the command::
 
- ./bin/fix-india-routing.sh 
+  ./bin/fix-india-routing.sh 
 
 To start the installation of cloudmesh we first need to install a
 number of packages with::
@@ -60,9 +60,14 @@ Now let us install cloudmesh into this virtualenv::
 
 The last command will create a number of yaml files in a folder
 ``.cloudmesh. 
+    
+Next, install the cloudmesh server anad API with:: 
 
-Now edit the file ``~/.cloudmesh/cloudmesh.yaml` either with emacs or
-vi::
+  ./install cloudmesh
+
+Now we need to populate the cloudmesh.yaml file with your actual
+information. You can edit the file ``~/.cloudmesh/cloudmesh.yaml` 
+either with emacs or vi::
 
   emacs ~/.cloudmesh/cloudmesh.yaml
 
@@ -75,6 +80,21 @@ data. Alternatively, if you already have yaml files on for example
 india.futuresystems.org you can copy your local working yaml files from
 that machine to th virtual machine.
 
+Yet another alternative is to use the functionality provided by cloudmesh::
+
+  cm-iu user fetch
+  cm-iu user create
+
+This will fetch your cloud credentials from futuresystems and populate them 
+into the yaml config file. BEFORE you can do this, make sure you can log into 
+the futuresystems resources, e.g. india. You will need a private key present 
+in the VM that the matching public ssh key had been registered to the futuresystems. 
+Additionally you may need to excetue the following beforehand to add your 
+password protected key into the session::
+
+  eval `ssh-agent -s`
+  ssh-add
+
 Next, edit the file `~/.cloudmesh/cloudmesh_server.yaml`::
 
   vi ~/.cloudmesh/cloudmesh_server.yaml
@@ -83,21 +103,22 @@ In the attribute cloudmesh->server->webui, make the following changes::
   
   host: 0.0.0.0
   browser: False
-    
-Next, install the cloudmesh server anad API with:: 
-
-  ./install cloudmesh
-
+  
 To run cloudmesh you will need to start a number of services that you
 can do with::
 
   fab mongo.boot
-  fab mongo.boot 
 
-Please make sure to call `fab mongo.boot` twice so the tables and
-security settings are done properly. After this update the user data with::
+In rare casees you may see connection problems in the later step. In that case 
+please execute this command one again so the tables and security settings 
+are done properly.
+
+Once the mongo is initiated properly it's time to update the user data with::
 
   fab user.mongo
+  
+And then start the server::
+
   fab server.start
 
 Then the cloudmesh service should be available via::
