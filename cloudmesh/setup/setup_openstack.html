@@ -214,6 +214,29 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_pbs.html#qinfo">QInfo</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../api/_vm_management.html">Cloudmesh VM API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#import-cloudmesh">Import Cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-a-username">Get a username</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#activate-the-user-account">Activate the user account</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-flavors">Get Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#start-vm">Start VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#delete-vm">Delete VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vm-images">VM Images</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-image">Select a image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#need-a-help-for-the-function">Need a help for the function?</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vitual-machine-name">Vitual Machine Name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#ssh-to-the-vm">SSH to the VM</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a><ul>
@@ -322,6 +345,22 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/makefile.html#practical-other-applications-of-make">Practical Other Applications of Make</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/makefile.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/shell.html#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
@@ -404,6 +443,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 </ul>
 
@@ -437,13 +477,18 @@
 <h1>Setup Cloudmesh in an Openstack VM for Testing<a class="headerlink" href="#setup-cloudmesh-in-an-openstack-vm-for-testing" title="Permalink to this headline">¶</a></h1>
 <p>Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
-cloudmesh in a VM running Ubuntu 14.01.1 on FutureGrid Sierra
-Openstack. If you use a different cloud, you can adapt the
-instructions accordingly.</p>
+cloudmesh in a VM running Ubuntu 14.04 on FutureSystems India
+Openstack.</p>
+<p>We assume that you have set up an account on FutureSystems and are
+able to log into the machine with the name india.</p>
+<p>If you use a different cloud, you can adapt the instructions accordingly.</p>
 <p>First, you have to start a VM on the cloud and assign it a public
-IP. This can be done in multiple ways, using the commandline, vagrant,
-or the horizon GUI. Let us assume you have set it up via the GUI. Next
-you have to update the operating system while logging into the VM:</p>
+IP.</p>
+<p>This can be done in multiple ways, using the commandline, vagrant, or
+the horizon GUI. Let us assume you have set it up via the horizon
+GUI. This is described in the folowing document:</p>
+<p>Next you have to update the operating system while logging into
+the VM:</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
 sudo apt-get install git
 sudo apt-get install emacs
@@ -454,6 +499,11 @@ the cloudmesh directory:</p>
 <div class="highlight-python"><div class="highlight"><pre>cd ~
 git clone https://github.com/cloudmesh/cloudmesh.git
 cd cloudmesh
+</pre></div>
+</div>
+<p>The first thing you have to do is to fix some ip addresses on india
+with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>./bin/fix-india-routing.sh
 </pre></div>
 </div>
 <p>To start the installation of cloudmesh we first need to install a
@@ -476,13 +526,6 @@ source ~/ENV/bin/activate
 </div>
 <p>The last command will create a number of yaml files in a folder
 <a href="#id1"><span class="problematic" id="id2">``</span></a>.cloudmesh.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p>Users: currently the code still installs into .futuregrid please
-change the name for .cloudmesh to .futuregrid for now.</p>
-<p class="last">Developers: lets simply change the cloudmesh code to use
-.cloudmesh instead of .futuregrid</p>
-</div>
 <p>Now edit the file <a href="#id3"><span class="problematic" id="id4">``</span></a>~/.cloudmesh/cloudmesh.yaml` either with emacs or
 vi:</p>
 <div class="highlight-python"><div class="highlight"><pre>emacs ~/.cloudmesh/cloudmesh.yaml
@@ -494,10 +537,10 @@ vi:</p>
 </div>
 <p>In this file, update your user profile, name, project
 data. Alternatively, if you already have yaml files on for example
-india.yuturegrid.org you can copy your local working yaml files from
+india.futuresystems.org you can copy your local working yaml files from
 that machine to th virtual machine.</p>
-<p>Next, edit the file <cite>~/.futuregrid/cloudmesh_server.yaml</cite>:</p>
-<div class="highlight-python"><div class="highlight"><pre>vi ~/.futuregrid/cloudmesh_server.yaml
+<p>Next, edit the file <cite>~/.cloudmesh/cloudmesh_server.yaml</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>vi ~/.cloudmesh/cloudmesh_server.yaml
 </pre></div>
 </div>
 <p>In the attribute cloudmesh-&gt;server-&gt;webui, make the following changes:</p>
@@ -603,6 +646,7 @@ provided at</p>
 <li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 </ul>
 
