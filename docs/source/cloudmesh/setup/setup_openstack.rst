@@ -12,8 +12,7 @@ able to log into the machine with the name india.
 
 If you use a different cloud, you can adapt the instructions accordingly.
 
-First, you have to start a VM on the cloud and assign it a public
-IP. 
+First, you have to start a VM on the cloud and assign it a public IP. 
 
 This can be done in multiple ways, using the commandline, vagrant, or
 the horizon GUI. Let us assume you have set it up via the horizon
