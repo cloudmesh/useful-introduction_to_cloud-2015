@@ -11,18 +11,18 @@ Notebooks
    :header: RST, ipython, File
    :widths: 30,30, 30
 
-   `_vm_sh <sh/_vm_sh.html>`__, `_vm_sh.ipynb <http://localhost:8889/notebooks/docs/source/sh/_vm_sh.ipynb>`__, sh/_vm_sh.ipynb
+   `_hello <cloudmesh/api/_hello.html>`__, `_hello.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_hello.ipynb>`__, cloudmesh/api/_hello.ipynb
+   `_load <cloudmesh/api/_load.html>`__, `_load.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_load.ipynb>`__, cloudmesh/api/_load.ipynb
+   `_mesh <cloudmesh/api/_mesh.html>`__, `_mesh.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_mesh.ipynb>`__, cloudmesh/api/_mesh.ipynb
+   `_pbs <cloudmesh/api/_pbs.html>`__, `_pbs.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__, cloudmesh/api/_pbs.ipynb
+   `_uuid <cloudmesh/api/_uuid.html>`__, `_uuid.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_uuid.ipynb>`__, cloudmesh/api/_uuid.ipynb
+   `_vm_management <cloudmesh/api/_vm_management.html>`__, `_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_vm_management.ipynb>`__, cloudmesh/api/_vm_management.ipynb
+   `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
+   `_introduction <cloudmesh/shell/_introduction.html>`__, `_introduction.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_introduction.ipynb>`__, cloudmesh/shell/_introduction.ipynb
+   `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
+   `_overview <cloudmesh/shell/_overview.html>`__, `_overview.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_overview.ipynb>`__, cloudmesh/shell/_overview.ipynb
+   `_ipython <ipython/_ipython.html>`__, `_ipython.ipynb <http://localhost:8889/notebooks/docs/source/ipython/_ipython.ipynb>`__, ipython/_ipython.ipynb
+   `_mongo_cm <mongo/_mongo_cm.html>`__, `_mongo_cm.ipynb <http://localhost:8889/notebooks/docs/source/mongo/_mongo_cm.ipynb>`__, mongo/_mongo_cm.ipynb
    `_cm_shell_boot <proposed/_cm_shell_boot.html>`__, `_cm_shell_boot.ipynb <http://localhost:8889/notebooks/docs/source/proposed/_cm_shell_boot.ipynb>`__, proposed/_cm_shell_boot.ipynb
    `_cm_shell_notes <proposed/_cm_shell_notes.html>`__, `_cm_shell_notes.ipynb <http://localhost:8889/notebooks/docs/source/proposed/_cm_shell_notes.ipynb>`__, proposed/_cm_shell_notes.ipynb
-   `_ipython <ipython/_ipython.html>`__, `_ipython.ipynb <http://localhost:8889/notebooks/docs/source/ipython/_ipython.ipynb>`__, ipython/_ipython.ipynb
-   `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
-   `_vm_management <cloudmesh/api/_vm_management.html>`__, `_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_vm_management.ipynb>`__, cloudmesh/api/_vm_management.ipynb
-   `_uuid <cloudmesh/api/_uuid.html>`__, `_uuid.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_uuid.ipynb>`__, cloudmesh/api/_uuid.ipynb
-   `_hello <cloudmesh/api/_hello.html>`__, `_hello.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_hello.ipynb>`__, cloudmesh/api/_hello.ipynb
-   `_pbs <cloudmesh/api/_pbs.html>`__, `_pbs.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__, cloudmesh/api/_pbs.ipynb
-   `_mesh <cloudmesh/api/_mesh.html>`__, `_mesh.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_mesh.ipynb>`__, cloudmesh/api/_mesh.ipynb
-   `_load <cloudmesh/api/_load.html>`__, `_load.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/api/_load.ipynb>`__, cloudmesh/api/_load.ipynb
-   `_introduction <cloudmesh/shell/_introduction.html>`__, `_introduction.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_introduction.ipynb>`__, cloudmesh/shell/_introduction.ipynb
-   `_overview <cloudmesh/shell/_overview.html>`__, `_overview.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_overview.ipynb>`__, cloudmesh/shell/_overview.ipynb
-   `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
-   `_mongo_cm <mongo/_mongo_cm.html>`__, `_mongo_cm.ipynb <http://localhost:8889/notebooks/docs/source/mongo/_mongo_cm.ipynb>`__, mongo/_mongo_cm.ipynb
+   `_vm_sh <sh/_vm_sh.html>`__, `_vm_sh.ipynb <http://localhost:8889/notebooks/docs/source/sh/_vm_sh.ipynb>`__, sh/_vm_sh.ipynb
