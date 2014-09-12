@@ -3,14 +3,26 @@ Setup Cloudmesh in an Openstack VM for Testing
 
 Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
-cloudmesh in a VM running Ubuntu 14.01.1 on FutureGrid Sierra
-Openstack. If you use a different cloud, you can adapt the
-instructions accordingly.
+cloudmesh in a VM running Ubuntu 14.04 on FutureSystems India
+Openstack. 
+
+We assume that you have set up an account on FutureSystems and are
+able to log into the machine with the name india.
+
+
+If you use a different cloud, you can adapt the instructions accordingly.
 
 First, you have to start a VM on the cloud and assign it a public
-IP. This can be done in multiple ways, using the commandline, vagrant,
-or the horizon GUI. Let us assume you have set it up via the GUI. Next
-you have to update the operating system while logging into the VM::
+IP. 
+
+This can be done in multiple ways, using the commandline, vagrant, or
+the horizon GUI. Let us assume you have set it up via the horizon
+GUI. This is described in the folowing document:
+
+.. todo: describe how we do this
+
+Next you have to update the operating system while logging into
+the VM::
 
   sudo apt-get update
   sudo apt-get install git
@@ -22,6 +34,11 @@ the cloudmesh directory::
   cd ~
   git clone https://github.com/cloudmesh/cloudmesh.git
   cd cloudmesh
+
+The first thing you have to do is to fix some ip addresses on india
+with the command::
+
+ ./bin/fix-india-routing.sh 
 
 To start the installation of cloudmesh we first need to install a
 number of packages with::
@@ -44,12 +61,6 @@ Now let us install cloudmesh into this virtualenv::
 The last command will create a number of yaml files in a folder
 ``.cloudmesh. 
 
-.. todo::  Users: currently the code still installs into .futuregrid please
-           change the name for .cloudmesh to .futuregrid for now.
-
-           Developers: lets simply change the cloudmesh code to use
-	   .cloudmesh instead of .futuregrid
-
 Now edit the file ``~/.cloudmesh/cloudmesh.yaml` either with emacs or
 vi::
 
@@ -61,12 +72,12 @@ or::
 
 In this file, update your user profile, name, project
 data. Alternatively, if you already have yaml files on for example
-india.yuturegrid.org you can copy your local working yaml files from
+india.futuresystems.org you can copy your local working yaml files from
 that machine to th virtual machine.
 
-Next, edit the file `~/.futuregrid/cloudmesh_server.yaml`::
+Next, edit the file `~/.cloudmesh/cloudmesh_server.yaml`::
 
-  vi ~/.futuregrid/cloudmesh_server.yaml
+  vi ~/.cloudmesh/cloudmesh_server.yaml
 
 In the attribute cloudmesh->server->webui, make the following changes::
   
