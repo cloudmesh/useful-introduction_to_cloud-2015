@@ -1,26 +1,41 @@
-Setup Cloudmesh in an Openstack VM for Testing
+Quickstart for an Openstack VM 
 ======================================================================
+
+.. note:: This setup is primarily used for testing, but it can also be
+	  useful for classes using OpenStack, when the call
+	  participants have access to an OpenStack cloud. 
 
 Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
-cloudmesh in a VM running Ubuntu 14.04 on FutureSystems India
-Openstack. The instructions have been tested on a small instance 
+cloudmesh in a VM running Ubuntu 14.04 on FutureSystems `India`
+OpenStack. The instructions have been tested on a small instance 
 and the whole process could take about half an hour before you 
 can access the running server.
+
+Requirements
+----------------------------------------------------------------------
 
 We assume that you have set up an account on FutureSystems and are
 able to log into the machine with the name india.
 
 
-If you use a different cloud, you can adapt the instructions accordingly.
+If you use a different cloud, you can adapt the instructions
+accordingly.
+
+Starting the VM
+----------------------------------------------------------------------
 
 First, you have to start a VM on the cloud and assign it a public IP. 
 
-This can be done in multiple ways, using the commandline, vagrant, or
+This can be done in multiple ways, using the command line, vagrant, or
 the horizon GUI. Let us assume you have set it up via the horizon
-GUI. This is described in the folowing document:
+GUI. This is described in the following document:
 
 .. todo: describe how we do this
+
+
+Preparation of the VM
+----------------------------------------------------------------------
 
 Next you have to update the operating system while logging into
 the VM::
@@ -41,6 +56,9 @@ with the command::
 
   ./bin/fix-india-routing.sh 
 
+Instalation
+----------------------------------------------------------------------
+
 To start the installation of cloudmesh we first need to install a
 number of packages with::
 
@@ -59,8 +77,9 @@ Now let us install cloudmesh into this virtualenv::
   ./install requirements
   ./install new
 
-The last command will create a number of yaml files in a folder
-``.cloudmesh. 
+The last command will create a number of yaml files in a folder::
+
+  ~.cloudmesh
     
 Next, install the cloudmesh server anad API with:: 
 
@@ -78,7 +97,7 @@ or::
 
 In this file, update your user profile, name, project
 data. Alternatively, if you already have yaml files on for example
-india.futuresystems.org you can copy your local working yaml files from
+india.FutureSystems.org you can copy your local working yaml files from
 that machine to th virtual machine.
 
 Yet another alternative is to use the functionality provided by cloudmesh::
@@ -86,10 +105,10 @@ Yet another alternative is to use the functionality provided by cloudmesh::
   cm-iu user fetch
   cm-iu user create
 
-This will fetch your cloud credentials from futuresystems and populate them 
+This will fetch your cloud credentials from FutureSystems and populate them 
 into the yaml config file. BEFORE you can do this, make sure you can log into 
-the futuresystems resources, e.g. india. You will need a private key present 
-in the VM that the matching public ssh key had been registered to the futuresystems. 
+the FutureSystems resources, e.g. india. You will need a private key present 
+in the VM that the matching public ssh key had been registered to the FutureSystems. 
 Additionally you may need to excetue the following beforehand to add your 
 password protected key into the session::
 
@@ -101,7 +120,7 @@ can do with::
 
   fab mongo.boot
 
-In some casees you may see connection problems in the later step. In that case 
+In some cases you may see connection problems in the later step. In that case 
 please execute this command one again so the tables and security settings 
 are done properly.
 
