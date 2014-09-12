@@ -4,7 +4,9 @@ Setup Cloudmesh in an Openstack VM for Testing
 Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
 cloudmesh in a VM running Ubuntu 14.04 on FutureSystems India
-Openstack. 
+Openstack. The instructions have been tested on a small instance 
+and the whole process could take about half an hour before you 
+can access the running server.
 
 We assume that you have set up an account on FutureSystems and are
 able to log into the machine with the name india.
