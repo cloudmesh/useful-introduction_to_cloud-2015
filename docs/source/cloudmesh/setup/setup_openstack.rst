@@ -95,29 +95,25 @@ password protected key into the session::
 
   eval `ssh-agent -s`
   ssh-add
-
-Next, edit the file `~/.cloudmesh/cloudmesh_server.yaml`::
-
-  vi ~/.cloudmesh/cloudmesh_server.yaml
-
-In the attribute cloudmesh->server->webui, make the following changes::
-  
-  host: 0.0.0.0
-  browser: False
   
 To run cloudmesh you will need to start a number of services that you
 can do with::
 
   fab mongo.boot
 
-In rare casees you may see connection problems in the later step. In that case 
+In some casees you may see connection problems in the later step. In that case 
 please execute this command one again so the tables and security settings 
 are done properly.
 
 Once the mongo is initiated properly it's time to update the user data with::
 
   fab user.mongo
+
+Before you start the server, you need to execute this so the server
+would be accessible from outside::
   
+  fab india.configure
+    
 And then start the server::
 
   fab server.start
@@ -126,31 +122,6 @@ Then the cloudmesh service should be available via::
 
    http://PUBLIC_IP_OF_THE_VM:5000
 
-To access the server, you will also need to first open the port 5000
-for the VM. By default, you will add the port 5000 to the 'default'
-security group. This only need to be done once for a project. 
-
-
-Essentially you can do this from horizon or nova CLI. We can do this
-using cloudmesh too and use this method (We will simplify this step at
-a later phase in the project, but for now, you can do this from
-command line).
-
-First identify the index of the cloud in which the VM is
-running from the cloudmesh.yaml. The index is the sequential number
-of the cloud from cloudmesh->active list, counting starting from 0.
-
-Then make proper change of the file test_compute.py under tests. In 
-the definition of the setup method in the above mentioned file, 
-modify the line::
-
-  self.name = self.configuration.active()[IDX]
-
-with proper IDX. And then run from within the tests directory::
-
-  nosetests test_compute.py:Test.test_20_create_secgroup
-
-This will open the port 5000 so it is accessible from outside.
 
 NOTE:
 
@@ -163,7 +134,7 @@ NOTE:
    after using.
 
 #. As the server is not secured by HTTPS, remember not to use your
-   real passwords that you use on other systems to login.
+   favorite password when you are asked to set a password for portal login.
 
 #. This method is only intended for development and testing, and not
    recommended for real production use.
