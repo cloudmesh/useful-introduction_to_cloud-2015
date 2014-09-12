@@ -526,8 +526,13 @@ source ~/ENV/bin/activate
 </div>
 <p>The last command will create a number of yaml files in a folder
 <a href="#id1"><span class="problematic" id="id2">``</span></a>.cloudmesh.</p>
-<p>Now edit the file <a href="#id3"><span class="problematic" id="id4">``</span></a>~/.cloudmesh/cloudmesh.yaml` either with emacs or
-vi:</p>
+<p>Next, install the cloudmesh server anad API with:</p>
+<div class="highlight-python"><div class="highlight"><pre>./install cloudmesh
+</pre></div>
+</div>
+<p>Now we need to populate the cloudmesh.yaml file with your actual
+information. You can edit the file <a href="#id3"><span class="problematic" id="id4">``</span></a>~/.cloudmesh/cloudmesh.yaml`
+either with emacs or vi:</p>
 <div class="highlight-python"><div class="highlight"><pre>emacs ~/.cloudmesh/cloudmesh.yaml
 </pre></div>
 </div>
@@ -539,6 +544,21 @@ vi:</p>
 data. Alternatively, if you already have yaml files on for example
 india.futuresystems.org you can copy your local working yaml files from
 that machine to th virtual machine.</p>
+<p>Yet another alternative is to use the functionality provided by cloudmesh:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm-iu user fetch
+cm-iu user create
+</pre></div>
+</div>
+<p>This will fetch your cloud credentials from futuresystems and populate them
+into the yaml config file. BEFORE you can do this, make sure you can log into
+the futuresystems resources, e.g. india. You will need a private key present
+in the VM that the matching public ssh key had been registered to the futuresystems.
+Additionally you may need to excetue the following beforehand to add your
+password protected key into the session:</p>
+<div class="highlight-python"><div class="highlight"><pre>eval `ssh-agent -s`
+ssh-add
+</pre></div>
+</div>
 <p>Next, edit the file <cite>~/.cloudmesh/cloudmesh_server.yaml</cite>:</p>
 <div class="highlight-python"><div class="highlight"><pre>vi ~/.cloudmesh/cloudmesh_server.yaml
 </pre></div>
@@ -548,20 +568,20 @@ that machine to th virtual machine.</p>
 browser: False
 </pre></div>
 </div>
-<p>Next, install the cloudmesh server anad API with:</p>
-<div class="highlight-python"><div class="highlight"><pre>./install cloudmesh
-</pre></div>
-</div>
 <p>To run cloudmesh you will need to start a number of services that you
 can do with:</p>
 <div class="highlight-python"><div class="highlight"><pre>fab mongo.boot
-fab mongo.boot
 </pre></div>
 </div>
-<p>Please make sure to call <cite>fab mongo.boot</cite> twice so the tables and
-security settings are done properly. After this update the user data with:</p>
+<p>In rare casees you may see connection problems in the later step. In that case
+please execute this command one again so the tables and security settings
+are done properly.</p>
+<p>Once the mongo is initiated properly it&#8217;s time to update the user data with:</p>
 <div class="highlight-python"><div class="highlight"><pre>fab user.mongo
-fab server.start
+</pre></div>
+</div>
+<p>And then start the server:</p>
+<div class="highlight-python"><div class="highlight"><pre>fab server.start
 </pre></div>
 </div>
 <p>Then the cloudmesh service should be available via:</p>
