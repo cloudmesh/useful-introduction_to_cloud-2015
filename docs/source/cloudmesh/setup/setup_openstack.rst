@@ -90,7 +90,7 @@ into the yaml config file. BEFORE you can do this, make sure you can log into
 the futuresystems resources, e.g. india. You will need a private key present 
 in the VM that the matching public ssh key had been registered to the futuresystems. 
 Additionally you may need to excetue the following beforehand to add your 
-password protected key into the session:
+password protected key into the session::
 
   eval `ssh-agent -s`
   ssh-add
