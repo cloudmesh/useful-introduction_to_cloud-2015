@@ -38,7 +38,7 @@ banner("notebooks")
 
 files = find_files(root, "", ".ipynb")
 
-f = open('docs/source/index_notebooks.rst', 'w')
+f = open('docs/source/_index_notebooks.rst', 'w')
 print >> f, ".. _notebooks:"
 print >> f
 print >> f,  70 * "*"
