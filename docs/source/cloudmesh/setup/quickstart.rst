@@ -61,8 +61,8 @@ library path::
 
   Other resources may require you also to manage keys.
 
-At this time We like you to edit some information about yourself in
-the cloudmesh.yaml file. Chhose your favorite editor::
+At this time we like you to edit some information about yourself in
+the cloudmesh.yaml file. Choose your favorite editor::
 
   $ emacs ~/.cloudmesh/cloudmesh.yaml
 
