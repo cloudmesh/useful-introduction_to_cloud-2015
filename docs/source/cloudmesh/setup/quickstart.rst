@@ -59,6 +59,12 @@ library path::
      $ cm-iu user fetch
      $ cm-iu user create
 
+   You may also need to specify a project id as follows::
+   
+     $ cm project default [project id]
+     
+   *[project id]* is your default project id e.g. fg82
+   
   Other resources may require you also to manage keys.
 
 At this time we like you to edit some information about yourself in
@@ -69,10 +75,12 @@ the cloudmesh.yaml file. Choose your favorite editor::
 Change the values TBD that you find here with values that describe
 you. 
 
-.. todo:: Hyungro: cm "default username=username <portalname>"
+.. .. todo:: Hyungro: cm "default username=username <portalname>"
 
-.. todo:: Hyungro: cm "project fg101"  101 is just a placeholder use your real
+.. .. todo:: Hyungro: cm "project fg101"  101 is just a placeholder use your real
 	  project id
+	  
+	  
 
 
 As you will need at one point to login into virtual machines you will
