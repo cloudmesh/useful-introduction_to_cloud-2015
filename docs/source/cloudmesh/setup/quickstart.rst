@@ -192,7 +192,6 @@ be uploaded to the FutureSystems portal.
   ./install cloudmesh
   cm-iu user fetch
   cm-iu user create
-  ./install cloudmesh
   fab mongo.reset
   fab server.start
   cm cloud list
