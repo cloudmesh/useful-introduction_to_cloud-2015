@@ -29,9 +29,71 @@ First, you have to start a VM on the cloud and assign it a public IP.
 
 This can be done in multiple ways, using the command line, vagrant, or
 the horizon GUI. Let us assume you have set it up via the horizon
-GUI. This is described in the following document:
+GUI or the novaclient commandline. This is described in the following document:
 
-.. todo: describe how we do this
+More information about horizon on FutureSystems is available at `our
+manual page <../../iaas/openstack.html#horizon-gui.html>`_.
+
+We summarize the following steps, however like to point out that the
+best source for this is our previously pointed out document.::
+
+  ssh <portalname>@india.futuresystems.org
+ 
+  india$ source ~/.futuregrid/openstack_havana/novarc
+  india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+
+  india$ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+  india$ nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
+  india$ nova secgroup-add-rule default tcp 8888 8888 0.0.0.0/0
+  india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
+  india$ nova secgroup-list-rules default
+
+  india$ nova boot --flavor m1.small --image "futuregrid/ubuntu-14.04" --key_name $USER-india-key $USER-001
+
+
+  india$ nova floating-ip-create
+
+  india$ export MYIP=`nova floating-ip-list |fgrep "None" | cut -d '|' -f2`
+  india$ nova add-floating-ip $USER-001 $MYIP
+  india$ nova show $USER-001
+
+You should see a table similare like this::
+
+  +--------------------------------------+----------------------------------------------------------------+
+  | Property                             | Value                                                          |
+  +--------------------------------------+----------------------------------------------------------------+
+  | status                               | ACTIVE                                                         |
+  | updated                              | 2014-09-12T19:27:30Z                                           |
+  | OS-EXT-STS:task_state                | None                                                           |
+  | private network                      | 168.39.1.34, 192.165.159.40                                    |
+  | key_name                             | USER-key                                                       |
+  | image                                | futuregrid/ubuntu-14.04 (02cf1545-dd83-493a-986e-583d53ee3728) |
+  | hostId                               | hsakjfhsdlkjfhsdlkjhflskjdhflkjsdhflkjshfpoeuiyrewuohfkljsdkjk |
+  | OS-EXT-STS:vm_state                  | active                                                         |
+  | OS-SRV-USG:launched_at               | 2014-09-12T19:27:30.000000                                     |
+  | flavor                               | m1.small (2)                                                   |
+  | id                                   | 7e458cbd-d37d-443a-aa76-adc7fcad52ea                           |
+  | security_groups                      | [{u'name': u'default'}]                                        |
+  | OS-SRV-USG:terminated_at             | None                                                           |
+  | user_id                              | sjhkjsahflkjashfkljshfkdjsahfkjh                               |
+  | name                                 | USER-001                                                       |
+  | created                              | 2014-09-12T19:27:23Z                                           |
+  | tenant_id                            | abcd01234hfslkjhfdskjfhkjdshfkjs                               |
+  | OS-DCF:diskConfig                    | MANUAL                                                         |
+  | metadata                             | {}                                                             |
+  | os-extended-volumes:volumes_attached | []                                                             |
+  | accessIPv4                           |                                                                |
+  | accessIPv6                           |                                                                |
+  | progress                             | 0                                                              |
+  | OS-EXT-STS:power_state               | 1                                                              |
+  | OS-EXT-AZ:availability_zone          | nova                                                           |
+  | config_drive                         |                                                                |
+  +--------------------------------------+----------------------------------------------------------------+
+
+Looking at the status you will see if the VM is in ACTIVE state. Once this is the case you can login to it with::
+
+  india$ ssh -i ~/.ssh/id_rsa.pub ubuntu@$MYIP
+
 
 
 Preparation of the VM
@@ -42,7 +104,6 @@ the VM::
 
   sudo apt-get update
   sudo apt-get install git
-  sudo apt-get install emacs  
 
 To obtain cloudmesh you need to clone it from git hub and change to
 the cloudmesh directory::
@@ -162,5 +223,18 @@ More information about more sophisticated install instructions are
 provided at 
 
 * http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements
+
+
+Install IPython
+----------------------------------------------------------------------
+
+::
+  
+   fab ipython.create
+
+
+::
+  
+   fab ipython.start
 
 
