@@ -189,8 +189,9 @@ be uploaded to the FutureSystems portal.
   sudo ./install system
   ./install requirements
   ./install new
-  ./cm-iu rc fetch
-  ./cm-iu rc fill
+  ./install cloudmesh
+  cm-iu user fetch
+  cm-iu user create
   ./install cloudmesh
   fab mongo.reset
   fab server.start
