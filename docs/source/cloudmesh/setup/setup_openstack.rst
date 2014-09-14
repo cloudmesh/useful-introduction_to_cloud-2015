@@ -29,7 +29,7 @@ First, you have to start a VM on the cloud and assign it a public IP.
 
 This can be done in multiple ways, using the command line, vagrant, or
 the horizon GUI. Let us assume you have set it up via the horizon
-GUI or the novaclient commandline. This is described in the following document:
+GUI or the novaclient command line. This is described in the following document:
 
 More information about horizon on FutureSystems is available at `our
 manual page <../../iaas/openstack.html#horizon-gui.html>`_.
@@ -117,7 +117,7 @@ with the command::
 
   ./bin/fix-india-routing.sh 
 
-Instalation
+Installation
 ----------------------------------------------------------------------
 
 To start the installation of cloudmesh we first need to install a
@@ -159,7 +159,7 @@ or::
 In this file, update your user profile, name, project
 data. Alternatively, if you already have yaml files on for example
 india.FutureSystems.org you can copy your local working yaml files from
-that machine to th virtual machine.
+that machine to the virtual machine.
 
 Yet another alternative is to use the functionality provided by cloudmesh::
 
@@ -225,16 +225,24 @@ provided at
 * http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements
 
 
-Install IPython
+Install IPython Server
 ----------------------------------------------------------------------
 
-::
-  
-   fab ipython.create
+The server will run on port 8888 of your vm. It will install in your
+environment a notebook directory in ~/notebook. Here you can place
+your ipython notebooks. initially this directory will be empty.
 
+You create the notebook server with::
 
-::
-  
-   fab ipython.start
+   cm notebook create
 
+You start the notebook server with ::
 
+   cm notebook start
+
+You can terminate the notebook server with::
+
+   cm notebook kill
+
+When terminating, make sure you saved your notebooks. You can restart
+the server in case you need to run it again.
