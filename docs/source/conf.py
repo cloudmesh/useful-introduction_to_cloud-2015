@@ -75,7 +75,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'my Cloudmesh'
-copyright = u'2013, Gregor von Laszewski for Cloudmesh'
+copyright = u'2013, myCloudmesh.org/learning'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -300,7 +300,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'myCloudmesh.tex', u'Introduction to Cloud Computing',
-   u'Gregor von Laszewski', 'manual'),
+   u'Editor: Gregor von Laszewski', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -364,10 +364,10 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'my Cloudmesh'
-epub_author = u'Gregor von Laszewski'
+epub_title = u'Introduction to Cloud Computing'
+epub_author = u'Editor: Gregor von Laszewski'
 epub_publisher = u'Gregor von Laszewski'
-epub_copyright = u'2013, myCLoudmesh.org'
+epub_copyright = u'2013, myCloudmesh.org'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
