@@ -13,6 +13,7 @@ Contents
 
    about
    contact
+   accounts/index
    shell
    ipython/index
    parallel
