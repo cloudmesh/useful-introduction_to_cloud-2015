@@ -8,5 +8,6 @@ Cloudmesh cm
 
    _cm
    _cm-project
+   _cm-debug
    ipython
    _ipython
