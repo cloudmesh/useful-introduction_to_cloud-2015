@@ -10,9 +10,19 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-
+    
 import sys, os
 import sphinx_bootstrap_theme
+
+
+
+try:
+    theme = os.environ['SPHINX_THEME']
+except:
+    print "please set the them environment var"
+    print "   SPHINX_THEME bootstrap"
+    sys.exit()
+
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -117,59 +127,64 @@ pygments_style = 'sphinx'
 # -- Options for HTML output ---------------------------------------------------
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'bootstrap'
 
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#html_theme_options = {}
-# Theme options are theme-specific and customize the look and feel of a
-# theme further.
-html_theme_options = {
-    # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "my Cloudmesh",
+if os.environ['SPHINX_THEME'] == 'bootstrap':
+    html_theme = 'bootstrap'
 
-    # Tab name for entire site. (Default: "Site")
-    'navbar_site_name': "Site",
+    # Theme options are theme-specific and customize the look and feel
+    # of a theme further.  For a list of options available for each
+    # theme, see the documentation.
 
-    # Global TOC depth for "site" navbar tab. (Default: 1)
-    # Switching to -1 shows all levels.
-    'globaltoc_depth': -1,
-
-    # Include hidden TOCs in Site navbar?
-    #
-    # Note: If this is "false", you cannot have mixed ``:hidden:`` and
-    # non-hidden ``toctree`` directives in the same page, or else the build
-    # will break.
-    #
-    # Values: "true" (default) or "false"
-    'globaltoc_includehidden': "true",
-
-    # HTML navbar class (Default: "navbar") to attach to <div> element.
-    # For black navbar, do "navbar navbar-inverse"
-    #'navbar_class': "navbar",
-    'navbar_class': "navbar navbar-inverse",
+    #html_theme_ptions = {}
     
-    # Fix navigation bar to top of page?
-    # Values: "true" (default) or "false"
-    'navbar_fixed_top': "true",
+    # Theme options are theme-specific and customize the look and feel
+    # of a theme further.
 
-    # Location of link to source.
-    # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "nav",
+    html_theme_options = {
+        # Navigation bar title. (Default: ``project`` value)
+        'navbar_title': "my Cloudmesh",
 
-    # Bootswatch (http://bootswatch.com/) theme.
-    #
-    # Options are nothing with "" (default) or the name of a valid theme
-    # such as "amelia" or "cosmo".
-    #
-    # Note that this is served off CDN, so won't be available offline.
-    #'bootswatch_theme': "cosmo",
-}
+        # Tab name for entire site. (Default: "Site")
+        'navbar_site_name': "Site",
 
-# Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+        # Global TOC depth for "site" navbar tab. (Default: 1)
+        # Switching to -1 shows all levels.
+        'globaltoc_depth': -1,
+
+        # Include hidden TOCs in Site navbar?
+        #
+        # Note: If this is "false", you cannot have mixed ``:hidden:`` and
+        # non-hidden ``toctree`` directives in the same page, or else the build
+        # will break.
+        #
+        # Values: "true" (default) or "false"
+        'globaltoc_includehidden': "true",
+
+        # HTML navbar class (Default: "navbar") to attach to <div> element.
+        # For black navbar, do "navbar navbar-inverse"
+        #'navbar_class': "navbar",
+        'navbar_class': "navbar navbar-inverse",
+
+        # Fix navigation bar to top of page?
+        # Values: "true" (default) or "false"
+        'navbar_fixed_top': "true",
+
+        # Location of link to source.
+        # Options are "nav" (default), "footer" or anything else to exclude.
+        'source_link_position': "nav",
+
+        # Bootswatch (http://bootswatch.com/) theme.
+        #
+        # Options are nothing with "" (default) or the name of a valid theme
+        # such as "amelia" or "cosmo".
+        #
+        # Note that this is served off CDN, so won't be available offline.
+        #'bootswatch_theme': "cosmo",
+    }
+
+    # Add any paths that contain custom themes here, relative to this directory.
+    #html_theme_path = []
+    html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -202,20 +217,37 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
-html_sidebars = {
-   '**': ['menu.html',
-             'localtoc.html',
-             #'relations.html',
-             'searchbox.html',
-             'sourcelink.html',
-            ],
-   'index': ['menu.html',
-             'localtoc.html',
-             #'relations.html',
-             'searchbox.html',
-             'sourcelink.html',
-            ],
-}
+
+if os.environ['SPHINX_THEME'] == 'bootstrap':
+    html_sidebars = {
+       '**': ['menu.html',
+                 'localtoc.html',
+                 #'relations.html',
+                 'searchbox.html',
+                 'sourcelink.html',
+                ],
+       'index': ['menu.html',
+                 'localtoc.html',
+                 #'relations.html',
+                 'searchbox.html',
+                 'sourcelink.html',
+                ],
+    }
+else:
+    html_sidebars = {
+       '**': ['menu.html',
+                 'localtoc.html',
+                 'relations.html',
+                 'searchbox.html',
+                 'sourcelink.html',
+                ],
+       'index': ['menu.html',
+                 'localtoc.html',
+                 'relations.html',
+                 'searchbox.html',
+                 'sourcelink.html',
+                ],
+    }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -267,8 +299,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Cloudmesh.tex', u'Cloudmesh Documentation',
-   u'Gregor von Laszewski for FutureGrid', 'manual'),
+  ('index', 'myCloudmesh.tex', u'Introduction to Cloud Computing',
+   u'Gregor von Laszewski', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -280,10 +312,10 @@ latex_documents = [
 #latex_use_parts = False
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+#latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
-#latex_show_urls = False
+#latex_show_urls = True
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
@@ -297,8 +329,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'cloudmesh', u'Cloudmesh Documentation',
-     [u'Gregor von Laszewski for FutureGrid'], 1)
+    ('index', 'cloudmesh', u'Cloudmesh',
+     [u'Gregor von Laszewski'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -311,8 +343,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Cloudmesh', u'Cloudmesh Documentation',
-   u'Gregor von Laszewski for FutureGrid', 'Cloudmesh', 'One line description of project.',
+  ('index', 'Cloudmesh', u'Cloudmesh',
+   u'Gregor von Laszewski', 'Cloudmesh', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -332,10 +364,10 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Cloudmesh'
-epub_author = u'Gregor von Laszewski for FutureGrid'
-epub_publisher = u'Gregor von Laszewski for FutureGrid'
-epub_copyright = u'2013, Gregor von Laszewski for FutureGrid'
+epub_title = u'my Cloudmesh'
+epub_author = u'Gregor von Laszewski'
+epub_publisher = u'Gregor von Laszewski'
+epub_copyright = u'2013, myCLoudmesh.org'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
@@ -346,7 +378,7 @@ epub_copyright = u'2013, Gregor von Laszewski for FutureGrid'
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
-#epub_identifier = ''
+epub_identifier = 'http://myCloudmesh.org/learning'
 
 # A unique identification for the text.
 #epub_uid = ''

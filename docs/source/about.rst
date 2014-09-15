@@ -1,9 +1,16 @@
 About
 ======================================================================
 
-The purpose of this Web page is to provide developers and students
+The purpose of this documentation is to provide developers and students
 with a very simple guide on how to get started to program in the
-cloud. The material is based on practical experience that we gained
+cloud. The documentation is available in a variety of formats
+including:
+
+* `PDF <myCloudmesh.pdf>`_
+* `epub <myCloudmesh.epub>`_
+* `Web pages </>`_
+
+The material is based on practical experience that we gained
 form interacting with undergraduate students starting from the
 freshman level to graduate students working on a PhD. Naturally, this
 means that some material may seem to you very simple and at other

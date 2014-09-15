@@ -4,13 +4,14 @@ BASENAME=$(shell basename $(PATHNAME))
 TAG=`echo "print __version__" > v.py;  cat cloudmesh/__init__.py v.py > /tmp/v1.py; python /tmp/v1.py; rm /tmp/v1.py v.py`
 
 all: banner
-	fab doc.html
-	fab doc.pdf
-	fab doc.view
+	fab doc.all
 
 pdf:
 	fab doc.pdf
-	cp docs/build/latex/Cloudmesh.pdf docs/build/html/Cloudmesh.pdf 
+
+epub:
+	fab doc.epub
+
 
 slides: banner
 	fab doc.slides
