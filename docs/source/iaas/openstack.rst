@@ -6,11 +6,9 @@ OpenStack on FutureGrid
 Login
 -------
 
-Currently FutureGrid OpenStack Havana installed on India and Openstack
-Grizzly on sierra. There are minor differences with these versions, but
-as Havana is the more recent one we will be focussing on that deployment.
+Currently FutureGrid OpenStack Havana installed on India. 
 
-To use it you need to first log into sierra and prepare your Openstack
+To use it you need to first log into india and prepare your Openstack
 credentials (Make sure to replace the 'username' with your actual FG
 username)::
 
@@ -78,7 +76,7 @@ You will see an output similar to::
 
 .. sidebar :: Hint
 
-   $USER is your username on sierra machine. 
+   $USER is your username on the machine. 
 
 Key management
 --------------
@@ -95,7 +93,7 @@ cloud. This can be easily done in the following way::
        | <USER>-key    | ab:a6:63:82:dd:08:d3:bc:c0:21:56:4c:e2:bb:22:ac |
        +---------------+-------------------------------------------------+
 
-Where USER is your login name on sierra.
+Where USER is your login name on india.
 
 Make sure you are not already having the key with that name in order
 to avoid overwriting it in the cloud. Thus be extra careful to execute
@@ -164,7 +162,7 @@ If everything went correctly, you will see an output similar to::
        | config_drive                |                                      |
        +-----------------------------+--------------------------------------+
 
-Where USER is your login name on sierra.
+Where USER is your login name on india.
 
 List running images
 ----------------------------------------------------------------------
@@ -182,7 +180,7 @@ command and monitor the Status field in the table::
 
 Once it has changed from for example BUILD to ACTIVE, you can log
 in. Pleas use the IP address provided under networks. Note that the
-first address is private and can not be reached from outside sierra::
+first address is private and can not be reached from outside india::
 
        $ ssh -l ubuntu -i ~/.ssh/$USER-key 10.35.23.18
 
@@ -242,7 +240,7 @@ Here's an example, mounting on /mnt::
        none            100M     0  100M   0% /run/user
        /dev/vdb        4.8G   23M  4.2G   1% /mnt
 
-When you want to detach it, unmount /mnt first, go back to sierra's
+When you want to detach it, unmount /mnt first, go back to indias's
 login node and execute volume-detach::
 
        root@<USER>-001:~# umount /mnt
@@ -256,7 +254,7 @@ Set up external access to your instance
 
 So far we only used the internal IP address, but you can also assign
 an external address, so that you can log in from other machines than
-sierra. Firts, Create an external ip address with::
+india. Firts, Create an external ip address with::
 
        $ nova floating-ip-create
 
@@ -293,7 +291,7 @@ To allow snapshots, you must use the following convention:
 
 Let us assume your project is fg101 and you want to save the image
 with by reminding you it was a my-ubuntu-01 image you want to
-key. Than you can issue on sierra the following command::
+key. Than you can issue on india the following command::
 
        $ nova image-create $USER-001 fg101/$USER/my-ubuntu-01
        $ nova image-list
@@ -479,32 +477,25 @@ Alamo an older version of Openstack is run.
        this may be a good way to start. The link to the GUI is 
        https://openstack-h.india.futuregrid.org/horizon The password
        can be found by following the method dicussed above.
-   * - |image-horizon| 
-     - Grizzly
-     - `Sierra <http://openstack-sierra.futuregrid.org/horizon>`_
-     - Native OpenStack
-     - Sierra offers a Graphical user interface to access
-       OpenStack. For those interested in only managing a few images
-       this may be a good way to start. The link to the GUI is 
-       http://openstack-sierra.futuregrid.org/horizon The password
-       can be found by following the method dicussed above.
 
 
 .. |image-horizon| image:: /images/fg-horizon.png 
    :width: 100px 
 
 
-OpenStack on FutureGrid
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Screencasts
+----------------------------------------------------------------------
 
 This series of screencasts will walk you through the various ways on
 how you can use OpenStack on FutureSystems. This includes the following:
 
 * using openstack client command line tools to 
+
   * start, stop, assign ips, and query virtual machines
   * list images and flavors
   * to create security groups for login 
   * to log in to your virtual machine while using a key
+
 * using the openstack horizon interface
 
 .. list-table::
