@@ -6,7 +6,7 @@ Cloudmesh cm
    :maxdepth: -1
    :glob:
 
-   _ipython
    _cm
    _cm-project
-   
+   ipython
+   _ipython

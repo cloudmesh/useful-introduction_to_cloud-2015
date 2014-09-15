@@ -36,6 +36,10 @@ def html():
     local("cd docs; make html")
 
 @task
+def pdf():
+    local("cd docs; make latex")
+        
+@task
 def slides():
     # disable Flask RSTPAGES due to sphins incompatibility
     os.environ['RSTPAGES'] = 'FALSE'

@@ -5,7 +5,12 @@ TAG=`echo "print __version__" > v.py;  cat cloudmesh/__init__.py v.py > /tmp/v1.
 
 all: banner
 	fab doc.html
+	fab doc.pdf
 	fab doc.view
+
+pdf:
+	fab doc.pdf
+	cp docs/build/latex/Cloudmesh.pdf docs/build/html/Cloudmesh.pdf 
 
 slides: banner
 	fab doc.slides
