@@ -12,6 +12,7 @@ Cloudmesh
    api/index
    sh/index
    shell/index
+   gui/index
 
    veewee-requirements
 

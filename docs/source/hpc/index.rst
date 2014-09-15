@@ -19,19 +19,22 @@ To access the login nodes you need a FG resource account and an SSH
 public key you have uploaded to FutureGrid (this process is described
 in the section about :ref:`s-accounts`. After you are part of a valid
 project and have a FutureGrid account, you can log into the FutureGrid
-resources with ssh. The resources include the following login nodes:
+resources with ssh. Multiple systems are accessed through the follong
+node::
 
-- bravo.futuregrid.org
-- foxtrot.futuregrid.org
-- india.futuregrid.org
-- sierra.futuregrid.org
-- xray.futuregrid.org
+  india.futuregrid.org
+
+The systems include india, bravo, delta, echo
+
+To log into xray, please use::
+
+  xray.futuregrid.org
 
 For example, assume your portalname is "portalname", than you can
 login to sierra as follows::
 
-        $ ssh portalname@sierra.futuregrid.org
-        Welcome to sierra.futuregrid.org
+        $ ssh portalname@india.futuregrid.org
+        Welcome to india.futuregrid.org
         Last login: Thu Aug 12 19:19:22 2010 from ....
 
 .. _s-sshadd:
@@ -115,7 +118,7 @@ The available command are listed in the next table:
 
 
 
-**Example** - List the currently loaded modules on sierra after login:: 
+**Example** - List the currently loaded modules on india after login:: 
 
    $ module list
 
@@ -123,7 +126,7 @@ The available command are listed in the next table:
      1) torque/2.4.8   2) moab/5.4.0
 
 
-**Example** - list the avialable modules on sierra::
+**Example** - list the avialable modules on india::
 
 
    $ module avail
@@ -235,7 +238,6 @@ status pages <http://inca.futuregrid.org:8080/inca/jsp/status.jsp?suiteNames=HPC
 		, OpenMPI 1.4.3     , Intel 11.1     , no    , openmpi/1.4.3-intel    
 		, OpenMPI 1.5.4     , gcc 4.4.6      , no    , openmpi/1.5.4-[gnu,intel]   
    India        , OpenMPI 1.4.2     , Intel 11.1     , yes   , openmpi                
-   Sierra       , OpenMPI 1.4.2     , Intel 11.1     , no    , openmpi                
    Xray         ,                   ,                , N/A   ,                             
 
 Loading the OpenMPI module adds the MPI compilers to your $PATH
@@ -375,8 +377,6 @@ HPC Job Queue Information:
 	india      , batch        , 4 hours                   , 24 hours              ,                       
 		   , long         , 8 hours                   , 168 hours             ,                       
 		   , scalemp      , 8 hours                   , 168 hours             , restricted access     
-	sierra     , batch        , 4 hours                   , 24 hours              ,                       
-		   , long         , 8 hours                   , 168 hours             ,                       
 
 
 Next we focus on the -l option that specifies the resources. The
@@ -397,7 +397,7 @@ be dependent on factors such as memory needs, IO access and other
 resource bounded properties. You may have to experiment with the
 parameters. To identify the number of servers and cores available
 please see Tables :ref:`t-clusters` and :ref:`t-clusters-details`.
-For example, India, and Sierra have 8 cores per node,
+For example, India has 8 cores per node,
 thus 4 servers would provide you access to 32 processing units.
 
 Often you may just want to have the stdout and stderr in one file,
