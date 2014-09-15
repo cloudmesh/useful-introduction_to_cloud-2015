@@ -2,7 +2,7 @@
 Creating FutureSystems Accounts and Projects
 ======================================================================
 
-.. warning:: please note that in the videaos we refer to FutureGrid, however starting October 1, 2014,
+.. warning:: please note that in the videos we refer to FutureGrid, however starting October 1, 2014,
    the Web site will be called FutureSystems to access resources and apply for accounts.
    Also be aware that the manual is located at http://mycloudmesh.org/learning
 
@@ -49,7 +49,7 @@ create your own project or join an existing one
    * - |video-portal-create-proj|
      - 6:25 min
      - Create a project
-     - This lesson explains you how to craete a FutureSystems project.
+     - This lesson explains you how to create a FutureSystems project.
        For written material, see section :ref:`s-account-create-account`.
    * - |video-portal-join-proj| 
      - 1:28 min
