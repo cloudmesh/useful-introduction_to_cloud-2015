@@ -490,7 +490,51 @@ Alamo an older version of Openstack is run.
        can be found by following the method dicussed above.
 
 
-
 .. |image-horizon| image:: /images/fg-horizon.png 
    :width: 100px 
 
+
+OpenStack on FutureGrid
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This series of screencasts will walk you through the various ways on
+how you can use OpenStack on FutureSystems. This includes the following:
+
+* using openstack client command line tools to 
+  * start, stop, assign ips, and query virtual machines
+  * list images and flavors
+  * to create security groups for login 
+  * to log in to your virtual machine while using a key
+* using the openstack horizon interface
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-openstack| 
+     - 11:55 min
+     - Using OpenStack command line tools
+     - This lesson explains you how to use the OpenStack Commandline
+       tools on the FutureSystems cluster called sierra.futuregrid.org. 
+       For written material, see section :ref:`s-openstack-grizzly`.
+
+       .. warning:: please replace sierra with india.
+
+   * - |video-horizon| 
+     - 8:30 min
+     - Using OpenStack horizon GUI
+     - This lesson explains you how to use the OpenStack Horizon to
+       access the FutureSystems OpenStack IaaS framework on sierra.futuregrid.org. 
+       For written material, see section :ref:`s-openstack-horizon`.
+
+       .. warning:: please replace sierra with india.
+
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+
+.. |video-openstack| replace:: |video-image| :youtube:`xRVJfOaR23w`
+.. |video-horizon| replace:: |video-image| :youtube:`JkNlWAUlxF0`
+.. |video-eucalyptus| replace:: |video-image| :youtube:`D1v_twqWIxg`
