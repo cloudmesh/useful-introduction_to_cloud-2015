@@ -1,0 +1,201 @@
+
+``project`` Command in Cloudmesh ``cm``
+=======================================
+
+The ``project`` command provides a list of default, active, or completed
+project on a given user. You can update the project information with
+this command.
+
+***Note*** that all your ``project`` command executions update your yaml
+file (cloudmesh.yaml) and mongo db (user, defaults) both.
+
+IPython Alias
+~~~~~~~~~~~~~
+
+With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters ar between "" so that they are properly set. Just execute the
+following lines.
+
+.. code:: python
+
+    alias cm cm %s
+We are using now one of the methods to call the cm commands in the
+following sections.
+
+``project info`` Command
+------------------------
+
+The ``project`` command has a number of options that are useful to
+manage a list of projects. The ``info`` option provides a current
+information on your account.
+
+.. code:: python
+
+    cm project info
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg20
+      projects: fg20, fg82
+     completed: fg130
+    
+
+
+Set a default project
+---------------------
+
+``project default [project name]`` allows you to update a default
+project to your account.
+
+.. code:: python
+
+    cm project default fg82
+
+.. parsed-literal::
+
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:58:   INFO - sets the default project
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:70:   INFO - fg82 project is a default project now
+    fg82 project is a default project now
+
+
+.. code:: python
+
+    cm project
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg82
+      projects: fg20, fg82
+     completed: fg130
+    
+
+
+You can see your default project has been changed from fg20 to fg82.
+Note that ``cm project`` is same command with ``cm project info``.
+``info`` option can be suppressed.
+
+Set an active project
+---------------------
+
+You can add a project to your account as one of the active projects. You
+can have multiple projects in your active project list.
+
+.. code:: python
+
+    cm project active fg415
+
+.. parsed-literal::
+
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:75:   INFO - Sets the active project
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:83:   INFO - fg415 project is an active project(s) now
+    fg415 project is an active project(s) now
+
+
+.. code:: python
+
+    cm project info
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg82
+      projects: fg20, fg82, fg415
+     completed: fg130
+    
+
+
+You can see the new project ``fg415`` added to the active projects.
+
+Change the status of project to ``completed``
+---------------------------------------------
+
+If your project is completed and no longer needed, you may want to
+change the status from active to completed. ``completed`` option allows
+to change the status of the selected project.
+
+.. code:: python
+
+    cm project completed fg415
+
+.. parsed-literal::
+
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:115:   INFO - Sets a completed project
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:126:   INFO - fg415 project is in a completed project(s)
+    fg415 project is in a completed project(s)
+
+
+.. code:: python
+
+    cm project 
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg82
+      projects: fg20, fg82
+     completed: fg130, fg415
+    
+
+
+Help message
+------------
+
+.. code:: python
+
+    cm "project -h"
+
+.. parsed-literal::
+
+    Usage:
+           project
+           project info [--json]
+           project default NAME
+           project active NAME
+           project delete NAME
+           project completed NAME
+    
+    Manages the project
+    
+    Arguments:
+    
+      NAME           The project id
+    
+    Options:
+    
+       -v       verbose mode
+    
+    Usage:
+           project
+           project info [--json]
+           project default NAME
+           project active NAME
+           project delete NAME
+           project completed NAME
+    
+    Manages the project
+    
+    Arguments:
+    
+      NAME           The project id
+    
+    Options:
+    
+       -v       verbose mode
+    
+    
+

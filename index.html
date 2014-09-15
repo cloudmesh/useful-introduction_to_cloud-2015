@@ -42,12 +42,23 @@
   <body>
 
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 
 
 
             <div class="row">
-                <div class="col-lg-12"  style="-webkit-font-smoothing: none; border:solid 1px #2d2d2d;  text-align:center; background:#575757; padding:100px 50px 100px 50px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;background:-webkit-gradient(linear, 80% 20%, 10% 21%, from(#280A59), to(#005545))">
+                <div class="col-lg-12"
+		     style="-webkit-font-smoothing: none; border:solid 1px #2d2d2d;  text-align:center; background:#575757; padding:100px 50px 100px 50px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+background: #005545; /* Old browsers */
+background: -moz-linear-gradient(left, #005545 0%, #280a59 74%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#005545), color-stop(74%,#280a59)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #005545 0%,#280a59 74%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #005545 0%,#280a59 74%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #005545 0%,#280a59 74%); /* IE10+ */
+background: linear-gradient(to right, #005545 0%,#280a59 74%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005545', endColorstr='#280a59',GradientType=1 ); /* IE6-9 */
+		  ">
 		  <br>
 		  <br>
 		  <center style="color:white">
@@ -180,7 +191,13 @@
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="cloudmesh/setup/setup_openstack.html">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/setup/setup_openstack.html">Quickstart for an Openstack VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_openstack.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_openstack.html#starting-the-vm">Starting the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_openstack.html#preparation-of-the-vm">Preparation of the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_openstack.html#installation">Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="cloudmesh/setup/setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
@@ -211,6 +228,18 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/cm/_cm-project.html"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh/cm/_cm-project.html#ipython-alias">IPython Alias</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="cloudmesh/cm/_cm-project.html#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cloudmesh/cm/_cm-project.html#set-a-default-project">Set a default project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cloudmesh/cm/_cm-project.html#set-an-active-project">Set an active project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cloudmesh/cm/_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="cloudmesh/cm/_cm-project.html#help-message">Help message</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/cm/ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cloudmesh/api/index.html">Cloudmesh API</a><ul>
@@ -449,6 +478,8 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary">
+<div id="toc"></div>
+
 <h4 class="nav-header">Site Contents</h4>
 
   <ul class="nav nav-list">  

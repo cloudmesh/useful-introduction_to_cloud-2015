@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Cloudmesh cm Command &mdash; my Cloudmesh Learning documentation</title>
+    <title>project Command in Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -33,8 +33,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
     <link rel="up" title="Cloudmesh cm" href="index.html" />
-    <link rel="next" title="project Command in Cloudmesh cm" href="_cm-project.html" />
-    <link rel="prev" title="Cloudmesh cm" href="index.html" />
+    <link rel="next" title="Cloudmesh API" href="../api/index.html" />
+    <link rel="prev" title="Cloudmesh cm Command" href="_cm.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -182,27 +182,27 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_cm.html#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#python-rehashx">Python %rehashx</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#help">Help</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#starting-the-web-browser">Starting the Web Browser</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm.html#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#help">Help</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#starting-the-web-browser">Starting the Web Browser</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm.html#listing-clouds">Listing Clouds</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="_cm-project.html#ipython-alias">IPython Alias</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#set-a-default-project">Set a default project</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#set-an-active-project">Set an active project</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ipython-alias">IPython Alias</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#help-message">Help message</a></li>
 </ul>
 </li>
 </ul>
@@ -400,16 +400,13 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
-<li><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
-<li><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li><a class="reference internal" href="#help">Help</a></li>
-<li><a class="reference internal" href="#starting-the-web-browser">Starting the Web Browser</a></li>
-<li><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li><a class="reference internal" href="#ipython-alias">IPython Alias</a><ul>
+<li><a class="reference internal" href="#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
+<li><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
+<li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
+<li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li><a class="reference internal" href="#help-message">Help message</a></li>
 </ul>
 </li>
 </ul>
@@ -423,11 +420,11 @@
               
                 
   <li>
-    <a href="index.html" title="Previous Chapter: Cloudmesh cm"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Cloudmesh cm</span>
+    <a href="_cm.html" title="Previous Chapter: Cloudmesh cm Command"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Cloudmesh cm Com...</span>
     </a>
   </li>
   <li>
-    <a href="_cm-project.html" title="Next Chapter: project Command in Cloudmesh cm"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">project Command ... &raquo;</span>
+    <a href="../api/index.html" title="Next Chapter: Cloudmesh API"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Cloudmesh API &raquo;</span>
     </a>
   </li>
               
@@ -437,7 +434,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../../_sources/cloudmesh/cm/_cm.txt"
+  <a href="../../_sources/cloudmesh/cm/_cm-project.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -489,16 +486,13 @@
   </ul>
   
 <h4 class="nav-header">Page Contents</h4><ul>
-<li><a class="reference internal" href="#">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
-<li><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
-<li><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li><a class="reference internal" href="#help">Help</a></li>
-<li><a class="reference internal" href="#starting-the-web-browser">Starting the Web Browser</a></li>
-<li><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li><a class="reference internal" href="#ipython-alias">IPython Alias</a><ul>
+<li><a class="reference internal" href="#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
+<li><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
+<li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
+<li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li><a class="reference internal" href="#help-message">Help message</a></li>
 </ul>
 </li>
 </ul>
@@ -513,26 +507,22 @@
   <input type="hidden" name="area" value="default" />
 </form>
 <div id="sourcelink">
-  <a href="../../_sources/cloudmesh/cm/_cm.txt"
+  <a href="../../_sources/cloudmesh/cm/_cm-project.txt"
      rel="nofollow">Source</a>
 </div>
         </div>
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="cloudmesh-cm-command">
-<h1>Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command<a class="headerlink" href="#cloudmesh-cm-command" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ipython-execution-of-shell-commands">
-<h2>iPython Execution of shell commands<a class="headerlink" href="#ipython-execution-of-shell-commands" title="Permalink to this headline">¶</a></h2>
-<p>In this section we use one of the build in features of iPython. IPython
-provides various mechanisms to call programs within its shell. One of
-the ways to do so is to use the ! character at the beginning of a line
-to execute the command in the shell.</p>
-<p>However, there are more convenient ways to eliminate the ! sign at the
-beginning of a line. One way is to use the alias command, another is to
-use the %rehasx command.</p>
+  <div class="section" id="project-command-in-cloudmesh-cm">
+<h1><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#project-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="docutils literal"><span class="pre">project</span></tt> command provides a list of default, active, or completed
+project on a given user. You can update the project information with
+this command.</p>
+<p><strong>*Note*</strong> that all your <tt class="docutils literal"><span class="pre">project</span></tt> command executions update your yaml
+file (cloudmesh.yaml) and mongo db (user, defaults) both.</p>
 <div class="section" id="ipython-alias">
-<h3>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h3>
+<h2>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h2>
 <p>With the alias command we simply define a new command with the name cm
 that we can call directly from IPython. Here we make sure that the
 parameters ar between &#8220;&#8221; so that they are properly set. Just execute the
@@ -540,174 +530,142 @@ following lines.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
 </pre></div>
 </div>
-<p>Now let us test the command and lets print the version of cloudmesh cm</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm version
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>1.0.4
-</pre></div>
-</div>
-</div>
-<div class="section" id="python-rehashx">
-<h3>Python %rehashx<a class="headerlink" href="#python-rehashx" title="Permalink to this headline">¶</a></h3>
-<p>In addition to the direct specification IPython has also a rehashx
-function, that loads the commands found in the $PATH variable so you can
-execute the without !.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>%rehashx
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm version
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>1.0.4
-</pre></div>
-</div>
 <p>We are using now one of the methods to call the cm commands in the
 following sections.</p>
-</div>
-</div>
-<div class="section" id="cm-command">
-<h2><tt class="docutils literal"><span class="pre">cm</span></tt> Command<a class="headerlink" href="#cm-command" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">cm</span></tt> command has a number of options that are useful to pass a
-script or a command directly into cm. Please however not that in some
-cases the command must be quoted to avoid confusion between flags used
-for cm and flags used for its subcommands. Let us invoke the -h flag to
-see which options cm has.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cm</span> <span class="o">-</span><span class="n">h</span>
+<div class="section" id="project-info-command">
+<h3><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command<a class="headerlink" href="#project-info-command" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">project</span></tt> command has a number of options that are useful to
+manage a list of projects. The <tt class="docutils literal"><span class="pre">info</span></tt> option provides a current
+information on your account.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project info
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>cm.
+<div class="highlight-python"><div class="highlight"><pre>Project Information
+-------------------
 
-    Usage:
-      cm [-q] help
-      cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
+   default: fg20
+  projects: fg20, fg82
+ completed: fg130
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-a-default-project">
+<h3>Set a default project<a class="headerlink" href="#set-a-default-project" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">project</span> <span class="pre">default</span> <span class="pre">[project</span> <span class="pre">name]</span></tt> allows you to update a default
+project to your account.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project default fg82
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:58:   INFO - sets the default project
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:70:   INFO - fg82 project is a default project now
+fg82 project is a default project now
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Project Information
+-------------------
 
-    Arguments:
-      COMMAND                  A command to be executed
+   default: fg82
+  projects: fg20, fg82
+ completed: fg130
+</pre></div>
+</div>
+<p>You can see your default project has been changed from fg20 to fg82.
+Note that <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span></tt> is same command with <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">info</span></tt>.
+<tt class="docutils literal"><span class="pre">info</span></tt> option can be suppressed.</p>
+</div>
+<div class="section" id="set-an-active-project">
+<h3>Set an active project<a class="headerlink" href="#set-an-active-project" title="Permalink to this headline">¶</a></h3>
+<p>You can add a project to your account as one of the active projects. You
+can have multiple projects in your active project list.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project active fg415
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:75:   INFO - Sets the active project
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:83:   INFO - fg415 project is an active project(s) now
+fg415 project is an active project(s) now
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project info
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Project Information
+-------------------
 
-    Options:
-      --file=SCRIPT  -f  SCRIPT  Executes the script
-      -i                 After start keep the shell interactive,
-                         otherwise quit [default: False]
-      -b                 surpress the printing of the banner [default: False]
+   default: fg82
+  projects: fg20, fg82, fg415
+ completed: fg130
 </pre></div>
 </div>
-<div class="section" id="help">
-<h3>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h3>
-<p>Now let us execute the help command to see what other functions are
-supported. As cm is based on cmd3 that you can find in pypi it inherits
-a number of commands from cmd3. However, more importantly it also
-obtains a number of commands from cm itself. To more easily distinguish
-the categories of the cloud related commands we introduced two of them
-called GUI commands and cloud commands.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm help
+<p>You can see the new project <tt class="docutils literal"><span class="pre">fg415</span></tt> added to the active projects.</p>
+</div>
+<div class="section" id="change-the-status-of-project-to-completed">
+<h3>Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt><a class="headerlink" href="#change-the-status-of-project-to-completed" title="Permalink to this headline">¶</a></h3>
+<p>If your project is completed and no longer needed, you may want to
+change the status from active to completed. <tt class="docutils literal"><span class="pre">completed</span></tt> option allows
+to change the status of the selected project.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project completed fg415
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Documented commands (type help &lt;topic&gt;):
-========================================
-EOF       edit      help       label   plugins  register        user
-banner    exec      image      list    project  script          var
-clear     exp       info       man     py       security_group  verbose
-cloud     flavor    init       metric  q        storm           version
-defaults  graphviz  inventory  open    quit     timer           vm
-dot2      group     keys       pause   rain     use             web
+<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:115:   INFO - Sets a completed project
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:126:   INFO - fg415 project is in a completed project(s)
+fg415 project is in a completed project(s)
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Project Information
+-------------------
 
-Gui Commands
-============
-web
-
-Cloud Commands
-==============
-cloud     group  inventory  rain            storm  keys
-defaults  image  list       register        user   project
-flavor    init   metric     security_group  vm
+   default: fg82
+  projects: fg20, fg82
+ completed: fg130, fg415
 </pre></div>
 </div>
 </div>
-<div class="section" id="starting-the-web-browser">
-<h3>Starting the Web Browser<a class="headerlink" href="#starting-the-web-browser" title="Permalink to this headline">¶</a></h3>
-<p>To start the browser, simply type the command</p>
-<pre>cm web</pre></div>
-<div class="section" id="listing-clouds">
-<h3>Listing Clouds<a class="headerlink" href="#listing-clouds" title="Permalink to this headline">¶</a></h3>
-<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>+---------+----------+
-| cloud   | active   |
-+=========+==========+
-| alamo   |          |
-+---------+----------+
-| aws     |          |
-+---------+----------+
-| azure   |          |
-+---------+----------+
-| hp      |          |
-+---------+----------+
-| hp_east |          |
-+---------+----------+
-| india   | True     |
-+---------+----------+
-| sierra  | True     |
-+---------+----------+
-</pre></div>
-</div>
-<p>Let us inspect the parameters. To limit the output we just display the
-first 10 lines of the help/man page. We see the &#8211;column option in the
-list command.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm help cloud | head -n 10
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>::
-
-    Usage:
-        cloud [list] [--column=COLUMN]
-        cloud info [CLOUD|--all]
-        cloud alias NAME [CLOUD]
-        cloud select [CLOUD]
-        cloud on [CLOUD]
-        cloud off [CLOUD]
-</pre></div>
-</div>
-<p>...</p>
-<p>For more information, read the help page. It essentially allows us to
-display some more useful information beyond to just document the active
-clouds. Let us also display the label. This is done with the following
-command.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud list --column=active,label&quot;
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>+---------+----------+------------+
-| cloud   | active   | label      |
-+=========+==========+============+
-| alamo   |          | alamo      |
-+---------+----------+------------+
-| aws     |          | aws        |
-+---------+----------+------------+
-| azure   |          | waz        |
-+---------+----------+------------+
-| hp      |          | hpos       |
-+---------+----------+------------+
-| hp_east |          | hpeos      |
-+---------+----------+------------+
-| india   | True     | ios_havana |
-+---------+----------+------------+
-| sierra  | True     | sos        |
-+---------+----------+------------+
-</pre></div>
-</div>
-<p>Let us now demonstrate a common error by not using proper quoting. This
-occurs when you use option flags with the command. Here our current
-parser is unable to distinguish between the options passed to cm and the
-options as used in the cm command. You see the usage message that we do
-not have a &#8211;column in the cm command. To avoid thie use the &#8221; &#8221; as
-previously shown.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list --column=active,label
+<div class="section" id="help-message">
+<h3>Help message<a class="headerlink" href="#help-message" title="Permalink to this headline">¶</a></h3>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;project -h&quot;
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>Usage:
-      cm [-q] help
-      cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
+       project
+       project info [--json]
+       project default NAME
+       project active NAME
+       project delete NAME
+       project completed NAME
+
+Manages the project
+
+Arguments:
+
+  NAME           The project id
+
+Options:
+
+   -v       verbose mode
+
+Usage:
+       project
+       project info [--json]
+       project default NAME
+       project active NAME
+       project delete NAME
+       project completed NAME
+
+Manages the project
+
+Arguments:
+
+  NAME           The project id
+
+Options:
+
+   -v       verbose mode
 </pre></div>
 </div>
 </div>
@@ -764,16 +722,13 @@ previously shown.</p>
 
 
        <ul>
-<li><a class="reference internal" href="#">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li><a class="reference internal" href="#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
-<li><a class="reference internal" href="#ipython-alias">IPython Alias</a></li>
-<li><a class="reference internal" href="#python-rehashx">Python %rehashx</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#cm-command"><tt class="docutils literal"><span class="pre">cm</span></tt> Command</a><ul>
-<li><a class="reference internal" href="#help">Help</a></li>
-<li><a class="reference internal" href="#starting-the-web-browser">Starting the Web Browser</a></li>
-<li><a class="reference internal" href="#listing-clouds">Listing Clouds</a></li>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li><a class="reference internal" href="#ipython-alias">IPython Alias</a><ul>
+<li><a class="reference internal" href="#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
+<li><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
+<li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
+<li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li><a class="reference internal" href="#help-message">Help message</a></li>
 </ul>
 </li>
 </ul>

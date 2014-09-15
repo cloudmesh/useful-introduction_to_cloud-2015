@@ -44,7 +44,8 @@
   <body>
 
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 
 
 
@@ -157,7 +158,14 @@
 <li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Setup Cloudmesh in an Openstack VM for Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#starting-the-vm">Starting the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#preparation-of-the-vm">Preparation of the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#instalation">Instalation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#install-ipython">Install IPython</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
@@ -184,6 +192,17 @@
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm.html#help">Help</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm.html#starting-the-web-browser">Starting the Web Browser</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm.html#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm-project.html"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm-project.html#ipython-alias">IPython Alias</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#project-info-command"><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#set-a-default-project">Set a default project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#set-an-active-project">Set an active project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#help-message">Help message</a></li>
 </ul>
 </li>
 </ul>
@@ -433,6 +452,8 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary">
+<div id="toc"></div>
+
 <h4 class="nav-header">Site Contents</h4>
 
   <ul class="nav nav-list">  
@@ -485,9 +506,9 @@
 <h1>Quick Start on your desktop<a class="headerlink" href="#quick-start-on-your-desktop" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">this tutorial is for the new FUtureSystems
-infrastructure. However at this time we stoll use
-FutureGrid. Please replace all occurences of FutureSystems
+<p class="last">this tutorial is for the new FutureSystems
+infrastructure. However at this time we still use
+FutureGrid. Please replace all occurrences of FutureSystems
 with FutureGrid.</p>
 </div>
 <p>This quickstart is designed for Ubuntu 14.04 and OSX.</p>
@@ -497,7 +518,7 @@ for cloudmesh. We assume you create one called ENV and activate it:</p>
 $ source ~/ENV/bin/activate
 </pre></div>
 </div>
-<p>Firts you need to download the code from github. We assume you have
+<p>First you need to download the code from github. We assume you have
 git installed:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/cloudmesh/cloudmesh.git
 </pre></div>
@@ -511,9 +532,9 @@ $ ./install requirements
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">on OSX you can ommit the sudo.</p>
+<p class="last">on OSX you can omit the sudo.</p>
 </div>
-<p>To get access to IaaS cloud platforms, you need to create loaclly a
+<p>To get access to IaaS cloud platforms, you need to create locally a
 new user that has access to various clouds. This can be done with:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ./install new
 </pre></div>
@@ -527,8 +548,8 @@ library path:</p>
 <p class="first admonition-title">Note</p>
 <p>This step is optional but highly recommended for users.</p>
 <blockquote>
-<div><p>In case you have accounts on the IU machines yo ucan also obtain
-preconfigured cloud rc files from them. To test if you have an account
+<div><p>In case you have accounts on the IU machines you can also obtain
+pre-configured cloud rc files from them. To test if you have an account
 and have set it up correctly, please login to the machine india:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh [username]@india.futuresystems.org
 </pre></div>
@@ -544,25 +565,21 @@ create the configuration files as follows:</p>
 $ cm-iu user create
 </pre></div>
 </div>
+<p>You may also need to specify a project id as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cm project default [project id]
+</pre></div>
+</div>
+<p><em>[project id]</em> is your default project id e.g. fg82</p>
 </div></blockquote>
 <p class="last">Other resources may require you also to manage keys.</p>
 </div>
-<p>At this time We like you to edit some information about yourself in
-the cloudmesh.yaml file. Chhose your favorite editor:</p>
+<p>At this time we like you to edit some information about yourself in
+the cloudmesh.yaml file. Choose your favorite editor:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ emacs ~/.cloudmesh/cloudmesh.yaml
 </pre></div>
 </div>
 <p>Change the values TBD that you find here with values that describe
 you.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro: cm &#8220;default username=username &lt;portalname&gt;&#8221;</p>
-</div>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro: cm &#8220;project fg101&#8221;  101 is just a placeholder use your real
-project id</p>
-</div>
 <p>As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
 public key generated in your .ssh directory in the file:</p>
@@ -585,14 +602,14 @@ public key generated in your .ssh directory in the file:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab server.start
 </pre></div>
 </div>
-<p>Now you cen test the services by visiting the Web interface at
+<p>Now you can test the services by visiting the web interface at
 <a class="reference external" href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>. We have a convenient shortcut for this by
 typing:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab server.view
 </pre></div>
 </div>
 <p>Alternatively you can use the cloudmesh shell by invoking the cm
-command ina aterminal:</p>
+command via a terminal:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cm
 
 ======================================================
@@ -654,7 +671,7 @@ Store time: 0.0578060150146
 <div class="highlight-python"><div class="highlight"><pre>~/.ssh/id_rsa.pub
 </pre></div>
 </div>
-<p>Which will be used to log into the VMs and the machines. THis key must
+<p>Which will be used to log into the VMs and the machines. This key must
 be uploaded to the FutureSystems portal.</p>
 <div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/cloudmesh/cloudmesh.git
 virtualenv ~/ENV
@@ -663,9 +680,9 @@ cd cloudmesh
 sudo ./install system
 ./install requirements
 ./install new
-./cm-iu rc fetch
-./cm-iu rc fill
 ./install cloudmesh
+cm-iu user fetch
+cm-iu user create
 fab mongo.reset
 fab server.start
 cm cloud list
