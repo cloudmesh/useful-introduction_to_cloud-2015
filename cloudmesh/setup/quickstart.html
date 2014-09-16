@@ -636,12 +636,12 @@ public key generated in your .ssh directory in the file:</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -C $USER-key
 </pre></div>
 </div>
-<p>We add this key to the cloudmesh database with:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm &quot;key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub&quot;
-</pre></div>
-</div>
 <p>The next steps will deploy the cloudmesh databases:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab mongo.reset
+</pre></div>
+</div>
+<p>We ass the key to the databasewith:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cm &quot;key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub&quot;
 </pre></div>
 </div>
 <p>You may next need to specify your default project if you have not yet
