@@ -82,13 +82,14 @@ If you do not have such a key, you can generate it with::
 
  ssh-keygen -t rsa -C $USER-key
 
-We add this key to the cloudmesh database with::
-
-  cm "key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub"
-
 The next steps will deploy the cloudmesh databases::
 
   $ fab mongo.reset
+
+We ass the key to the databasewith::
+
+   $ cm "key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub"
+
 
 You may next need to specify your default project if you have not yet
 done so::
