@@ -80,15 +80,15 @@ public key generated in your .ssh directory in the file::
 
 If you do not have such a key, you can generate it with::
 
- ssh-keygen -t rsa -C $USER-key
+ ssh-keygen -t rsa -C [portal login id]-key
 
-The next steps will deploy the cloudmesh databases::
+The next steps will deploy the cloudmesh database::
 
   $ fab mongo.reset
 
-We ass the key to the databasewith::
+We add the key to the database with::
 
-   $ cm "key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub"
+   $ cm "key add --keyname=[portal login id]-key ~/.ssh/id_rsa.pub"
 
 
 You may next need to specify your default project if you have not yet
@@ -98,11 +98,11 @@ done so::
      
    *[project id]* is your default project id e.g. fg354
    
-To start the cloudmesh services use::
+To start Cloudmesh use::
 
   $ fab server.start
 
-Now you can test the services by visiting the web interface at
+Now you can test the service by visiting the web interface at
 http://127.0.0.1:5000. We have a convenient shortcut for this by
 typing:: 
 
@@ -139,7 +139,7 @@ command via a terminal::
   +--------------------------+----------+
   | india_eucalyptus         |          |
   +--------------------------+----------+
-  | india_openstack_havana   |          |
+  | india                    |          |
   +--------------------------+----------+
   | sierra_eucalyptus        |          |
   +--------------------------+----------+
