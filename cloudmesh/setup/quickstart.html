@@ -100,6 +100,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/ssh.html">Using SSH Keys</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts/ssh.html#using-ssh-from-windows">Using SSH from Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts/ssh.html#generate-a-ssh-key">Generate a SSH key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts/ssh.html#add-or-replace-passphrase-for-an-already-generated-key">Add or Replace Passphrase for an Already Generated Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts/ssh.html#upload-the-key-to-the-futuresystem-portal">Upload the key to the FutureSystem Portal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts/ssh.html#testing-your-ssh-key">Testing your ssh key</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
@@ -229,6 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -334,10 +343,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#delete-your-instance">Delete your instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#how-to-change-your-password">How to change your password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#things-to-do-when-you-need-euca2ools-or-ec2-interfaces">Things to do when you need Euca2ools or EC2 interfaces</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#horizon-gui">Horizon GUI</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../iaas/openstack.html#id1">OpenStack on FutureGrid</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#horizon-gui">Horizon GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../iaas/openstack.html#screencasts">Screencasts</a></li>
 </ul>
 </li>
 </ul>
@@ -594,8 +601,7 @@ library path:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>This step is optional but highly recommended for users.</p>
-<blockquote>
-<div><p>In case you have accounts on the IU machines you can also obtain
+<p>In case you have accounts on the IU machines you can also obtain
 pre-configured cloud rc files from them. To test if you have an account
 and have set it up correctly, please login to the machine india:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh [username]@india.futuresystems.org
@@ -608,17 +614,10 @@ FutureSystems portal at</p>
 </ul>
 <p>Once this step is completed, you can
 create the configuration files as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cm-iu user fetch
+<div class="last highlight-python"><div class="highlight"><pre>$ cm-iu user fetch
 $ cm-iu user create
 </pre></div>
 </div>
-<p>You may also need to specify a project id as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cm project default [project id]
-</pre></div>
-</div>
-<p><em>[project id]</em> is your default project id e.g. fg82</p>
-</div></blockquote>
-<p class="last">Other resources may require you also to manage keys.</p>
 </div>
 <p>At this time we like you to edit some information about yourself in
 the cloudmesh.yaml file. Choose your favorite editor:</p>
@@ -643,6 +642,13 @@ public key generated in your .ssh directory in the file:</p>
 </div>
 <p>The next steps will deploy the cloudmesh databases:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab mongo.reset
+</pre></div>
+</div>
+<p>You may next need to specify your default project if you have not yet
+done so:</p>
+<div class="highlight-python"><div class="highlight"><pre>  $ cm project default [project id]
+
+*[project id]* is your default project id e.g. fg354
 </pre></div>
 </div>
 <p>To start the cloudmesh services use:</p>

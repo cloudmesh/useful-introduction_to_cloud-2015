@@ -1,4 +1,6 @@
 
+.. _s-screencast-accounts:
+
 Creating FutureSystems Accounts and Projects
 ======================================================================
 

@@ -131,3 +131,28 @@ If you desire to change the log level to *ERROR*, you need to call
 
 
 Now you can see it has been changed to *ERROR*.
+
+color Command in Cloumesh cm
+============================
+
+to switch on/off the color printing function of cmd3 in cloudmesh shell
+
+.. code:: python
+
+    cm color on
+
+.. parsed-literal::
+
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_yaml.pyc:56:   INFO - color on.
+    color on.
+
+
+.. code:: python
+
+    cm color off
+
+.. parsed-literal::
+
+    CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_yaml.pyc:63:   INFO - color off.
+    color off.
+

@@ -100,6 +100,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts/ssh.html">Using SSH Keys</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts/ssh.html#using-ssh-from-windows">Using SSH from Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../accounts/ssh.html#generate-a-ssh-key">Generate a SSH key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../accounts/ssh.html#add-or-replace-passphrase-for-an-already-generated-key">Add or Replace Passphrase for an Already Generated Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../accounts/ssh.html#upload-the-key-to-the-futuresystem-portal">Upload the key to the FutureSystem Portal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../accounts/ssh.html#testing-your-ssh-key">Testing your ssh key</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a><ul>
@@ -229,6 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cloudmesh/cm/_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cloudmesh/cm/_cm-debug.html#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cloudmesh/cm/ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -334,10 +343,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#delete-your-instance">Delete your instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-change-your-password">How to change your password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces">Things to do when you need Euca2ools or EC2 interfaces</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#horizon-gui">Horizon GUI</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id1">OpenStack on FutureGrid</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="#horizon-gui">Horizon GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screencasts">Screencasts</a></li>
 </ul>
 </li>
 </ul>
@@ -458,10 +465,8 @@
 <li><a class="reference internal" href="#delete-your-instance">Delete your instance</a></li>
 <li><a class="reference internal" href="#how-to-change-your-password">How to change your password</a></li>
 <li><a class="reference internal" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces">Things to do when you need Euca2ools or EC2 interfaces</a></li>
-<li><a class="reference internal" href="#horizon-gui">Horizon GUI</a><ul>
-<li><a class="reference internal" href="#id1">OpenStack on FutureGrid</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#horizon-gui">Horizon GUI</a></li>
+<li><a class="reference internal" href="#screencasts">Screencasts</a></li>
 </ul>
 </li>
 </ul>
@@ -564,10 +569,8 @@
 <li><a class="reference internal" href="#delete-your-instance">Delete your instance</a></li>
 <li><a class="reference internal" href="#how-to-change-your-password">How to change your password</a></li>
 <li><a class="reference internal" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces">Things to do when you need Euca2ools or EC2 interfaces</a></li>
-<li><a class="reference internal" href="#horizon-gui">Horizon GUI</a><ul>
-<li><a class="reference internal" href="#id1">OpenStack on FutureGrid</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#horizon-gui">Horizon GUI</a></li>
+<li><a class="reference internal" href="#screencasts">Screencasts</a></li>
 </ul>
 </li>
 </ul>
@@ -591,10 +594,8 @@
 <span id="s-openstack"></span><h1>OpenStack on FutureGrid<a class="headerlink" href="#openstack-on-futuregrid" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="login">
 <h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
-<p>Currently FutureGrid OpenStack Havana installed on India and Openstack
-Grizzly on sierra. There are minor differences with these versions, but
-as Havana is the more recent one we will be focussing on that deployment.</p>
-<p>To use it you need to first log into sierra and prepare your Openstack
+<p>Currently FutureGrid OpenStack Havana installed on India.</p>
+<p>To use it you need to first log into india and prepare your Openstack
 credentials (Make sure to replace the &#8216;username&#8217; with your actual FG
 username):</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh username@india.futuregrid.org
@@ -659,7 +660,7 @@ uploaded images with the nova image-list command:</p>
 </div>
 <div class="sidebar">
 <p class="first sidebar-title">Hint</p>
-<p class="last">$USER is your username on sierra machine.</p>
+<p class="last">$USER is your username on the machine.</p>
 </div>
 </div>
 <div class="section" id="key-management">
@@ -676,7 +677,7 @@ $ nova keypair-list
 +---------------+-------------------------------------------------+
 </pre></div>
 </div>
-<p>Where USER is your login name on sierra.</p>
+<p>Where USER is your login name on india.</p>
 <p>Make sure you are not already having the key with that name in order
 to avoid overwriting it in the cloud. Thus be extra careful to execute
 this step twice. Often it is the case that you already have a key in
@@ -743,7 +744,7 @@ $ nova secgroup-list-rules default
 +-----------------------------+--------------------------------------+
 </pre></div>
 </div>
-<p>Where USER is your login name on sierra.</p>
+<p>Where USER is your login name on india.</p>
 </div>
 <div class="section" id="list-running-images">
 <h2>List running images<a class="headerlink" href="#list-running-images" title="Permalink to this headline">¶</a></h2>
@@ -760,7 +761,7 @@ command and monitor the Status field in the table:</p>
 </div>
 <p>Once it has changed from for example BUILD to ACTIVE, you can log
 in. Pleas use the IP address provided under networks. Note that the
-first address is private and can not be reached from outside sierra:</p>
+first address is private and can not be reached from outside india:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh -l ubuntu -i ~/.ssh/$USER-key 10.35.23.18
 </pre></div>
 </div>
@@ -819,7 +820,7 @@ none            100M     0  100M   0% /run/user
 /dev/vdb        4.8G   23M  4.2G   1% /mnt
 </pre></div>
 </div>
-<p>When you want to detach it, unmount /mnt first, go back to sierra&#8217;s
+<p>When you want to detach it, unmount /mnt first, go back to indias&#8217;s
 login node and execute volume-detach:</p>
 <div class="highlight-python"><div class="highlight"><pre>root@&lt;USER&gt;-001:~# umount /mnt
 root@&lt;USER&gt;-001:~# exit
@@ -833,7 +834,7 @@ $ nova volume-detach $USER-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 <h2>Set up external access to your instance<a class="headerlink" href="#set-up-external-access-to-your-instance" title="Permalink to this headline">¶</a></h2>
 <p>So far we only used the internal IP address, but you can also assign
 an external address, so that you can log in from other machines than
-sierra. Firts, Create an external ip address with:</p>
+india. Firts, Create an external ip address with:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-create
 
 +-----------------+-------------+----------+------+
@@ -868,7 +869,7 @@ the project number.</li>
 </ul>
 <p>Let us assume your project is fg101 and you want to save the image
 with by reminding you it was a my-ubuntu-01 image you want to
-key. Than you can issue on sierra the following command:</p>
+key. Than you can issue on india the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova image-create $USER-001 fg101/$USER/my-ubuntu-01
 $ nova image-list
 +--------------------------------------+----------------------------+--------+--------------------------------------+
@@ -1067,28 +1068,21 @@ this may be a good way to start. The link to the GUI is
 <a class="reference external" href="https://openstack-h.india.futuregrid.org/horizon">https://openstack-h.india.futuregrid.org/horizon</a> The password
 can be found by following the method dicussed above.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/fg-horizon.png"><img alt="image-horizon" src="../_images/fg-horizon.png" style="width: 100px;" /></a></td>
-<td>Grizzly</td>
-<td><a class="reference external" href="http://openstack-sierra.futuregrid.org/horizon">Sierra</a></td>
-<td>Native OpenStack</td>
-<td>Sierra offers a Graphical user interface to access
-OpenStack. For those interested in only managing a few images
-this may be a good way to start. The link to the GUI is
-<a class="reference external" href="http://openstack-sierra.futuregrid.org/horizon">http://openstack-sierra.futuregrid.org/horizon</a> The password
-can be found by following the method dicussed above.</td>
-</tr>
 </tbody>
 </table>
-<div class="section" id="id1">
-<h3>OpenStack on FutureGrid<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="screencasts">
+<h2>Screencasts<a class="headerlink" href="#screencasts" title="Permalink to this headline">¶</a></h2>
 <p>This series of screencasts will walk you through the various ways on
 how you can use OpenStack on FutureSystems. This includes the following:</p>
 <ul class="simple">
-<li>using openstack client command line tools to
-* start, stop, assign ips, and query virtual machines
-* list images and flavors
-* to create security groups for login
-* to log in to your virtual machine while using a key</li>
+<li>using openstack client command line tools to<ul>
+<li>start, stop, assign ips, and query virtual machines</li>
+<li>list images and flavors</li>
+<li>to create security groups for login</li>
+<li>to log in to your virtual machine while using a key</li>
+</ul>
+</li>
 <li>using the openstack horizon interface</li>
 </ul>
 <table border="1" class="docutils">
@@ -1132,7 +1126,6 @@ For written material, see section <a class="reference internal" href="#s-opensta
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 
@@ -1206,10 +1199,8 @@ For written material, see section <a class="reference internal" href="#s-opensta
 <li><a class="reference internal" href="#delete-your-instance">Delete your instance</a></li>
 <li><a class="reference internal" href="#how-to-change-your-password">How to change your password</a></li>
 <li><a class="reference internal" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces">Things to do when you need Euca2ools or EC2 interfaces</a></li>
-<li><a class="reference internal" href="#horizon-gui">Horizon GUI</a><ul>
-<li><a class="reference internal" href="#id1">OpenStack on FutureGrid</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#horizon-gui">Horizon GUI</a></li>
+<li><a class="reference internal" href="#screencasts">Screencasts</a></li>
 </ul>
 </li>
 </ul>
