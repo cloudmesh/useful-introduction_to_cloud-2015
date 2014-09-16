@@ -238,6 +238,22 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm_vm.html">VM management using cm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#starting-vms">Starting VMs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-image">set default image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-flavor">set default flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-cloud">set default cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-vm-name">set default VM name</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#deleting-vms">Deleting VMs</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -783,27 +799,6 @@ images of cloud &#39;india&#39;
 | DaLiAna-vm2014d-SL64-A.vmdk                        | ACTIVE   | ff5bb4de-d7e9-4bfb-b42b-cec9ed8d2d08 |           |          |            |           | 2014-02-03T16:04:12Z |             |       |         |
 +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
 count: 25
-+-------+
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>+--------------------------+--------+
-| cloud                    | active |
-+--------------------------+--------+
-| alamo                    | True   |
-| aws                      | True   |
-| azure                    | True   |
-| dreamhost                |        |
-| hp                       |        |
-| hp_east                  |        |
-| india_eucalyptus         |        |
-| india_openstack_havana   | True   |
-| sierra_eucalyptus        |        |
-| sierra_openstack_grizzly | True   |
-+--------------------------+--------+
-count: 10
 +-------+
 </pre></div>
 </div>

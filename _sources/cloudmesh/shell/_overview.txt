@@ -248,31 +248,6 @@ image by giving its image name or image id
 
 .. code:: python
 
-    print cloudmesh.shell("cloud")
-
-.. parsed-literal::
-
-    +--------------------------+--------+
-    | cloud                    | active |
-    +--------------------------+--------+
-    | alamo                    | True   |
-    | aws                      | True   |
-    | azure                    | True   |
-    | dreamhost                |        |
-    | hp                       |        |
-    | hp_east                  |        |
-    | india_eucalyptus         |        |
-    | india_openstack_havana   | True   |
-    | sierra_eucalyptus        |        |
-    | sierra_openstack_grizzly | True   |
-    +--------------------------+--------+
-    count: 10
-    +-------+
-    
-
-
-.. code:: python
-
     print cloudmesh.shell("cloud set image india --image=futuregrid/ubuntu-14.04")
 
 .. parsed-literal::

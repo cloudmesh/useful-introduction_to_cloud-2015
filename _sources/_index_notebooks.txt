@@ -20,6 +20,7 @@ Notebooks
    `_cm-debug <cloudmesh/cm/_cm-debug.html>`__, `_cm-debug.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm-debug.ipynb>`__, cloudmesh/cm/_cm-debug.ipynb
    `_cm-project <cloudmesh/cm/_cm-project.html>`__, `_cm-project.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__, cloudmesh/cm/_cm-project.ipynb
    `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
+   `_cm_vm <cloudmesh/cm/_cm_vm.html>`__, `_cm_vm.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm_vm.ipynb>`__, cloudmesh/cm/_cm_vm.ipynb
    `_introduction <cloudmesh/shell/_introduction.html>`__, `_introduction.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_introduction.ipynb>`__, cloudmesh/shell/_introduction.ipynb
    `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
    `_overview <cloudmesh/shell/_overview.html>`__, `_overview.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_overview.ipynb>`__, cloudmesh/shell/_overview.ipynb
