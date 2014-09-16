@@ -59,14 +59,6 @@ library path::
      $ cm-iu user fetch
      $ cm-iu user create
 
-   You may also need to specify a project id as follows::
-   
-     $ cm project default [project id]
-     
-   *[project id]* is your default project id e.g. fg82
-   
-  Other resources may require you also to manage keys.
-
 At this time we like you to edit some information about yourself in
 the cloudmesh.yaml file. Choose your favorite editor::
 
@@ -80,9 +72,6 @@ you.
 .. .. todo:: Hyungro: cm "project fg101"  101 is just a placeholder use your real
 	  project id
 	  
-	  
-
-
 As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
 public key generated in your .ssh directory in the file::
@@ -101,6 +90,13 @@ The next steps will deploy the cloudmesh databases::
 
   $ fab mongo.reset
 
+You may next need to specify your default project if you have not yet
+done so::
+   
+     $ cm project default [project id]
+     
+   *[project id]* is your default project id e.g. fg354
+   
 To start the cloudmesh services use::
 
   $ fab server.start
