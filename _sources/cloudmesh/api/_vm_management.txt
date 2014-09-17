@@ -1,12 +1,12 @@
 
-Cloudmesh VM API
-================
+Cloudmesh API for VM Management
+===============================
 
 Cloudmesh supports the simple management of heterogeneous virtual
-machines from a variety of cloud farmeworks, including Openstack, Azure,
-AWS, Eucalyptus and but also EC2 complient clouds. This page shows how
-to use Cloudmesh functions in python by introducing a few examples on
-how to launch end terminate instances via the API.
+machines from a variety of cloud frameworks, including Openstack, Azure,
+AWS, Eucalyptus and but also AWS compatible clouds. This page shows how
+to use Cloudmesh functions in python by a couple of examples on starting
+or stopping virtual machine instances through the APIs.
 
 Import Cloudmesh
 ----------------
@@ -39,8 +39,7 @@ server who is going to use cloud services.
 Activate the user account
 -------------------------
 
-With the activation, Cloudmesh is verified to connect IaaS cloud
-services.
+With the activation, the connection to IaaS cloud is established.
 
 .. code:: python
 
@@ -72,7 +71,7 @@ Delete VM
 ---------
 
 If you know the id of the virtual machine that you want to destroy,
-*delete* funcion in cloudmesh simply terminate the instance. This
+*delete* function in cloudmesh simply terminate the instance. This
 example deletes the vm that we just launched above by getting the id
 from the result dict.
 
@@ -89,8 +88,8 @@ selected cloud.
 .. code:: python
 
     mesh.images(clouds=['india'],cm_user_id=username)
-Select a image
-~~~~~~~~~~~~~~
+Select an image
+~~~~~~~~~~~~~~~
 
 If you know the name of the vm image, you can specify the vm image to
 user it later. In this example, we choose Ubuntu trusty 14.04 image.
@@ -110,10 +109,10 @@ set a default image or a default flavor.
 Set a default flavor or image
 -----------------------------
 
-Each cloud must have a default image or a default flavor to launch vm
+Each cloud must have a default image and a default flavor to launch vm
 instances in a simple step. default function provides a way to set
-default values for an image and a flavor. In this example, we use
-*image*, *flavor* variables which created from the examples above.
+default values for an image o a flavor. In this example, we use *image*,
+*flavor* variables which created from the examples above.
 
 Need a help for the function?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>VM management using cm &mdash; my Cloudmesh Learning documentation</title>
+    <title>CM Console for VM Management &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -242,8 +242,15 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">VM management using cm</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">CM Console for VM Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#set-default-image">set default image</a></li>
@@ -285,7 +292,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_pbs.html#qinfo">QInfo</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api/_vm_management.html">Cloudmesh VM API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/_vm_management.html">Cloudmesh API for VM Management</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#import-cloudmesh">Import Cloudmesh</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-a-username">Get a username</a></li>
@@ -294,7 +301,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#start-vm">Start VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#delete-vm">Delete VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vm-images">VM Images</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-image">Select a image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-an-image">Select an image</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
 </ul>
 </li>
@@ -312,22 +319,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../shell/_introduction.html">Cloudmesh Shell API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../shell/_overview.html">Cloudmesh Shell</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#initialization">Initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-image">set default image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../shell/_overview.html#set-default-vm-name">set default VM name</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#refreshing-vm-status">Refreshing VM status</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#starting-multiple-vms">Starting multiple VMs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../shell/_overview.html#deleting-vms">Deleting VMs</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a><ul>
@@ -467,8 +458,15 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">VM management using cm</a><ul>
-<li><a class="reference internal" href="#initialization">Initialization</a></li>
+<li><a class="reference internal" href="#">CM Console for VM Management</a><ul>
+<li><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
+<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
 <li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
 <li><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
 <li><a class="reference internal" href="#set-default-image">set default image</a></li>
@@ -566,8 +564,15 @@
   </ul>
   
 <h4 class="nav-header">Page Contents</h4><ul>
-<li><a class="reference internal" href="#">VM management using cm</a><ul>
-<li><a class="reference internal" href="#initialization">Initialization</a></li>
+<li><a class="reference internal" href="#">CM Console for VM Management</a><ul>
+<li><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
+<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
 <li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
 <li><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
 <li><a class="reference internal" href="#set-default-image">set default image</a></li>
@@ -599,10 +604,10 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="vm-management-using-cm">
-<h1>VM management using cm<a class="headerlink" href="#vm-management-using-cm" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="cm-console-for-vm-management">
+<h1>CM Console for VM Management<a class="headerlink" href="#cm-console-for-vm-management" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preparing-on-ipython">
+<h2>Preparing on IPython<a class="headerlink" href="#preparing-on-ipython" title="Permalink to this headline">¶</a></h2>
 <p>With the alias command we simply define a new command with the name cm
 that we can call directly from IPython. Here we make sure that the
 parameters are between &#8220;&#8221; so that they are properly set. Just execute
@@ -610,7 +615,162 @@ the following line</p>
 <div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm help
+</div>
+<div class="section" id="get-flavors">
+<h2>Get Flavors<a class="headerlink" href="#get-flavors" title="Permalink to this headline">¶</a></h2>
+<p>Available flavors can be listed with the following command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm list flavor india
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+------+-----------+---------+-------+--------+----------------------+
+|   id | name      |   vcpus |   ram |   disk | refresh time         |
++======+===========+=========+=======+========+======================+
+|    1 | m1.tiny   |       1 |   512 |      0 | 2014-09-15T01-09-56Z |
++------+-----------+---------+-------+--------+----------------------+
+|    3 | m1.medium |       2 |  4096 |     40 | 2014-09-15T01-09-56Z |
++------+-----------+---------+-------+--------+----------------------+
+|    2 | m1.small  |       1 |  2048 |     20 | 2014-09-15T01-09-56Z |
++------+-----------+---------+-------+--------+----------------------+
+|    5 | m1.xlarge |       8 | 16384 |    160 | 2014-09-15T01-09-56Z |
++------+-----------+---------+-------+--------+----------------------+
+|    4 | m1.large  |       4 |  8192 |     80 | 2014-09-15T01-09-56Z |
++------+-----------+---------+-------+--------+----------------------+
+</pre></div>
+</div>
+<p>refresh option updates the data from the IaaS cloud. The cached data in
+the mongo database will be updated.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list flavor india --refresh&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-vm">
+<h2>Start VM<a class="headerlink" href="#start-vm" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command provides a quick launch of a vm instance in
+cloudmesh.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-vm">
+<h2>Delete VM<a class="headerlink" href="#delete-vm" title="Permalink to this headline">¶</a></h2>
+<p>If you know the id of the virtual machine that you want to destroy,
+<em>delete</em> command in cloudmesh simply terminate the instance.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete [NAME] --cloud=india&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="vm-images">
+<h2>VM Images<a class="headerlink" href="#vm-images" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></tt> command provides an available vm images on a selected
+cloud.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list image india --column=name,id,updated&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+----------------------------------------------------+--------------------------------------+----------------------+
+| name                                               | id                                   | updated              |
++====================================================+======================================+======================+
+| salsahpc/cloud-mooc-m1-large-4GB                   | 384ca88c-f674-4d3d-999f-353fc6915608 | 2013-12-27T01:09:19Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| CentOS6                                            | ad35042c-d242-4514-bde0-138718b5aa3e | 2014-04-29T05:06:40Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| SL64-blank-sparse10gb-C vmdk                       | f480f1e7-38af-4410-bc13-6a1e43bf58ba | 2014-02-05T16:57:37Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| fg7/rynge/centos6-v1                               | ac464f65-7175-44df-9e0e-34b1a32f8a2a | 2014-05-01T21:42:25Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| futuregrid/centos-6                                | 81b27cb5-4f8b-4583-afd4-1901053f6a28 | 2014-05-27T15:04:30Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| DaLiAna-vm2014e-geant4.10.vmdk Jan best            | f4f9821f-881b-433a-97ab-1ad87273c5fc | 2014-03-05T04:22:40Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| ubuntu-13.10                                       | cd844b12-f138-414a-8cd5-2c977f0a2379 | 2014-01-29T17:24:08Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| futuregrid/ubuntu-14.04                            | ba327564-5969-4309-b3f3-b67764038e66 | 2014-09-12T20:16:05Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| fg101/richieriee/my-ubuntu-01                      | 7915f335-d1a9-4380-a9f3-159eb67d721e | 2014-07-24T01:10:37Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| sl64-gluex-vm2014e-40gb.vmdk Justin                | f51fc1e4-d495-4376-824b-19000c41abef | 2014-03-13T17:21:09Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| futuregrid/fedora-19                               | 6e9322df-fcb2-4ac8-bd02-1d39c6f6919f | 2014-09-12T20:16:22Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| fg10/jcharcal/centos6.5_x86_64                     | 28f2ad75-8f42-4079-85e1-3d4fe986317f | 2014-03-12T13:50:20Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| balewski/kernel-2.6.32-431.5.1-sl65                | 00e935c3-82a6-499c-9056-6db37d27439b | 2014-03-10T01:56:13Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| snapshot 1                                         | adc6b8d0-8fba-47ba-af20-f91cb84334cc | 2014-08-15T09:03:10Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| Ubuntu-12.04-blank2.vmdk                           | b49324f8-d2c3-413a-8f8c-83b498e815f6 | 2014-02-05T16:55:28Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| balewski/ramdisk-2.6.32-431.5.1-sl65               | 9589cf93-f0e6-45d8-930f-63dd2d9c2f1a | 2014-03-10T01:56:19Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| sl6_x64-qemu  french ?bad                          | c9ca9852-dfcb-4ceb-a164-a58c89594551 | 2014-02-01T21:59:26Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| balewski/sl6.5-blank-80gb-b works                  | 5cb90f55-c3a1-468b-b60a-0ecd589baf31 | 2014-03-10T15:48:27Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| futuregrid/ubuntu-12.04                            | 9cd8cc0d-96cd-44b8-a307-8b574c899ef4 | 2014-09-12T20:16:01Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| ndssl-vt/ubuntu-12.04-small                        | b9455041-407b-488b-a3f1-5dce6c480b5a | 2013-12-05T22:02:57Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| futuregrid/fedora-20                               | 68a5d085-ea4d-42c4-800f-2017309989ae | 2014-09-12T20:15:43Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| SL64-blank-sparse40GB vmdk                         | 882871a5-3157-426a-b7bc-10cca91860f0 | 2014-02-05T16:57:23Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| cglmoocs/ipython                                   | 0eff8bfc-e455-429e-9dfb-e16488d410f9 | 2014-01-06T16:18:54Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| balewski/daliana-vm2014e2-sl6.5-geant4.10-root5.34 | 64866d96-8a9e-4d7c-983f-90b0bb594310 | 2014-03-10T02:05:55Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+| DaLiAna-vm2014d-SL64-A.vmdk                        | ff5bb4de-d7e9-4bfb-b42b-cec9ed8d2d08 | 2014-02-03T16:04:12Z |
++----------------------------------------------------+--------------------------------------+----------------------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-a-default-flavor-or-image">
+<h2>Set a default flavor or image<a class="headerlink" href="#set-a-default-flavor-or-image" title="Permalink to this headline">¶</a></h2>
+<p>Each cloud must have a default image and a default flavor to launch vm
+instances in a simple step. The <tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></tt> command provides a way to
+set default values for an image or a flavor.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --flavor=m1.small&quot;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --image=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-options-to-launch-a-vm-instance">
+<h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>
+<p>When you create a new VM instance, you can also choose multiple options
+such as a flavor, an image, or a key associated with the instance. The
+<tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command accepts optional parameters as a user input of
+these options. To see a brief description of the command, try
+<tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></tt> in the IPython Notebook cell.</p>
+<p>Available options are:</p>
+<ul class="simple">
+<li>&#8211;cloud= give a cloud to work on, if not given, selected or default
+cloud will be used</li>
+<li>&#8211;count= give the number of servers to start</li>
+<li>&#8211;flavor= give the name of the flavor</li>
+<li>&#8211;flavorid= give the id of the flavor</li>
+<li>&#8211;group= give the group name of server</li>
+<li>&#8211;id= give the server id</li>
+<li>&#8211;image= give the name of the image</li>
+<li>&#8211;imageid= give the id of the image</li>
+<li>&#8211;prefix= give the prefix of the server, standand server name is in
+the form of prefix_index, e.g. abc_9</li>
+<li>&#8211;range= give the range of the index of the servers to delete, e.g.
+&#8211;range=3,6. standand server name is in the form of prefix_index,
+e.g. abc_9</li>
+<li>&#8211;force delete vms without user&#8217;s confirmation</li>
+</ul>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="vitual-machine-name">
+<h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-python"><div class="highlight"><pre>cm label
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>prefix:  brian
+index:  32
+next VM name: brian_32
 </pre></div>
 </div>
 </div>
@@ -621,6 +781,22 @@ first which clouds are available. Users can add their own clouds later
 which we describe in the registration section.</p>
 <p>Let us inspect what is already available by invoking the list command</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+-------------------+--------+
+| cloud             | active |
++-------------------+--------+
+| alamo             | True   |
+| aws               |        |
+| azure             |        |
+| dreamhost         |        |
+| hp                |        |
+| hp_east           |        |
+| india             | True   |
+| india_eucalyptus  |        |
+| sierra            | True   |
+| sierra_eucalyptus |        |
++-------------------+--------+
 </pre></div>
 </div>
 <p>As you see we have a number of clouds, but none of them is already
@@ -824,8 +1000,15 @@ range is no greater than 100</p>
 
 
        <ul>
-<li><a class="reference internal" href="#">VM management using cm</a><ul>
-<li><a class="reference internal" href="#initialization">Initialization</a></li>
+<li><a class="reference internal" href="#">CM Console for VM Management</a><ul>
+<li><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
+<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
+<li><a class="reference internal" href="#start-vm">Start VM</a></li>
+<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
+<li><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
 <li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
 <li><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
 <li><a class="reference internal" href="#set-default-image">set default image</a></li>

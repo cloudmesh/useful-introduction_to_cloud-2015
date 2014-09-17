@@ -23,7 +23,7 @@ Notebooks
    `_cm_vm_management <cloudmesh/cm/_cm_vm_management.html>`__, `_cm_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm_vm_management.ipynb>`__, cloudmesh/cm/_cm_vm_management.ipynb
    `_introduction <cloudmesh/shell/_introduction.html>`__, `_introduction.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_introduction.ipynb>`__, cloudmesh/shell/_introduction.ipynb
    `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
-   `_overview <cloudmesh/shell/_overview.html>`__, `_overview.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_overview.ipynb>`__, cloudmesh/shell/_overview.ipynb
+   `_shell_vm_management <cloudmesh/shell/_shell_vm_management.html>`__, `_shell_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_shell_vm_management.ipynb>`__, cloudmesh/shell/_shell_vm_management.ipynb
    `_ipython <ipython/_ipython.html>`__, `_ipython.ipynb <http://localhost:8889/notebooks/docs/source/ipython/_ipython.ipynb>`__, ipython/_ipython.ipynb
    `_mongo_cm <mongo/_mongo_cm.html>`__, `_mongo_cm.ipynb <http://localhost:8889/notebooks/docs/source/mongo/_mongo_cm.ipynb>`__, mongo/_mongo_cm.ipynb
    `_cm_shell_boot <proposed/_cm_shell_boot.html>`__, `_cm_shell_boot.ipynb <http://localhost:8889/notebooks/docs/source/proposed/_cm_shell_boot.ipynb>`__, proposed/_cm_shell_boot.ipynb
