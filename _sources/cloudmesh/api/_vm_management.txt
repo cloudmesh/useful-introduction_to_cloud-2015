@@ -8,8 +8,8 @@ AWS, Eucalyptus and but also AWS compatible clouds. This page shows how
 to use Cloudmesh functions in python by a couple of examples on starting
 or stopping virtual machine instances through the APIs.
 
-Import Cloudmesh
-----------------
+Initialization
+--------------
 
 A simple import allows you to enable all features of Cloudmesh in
 Python.
@@ -17,8 +17,8 @@ Python.
 .. code:: python
 
     import cloudmesh
-Choose a place to initialize
-----------------------------
+Activating Clouds
+-----------------
 
 Cloudmesh provides *yaml* or *mongo* option where to load basic
 information. *yaml* relies on the yaml files in the $HOME/.cloudmesh
@@ -28,7 +28,7 @@ directory, *mongo* retrieves information from the mongo database.
 
     mesh = cloudmesh.mesh("mongo")
 Get a username
---------------
+~~~~~~~~~~~~~~
 
 In most Cloudmesh functions, you need to provide a username to tell the
 server who is going to use cloud services.
@@ -37,75 +37,26 @@ server who is going to use cloud services.
 
     username = cloudmesh.load().username()
 Activate the user account
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With the activation, the connection to IaaS cloud is established.
 
 .. code:: python
 
     mesh.activate(username)
-Get Flavors
------------
+Start a VM
+----------
 
-Available flavors can be listed with the following function.
-
-.. code:: python
-
-    mesh.flavors(cm_user_id=username, clouds=["india"])
-refresh function updates the data from the IaaS cloud. The cached data
-in the mongo database will be updated.
+Now let us see how to start VMs on a cloud, here is how to start a VM on
+cloud india.
 
 .. code:: python
 
-    mesh.refresh(username,types=['flavors'],names=["india"])
-Start VM
---------
+    result = mesh.start(cloud="india", cm_user_id="Taylor", prefix="hoho", index=5, flavor="m1.small", image="futuregrid/ubuntu-14.04")
+You may don’t know what images or flavors are available on the cloud, or
+you don’t want to type a long line every time you start a VM, things can
+get a lot easier by performing some setting up.
 
-A simple function *start* provides a quick launch of vm instances in
-cloudmesh.
-
-.. code:: python
-
-    result = mesh.start("india", username)
-Delete VM
----------
-
-If you know the id of the virtual machine that you want to destroy,
-*delete* function in cloudmesh simply terminate the instance. This
-example deletes the vm that we just launched above by getting the id
-from the result dict.
-
-.. code:: python
-
-    server = result['server']['id']
-    mesh.delete(cloud, server, username)
-VM Images
----------
-
-The functions about vm images provide an available vm images on a
-selected cloud.
-
-.. code:: python
-
-    mesh.images(clouds=['india'],cm_user_id=username)
-Select an image
-~~~~~~~~~~~~~~~
-
-If you know the name of the vm image, you can specify the vm image to
-user it later. In this example, we choose Ubuntu trusty 14.04 image.
-
-.. code:: python
-
-    image=mesh.image('india','futuregrid/ubuntu-14.04')
-Select a flavor
-~~~~~~~~~~~~~~~
-
-Flavor is also selectable. The selected image or flavor can be used to
-set a default image or a default flavor.
-
-.. code:: python
-
-    flavor = mesh.flavor('india', 'm1.small')
 Set a default flavor or image
 -----------------------------
 
@@ -128,6 +79,65 @@ You can execute a cell with a function name and a single question mark
 .. code:: python
 
     defaults = mesh.default('india', 'flavor', flavor)
+Get Flavors or Images
+---------------------
+
+Available flavors can be listed with the following function.
+
+.. code:: python
+
+    mesh.flavors(cm_user_id=username, clouds=["india"])
+refresh function updates the data from the IaaS cloud. The cached data
+in the mongo database will be updated.
+
+.. code:: python
+
+    mesh.refresh(username,types=['flavors'],names=["india"])
+The functions about vm images provide an available vm images on a
+selected cloud.
+
+.. code:: python
+
+    mesh.images(clouds=['india'],cm_user_id=username)
+Select a flavor
+~~~~~~~~~~~~~~~
+
+Flavor is also selectable. The selected image or flavor can be used to
+set a default image or a default flavor.
+
+.. code:: python
+
+    flavor = mesh.flavor('india', 'm1.small')
+Select an image
+~~~~~~~~~~~~~~~
+
+If you know the name of the vm image, you can specify the vm image to
+user it later. In this example, we choose Ubuntu trusty 14.04 image.
+
+.. code:: python
+
+    image=mesh.image('india','futuregrid/ubuntu-14.04')
+Quick Start a VM
+----------------
+
+A simple function *start* provides a quick launch of vm instances in
+cloudmesh.
+
+.. code:: python
+
+    result = mesh.start("india", username)
+Delete VM
+---------
+
+If you know the id of the virtual machine that you want to destroy,
+*delete* function in cloudmesh simply terminate the instance. This
+example deletes the vm that we just launched above by getting the id
+from the result dict.
+
+.. code:: python
+
+    server = result['server']['id']
+    mesh.delete(cloud, server, username)
 More options to launch a VM instance
 ------------------------------------
 
@@ -137,10 +147,12 @@ such as a flavor, an image, or a key associated with the instance.
 options. To see a brief description of the function, try *mesh.start?*
 in the IPython Notebook cell.
 
-Available options are:
-
--  prefix: The VM instance name starts with
--  index: The number of vm instances (auto increment)
+Available options are: with \* cloud: cloud id e.g. india \*
+cm\_user\_id: portal user id \* prefix: The VM instance name starts \*
+index: The number of vm instances (auto increment) \* flavor: flavor
+name e.g. m1.small \* image: image name e.g. futuregrid/ubuntu-14.04 \*
+key: key name to use \* meta: data in python dict e.g. {"cm\_user\_id":
+"brian"}
 
 .. code:: python
 
@@ -230,4 +242,15 @@ Otherwise, you can simply use ssh\_execute() function.
 .. code:: python
 
     mesh.ssh_execute(ipaddr=ip, command="uname -a")
-More examples follows soon, for example listing vm instances.
+Refreshing VM status
+--------------------
+
+The information of VM instances can be displayed with ``servers()``
+function.
+
+.. code:: python
+
+    mesh.refresh(username, names=["india"],types=["servers"])
+.. code:: python
+
+    mesh.servers(clouds=["india"],cm_user_id=username)

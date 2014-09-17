@@ -243,23 +243,16 @@
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">CM Console for VM Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#start-vm">Start VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#delete-vm">Delete VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialization-preparing-on-ipython">Initialization (Preparing on IPython)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-a-vm">Start a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-flavors-or-images">Get Flavors or Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-a-vm">Delete a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#set-default-image">set default image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#set-default-vm-name">set default VM name</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="#set-default-cloud">Set default cloud</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#refreshing-vm-status">Refreshing VM status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#starting-multiple-vms">Starting multiple VMs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#deleting-vms">Deleting VMs</a></li>
@@ -293,32 +286,65 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/_vm_management.html">Cloudmesh API for VM Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#import-cloudmesh">Import Cloudmesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-a-username">Get a username</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#activate-the-user-account">Activate the user account</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-flavors">Get Flavors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#start-vm">Start VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#delete-vm">Delete VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vm-images">VM Images</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-an-image">Select an image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#activating-clouds">Activating Clouds</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#get-a-username">Get a username</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#activate-the-user-account">Activate the user account</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#start-a-vm">Start a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#need-a-help-for-the-function">Need a help for the function?</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-flavors-or-images">Get Flavors or Images</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-an-image">Select an image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#delete-vm">Delete VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vitual-machine-name">Vitual Machine Name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#ssh-to-the-vm">SSH to the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../shell/_introduction.html">Cloudmesh Shell API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/_shell_vm_management.html">Cloudmesh Shell for VM Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#start-a-vm">Start a VM</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_shell_vm_management.html#set-a-default-flavor-or-a-default-image">Set a default flavor or a default image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#get-flavors-or-images">Get Flavors or Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#delete-a-vm">Delete a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#vitual-machine-name">Vitual Machine Name</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_shell_vm_management.html#set-a-default-cloud">Set a default cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#deleting-vms">Deleting VMs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/_list.html">Cloudmesh Shell - list command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_list.html#listing-flavors">Listing flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_list.html#listing-images">Listing images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_list.html#listing-vm-instances">Listing vm instances</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../shell/_list.html#json-format-output">JSON format output</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../shell/_list.html#options">Options</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a><ul>
@@ -459,23 +485,16 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">CM Console for VM Management</a><ul>
-<li><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
-<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
-<li><a class="reference internal" href="#start-vm">Start VM</a></li>
-<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
-<li><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li><a class="reference internal" href="#initialization-preparing-on-ipython">Initialization (Preparing on IPython)</a></li>
+<li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
+<li><a class="reference internal" href="#start-a-vm">Start a VM</a></li>
 <li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li><a class="reference internal" href="#get-flavors-or-images">Get Flavors or Images</a></li>
+<li><a class="reference internal" href="#quick-start-a-vm">Quick Start a VM</a></li>
+<li><a class="reference internal" href="#delete-a-vm">Delete a VM</a></li>
 <li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
-<li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
-<li><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
-<li><a class="reference internal" href="#set-default-image">set default image</a></li>
-<li><a class="reference internal" href="#set-default-flavor">set default flavor</a></li>
-<li><a class="reference internal" href="#set-default-cloud">set default cloud</a></li>
-<li><a class="reference internal" href="#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li><a class="reference internal" href="#set-default-vm-name">set default VM name</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#set-default-cloud">Set default cloud</a></li>
 <li><a class="reference internal" href="#refreshing-vm-status">Refreshing VM status</a></li>
 <li><a class="reference internal" href="#starting-multiple-vms">Starting multiple VMs</a></li>
 <li><a class="reference internal" href="#deleting-vms">Deleting VMs</a></li>
@@ -565,23 +584,16 @@
   
 <h4 class="nav-header">Page Contents</h4><ul>
 <li><a class="reference internal" href="#">CM Console for VM Management</a><ul>
-<li><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
-<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
-<li><a class="reference internal" href="#start-vm">Start VM</a></li>
-<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
-<li><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li><a class="reference internal" href="#initialization-preparing-on-ipython">Initialization (Preparing on IPython)</a></li>
+<li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
+<li><a class="reference internal" href="#start-a-vm">Start a VM</a></li>
 <li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li><a class="reference internal" href="#get-flavors-or-images">Get Flavors or Images</a></li>
+<li><a class="reference internal" href="#quick-start-a-vm">Quick Start a VM</a></li>
+<li><a class="reference internal" href="#delete-a-vm">Delete a VM</a></li>
 <li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
-<li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
-<li><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
-<li><a class="reference internal" href="#set-default-image">set default image</a></li>
-<li><a class="reference internal" href="#set-default-flavor">set default flavor</a></li>
-<li><a class="reference internal" href="#set-default-cloud">set default cloud</a></li>
-<li><a class="reference internal" href="#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li><a class="reference internal" href="#set-default-vm-name">set default VM name</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#set-default-cloud">Set default cloud</a></li>
 <li><a class="reference internal" href="#refreshing-vm-status">Refreshing VM status</a></li>
 <li><a class="reference internal" href="#starting-multiple-vms">Starting multiple VMs</a></li>
 <li><a class="reference internal" href="#deleting-vms">Deleting VMs</a></li>
@@ -606,8 +618,8 @@
       
   <div class="section" id="cm-console-for-vm-management">
 <h1>CM Console for VM Management<a class="headerlink" href="#cm-console-for-vm-management" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="preparing-on-ipython">
-<h2>Preparing on IPython<a class="headerlink" href="#preparing-on-ipython" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="initialization-preparing-on-ipython">
+<h2>Initialization (Preparing on IPython)<a class="headerlink" href="#initialization-preparing-on-ipython" title="Permalink to this headline">¶</a></h2>
 <p>With the alias command we simply define a new command with the name cm
 that we can call directly from IPython. Here we make sure that the
 parameters are between &#8220;&#8221; so that they are properly set. Just execute
@@ -615,9 +627,78 @@ the following line</p>
 <div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
 </pre></div>
 </div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm help
+</pre></div>
 </div>
-<div class="section" id="get-flavors">
-<h2>Get Flavors<a class="headerlink" href="#get-flavors" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="activating-clouds">
+<h2>Activating Clouds<a class="headerlink" href="#activating-clouds" title="Permalink to this headline">¶</a></h2>
+<p>In order for cloudmesh to work with multiple clouds, we need to find out
+first which clouds are available. Users can add their own clouds later
+which we describe in the registration section.</p>
+<p>Let us inspect which clouds are available by invoking the list command.</p>
+<p>As you see we have a number of clouds, but none of them is already
+active. Thus we need to first activate a cloud. We assume that you have
+an account on FutureGrid. Let us activate the cloud india</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+-------------------+--------+
+| cloud             | active |
++-------------------+--------+
+| alamo             | True   |
+| aws               |        |
+| azure             |        |
+| dreamhost         |        |
+| hp                |        |
+| hp_east           |        |
+| india             | True   |
+| india_eucalyptus  |        |
+| sierra            | True   |
+| sierra_eucalyptus |        |
++-------------------+--------+
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud on india
+</pre></div>
+</div>
+<p>We also have a conveniet interactive command to select a cloud to work
+with, that however does not work with ipython</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&quot;cloud select&quot;</span>
+</pre></div>
+</div>
+<p>or you may also input &#8220;cloud select india&#8221; to select a specific cloud
+india.</p>
+<p>To check if the cloud was activated, simply use the list command again.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-a-vm">
+<h2>Start a VM<a class="headerlink" href="#start-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>Now let us see how to start a VM on a cloud, here is how to start a VM
+on cloud india.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small&quot;
+</pre></div>
+</div>
+<p>You may don’t know what images or flavors are available on the cloud, or
+you don’t want to type a long command every time you start a VM, things
+can get a lot easier by performing some setting up.</p>
+</div>
+<div class="section" id="set-a-default-flavor-or-image">
+<h2>Set a default flavor or image<a class="headerlink" href="#set-a-default-flavor-or-image" title="Permalink to this headline">¶</a></h2>
+<p>Each cloud must have a default image and a default flavor to launch vm
+instances in a simple step. The <tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></tt> command provides a way to
+set default values for an image or a flavor.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --flavor=m1.small&quot;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --image=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-flavors-or-images">
+<h2>Get Flavors or Images<a class="headerlink" href="#get-flavors-or-images" title="Permalink to this headline">¶</a></h2>
 <p>Available flavors can be listed with the following command.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm list flavor india
 </pre></div>
@@ -642,25 +723,6 @@ the mongo database will be updated.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list flavor india --refresh&quot;
 </pre></div>
 </div>
-</div>
-<div class="section" id="start-vm">
-<h2>Start VM<a class="headerlink" href="#start-vm" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command provides a quick launch of a vm instance in
-cloudmesh.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india&quot;
-</pre></div>
-</div>
-</div>
-<div class="section" id="delete-vm">
-<h2>Delete VM<a class="headerlink" href="#delete-vm" title="Permalink to this headline">¶</a></h2>
-<p>If you know the id of the virtual machine that you want to destroy,
-<em>delete</em> command in cloudmesh simply terminate the instance.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete [NAME] --cloud=india&quot;
-</pre></div>
-</div>
-</div>
-<div class="section" id="vm-images">
-<h2>VM Images<a class="headerlink" href="#vm-images" title="Permalink to this headline">¶</a></h2>
 <p>The <tt class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></tt> command provides an available vm images on a selected
 cloud.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list image india --column=name,id,updated&quot;
@@ -722,15 +784,19 @@ cloud.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="set-a-default-flavor-or-image">
-<h2>Set a default flavor or image<a class="headerlink" href="#set-a-default-flavor-or-image" title="Permalink to this headline">¶</a></h2>
-<p>Each cloud must have a default image and a default flavor to launch vm
-instances in a simple step. The <tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></tt> command provides a way to
-set default values for an image or a flavor.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --flavor=m1.small&quot;
+<div class="section" id="quick-start-a-vm">
+<h2>Quick Start a VM<a class="headerlink" href="#quick-start-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command provides a quick launch of a vm instance in
+cloudmesh.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india&quot;
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --image=futuregrid/ubuntu-14.04&quot;
+</div>
+<div class="section" id="delete-a-vm">
+<h2>Delete a VM<a class="headerlink" href="#delete-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>If you know the id of the virtual machine that you want to destroy,
+<em>delete</em> command in cloudmesh simply terminate the instance.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete [NAME] --cloud=india&quot;
 </pre></div>
 </div>
 </div>
@@ -765,6 +831,9 @@ e.g. abc_9</li>
 </div>
 <div class="section" id="vitual-machine-name">
 <h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
+<p>In Cloudmesh, the default name of VM consists of your username and a
+number, for example, alex_1. <tt class="docutils literal"><span class="pre">label</span></tt> command allows you to manage or
+modify the VM name as you wish.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm label
 </pre></div>
 </div>
@@ -773,87 +842,25 @@ index:  32
 next VM name: brian_32
 </pre></div>
 </div>
-</div>
-<div class="section" id="activating-clouds">
-<h2>Activating Clouds<a class="headerlink" href="#activating-clouds" title="Permalink to this headline">¶</a></h2>
-<p>In order for cloudmesh to work with multiple coulds, we need to find out
-first which clouds are available. Users can add their own clouds later
-which we describe in the registration section.</p>
-<p>Let us inspect what is already available by invoking the list command</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;label --prefix=Alex --id=40&quot;
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>+-------------------+--------+
-| cloud             | active |
-+-------------------+--------+
-| alamo             | True   |
-| aws               |        |
-| azure             |        |
-| dreamhost         |        |
-| hp                |        |
-| hp_east           |        |
-| india             | True   |
-| india_eucalyptus  |        |
-| sierra            | True   |
-| sierra_eucalyptus |        |
-+-------------------+--------+
+<div class="code python highlight-python"><div class="highlight"><pre>cm label
 </pre></div>
 </div>
-<p>As you see we have a number of clouds, but none of them is already
-active. Thus we need to first activate a cloud. We assume that you have
-an account on FutureGrid. Let us activate the cloud india</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm cloud on india
+<div class="highlight-python"><div class="highlight"><pre>prefix:  Alex
+index:  40
+next VM name: Alex_40
 </pre></div>
 </div>
-<p>We also have a conveniet interactive selector to select a cloud to work
-with, that however does not work with ipython</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">&quot;cloud select&quot;</span>
-</pre></div>
-</div>
-<p>or you may also input &#8220;cloud select india&#8221; to select a specific cloud
-india</p>
-<p>To check if the cloud was activated, simply use the list command again</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
-</pre></div>
-</div>
-</div>
-<div class="section" id="starting-vms">
-<h2>Starting VMs<a class="headerlink" href="#starting-vms" title="Permalink to this headline">¶</a></h2>
-<p>Now let us see how to start VMs on a cloud, here is how to start a VM on
-cloud india</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small&quot;
-</pre></div>
-</div>
-<p>You may don&#8217;t know what images or flavors are available on the cloud, or
-you don&#8217;t want to type a long command every time you start a VM, things
-can get a lot easier by performing some setting up...</p>
-<div class="section" id="set-default-image">
-<h3>set default image<a class="headerlink" href="#set-default-image" title="Permalink to this headline">¶</a></h3>
-<p>You can invoke command &#8220;cloud set image india&#8221; to set a image
-interactively, however this does not work with ipython. Then we can use
-the following commands to get a list of images first and set default
-image by giving its image name or image id</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list image india --refresh&quot;
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --image=futuregrid/ubuntu-14.04&quot;
-</pre></div>
-</div>
-</div>
-<div class="section" id="set-default-flavor">
-<h3>set default flavor<a class="headerlink" href="#set-default-flavor" title="Permalink to this headline">¶</a></h3>
-<p>Similar as setting default image, to set up default flavor
-interactively, &#8220;cloud set flavor india&#8221;, otherwise you may get a list of
-flavors then set by giving flavor name or flavor id</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list flavor india --refresh&quot;
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --flavorid=2&quot;
-</pre></div>
-</div>
+<p>If the user doesn’t provide a name while starting VMs, cloudmesh will
+generate labels for them. The default form to name VMs is prefix_index,
+where prefix is a string and index is an non-negative integer. If a
+index is used, the index value will be automatically added by one
+waiting to be used for next VM. To check your current prefix and index</p>
 </div>
 <div class="section" id="set-default-cloud">
-<h3>set default cloud<a class="headerlink" href="#set-default-cloud" title="Permalink to this headline">¶</a></h3>
+<h2>Set default cloud<a class="headerlink" href="#set-default-cloud" title="Permalink to this headline">¶</a></h2>
 <p>If you want to make things even more convenient, you can set a default
 cloud or select a cloud to work with so that you don&#8217;t have to type in a
 cloud everytime you need to specify a cloud, to set india as default
@@ -870,29 +877,6 @@ with.</p>
 <p>For more details of using command cloud to set up a cloud</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud -h&quot;
 </pre></div>
-</div>
-</div>
-<div class="section" id="simple-way-to-start-a-vm">
-<h3>simple way to start a VM<a class="headerlink" href="#simple-way-to-start-a-vm" title="Permalink to this headline">¶</a></h3>
-<p>After all setting up above, now you can start a VM simply by typing in</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start&quot;
-</pre></div>
-</div>
-</div>
-<div class="section" id="set-default-vm-name">
-<h3>set default VM name<a class="headerlink" href="#set-default-vm-name" title="Permalink to this headline">¶</a></h3>
-<p>If the user doesn&#8217;t provide a name while starting VMs, cloudmesh will
-generate labels for them. The default form to name VMs is prefix_index,
-where prefix is a string and index is an non-negative integer. If a
-index is used, the index value will be automatically added by one
-waiting to be used for next VM. To check your current prefix and index</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;label&quot;
-</pre></div>
-</div>
-<p>To change the prefix and/or reset index(e.g. to abc and 3)</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;label --prefix=Brain --id=3&quot;
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="refreshing-vm-status">
@@ -1001,23 +985,16 @@ range is no greater than 100</p>
 
        <ul>
 <li><a class="reference internal" href="#">CM Console for VM Management</a><ul>
-<li><a class="reference internal" href="#preparing-on-ipython">Preparing on IPython</a></li>
-<li><a class="reference internal" href="#get-flavors">Get Flavors</a></li>
-<li><a class="reference internal" href="#start-vm">Start VM</a></li>
-<li><a class="reference internal" href="#delete-vm">Delete VM</a></li>
-<li><a class="reference internal" href="#vm-images">VM Images</a></li>
+<li><a class="reference internal" href="#initialization-preparing-on-ipython">Initialization (Preparing on IPython)</a></li>
+<li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
+<li><a class="reference internal" href="#start-a-vm">Start a VM</a></li>
 <li><a class="reference internal" href="#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li><a class="reference internal" href="#get-flavors-or-images">Get Flavors or Images</a></li>
+<li><a class="reference internal" href="#quick-start-a-vm">Quick Start a VM</a></li>
+<li><a class="reference internal" href="#delete-a-vm">Delete a VM</a></li>
 <li><a class="reference internal" href="#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li><a class="reference internal" href="#vitual-machine-name">Vitual Machine Name</a></li>
-<li><a class="reference internal" href="#activating-clouds">Activating Clouds</a></li>
-<li><a class="reference internal" href="#starting-vms">Starting VMs</a><ul>
-<li><a class="reference internal" href="#set-default-image">set default image</a></li>
-<li><a class="reference internal" href="#set-default-flavor">set default flavor</a></li>
-<li><a class="reference internal" href="#set-default-cloud">set default cloud</a></li>
-<li><a class="reference internal" href="#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li><a class="reference internal" href="#set-default-vm-name">set default VM name</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#set-default-cloud">Set default cloud</a></li>
 <li><a class="reference internal" href="#refreshing-vm-status">Refreshing VM status</a></li>
 <li><a class="reference internal" href="#starting-multiple-vms">Starting multiple VMs</a></li>
 <li><a class="reference internal" href="#deleting-vms">Deleting VMs</a></li>

@@ -32,6 +32,9 @@
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
+    <link rel="up" title="Cloudmesh Shell" href="index.html" />
+    <link rel="next" title="Cloudmesh GUI" href="../gui/index.html" />
+    <link rel="prev" title="Cloudmesh Shell for VM Management" href="_shell_vm_management.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -74,7 +77,7 @@
      href="../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 </ul>
@@ -132,7 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-main-components">Cloudmesh Main Components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-install-management">Cloudmesh Install Management</a></li>
@@ -240,23 +243,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm_vm_management.html">CM Console for VM Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#preparing-on-ipython">Preparing on IPython</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#get-flavors">Get Flavors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#start-vm">Start VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#delete-vm">Delete VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#vm-images">VM Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#initialization-preparing-on-ipython">Initialization (Preparing on IPython)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#start-a-vm">Start a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#get-flavors-or-images">Get Flavors or Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#delete-a-vm">Delete a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#vitual-machine-name">Vitual Machine Name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-image">set default image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-vm-name">set default VM name</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-cloud">Set default cloud</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#starting-multiple-vms">Starting multiple VMs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#deleting-vms">Deleting VMs</a></li>
@@ -290,32 +286,65 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/_vm_management.html">Cloudmesh API for VM Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#import-cloudmesh">Import Cloudmesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#choose-a-place-to-initialize">Choose a place to initialize</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-a-username">Get a username</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#activate-the-user-account">Activate the user account</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-flavors">Get Flavors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#start-vm">Start VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#delete-vm">Delete VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vm-images">VM Images</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-an-image">Select an image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#activating-clouds">Activating Clouds</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#get-a-username">Get a username</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#activate-the-user-account">Activate the user account</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#start-a-vm">Start a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#set-a-default-flavor-or-image">Set a default flavor or image</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#need-a-help-for-the-function">Need a help for the function?</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#get-flavors-or-images">Get Flavors or Images</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-a-flavor">Select a flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/_vm_management.html#select-an-image">Select an image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#delete-vm">Delete VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#vitual-machine-name">Vitual Machine Name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#ssh-to-the-vm">SSH to the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html">Cloudmesh Shell</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Shell</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="_introduction.html">Cloudmesh Shell API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_shell_vm_management.html">Cloudmesh Shell for VM Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#start-a-vm">Start a VM</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_shell_vm_management.html#set-a-default-flavor-or-a-default-image">Set a default flavor or a default image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#get-flavors-or-images">Get Flavors or Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#delete-a-vm">Delete a VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#vitual-machine-name">Vitual Machine Name</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_shell_vm_management.html#set-a-default-cloud">Set a default cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_shell_vm_management.html#deleting-vms">Deleting VMs</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Cloudmesh Shell - list command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#listing-flavors">Listing flavors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listing-images">Listing images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listing-vm-instances">Listing vm instances</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#json-format-output">JSON format output</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a><ul>
@@ -473,6 +502,14 @@
             
               
                 
+  <li>
+    <a href="_shell_vm_management.html" title="Previous Chapter: Cloudmesh Shell for VM Management"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Cloudmesh Shell ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../gui/index.html" title="Next Chapter: Cloudmesh GUI"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Cloudmesh GUI &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -516,14 +553,14 @@
       <a href="myCloudmesh.epub"> ePub </a> 
     </li>
     <li> <a href="toc.html"> Table of Contents </a> </li>
-    <ul>
+    <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
@@ -1368,14 +1405,14 @@ selected information. &#8211;column=all displays all.</li>
 
       <ul class="nav nav-list">
 	<li> <a href="toc.html"> Table of Contents </a> </li>	
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>

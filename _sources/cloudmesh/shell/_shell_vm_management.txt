@@ -1,9 +1,12 @@
 
-Cloudmesh Shell
-===============
+Cloudmesh Shell for VM Management
+=================================
 
 Initialization
 --------------
+
+A simple import allows you to enable all features of Cloudmesh in
+Python.
 
 .. code:: python
 
@@ -79,17 +82,6 @@ an account on FutureGrid. Let us activate the cloud india
 .. code:: python
 
     print cloudmesh.shell("cloud on india")
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.361881971359
-    Store time: 0.00755286216736
-    [92mcloud 'india' activated.[0m
-    
-
-
 We also have a conveniet interactive selector to select a cloud to work
 with, that however does not work with ipython
 
@@ -128,8 +120,8 @@ To check if the cloud was activated, simply use the list command again
     
 
 
-Starting VMs
-------------
+Start a VM
+----------
 
 Now let us see how to start VMs on a cloud, here is how to start a VM on
 cloud india
@@ -137,194 +129,140 @@ cloud india
 .. code:: python
 
     print cloudmesh.shell("vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small")
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.340050935745
-    Store time: 0.00301289558411
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.149047136307
-    Store time: 0.0033278465271
-    Refreshing gvonlasz images india ->
-    Refresh time: 0.72811293602
-    Store time: 0.0171279907227
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_1 on cloud->india using image->m1.small, flavor->futuregrid/ubuntu-14.04, key->gvonlasz_fg_pro
-    # ######################################################################
-    job status: PENDING
-    to check realtime vm status: list vm --refresh
-    
-
-
 You may don't know what images or flavors are available on the cloud, or
 you don't want to type a long command every time you start a VM, things
 can get a lot easier by performing some setting up...
 
-set default image
-~~~~~~~~~~~~~~~~~
+Set a default flavor or a default image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can invoke command "cloud set image india" to set a image
-interactively, however this does not work with ipython. Then we can use
-the following commands to get a list of images first and set default
-image by giving its image name or image id
-
-.. code:: python
-
-    print cloudmesh.shell("list image india --refresh")
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.101712942123
-    Store time: 0.0334851741791
-    * india
-    Refreshing gvonlasz images india ->
-    Refresh time: 0.260214090347
-    Store time: 0.0410861968994
-    +--------------------------------------+
-    images of cloud 'india'
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | name                                               | status   | id                                   |   type_id | iname    | location   | state     | updated              |   memory_mb |   fid |   vcpus |
-    +====================================================+==========+======================================+===========+==========+============+===========+======================+=============+=======+=========+
-    | futuregrid/fedora-19                               | ACTIVE   | 5bf9905b-3314-4b83-8609-d94a3b4c89a8 |           |          |            |           | 2014-08-21T18:47:00Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | salsahpc/cloud-mooc-m1-large-4GB                   | ACTIVE   | 384ca88c-f674-4d3d-999f-353fc6915608 |         3 | m1.large | snapshot   | available | 2013-12-27T01:09:19Z |        8192 |     4 |       4 |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | CentOS6                                            | ACTIVE   | ad35042c-d242-4514-bde0-138718b5aa3e |           |          |            |           | 2014-04-29T05:06:40Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | SL64-blank-sparse10gb-C vmdk                       | ACTIVE   | f480f1e7-38af-4410-bc13-6a1e43bf58ba |           |          |            |           | 2014-02-05T16:57:37Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | fg7/rynge/centos6-v1                               | ACTIVE   | ac464f65-7175-44df-9e0e-34b1a32f8a2a |           |          |            |           | 2014-05-01T21:42:25Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | futuregrid/centos-6                                | ACTIVE   | 81b27cb5-4f8b-4583-afd4-1901053f6a28 |           |          |            |           | 2014-05-27T15:04:30Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | DaLiAna-vm2014e-geant4.10.vmdk Jan best            | ACTIVE   | f4f9821f-881b-433a-97ab-1ad87273c5fc |           |          |            |           | 2014-03-05T04:22:40Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | ubuntu-13.10                                       | ACTIVE   | cd844b12-f138-414a-8cd5-2c977f0a2379 |           |          |            |           | 2014-01-29T17:24:08Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | fg101/richieriee/my-ubuntu-01                      | ACTIVE   | 7915f335-d1a9-4380-a9f3-159eb67d721e |         5 | m1.small | snapshot   | available | 2014-07-24T01:10:37Z |        2048 |     2 |       1 |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | sl64-gluex-vm2014e-40gb.vmdk Justin                | ACTIVE   | f51fc1e4-d495-4376-824b-19000c41abef |           |          |            |           | 2014-03-13T17:21:09Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | fg10/jcharcal/centos6.5_x86_64                     | ACTIVE   | 28f2ad75-8f42-4079-85e1-3d4fe986317f |           |          |            |           | 2014-03-12T13:50:20Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | balewski/kernel-2.6.32-431.5.1-sl65                | ACTIVE   | 00e935c3-82a6-499c-9056-6db37d27439b |           |          |            |           | 2014-03-10T01:56:13Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | SL64-blank-sparse40GB vmdk                         | ACTIVE   | 882871a5-3157-426a-b7bc-10cca91860f0 |           |          |            |           | 2014-02-05T16:57:23Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | futuregrid/fedora-20                               | ACTIVE   | 928b52df-06cf-46b6-a6a6-af25a6a14776 |           |          |            |           | 2014-08-21T18:49:23Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | futuregrid/ubuntu-12.04                            | ACTIVE   | 9e1765c7-f554-4a10-a8e5-e2d3bf75904b |           |          |            |           | 2014-08-21T18:47:25Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | Ubuntu-12.04-blank2.vmdk                           | ACTIVE   | b49324f8-d2c3-413a-8f8c-83b498e815f6 |           |          |            |           | 2014-02-05T16:55:28Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | balewski/ramdisk-2.6.32-431.5.1-sl65               | ACTIVE   | 9589cf93-f0e6-45d8-930f-63dd2d9c2f1a |           |          |            |           | 2014-03-10T01:56:19Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | sl6_x64-qemu  french ?bad                          | ACTIVE   | c9ca9852-dfcb-4ceb-a164-a58c89594551 |           |          |            |           | 2014-02-01T21:59:26Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | balewski/sl6.5-blank-80gb-b works                  | ACTIVE   | 5cb90f55-c3a1-468b-b60a-0ecd589baf31 |           |          |            |           | 2014-03-10T15:48:27Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | grp17Cent                                          | ACTIVE   | 3fcf5075-f8e4-44db-b963-183de5a17c33 |           |          |            |           | 2014-04-10T23:19:30Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | futuregrid/ubuntu-14.04                            | ACTIVE   | 02cf1545-dd83-493a-986e-583d53ee3728 |           |          |            |           | 2014-08-21T18:47:14Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | ndssl-vt/ubuntu-12.04-small                        | ACTIVE   | b9455041-407b-488b-a3f1-5dce6c480b5a |         3 | m1.large | snapshot   | available | 2013-12-05T22:02:57Z |        8192 |     4 |       4 |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | cglmoocs/ipython                                   | ACTIVE   | 0eff8bfc-e455-429e-9dfb-e16488d410f9 |           |          |            |           | 2014-01-06T16:18:54Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | balewski/daliana-vm2014e2-sl6.5-geant4.10-root5.34 | ACTIVE   | 64866d96-8a9e-4d7c-983f-90b0bb594310 |           |          |            |           | 2014-03-10T02:05:55Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    | DaLiAna-vm2014d-SL64-A.vmdk                        | ACTIVE   | ff5bb4de-d7e9-4bfb-b42b-cec9ed8d2d08 |           |          |            |           | 2014-02-03T16:04:12Z |             |       |         |
-    +----------------------------------------------------+----------+--------------------------------------+-----------+----------+------------+-----------+----------------------+-------------+-------+---------+
-    count: 25
-    +-------+
-    
-
-
-.. code:: python
-
-    print cloudmesh.shell("cloud set image india --image=futuregrid/ubuntu-14.04")
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.328827857971
-    Store time: 0.00358605384827
-    * india
-    Refreshing gvonlasz images india ->
-    Refresh time: 0.438119888306
-    Store time: 0.0100111961365
-    [92m'futuregrid/ubuntu-14.04' is selected[0m
-    
-
-
-set default flavor
-~~~~~~~~~~~~~~~~~~
-
-Similar as setting default image, to set up default flavor
-interactively, "cloud set flavor india", otherwise you may get a list of
-flavors then set by giving flavor name or flavor id
-
-.. code:: python
-
-    print cloudmesh.shell("list flavor india --refresh")
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.349723100662
-    Store time: 0.00250005722046
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.157089948654
-    Store time: 0.00244212150574
-    +----------------------+
-    flavors of cloud 'india'
-    +------+-----------+---------+-------+--------+----------------------+
-    |   id | name      |   vcpus |   ram |   disk | refresh time         |
-    +======+===========+=========+=======+========+======================+
-    |    1 | m1.tiny   |       1 |   512 |      0 | 2014-08-30T16-08-55Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    3 | m1.medium |       2 |  4096 |     40 | 2014-08-30T16-08-55Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    2 | m1.small  |       1 |  2048 |     20 | 2014-08-30T16-08-55Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    5 | m1.xlarge |       8 | 16384 |    160 | 2014-08-30T16-08-55Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    4 | m1.large  |       4 |  8192 |     80 | 2014-08-30T16-08-55Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    count: 5
-    +------+
-    
-
+Each cloud must have a default image and a default flavor to launch vm
+instances in a simple step. The cloud set command provides a way to set
+default values for an image or a flavor.
 
 .. code:: python
 
     print cloudmesh.shell("cloud set flavor india --flavorid=2")
+.. code:: python
+
+    print cloudmesh.shell("cloud set image india --image=futuregrid/ubuntu-14.04")
+Get Flavors or Images
+---------------------
+
+Available flavors can be listed with the following command.
+
+.. code:: python
+
+    print cloudmesh.shell("list flavor india --refresh")
+refresh option updates the data from the IaaS cloud. The cached data in
+the mongo database will be updated.
+
+The ``list image`` command provides an available vm images on a selected
+cloud.
+
+.. code:: python
+
+    print cloudmesh.shell("list image india --refresh")
+Quick Start a VM
+----------------
+
+.. code:: python
+
+    print cloudmesh.shell("vm start --cloud=india")
+Delete a VM
+-----------
+
+If you know the id of the virtual machine that you want to destroy,
+*delete* command in cloudmesh simply terminate the instance.
+
+.. code:: python
+
+    cloudmesh.shell("vm delete [NAME] --cloud=india")
+More options to launch a VM instance
+------------------------------------
+
+When you create a new VM instance, you can also choose multiple options
+such as a flavor, an image, or a key associated with the instance. The
+``vm start`` command accepts optional parameters as a user input of
+these options. To see a brief description of the command, try
+``cm "vm --help"`` in the IPython Notebook cell.
+
+Available options are:
+
+-  --cloud= give a cloud to work on, if not given, selected or default
+   cloud will be used
+-  --count= give the number of servers to start
+-  --flavor= give the name of the flavor
+-  --flavorid= give the id of the flavor
+-  --group= give the group name of server
+-  --id= give the server id
+-  --image= give the name of the image
+-  --imageid= give the id of the image
+-  --prefix= give the prefix of the server, standand server name is in
+   the form of prefix\_index, e.g. abc\_9
+-  --range= give the range of the index of the servers to delete, e.g.
+   --range=3,6. standand server name is in the form of prefix\_index,
+   e.g. abc\_9
+-  --force delete vms without user's confirmation
+
+.. code:: python
+
+    cloudmesh.shell("vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04")
+Vitual Machine Name
+-------------------
+
+In Cloudmesh, the default name of VM consists of your username and a
+number, for example, alex\_1. ``label`` command allows you to manage or
+modify the VM name as you wish.
+
+.. code:: python
+
+    cloudmesh.shell("label")
+
+
 
 .. parsed-literal::
 
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.300434112549
-    Store time: 0.00324892997742
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.161976099014
-    Store time: 0.00268888473511
-    [92m'm1.small' is selected[0m
+    prefix:  Brian
+    index:  32
+    next VM name: Brian_32
+
+
+
+.. code:: python
+
+    cloudmesh.shell("label --prefix=Alex --id=40")
+
+
+
+.. parsed-literal::
+
     
 
 
-set default cloud
-~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    cloudmesh.shell("label")
+
+
+
+.. parsed-literal::
+
+    prefix:  Alex
+    index:  40
+    next VM name: Alex_40
+
+
+
+If the user doesn’t provide a name while starting VMs, cloudmesh will
+generate labels for them. The default form to name VMs is prefix\_index,
+where prefix is a string and index is an non-negative integer. If a
+index is used, the index value will be automatically added by one
+waiting to be used for next VM. To check your current prefix and index
+
+Set a default cloud
+~~~~~~~~~~~~~~~~~~~
 
 If you want to make things even more convenient, you can set a default
 cloud or select a cloud to work with so that you don't have to type in a
@@ -347,31 +285,8 @@ For more details of using command cloud to set up a cloud
 .. code:: python
 
     print cloudmesh.shell("cloud -h")
-simple way to start a VM
-~~~~~~~~~~~~~~~~~~~~~~~~
-
 After all setting up above, now you can start a VM simply by typing in
 
-.. code:: python
-
-    print cloudmesh.shell("vm start")
-set default VM name
-~~~~~~~~~~~~~~~~~~~
-
-If the user doesn't provide a name while starting VMs, cloudmesh will
-generate labels for them. The default form to name VMs is prefix\_index,
-where prefix is a string and index is an non-negative integer. If a
-index is used, the index value will be automatically added by one
-waiting to be used for next VM. To check your current prefix and index
-
-.. code:: python
-
-    print cloudmesh.shell("label")
-To change the prefix and/or reset index(e.g. to abc and 3)
-
-.. code:: python
-
-    print cloudmesh.shell("label --prefix=abc --id=3")
 Refreshing VM status
 --------------------
 

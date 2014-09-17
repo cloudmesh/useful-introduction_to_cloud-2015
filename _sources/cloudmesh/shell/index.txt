@@ -7,4 +7,5 @@ Cloudmesh Shell
    :glob:
 
    _introduction
-   _overview
+   _shell_vm_management
+   _list
