@@ -80,7 +80,7 @@ public key generated in your .ssh directory in the file::
 
 If you do not have such a key, you can generate it with::
 
- ssh-keygen -t rsa -C [portal login id]-key
+ ssh-keygen -t rsa -C portalname-key
 
 The next steps will deploy the cloudmesh database::
 
@@ -88,7 +88,7 @@ The next steps will deploy the cloudmesh database::
 
 We add the key to the database with::
 
-   $ cm "key add --keyname=[portal login id]-key ~/.ssh/id_rsa.pub"
+   $ cm "key add --keyname=portalname -key ~/.ssh/id_rsa.pub"
 
 
 You may next need to specify your default project if you have not yet
