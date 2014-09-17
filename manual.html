@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Parallel Shell &mdash; my Cloudmesh Learning documentation</title>
+    <title>Manual (TODO) &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -32,8 +32,6 @@
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="index.html" />
-    <link rel="next" title="Cloudmesh" href="cloudmesh/index.html" />
-    <link rel="prev" title="IPython" href="ipython/_ipython.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -76,7 +74,7 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul class="current">
+      aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="preface.html#conventions">Conventions</a></li>
 </ul>
@@ -123,15 +121,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Parallel Shell</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fabric">Fabric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parallel.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parallel.html#code">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parallel.html#exercises">Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cloudmesh/index.html">Cloudmesh</a><ul>
@@ -466,15 +464,34 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Parallel Shell</a><ul>
-<li><a class="reference internal" href="#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
-<li><a class="reference internal" href="#fabric">Fabric</a></li>
-<li><a class="reference internal" href="#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#">Manual (TODO)</a></li>
+<li><a class="reference internal" href="#getting-the-manual-from-git">Getting the Manual from Git</a></li>
+<li><a class="reference internal" href="#contributing-to-the-manual">Contributing to the Manual</a><ul>
+<li><a class="reference internal" href="#organisation-of-the-manual-in-git">Organisation of the Manual in Git</a></li>
+<li><a class="reference internal" href="#online-editing-for-novice-editors">Online Editing for Novice Editors</a></li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
+<li><a class="reference internal" href="#publication-of-the-manual">Publication of the Manual</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exercises">Exercises</a></li>
+<li><a class="reference internal" href="#setting-up-the-expert-developers-manual-editing-environment">Setting Up the Expert Developers Manual Editing Environment</a><ul>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#virtualenv">Virtualenv</a></li>
+<li><a class="reference internal" href="#create-a-github-local-directory-with-the-manual">Create a github local directory with the manual</a></li>
+<li><a class="reference internal" href="#install-the-requirements">Install the Requirements</a></li>
+<li><a class="reference internal" href="#all-in-one-setup-script">All-in-one setup script</a></li>
+<li><a class="reference internal" href="#watchdog">Watchdog</a></li>
+<li><a class="reference internal" href="#transfering-a-page-from-the-portal-to-rst">Transfering a page from the portal to RST</a></li>
+<li><a class="reference internal" href="#creating-the-pages-locally">Creating the pages locally</a></li>
+<li><a class="reference internal" href="#publishing-the-pages">Publishing the pages</a></li>
+<li><a class="reference internal" href="#jira">Jira</a></li>
+<li><a class="reference internal" href="#portal-link">Portal link</a></li>
+<li><a class="reference internal" href="#screencast-recording-tips">Screencast recording tips</a><ul>
+<li><a class="reference internal" href="#osx">OSX</a></li>
+<li><a class="reference internal" href="#changing-the-prompt">Changing the prompt</a></li>
+<li><a class="reference internal" href="#recording-of-typed-in-commands">Recording of typed in commands</a></li>
+<li><a class="reference internal" href="#setup-quicktime-sound-recording">Setup quicktime sound recording</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -485,14 +502,6 @@
             
               
                 
-  <li>
-    <a href="ipython/_ipython.html" title="Previous Chapter: IPython"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; IPython</span>
-    </a>
-  </li>
-  <li>
-    <a href="cloudmesh/index.html" title="Next Chapter: Cloudmesh"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Cloudmesh &raquo;</span>
-    </a>
-  </li>
               
             
             
@@ -500,7 +509,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="_sources/parallel.txt"
+  <a href="_sources/manual.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -536,13 +545,13 @@
       <a href="myCloudmesh.epub"> ePub </a> 
     </li>
     <li> <a href="toc.html"> Table of Contents </a> </li>
-    <ul class="current">
+    <ul>
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython/index.html">IPython</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloudmesh/index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paas/index.html">PaaS</a></li>
@@ -560,15 +569,34 @@
   </ul>
   
 <h4 class="nav-header">Page Contents</h4><ul>
-<li><a class="reference internal" href="#">Parallel Shell</a><ul>
-<li><a class="reference internal" href="#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
-<li><a class="reference internal" href="#fabric">Fabric</a></li>
-<li><a class="reference internal" href="#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#">Manual (TODO)</a></li>
+<li><a class="reference internal" href="#getting-the-manual-from-git">Getting the Manual from Git</a></li>
+<li><a class="reference internal" href="#contributing-to-the-manual">Contributing to the Manual</a><ul>
+<li><a class="reference internal" href="#organisation-of-the-manual-in-git">Organisation of the Manual in Git</a></li>
+<li><a class="reference internal" href="#online-editing-for-novice-editors">Online Editing for Novice Editors</a></li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
+<li><a class="reference internal" href="#publication-of-the-manual">Publication of the Manual</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exercises">Exercises</a></li>
+<li><a class="reference internal" href="#setting-up-the-expert-developers-manual-editing-environment">Setting Up the Expert Developers Manual Editing Environment</a><ul>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#virtualenv">Virtualenv</a></li>
+<li><a class="reference internal" href="#create-a-github-local-directory-with-the-manual">Create a github local directory with the manual</a></li>
+<li><a class="reference internal" href="#install-the-requirements">Install the Requirements</a></li>
+<li><a class="reference internal" href="#all-in-one-setup-script">All-in-one setup script</a></li>
+<li><a class="reference internal" href="#watchdog">Watchdog</a></li>
+<li><a class="reference internal" href="#transfering-a-page-from-the-portal-to-rst">Transfering a page from the portal to RST</a></li>
+<li><a class="reference internal" href="#creating-the-pages-locally">Creating the pages locally</a></li>
+<li><a class="reference internal" href="#publishing-the-pages">Publishing the pages</a></li>
+<li><a class="reference internal" href="#jira">Jira</a></li>
+<li><a class="reference internal" href="#portal-link">Portal link</a></li>
+<li><a class="reference internal" href="#screencast-recording-tips">Screencast recording tips</a><ul>
+<li><a class="reference internal" href="#osx">OSX</a></li>
+<li><a class="reference internal" href="#changing-the-prompt">Changing the prompt</a></li>
+<li><a class="reference internal" href="#recording-of-typed-in-commands">Recording of typed in commands</a></li>
+<li><a class="reference internal" href="#setup-quicktime-sound-recording">Setup quicktime sound recording</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -581,388 +609,403 @@
   <input type="hidden" name="area" value="default" />
 </form>
 <div id="sourcelink">
-  <a href="_sources/parallel.txt"
+  <a href="_sources/manual.txt"
      rel="nofollow">Source</a>
 </div>
         </div>
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="parallel-shell">
-<h1>Parallel Shell<a class="headerlink" href="#parallel-shell" title="Permalink to this headline">¶</a></h1>
-<p>Traditionally system administrators and developers using parallel
-computing need tools to manage a significant number of machines. One
-of the requirements is to execute a command in parallel on many
-machines and gather its output. There are many tools that can achieve
-this task. We focus here on the introduction of the following tools:</p>
-<ol class="arabic simple">
-<li>pdsh - a parallel distributed shell</li>
-<li>fabric - python framework to execute commands on remote computers</li>
-<li>Cloudmesh Sequential and Parallel python functions for
-executing repeatedly commands with caching</li>
-</ol>
-<div class="section" id="parallel-distributed-shell-pdsh">
-<h2>Parallel Distributed Shell (pdsh)<a class="headerlink" href="#parallel-distributed-shell-pdsh" title="Permalink to this headline">¶</a></h2>
-<p>The parallel distributed shell (pdsh) is a shell command line program
-that allows the execution of commands not just on one computer but on
-a list of computers.</p>
-<p>An online version of the manual pages is located at</p>
+  <div class="section" id="manual-todo">
+<h1>Manual (TODO)<a class="headerlink" href="#manual-todo" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="getting-the-manual-from-git">
+<h1>Getting the Manual from Git<a class="headerlink" href="#getting-the-manual-from-git" title="Permalink to this headline">¶</a></h1>
+<p>The manual is maintained in github. In case you like to directly
+contribute you can do this either by sending us patches or by
+becomming a committer in github.</p>
+<p>The first thing you want to do is to set your git username and e-mail</p>
 <ul class="simple">
-<li><a class="reference external" href="http://linux.die.net/man/1/pdsh">http://linux.die.net/man/1/pdsh</a></li>
+<li><a class="reference external" href="https://help.github.com/articles/setting-your-username-in-git">https://help.github.com/articles/setting-your-username-in-git</a></li>
 </ul>
-<p>An important feature is that the list of hosts can be specified in a
-convenient form that is also kwon as hostlists. This format allows you
-to define a list of hosts based on some abbreviation. For example the
-string:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">host</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>will create a host list containing the hosts:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">host0</span><span class="p">,</span> <span class="n">host1</span><span class="p">,</span> <span class="n">host2</span><span class="p">,</span> <span class="n">host3</span>
-</pre></div>
-</div>
-<p>Furthermore, substitutions for the user and the hostname to login to
-the remote machine while leveraging ssh config files make this tool
-real easy to use. One such example:</p>
-<div class="highlight-python"><div class="highlight"><pre>pdsh -R exec -w host[0-3] ssh -x -l %u %h hostname
-</pre></div>
-</div>
-<p>executes the command hostname on all specified machines.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">At this time we are not aware that pdsh is installed by
-default on india. check with the systems group and have them
-provide a documentation on how we activate it.</p>
-</div>
-</div>
-<div class="section" id="fabric">
-<h2>Fabric<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h2>
-<p>Fabric is a Python command-line tool and library for assisting system
-administration tasks related to the execution of command via ssh. It
-includes the ability to execute commands on the local machine, but
-also on a remote machine. Due to the integration with Python function
-definitions, it has also somewhat the ability to write &#8220;target&#8221; like
-specifications that we may know from makefiles. However it is more
-sophisticated as we can use the full feature richness of python.</p>
-<p>The web page of Fabric which includes several examples and tutorials
-is located at:</p>
+<p>In the following are useful</p>
+<p><a class="reference external" href="http://learn.github.com/p/normal.html">http://learn.github.com/p/normal.html</a></p>
 <ul class="simple">
-<li><a class="reference external" href="http://www.fabfile.org">http://www.fabfile.org</a></li>
+<li>the simple case</li>
+<li>using staging area</li>
 </ul>
-<p>Similar to the previous command we like to start the command hostname
-on a number of machines. To install fabric you simply say:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install fabric
+<p>More you will probably not need to know as I create separate repos for you.</p>
+<p>Useful other things are</p>
+<ul class="simple">
+<li>gitk</li>
+<li>git config color.ui true</li>
+<li>git add -i</li>
+</ul>
+<p>The manual is maintained in the directory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">doc</span>
 </pre></div>
 </div>
-<p>in your virtualenv. Next, we define a file called fabfile.py with the
-following contents:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
-
-<span class="k">def</span> <span class="nf">hostname</span><span class="p">():</span>
-    <span class="n">run</span><span class="p">(</span><span class="s">&#39;hostname&#39;</span><span class="p">)</span>
+<p>The individual pages can be found in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">doc</span><span class="o">/</span><span class="n">source</span>
 </pre></div>
 </div>
-<p>Next let us run this command on the local computer and test it out:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab -H localhost hostname
-</pre></div>
-</div>
-<p>This will execute the function defined with the name hostname and
-print it via the run command. To execute the command on multiple
-hosts, you can simply specify them as part of the -H argument:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab -H host0,host1,host2,host3 hostname
+<p>Please use your favorite editor to edit the pages or add new once.
+Make sure that new once can be found in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">index</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="cloudmesh-parallel-api">
-<h2>Cloudmesh Parallel API<a class="headerlink" href="#cloudmesh-parallel-api" title="Permalink to this headline">¶</a></h2>
-<p>The previous commands are all developed with a single user in mind,
-i.e. a single user executes the command. However in the age of
-cloud computing what would happen if thousands of users were to execute
-the same task, or even when ten users execute the same task, but the
-task would take considerable compute time to calculate? The answer is
-obvious, we would waste valuable compute resources as we do not take
-into consideration that the same task may be run by multiple
-people. To overcome this challenge we have started a simple
-demonstration program in our cloudmesh repository to partially address
-this issue.</p>
-<p>To do so we are at this time we are only focussing on the consecutive
-execution of a command in a particular time period. Instead of
-executing the command over and over, we will simply return the result
-from a result cache. The cache has a specific time to life in which no
-new results are created but the result is read from the cache. New
-requests are cached.</p>
-<p>We recognize that the example we provide is not a complete solution to
-our problem, but a step in the right direction. I also has the
-advantage of being relatively simple and introducing you to a number
-of tools and concepts that will become important when dealing with
-parallelism in the cloud.</p>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>A computer with python 2.7</li>
-<li>Using a python virtualenv</li>
-<li>Having downloaded the cloudmesh code with git clone as discussed
-elsewhere</li>
-<li>Having installed the cloudmesh code and libraries as discussed
-elsewhere</li>
-</ol>
-</div>
-<div class="section" id="code">
-<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
-<p>The code is located in the directory:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">cloudmesh_examples</span><span class="o">/</span><span class="n">example_mongo</span>
+<div class="section" id="contributing-to-the-manual">
+<h1>Contributing to the Manual<a class="headerlink" href="#contributing-to-the-manual" title="Permalink to this headline">¶</a></h1>
+<p>It is very easy to contribute to the existing manual. All you need is
+to e-mail us the changes. However, if you like it is also easy to set
+up the manual generation framework on your local machine as described
+in a later section.</p>
+<div class="section" id="organisation-of-the-manual-in-git">
+<h2>Organisation of the Manual in Git<a class="headerlink" href="#organisation-of-the-manual-in-git" title="Permalink to this headline">¶</a></h2>
+<p>The FG manual has been developed by many different groups and we try
+to provide a consistant set of manual pages as much as possible. The
+manual is located in the directory:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">docs</span><span class="o">/</span><span class="n">source</span>
 </pre></div>
 </div>
-<p>within the cloudmesh code you have cloned from github. The code
-contains two python functions called Sequential and Parallel, that
-allow users to run commands either sequentially or in parallel on a
-number of hosts. The hosts can be specified in a yaml file located
-in:</p>
-<div class="highlight-python"><div class="highlight"><pre>~/.cloudmesh/cloudmesh_hpc.yaml
+<p>Here you will find the many RST files contributed by the team members.
+To simplify editing and to keep the number of conflicts during
+editing to a minimum it is naturally a good idea to have many such
+files. However, all of them are integrated via the file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">docs</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
-<p>An example would be:</p>
-<div class="highlight-python"><div class="highlight"><pre>meta:
-  yaml_version: 3.0
-  kind: hpc
-cloudmesh:
-    hpc:
-        alamo:
-            cm_host: alamo.futuregrid.org
-            cm_type: hpc
-            username: albert
-        india:
-            cm_host: india.futuregrid.org
-            cm_type: hpc
-            username: albert
-        sierra:
-            cm_host: sierra.futuregrid.org
-            cm_type: hpc
-            username: albert
-        bigred:
-            cm_host: bigred2.uits.iu.edu
-            cm_type: hpc
-            username: albert
+<p>into a single manual. Due to this organization it is also possible to
+create custom manuals that may suport a particular class. For example
+a class on big data may not be wanting to use MPI and thus a special
+manual for such a class could be created. The nice thing is that the
+teacher does not have to create additional information, but can just
+use sphinx and a special index rst file to create a customized manual
+of interest.</p>
+<p>Please note that at this time we have also additional documented rst
+files not yet included into the manual as they were not yet reviewed.</p>
+</div>
+<div class="section" id="online-editing-for-novice-editors">
+<h2>Online Editing for Novice Editors<a class="headerlink" href="#online-editing-for-novice-editors" title="Permalink to this headline">¶</a></h2>
+<p>If you are part of the FG manual development team you can edit the
+manaul pages online by going to:</p>
+<div class="highlight-python"><div class="highlight"><pre>https://github.com/futuregrid/manual/tree/master/docs/source
 </pre></div>
 </div>
-<p>This file is used to specify the username for each host and define the
-host names. In case you want to run commands on the hosts you can do
-this with the following python program.</p>
-<p>The first command executes the task sequentially over the array given
-in the first parameter. The second one executes it in
-parallel. Instead of just presenting you with a bare bones program we
-present you with some additional features that are worth noting and
-may come in handy in future. This includes the availability of a named
-stopwatch and the ability to read configuration parameters easily from
-a yaml file. Sometimes it is also nice to have very visible debug
-messages that we create with a banner function. Results are often more
-readable when using the python pprint function instead of just the
-print function. This is especially true when we print data-structures
-such as arrays and dicts. Next we will present the program and explain
-a selected number of features by commenting them in the code. We
-assume you know by now elementary python.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh_task.tasks</span> <span class="kn">import</span> <span class="n">cm_ssh</span>
-<span class="kn">from</span> <span class="nn">cloudmesh_task.parallel</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">Sequential</span>
-<span class="kn">from</span> <span class="nn">cloudmesh.util.stopwatch</span> <span class="kn">import</span> <span class="n">StopWatch</span>
-<span class="kn">from</span> <span class="nn">cloudmesh_common.util</span> <span class="kn">import</span> <span class="n">banner</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
-<span class="kn">from</span> <span class="nn">cloudmesh.config.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-
-<span class="c"># read the information from the yaml file into a dict called config</span>
-<span class="n">config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&quot;~/.cloudmesh/cloudmesh_hpc.yaml&quot;</span><span class="p">)[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s">&quot;hpc&quot;</span><span class="p">]</span>
-
-<span class="c"># a function to extract from the config file the username from all</span>
-<span class="c"># hostnames in the array hosts</span>
-<span class="k">def</span>  <span class="nf">get_credentials</span><span class="p">(</span><span class="n">hosts</span><span class="p">):</span>
-    <span class="n">credential</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
-        <span class="n">credential</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="n">host</span><span class="p">][</span><span class="s">&#39;username&#39;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">credential</span>
-
-<span class="c"># find all hostnames from the config file</span>
-<span class="n">hosts</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-
-<span class="c"># find all credentials (username, hostname) from the hosts in the</span>
-<span class="c">#  config file</span>
-<span class="n">credentials</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
-
-
-<span class="c"># create a stop watch</span>
-<span class="n">watch</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
-
-<span class="c"># execute is a python function. It is either Parallel or Sequential</span>
-<span class="c"># * modify</span>
-<span class="c">#    for execute in [Sequential]:</span>
-<span class="c">#    for execute in [Parallel]:</span>
-
-<span class="k">for</span> <span class="n">execute</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Sequential</span><span class="p">,</span> <span class="n">Parallel</span><span class="p">]:</span>
-
-    <span class="c"># get the name of the function</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">execute</span><span class="o">.</span><span class="n">__name__</span>
-
-    <span class="c"># print the name of the function and start the timer</span>
-    <span class="n">banner</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">watch</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-
-    <span class="c"># execute the function and return the result in a dict</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="n">credentials</span><span class="p">,</span> <span class="n">cm_ssh</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s">&quot;qstat&quot;</span><span class="p">)</span>
-
-    <span class="c"># stop the timer and print the result dict</span>
-    <span class="n">watch</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">pprint</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-    <span class="c"># only print the output from the command we executed</span>
-    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;PRINT&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
-        <span class="k">print</span> <span class="n">result</span><span class="p">[</span><span class="n">host</span><span class="p">][</span><span class="s">&quot;output&quot;</span><span class="p">]</span>
-
-<span class="c"># print the timers</span>
-<span class="k">for</span> <span class="n">timer</span> <span class="ow">in</span> <span class="n">watch</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="k">print</span> <span class="n">timer</span><span class="p">,</span> <span class="n">watch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timer</span><span class="p">),</span> <span class="s">&quot;s&quot;</span>
+<p>This will contain a directory with all the documents of the
+manual. The names of the documents you can simply find by visiting the
+manual and look at the URL of the page that you like to modify and
+simply open up the corresponding rst page (e.g. replace the html with
+rst). Dependent on your browser you can even configure it to open the
+file in your favorite editor. Some plugins such as <em>It&#8217;s All Text!</em>
+may be able to help.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/its-all-text/">https://addons.mozilla.org/en-US/firefox/addon/its-all-text/</a></li>
+</ul>
+<p>Please consult with your browsers manual and available plugins.
+However, a better solution may be to do the
+changes in a clone locally and commit when ready. THis is documented
+in more detail in this section.</p>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>How to find the rst file?<ul>
+<li>Sometimes an editor may want to locate the name of the rst
+file. This is easy, just look in your browser, and see the url&#8217;s,
+the last filename with a .html ending gives your the rst file name,
+just replace html with rst</li>
+</ul>
+</li>
+<li>Can I edit RST files in Word?<ul>
+<li>yes you can, but you must make sure that you do use the proper
+ascii characters for quotes and other symbols that RST relies on.</li>
+</ul>
+</li>
+<li>Can I edit RST files directly in a Web browser without word<ul>
+<li>Yes you can, you must have a git account for that and you can editd
+directly?</li>
+</ul>
+</li>
+<li>I do not have a Git account how do I communicate errors?<ul>
+<li>Either Send us the url of the manual page with an error, copy the &#8220;before
+text&#8221;, add a &#8220;changed to&#8221; text and e-mail it to us</li>
+<li>Or, create a git clone and send us the patch. More information
+about this can be found in the git user manual on github.com</li>
+</ul>
+</li>
+<li>Why use RST?<ul>
+<li>Previously pages of the FG manual were edited directly in drupal
+on our portal. However, editors were abusing our wysiwyg editor by
+pasting and copying text from third party editors such as word
+into the drupal editor. Unfortunately, this lead to inconsistent
+formatting and severe problems by editing documents. We also
+discovered issues at times when documents were edited by multiple
+editors at the same time.</li>
+<li>While using RST we avoid inconsistent formatting.</li>
+<li>While using git we use a much better tracking feature for parallel
+edits,</li>
+<li>While using RST we have a nice search feature.</li>
+<li>While using RST we can integrate auto-generate documentation form
+FutureGrid code we develop such as RAIN and cloudmesh.</li>
+</ul>
+</li>
+<li>Why not use Word and skydrive?<ul>
+<li>Our team has rich experience with skydrive and Word. However word
+does not provide a publication framework for our manual that is
+maintained by a highly distributed team. Although skydrive can be
+a help to share directories, we still have to enable the creation
+of a single consistent manual. We also experienced issues with
+large groups on microsoft skydrive. As most contributions come
+from developers that have already accounts on github, they do not
+have to create new accounts on skydrive. Furthermore, not all
+developers have access to word. However RST documents are editor
+independent. You can edit them with Word, emacs, vi, vim, or
+whatever other text editor you like. Thus the good news is if you like to use word to edit the
+documentation you can.</li>
+</ul>
+</li>
+<li>I am having difficulties understanding this how can I get help?<ul>
+<li>Please contact Gregor von Laszewski at <a class="reference external" href="mailto:laszewski&#37;&#52;&#48;gmail&#46;com">laszewski<span>&#64;</span>gmail<span>&#46;</span>com</a> he can
+schedule an in person meeting in Bloomington, IN or a google
+hangout meeting.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="publication-of-the-manual">
+<h2>Publication of the Manual<a class="headerlink" href="#publication-of-the-manual" title="Permalink to this headline">¶</a></h2>
+<p>The manual will be automatically updates once a day</p>
+<p>Additionally you can e-mail <a class="reference external" href="mailto:laszewski&#37;&#52;&#48;gmail&#46;com">laszewski<span>&#64;</span>gmail<span>&#46;</span>com</a> for an update
+request while describing which files have been changed so a review can
+take place and the publication script can be invoked. We have not put
+this script into the repository in order to avoid accidental changes.</p>
+</div>
+</div>
+<div class="section" id="setting-up-the-expert-developers-manual-editing-environment">
+<h1>Setting Up the Expert Developers Manual Editing Environment<a class="headerlink" href="#setting-up-the-expert-developers-manual-editing-environment" title="Permalink to this headline">¶</a></h1>
+<p>Note that setting up the expert manual editing environment is optional
+and does not have to be conducted at all in order to contribute or
+allert us of errors in the manual. We suggest that you consult the
+previous section for hints on how to send us errors or improvement
+suggestions for the manual.</p>
+<p>It is extremely easy to build the FG manual on your local
+machine. Just a very limited number of python packages are
+needed. However, we have decided to only document the way to install
+it in pythons excellent virtualenv. Although it is possible to have an
+even easier instal, we decided to stay with virtualenv as it will
+protect your current environment from packeges that you may not want
+to have on your computer in your regular python environment.</p>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you have python 2.7.2:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python --version
 </pre></div>
 </div>
-<p>Bug: Before you start the command, you have to start a new window and
-say fab fab manage.mongo in the cloudmesh directory where your
-fabfiles are located. This will give something like:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ fab manage.mongo
-[localhost] local: make -f cloudmesh/management/Makefile mongo
-mongod --noauth --dbpath . --port 27777
-all output going to: /usr/local/var/log/mongodb/mongo.log
+<p>Please note that we have not tried python version 3 for this.</p>
+</div>
+<div class="section" id="virtualenv">
+<h2>Virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>Make sure the is no book directory in your home</p>
+<p>Use virtual env:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd ~
+$ virtualenv MANUAL
+$ source MANUAL/bin/activate
 </pre></div>
 </div>
-<p>To run the command you will need to start the caching backend
-services. to do so we created a simple program cm-task.py that will be
-used to start and stop the services:</p>
-<div class="highlight-python"><div class="highlight"><pre>./cm-tasks.py menu
-
-Queue Management
-================
-
-    1 - all start
-    2 - all stop
-    3 - rabbit start
-    4 - celery start
-    5 - rabbit stop
-    6 - celery stop
-    7 - mongo start
-    q - quit
-
-Select between 1 - 7:
+<p>In case you were to use another terminal (for example quit this one
+and start a new one later), please remember to execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source MANUAL/bin/activate
 </pre></div>
 </div>
-<p>Now select the number:</p>
-<div class="highlight-python"><div class="highlight"><pre>1 - all start
+</div>
+<div class="section" id="create-a-github-local-directory-with-the-manual">
+<h2>Create a github local directory with the manual<a class="headerlink" href="#create-a-github-local-directory-with-the-manual" title="Permalink to this headline">¶</a></h2>
+<p>We assume you will install your local copy of the manual in
+~/github/manual. If you do not want to use the github dir, please use
+another directory name you like:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir -p ~/github
+$ cd ~/github
+$ git clone https://github.com/futuregrid/manual.git
 </pre></div>
 </div>
-<p>This will bring up the necessary services and look similar to:</p>
-<div class="highlight-python"><div class="highlight"><pre> -------------- celery@host.local v3.1.13 (Cipater)
----- **** -----
---- * ***  * -- Darwin-13.3.0-x86_64-i386-64bit
--- * - **** ---
-- ** ---------- [config]
-- ** ---------- .&gt; app:         cloudmesh_task:0x10365bcd0
-- ** ---------- .&gt; transport:   amqp://guest:**@localhost:5672//
-- ** ---------- .&gt; results:     amqp
-- *** --- * --- .&gt; concurrency: 10 (prefork)
--- ******* ----
---- ***** ----- [queues]
- -------------- .&gt; celery           exchange=celery(direct) key=celery
-
-
-[tasks]
-  . cloudmesh_task.tasks.cm_ssh
-
-[2014-08-19 15:46:24,060: INFO/MainProcess] Connected to amqp://guest:**@localhost:5672//
-[2014-08-19 15:46:24,071: INFO/MainProcess] mingle: searching for neighbors
-[2014-08-19 15:46:25,098: INFO/MainProcess] mingle: sync with 10 nodes
-[2014-08-19 15:46:25,099: INFO/MainProcess] mingle: sync complete
-[2014-08-19 15:46:25,109: WARNING/MainProcess] celery@host.local ready.
-[2014-08-19 15:46:28,352: INFO/MainProcess] Events of group {task} enabled by remote.
+</div>
+<div class="section" id="install-the-requirements">
+<h2>Install the Requirements<a class="headerlink" href="#install-the-requirements" title="Permalink to this headline">¶</a></h2>
+<p>To build this book make sure you install the following module:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd manual
+$ pip install -r requirements.txt
 </pre></div>
 </div>
-<p>After this you can start the program repeatedly with:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python prg.py
+<p>This may take a while, so be patient.</p>
+<p>The files will be in:</p>
+<div class="highlight-python"><div class="highlight"><pre>./docs/source
 </pre></div>
 </div>
-<p>We are committing some of the output but at the end ist should look
-something like:</p>
-<div class="highlight-python"><div class="highlight"><pre># ######################################################################
-# PRINT
-# ######################################################################
-Tue Aug 19 15:48:29 EDT 2014
-Job id                    Name             User            Time Use S Queue
-------------------------- ---------------- --------------- -------- - -----
-1589570.i136               sub18248.sub     aaaa                   0 Q delta
-1589589.i136               sub15366.sub     aaaa                   0 Q delta
-1589669.i136               sub12428.sub     aaaa                   0 Q delta
-1795838.i136               twisterJob       bbbbbb                 0 Q batch
-1872981.i136               sub9593.sub      aaaa                   0 Q delta
-1904453.i136               sub2114.sub      aaaa                   0 Q delta
-1904930.i136               dimer_in_sol_ph7 cccccccc        883:55:5 R batch
-1904931.i136               dimer_in_sol_ph5 cccccccc        902:18:4 R batch
-1904957.i136               suffix           dddddddd        360:36:1 R echo
-1904961.i136               dimer_in_sol_ph7 cccccccc               0 H batch
-1904963.i136               dimer_in_sol_ph5 cccccccc               0 H batch
-1904993.i136               blast            eeee            15:08:00 R bravo
-1904995.i136               blast            eeee            14:33:19 R bravo
-1905016.i136               papi-inca        aaaa                   0 Q bravo
-1905021.i136               vampir-inca      aaaa                   0 Q bravo
-1905044.i136               papi-inca        aaaa                   0 Q bravo
-1905057.i136               STDIN            ffffffff        00:10:17 R delta
-1905062.i136               ...Script.i21500 gggggg          00:00:11 R batch
-
-Sequential 12.12866169 s
-Parallel    0.00446796417236 s
+<p>and have an rst ending. They use
+restructured text. For more info on rst see:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://sphinx-doc.org/rest.html">http://sphinx-doc.org/rest.html</a></li>
+</ul>
+<p>A cheat sheet is available from</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference external" href="http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf">http://github.com/ralsina/rst-cheatsheet/raw/master/rst-cheatsheet.pdf</a></p>
+<p>The cheatsheet is also available in our online documentation in the
+Section <em class="xref std std-ref">s-cheatsheet</em>.</p>
+</div>
+<div class="section" id="all-in-one-setup-script">
+<h2>All-in-one setup script<a class="headerlink" href="#all-in-one-setup-script" title="Permalink to this headline">¶</a></h2>
+<p>Execute the following script only with care. Maybe its best if you
+copy one line at a time as documented earlier to avoid problems:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd ~
+virtualenv MANUAL
+source MANUAL/bin/activate
+mkdir -p ~/github
+cd ~/github
+git clone https://github.com/futuregrid/manual.git
+cd manual
+pip install -r requirements.txt
 </pre></div>
 </div>
-<p>Please note that we have replaced the real usernames.</p>
-<p>When you execute this command you will notice That the parallel
-execution time is much faster. In this case it was within the TTL and
-thus read the cache value from the cache. Executing the command again
-within the TTL will give you also for the sequential time a real short
-value:</p>
-<div class="highlight-python"><div class="highlight"><pre>Sequential 0.00726103782654 s
-Parallel   0.000990867614746 s
+</div>
+<div class="section" id="watchdog">
+<h2>Watchdog<a class="headerlink" href="#watchdog" title="Permalink to this headline">¶</a></h2>
+<p>This tool is optional and can be skipped for those just doing a
+regular install.</p>
+<p>You may be interested in using watchdog when you are in the process of
+editing a page. Upon chnage it will update the changed html output
+into the browser. For example, assume you edit the page
+openstack.rst. If you are running in another window:</p>
+<div class="highlight-python"><div class="highlight"><pre>make watchdog FILE=openstack
 </pre></div>
 </div>
-<p>It is not surprising the parallel result is even faster than the
-sequential one as the information gathering even from reading it out
-from the cache is done in parallel and no resource congestion exists
-at the scale we use for our example.</p>
-<p>Let us now compare the true time between sequential and parallel
-execution. Simply modify the code in the * line and replace the loop accordingly:</p>
-<div class="highlight-python"><div class="highlight"><pre>Sequential 12.681866169 s
-Parallel    6.51530909538 s
+<p>For more details, please see the Makefile.</p>
+</div>
+<div class="section" id="transfering-a-page-from-the-portal-to-rst">
+<h2>Transfering a page from the portal to RST<a class="headerlink" href="#transfering-a-page-from-the-portal-to-rst" title="Permalink to this headline">¶</a></h2>
+<p>Assume you like to transfer a page from the portal to rst. This can
+actually be done quite easily using a program called pandoc. First get
+the page and rename it to a page with html:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget https://portal.futuregrid.org/contrib/simple-vine-tutorial
+$ mv simple-vine-tutorial simple-vine-tutorial.html
+$ pandoc simple-vine-tutorial.html -o simple-vine-tutorial.rst
 </pre></div>
 </div>
-<p>Thus we see two interesting performance improvements</p>
-<p>First, the performance improvement for running the queries in
-parallel. Second, the improvement of retrieving the results from a
-cache. The later is important if we have many user on the system
-executing the same command.</p>
-<p>The lesson we learn is that clouds must make use of execution
-parallelism as well as addressing reuse of repeated results.</p>
+<p>Than edit the page and remove the code related to the menues so only
+the bare code stays:</p>
+<ul>
+<li><p class="first">typically everything before <strong>What links here</strong> can be ignored.</p>
+</li>
+<li><dl class="first docutils">
+<dt>typically everything after the words  <strong>Your rating</strong> and the rest</dt>
+<dd><p class="first last">of the page can  be ignored.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="creating-the-pages-locally">
+<h2>Creating the pages locally<a class="headerlink" href="#creating-the-pages-locally" title="Permalink to this headline">¶</a></h2>
+<p>To create the pages locally simply go in the manual folder and saay
+make:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd ~/github/manual
+$ make
+</pre></div>
+</div>
+<p>Your index file will be in:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ firefox ./docs/build/html/index.html
+</pre></div>
+</div>
+<p>On Osx you can simply say:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make view
+</pre></div>
 </div>
 </div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Is pdsh installed? Where</li>
-<li>Return the hostname of the machines sierra, india and foxtrot via
-the fabric command</li>
-<li>Execute the command qstat with fabric on sierra and india. If you
-have an account on bigred2, please try it also there</li>
-<li>Run the cloudmesh Sequential and parallel program. Modify your
-cloudmesh file accordingly</li>
-<li>Advanced: compare the performance of the cache backend between
-Mongodb and the use of RabbitMQ while switching RabbitMQ out with
-Redis in the Celery code.</li>
-<li>Advanced: provide a documentation on how to run celery for this
-example  on Redis.</li>
-</ol>
+<div class="section" id="publishing-the-pages">
+<h2>Publishing the pages<a class="headerlink" href="#publishing-the-pages" title="Permalink to this headline">¶</a></h2>
+<p>The pages can be published to github with:</p>
+<div class="highlight-python"><div class="highlight"><pre>make gh-pages
+</pre></div>
+</div>
+</div>
+<div class="section" id="jira">
+<h2>Jira<a class="headerlink" href="#jira" title="Permalink to this headline">¶</a></h2>
+<p>References to jira can be made with the tag:</p>
+<div class="highlight-python"><div class="highlight"><pre>:jira:`this issue &lt;FG-1418&gt;`
+</pre></div>
+</div>
+<p>It will result in an output such as</p>
+<p><a class="reference external" href="https://jira.futuregrid.org/browse/FG-1418">this issue</a></p>
+<p>To just refer to a text with the number use:</p>
+<div class="highlight-python"><div class="highlight"><pre>:jira:`FG-1418`
+</pre></div>
+</div>
+<p>and you will get</p>
+<p><a class="reference external" href="https://jira.futuregrid.org/browse/FG-1418">issue FG-1418</a></p>
+<p>It uses the extension <a class="reference external" href="http://sphinx-doc.org/latest/ext/extlinks.html">http://sphinx-doc.org/latest/ext/extlinks.html</a>
+and the tags must be specified in the conf.py file.</p>
+</div>
+<div class="section" id="portal-link">
+<h2>Portal link<a class="headerlink" href="#portal-link" title="Permalink to this headline">¶</a></h2>
+<p>to simplify access to a portal url you can use:</p>
+<div class="highlight-python"><div class="highlight"><pre>:portal:`my/ssh-keys`
+</pre></div>
+</div>
+<p>and it will return</p>
+<p><a class="reference external" href="https://portal.futuregrid.org/my/ssh-keys">https://portal.futuregrid.org/my/ssh-keys</a></p>
+<p>It uses the extension <a class="reference external" href="http://sphinx-doc.org/latest/ext/extlinks.html">http://sphinx-doc.org/latest/ext/extlinks.html</a>
+and the tags must be specified in the conf.py file.</p>
+</div>
+<div class="section" id="screencast-recording-tips">
+<h2>Screencast recording tips<a class="headerlink" href="#screencast-recording-tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="osx">
+<h3>OSX<a class="headerlink" href="#osx" title="Permalink to this headline">¶</a></h3>
+<p>Install OmniDazzle from:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.omnigroup.com/products/omnidazzle/">http://www.omnigroup.com/products/omnidazzle/</a></li>
+</ul>
+<p>Hide the icons on OSX desktop:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ defaults write com.apple.finder CreateDesktop -bool false
+$ killall Finder
+</pre></div>
+</div>
+<p>Show the icons on OSX desktop:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ defaults write com.apple.finder CreateDesktop -bool true
+$ killall Finder
+</pre></div>
+</div>
+</div>
+<div class="section" id="changing-the-prompt">
+<h3>Changing the prompt<a class="headerlink" href="#changing-the-prompt" title="Permalink to this headline">¶</a></h3>
+<p>To change the prompt you can do something like:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ PS1=&quot;$ &quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="recording-of-typed-in-commands">
+<h3>Recording of typed in commands<a class="headerlink" href="#recording-of-typed-in-commands" title="Permalink to this headline">¶</a></h3>
+<p>Simply use:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ script file.log
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-quicktime-sound-recording">
+<h3>Setup quicktime sound recording<a class="headerlink" href="#setup-quicktime-sound-recording" title="Permalink to this headline">¶</a></h3>
+<p>Start up quicktime you will see the following window:</p>
+<p><img alt="i-quicktime-1" src="images/quicktime-1.png" /></p>
+<p>Click on the little arrow on the right and you will see</p>
+<p><img alt="i-quicktime-2" src="images/quicktime-2.png" /></p>
+<p>Checkon the microphone you like to activate. This is  most likely the
+<em>Build-in-Input: Internal microphone</em>. Also click on <em>Show mouse click
+in Recording</em>:</p>
+<p><img alt="i-quicktime-3" src="images/quicktime-3.png" /></p>
+<p>Then start regording. Be careful that you wait in the rcordng till you
+see a little timer on the left quicktime needs a bit of startup time
+when recording sound and images.</p>
+</div>
 </div>
 </div>
 
@@ -993,13 +1036,13 @@ example  on Redis.</li>
 
       <ul class="nav nav-list">
 	<li> <a href="toc.html"> Table of Contents </a> </li>	
-	<ul class="current">
+	<ul>
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython/index.html">IPython</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel.html">Parallel Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloudmesh/index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="iaas/index.html">IaaS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paas/index.html">PaaS</a></li>
@@ -1019,15 +1062,34 @@ example  on Redis.</li>
 
 
        <ul>
-<li><a class="reference internal" href="#">Parallel Shell</a><ul>
-<li><a class="reference internal" href="#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
-<li><a class="reference internal" href="#fabric">Fabric</a></li>
-<li><a class="reference internal" href="#cloudmesh-parallel-api">Cloudmesh Parallel API</a><ul>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#">Manual (TODO)</a></li>
+<li><a class="reference internal" href="#getting-the-manual-from-git">Getting the Manual from Git</a></li>
+<li><a class="reference internal" href="#contributing-to-the-manual">Contributing to the Manual</a><ul>
+<li><a class="reference internal" href="#organisation-of-the-manual-in-git">Organisation of the Manual in Git</a></li>
+<li><a class="reference internal" href="#online-editing-for-novice-editors">Online Editing for Novice Editors</a></li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
+<li><a class="reference internal" href="#publication-of-the-manual">Publication of the Manual</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exercises">Exercises</a></li>
+<li><a class="reference internal" href="#setting-up-the-expert-developers-manual-editing-environment">Setting Up the Expert Developers Manual Editing Environment</a><ul>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#virtualenv">Virtualenv</a></li>
+<li><a class="reference internal" href="#create-a-github-local-directory-with-the-manual">Create a github local directory with the manual</a></li>
+<li><a class="reference internal" href="#install-the-requirements">Install the Requirements</a></li>
+<li><a class="reference internal" href="#all-in-one-setup-script">All-in-one setup script</a></li>
+<li><a class="reference internal" href="#watchdog">Watchdog</a></li>
+<li><a class="reference internal" href="#transfering-a-page-from-the-portal-to-rst">Transfering a page from the portal to RST</a></li>
+<li><a class="reference internal" href="#creating-the-pages-locally">Creating the pages locally</a></li>
+<li><a class="reference internal" href="#publishing-the-pages">Publishing the pages</a></li>
+<li><a class="reference internal" href="#jira">Jira</a></li>
+<li><a class="reference internal" href="#portal-link">Portal link</a></li>
+<li><a class="reference internal" href="#screencast-recording-tips">Screencast recording tips</a><ul>
+<li><a class="reference internal" href="#osx">OSX</a></li>
+<li><a class="reference internal" href="#changing-the-prompt">Changing the prompt</a></li>
+<li><a class="reference internal" href="#recording-of-typed-in-commands">Recording of typed in commands</a></li>
+<li><a class="reference internal" href="#setup-quicktime-sound-recording">Setup quicktime sound recording</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

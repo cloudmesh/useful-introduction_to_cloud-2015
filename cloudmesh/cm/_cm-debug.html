@@ -33,7 +33,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
     <link rel="up" title="Cloudmesh cm" href="index.html" />
-    <link rel="next" title="VM management using cm" href="_cm_vm.html" />
+    <link rel="next" title="VM management using cm" href="_cm_vm_management.html" />
     <link rel="prev" title="project Command in Cloudmesh cm" href="_cm-project.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -78,6 +78,10 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../about.html#cloud-topics">Cloud Topics</a></li>
@@ -237,21 +241,21 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm_vm.html">VM management using cm</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="_cm_vm.html#initialization">Initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_cm_vm.html#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_cm_vm.html#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="_cm_vm.html#set-default-image">set default image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm_vm.html#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm_vm.html#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm_vm.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_cm_vm.html#set-default-vm-name">set default VM name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm_vm_management.html">VM management using cm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_cm_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm_vm_management.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm_vm_management.html#starting-vms">Starting VMs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm_vm_management.html#set-default-image">set default image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm_vm_management.html#set-default-flavor">set default flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm_vm_management.html#set-default-cloud">set default cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm_vm_management.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm_vm_management.html#set-default-vm-name">set default VM name</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="_cm_vm.html#refreshing-vm-status">Refreshing VM status</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_cm_vm.html#starting-multiple-vms">Starting multiple VMs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_cm_vm.html#deleting-vms">Deleting VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm_vm_management.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm_vm_management.html#deleting-vms">Deleting VMs</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
@@ -476,7 +480,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
-<li><a class="reference internal" href="#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
+<li><a class="reference internal" href="#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
 </ul>
 </ul>
 </li>
@@ -490,7 +494,7 @@
     </a>
   </li>
   <li>
-    <a href="_cm_vm.html" title="Next Chapter: VM management using cm"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">VM management us... &raquo;</span>
+    <a href="_cm_vm_management.html" title="Next Chapter: VM management using cm"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">VM management us... &raquo;</span>
     </a>
   </li>
               
@@ -537,6 +541,7 @@
     </li>
     <li> <a href="toc.html"> Table of Contents </a> </li>
     <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
@@ -572,7 +577,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
-<li><a class="reference internal" href="#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
+<li><a class="reference internal" href="#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
 </ul>
 
 <form action="../../search.html" method="get">
@@ -682,9 +687,12 @@ Cloudmesh server.</p>
 </div>
 <p>Now you can see it has been changed to <em>ERROR</em>.</p>
 </div>
-<div class="section" id="color-command-in-cloumesh-cm">
-<h1>color Command in Cloumesh cm<a class="headerlink" href="#color-command-in-cloumesh-cm" title="Permalink to this headline">¶</a></h1>
-<p>to switch on/off the color printing function of cmd3 in cloudmesh shell</p>
+<div class="section" id="color-command-in-cloudmesh-cm">
+<h1><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm<a class="headerlink" href="#color-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>The Cloudmesh cm shell can enable color support in output messages.
+Warning, Error, Debug, Info, or other type of messages can be viewed
+with different colors. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">color</span> <span class="pre">on/off</span></tt> command enables or disables
+this feature.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm color on
 </pre></div>
 </div>
@@ -729,6 +737,7 @@ color off.
       <ul class="nav nav-list">
 	<li> <a href="toc.html"> Table of Contents </a> </li>	
 	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
@@ -766,7 +775,7 @@ color off.
 </ul>
 </li>
 <li><a class="reference internal" href="#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
-<li><a class="reference internal" href="#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
+<li><a class="reference internal" href="#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
 </ul>
 
     </div>

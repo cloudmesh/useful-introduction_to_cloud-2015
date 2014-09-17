@@ -35,12 +35,24 @@ More information about horizon on FutureSystems is available at `our
 manual page <../../iaas/openstack.html#horizon-gui.html>`_.
 
 We summarize the following steps, however like to point out that the
-best source for this is our previously pointed out document.::
+best source for this is our previously pointed out document::
 
   ssh <portalname>@india.futuresystems.org
- 
+  india$ module load novaclient
   india$ source ~/.futuregrid/openstack_havana/novarc
   india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+
+This assumes such a key exists in the location::
+
+  ~/.ssh/id_rsa.pub
+
+If you do not have such a key, you can generate it with::
+
+ ssh-keygen -t rsa -C $USER-key
+ 
+Remember to set a passphrase once prompted to secure your private key.
+
+Next step is to open the necessary ports of the VM to be started::
 
   india$ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
   india$ nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
@@ -48,8 +60,9 @@ best source for this is our previously pointed out document.::
   india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
   india$ nova secgroup-list-rules default
 
-  india$ nova boot --flavor m1.small --image "futuregrid/ubuntu-14.04" --key_name $USER-india-key $USER-001
+And then boot a VM and set public ip for external access::
 
+  india$ nova boot --flavor m1.small --image "futuregrid/ubuntu-14.04" --key_name $USER-india-key $USER-001
 
   india$ nova floating-ip-create
 
@@ -92,7 +105,7 @@ You should see a table similare like this::
 
 Looking at the status you will see if the VM is in ACTIVE state. Once this is the case you can login to it with::
 
-  india$ ssh -i ~/.ssh/id_rsa.pub ubuntu@$MYIP
+  india$ ssh -i ~/.ssh/id_rsa -l ubuntu $MYIP
 
 
 

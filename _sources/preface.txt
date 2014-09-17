@@ -1,0 +1,37 @@
+Preface
+======================================================================
+
+Conventions
+----------------------------------------------------------------------
+
+.. role:: rubric
+
+.. highlight:: bash
+
+$
+    When showing examples of commands, the $ symbol precedes the
+    actual command. So, the other lines are the output obtained after
+    executing the command. An example invoking the ls command
+    follows::
+
+       $ ls
+
+portalname:
+    In some examples we refer to your portal name as |portalname|.
+
+localname: 
+    In some examples we refer to your local computers name as
+    |localname|. Your portal name and your local name may be
+    different.
+
+Menu selections:
+    :menuselection:`Start --> Programs`
+
+Man page:
+    :manpage:`ls(1)`
+
+.. role:: rubric
+
+.. |portalname| replace:: **portalname**
+
+.. |localname| replace:: **localname**

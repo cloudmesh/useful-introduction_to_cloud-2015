@@ -9,6 +9,6 @@ Cloudmesh cm
    _cm
    _cm-project
    _cm-debug
-   _cm_vm
+   _cm_vm_management
    ipython
    _ipython

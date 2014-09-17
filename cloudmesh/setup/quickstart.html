@@ -78,6 +78,10 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../about.html#cloud-topics">Cloud Topics</a></li>
@@ -237,21 +241,21 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cm/_cm_vm.html">VM management using cm</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#initialization">Initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-image">set default image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-vm-name">set default VM name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm_vm_management.html">VM management using cm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#starting-vms">Starting VMs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-image">set default image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-flavor">set default flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-cloud">set default cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-vm-name">set default VM name</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#refreshing-vm-status">Refreshing VM status</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#starting-multiple-vms">Starting multiple VMs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#deleting-vms">Deleting VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#deleting-vms">Deleting VMs</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/ipython.html">Install IPython Server</a></li>
@@ -528,6 +532,7 @@
     </li>
     <li> <a href="toc.html"> Table of Contents </a> </li>
     <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
@@ -649,15 +654,15 @@ public key generated in your .ssh directory in the file:</p>
 </pre></div>
 </div>
 <p>If you do not have such a key, you can generate it with:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -C $USER-key
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -C [portal login id]-key
 </pre></div>
 </div>
-<p>The next steps will deploy the cloudmesh databases:</p>
+<p>The next steps will deploy the cloudmesh database:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab mongo.reset
 </pre></div>
 </div>
-<p>We ass the key to the databasewith:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cm &quot;key add --keyname=gvonlasz-key ~/.ssh/id_rsa.pub&quot;
+<p>We add the key to the database with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cm &quot;key add --keyname=[portal login id]-key ~/.ssh/id_rsa.pub&quot;
 </pre></div>
 </div>
 <p>You may next need to specify your default project if you have not yet
@@ -667,11 +672,11 @@ done so:</p>
 *[project id]* is your default project id e.g. fg354
 </pre></div>
 </div>
-<p>To start the cloudmesh services use:</p>
+<p>To start Cloudmesh use:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab server.start
 </pre></div>
 </div>
-<p>Now you can test the services by visiting the web interface at
+<p>Now you can test the service by visiting the web interface at
 <a class="reference external" href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>. We have a convenient shortcut for this by
 typing:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ fab server.view
@@ -707,7 +712,7 @@ cm&gt; cloud
 +--------------------------+----------+
 | india_eucalyptus         |          |
 +--------------------------+----------+
-| india_openstack_havana   |          |
+| india                    |          |
 +--------------------------+----------+
 | sierra_eucalyptus        |          |
 +--------------------------+----------+
@@ -809,6 +814,7 @@ please download the script and modify accordingly.</p>
       <ul class="nav nav-list">
 	<li> <a href="toc.html"> Table of Contents </a> </li>	
 	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>

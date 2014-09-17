@@ -78,6 +78,10 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../about.html#cloud-topics">Cloud Topics</a></li>
@@ -237,21 +241,21 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#yaml-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloumesh-cm">color Command in Cloumesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cm/_cm_vm.html">VM management using cm</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#initialization">Initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#activating-clouds">Activating Clouds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#starting-vms">Starting VMs</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-image">set default image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-flavor">set default flavor</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-cloud">set default cloud</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm.html#set-default-vm-name">set default VM name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm-debug.html#color-command-in-cloudmesh-cm"><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cm/_cm_vm_management.html">VM management using cm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#starting-vms">Starting VMs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-image">set default image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-flavor">set default flavor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-cloud">set default cloud</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#simple-way-to-start-a-vm">simple way to start a VM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm_vm_management.html#set-default-vm-name">set default VM name</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#refreshing-vm-status">Refreshing VM status</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#starting-multiple-vms">Starting multiple VMs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm.html#deleting-vms">Deleting VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cm/_cm_vm_management.html#deleting-vms">Deleting VMs</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cm/ipython.html">Install IPython Server</a></li>
@@ -530,6 +534,7 @@
     </li>
     <li> <a href="toc.html"> Table of Contents </a> </li>
     <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
@@ -606,20 +611,32 @@ GUI or the novaclient command line. This is described in the following document:
 <p>More information about horizon on FutureSystems is available at <a class="reference external" href="../../iaas/openstack.html#horizon-gui.html">our
 manual page</a>.</p>
 <p>We summarize the following steps, however like to point out that the
-best source for this is our previously pointed out document.:</p>
+best source for this is our previously pointed out document:</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh &lt;portalname&gt;@india.futuresystems.org
-
+india$ module load novaclient
 india$ source ~/.futuregrid/openstack_havana/novarc
 india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
-
-india$ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+</pre></div>
+</div>
+<p>This assumes such a key exists in the location:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>If you do not have such a key, you can generate it with:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -C $USER-key
+</pre></div>
+</div>
+<p>Remember to set a passphrase once prompted to secure your private key.</p>
+<p>Next step is to open the necessary ports of the VM to be started:</p>
+<div class="highlight-python"><div class="highlight"><pre>india$ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
 india$ nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
 india$ nova secgroup-add-rule default tcp 8888 8888 0.0.0.0/0
 india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
 india$ nova secgroup-list-rules default
-
-india$ nova boot --flavor m1.small --image &quot;futuregrid/ubuntu-14.04&quot; --key_name $USER-india-key $USER-001
-
+</pre></div>
+</div>
+<p>And then boot a VM and set public ip for external access:</p>
+<div class="highlight-python"><div class="highlight"><pre>india$ nova boot --flavor m1.small --image &quot;futuregrid/ubuntu-14.04&quot; --key_name $USER-india-key $USER-001
 
 india$ nova floating-ip-create
 
@@ -662,7 +679,7 @@ india$ nova show $USER-001
 </pre></div>
 </div>
 <p>Looking at the status you will see if the VM is in ACTIVE state. Once this is the case you can login to it with:</p>
-<div class="highlight-python"><div class="highlight"><pre>india$ ssh -i ~/.ssh/id_rsa.pub ubuntu@$MYIP
+<div class="highlight-python"><div class="highlight"><pre>india$ ssh -i ~/.ssh/id_rsa -l ubuntu $MYIP
 </pre></div>
 </div>
 </div>
@@ -819,6 +836,7 @@ provided at</p>
       <ul class="nav nav-list">
 	<li> <a href="toc.html"> Table of Contents </a> </li>	
 	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
