@@ -11,6 +11,7 @@ Contents
    :maxdepth: 2
    :glob:
 
+   preface
    about
    contact
    accounts/index
