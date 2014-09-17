@@ -151,9 +151,9 @@ Now let us install cloudmesh into this virtualenv::
   ./install requirements
   ./install new
 
-The last command will create a number of yaml files in a folder::
+The last command will create a number of yaml files in the folder::
 
-  ~.cloudmesh
+  ~/.cloudmesh
     
 Next, install the cloudmesh server anad API with:: 
 
