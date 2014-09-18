@@ -88,15 +88,16 @@ The next steps will deploy the cloudmesh database::
 
 We add the key to the database with::
 
-   $ cm "key add --keyname=portalname -key ~/.ssh/id_rsa.pub"
+   $ cm "key add --keyname=portalname-key ~/.ssh/id_rsa.pub"
 
+where portal name is your name for the FutuerSystems portal.
 
 You may next need to specify your default project if you have not yet
 done so::
    
      $ cm project default [project id]
      
-   *[project id]* is your default project id e.g. fg354
+   *[project id]* is your default project id from FutureSystems e.g. fg455 as an example
    
 To start Cloudmesh use::
 

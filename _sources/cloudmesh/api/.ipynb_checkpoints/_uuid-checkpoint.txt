@@ -137,3 +137,15 @@ cloudmesh.yaml file.
 
     gregor-00001
 
+
+Reading names and prefixes from the Yaml file
+---------------------------------------------
+
+.. todo:: Mark, please develop an example
+
+Getting the next vm name
+------------------------
+
+.. todo:: Mark, please find the function we have for this, do not
+develop your own. Use the function we have
+

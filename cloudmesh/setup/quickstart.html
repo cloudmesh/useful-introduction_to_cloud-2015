@@ -224,6 +224,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/_load.html">Load Command</a><ul>
@@ -679,14 +682,15 @@ public key generated in your .ssh directory in the file:</p>
 </pre></div>
 </div>
 <p>We add the key to the database with:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cm &quot;key add --keyname=portalname -key ~/.ssh/id_rsa.pub&quot;
+<div class="highlight-python"><div class="highlight"><pre>$ cm &quot;key add --keyname=portalname-key ~/.ssh/id_rsa.pub&quot;
 </pre></div>
 </div>
+<p>where portal name is your name for the FutuerSystems portal.</p>
 <p>You may next need to specify your default project if you have not yet
 done so:</p>
 <div class="highlight-python"><div class="highlight"><pre>  $ cm project default [project id]
 
-*[project id]* is your default project id e.g. fg354
+*[project id]* is your default project id from FutureSystems e.g. fg455 as an example
 </pre></div>
 </div>
 <p>To start Cloudmesh use:</p>

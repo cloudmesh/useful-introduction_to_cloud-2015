@@ -224,6 +224,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/_load.html">Load Command</a><ul>
@@ -491,6 +494,7 @@
 <li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li><a class="reference internal" href="#help-message">Help message</a></li>
+<li><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -585,6 +589,7 @@
 <li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li><a class="reference internal" href="#help-message">Help message</a></li>
+<li><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -609,9 +614,9 @@
   <div class="section" id="project-command-in-cloudmesh-cm">
 <h1><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#project-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <p>The <tt class="docutils literal"><span class="pre">project</span></tt> command provides a list of default, active, or completed
-project on a given user. You can update the project information with
+project fo a given user. You can update the project information with
 this command.</p>
-<p><strong>*Note*</strong> that all your <tt class="docutils literal"><span class="pre">project</span></tt> command executions update your yaml
+<p>..note:: that all your <tt class="docutils literal"><span class="pre">project</span></tt> command executions update your yaml
 file (cloudmesh.yaml) and mongo db (user, defaults) both.</p>
 <div class="section" id="ipython-alias">
 <h2>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h2>
@@ -761,6 +766,27 @@ Options:
 </pre></div>
 </div>
 </div>
+<div class="section" id="future-extensions">
+<h3>Future Extensions<a class="headerlink" href="#future-extensions" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro, please proovide an extension to this function to</p>
+</div>
+<p>allow adding and deleting of projects.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project add fg455
+            cm project delete fg455
+</pre></div>
+</div>
+<p>Adding and deletion of projects may need to be done carefully. We do not
+want t o add projects you are not member of. It would be important to
+add some test if possible. The &#8211;force flag forces the addition and
+deletion without test.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro, please add the &#8211;format=FORMAT flag to print the</p>
+</div>
+<p>output in json and a table.</p>
+</div>
 </div>
 </div>
 
@@ -824,6 +850,7 @@ Options:
 <li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li><a class="reference internal" href="#help-message">Help message</a></li>
+<li><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>

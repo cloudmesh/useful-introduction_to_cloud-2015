@@ -224,6 +224,7 @@
 <li class="toctree-l5"><a class="reference internal" href="_cm-project.html#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/_load.html">Load Command</a><ul>
@@ -649,8 +652,8 @@ Debug mode is off.
 </div>
 <div class="section" id="loglevel-command-in-cloudmesh-cm">
 <h1><tt class="docutils literal"><span class="pre">loglevel</span></tt> Command in Cloudmesh cm<a class="headerlink" href="#loglevel-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
-<p><tt class="docutils literal"><span class="pre">loglevel</span></tt> allows you to update a log level on Cloudmesh. * DEBUG *
-INFO * WARNING * ERROR * CRITICAL</p>
+<p><tt class="docutils literal"><span class="pre">loglevel</span></tt> allows you to update a log level on Cloudmesh. * <tt class="docutils literal"><span class="pre">DEBUG</span></tt>
+* <tt class="docutils literal"><span class="pre">INFO</span></tt> * <tt class="docutils literal"><span class="pre">WARNING</span></tt> * <tt class="docutils literal"><span class="pre">ERROR</span></tt> * <tt class="docutils literal"><span class="pre">CRITICAL</span></tt></p>
 <div class="section" id="view-a-current-log-level">
 <h2>View a current log level<a class="headerlink" href="#view-a-current-log-level" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-python"><div class="highlight"><pre>cm loglevel
@@ -672,9 +675,9 @@ INFO * WARNING * ERROR * CRITICAL</p>
 </div>
 <div class="section" id="yaml-command-in-cloudmesh-cm">
 <h1><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm<a class="headerlink" href="#yaml-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
-<p>You can change a value on a selected yaml file on Cloudmesh cm shell.
-You may need to restart Cloudmesh server to reflect the change.
-<tt class="docutils literal"><span class="pre">yaml</span> <span class="pre">info</span></tt> provides a current information of the yaml file
+<p>You can change a value on a selected yaml file on the Cloudmesh cm
+shell. You may need to restart the Cloudmesh server to reflect the
+change. <tt class="docutils literal"><span class="pre">yaml</span> <span class="pre">info</span></tt> provides a current information of the yaml file
 (cloudmesh.yaml).</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm yaml info
 </pre></div>

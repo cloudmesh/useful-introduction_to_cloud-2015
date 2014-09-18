@@ -3,7 +3,7 @@ Cloudmesh API Initialization
 ============================
 
 To access the many useful functions available in cloudmesh, we need to
-import the basic cloudmesh module.
+import the cloudmesh module.
 
 .. code:: python
 

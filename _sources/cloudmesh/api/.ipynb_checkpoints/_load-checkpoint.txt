@@ -2,11 +2,11 @@
 Load Command
 ============
 
-CLoudmesh comes with a number f easy to use configuration files. All of
-them are yaml files. These configuration files configure certain
-aspects. They are important when cloudmesh starts up or is run in user
-more. In server mode the information is typically retrieved from the
-cloudmesh database.
+Cloudmesh comes with a number of easy to use configuration files. All of
+them are yaml files. These configuration files are used to initialize
+cloudmesh in standalone mode. Hence, they are important when cloudmesh
+starts up or is run in user more. In server mode the information is
+typically retrieved from the cloudmesh database.
 
 We focus here on some of the most important configuration files. After
 deployment they can be found in the ``~/.cloudmesh`` directory
@@ -20,9 +20,17 @@ in the ``cloudmesh.yaml`` file.
 .. code:: python
 
     import cloudmesh
+You can load this file with the load command, while either specifying no
+parameters or using the ``"user"`` string as parameter.
+
 .. code:: python
 
     user = cloudmesh.load()
+Once you have loaded it you can inspect the available clouds. Note that
+you must have provided credential information for these clouds in the
+cloudmesh.yaml file prior to starting the program. You also will need to
+activate a cloud befor eyou can use them. This is discussed elsewhere.
+
 .. code:: python
 
     user.cloudnames()
@@ -34,6 +42,10 @@ in the ``cloudmesh.yaml`` file.
     ['alamo', 'hp_east', 'sierra', 'aws', 'hp', 'india', 'azure']
 
 
+
+In addition to information about clouds you will also find some
+information about yourself. Make sure YOu have specified the information
+in the yaml file.
 
 .. code:: python
 
@@ -121,6 +133,8 @@ that easily deploy software based on configuration parameters specified
 in the launchers. The specification of the launchers are stored under
 ``cloudmesh.launcher.recipies``. We provide the information for such a
 launcher as an example.
+
+.. note:: This is a new feature and is not yet fully developed.
 
 .. code:: python
 

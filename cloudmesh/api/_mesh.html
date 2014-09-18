@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; my Cloudmesh Learning documentation</title>
+    <title>Cloudmesh Mesh &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -221,6 +221,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -269,6 +270,8 @@
 <li class="toctree-l4"><a class="reference internal" href="_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_load.html">Load Command</a><ul>
@@ -480,7 +483,8 @@
      href="#">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"
       role="menu"
-      aria-labelledby="dLabelLocalToc"><ul class="simple">
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Cloudmesh Mesh</a></li>
 </ul>
 </ul>
 </li>
@@ -555,7 +559,8 @@
     <li> <a href="../../_index_notebooks.html"> List </a> </li>
   </ul>
   
-<h4 class="nav-header">Page Contents</h4><ul class="simple">
+<h4 class="nav-header">Page Contents</h4><ul>
+<li><a class="reference internal" href="#">Cloudmesh Mesh</a></li>
 </ul>
 
 <form action="../../search.html" method="get">
@@ -573,15 +578,25 @@
       </div>
     <div class="col-md-9">
       
-  <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
+  <div class="section" id="cloudmesh-mesh">
+<h1>Cloudmesh Mesh<a class="headerlink" href="#cloudmesh-mesh" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">this example is not yet fully completed</p>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s">&quot;yaml&quot;</span><span class="p">)</span>
+<p>One of the most convenient methods to interact in python is to use the
+cloudmesh mesh interface. To activate it use the mesh command. We are
+currently only supporting to run cloudmesh with the mongo db activated.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s">&quot;mongo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>After activation we can find out more information with th einfo command.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -689,6 +704,7 @@ TypeError                                 Traceback (most recent call last)
 TypeError: refresh() takes at least 2 arguments (1 given)
 </pre></div>
 </div>
+</div>
 
 
     </div>
@@ -742,7 +758,8 @@ TypeError: refresh() takes at least 2 arguments (1 given)
        <h4 class="nav-header" style="color:white;">Page Contents</h4>
 
 
-       <ul class="simple">
+       <ul>
+<li><a class="reference internal" href="#">Cloudmesh Mesh</a></li>
 </ul>
 
     </div>

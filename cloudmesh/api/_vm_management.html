@@ -224,6 +224,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cm/_cm-project.html#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_load.html">Load Command</a><ul>
@@ -765,12 +768,12 @@ such as a flavor, an image, or a key associated with the instance.
 <em>start()</em> function accepts keyword parameters as a user input of these
 options. To see a brief description of the function, try <em>mesh.start?</em>
 in the IPython Notebook cell.</p>
-<p>Available options are: with * cloud: cloud id e.g. india *
-cm_user_id: portal user id * prefix: The VM instance name starts *
-index: The number of vm instances (auto increment) * flavor: flavor
-name e.g. m1.small * image: image name e.g. futuregrid/ubuntu-14.04 *
-key: key name to use * meta: data in python dict e.g. {&#8220;cm_user_id&#8221;:
-&#8220;brian&#8221;}</p>
+<p>Available options are: with * <tt class="docutils literal"><span class="pre">cloud</span></tt>: cloud id e.g. india *
+<tt class="docutils literal"><span class="pre">cm_user_id</span></tt>: portal user id * <tt class="docutils literal"><span class="pre">prefix</span></tt>: The VM instance name
+starts * <tt class="docutils literal"><span class="pre">index</span></tt>: The number of vm instances (auto increment) *
+<tt class="docutils literal"><span class="pre">flavor</span></tt>: flavor name e.g. m1.small * <tt class="docutils literal"><span class="pre">image</span></tt>: image name e.g.
+futuregrid/ubuntu-14.04 * <tt class="docutils literal"><span class="pre">key</span></tt>: key name to use * <tt class="docutils literal"><span class="pre">meta</span></tt>: data in
+python dict e.g. {&#8220;cm_user_id&#8221;: &#8220;brian&#8221;}</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="s">&quot;Taylor&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;hoho&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -786,7 +789,7 @@ you to manage or modify the VM name as you wish.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Alex_37&#39;</span>
 </pre></div>
 </div>
-<p>vmname() without parameters returns the current VM name that you can
+<p><tt class="docutils literal"><span class="pre">vmname()</span></tt> without parameters returns the current VM name that you can
 use. If you want to use a different name, you can specify <em>prefix=&#8217;&#8216;</em>
 and <em>idx=&#8217;&#8216;</em> as parameters.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="s">&quot;Brian&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>

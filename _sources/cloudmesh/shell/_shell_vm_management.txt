@@ -182,7 +182,7 @@ More options to launch a VM instance
 ------------------------------------
 
 When you create a new VM instance, you can also choose multiple options
-such as a flavor, an image, or a key associated with the instance. The
+such as a flavor, an image associated with the instance. The
 ``vm start`` command accepts optional parameters as a user input of
 these options. To see a brief description of the command, try
 ``cm "vm --help"`` in the IPython Notebook cell.
@@ -195,15 +195,8 @@ Available options are:
 -  --flavor= give the name of the flavor
 -  --flavorid= give the id of the flavor
 -  --group= give the group name of server
--  --id= give the server id
 -  --image= give the name of the image
 -  --imageid= give the id of the image
--  --prefix= give the prefix of the server, standand server name is in
-   the form of prefix\_index, e.g. abc\_9
--  --range= give the range of the index of the servers to delete, e.g.
-   --range=3,6. standand server name is in the form of prefix\_index,
-   e.g. abc\_9
--  --force delete vms without user's confirmation
 
 .. code:: python
 
@@ -332,7 +325,7 @@ to delete a VM by group
 
 .. code:: python
 
-    print cloudmesh.shell("vm delete --cloud=india --goup=testgroup --force")
+    print cloudmesh.shell("vm delete --cloud=india --group=testgroup --force")
 We can also narrow the search result by giving more search conditions.
 For example, to delete VMs of cloud india that they are also in the
 group 'testgroup' and they have the prefix name 'abc' and their indices'
@@ -340,7 +333,7 @@ range is no greater than 100
 
 .. code:: python
 
-    print cloudmesh.shell("vm delete --cloud=india --goup=testgroup --prefix=abc --range=,100 --force")
+    print cloudmesh.shell("vm delete --cloud=india --group=testgroup --prefix=abc --range=,100 --force")
 For more details for command vm
 
 .. code:: python

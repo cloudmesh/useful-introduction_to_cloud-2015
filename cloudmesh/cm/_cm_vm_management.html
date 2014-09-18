@@ -224,6 +224,7 @@
 <li class="toctree-l5"><a class="reference internal" href="_cm-project.html#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_cm-project.html#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/_load.html">Load Command</a><ul>
@@ -725,6 +728,11 @@ the mongo database will be updated.</p>
 </div>
 <p>The <tt class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></tt> command provides an available vm images on a selected
 cloud.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro, update this example so it fits better in 80 column,</p>
+</div>
+<p>maybe remove the id</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list image india --column=name,id,updated&quot;
 </pre></div>
 </div>
@@ -803,27 +811,20 @@ cloudmesh.</p>
 <div class="section" id="more-options-to-launch-a-vm-instance">
 <h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>
 <p>When you create a new VM instance, you can also choose multiple options
-such as a flavor, an image, or a key associated with the instance. The
+such as a flavor, an image associated with the instance. The
 <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command accepts optional parameters as a user input of
 these options. To see a brief description of the command, try
 <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></tt> in the IPython Notebook cell.</p>
 <p>Available options are:</p>
 <ul class="simple">
-<li>&#8211;cloud= give a cloud to work on, if not given, selected or default
-cloud will be used</li>
-<li>&#8211;count= give the number of servers to start</li>
-<li>&#8211;flavor= give the name of the flavor</li>
-<li>&#8211;flavorid= give the id of the flavor</li>
-<li>&#8211;group= give the group name of server</li>
-<li>&#8211;id= give the server id</li>
-<li>&#8211;image= give the name of the image</li>
-<li>&#8211;imageid= give the id of the image</li>
-<li>&#8211;prefix= give the prefix of the server, standand server name is in
-the form of prefix_index, e.g. abc_9</li>
-<li>&#8211;range= give the range of the index of the servers to delete, e.g.
-&#8211;range=3,6. standand server name is in the form of prefix_index,
-e.g. abc_9</li>
-<li>&#8211;force delete vms without user&#8217;s confirmation</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">cloud=&lt;CloudName&gt;</span>&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give a cloud to work on, if not given,
+selected or default cloud will be used</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">count=&lt;count&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the number of servers to start</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">flavor=&lt;flavorName&gt;</span>&nbsp; <span class="pre">:</span></tt> give the name of the flavor</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">flavorid=&lt;flavorId&gt;</span>&nbsp; <span class="pre">:</span></tt> give the id of the flavor</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">group=&lt;group&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the group name of server</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">image=&lt;imgName&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the name of the image</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">imageid=&lt;imgId&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the id of the image</li>
 </ul>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04&quot;
 </pre></div>
@@ -928,6 +929,11 @@ range is no greater than 100</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm -h&quot;
 </pre></div>
 </div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Hyungro, add an example where you first set the default cloud</p>
+</div>
+<p>and than use <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">delete</span> <span class="pre">Brain_2</span></tt></p>
 </div>
 </div>
 

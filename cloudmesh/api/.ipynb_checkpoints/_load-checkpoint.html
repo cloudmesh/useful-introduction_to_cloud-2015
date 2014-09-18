@@ -221,6 +221,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../../cm/_cm-project.html#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../cm/_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../cm/_cm-project.html#help-message">Help message</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cm/_cm-project.html#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -269,6 +270,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../_uuid.html#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_uuid.html#generating-vm-names">Generating VM names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../_uuid.html#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../_load.html">Load Command</a><ul>
@@ -587,11 +590,11 @@
       
   <div class="section" id="load-command">
 <h1>Load Command<a class="headerlink" href="#load-command" title="Permalink to this headline">¶</a></h1>
-<p>CLoudmesh comes with a number f easy to use configuration files. All of
-them are yaml files. These configuration files configure certain
-aspects. They are important when cloudmesh starts up or is run in user
-more. In server mode the information is typically retrieved from the
-cloudmesh database.</p>
+<p>Cloudmesh comes with a number of easy to use configuration files. All of
+them are yaml files. These configuration files are used to initialize
+cloudmesh in standalone mode. Hence, they are important when cloudmesh
+starts up or is run in user more. In server mode the information is
+typically retrieved from the cloudmesh database.</p>
 <p>We focus here on some of the most important configuration files. After
 deployment they can be found in the <tt class="docutils literal"><span class="pre">~/.cloudmesh</span></tt> directory</p>
 <div class="section" id="api-for-cloudmesh-yaml">
@@ -601,15 +604,24 @@ in the <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
+<p>You can load this file with the load command, while either specifying no
+parameters or using the <tt class="docutils literal"><span class="pre">&quot;user&quot;</span></tt> string as parameter.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>Once you have loaded it you can inspect the available clouds. Note that
+you must have provided credential information for these clouds in the
+cloudmesh.yaml file prior to starting the program. You also will need to
+activate a cloud befor eyou can use them. This is discussed elsewhere.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span><span class="o">.</span><span class="n">cloudnames</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;alamo&#39;</span><span class="p">,</span> <span class="s">&#39;hp_east&#39;</span><span class="p">,</span> <span class="s">&#39;sierra&#39;</span><span class="p">,</span> <span class="s">&#39;aws&#39;</span><span class="p">,</span> <span class="s">&#39;hp&#39;</span><span class="p">,</span> <span class="s">&#39;india&#39;</span><span class="p">,</span> <span class="s">&#39;azure&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>In addition to information about clouds you will also find some
+information about yourself. Make sure YOu have specified the information
+in the yaml file.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span><span class="o">.</span><span class="n">firstname</span>
 </pre></div>
 </div>
@@ -664,6 +676,10 @@ that easily deploy software based on configuration parameters specified
 in the launchers. The specification of the launchers are stored under
 <tt class="docutils literal"><span class="pre">cloudmesh.launcher.recipies</span></tt>. We provide the information for such a
 launcher as an example.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a new feature and is not yet fully developed.</p>
+</div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">config</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;launcher&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
