@@ -15,4 +15,5 @@ For development and class users we recommend the local setup.
    yaml
    setup_openstack
    setup_vagrant
+   nosetests
 
