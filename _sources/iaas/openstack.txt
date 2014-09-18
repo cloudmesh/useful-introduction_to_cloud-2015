@@ -1,12 +1,14 @@
 .. _s-openstack:
 
-OpenStack on FutureGrid
+OpenStack on FutureSystems
 ======================================================================
+
+.. note:: futuregrid will be soon changing its name to FutureSystems
 
 Login
 -------
 
-Currently FutureGrid OpenStack Havana installed on India. 
+Currently FutureSystems OpenStack Havana installed on India. 
 
 To use it you need to first log into india and prepare your Openstack
 credentials (Make sure to replace the 'username' with your actual FG
@@ -32,7 +34,7 @@ can be activated wih ::
 
 
 In future this file will be created with the help of cloudmesh
-simplifying access to multiple heterogeneous clouds on FutureGrid.
+simplifying access to multiple heterogeneous clouds on FutureSystems.
 
 List flavors
 ------------

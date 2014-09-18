@@ -79,6 +79,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a><ul>
@@ -372,7 +373,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="iaas/index.html">IaaS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="iaas/index.html#openstack-clouds">OpenStack Clouds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="iaas/openstack.html">OpenStack on FutureGrid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="iaas/openstack.html">OpenStack on FutureSystems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="iaas/openstack.html#login">Login</a></li>
 <li class="toctree-l4"><a class="reference internal" href="iaas/openstack.html#setup-openstack-environment">Setup OpenStack Environment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="iaas/openstack.html#creating-the-novarc-file">Creating the novarc file</a></li>
@@ -496,6 +497,7 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Preface</a><ul>
 <li><a class="reference internal" href="#conventions">Conventions</a></li>
+<li><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
 </ul>
@@ -547,7 +549,7 @@
         <div id="sidebar" class="bs-sidenav" role="complementary">
 <div id="toc"></div>
 
-<h4 class="nav-header">Site Contents</h4>
+<h4 class="nav-header">&nbsp; Site Contents</h4>
 
   <ul class="nav nav-list">  
     <li>
@@ -575,14 +577,15 @@
 
   </ul>
 
-<h4 class="nav-header">Notebooks</h4>
+<h4 class="nav-header"> &nbsp; Notebooks</h4>
   <ul class="nav nav-list">
     <li> <a href="_index_notebooks.html"> List </a> </li>
   </ul>
   
-<h4 class="nav-header">Page Contents</h4><ul>
+<h4 class="nav-header"> &nbsp; Page Contents</h4><ul>
 <li><a class="reference internal" href="#">Preface</a><ul>
 <li><a class="reference internal" href="#conventions">Conventions</a></li>
+<li><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
 </ul>
@@ -628,6 +631,45 @@ different.</dd>
 <dd><em class="manpage">ls(1)</em></dd>
 </dl>
 </div>
+<div class="section" id="using-the-notebooks">
+<h2>Using the Notebooks<a class="headerlink" href="#using-the-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>The material provided in this documentation contains a number of
+IPython notebooks. These notebooks can be executed or accessed through
+te IPython notebook. We recommend that you set up the cloudmesh server
+software on the machine where you run the iPython notebooks on. If it
+is your desktop or Laptop, you can follow the instructions given in
+the quickstart setup guide.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Mark, provide explicit link here</p>
+</div>
+<p>You need to run the notebook server from the directory that contains this
+material. This can be easily checked out from git hub in the following
+way:</p>
+<div class="highlight-bash"><div class="highlight"><pre>.. todo:: Mark, put the git clone <span class="nb">command </span>here
+</pre></div>
+</div>
+<p>One you have downloaded the learning documentation form github, you
+need to cd into the directory with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>introduction_to_cloud_computing
+</pre></div>
+</div>
+<p>Next you have to compile the information with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>fab doc.html
+</pre></div>
+</div>
+<p>Now you can start the notebook server with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>fab doc.notebook
+</pre></div>
+</div>
+<p>The lit of notebooks will be provided in the sidebar menu. You can ow
+visit them and execute them. Howler, we like to remind you that this
+requires that you have previously setup cloudmesh.</p>
+<p>To view the information locally you can say:</p>
+<div class="highlight-bash"><div class="highlight"><pre>fab doc.html
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -639,8 +681,10 @@ different.</dd>
 
 <div class="container">
 <br/>
-<div class="row">     
-     <div class="col-sm-4  ">
+<div class="row">
+     <div class="col-sm-3  ">
+     </div>	 
+     <div class="col-sm-3  ">
      <h4 class="nav-header" style="color:white;">Cloudmesh</h4>
      <ul>       
        <li> <a href="_index_notebooks.html"> IPython Notebooks </a> </li>       
@@ -651,9 +695,9 @@ different.</dd>
      <div style="color:white;">&copy; 2014 myCloudmesh.org</div>     
    </div>
 
-   <div class="col-sm-4" style="font-size:small">
+   <div class="col-sm-3" style="font-size:small">
 
-      <h4 class="nav-header" style="color:white;">Site Contents</h4>
+      <h4 class="nav-header" style="color:white;"> Site Contents</h4>
 
       <ul class="nav nav-list">
 	<li> <a href="toc.html"> Table of Contents </a> </li>	
@@ -677,14 +721,15 @@ different.</dd>
     </div>
 
      
-    <div class="col-sm-4 ">
+    <div class="col-sm-3 ">
        
-       <h4 class="nav-header" style="color:white;">Page Contents</h4>
+       <h4 class="nav-header" style="color:white;"> Page Contents</h4>
 
 
        <ul>
 <li><a class="reference internal" href="#">Preface</a><ul>
 <li><a class="reference internal" href="#conventions">Conventions</a></li>
+<li><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
 </ul>
