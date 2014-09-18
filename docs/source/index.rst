@@ -31,7 +31,7 @@ Contents
    rst
 
    unfinished/index
-
+   todo
 
 Indices and tables
 ==================
