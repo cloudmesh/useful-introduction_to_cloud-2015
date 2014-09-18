@@ -5,6 +5,12 @@ OpenStack on FutureSystems
 
 .. note:: futuregrid will be soon changing its name to FutureSystems
 
+.. note:: Many of us use cloudmesh directly to access the various
+	  clouds. The interface cloudmesh provides is in regarsts to
+	  starting multiple virtual machines more convenient. Please
+	  try out the nova commands so you can appreciate what
+	  cloudmesh offers.
+
 Login
 -------
 
@@ -73,7 +79,7 @@ You will see an output similar to::
        | ID                                   | Name                    | Status | Server |
        +--------------------------------------+-------------------------+--------+--------+
        | 18c437e5-d65e-418f-a739-9604cef8ab33 | futuregrid/fedora-18    | ACTIVE |        |
-       | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-12.04 | ACTIVE |        |
+       | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04 | ACTIVE |        |
        +--------------------------------------+-------------------------+--------+--------+   
 
 .. sidebar :: Hint
@@ -131,7 +137,7 @@ Booting an image
 To boot an instance you simply can now use the command::
 
        $ nova boot --flavor m1.small \
-                   --image "futuregrid/ubuntu-12.04" \
+                   --image "futuregrid/ubuntu-14.04" \
                    --key_name $USER-key $USER-001
 
 If everything went correctly, you will see an output similar to::
@@ -143,7 +149,7 @@ If everything went correctly, you will see an output similar to::
        | updated                     | 2013-05-15T20:32:03Z                 |
        | OS-EXT-STS:task_state       | scheduling                           |
        | key_name                    | <USER>-key                           |
-       | image                       | futuregrid/ubuntu-12.04              |
+       | image                       | futuregrid/ubuntu-14.04              |
        | hostId                      |                                      |
        | OS-EXT-STS:vm_state         | building                             |
        | flavor                      | m1.small                             |
@@ -289,7 +295,8 @@ To allow snapshots, you must use the following convention:
   by a /
 
 * If needed you can also add your username as a prefix in addition to
-  the project number.
+  the project number. Replace the $USER with the username of your
+  FutureSystems account.
 
 Let us assume your project is fg101 and you want to save the image
 with by reminding you it was a my-ubuntu-01 image you want to
@@ -301,7 +308,7 @@ key. Than you can issue on india the following command::
        | ID                                   | Name                       | Status | Server                               |
        +--------------------------------------+----------------------------+--------+--------------------------------------+
        | 18c437e5-d65e-418f-a739-9604cef8ab33 | futuregrid/fedora-18       | ACTIVE |                                      |
-       | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-12.04    | ACTIVE |                                      |
+       | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04    | ACTIVE |                                      |
        | f43375b4-44d3-4350-a9a8-a73f35589344 | fg101/<USER>/my-ubuntu-01  | ACTIVE | c0bd849a-221a-4e53-bf7b-7097541a9bcc |
        +--------------------------------------+----------------------------+--------+--------------------------------------+
 
@@ -311,7 +318,9 @@ If you want to download your customized image, you can do it with this::
 
 .. sidebar:: Hint
 
-   Please note that images not following this convention will be deleted.
+   Please note that images not following this convention may be
+   deleted without warning. Also ifyou do no longer need an image,
+   please remove it.
 
 Automate some initial configuration
 -----------------------------------
@@ -341,7 +350,7 @@ Create a file(mycloudinit.txt) containing these lines::
 Now boot your instance with --user-data mycloudinit.txt like this::
 
        $ nova boot --flavor m1.small \
-                   --image "futuregrid/ubuntu-12.04" \
+                   --image "futuregrid/ubuntu-14.04" \
                    --key_name $USER-key \
                    --user-data mycloudinit.txt $USER-002
 
@@ -357,30 +366,31 @@ Several versions of Ubuntu cloud images are available at
 `http://cloud-images.ubuntu.com/
 <http://cloud-images.ubuntu.com/>`__. Choose the version you want and
 download the file name with \*\*\*\*\*\*-cloudimg-amd64-disk1.img. For
-example, downloading Ubuntu-13.04(Raring Ringtail)is like this::
+example, downloading Ubuntu-14.04 is done like this::
 
-       $ wget http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-amd...
+       $ wget https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
 
+If you need a different version, please adapt the link accordingly.
 You can upload the image with the glance client like this::
 
        $ glance image-create \
-              --name fg101/$USER/myimages/ubuntu-13.04 \
+              --name fg101/$USER/myimages/ubuntu-14.04 \
               --disk-format qcow2 \
               --container-format bare \
-              --file raring-server-cloudimg-amd64-disk1.img
+              --file trusty-server-cloudimg-amd64-disk1.img
 
-Now your new image is listed on ``nova image-list``\ and will be
+Now your new image is listed on ``nova image-list`` and will be
 available when the status become "ACTIVE".
 
 Delete your instance
 --------------------
 
-#. You can delete your instance with::
+You can delete your instance with::
 
        $ nova delete $USER-002
 
-   Please do not forget to also delete your 001 vm if you no longer need
-   it
+Please do not forget to also delete your 001 vm if you no longer need
+it.
 
    
 
@@ -394,10 +404,9 @@ How to change your password
 
        $ keystone password-update
 
-   \* Remember, you will also need to change it in your novarc. This can
-   be achieved by either editing your novarc file directly, or by
-   editing the file ~/.futuregrid/cloudmesh.yaml and recreating your
-   novarc file.
+Remember, you will also need to change it in your novarc. This can be
+achieved by either editing your novarc file directly, or by editing
+the file ~/.futuregrid/cloudmesh.yaml and recreating your novarc file.
 
 Things to do when you need Euca2ools or EC2 interfaces
 ------------------------------------------------------
