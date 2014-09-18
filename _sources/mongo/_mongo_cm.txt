@@ -2,6 +2,13 @@
 Mongo
 =====
 
+This section is mostly for developers of cloudmesh. It will introduce
+you to some methods and classes that you can use to easily interact with
+the mongo db.
+
+.. todo:: Fugang. this desction seems empty. can you describe how to
+interact with mongo. This is for developers
+
 .. code:: python
 
     import cloudmesh

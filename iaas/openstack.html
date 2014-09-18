@@ -646,6 +646,14 @@
 <p class="first admonition-title">Note</p>
 <p class="last">futuregrid will be soon changing its name to FutureSystems</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Many of us use cloudmesh directly to access the various
+clouds. The interface cloudmesh provides is in regarsts to
+starting multiple virtual machines more convenient. Please
+try out the nova commands so you can appreciate what
+cloudmesh offers.</p>
+</div>
 <div class="section" id="login">
 <h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
 <p>Currently FutureSystems OpenStack Havana installed on India.</p>
@@ -708,7 +716,7 @@ uploaded images with the nova image-list command:</p>
 | ID                                   | Name                    | Status | Server |
 +--------------------------------------+-------------------------+--------+--------+
 | 18c437e5-d65e-418f-a739-9604cef8ab33 | futuregrid/fedora-18    | ACTIVE |        |
-| 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-12.04 | ACTIVE |        |
+| 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04 | ACTIVE |        |
 +--------------------------------------+-------------------------+--------+--------+
 </pre></div>
 </div>
@@ -764,7 +772,7 @@ $ nova secgroup-list-rules default
 <h2>Booting an image<a class="headerlink" href="#booting-an-image" title="Permalink to this headline">¶</a></h2>
 <p>To boot an instance you simply can now use the command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova boot --flavor m1.small \
-            --image &quot;futuregrid/ubuntu-12.04&quot; \
+            --image &quot;futuregrid/ubuntu-14.04&quot; \
             --key_name $USER-key $USER-001
 </pre></div>
 </div>
@@ -776,7 +784,7 @@ $ nova secgroup-list-rules default
 | updated                     | 2013-05-15T20:32:03Z                 |
 | OS-EXT-STS:task_state       | scheduling                           |
 | key_name                    | &lt;USER&gt;-key                           |
-| image                       | futuregrid/ubuntu-12.04              |
+| image                       | futuregrid/ubuntu-14.04              |
 | hostId                      |                                      |
 | OS-EXT-STS:vm_state         | building                             |
 | flavor                      | m1.small                             |
@@ -919,7 +927,8 @@ given ip address.</p>
 <li>use your project number fg### in the prefix of your snapshot name followed
 by a /</li>
 <li>If needed you can also add your username as a prefix in addition to
-the project number.</li>
+the project number. Replace the $USER with the username of your
+FutureSystems account.</li>
 </ul>
 <p>Let us assume your project is fg101 and you want to save the image
 with by reminding you it was a my-ubuntu-01 image you want to
@@ -930,7 +939,7 @@ $ nova image-list
 | ID                                   | Name                       | Status | Server                               |
 +--------------------------------------+----------------------------+--------+--------------------------------------+
 | 18c437e5-d65e-418f-a739-9604cef8ab33 | futuregrid/fedora-18       | ACTIVE |                                      |
-| 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-12.04    | ACTIVE |                                      |
+| 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04    | ACTIVE |                                      |
 | f43375b4-44d3-4350-a9a8-a73f35589344 | fg101/&lt;USER&gt;/my-ubuntu-01  | ACTIVE | c0bd849a-221a-4e53-bf7b-7097541a9bcc |
 +--------------------------------------+----------------------------+--------+--------------------------------------+
 </pre></div>
@@ -941,7 +950,9 @@ $ nova image-list
 </div>
 <div class="sidebar">
 <p class="first sidebar-title">Hint</p>
-<p class="last">Please note that images not following this convention will be deleted.</p>
+<p class="last">Please note that images not following this convention may be
+deleted without warning. Also ifyou do no longer need an image,
+please remove it.</p>
 </div>
 </div>
 <div class="section" id="automate-some-initial-configuration">
@@ -969,7 +980,7 @@ ssh_authorized_keys:
 </div>
 <p>Now boot your instance with &#8211;user-data mycloudinit.txt like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova boot --flavor m1.small \
-            --image &quot;futuregrid/ubuntu-12.04&quot; \
+            --image &quot;futuregrid/ubuntu-14.04&quot; \
             --key_name $USER-key \
             --user-data mycloudinit.txt $USER-002
 </pre></div>
@@ -986,32 +997,30 @@ duplicate them on the server</p>
 <p>Several versions of Ubuntu cloud images are available at
 <a class="reference external" href="http://cloud-images.ubuntu.com/">http://cloud-images.ubuntu.com/</a>. Choose the version you want and
 download the file name with ******-cloudimg-amd64-disk1.img. For
-example, downloading Ubuntu-13.04(Raring Ringtail)is like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ wget http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-amd...
+example, downloading Ubuntu-14.04 is done like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img
 </pre></div>
 </div>
-<p>You can upload the image with the glance client like this:</p>
+<p>If you need a different version, please adapt the link accordingly.
+You can upload the image with the glance client like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ glance image-create \
-       --name fg101/$USER/myimages/ubuntu-13.04 \
+       --name fg101/$USER/myimages/ubuntu-14.04 \
        --disk-format qcow2 \
        --container-format bare \
-       --file raring-server-cloudimg-amd64-disk1.img
+       --file trusty-server-cloudimg-amd64-disk1.img
 </pre></div>
 </div>
-<p>Now your new image is listed on <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt>and will be
+<p>Now your new image is listed on <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt> and will be
 available when the status become &#8220;ACTIVE&#8221;.</p>
 </div>
 <div class="section" id="delete-your-instance">
 <h2>Delete your instance<a class="headerlink" href="#delete-your-instance" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">You can delete your instance with:</p>
+<p>You can delete your instance with:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova delete $USER-002
 </pre></div>
 </div>
 <p>Please do not forget to also delete your 001 vm if you no longer need
-it</p>
-</li>
-</ol>
+it.</p>
 </div>
 <div class="section" id="how-to-change-your-password">
 <h2>How to change your password<a class="headerlink" href="#how-to-change-your-password" title="Permalink to this headline">¶</a></h2>
@@ -1023,12 +1032,11 @@ your password with:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ keystone password-update
 </pre></div>
 </div>
-<p>* Remember, you will also need to change it in your novarc. This can
-be achieved by either editing your novarc file directly, or by
-editing the file ~/.futuregrid/cloudmesh.yaml and recreating your
-novarc file.</p>
 </li>
 </ol>
+<p>Remember, you will also need to change it in your novarc. This can be
+achieved by either editing your novarc file directly, or by editing
+the file ~/.futuregrid/cloudmesh.yaml and recreating your novarc file.</p>
 </div>
 <div class="section" id="things-to-do-when-you-need-euca2ools-or-ec2-interfaces">
 <h2>Things to do when you need Euca2ools or EC2 interfaces<a class="headerlink" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" title="Permalink to this headline">¶</a></h2>
