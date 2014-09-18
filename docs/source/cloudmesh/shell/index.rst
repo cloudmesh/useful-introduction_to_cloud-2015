@@ -6,6 +6,5 @@ Cloudmesh Shell
    :maxdepth: -1
    :glob:
 
-   _introduction
    _shell_vm_management
    _list
