@@ -20,7 +20,7 @@ def clean():
 
 @task
 def notebook():
-    local("cd docs/source/notebook && ipython notebook ")
+    local("ipython notebook ")
     
 @task
 def convert():
