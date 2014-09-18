@@ -1,9 +1,10 @@
 nosetests
 =========
 
-If you would like to verify installation by nosetests, we provides couple of
-examples. This basic examples perform several tests towards installation, cm
-console, cm API, and cm shell.
+If you would like to verify installation and other features of Cloudmesh, 
+we provide couple of nosetests to make sure that you have working Cloudmesh.
+These test cases perform several tasks towards Cloudmesh installation, vm
+creation, termination and others on cm console, cm API, and cm shell.
 
 What does the test involve?
 ----------------------------
