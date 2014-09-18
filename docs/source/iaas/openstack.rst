@@ -3,10 +3,10 @@
 OpenStack on FutureSystems
 ======================================================================
 
-.. note:: futuregrid will be soon changing its name to FutureSystems
+.. note:: FutureGrid will be soon changing its name to FutureSystems
 
 .. note:: Many of us use cloudmesh directly to access the various
-	  clouds. The interface cloudmesh provides is in regarsts to
+	  clouds. The interface cloudmesh provides is in regards to
 	  starting multiple virtual machines more convenient. Please
 	  try out the nova commands so you can appreciate what
 	  cloudmesh offers.
@@ -25,7 +25,7 @@ username)::
 Setup OpenStack Environment
 ---------------------------
 
-In case you like to use the shell commandline tools you can load them
+In case you like to use the shell command line tools you can load them
 with ::
 
     $ module load novaclient
@@ -487,7 +487,7 @@ Alamo an older version of Openstack is run.
        OpenStack. For those interested in only managing a few images
        this may be a good way to start. The link to the GUI is 
        https://openstack-h.india.futuregrid.org/horizon The password
-       can be found by following the method dicussed above.
+       can be found by following the method discussed above.
 
 
 .. |image-horizon| image:: /images/fg-horizon.png 
