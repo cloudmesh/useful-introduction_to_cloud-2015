@@ -69,7 +69,7 @@ for filename in files:
         'dirname': os.path.dirname(filename),
         'basename': os.path.basename(filename),
         'prefix' : os.path.basename(filename).replace(".ipynb",""),
-        'ipython': 'http://localhost:8889/notebooks/docs/source/' + filename
+        'ipython': 'http://localhost:8888/notebooks/docs/source/' + filename
         }
     if ".ipynb_checkpoints" not in filename:
         print >> f, "   `{prefix} <{dirname}/{prefix}.html>`__, " \
