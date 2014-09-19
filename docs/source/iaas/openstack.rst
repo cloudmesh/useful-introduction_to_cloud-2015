@@ -359,8 +359,9 @@ You should be able to login to <USER>-002 as root, and the added packages are in
 Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack
 ---------------------------------------------------------------------------
 
-.. todo:: In future we will just host these images so we do not
-   duplicate them on the server
+.. NOTE:: We will try to provide the latest images. E.g., currently in india openstack 
+the ubuntu 14.04 image is officially available under name: futuregrid/ubuntu-14.04. So 
+usually you can skip this section to simply use the one provided officially.
 
 Several versions of Ubuntu cloud images are available at
 `http://cloud-images.ubuntu.com/
