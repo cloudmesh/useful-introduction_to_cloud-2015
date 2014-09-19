@@ -19,6 +19,7 @@ Contents
    ipython/index
    parallel
    cloudmesh/index
+   python/python
 
    iaas/index
    paas/index
