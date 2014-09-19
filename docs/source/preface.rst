@@ -46,13 +46,11 @@ software on the machine where you run the iPython notebooks on. If it
 is your desktop or Laptop, you can follow the instructions given in
 the quickstart setup guide.
 
-.. todo:: Mark, provide explicit link here
-
 You need to run the notebook server from the directory that contains this
 material. This can be easily checked out from git hub in the following
 way::
 
-.. todo:: Mark, put the git clone command here
+  git clone git@github.com:cloudmesh/introduction_to_cloud_computing.git
 
 One you have downloaded the learning documentation form github, you
 need to cd into the directory with::
