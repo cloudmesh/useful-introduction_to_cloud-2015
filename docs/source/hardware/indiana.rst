@@ -104,7 +104,8 @@ Below is further information about networking:
        node)
      -
  
-.. todo:: Hyungro, get info from Koji or Allan . we need current network swithes inside india 
+.. Allan confirmed that we have up-to-date information for network switches on india. Sep 19th, 2014
+   .. todo:: Hyungro, get info from Koji or Allan . we need current network swithes inside india 
              old switch is  `IBM rack switches (formerly BNT) <http://www-03.ibm.com/systems/networking/switches/rack.html>`__
              but that switch was replaced
  
