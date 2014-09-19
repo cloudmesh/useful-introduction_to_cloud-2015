@@ -6,7 +6,12 @@ Conventions
 
 .. role:: rubric
 
+.. role:: red
+
 .. highlight:: bash
+
+
+:rubric:`test`
 
 $
     When showing examples of commands, the $ symbol precedes the
@@ -32,7 +37,7 @@ Man page:
 
 .. role:: rubric
 
-.. |portalname| replace:: **portalname**
+.. |portalname| replace:: :red:**portalname**
 
 .. |localname| replace:: **localname**
 
@@ -72,3 +77,7 @@ requires that you have previously setup cloudmesh.
 To view the information locally you can say::
 
   fab doc.html
+
+.. |portalname| replace:: **portalname**
+
+.. |localname| replace:: **localname**

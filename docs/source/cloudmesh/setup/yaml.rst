@@ -138,13 +138,18 @@ under the name::
 
   $HOME/.cloudmesh/azure_managementCertificate.pem
 
-Cloudmesh yaml file has an example non valid entry that you can change
-with your settings. it can be easily identified whle looking for the
-keyword azure in the `cloudmesh.yaml` file
+Cloudmesh yaml file has an example invalid entry that you can change
+with your settings. It can be easily identified while looking for the
+keyword azure in the `cloudmesh.yaml` file.
 As Azure is a commercial service it is important that you properly
 secure the .cloudmesh directory and its yaml files. 
 
-.. todo:: Hyungro, describe briefly how to do that, use chmod go-rw ... chmod u+r ...
+.. note:: Recommended files and directory permissions for Secured Cloudmesh
+   To protect the yaml files against any access from other users, we recommend
+   to use `chmod` command. Try `chmod -R o+rwx,go-rwx ~/.cloudmesh` to make
+   any file in the *.cloudmesh* directory a private file to your user account.
+   This way allows you have a full access to the files and the directory but
+   not others.
 
 Azure Quickstart
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,7 +205,12 @@ Place X.509 certificate on Cloudmesh
 
  Only the owner with read and write permission e.g. -rw-------
 
-.. todo:: Hyungro, explicitly describe how to do that , do not use the 755 or  other numbers use chmod go- ....
+.. note:: Recommended files and directory permissions for Secured Cloudmesh
+   To protect the yaml files against any access from other users, we recommend
+   to use `chmod` command. Try 
+   `chmod o+rwx,go-rwx ~/azure_managementCertificate.pem` to make the file a 
+   private file to your user account. This way allows you have a full access to
+   the file but not others.
 
 Replace Subscription ID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
