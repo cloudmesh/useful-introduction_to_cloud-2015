@@ -20,7 +20,7 @@ def _execute(command, filename):
 
     _command  = "cd {dirname} ; {command} {basename} > /dev/null 2>&1".format(**data)
     print "EXECUTING:", _command
-    os.system(_command)    
+    os.system(_command)
 
 def find_files(root, prefix="", ending=""):
     all_files = []
@@ -33,7 +33,7 @@ def find_files(root, prefix="", ending=""):
 
 
 def execute_all(command, files):
-    with futures.ThreadPoolExecutor(max_workers=1000) as e:
+    with futures.ThreadPoolExecutor(max_workers=1) as e:
         for filename in files:
             e.submit(_execute, command, filename)
 
