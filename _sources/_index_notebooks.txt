@@ -21,7 +21,6 @@ Notebooks
    `_cm-project <cloudmesh/cm/_cm-project.html>`__, `_cm-project.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__, cloudmesh/cm/_cm-project.ipynb
    `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
    `_cm_vm_management <cloudmesh/cm/_cm_vm_management.html>`__, `_cm_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/cm/_cm_vm_management.ipynb>`__, cloudmesh/cm/_cm_vm_management.ipynb
-   `_introduction <cloudmesh/shell/_introduction.html>`__, `_introduction.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_introduction.ipynb>`__, cloudmesh/shell/_introduction.ipynb
    `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
    `_shell_vm_management <cloudmesh/shell/_shell_vm_management.html>`__, `_shell_vm_management.ipynb <http://localhost:8889/notebooks/docs/source/cloudmesh/shell/_shell_vm_management.ipynb>`__, cloudmesh/shell/_shell_vm_management.ipynb
    `_ipython <ipython/_ipython.html>`__, `_ipython.ipynb <http://localhost:8889/notebooks/docs/source/ipython/_ipython.ipynb>`__, ipython/_ipython.ipynb

@@ -45,9 +45,10 @@ executes the command hostname on all specified machines.
 
 
 
-.. todo:: At this time we are not aware that pdsh is installed by
-   default on india. check with the systems group and have them
-   provide a documentation on how we activate it.
+.. todo:: Hyungro, check with allan and Koji if we have pdsh on
+	  india. At this time we are not aware that pdsh is installed by
+          default on india. check with the systems group and have them
+          provide a documentation on how we activate it.
 
 
 Fabric

@@ -100,7 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../accounts/accounts.html#exercises">Exercises</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../accounts/accounts.html#creating-futuregrid-accounts-and-projects">Creating FutureGrid Accounts and Projects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../accounts/accounts.html#id1">Creating FutureSystems Accounts and Projects</a></li>
 </ul>
 </li>
 </ul>
@@ -282,7 +282,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#random-uuid">Random Uuid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#generating-vm-names">Generating VM names</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
@@ -326,7 +325,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../shell/_introduction.html">Cloudmesh Shell API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../shell/_shell_vm_management.html">Cloudmesh Shell for VM Management</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#initialization">Initialization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../shell/_shell_vm_management.html#activating-clouds">Activating Clouds</a></li>
@@ -503,7 +501,6 @@
 <li><a class="reference internal" href="#random-uuid">Random Uuid</a></li>
 <li><a class="reference internal" href="#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li><a class="reference internal" href="#generating-vm-names">Generating VM names</a></li>
-<li><a class="reference internal" href="#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
 <li><a class="reference internal" href="#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
@@ -597,7 +594,6 @@
 <li><a class="reference internal" href="#random-uuid">Random Uuid</a></li>
 <li><a class="reference internal" href="#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li><a class="reference internal" href="#generating-vm-names">Generating VM names</a></li>
-<li><a class="reference internal" href="#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
 <li><a class="reference internal" href="#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
@@ -622,12 +618,12 @@
 <h1>Defining Names<a class="headerlink" href="#defining-names" title="Permalink to this headline">¶</a></h1>
 <p>Often we need to define some unique names to distinguish virtual
 machines or other objects that we use as part of our programming.
-Besisdes uuid that is provided byt pythin cloudmesh ahs additional
+Besisdes uuid that is provided by python, cloudmesh has additional
 functions that simplify name generation.</p>
 <div class="section" id="uuids">
 <h2>UUIDs<a class="headerlink" href="#uuids" title="Permalink to this headline">¶</a></h2>
-<p>UUIDs are provided as part of the pythin standard libraries. There are a
-number of different initializations and which to uuse depends on your
+<p>UUIDs are provided as part of the python standard libraries. There are a
+number of different initializations and which to use depends on your
 needs.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">uuid</span>
 </pre></div>
@@ -682,7 +678,7 @@ we have a convenience function in cloudmesh.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">f04729ee324211e49889600308a5f9d2</span>
 </pre></div>
 </div>
-<p>As you can see it is just like the uuid function (currently uuid1 with
+<p>As you can see it is just like the uuid function (currently uuid1) with
 the - removed.</p>
 <p>In addition one can place a prefix into the uuid to make furher
 distinctions. However this is rarely needed.</p>
@@ -698,7 +694,7 @@ distinctions. However this is rarely needed.</p>
 <p>To create a name for a virtual machine we often recommend to use a
 prefix with a number for an identifier of the virtual machine. This will
 come in handy when we need to start multile virtual machines and
-distinguish them with a different name. CLoudmesh uses internally by
+distinguish them with a different name. Cloudmesh uses internally by
 using your username from the FutureGrid portal as defined in the
 cloudmesh.yaml file.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
@@ -711,20 +707,23 @@ cloudmesh.yaml file.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="reading-names-and-prefixes-from-the-yaml-file">
-<h2>Reading names and prefixes from the Yaml file<a class="headerlink" href="#reading-names-and-prefixes-from-the-yaml-file" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Mark, please develop an example</p>
-</div>
-</div>
 <div class="section" id="getting-the-next-vm-name">
 <h2>Getting the next vm name<a class="headerlink" href="#getting-the-next-vm-name" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Mark, please find the function we have for this, do not</p>
+<p>Here is how to get the next vm name by using Cloudmesh API, this method
+gets the data from database. Before call vmname(), we need to get the
+username and activate the user account.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s">&quot;mongo&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>develop your own. Use the function we have</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -790,7 +789,6 @@ cloudmesh.yaml file.</p>
 <li><a class="reference internal" href="#random-uuid">Random Uuid</a></li>
 <li><a class="reference internal" href="#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
 <li><a class="reference internal" href="#generating-vm-names">Generating VM names</a></li>
-<li><a class="reference internal" href="#reading-names-and-prefixes-from-the-yaml-file">Reading names and prefixes from the Yaml file</a></li>
 <li><a class="reference internal" href="#getting-the-next-vm-name">Getting the next vm name</a></li>
 </ul>
 </li>
