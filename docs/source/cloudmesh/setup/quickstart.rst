@@ -178,6 +178,13 @@ This script assumes that you have a key in::
 Which will be used to log into the VMs and the machines. This key must
 be uploaded to the FutureSystems portal.
 
+First, please set the PORTALNAME in your shell::
+
+   export PORTALNAME=[name of your user account in FutureSystem]
+
+For ubuntu use
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 ::
 
   git clone https://github.com/cloudmesh/cloudmesh.git
@@ -185,16 +192,51 @@ be uploaded to the FutureSystems portal.
   source ~/ENV/bin/activate
   cd cloudmesh
   sudo ./install system
+
+Next execute::
+
   ./install requirements
   ./install new
   ./install cloudmesh
-  cm-iu user fetch
+  cm-iu user fetch --username=$PORTALNAME
   cm-iu user create
   fab mongo.reset
+
+Next execute::
+
   fab server.start
   cm cloud list
   cm cloud on india
   cm flavor india --refresh
+
+
+For OSX use
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+  git clone https://github.com/cloudmesh/cloudmesh.git
+  virtualenv ~/ENV
+  source ~/ENV/bin/activate
+  cd cloudmesh
+  ./install system
+
+Next execute::
+
+  ./install requirements
+  ./install new
+  ./install cloudmesh
+  cm-iu user fetch --username=$PORTALNAME
+  cm-iu user create
+  fab mongo.reset
+
+Next execute::
+
+  fab server.start
+  cm cloud list
+  cm cloud on india
+  cm flavor india --refresh
+
 
 One line install with curl
 ----------------------------------------------------------------------
@@ -208,18 +250,33 @@ One line install with curl
 This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use::
 
-  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=[your Futuresystems portal id] sh
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=[your FutureSystems portal id] sh
 
 It will install cloudmesh in the directory where you started it from
 and place it in the directory::
 
   cloudmesh
 
-It creates also a directory called ~/github/cloudmesh and then cds
+It creates also a directory called `./github/cloudmesh` and then cds
 into this directory to conduct the installation from
 there. Furthermore, as you can see this script also creates a virtual
 env under the name ~/ENV
 
 If you do not like these names or have a conflict with the names,
 please download the script and modify accordingly.
+
+After you have installed cloudmesh it is important to set a different
+password for the local cloudmesh user. This is done with::
+
+   cd fab user.mongo
+
+
+Tips
+----------------------------------------------------------------------
+
+If you lost the cursor on your terminal, you can use the command::
+
+   reset 
+
+to bring the terminal in its default settings.
 
