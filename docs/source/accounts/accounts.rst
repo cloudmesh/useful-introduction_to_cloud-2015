@@ -63,14 +63,14 @@ create your own project or join an existing one
 Exercises
 --------------
 
-Creating FutureGrid Accounts and Projects
+Creating FutureSystems Accounts and Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Create a portal account on FutureGrid.
+#. Create a portal account on FutureSystems.
    
-#. Identify an interesting project that you can conduct on FutureGrids Cloud, HPC, or Grid resources.
+#. Identify an interesting project that you can conduct on FutureSystemss Cloud, HPC, or Grid resources.
 
-#. Apply for a FutureGrid project or join a project.
+#. Apply for a FutureSystems project or join a project.
 
    See section :ref:`s-account-join-project`.
 

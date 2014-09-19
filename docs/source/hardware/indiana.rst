@@ -104,7 +104,7 @@ Below is further information about networking:
        node)
      -
  
-.. todo:: network swithes inside india not corerct
+.. todo:: Hyungro, get info from Koji or Allan . we need current network swithes inside india 
              old switch is  `IBM rack switches (formerly BNT) <http://www-03.ibm.com/systems/networking/switches/rack.html>`__
              but that switch was replaced
  

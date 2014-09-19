@@ -144,7 +144,7 @@ keyword azure in the `cloudmesh.yaml` file
 As Azure is a commercial service it is important that you properly
 secure the .cloudmesh directory and its yaml files. 
 
-.. todo:: describe briefly how to do that, use chmod go-rw ... chmod u+r ...
+.. todo:: Hyungro, describe briefly how to do that, use chmod go-rw ... chmod u+r ...
 
 Azure Quickstart
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,7 +200,7 @@ Place X.509 certificate on Cloudmesh
 
  Only the owner with read and write permission e.g. -rw-------
 
-.. todo:: explicitly describe how to do that , do not use the 755 or  other numbers use chmod go- ....
+.. todo:: Hyungro, explicitly describe how to do that , do not use the 755 or  other numbers use chmod go- ....
 
 Replace Subscription ID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

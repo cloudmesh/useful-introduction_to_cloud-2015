@@ -12,7 +12,8 @@ Important extensions:
 
 .. todo::
 
-   add missing details about rst here.
+   Hyungro, I also posted yesterday to Barbara how to do links, please
+   dig out mail and add here. add additional missing details about rst here.
 
 Sections
 ----------------------------------------------------------------------   
