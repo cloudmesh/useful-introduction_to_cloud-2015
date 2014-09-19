@@ -85,7 +85,7 @@ clean:
 	rm -rf *.egg
 	find . -name "*~" -exec rm {} \;  
 	find . -name "*.pyc" -exec rm {} \;  
-	rm -rf build  dist *.egg-info *~ #*
+	rm -rf build dist *.egg-info *~ #*
 	rm -rf *.egg-info
 	rm -rf *.log *.pid
 
