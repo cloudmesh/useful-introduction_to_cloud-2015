@@ -1,0 +1,30 @@
+.. _notebooks:
+
+**********************************************************************
+Notebooks
+**********************************************************************
+
+.. note::
+   In order to view the ipynb you must start the ipython server in the home directory with ipython notebook
+
+.. csv-table:: Notebooks
+   :header: RST, ipython, File
+   :widths: 30,30, 30
+
+   `_hello <cloudmesh/api/_hello.html>`__, `_hello.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_hello.ipynb>`__, cloudmesh/api/_hello.ipynb
+   `_load <cloudmesh/api/_load.html>`__, `_load.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_load.ipynb>`__, cloudmesh/api/_load.ipynb
+   `_mesh <cloudmesh/api/_mesh.html>`__, `_mesh.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_mesh.ipynb>`__, cloudmesh/api/_mesh.ipynb
+   `_pbs <cloudmesh/api/_pbs.html>`__, `_pbs.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__, cloudmesh/api/_pbs.ipynb
+   `_uuid <cloudmesh/api/_uuid.html>`__, `_uuid.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_uuid.ipynb>`__, cloudmesh/api/_uuid.ipynb
+   `_vm_management <cloudmesh/api/_vm_management.html>`__, `_vm_management.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_management.ipynb>`__, cloudmesh/api/_vm_management.ipynb
+   `_cm-debug <cloudmesh/cm/_cm-debug.html>`__, `_cm-debug.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-debug.ipynb>`__, cloudmesh/cm/_cm-debug.ipynb
+   `_cm-project <cloudmesh/cm/_cm-project.html>`__, `_cm-project.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__, cloudmesh/cm/_cm-project.ipynb
+   `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
+   `_cm_vm_management <cloudmesh/cm/_cm_vm_management.html>`__, `_cm_vm_management.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm_vm_management.ipynb>`__, cloudmesh/cm/_cm_vm_management.ipynb
+   `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
+   `_shell_vm_management <cloudmesh/shell/_shell_vm_management.html>`__, `_shell_vm_management.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/shell/_shell_vm_management.ipynb>`__, cloudmesh/shell/_shell_vm_management.ipynb
+   `_ipython <ipython/_ipython.html>`__, `_ipython.ipynb <http://localhost:8888/notebooks/docs/source/ipython/_ipython.ipynb>`__, ipython/_ipython.ipynb
+   `_mongo_cm <mongo/_mongo_cm.html>`__, `_mongo_cm.ipynb <http://localhost:8888/notebooks/docs/source/mongo/_mongo_cm.ipynb>`__, mongo/_mongo_cm.ipynb
+   `_cm_shell_boot <proposed/_cm_shell_boot.html>`__, `_cm_shell_boot.ipynb <http://localhost:8888/notebooks/docs/source/proposed/_cm_shell_boot.ipynb>`__, proposed/_cm_shell_boot.ipynb
+   `_cm_shell_notes <proposed/_cm_shell_notes.html>`__, `_cm_shell_notes.ipynb <http://localhost:8888/notebooks/docs/source/proposed/_cm_shell_notes.ipynb>`__, proposed/_cm_shell_notes.ipynb
+   `_vm_sh <sh/_vm_sh.html>`__, `_vm_sh.ipynb <http://localhost:8888/notebooks/docs/source/sh/_vm_sh.ipynb>`__, sh/_vm_sh.ipynb

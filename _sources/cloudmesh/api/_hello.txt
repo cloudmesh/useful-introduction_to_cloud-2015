@@ -1,0 +1,24 @@
+
+Cloudmesh API Initialization
+============================
+
+To access the many useful functions available in cloudmesh, we need to
+import the cloudmesh module.
+
+.. code:: python
+
+    import cloudmesh
+Version
+-------
+
+Cloudmesh has a version number that can be retrived with the version
+function
+
+.. code:: python
+
+    print cloudmesh.version()
+
+.. parsed-literal::
+
+    1.0
+
