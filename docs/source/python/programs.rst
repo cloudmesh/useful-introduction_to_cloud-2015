@@ -14,7 +14,8 @@ Boot with  a shell command
 Boot with python calling a shell command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Mark
+.. include:: ../../../programs/boot-vm.py
+   :literal:
 
 Boot with cloudmesh
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
