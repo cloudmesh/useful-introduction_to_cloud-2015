@@ -1,5 +1,8 @@
 Quick Start on your desktop
 ============================
+
+.. highlight:: bash
+
 .. role:: red
 
 .. warning:: this tutorial is for the new FutureSystems
@@ -9,11 +12,28 @@ Quick Start on your desktop
 
 :red:`This quickstart is designed for Ubuntu 14.04 and OSX`.
 
+
+.. note:: FutureSystems Portalname and Project ID
+          For this example we assume you have set the shell variable
+	  PORTALNAME to your FutureSystems portal username. This can
+	  be done as follwows. Let us assume your portal name is
+	  `albert`. Than you can set it with::
+
+              export PORTALNAME=albert
+
+         We also assume that you have a project id that you set to::
+
+              export PROJECTID=fg101
+ 
+         if it is the number 101.
+
+
 We recommend that you use virtualenv to provide an isolated environment 
 for cloudmesh. We assume you create one called ENV and activate it::
 
-  virtualenv ~/ENV
-  source ~/ENV/bin/activate
+
+  $ virtualenv ~/ENV
+  $ source ~/ENV/bin/activate
 
 First you need to download the code from github. We assume you have
 git installed::
@@ -23,22 +43,21 @@ git installed::
 Next, you need to install a number of required packages with the
 following commands::
 
-
-  cd cloudmesh
-  sudo ./install system
-  ./install requirements
+  $ cd cloudmesh
+  $ sudo ./install system
+  $ ./install requirements
 
 .. note:: on OSX you can omit the sudo. 
 
 To get access to IaaS cloud platforms, you need to create locally a
 new user that has access to various clouds. This can be done with::
 
-  ./install new
+  $ ./install new
 
 The next steps will deploy the cloudmesh code into the virtualenv
 library path::
 
-  ./install cloudmesh
+  $ ./install cloudmesh
 
 
 .. note:: This step is optional but highly recommended for users.
@@ -47,7 +66,7 @@ library path::
    pre-configured cloud rc files from them. To test if you have an account
    and have set it up correctly, please login to the machine india::
 
-     ssh [username]@india.futuresystems.org
+     $ ssh $PORTALNAME@india.futuresystems.org
 
    If this does not work, you may not have uploaded your public key to
    FutureSystems portal at
@@ -57,18 +76,18 @@ library path::
    Once this step is completed, you can
    create the configuration files as follows::
 
-     cm-iu user fetch
-     cm-iu user create
+     $ cm-iu user fetch
+     $ cm-iu user create
 
 At this time we like you to edit some information about yourself in
 the cloudmesh.yaml file. Choose your favorite editor::
 
-  emacs ~/.cloudmesh/cloudmesh.yaml
+  $ emacs ~/.cloudmesh/cloudmesh.yaml
 
 Change the values TBD that you find here with values that describe
 you. 
 
-.. .. todo:: Hyungro: cm "default username=username <portalname>"
+.. .. todo:: Hyungro: cm "default username=username $PORTALNAME"
 
 .. .. todo:: Hyungro: cm "project fg101"  101 is just a placeholder use your real
 	  project id
@@ -77,43 +96,43 @@ As you will need at one point to login into virtual machines you will
 need a key that cloudmesh can use do to so. We assume you have a
 public key generated in your .ssh directory in the file::
 
-  ~/.ssh/id_rsa.pub
+  $ ~/.ssh/id_rsa.pub
 
 If you do not have such a key, you can generate it with::
 
- ssh-keygen -t rsa -C portalname-key
+<  $ ssh-keygen -t rsa -C $PORTALNAME-key
 
 The next steps will deploy the cloudmesh database::
 
-  fab mongo.reset
+  $ fab mongo.reset
 
 We add the key to the database with::
 
-   cm "key add --keyname=portalname-key ~/.ssh/id_rsa.pub"
+   $ cm "key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub"
 
-where portal name is your name for the FutuerSystems portal.
+where :red:`PORTALNAME` is your name for the FutuerSystems portal.
 
 You may next need to specify your default project if you have not yet
 done so::
    
-     cm project default [project id]
+     $ cm project default $PROJECTID
      
-   *[project id]* is your default project id from FutureSystems e.g. fg455 as an example
+where :red:`PROJECTID` is your default project id from FutureSystems e.g. fg455 as an example.
    
 To start Cloudmesh use::
 
-  fab server.start
+  $ fab server.start
 
 Now you can test the service by visiting the web interface at
 http://127.0.0.1:5000. We have a convenient shortcut for this by
 typing:: 
 
-  fab server.view
+  $ fab server.view
 
 Alternatively you can use the cloudmesh shell by invoking the cm
 command via a terminal::
 
-  cm
+  $ cm
   
   ======================================================
   / ___| | ___  _   _  __| |_ __ ___   ___  ___| |__
@@ -174,41 +193,38 @@ Commands without description
 
 This script assumes that you have a key in::
 
-  ~/.ssh/id_rsa.pub
+  $ ~/.ssh/id_rsa.pub
 
 Which will be used to log into the VMs and the machines. This key must
 be uploaded to the FutureSystems portal.
 
-First, please set the PORTALNAME in your shell::
-
-   export PORTALNAME=[name of your user account in FutureSystem]
 
 For ubuntu use
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-  git clone https://github.com/cloudmesh/cloudmesh.git
-  virtualenv ~/ENV
-  source ~/ENV/bin/activate
-  cd cloudmesh
-  sudo ./install system
-
-Next execute::
-
-  ./install requirements
-  ./install new
-  ./install cloudmesh
-  cm-iu user fetch --username=$PORTALNAME
-  cm-iu user create
-  fab mongo.reset
-
-Next execute::
-
-  fab server.start
-  cm cloud list
-  cm cloud on india
-  cm flavor india --refresh
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+  $ virtualenv ~/ENV
+  $ source ~/ENV/bin/activate
+  $ cd cloudmesh
+  $ sudo ./install system
+  #
+  # The commandrequires input
+  #
+  $ ./install requirements
+  $ ./install new
+  $ ./install cloudmesh
+  $ cm-iu user fetch --username=$PORTALNAME
+  $ cm-iu user create
+  $ fab mongo.reset
+  #
+  # The commandrequires input
+  #
+  $ fab server.start
+  $ cm cloud list
+  $ cm cloud on india
+  $ cm flavor india --refresh
 
 
 For OSX use
@@ -216,47 +232,43 @@ For OSX use
 
 ::
 
-  git clone https://github.com/cloudmesh/cloudmesh.git
-  virtualenv ~/ENV
-  source ~/ENV/bin/activate
-  cd cloudmesh
-  ./install system
-
-Next execute::
-
-  ./install requirements
-  ./install new
-  ./install cloudmesh
-  cm-iu user fetch --username=$PORTALNAME
-  cm-iu user create
-  fab mongo.reset
-
-Next execute::
-
-  fab server.start
-  cm cloud list
-  cm cloud on india
-  cm flavor india --refresh
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+  $ virtualenv ~/ENV
+  $ source ~/ENV/bin/activate
+  $ cd cloudmesh
+  $ ./install system
+  #
+  # The commandrequires input
+  #  
+  $ ./install requirements
+  $ ./install new
+  $ ./install cloudmesh
+  $ cm-iu user fetch --username=$PORTALNAME
+  $ cm-iu user create
+  $ fab mongo.reset
+  #
+  # The commandrequires input
+  #
+  $ fab server.start
+  $ cm cloud list
+  $ cm cloud on india
+  $ cm flavor india --refresh
 
 
 One line install with curl
 ----------------------------------------------------------------------
 
-.. .. error:: this method does not yet work 
-
-.. .. todo:: correct the documentation and the install script
-
-.. development:: It may not work properly in some platforms. Please do step-by-step installation above in that case.
-
+.. warning:: This method is experimental, please give us feedback. 
+ 
 This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use::
 
-  curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=[your FutureSystems portal id] sh
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=$PORTALNAME sh
 
 It will install cloudmesh in the directory where you started it from
 and place it in the directory::
 
-  cloudmesh
+  $ cloudmesh
 
 It creates also a directory called `./github/cloudmesh` and then cds
 into this directory to conduct the installation from
@@ -269,8 +281,8 @@ please download the script and modify accordingly.
 After you have installed cloudmesh it is important to set a different
 password for the local cloudmesh user. This is done with::
 
-   cd cloudmesh
-   fab user.mongo
+   $ cd cloudmesh
+   $ fab user.mongo
 
 
 Tips
@@ -278,7 +290,7 @@ Tips
 
 If you lost the cursor on your terminal, you can use the command::
 
-   reset 
+   $ reset 
 
 to bring the terminal in its default settings.
 

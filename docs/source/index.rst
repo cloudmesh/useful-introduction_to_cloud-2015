@@ -19,7 +19,6 @@ Contents
    ipython/index
    parallel
    cloudmesh/index
-   python/python
 
    iaas/index
    paas/index
@@ -31,8 +30,12 @@ Contents
 
    rst
 
-   unfinished/index
+
    todo
+
+.. comment::
+
+   unfinished/index
 
 Indices and tables
 ==================

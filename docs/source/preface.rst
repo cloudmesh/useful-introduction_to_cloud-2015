@@ -4,15 +4,6 @@ Preface
 Conventions
 ----------------------------------------------------------------------
 
-.. role:: rubric
-
-.. role:: red
-
-.. highlight:: bash
-
-
-:rubric:`test`
-
 $
     When showing examples of commands, the $ symbol precedes the
     actual command. So, the other lines are the output obtained after
@@ -21,12 +12,12 @@ $
 
        $ ls
 
-portalname:
+PORTALNAME:
     In some examples we refer to your portal name as |portalname|.
 
-localname: 
+USERNAME: 
     In some examples we refer to your local computers name as
-    |localname|. Your portal name and your local name may be
+    |username|. Your portal name and your local name may be
     different.
 
 Menu selections:
@@ -35,11 +26,6 @@ Menu selections:
 Man page:
     :manpage:`ls(1)`
 
-.. role:: rubric
-
-.. |portalname| replace:: :red:**portalname**
-
-.. |localname| replace:: **localname**
 
 Using the Notebooks
 ----------------------------------------------------------------------
@@ -78,6 +64,6 @@ To view the information locally you can say::
 
   fab doc.html
 
-.. |portalname| replace:: **portalname**
+.. |portalname| replace:: **PORTALNAME**
 
-.. |localname| replace:: **localname**
+.. |username| replace:: **USERNAME**
