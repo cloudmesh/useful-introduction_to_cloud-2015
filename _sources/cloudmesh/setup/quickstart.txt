@@ -5,6 +5,10 @@ Quick Start on your desktop
 
 .. role:: red
 
+.. role:: pink
+
+.. role:: nv
+
 .. warning:: this tutorial is for the new FutureSystems
 	  infrastructure. However at this time we still use
 	  FutureGrid. Please replace all occurrences of FutureSystems
@@ -110,14 +114,14 @@ We add the key to the database with::
 
    $ cm "key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub"
 
-where portal name is your name for the FutuerSystems portal.
+where :p:`PORTALNAME` is your name for the FutuerSystems portal.
 
 You may next need to specify your default project if you have not yet
 done so::
    
      $ cm project default $PROJECTID
      
-where :red:`PROJECTID` is your default project id from FutureSystems e.g. fg455 as an example.
+where :pink:`PROJECTID` is your default project id from FutureSystems e.g. fg455 as an example.
    
 To start Cloudmesh use::
 
