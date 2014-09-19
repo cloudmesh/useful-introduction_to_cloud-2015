@@ -24,3 +24,4 @@ nose
 autopep8
 markupsafe
 hieroglyph
+futures
