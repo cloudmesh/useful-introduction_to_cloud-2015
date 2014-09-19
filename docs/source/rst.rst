@@ -10,11 +10,6 @@ Important extensions:
 
 * http://sphinx-doc.org/ext/todo.html
 
-.. todo::
-
-   Hyungro, I also posted yesterday to Barbara how to do links, please
-   dig out mail and add here. add additional missing details about rst here.
-
 Sections
 ----------------------------------------------------------------------   
 
@@ -203,6 +198,33 @@ Produces
 However, when it comes to excersises we do preferthe use of ipython
 notebooks as this allows us to present them also to users as self
 contained excersises.
+
+Hyperlinks
+----------------------------------------------------------------------
+
+Direct links to html pages can ve done with::
+
+   `This is a link to an html page <hadoop.html>`_
+  
+Note that this page could be generated from an rst page
+
+
+Links to the FG portal need to be formulated with the portal tag::
+
+  :portal:`List to FG projects </projects/all>`
+  
+In case a subsection has a link declared you can use :ref: (this is
+the prefered way as it can be used to point even to subsections::
+
+  :ref:`Connecting private network VMs  clusters <_s_vpn>` 
+
+A html link can be created anywhere in the document but must be
+unique. for example if you place::
+
+  .. _s_vpn:
+
+in the text it will create a target to which the above link points when you click on it
+
 
 Todo
 ----------------------------------------------------------------------
