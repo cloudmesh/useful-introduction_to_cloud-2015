@@ -205,7 +205,12 @@ Place X.509 certificate on Cloudmesh
 
  Only the owner with read and write permission e.g. -rw-------
 
-.. todo:: Hyungro, explicitly describe how to do that , do not use the 755 or  other numbers use chmod go- ....
+.. note:: Recommended files and directory permissions for Secured Cloudmesh
+   To protect the yaml files against any access from other users, we recommend
+   to use `chmod` command. Try 
+   `chmod o+rwx,go-rwx ~/azure_managementCertificate.pem` to make the file a 
+   private file to your user account. This way allows you have a full access to
+   the file but not others.
 
 Replace Subscription ID
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
