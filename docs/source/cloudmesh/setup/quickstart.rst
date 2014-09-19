@@ -1,12 +1,13 @@
 Quick Start on your desktop
 ============================
+.. role:: red
 
 .. warning:: this tutorial is for the new FutureSystems
 	  infrastructure. However at this time we still use
 	  FutureGrid. Please replace all occurrences of FutureSystems
 	  with FutureGrid. 
 
-This quickstart is designed for Ubuntu 14.04 and OSX.
+:red:`This quickstart is designed for Ubuntu 14.04 and OSX`.
 
 We recommend that you use virtualenv to provide an isolated environment 
 for cloudmesh. We assume you create one called ENV and activate it::
