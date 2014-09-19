@@ -29,12 +29,14 @@ Deleting virtual machines
 Delete with  a shell command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Mark
+.. include:: ../../../programs/delete-vm.sh
+   :literal:
 
 Delete with python calling a shell command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Mark
+.. include:: ../../../programs/delete-vm.py
+   :literal:
 
 Delete with cloudmesh
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
