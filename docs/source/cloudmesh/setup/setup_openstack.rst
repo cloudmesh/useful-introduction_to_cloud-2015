@@ -1,6 +1,8 @@
 Quickstart for an Openstack VM 
 ======================================================================
 
+.. highlight:: bash
+
 .. note:: This setup is primarily used for testing, but it can also be
 	  useful for classes using OpenStack, when the call
 	  participants have access to an OpenStack cloud. 
@@ -37,18 +39,18 @@ manual page <../../iaas/openstack.html#horizon-gui.html>`_.
 We summarize the following steps, however like to point out that the
 best source for this is our previously pointed out document::
 
-  ssh <portalname>@india.futuresystems.org
+  $ ssh <portalname>@india.futuresystems.org
   india$ module load novaclient
   india$ source ~/.futuregrid/openstack_havana/novarc
   india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 This assumes such a key exists in the location::
 
-  ~/.ssh/id_rsa.pub
+  $ ~/.ssh/id_rsa.pub
 
 If you do not have such a key, you can generate it with::
 
- ssh-keygen -t rsa -C $USER-key
+ $ ssh-keygen -t rsa -C $USER-key
  
 Remember to set a passphrase once prompted to secure your private key.
 
@@ -115,20 +117,20 @@ Preparation of the VM
 Next you have to update the operating system while logging into
 the VM::
 
-  sudo apt-get update
-  sudo apt-get install git
+  $ sudo apt-get update
+  $ sudo apt-get install git
 
 To obtain cloudmesh you need to clone it from git hub and change to
 the cloudmesh directory::
 
-  cd ~
-  git clone https://github.com/cloudmesh/cloudmesh.git
-  cd cloudmesh
+  $ cd ~
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+  $ cd cloudmesh
 
 The first thing you have to do is to fix some ip addresses on india
 with the command::
 
-  ./bin/fix-india-routing.sh 
+  $ ./bin/fix-india-routing.sh 
 
 Installation
 ----------------------------------------------------------------------
@@ -136,38 +138,38 @@ Installation
 To start the installation of cloudmesh we first need to install a
 number of packages with::
 
-  ./install system
+  $ ./install system
 
 We also recommend that you run virtualenv in python which you can
 enable with::
 
-  cd ~
-  virtualenv  --no-site-packages ~/ENV
-  source ~/ENV/bin/activate
+  $ cd ~
+  $ virtualenv  --no-site-packages ~/ENV
+  $ source ~/ENV/bin/activate
 
 Now let us install cloudmesh into this virtualenv::
 
-  cd cloudmesh
-  ./install requirements
-  ./install new
+  $ cd cloudmesh
+  $ ./install requirements
+  $ ./install new
 
 The last command will create a number of yaml files in the folder::
 
-  ~/.cloudmesh
+  $ ~/.cloudmesh
     
 Next, install the cloudmesh server anad API with:: 
 
-  ./install cloudmesh
+  $ ./install cloudmesh
 
 Now we need to populate the cloudmesh.yaml file with your actual
 information. You can edit the file ``~/.cloudmesh/cloudmesh.yaml` 
 either with emacs or vi::
 
-  emacs ~/.cloudmesh/cloudmesh.yaml
+  $ emacs ~/.cloudmesh/cloudmesh.yaml
 
 or::
 
-  vi ~/.cloudmesh/cloudmesh.yaml
+  $ vi ~/.cloudmesh/cloudmesh.yaml
 
 In this file, update your user profile, name, project
 data. Alternatively, if you already have yaml files on for example
@@ -176,8 +178,8 @@ that machine to the virtual machine.
 
 Yet another alternative is to use the functionality provided by cloudmesh::
 
-  cm-iu user fetch
-  cm-iu user create
+  $ cm-iu user fetch
+  $ cm-iu user create
 
 This will fetch your cloud credentials from FutureSystems and populate them 
 into the yaml config file. BEFORE you can do this, make sure you can log into 
@@ -186,13 +188,13 @@ in the VM that the matching public ssh key had been registered to the FutureSyst
 Additionally you may need to excetue the following beforehand to add your 
 password protected key into the session::
 
-  eval `ssh-agent -s`
-  ssh-add
+  $ eval `ssh-agent -s`
+  $ ssh-add
   
 To run cloudmesh you will need to start a number of services that you
 can do with::
 
-  fab mongo.boot
+  $ fab mongo.boot
 
 In some cases you may see connection problems in the later step. In that case 
 please execute this command one again so the tables and security settings 
@@ -200,16 +202,16 @@ are done properly.
 
 Once the mongo is initiated properly it's time to update the user data with::
 
-  fab user.mongo
+  $ fab user.mongo
 
 Before you start the server, you need to execute this so the server
 would be accessible from outside::
   
-  fab india.configure
+  $ fab india.configure
     
 And then start the server::
 
-  fab server.start
+  $ fab server.start
 
 Then the cloudmesh service should be available via::
 

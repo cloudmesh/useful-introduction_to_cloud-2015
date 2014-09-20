@@ -1,12 +1,14 @@
 Creating the yaml file
 ======================================================================
 
+.. highlight:: bash
+
 You must have installed cloudmesh as discussed in ??? and run::
 
- ./install/new
+ $ ./install/new
 
 
-This will create a ~/.cloudmesh directory with some basic yaml files
+This will create a `~/.cloudmesh` directory with some basic yaml files
 that you will need to modify.
 
 Adding FutureGrid Openstack clouds on sierra and india to the yaml file
@@ -19,25 +21,25 @@ step is unnecessary. Before you can execute this command you maust
 make sure that you can log into india and sierra via ssh. Once you
 have verified this for example with::
 
-  ssh USERNAME@india.futuregrid.org hostname
-  ssh USERNAME@sierra.futuregrid.org hostname
+  $ ssh $PORTALNAME@india.futuregrid.org hostname
+  $ ssh $PORTALNAME@sierra.futuregrid.org hostname
 
 Now create the yaml file while fetching some information from the
 remote machines::
 
-  ./install rc fetch
+  $ ./install rc fetch
 
 First it will ask you which username you have on FutureGrid. The name
 may be different from your current local machine name. Please enter
 your name when you see::
 
 
-  Please enter your portal user id [default: flat]: 
+  Please enter your portal user id [default: albert]: 
 
 After this you can update the yaml files with the data fetched from
 the india and sierra with the command::
 
-  ./install rc fill
+  $ ./install rc fill
 
 The reason why we have separated the commands and not just created one
 command is to provide you with the ability to double check overwriting

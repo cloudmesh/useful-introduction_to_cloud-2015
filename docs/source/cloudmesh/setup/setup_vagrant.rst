@@ -1,6 +1,8 @@
 Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing
 ==============================================================
 
+.. highlight:: bash
+
 This tutorial provides as how to deploy Cloudmesh with Vagrant and VirtualBox.
 Official Ubuntu 14.04 Server LTS 64 bit and 32 bit are supported as base images
 of Vagrant.
@@ -10,8 +12,8 @@ Download cloudmesh
 
 ::
 
-  git clone https://github.com/cloudmesh/cloudmesh.git
-  cd cloudmesh
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+  $ cd cloudmesh
 
 Install Vagrant and VirtualBox
 --------------------------------
@@ -20,10 +22,10 @@ This instructions are tested on Ubuntu 14.04.
 
 ::
 
-  sudo apt-get install vagrant
-  sudo add-apt-repository multiverse 
-  sudo apt-get update
-  sudo apt-get install virtualbox
+  $ sudo apt-get install vagrant
+  $ sudo add-apt-repository multiverse 
+  $ sudo apt-get update
+  $ sudo apt-get install virtualbox
 
 Install Veewee (Optional)
 -------------------------
@@ -32,7 +34,7 @@ There are `requirements <veewee-requirement.html>`_ prior installing Veewee.
 
 ::
   
-   gem install veewee
+   $ gem install veewee
 
 * On OS X Mavericks::
 
@@ -44,8 +46,8 @@ Vagrant up
 
 ::
 
-  cd ~/cloudmesh/vagrant/example1
-  ./run.sh
+  $ cd ~/cloudmesh/vagrant/example1
+  $ ./run.sh
 
 FutureGrid Portal ID
 ^^^^^^^^^^^^^^^^^^^^^
@@ -83,8 +85,8 @@ root once you ssh to the VM.
 
 ::
  
-   vagrant ssh
-   sudo su -
+   $ vagrant ssh
+   $ sudo su -
 
 Virtualenv and cm
 -----------------
@@ -94,6 +96,6 @@ Cloudmesh interactive shell is ready to use.
 
 ::
 
-   source ~/ENV/bin/activate
-   cd cloudmesh
-   cm
+   $ source ~/ENV/bin/activate
+   $ cd cloudmesh
+   $ cm
