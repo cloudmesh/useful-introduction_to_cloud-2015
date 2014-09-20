@@ -79,7 +79,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Preface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conventions">Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#blocks">Blocks</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
@@ -206,7 +209,7 @@
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="cloudmesh/setup/nosetests.html">nosetests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh/setup/nosetests.html">Nosetests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/nosetests.html#what-does-the-test-involve">What does the test involve?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/nosetests.html#installation">Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cloudmesh/setup/nosetests.html#api">API</a></li>
@@ -511,7 +514,10 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Preface</a><ul>
-<li><a class="reference internal" href="#conventions">Conventions</a></li>
+<li><a class="reference internal" href="#conventions">Conventions</a><ul>
+<li><a class="reference internal" href="#blocks">Blocks</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
@@ -600,7 +606,10 @@
   
 <h4 class="nav-header"> &nbsp; Page Contents</h4><ul>
 <li><a class="reference internal" href="#">Preface</a><ul>
-<li><a class="reference internal" href="#conventions">Conventions</a></li>
+<li><a class="reference internal" href="#conventions">Conventions</a><ul>
+<li><a class="reference internal" href="#blocks">Blocks</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
@@ -626,26 +635,36 @@
 <div class="section" id="conventions">
 <h2>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt>$</dt>
-<dd><p class="first">When showing examples of commands, the $ symbol precedes the
+<dt><span class="pink">$</span></dt>
+<dd><p class="first">When showing examples of commands, the <span class="pink">$</span> symbol precedes the
 actual command. So, the other lines are the output obtained after
 executing the command. An example invoking the ls command
 follows:</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ ls
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls
 </pre></div>
 </div>
 </dd>
-<dt>PORTALNAME:</dt>
-<dd>In some examples we refer to your portal name as <strong>PORTALNAME</strong>.</dd>
-<dt>USERNAME:</dt>
+<dt><span class="pink">PORTALNAME</span></dt>
+<dd>In some examples we refer to your portal name as the <span class="pink">PORTALNAME</span>
+you have on FutureSystems.</dd>
+<dt><span class="pink">USERNAME</span></dt>
 <dd>In some examples we refer to your local computers name as
-<strong>USERNAME</strong>. Your portal name and your local name may be
+<span class="pink">USERNAME</span>. Your portal name and your local name may be
 different.</dd>
 <dt>Menu selections:</dt>
 <dd><em class="menuselection">Start ‣ Programs</em></dd>
 <dt>Man page:</dt>
 <dd><em class="manpage">ls(1)</em></dd>
 </dl>
+<div class="section" id="blocks">
+<h3>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h3>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>This is an important hint.</p>
+<p class="last"><img alt="info-image" src="_images/glyphicons_195_circle_info1.png" /> Hints are represented in simple blocks that are
+distinguished from the main text</p>
+</div>
+</div>
 </div>
 <div class="section" id="using-the-notebooks">
 <h2>Using the Notebooks<a class="headerlink" href="#using-the-notebooks" title="Permalink to this headline">¶</a></h2>
@@ -658,27 +677,27 @@ the quickstart setup guide.</p>
 <p>You need to run the notebook server from the directory that contains this
 material. This can be easily checked out from git hub in the following
 way:</p>
-<div class="highlight-python"><div class="highlight"><pre>git clone git@github.com:cloudmesh/introduction_to_cloud_computing.git
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git@github.com:cloudmesh/introduction_to_cloud_computing.git
 </pre></div>
 </div>
 <p>One you have downloaded the learning documentation form github, you
 need to cd into the directory with:</p>
-<div class="highlight-python"><div class="highlight"><pre>cd introduction_to_cloud_computing
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>introduction_to_cloud_computing
 </pre></div>
 </div>
 <p>Next you have to compile the information with:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab doc.html
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab doc.html
 </pre></div>
 </div>
 <p>Now you can start the notebook server with:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab doc.notebook
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab doc.notebook
 </pre></div>
 </div>
 <p>The lit of notebooks will be provided in the sidebar menu. You can ow
 visit them and execute them. Howler, we like to remind you that this
 requires that you have previously setup cloudmesh.</p>
 <p>To view the information locally you can say:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab doc.html
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab doc.html
 </pre></div>
 </div>
 </div>
@@ -741,7 +760,10 @@ requires that you have previously setup cloudmesh.</p>
 
        <ul>
 <li><a class="reference internal" href="#">Preface</a><ul>
-<li><a class="reference internal" href="#conventions">Conventions</a></li>
+<li><a class="reference internal" href="#conventions">Conventions</a><ul>
+<li><a class="reference internal" href="#blocks">Blocks</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>

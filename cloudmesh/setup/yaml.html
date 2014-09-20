@@ -80,7 +80,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../preface.html#blocks">Blocks</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
@@ -207,7 +210,7 @@
 <li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="nosetests.html">nosetests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#what-does-the-test-involve">What does the test involve?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#installation">Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#api">API</a></li>
@@ -661,10 +664,10 @@
   <div class="section" id="creating-the-yaml-file">
 <h1>Creating the yaml file<a class="headerlink" href="#creating-the-yaml-file" title="Permalink to this headline">¶</a></h1>
 <p>You must have installed cloudmesh as discussed in ??? and run:</p>
-<div class="highlight-python"><div class="highlight"><pre>./install/new
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install/new
 </pre></div>
 </div>
-<p>This will create a ~/.cloudmesh directory with some basic yaml files
+<p>This will create a <cite>~/.cloudmesh</cite> directory with some basic yaml files
 that you will need to modify.</p>
 <div class="section" id="adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file">
 <h2>Adding FutureGrid Openstack clouds on sierra and india to the yaml file<a class="headerlink" href="#adding-futuregrid-openstack-clouds-on-sierra-and-india-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
@@ -674,24 +677,24 @@ FutureGrid will provide directly a yaml for cloudmesh so that this
 step is unnecessary. Before you can execute this command you maust
 make sure that you can log into india and sierra via ssh. Once you
 have verified this for example with:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh USERNAME@india.futuregrid.org hostname
-ssh USERNAME@sierra.futuregrid.org hostname
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuregrid.org hostname
+<span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@sierra.futuregrid.org hostname
 </pre></div>
 </div>
 <p>Now create the yaml file while fetching some information from the
 remote machines:</p>
-<div class="highlight-python"><div class="highlight"><pre>./install rc fetch
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install rc fetch
 </pre></div>
 </div>
 <p>First it will ask you which username you have on FutureGrid. The name
 may be different from your current local machine name. Please enter
 your name when you see:</p>
-<div class="highlight-python"><div class="highlight"><pre>Please enter your portal user id [default: flat]:
+<div class="highlight-bash"><div class="highlight"><pre>Please enter your portal user id <span class="o">[</span>default: albert<span class="o">]</span>:
 </pre></div>
 </div>
 <p>After this you can update the yaml files with the data fetched from
 the india and sierra with the command:</p>
-<div class="highlight-python"><div class="highlight"><pre>./install rc fill
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install rc fill
 </pre></div>
 </div>
 <p>The reason why we have separated the commands and not just created one
@@ -782,7 +785,7 @@ the <cite>.cloudmesh</cite> directory. The <em>subscriptionid</em> field should 
 with your Azure subscription id. The valid X.509 certificate file
 (.pem) must also be stored in the <cite>.cloudmesh</cite> directory. We store it
 under the name:</p>
-<div class="highlight-python"><div class="highlight"><pre>$HOME/.cloudmesh/azure_managementCertificate.pem
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$HOME</span>/.cloudmesh/azure_managementCertificate.pem
 </pre></div>
 </div>
 <p>Cloudmesh yaml file has an example invalid entry that you can change
@@ -813,7 +816,7 @@ Windows Azure site is located at</p>
 <div class="section" id="download-credentials">
 <h4>Download credentials<a class="headerlink" href="#download-credentials" title="Permalink to this headline">¶</a></h4>
 <p>Form ther you can download the:</p>
-<div class="highlight-python"><div class="highlight"><pre>.publishsettings
+<div class="highlight-bash"><div class="highlight"><pre>.publishsettings
 </pre></div>
 </div>
 </div>
@@ -829,8 +832,8 @@ OSX installer.</p>
 </div>
 <div class="section" id="import-credentials-via-azure-cli">
 <h4>Import Credentials via Azure CLI<a class="headerlink" href="#import-credentials-via-azure-cli" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre>$ azure account download
-$ azure account import &lt;.publishsettings file path&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>azure account download
+<span class="nv">$ </span>azure account import &lt;.publishsettings file path&gt;
 </pre></div>
 </div>
 </div>
@@ -842,9 +845,9 @@ $ azure account import &lt;.publishsettings file path&gt;
 </div>
 <div class="section" id="place-x-509-certificate-on-cloudmesh">
 <h4>Place X.509 certificate on Cloudmesh<a class="headerlink" href="#place-x-509-certificate-on-cloudmesh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre> $ cp -p ~/.azure/managementCertificate.pem ~/.cloudmesh/azure_managementCertificate.pem
+<div class="highlight-bash"><div class="highlight"><pre> <span class="nv">$ </span>cp -p ~/.azure/managementCertificate.pem ~/.cloudmesh/azure_managementCertificate.pem
 
-Only the owner with read and write permission e.g. -rw-------
+Only the owner with <span class="nb">read </span>and write permission e.g. -rw-------
 </pre></div>
 </div>
 <div class="admonition note">
@@ -859,7 +862,7 @@ the file but not others.</p>
 </div>
 <div class="section" id="replace-subscription-id">
 <h4>Replace Subscription ID<a class="headerlink" href="#replace-subscription-id" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre>$ azure service cert list
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>azure service cert list
 </pre></div>
 </div>
 <p>provides your subscription id that just imported from the .publishsettings file.</p>

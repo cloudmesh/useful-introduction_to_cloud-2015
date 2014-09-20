@@ -1,5 +1,7 @@
-nosetests
+Nosetests
 =========
+
+.. highlight:: bash
 
 If you would like to verify installation and other features of Cloudmesh, 
 we provide couple of nosetests to make sure that you have working Cloudmesh.
@@ -18,28 +20,28 @@ re-installed and re-configured.
 Installation
 ------------------
 
-Try to run the following command:
+Try to run the following command::
 
-$ nosetests -v --nocapture ~/cloudmesh/tests/test_cm.py
+  $ nosetests -v --nocapture ~/cloudmesh/tests/test_cm.py
 
 
 API
 ---
 
-Try to run the following command:
+Try to run the following command::
 
-$ nosetests -v --nocapture ~/cloudmesh/tests/test_cm_api.py
+  $ nosetests -v --nocapture ~/cloudmesh/tests/test_cm_api.py
 
 cm shell
 --------
 
-Try to run the following command:
+Try to run the following command::
 
-$ nosetests -v --nocapture ~/cloudmesh/tests/test_cm_shell.py
+  $ nosetests -v --nocapture ~/cloudmesh/tests/test_cm_shell.py
 
 cm console
 ----------
 
-Try to run the following command:
+Try to run the following command::
 
-$ nosetests -v --nocapture ~/cloudmesh/tests/test_cm_console.py
+  $ nosetests -v --nocapture ~/cloudmesh/tests/test_cm_console.py

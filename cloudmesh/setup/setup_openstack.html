@@ -80,7 +80,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../preface.html#blocks">Blocks</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
@@ -207,7 +210,7 @@
 <li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="nosetests.html">nosetests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#what-does-the-test-involve">What does the test involve?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#installation">Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#api">API</a></li>
@@ -657,41 +660,41 @@ GUI or the novaclient command line. This is described in the following document:
 manual page</a>.</p>
 <p>We summarize the following steps, however like to point out that the
 best source for this is our previously pointed out document:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh &lt;portalname&gt;@india.futuresystems.org
-india$ module load novaclient
-india$ source ~/.futuregrid/openstack_havana/novarc
-india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh &lt;portalname&gt;@india.futuresystems.org
+india<span class="nv">$ </span>module load novaclient
+india<span class="nv">$ </span><span class="nb">source</span> ~/.futuregrid/openstack_havana/novarc
+india<span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <span class="nv">$USER</span>-india-key
 </pre></div>
 </div>
 <p>This assumes such a key exists in the location:</p>
-<div class="highlight-python"><div class="highlight"><pre>~/.ssh/id_rsa.pub
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/.ssh/id_rsa.pub
 </pre></div>
 </div>
 <p>If you do not have such a key, you can generate it with:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -C $USER-key
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$USER</span>-key
 </pre></div>
 </div>
 <p>Remember to set a passphrase once prompted to secure your private key.</p>
 <p>Next step is to open the necessary ports of the VM to be started:</p>
-<div class="highlight-python"><div class="highlight"><pre>india$ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
-india$ nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
-india$ nova secgroup-add-rule default tcp 8888 8888 0.0.0.0/0
-india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
-india$ nova secgroup-list-rules default
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp 8888 8888 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-list-rules default
 </pre></div>
 </div>
 <p>And then boot a VM and set public ip for external access:</p>
-<div class="highlight-python"><div class="highlight"><pre>india$ nova boot --flavor m1.small --image &quot;futuregrid/ubuntu-14.04&quot; --key_name $USER-india-key $USER-001
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova boot --flavor m1.small --image <span class="s2">&quot;futuregrid/ubuntu-14.04&quot;</span> --key_name <span class="nv">$USER</span>-india-key <span class="nv">$USER</span>-001
 
-india$ nova floating-ip-create
+india<span class="nv">$ </span>nova floating-ip-create
 
-india$ export MYIP=`nova floating-ip-list |fgrep &quot;None&quot; | cut -d &#39;|&#39; -f2`
-india$ nova add-floating-ip $USER-001 $MYIP
-india$ nova show $USER-001
+india<span class="nv">$ </span><span class="nb">export </span><span class="nv">MYIP</span><span class="o">=</span><span class="sb">`</span>nova floating-ip-list |fgrep <span class="s2">&quot;None&quot;</span> | cut -d <span class="s1">&#39;|&#39;</span> -f2<span class="sb">`</span>
+india<span class="nv">$ </span>nova add-floating-ip <span class="nv">$USER</span>-001 <span class="nv">$MYIP</span>
+india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
 </pre></div>
 </div>
 <p>You should see a table similare like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+----------------------------------------------------------------+
+<div class="highlight-bash"><div class="highlight"><pre>+--------------------------------------+----------------------------------------------------------------+
 | Property                             | Value                                                          |
 +--------------------------------------+----------------------------------------------------------------+
 | status                               | ACTIVE                                                         |
@@ -699,21 +702,21 @@ india$ nova show $USER-001
 | OS-EXT-STS:task_state                | None                                                           |
 | private network                      | 168.39.1.34, 192.165.159.40                                    |
 | key_name                             | USER-key                                                       |
-| image                                | futuregrid/ubuntu-14.04 (02cf1545-dd83-493a-986e-583d53ee3728) |
+| image                                | futuregrid/ubuntu-14.04 <span class="o">(</span>02cf1545-dd83-493a-986e-583d53ee3728<span class="o">)</span> |
 | hostId                               | hsakjfhsdlkjfhsdlkjhflskjdhflkjsdhflkjshfpoeuiyrewuohfkljsdkjk |
 | OS-EXT-STS:vm_state                  | active                                                         |
 | OS-SRV-USG:launched_at               | 2014-09-12T19:27:30.000000                                     |
-| flavor                               | m1.small (2)                                                   |
+| flavor                               | m1.small <span class="o">(</span>2<span class="o">)</span>                                                   |
 | id                                   | 7e458cbd-d37d-443a-aa76-adc7fcad52ea                           |
-| security_groups                      | [{u&#39;name&#39;: u&#39;default&#39;}]                                        |
+| security_groups                      | <span class="o">[{</span>u<span class="s1">&#39;name&#39;</span>: u<span class="s1">&#39;default&#39;</span><span class="o">}]</span>                                        |
 | OS-SRV-USG:terminated_at             | None                                                           |
 | user_id                              | sjhkjsahflkjashfkljshfkdjsahfkjh                               |
 | name                                 | USER-001                                                       |
 | created                              | 2014-09-12T19:27:23Z                                           |
 | tenant_id                            | abcd01234hfslkjhfdskjfhkjdshfkjs                               |
 | OS-DCF:diskConfig                    | MANUAL                                                         |
-| metadata                             | {}                                                             |
-| os-extended-volumes:volumes_attached | []                                                             |
+| metadata                             | <span class="o">{}</span>                                                             |
+| os-extended-volumes:volumes_attached | <span class="o">[]</span>                                                             |
 | accessIPv4                           |                                                                |
 | accessIPv6                           |                                                                |
 | progress                             | 0                                                              |
@@ -724,7 +727,7 @@ india$ nova show $USER-001
 </pre></div>
 </div>
 <p>Looking at the status you will see if the VM is in ACTIVE state. Once this is the case you can login to it with:</p>
-<div class="highlight-python"><div class="highlight"><pre>india$ ssh -i ~/.ssh/id_rsa -l ubuntu $MYIP
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>ssh -i ~/.ssh/id_rsa -l ubuntu <span class="nv">$MYIP</span>
 </pre></div>
 </div>
 </div>
@@ -732,20 +735,20 @@ india$ nova show $USER-001
 <h2>Preparation of the VM<a class="headerlink" href="#preparation-of-the-vm" title="Permalink to this headline">¶</a></h2>
 <p>Next you have to update the operating system while logging into
 the VM:</p>
-<div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
-sudo apt-get install git
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install git
 </pre></div>
 </div>
 <p>To obtain cloudmesh you need to clone it from git hub and change to
 the cloudmesh directory:</p>
-<div class="highlight-python"><div class="highlight"><pre>cd ~
-git clone https://github.com/cloudmesh/cloudmesh.git
-cd cloudmesh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>git clone https://github.com/cloudmesh/cloudmesh.git
+<span class="nv">$ </span><span class="nb">cd </span>cloudmesh
 </pre></div>
 </div>
 <p>The first thing you have to do is to fix some ip addresses on india
 with the command:</p>
-<div class="highlight-python"><div class="highlight"><pre>./bin/fix-india-routing.sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/fix-india-routing.sh
 </pre></div>
 </div>
 </div>
@@ -753,38 +756,38 @@ with the command:</p>
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>To start the installation of cloudmesh we first need to install a
 number of packages with:</p>
-<div class="highlight-python"><div class="highlight"><pre>./install system
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install system
 </pre></div>
 </div>
 <p>We also recommend that you run virtualenv in python which you can
 enable with:</p>
-<div class="highlight-python"><div class="highlight"><pre>cd ~
-virtualenv  --no-site-packages ~/ENV
-source ~/ENV/bin/activate
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>virtualenv  --no-site-packages ~/ENV
+<span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
 </pre></div>
 </div>
 <p>Now let us install cloudmesh into this virtualenv:</p>
-<div class="highlight-python"><div class="highlight"><pre>cd cloudmesh
-./install requirements
-./install new
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>cloudmesh
+<span class="nv">$ </span>./install requirements
+<span class="nv">$ </span>./install new
 </pre></div>
 </div>
 <p>The last command will create a number of yaml files in the folder:</p>
-<div class="highlight-python"><div class="highlight"><pre>~/.cloudmesh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/.cloudmesh
 </pre></div>
 </div>
 <p>Next, install the cloudmesh server anad API with:</p>
-<div class="highlight-python"><div class="highlight"><pre>./install cloudmesh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install cloudmesh
 </pre></div>
 </div>
 <p>Now we need to populate the cloudmesh.yaml file with your actual
 information. You can edit the file <a href="#id1"><span class="problematic" id="id2">``</span></a>~/.cloudmesh/cloudmesh.yaml`
 either with emacs or vi:</p>
-<div class="highlight-python"><div class="highlight"><pre>emacs ~/.cloudmesh/cloudmesh.yaml
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>emacs ~/.cloudmesh/cloudmesh.yaml
 </pre></div>
 </div>
 <p>or:</p>
-<div class="highlight-python"><div class="highlight"><pre>vi ~/.cloudmesh/cloudmesh.yaml
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vi ~/.cloudmesh/cloudmesh.yaml
 </pre></div>
 </div>
 <p>In this file, update your user profile, name, project
@@ -792,8 +795,8 @@ data. Alternatively, if you already have yaml files on for example
 india.FutureSystems.org you can copy your local working yaml files from
 that machine to the virtual machine.</p>
 <p>Yet another alternative is to use the functionality provided by cloudmesh:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-iu user fetch
-cm-iu user create
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm-iu user fetch
+<span class="nv">$ </span>cm-iu user create
 </pre></div>
 </div>
 <p>This will fetch your cloud credentials from FutureSystems and populate them
@@ -802,33 +805,33 @@ the FutureSystems resources, e.g. india. You will need a private key present
 in the VM that the matching public ssh key had been registered to the FutureSystems.
 Additionally you may need to excetue the following beforehand to add your
 password protected key into the session:</p>
-<div class="highlight-python"><div class="highlight"><pre>eval `ssh-agent -s`
-ssh-add
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
+<span class="nv">$ </span>ssh-add
 </pre></div>
 </div>
 <p>To run cloudmesh you will need to start a number of services that you
 can do with:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab mongo.boot
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab mongo.boot
 </pre></div>
 </div>
 <p>In some cases you may see connection problems in the later step. In that case
 please execute this command one again so the tables and security settings
 are done properly.</p>
 <p>Once the mongo is initiated properly it&#8217;s time to update the user data with:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab user.mongo
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab user.mongo
 </pre></div>
 </div>
 <p>Before you start the server, you need to execute this so the server
 would be accessible from outside:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab india.configure
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab india.configure
 </pre></div>
 </div>
 <p>And then start the server:</p>
-<div class="highlight-python"><div class="highlight"><pre>fab server.start
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab server.start
 </pre></div>
 </div>
 <p>Then the cloudmesh service should be available via:</p>
-<div class="highlight-python"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
+<div class="highlight-bash"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
 </pre></div>
 </div>
 <p>NOTE:</p>

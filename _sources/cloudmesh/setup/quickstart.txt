@@ -7,8 +7,6 @@ Quick Start on your desktop
 
 .. role:: pink
 
-.. role:: nv
-
 .. warning:: this tutorial is for the new FutureSystems
 	  infrastructure. However at this time we still use
 	  FutureGrid. Please replace all occurrences of FutureSystems

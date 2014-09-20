@@ -34,7 +34,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
     <link rel="up" title="Cloudmesh Setup" href="index.html" />
-    <link rel="next" title="nosetests" href="nosetests.html" />
+    <link rel="next" title="Nosetests" href="nosetests.html" />
     <link rel="prev" title="Quickstart for an Openstack VM" href="setup_openstack.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -80,7 +80,10 @@
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../preface.html#blocks">Blocks</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
 </ul>
 </li>
@@ -207,7 +210,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="nosetests.html">nosetests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#what-does-the-test-involve">What does the test involve?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#installation">Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nosetests.html#api">API</a></li>
@@ -537,7 +540,7 @@
     </a>
   </li>
   <li>
-    <a href="nosetests.html" title="Next Chapter: nosetests"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">nosetests &raquo;</span>
+    <a href="nosetests.html" title="Next Chapter: Nosetests"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Nosetests &raquo;</span>
     </a>
   </li>
               
@@ -645,30 +648,30 @@ Official Ubuntu 14.04 Server LTS 64 bit and 32 bit are supported as base images
 of Vagrant.</p>
 <div class="section" id="download-cloudmesh">
 <h2>Download cloudmesh<a class="headerlink" href="#download-cloudmesh" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>git clone https://github.com/cloudmesh/cloudmesh.git
-cd cloudmesh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/cloudmesh/cloudmesh.git
+<span class="nv">$ </span><span class="nb">cd </span>cloudmesh
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-vagrant-and-virtualbox">
 <h2>Install Vagrant and VirtualBox<a class="headerlink" href="#install-vagrant-and-virtualbox" title="Permalink to this headline">¶</a></h2>
 <p>This instructions are tested on Ubuntu 14.04.</p>
-<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install vagrant
-sudo add-apt-repository multiverse
-sudo apt-get update
-sudo apt-get install virtualbox
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install vagrant
+<span class="nv">$ </span>sudo add-apt-repository multiverse
+<span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install virtualbox
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-veewee-optional">
 <h2>Install Veewee (Optional)<a class="headerlink" href="#install-veewee-optional" title="Permalink to this headline">¶</a></h2>
 <p>There are <a class="reference external" href="veewee-requirement.html">requirements</a> prior installing Veewee.</p>
-<div class="highlight-python"><div class="highlight"><pre>gem install veewee
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gem install veewee
 </pre></div>
 </div>
 <ul>
 <li><p class="first">On OS X Mavericks:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install veewee
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ ARCHFLAGS</span><span class="o">=</span>-Wno-error<span class="o">=</span>unused-command-line-argument-hard-error-in-future gem install veewee
 </pre></div>
 </div>
 </li>
@@ -676,33 +679,33 @@ sudo apt-get install virtualbox
 </div>
 <div class="section" id="vagrant-up">
 <h2>Vagrant up<a class="headerlink" href="#vagrant-up" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>cd ~/cloudmesh/vagrant/example1
-./run.sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/cloudmesh/vagrant/example1
+<span class="nv">$ </span>./run.sh
 </pre></div>
 </div>
 <div class="section" id="futuregrid-portal-id">
 <h3>FutureGrid Portal ID<a class="headerlink" href="#futuregrid-portal-id" title="Permalink to this headline">¶</a></h3>
 <p>Provide your portal ID:</p>
-<div class="highlight-python"><div class="highlight"><pre>==================================
-Futuregrid portal id? (def: )
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">==================================</span>
+Futuregrid portal id? <span class="o">(</span>def: <span class="o">)</span>
 
-==================================
+<span class="o">==================================</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="base-image">
 <h3>Base Image<a class="headerlink" href="#base-image" title="Permalink to this headline">¶</a></h3>
 <p>Select one of the base images:</p>
-<div class="highlight-python"><div class="highlight"><pre>==================================
-Select base image to launch
-==================================
-1) Ubuntu Server 14.04 64bit
-2) Ubuntu Server 14.04 32bit
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">==================================</span>
+Select base image to <span class="nv">launch</span>
+<span class="o">==================================</span>
+1<span class="o">)</span> Ubuntu Server 14.04 64bit
+2<span class="o">)</span> Ubuntu Server 14.04 32bit
 Please choose an option:
 
 Ubuntu Server 14.04 xxbit selected
-Bringing machine &#39;default&#39; up with &#39;virtualbox&#39; provider...
-==&gt; default: Checking if box &#39;ubuntu/trustyxx&#39; is up to date...
+Bringing machine <span class="s1">&#39;default&#39;</span> up with <span class="s1">&#39;virtualbox&#39;</span> provider...
+<span class="o">==</span>&gt; default: Checking <span class="k">if </span>box <span class="s1">&#39;ubuntu/trustyxx&#39;</span> is up to date...
 </pre></div>
 </div>
 <p>Vagrant will be loaded.</p>
@@ -712,8 +715,8 @@ Bringing machine &#39;default&#39; up with &#39;virtualbox&#39; provider...
 <h2>Vagrant ssh<a class="headerlink" href="#vagrant-ssh" title="Permalink to this headline">¶</a></h2>
 <p>Cloudmesh installed on a root account. You need to switch user account to a
 root once you ssh to the VM.</p>
-<div class="highlight-python"><div class="highlight"><pre>vagrant ssh
-sudo su -
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant ssh
+<span class="nv">$ </span>sudo su -
 </pre></div>
 </div>
 </div>
@@ -721,9 +724,9 @@ sudo su -
 <h2>Virtualenv and cm<a class="headerlink" href="#virtualenv-and-cm" title="Permalink to this headline">¶</a></h2>
 <p>Cloudmesh installed on Virtualenv. You need to enable the environment. <tt class="docutils literal"><span class="pre">cm</span></tt>
 Cloudmesh interactive shell is ready to use.</p>
-<div class="highlight-python"><div class="highlight"><pre>source ~/ENV/bin/activate
-cd cloudmesh
-cm
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
+<span class="nv">$ </span><span class="nb">cd </span>cloudmesh
+<span class="nv">$ </span>cm
 </pre></div>
 </div>
 </div>
