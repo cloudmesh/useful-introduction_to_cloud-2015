@@ -46,12 +46,19 @@ Using the Notebooks
 ----------------------------------------------------------------------
 
 The material provided in this documentation contains a number of
-IPython notebooks. These notebooks can be executed or accessed through
-te IPython notebook. We recommend that you set up the cloudmesh server
-software on the machine where you run the iPython notebooks on. If it
-is your desktop or Laptop, you can follow the instructions given in
-the quickstart setup guide.
+IPython notebooks. Naturally, you do not have to do that, but it may
+provide you with an easy way to try and run the examples. These
+notebooks can be executed or accessed through the IPython notebook. We
+recommend that you set up the cloudmesh server software on the machine
+where you run the iPython notebooks on. If it is your desktop or
+Laptop, you can follow the instructions given in the quickstart setup
+guide.
 
+However, before you can use them you also have to download and install
+cloudmesh on the machine where you will be running the notebooks
+from. The installation of cloudmesh is documented elsewhere in this document.
+
+In addition you will need to install the notebook documents locally.
 You need to run the notebook server from the directory that contains this
 material. This can be easily checked out from git hub in the following
 way::
@@ -63,6 +70,10 @@ need to cd into the directory with::
 
   $ cd introduction_to_cloud_computing 
 
+Install additional requirements with requirements::
+
+    $ pip install -r requirements.txt
+
 Next you have to compile the information with::
 
    $ fab doc.html
@@ -71,11 +82,9 @@ Now you can start the notebook server with::
 
   $ fab doc.notebook
 
-The lit of notebooks will be provided in the sidebar menu. You can ow
-visit them and execute them. Howler, we like to remind you that this
-requires that you have previously setup cloudmesh.
-
-To view the information locally you can say::
+You can now visit them and execute them. To view the information
+locally you can say::
 
   $ fab doc.html
 
+A link to the list of notebooks will be provided in the sidebar menu.
