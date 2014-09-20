@@ -8,3 +8,4 @@ Cloud Accounts
 
    accounts
    ssh
+   details
