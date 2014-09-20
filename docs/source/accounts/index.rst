@@ -7,5 +7,6 @@ Cloud Accounts
    :glob:
 
    accounts
-   ssh
    details
+
+..   ssh
