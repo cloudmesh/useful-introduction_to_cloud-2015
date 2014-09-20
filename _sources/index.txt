@@ -15,10 +15,9 @@ Contents
    about
    contact
    accounts/index
-   shell
-   ipython/index
-   parallel
    cloudmesh/index
+
+   parallel
 
    iaas/index
    paas/index
@@ -28,6 +27,7 @@ Contents
 
    devops/index
 
+   ipython/index
    rst
 
 
