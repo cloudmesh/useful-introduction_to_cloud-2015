@@ -101,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../accounts/accounts.html#exercises">Exercises</a><ul>
@@ -602,6 +603,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
@@ -672,13 +674,27 @@ accordingly.</p>
 <h2>Starting the VM<a class="headerlink" href="#starting-the-vm" title="Permalink to this headline">¶</a></h2>
 <p>First, you have to start a VM on the cloud and assign it a public IP.</p>
 <p>This can be done in multiple ways, using the command line, vagrant, or
-the horizon GUI. Let us assume you have set it up via the horizon
-GUI or the novaclient command line. This is described in the following document:</p>
-<p>More information about horizon on FutureSystems is available at <a class="reference external" href="../../iaas/openstack.html#horizon-gui.html">our
-manual page</a>.</p>
+the horizon GUI. Let us assume you have set it up via the horizon GUI
+or the novaclient command line.</p>
+<p>To set up a mchine you could use the either of the folloing methods:</p>
+<ul class="simple">
+<li><strong>Horizon</strong>: see <a class="reference external" href="../../iaas/openstack.html#horizon-gui.html">our manual page</a>.</li>
+<li><strong>nova</strong>: see the <a href="#id1"><span class="problematic" id="id2">:ref:`s-openstack`_</span></a></li>
+<li><strong>cloudmsh</strong>: see <a href="#id3"><span class="problematic" id="id4">:ref:`s-cloudmesh-quickstart`_</span></a> and the cloudmesh
+shell found elsewhere.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please note that in the following document we use the
+<span class="pink">$USER</span> and <span class="pink">$PORTALNAME</span> are the same values
+and the portalname needs to be replaced with the portal name
+you obtained for FutureSystems. As the subsequent steps are
+all executed on india we can simply use the default
+<span class="pink">$USER</span> shell variable.</p>
+</div>
 <p>We summarize the following steps, however like to point out that the
 best source for this is our previously pointed out document:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh &lt;portalname&gt;@india.futuresystems.org
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuresystems.org
 india<span class="nv">$ </span>module load novaclient
 india<span class="nv">$ </span><span class="nb">source</span> ~/.futuregrid/openstack_havana/novarc
 india<span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <span class="nv">$USER</span>-india-key
@@ -799,7 +815,7 @@ enable with:</p>
 </pre></div>
 </div>
 <p>Now we need to populate the cloudmesh.yaml file with your actual
-information. You can edit the file <a href="#id1"><span class="problematic" id="id2">``</span></a>~/.cloudmesh/cloudmesh.yaml`
+information. You can edit the file <a href="#id5"><span class="problematic" id="id6">``</span></a>~/.cloudmesh/cloudmesh.yaml`
 either with emacs or vi:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>emacs ~/.cloudmesh/cloudmesh.yaml
 </pre></div>
@@ -907,6 +923,7 @@ provided at</p>
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>

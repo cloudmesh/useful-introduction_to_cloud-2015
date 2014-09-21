@@ -14,6 +14,7 @@ Contents
    preface
    about
    contact
+   resources
    accounts/index
    cloudmesh/index
 
