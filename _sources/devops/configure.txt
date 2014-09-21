@@ -26,7 +26,7 @@ work on creating a Makefile.in with the available tools, that than
 will be used as the input to configure to create the actual makefile. 
 
 Excersises
-======================================================================
+----------------------------------------------------------------------
 
 #. What is autoconf and auomake?
 

@@ -3,7 +3,9 @@
 OpenStack on FutureSystems
 ======================================================================
 
-.. note:: FutureGrid will be soon changing its name to FutureSystems
+.. highlight:: bash
+
+.. role:: pink
 
 .. note:: Many of us use cloudmesh directly to access the various
 	  clouds. The interface cloudmesh provides is in regards to
@@ -11,16 +13,34 @@ OpenStack on FutureSystems
 	  try out the nova commands so you can appreciate what
 	  cloudmesh offers.
 
+.. note:: FutureSystems Portalname and Project ID
+          For this example we assume you have set the shell variable
+	  :pink:PORTALNAME to your FutureSystems portal username. This can
+	  be done as follwows. Let us assume your portal name is
+	  `albert`. Than you can set it with::
+
+              $ export PORTALNAME=albert
+
+	 If you execute the steps in this manual on india your india
+	 login name is the portalname, thus you can do::
+
+              $ export PORTALNAME=$USER
+
+         We also assume that you have a project id that you set to::
+
+              $ export PROJECTID=fg101
+ 
+         if it is the number 101.
+
+
 Login
 -------
 
-Currently FutureSystems OpenStack Havana installed on India. 
+Currently FutureSystems OpenStack Havana installed on India.  To use
+it you need to first log into india and prepare your Openstack
+credentials::
 
-To use it you need to first log into india and prepare your Openstack
-credentials (Make sure to replace the 'username' with your actual FG
-username)::
-
-       $ ssh username@india.futuregrid.org
+       $ ssh $PORTALNAME@india.futuregrid.org
 
 Setup OpenStack Environment
 ---------------------------
@@ -82,32 +102,38 @@ You will see an output similar to::
        | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04 | ACTIVE |        |
        +--------------------------------------+-------------------------+--------+--------+   
 
-.. sidebar :: Hint
-
-   $USER is your username on the machine. 
 
 Key management
 --------------
+.. note:: Make sure to check if you have not already created a key with
+	  the name  at::
+
+	    ~/.ssh/$PORTALNAME-key
+
+	  if so, please use another name. However, if you want to
+	  reuse the key, you certainly can do that. Also make sure the
+	  key is not already uploaded.  This can be easily done in the
+	  following way::
+
+	    $ nova keypait-list
+
 To start a virtual machine you must first upload a key to the
-cloud. This can be easily done in the following way::
+cloud::
 
-
-       $ nova keypair-add $USER-key > ~/.ssh/$USER-key
-       $ chmod 600 ~/.ssh/$USER-key
+       $ nova keypair-add $PORTALNAME-key > ~/.ssh/$PORTALNAME-key
+       $ chmod 600 ~/.ssh/$PORTALNAME-key
        $ nova keypair-list
-       +---------------+-------------------------------------------------+
-       | Name          | Fingerprint                                     |
-       +---------------+-------------------------------------------------+
-       | <USER>-key    | ab:a6:63:82:dd:08:d3:bc:c0:21:56:4c:e2:bb:22:ac |
-       +---------------+-------------------------------------------------+
-
-Where USER is your login name on india.
+       +-----------------+-------------------------------------------------+
+       | Name            | Fingerprint                                     |
+       +-----------------+-------------------------------------------------+
+       | $PORTALNAME-key | ab:a6:63:82:dd:08:d3:bc:c0:21:56:4c:e2:bb:22:ac |
+       +-----------------+-------------------------------------------------+
 
 Make sure you are not already having the key with that name in order
 to avoid overwriting it in the cloud. Thus be extra careful to execute
 this step twice. Often it is the case that you already have a key in
-your ~/.ssh directory that you may want to use. For example if you use
-rsa, your key will be located at ~/.ssh/id_rsa.pub. 
+your `~/.ssh` directory that you may want to use. For example if you use
+rsa, your key will be located at `~/.ssh/id_rsa.pub`. 
 
 Managing security groups
 ----------------------------------------------------------------------
@@ -121,6 +147,10 @@ member. We will add ICMP and port 22 on default group::
        $ nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
        $ nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
        $ nova secgroup-list-rules default
+
+.. note:: Most likely you will get some errors at this time as the
+	  definitions may already uploaded by default. simply ignore
+	  the errors and move on.
 
 You will see the following output if everything went correctly::
 
@@ -138,9 +168,11 @@ To boot an instance you simply can now use the command::
 
        $ nova boot --flavor m1.small \
                    --image "futuregrid/ubuntu-14.04" \
-                   --key_name $USER-key $USER-001
+                   --key_name $PORTALNAME-key $PORTALNAME-001
 
-If everything went correctly, you will see an output similar to::
+Please note that the last parameter is a "label" for the VM and we
+recommend thst you use a unique label. If everything went correctly,
+you will see an output similar to::
 
        +-----------------------------+--------------------------------------+
        | Property                    | Value                                |
@@ -148,7 +180,7 @@ If everything went correctly, you will see an output similar to::
        | status                      | BUILD                                |
        | updated                     | 2013-05-15T20:32:03Z                 |
        | OS-EXT-STS:task_state       | scheduling                           |
-       | key_name                    | <USER>-key                           |
+       | key_name                    | $PORTALNAME-key                      |
        | image                       | futuregrid/ubuntu-14.04              |
        | hostId                      |                                      |
        | OS-EXT-STS:vm_state         | building                             |
@@ -170,7 +202,6 @@ If everything went correctly, you will see an output similar to::
        | config_drive                |                                      |
        +-----------------------------+--------------------------------------+
 
-Where USER is your login name on india.
 
 List running images
 ----------------------------------------------------------------------
@@ -180,24 +211,24 @@ command and monitor the Status field in the table::
 
        $ nova list
 
-       +--------------------------------------+---------------+--------+---------------------+
-       | ID                                   | Name          | Status | Networks            |
-       +--------------------------------------+---------------+--------+---------------------+
-       | e15ad5b6-c3f0-4c07-996c-3bbe709a63b7 | <USER>-001    | ACTIVE | private=10.35.23.18 |
-       +--------------------------------------+---------------+--------+---------------------+
+       +-------------+----------------+--------+---------------------+
+       | ID          | Name           | Status | Networks            |
+       +-------------+----------------+--------+---------------------+
+       | e15 ... 3b7 | $PORTALNAME-001| ACTIVE | private=10.35.23.18 |
+       +-------------+----------------+--------+---------------------+
 
 Once it has changed from for example BUILD to ACTIVE, you can log
 in. Pleas use the IP address provided under networks. Note that the
 first address is private and can not be reached from outside india::
 
-       $ ssh -l ubuntu -i ~/.ssh/$USER-key 10.35.23.18
+       $ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 10.35.23.18
 
 If you see a warning similar to::
 
-       Add correct host key in /home/<USER>/.ssh/known_hosts to get rid of this message.
-       Offending key in /home/<$USER>/.ssh/known_hosts:3
+       Add correct host key in ~/.ssh/known_hosts to get rid of this message.
+       Offending key in ~/.ssh/known_hosts:3
 
-you need to delete the offending host key from .ssh/known_hosts.
+you need to delete the offending host key from ~/.ssh/known_hosts.
 
 Use block storage
 ----------------------------------------------------------------------
@@ -208,36 +239,40 @@ particular volumen to a VM. Hence, if you delete the VM, your volume
 and the data on t is still there to be reused. To create one 5G volume
 you can do ::
 
-       $ nova volume-create 5
+       $ nova volume-create 5 --display-name $PORTALNAME-vol-001
+
+To more conveniently identify the image we also specified a
+displayname. Please chose a uinque name so you can identify the volume
+more easily.
 
 To list the volumes you can use::
 
        $ nova volume-list
-       +--------------------------------------+-----------+--------------+------+-------------+-------------+
-       | ID                                   | Status    | Display Name | Size | Volume Type | Attached to |
-       +--------------------------------------+-----------+--------------+------+-------------+-------------+
-       | 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx | available | None         |  5   | None        |             |
-       +--------------------------------------+-----------+--------------+------+-------------+-------------+
+       +--------------+-----------+---------------------+------+-------------+-------------+
+       | ID           | Status    | Display Name        | Size | Volume Type | Attached to |
+       +--------------+-----------+---------------------+------+-------------+-------------+
+       | 6d0d ... abc | available | $PORTALNAME-vol-001 |  5   | None        |             |
+       +--------------+-----------+---------------------+------+-------------+-------------+
 
 To attach the volume to your instance you can use the volume-attach
 subcommand. Let us assume we like to attache it as "/dev/vdb", than
 you can use the command:::
 
-       $ nova volume-attach $USER-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx "/dev/vdb"
+       $ nova volume-attach $PORTALNAME-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxabc "/dev/vdb"
 
 .. sidebar:: Hint
 
-   Note thate $USER-001 refers to the name of the VM that we have
+   Note thate $PORTALNAME-001 refers to the name of the VM that we have
    created earlier with the boot command.
 
 Next, let us login to your instance, make filesystem and mount it.
 Here's an example, mounting on /mnt::
 
-       $ ssh -l ubuntu -i ~/.ssh/$USER-key 10.35.23.18
-       ubuntu@<USER>-001:~$ sudo su -
-       root@<USER>-001:~# mkfs.ext4 /dev/vdb
-       root@<USER>-001:~# mount /dev/vdb /mnt
-       root@<USER>-001:~# df -h
+       $ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 10.35.23.18
+       ubuntu@$PORTALNAME-001:~$ sudo su -
+       root@$PORTALNAME-001:~# mkfs.ext4 /dev/vdb
+       root@$PORTALNAME-001:~# mount /dev/vdb /mnt
+       root@$PORTALNAME-001:~# df -h
        Filesystem      Size  Used Avail Use% Mounted on
        /dev/vda1        20G  2.1G   17G  11% /
        none            4.0K     0  4.0K   0% /sys/fs/cgroup
@@ -251,11 +286,11 @@ Here's an example, mounting on /mnt::
 When you want to detach it, unmount /mnt first, go back to indias's
 login node and execute volume-detach::
 
-       root@<USER>-001:~# umount /mnt
-       root@<USER>-001:~# exit
-       ubuntu@<USER>-001:~$ exit
+       root@$PORTALNAME-001:~# umount /mnt
+       root@$PORTALNAME-001:~# exit
+       ubuntu@$PORTALNAME-001:~$ exit
        
-       $ nova volume-detach $USER-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+       $ nova volume-detach $PORTALNAME-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 Set up external access to your instance
 ---------------------------------------
@@ -274,7 +309,7 @@ india. Firts, Create an external ip address with::
 
 Next, put it on your instance with::
 
-       $ nova add-floating-ip $USER-001 198.202.120.193
+       $ nova add-floating-ip $PORTALNAME-001 198.202.120.193
        $ nova floating-ip-list
 
        +-----------------+--------------------------------------+-------------+------+
@@ -295,26 +330,26 @@ To allow snapshots, you must use the following convention:
   by a /
 
 * If needed you can also add your username as a prefix in addition to
-  the project number. Replace the $USER with the username of your
+  the project number. Replace the $PORTALNAME with the username of your
   FutureSystems account.
 
 Let us assume your project is fg101 and you want to save the image
 with by reminding you it was a my-ubuntu-01 image you want to
 key. Than you can issue on india the following command::
 
-       $ nova image-create $USER-001 fg101/$USER/my-ubuntu-01
+       $ nova image-create $PORTALNAME-001 fg101/$PORTALNAME/my-ubuntu-01
        $ nova image-list
-       +--------------------------------------+----------------------------+--------+--------------------------------------+
-       | ID                                   | Name                       | Status | Server                               |
-       +--------------------------------------+----------------------------+--------+--------------------------------------+
-       | 18c437e5-d65e-418f-a739-9604cef8ab33 | futuregrid/fedora-18       | ACTIVE |                                      |
-       | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04    | ACTIVE |                                      |
-       | f43375b4-44d3-4350-a9a8-a73f35589344 | fg101/<USER>/my-ubuntu-01  | ACTIVE | c0bd849a-221a-4e53-bf7b-7097541a9bcc |
-       +--------------------------------------+----------------------------+--------+--------------------------------------+
+       +--------------+--------------------------------+--------+--------------+
+       | ID           | Name                           | Status | Server       |
+       +--------------+--------------------------------+--------+--------------+
+       | 18c43 ... 33 | futuregrid/fedora-18           | ACTIVE |              |
+       | 1a5fd ... e9 | futuregrid/ubuntu-14.04        | ACTIVE |              |
+       | f4337 ... 44 | fg101/$PORTALNAME/my-ubuntu-01 | ACTIVE | c0bd ... bcc |
+       +--------------+--------------------------------+--------+--------------+
 
 If you want to download your customized image, you can do it with this::
 
-       $ glance image-download --file "my-ubuntu-01.img" "fg101/$USER/custom-ubuntu-01"
+       $ glance image-download --file "my-ubuntu-01.img" "fg101/$PORTALNAME/custom-ubuntu-01"
 
 .. sidebar:: Hint
 
@@ -351,15 +386,15 @@ Now boot your instance with --user-data mycloudinit.txt like this::
 
        $ nova boot --flavor m1.small \
                    --image "futuregrid/ubuntu-14.04" \
-                   --key_name $USER-key \
-                   --user-data mycloudinit.txt $USER-002
+                   --key_name $PORTALNAME-key \
+                   --user-data mycloudinit.txt $PORTALNAME-002
 
-You should be able to login to <USER>-002 as root, and the added packages are installed.
+You should be able to login to $PORTALNAME-002 as root, and the added packages are installed.
 
 Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack
 ---------------------------------------------------------------------------
 
-.. NOTE:: We will try to provide the latest images. E.g., currently in india openstack 
+.. note:: We will try to provide the latest images. E.g., currently in india openstack 
 the ubuntu 14.04 image is officially available under name: futuregrid/ubuntu-14.04. So 
 usually you can skip this section to simply use the one provided officially.
 
@@ -375,7 +410,7 @@ If you need a different version, please adapt the link accordingly.
 You can upload the image with the glance client like this::
 
        $ glance image-create \
-              --name fg101/$USER/myimages/ubuntu-14.04 \
+              --name fg101/$PORTALNAME/myimages/ubuntu-14.04 \
               --disk-format qcow2 \
               --container-format bare \
               --file trusty-server-cloudimg-amd64-disk1.img
@@ -388,7 +423,7 @@ Delete your instance
 
 You can delete your instance with::
 
-       $ nova delete $USER-002
+       $ nova delete $PORTALNAME-002
 
 Please do not forget to also delete your 001 vm if you no longer need
 it.
@@ -414,8 +449,9 @@ Things to do when you need Euca2ools or EC2 interfaces
 
 Even though the nova client and protocols will provide you with more
 advanced features, some users still want to access OpenStack with EC2
-compatible tools. One such tool are the euca2tools. We explain briefly
-how you can access them.
+compatible tools. We recommend against this and recommend instead that
+you use `nova`. One such tool using eucarc files is euca2tools. We
+explain briefly how you can access them.
 
 #. Create a directory for putting eucarc, and create pk.pem, cert.pem
    and cacert.pem::
@@ -429,7 +465,7 @@ how you can access them.
 
        keystone ec2-credentials-create
 
-#. Create the file calle *~/.futuregrid/openstack_havana/eucarc*   and put your EC2_ACCESS_KEY and
+#. Create the file calle `~/.futuregrid/openstack_havana/eucarc` and put your EC2_ACCESS_KEY and
    EC2_SECRET_KEY that you obtained from the previous command into
    this file::
 

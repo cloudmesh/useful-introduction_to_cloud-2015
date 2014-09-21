@@ -106,14 +106,13 @@ can have multiple projects in your active project list.
 
 .. parsed-literal::
 
-    
-    Project Information
-    -------------------
-    
-       default: fg82
-      projects: fg20, fg82, fg415
-     completed: fg130
-    
+    +-----------+----------------------+
+    | Default   | Value                |
+    +-----------+----------------------+
+    | active    | [u'fg20', u'fg82']   |
+    | default   | fg20                 |
+    | completed | [u'fg130', u'fg415'] |
+    +-----------+----------------------+
 
 
 You can see the new project ``fg415`` added to the active projects.
@@ -142,14 +141,45 @@ to change the status of the selected project.
 
 .. parsed-literal::
 
-    
-    Project Information
-    -------------------
-    
-       default: fg82
-      projects: fg20, fg82
-     completed: fg130, fg415
-    
+    +-----------+----------------------+
+    | Default   | Value                |
+    +-----------+----------------------+
+    | active    | [u'fg20', u'fg82']   |
+    | default   | fg20                 |
+    | completed | [u'fg130', u'fg415'] |
+    +-----------+----------------------+
+
+
+Add a project
+-------------
+
+You can use three commands to add a project. ``cm project active``
+allows you to add a project to the active list. ``cm project default``
+sets a default project. ``cm project completed`` adds a project to the
+completed list. For example, you can add fg999 to the active like below.
+
+.. code:: python
+
+    cm project active fg999
+
+.. parsed-literal::
+
+    fg999 project is an active project(s) now
+
+
+Delete a project
+----------------
+
+``project delete`` command simply performs the deletion of the given
+project in the yaml file.
+
+.. code:: python
+
+    cm project delete fg999
+
+.. parsed-literal::
+
+    fg999 project is deleted
 
 
 Help message
@@ -163,7 +193,7 @@ Help message
 
     Usage:
            project
-           project info [--json]
+           project info [--format=FORMAT]
            project default NAME
            project active NAME
            project delete NAME
@@ -174,6 +204,7 @@ Help message
     Arguments:
     
       NAME           The project id
+      FORMAT         The display format. (json, table)
     
     Options:
     
@@ -181,7 +212,7 @@ Help message
     
     Usage:
            project
-           project info [--json]
+           project info [--format=FORMAT]
            project default NAME
            project active NAME
            project delete NAME
@@ -192,30 +223,11 @@ Help message
     Arguments:
     
       NAME           The project id
+      FORMAT         The display format. (json, table)
     
     Options:
     
        -v       verbose mode
     
     
-
-
-Future Extensions
------------------
-
-.. todo:: Hyungro, please proovide an extension to this function to
-allow adding and deleting of projects.
-
-.. code:: python
-
-    cm project add fg455
-                cm project delete fg455
-                
-Adding and deletion of projects may need to be done carefully. We do not
-want t o add projects you are not member of. It would be important to
-add some test if possible. The --force flag forces the addition and
-deletion without test.
-
-.. todo:: Hyungro, please add the --format=FORMAT flag to print the
-output in json and a table.
 

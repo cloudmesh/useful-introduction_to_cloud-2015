@@ -234,8 +234,9 @@
 <li class="toctree-l5"><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#add-a-project">Add a project</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#delete-a-project">Delete a project</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#help-message">Help message</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -482,8 +483,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../devops/shell.html#exercises">Exercises:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html#excersises">Excersises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../devops/configure.html#excersises">Excersises</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
@@ -534,8 +537,9 @@
 <li><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
 <li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li><a class="reference internal" href="#add-a-project">Add a project</a></li>
+<li><a class="reference internal" href="#delete-a-project">Delete a project</a></li>
 <li><a class="reference internal" href="#help-message">Help message</a></li>
-<li><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -630,8 +634,9 @@
 <li><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
 <li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li><a class="reference internal" href="#add-a-project">Add a project</a></li>
+<li><a class="reference internal" href="#delete-a-project">Delete a project</a></li>
 <li><a class="reference internal" href="#help-message">Help message</a></li>
-<li><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -730,12 +735,13 @@ fg415 project is an active project(s) now
 <div class="code python highlight-python"><div class="highlight"><pre>cm project info
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Project Information
--------------------
-
-   default: fg82
-  projects: fg20, fg82, fg415
- completed: fg130
+<div class="highlight-python"><div class="highlight"><pre>+-----------+----------------------+
+| Default   | Value                |
++-----------+----------------------+
+| active    | [u&#39;fg20&#39;, u&#39;fg82&#39;]   |
+| default   | fg20                 |
+| completed | [u&#39;fg130&#39;, u&#39;fg415&#39;] |
++-----------+----------------------+
 </pre></div>
 </div>
 <p>You can see the new project <tt class="docutils literal"><span class="pre">fg415</span></tt> added to the active projects.</p>
@@ -756,12 +762,37 @@ fg415 project is in a completed project(s)
 <div class="code python highlight-python"><div class="highlight"><pre>cm project
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Project Information
--------------------
-
-   default: fg82
-  projects: fg20, fg82
- completed: fg130, fg415
+<div class="highlight-python"><div class="highlight"><pre>+-----------+----------------------+
+| Default   | Value                |
++-----------+----------------------+
+| active    | [u&#39;fg20&#39;, u&#39;fg82&#39;]   |
+| default   | fg20                 |
+| completed | [u&#39;fg130&#39;, u&#39;fg415&#39;] |
++-----------+----------------------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-project">
+<h3>Add a project<a class="headerlink" href="#add-a-project" title="Permalink to this headline">¶</a></h3>
+<p>You can use three commands to add a project. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">active</span></tt>
+allows you to add a project to the active list. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">default</span></tt>
+sets a default project. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">completed</span></tt> adds a project to the
+completed list. For example, you can add fg999 to the active like below.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project active fg999
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>fg999 project is an active project(s) now
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-a-project">
+<h3>Delete a project<a class="headerlink" href="#delete-a-project" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">project</span> <span class="pre">delete</span></tt> command simply performs the deletion of the given
+project in the yaml file.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm project delete fg999
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>fg999 project is deleted
 </pre></div>
 </div>
 </div>
@@ -772,7 +803,7 @@ fg415 project is in a completed project(s)
 </div>
 <div class="highlight-python"><div class="highlight"><pre>Usage:
        project
-       project info [--json]
+       project info [--format=FORMAT]
        project default NAME
        project active NAME
        project delete NAME
@@ -783,6 +814,7 @@ Manages the project
 Arguments:
 
   NAME           The project id
+  FORMAT         The display format. (json, table)
 
 Options:
 
@@ -790,7 +822,7 @@ Options:
 
 Usage:
        project
-       project info [--json]
+       project info [--format=FORMAT]
        project default NAME
        project active NAME
        project delete NAME
@@ -801,33 +833,13 @@ Manages the project
 Arguments:
 
   NAME           The project id
+  FORMAT         The display format. (json, table)
 
 Options:
 
    -v       verbose mode
 </pre></div>
 </div>
-</div>
-<div class="section" id="future-extensions">
-<h3>Future Extensions<a class="headerlink" href="#future-extensions" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro, please proovide an extension to this function to</p>
-</div>
-<p>allow adding and deleting of projects.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm project add fg455
-            cm project delete fg455
-</pre></div>
-</div>
-<p>Adding and deletion of projects may need to be done carefully. We do not
-want t o add projects you are not member of. It would be important to
-add some test if possible. The &#8211;force flag forces the addition and
-deletion without test.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Hyungro, please add the &#8211;format=FORMAT flag to print the</p>
-</div>
-<p>output in json and a table.</p>
 </div>
 </div>
 </div>
@@ -894,8 +906,9 @@ deletion without test.</p>
 <li><a class="reference internal" href="#set-a-default-project">Set a default project</a></li>
 <li><a class="reference internal" href="#set-an-active-project">Set an active project</a></li>
 <li><a class="reference internal" href="#change-the-status-of-project-to-completed">Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt></a></li>
+<li><a class="reference internal" href="#add-a-project">Add a project</a></li>
+<li><a class="reference internal" href="#delete-a-project">Delete a project</a></li>
 <li><a class="reference internal" href="#help-message">Help message</a></li>
-<li><a class="reference internal" href="#future-extensions">Future Extensions</a></li>
 </ul>
 </li>
 </ul>
