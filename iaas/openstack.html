@@ -684,7 +684,8 @@
 clouds. The interface cloudmesh provides is in regards to
 starting multiple virtual machines more convenient. Please
 try out the nova commands so you can appreciate what
-cloudmesh offers.</p>
+cloudmesh offers. For more information about cloudmesh see
+the Section <a class="reference internal" href="../cloudmesh/index.html#s-cloudmesh"><em>Cloudmesh</em></a>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -934,9 +935,10 @@ you can use the command::</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova volume-attach <span class="nv">$PORTALNAME</span>-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxabc <span class="s2">&quot;/dev/vdb&quot;</span>
 </pre></div>
 </div>
-<div class="sidebar">
-<p class="first sidebar-title">Hint</p>
-<p class="last">Note thate $PORTALNAME-001 refers to the name of the VM that we have
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Hint</p>
+<p class="last">$PORTALNAME-001 refers to the name of the VM that we have
 created earlier with the boot command.</p>
 </div>
 <p>Next, let us login to your instance, make filesystem and mount it.
@@ -1023,10 +1025,10 @@ key. Than you can issue on india the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>glance image-download --file <span class="s2">&quot;my-ubuntu-01.img&quot;</span> <span class="s2">&quot;fg101/$PORTALNAME/custom-ubuntu-01&quot;</span>
 </pre></div>
 </div>
-<div class="sidebar">
-<p class="first sidebar-title">Hint</p>
-<p class="last">Please note that images not following this convention may be
-deleted without warning. Also ifyou do no longer need an image,
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please note that images not following this convention may
+be deleted without warning. Also ifyou do no longer need an image,
 please remove it.</p>
 </div>
 </div>
@@ -1244,7 +1246,7 @@ how you can use OpenStack on FutureSystems. This includes the following:</p>
 <td>Using OpenStack command line tools</td>
 <td><p class="first">This lesson explains you how to use the OpenStack Commandline
 tools on the FutureSystems cluster called sierra.futuregrid.org.
-For written material, see section <em class="xref std std-ref">s-openstack-grizzly</em>.</p>
+For written material, see section <a class="reference internal" href="#s-openstack"><em>OpenStack on FutureSystems</em></a>.</p>
 <div class="last admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">please replace sierra with india.</p>

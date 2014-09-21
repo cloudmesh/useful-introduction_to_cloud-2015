@@ -11,7 +11,9 @@ OpenStack on FutureSystems
 	  clouds. The interface cloudmesh provides is in regards to
 	  starting multiple virtual machines more convenient. Please
 	  try out the nova commands so you can appreciate what
-	  cloudmesh offers.
+	  cloudmesh offers. For more information about cloudmesh see
+	  the Section :ref:`s_cloudmesh`.
+
 
 .. note:: FutureSystems Portalname and Project ID
           For this example we assume you have set the shell variable
@@ -260,9 +262,9 @@ you can use the command:::
 
        $ nova volume-attach $PORTALNAME-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxabc "/dev/vdb"
 
-.. sidebar:: Hint
+.. hint:: Hint
 
-   Note thate $PORTALNAME-001 refers to the name of the VM that we have
+   $PORTALNAME-001 refers to the name of the VM that we have
    created earlier with the boot command.
 
 Next, let us login to your instance, make filesystem and mount it.
@@ -351,10 +353,8 @@ If you want to download your customized image, you can do it with this::
 
        $ glance image-download --file "my-ubuntu-01.img" "fg101/$PORTALNAME/custom-ubuntu-01"
 
-.. sidebar:: Hint
-
-   Please note that images not following this convention may be
-   deleted without warning. Also ifyou do no longer need an image,
+.. warning:: Please note that images not following this convention may
+   be deleted without warning. Also ifyou do no longer need an image,
    please remove it.
 
 Automate some initial configuration
@@ -559,7 +559,7 @@ how you can use OpenStack on FutureSystems. This includes the following:
      - Using OpenStack command line tools
      - This lesson explains you how to use the OpenStack Commandline
        tools on the FutureSystems cluster called sierra.futuregrid.org. 
-       For written material, see section :ref:`s-openstack-grizzly`.
+       For written material, see section :ref:`s-openstack`.
 
        .. warning:: please replace sierra with india.
 
