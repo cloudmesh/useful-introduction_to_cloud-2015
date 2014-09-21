@@ -15,7 +15,7 @@ using various technologies.
 
 An high level architectural image is provided at 
 
-.. figure:: http://cloudmesh.github.io/_images/cloudmesh-arch-2013.png
+.. figure:: /images/cloudmesh-arch-2013.png
    :scale: 50%
 
    **Figure:** *High level architecture of Cloudmesh*
@@ -170,6 +170,12 @@ on a different level than just being able to start and stop virtual
 machines. Interfaces to HPC queues are also available. The Web
 services interfaces with the Task and Database Services.
 
+.. figure:: /images/cm-splash.png
+   :scale: 50%
+
+   **Figure:** *The Cloudmesh Web Interface*
+
+
 Cloudmesh Shell
 ----------------------------------------------------------------------
 
@@ -179,6 +185,51 @@ coordinated. This can be done with our cloudmesh shell that similar to
 matlab has its own shell environment, but can also be simply be
 called as a command on a regular Linux terminal. The Cloudmesh Shell 
 services interfaces with the Task and Database Services.
+
+::
+
+   cm cloud list
+
+::
+
+    +-------------------+--------+
+    | cloud             | active |
+    +-------------------+--------+
+    | alamo             | True   |
+    | aws               |        |
+    | azure             |        |
+    | dreamhost         |        |
+    | hp                |        |
+    | hp_east           |        |
+    | india             | True   |
+    | india_eucalyptus  |        |
+    | sierra            | True   |
+    | sierra_eucalyptus |        |
+    +-------------------+--------+
+
+Cloudmesh API
+----------------------------------------------------------------------
+
+A convenient API is presented to interface to cloudmesh in python
+(shown here how to select an image on the cloud india)::
+  #
+  # IMPORTS
+  #
+  import cloudmesh
+  
+  #
+  # INITIALIZATION
+  #
+  mesh = cloudmesh.mesh("mongo")
+  username = cloudmesh.load().username()
+  mesh.activate(username)
+
+  #
+  # GETTING INFORMATION ABOUT THE IMAGE
+  #
+  image=mesh.image('india','futuregrid/ubuntu-14.04')
+
+  print image
 
 Cloudmesh State
 ----------------------------------------------------------------------
