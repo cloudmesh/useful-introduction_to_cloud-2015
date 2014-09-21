@@ -9,9 +9,8 @@ system – encompassing virtualized and bare-metal infrastructure,
 networks, application, systems and platform software – with a unifying
 goal of providing Cloud Testbeds as a Service (CTaaS). Cloudmesh
 federates a number of resources from academia and industry. This
-includes existing FutureGrid infrastructure (4704 cores used by more
-than 355 projects), Amazon Web Services, Azure, HP Cloud, Karlsruhe
-using various technologies.
+includes existing FutureSystems, Amazon Web Services, Azure, HP Cloud,
+Karlsruhe using various technologies.
 
 An high level architectural image is provided at 
 
@@ -125,13 +124,13 @@ services. However the important feature is that it also contains a very
 small abstraction interface to bare metal provisioning. This will allow
 us to integrate with other bare metal provisioners and enable for
 example the use of OpenStack Ironic once it is deployed for example on
-FutureGrid.
+FutureSystems.
 
 Cloudmesh HPC
 ----------------------------------------------------------------------
 
 Cloudmesh provides an easy tou use API and GUI to HPC queues. It
-allows simple display of queues. As FutureGrid shares on some systems
+allows simple display of queues. As FutureSystems shares on some systems
 the queue manager it also seperates the queues appropriately and
 displays them accordingly. The API returns the job and queue
 information as python dicts.
