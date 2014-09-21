@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -717,6 +718,9 @@ server who is going to use cloud services.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">username</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="activate-the-user-account">
 <h3>Activate the user account<a class="headerlink" href="#activate-the-user-account" title="Permalink to this headline">¶</a></h3>
@@ -730,7 +734,7 @@ server who is going to use cloud services.</p>
 <h2>Start a VM<a class="headerlink" href="#start-a-vm" title="Permalink to this headline">¶</a></h2>
 <p>Now let us see how to start VMs on a cloud, here is how to start a VM on
 cloud india.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">cloud</span><span class="o">=</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="n">cm_user_id</span><span class="o">=</span><span class="s">&quot;Taylor&quot;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;hoho&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s">&quot;m1.small&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s">&quot;futuregrid/ubuntu-14.04&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">cloud</span><span class="o">=</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">flavor</span><span class="o">=</span><span class="s">&quot;m1.small&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s">&quot;futuregrid/ubuntu-14.04&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You may don’t know what images or flavors are available on the cloud, or
@@ -821,8 +825,8 @@ in the IPython Notebook cell.</p>
 starts * <tt class="docutils literal"><span class="pre">index</span></tt>: The number of vm instances (auto increment) *
 <tt class="docutils literal"><span class="pre">flavor</span></tt>: flavor name e.g. m1.small * <tt class="docutils literal"><span class="pre">image</span></tt>: image name e.g.
 futuregrid/ubuntu-14.04 * <tt class="docutils literal"><span class="pre">key</span></tt>: key name to use * <tt class="docutils literal"><span class="pre">meta</span></tt>: data in
-python dict e.g. {&#8220;cm_user_id&#8221;: &#8220;brian&#8221;}</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="s">&quot;Taylor&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;hoho&quot;</span><span class="p">)</span>
+python dict e.g. {&#8220;cm_user_id&#8221;: username}</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -834,30 +838,18 @@ you to manage or modify the VM name as you wish.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Alex_37&#39;</span>
-</pre></div>
-</div>
 <p><tt class="docutils literal"><span class="pre">vmname()</span></tt> without parameters returns the current VM name that you can
 use. If you want to use a different name, you can specify <em>prefix=&#8217;&#8216;</em>
 and <em>idx=&#8217;&#8216;</em> as parameters.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="s">&quot;Brian&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Brian_10&#39;</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>vmname_next() returns a VM name with an increased index number.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname_next</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Brian_11&#39;</span>
-</pre></div>
-</div>
 <p>There are some tricks to update the index number in <em>vmname()</em> function.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="s">&quot;Alex&quot;</span><span class="p">,</span> <span class="s">&quot;+5&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;Alex_21&#39;</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">vmname</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="s">&quot;+5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

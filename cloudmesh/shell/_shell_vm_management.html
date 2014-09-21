@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -687,24 +688,10 @@ Python.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;help&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Documented commands (type help &lt;topic&gt;):
-========================================
-EOF       edit      help       label   plugins  register        user
-banner    exec      image      list    project  script          var
-clear     exp       info       man     py       security_group  verbose
-cloud     flavor    init       metric  q        storm           version
-defaults  graphviz  inventory  open    quit     timer           vm
-dot2      group     keys       pause   rain     use             web
-
-Gui Commands
-============
-web
-
-Cloud Commands
-==============
-cloud     group  inventory  rain            storm  keys
-defaults  image  list       register        user   project
-flavor    init   metric     security_group  vm
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;debug off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;loglevel error&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -715,25 +702,6 @@ first which clouds are available. Users can add their own clouds later
 which we describe in the registration section.</p>
 <p>Let us inspect what is already available by invoking the list command</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud list&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>+---------+----------+
-| cloud   | active   |
-+=========+==========+
-| alamo   |          |
-+---------+----------+
-| aws     |          |
-+---------+----------+
-| azure   |          |
-+---------+----------+
-| hp      |          |
-+---------+----------+
-| hp_east |          |
-+---------+----------+
-| india   | True     |
-+---------+----------+
-| sierra  |          |
-+---------+----------+
 </pre></div>
 </div>
 <p>As you see we have a number of clouds, but none of them is already
@@ -751,25 +719,6 @@ with, that however does not work with ipython</p>
 india</p>
 <p>To check if the cloud was activated, simply use the list command again</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud list&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>+---------+----------+
-| cloud   | active   |
-+=========+==========+
-| alamo   |          |
-+---------+----------+
-| aws     |          |
-+---------+----------+
-| azure   |          |
-+---------+----------+
-| hp      |          |
-+---------+----------+
-| hp_east |          |
-+---------+----------+
-| india   | True     |
-+---------+----------+
-| sierra  |          |
-+---------+----------+
 </pre></div>
 </div>
 </div>
@@ -854,20 +803,10 @@ modify the VM name as you wish.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;label&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>prefix:  Brian
-index:  32
-next VM name: Brian_32
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;label --prefix=Alex --id=40&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;label --prefix=albert --id=40&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;label&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>prefix:  Alex
-index:  40
-next VM name: Alex_40
 </pre></div>
 </div>
 <p>If the user doesn’t provide a name while starting VMs, cloudmesh will

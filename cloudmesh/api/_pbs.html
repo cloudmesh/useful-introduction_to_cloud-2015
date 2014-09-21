@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -685,18 +686,111 @@ deployment</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">qstat</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">u&#39;1906163.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906085.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906155.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906160.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906164.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906161.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906086.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906088.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906084.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906162.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906087.i136&#39;</span><span class="p">,</span>
- <span class="s">u&#39;1906154.i136&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">u&#39;1979086.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978990.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979049.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979053.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979043.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1945306.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979047.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979027.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979079.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979070.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979025.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978995.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1972832.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979020.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979075.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979090.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979031.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979030.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979050.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979080.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979034.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979000.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979018.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979048.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979046.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979062.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979068.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979087.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979057.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979083.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979089.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979029.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979004.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979005.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979067.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978994.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979042.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979051.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979013.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979037.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979058.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979052.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979076.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979017.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979044.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978997.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979064.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979074.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979026.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979063.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979032.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979008.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979019.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979066.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979002.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979073.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979056.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978962.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979022.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979085.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979072.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979023.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979077.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979035.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979007.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979069.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979039.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978996.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979040.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1956966.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979010.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979081.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979054.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979078.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979012.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979009.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979084.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979036.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979082.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979033.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979024.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978993.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979015.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979045.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979065.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979014.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979001.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979011.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978992.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1930290.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979021.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979016.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979003.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979071.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979059.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979006.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979060.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979041.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978999.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979061.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979088.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1978998.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979028.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979038.i136&#39;</span><span class="p">,</span>
+ <span class="s">u&#39;1979055.i136&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">jobname</span> <span class="ow">in</span> <span class="n">qstat</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]:</span>
@@ -704,18 +798,111 @@ deployment</p>
     <span class="k">print</span> <span class="n">jobname</span><span class="p">,</span> <span class="n">job</span><span class="p">[</span><span class="s">&quot;job_state&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>1906163.i136 H
-1906085.i136 R
-1906155.i136 R
-1906160.i136 H
-1906164.i136 H
-1906161.i136 H
-1906086.i136 R
-1906088.i136 R
-1906084.i136 R
-1906162.i136 H
-1906087.i136 R
-1906154.i136 Q
+<div class="highlight-python"><div class="highlight"><pre>1979086.i136 C
+1978990.i136 C
+1979049.i136 C
+1979053.i136 C
+1979043.i136 C
+1945306.i136 R
+1979047.i136 C
+1979027.i136 C
+1979079.i136 C
+1979070.i136 C
+1979025.i136 C
+1978995.i136 C
+1972832.i136 H
+1979020.i136 C
+1979075.i136 C
+1979090.i136 Q
+1979031.i136 C
+1979030.i136 C
+1979050.i136 C
+1979080.i136 C
+1979034.i136 C
+1979000.i136 C
+1979018.i136 C
+1979048.i136 C
+1979046.i136 C
+1979062.i136 C
+1979068.i136 C
+1979087.i136 C
+1979057.i136 C
+1979083.i136 C
+1979089.i136 C
+1979029.i136 C
+1979004.i136 C
+1979005.i136 C
+1979067.i136 C
+1978994.i136 C
+1979042.i136 C
+1979051.i136 C
+1979013.i136 C
+1979037.i136 C
+1979058.i136 C
+1979052.i136 C
+1979076.i136 C
+1979017.i136 C
+1979044.i136 C
+1978997.i136 C
+1979064.i136 C
+1979074.i136 C
+1979026.i136 C
+1979063.i136 C
+1979032.i136 C
+1979008.i136 C
+1979019.i136 C
+1979066.i136 C
+1979002.i136 C
+1979073.i136 C
+1979056.i136 C
+1978962.i136 C
+1979022.i136 C
+1979085.i136 C
+1979072.i136 C
+1979023.i136 C
+1979077.i136 C
+1979035.i136 C
+1979007.i136 C
+1979069.i136 C
+1979039.i136 C
+1978996.i136 C
+1979040.i136 C
+1956966.i136 H
+1979010.i136 C
+1979081.i136 C
+1979054.i136 C
+1979078.i136 C
+1979012.i136 C
+1979009.i136 C
+1979084.i136 C
+1979036.i136 C
+1979082.i136 C
+1979033.i136 C
+1979024.i136 C
+1978993.i136 C
+1979015.i136 C
+1979045.i136 C
+1979065.i136 C
+1979014.i136 C
+1979001.i136 C
+1979011.i136 C
+1978992.i136 C
+1930290.i136 R
+1979021.i136 C
+1979016.i136 C
+1979003.i136 C
+1979071.i136 C
+1979059.i136 C
+1979006.i136 C
+1979060.i136 C
+1979041.i136 C
+1978999.i136 C
+1979061.i136 C
+1979088.i136 C
+1978998.i136 C
+1979028.i136 C
+1979038.i136 C
+1979055.i136 C
 </pre></div>
 </div>
 </div>
@@ -724,9 +911,7 @@ deployment</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">qinfo</span> <span class="o">=</span> <span class="n">india</span><span class="o">.</span><span class="n">qinfo</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>To list the queue names, simply print the keys.
-</pre></div>
-</div>
+<p>To list the queue names, simply print the keys.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">qinfo</span><span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>

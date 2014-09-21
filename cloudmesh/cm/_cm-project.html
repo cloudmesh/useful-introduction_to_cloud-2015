@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -690,9 +691,9 @@ information on your account.</p>
 <div class="highlight-python"><div class="highlight"><pre>Project Information
 -------------------
 
-   default: fg20
-  projects: fg20, fg82
- completed: fg130
+   default: fg2
+  projects: fg2, fg82, fg415
+ completed: fg1003
 </pre></div>
 </div>
 </div>
@@ -700,12 +701,10 @@ information on your account.</p>
 <h3>Set a default project<a class="headerlink" href="#set-a-default-project" title="Permalink to this headline">¶</a></h3>
 <p><tt class="docutils literal"><span class="pre">project</span> <span class="pre">default</span> <span class="pre">[project</span> <span class="pre">name]</span></tt> allows you to update a default
 project to your account.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm project default fg82
+<div class="code python highlight-python"><div class="highlight"><pre>cm project default fg2
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:58:   INFO - sets the default project
-CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:70:   INFO - fg82 project is a default project now
-fg82 project is a default project now
+<div class="highlight-python"><div class="highlight"><pre>fg2 project is a default project now
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project
@@ -714,9 +713,9 @@ fg82 project is a default project now
 <div class="highlight-python"><div class="highlight"><pre>Project Information
 -------------------
 
-   default: fg82
-  projects: fg20, fg82
- completed: fg130
+   default: fg2
+  projects: fg2, fg82, fg415
+ completed: fg1003
 </pre></div>
 </div>
 <p>You can see your default project has been changed from fg20 to fg82.
@@ -730,21 +729,18 @@ can have multiple projects in your active project list.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project active fg415
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:75:   INFO - Sets the active project
-CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:83:   INFO - fg415 project is an active project(s) now
-fg415 project is an active project(s) now
+<div class="highlight-python"><div class="highlight"><pre>fg415 project is an active project(s) now
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project info
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>+-----------+----------------------+
-| Default   | Value                |
-+-----------+----------------------+
-| active    | [u&#39;fg20&#39;, u&#39;fg82&#39;]   |
-| default   | fg20                 |
-| completed | [u&#39;fg130&#39;, u&#39;fg415&#39;] |
-+-----------+----------------------+
+<div class="highlight-python"><div class="highlight"><pre>Project Information
+-------------------
+
+   default: fg2
+  projects: fg2, fg82, fg415
+ completed: fg1003
 </pre></div>
 </div>
 <p>You can see the new project <tt class="docutils literal"><span class="pre">fg415</span></tt> added to the active projects.</p>
@@ -757,21 +753,18 @@ to change the status of the selected project.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project completed fg415
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:115:   INFO - Sets a completed project
-CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_project.pyc:126:   INFO - fg415 project is in a completed project(s)
-fg415 project is in a completed project(s)
+<div class="highlight-python"><div class="highlight"><pre>fg415 project is in a completed project(s)
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>+-----------+----------------------+
-| Default   | Value                |
-+-----------+----------------------+
-| active    | [u&#39;fg20&#39;, u&#39;fg82&#39;]   |
-| default   | fg20                 |
-| completed | [u&#39;fg130&#39;, u&#39;fg415&#39;] |
-+-----------+----------------------+
+<div class="highlight-python"><div class="highlight"><pre>Project Information
+-------------------
+
+   default: fg2
+  projects: fg2, fg82
+ completed: fg1003, fg415
 </pre></div>
 </div>
 </div>
@@ -806,7 +799,7 @@ project in the yaml file.</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>Usage:
        project
-       project info [--format=FORMAT]
+       project info [--json]
        project default NAME
        project active NAME
        project delete NAME
@@ -817,7 +810,6 @@ Manages the project
 Arguments:
 
   NAME           The project id
-  FORMAT         The display format. (json, table)
 
 Options:
 
@@ -825,7 +817,7 @@ Options:
 
 Usage:
        project
-       project info [--format=FORMAT]
+       project info [--json]
        project default NAME
        project active NAME
        project delete NAME
@@ -836,7 +828,6 @@ Manages the project
 Arguments:
 
   NAME           The project id
-  FORMAT         The display format. (json, table)
 
 Options:
 

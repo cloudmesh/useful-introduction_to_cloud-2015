@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -675,7 +676,7 @@ uuid1.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;f040aaf5-3242-11e4-bd35-600308a5f9d2&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;f79f7a8f-41b5-11e4-89c6-600308a5f9d2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -685,7 +686,7 @@ uuid1.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;ac332de1-faef-4054-aae8-6f32eb15f982&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;040260d7-2d16-4441-94a3-c5deaaa54f07&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>As in some cases we want to generate names that do not include special
@@ -694,13 +695,13 @@ use the function get_unique_name instaed.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">bytes</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;e529ec9c-e40d-4e3b-b4db-4b46802bd4f6&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">UUID</span><span class="p">(</span><span class="s">&#39;7e0b4d6c-63cb-4a7f-9123-afeb1a5c05db&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">int</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="il">64005057163216856052777834181321712834L</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="il">47490726933316444798735825843092800205L</span>
 </pre></div>
 </div>
 </div>
@@ -714,7 +715,7 @@ we have a convenience function in cloudmesh.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">get_unique_name</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f04729ee324211e49889600308a5f9d2</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">faab4f6e41b511e4809c600308a5f9d2</span>
 </pre></div>
 </div>
 <p>As you can see it is just like the uuid function (currently uuid1) with
@@ -724,7 +725,7 @@ distinctions. However this is rarely needed.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">get_unique_name</span><span class="p">(</span><span class="s">&quot;gregor&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;gregorf0487de3324211e4b177600308a5f9d2&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;gregorfb899bc041b511e4b44b600308a5f9d2&#39;</span>
 </pre></div>
 </div>
 </div>

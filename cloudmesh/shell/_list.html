@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -664,11 +665,10 @@ understand what information can be viewed in the cm command line shell.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&#39;list&#39;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&#39;help list&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Error: Wrong Format
-List available flavors, images, vms, projects and clouds
+<div class="highlight-python"><div class="highlight"><pre>List available flavors, images, vms, projects and clouds
 
     Usage:
         list flavor [CLOUD|--all] [--refresh] [--format=FORMAT]
@@ -823,17 +823,11 @@ virtual machines.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;list vm india --column=status,name,address,flavor,id,created&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>+----------+----------+--------------------------------------+----------+----------------------+
-| name     | status   | id                                   | flavor   | created              |
-+==========+==========+======================================+==========+======================+
-| Brain_8  | ACTIVE   | 9a447694-b52d-4f78-b489-ff8d7de694cc | m1.small | 2014-09-16T18:20:02Z |
-+----------+----------+--------------------------------------+----------+----------------------+
-| Brain_10 | ACTIVE   | 9208543e-cf9f-4f31-997b-40ea4443a808 | m1.small | 2014-09-16T18:20:04Z |
-+----------+----------+--------------------------------------+----------+----------------------+
-| Brain_11 | ACTIVE   | e13426e2-1f0d-4ee0-952a-ef6a7bcf40a2 | m1.small | 2014-09-17T18:02:21Z |
-+----------+----------+--------------------------------------+----------+----------------------+
-| Brain_9  | ACTIVE   | 81844eb9-1693-41e8-a976-e8e81ba477a1 | m1.small | 2014-09-16T18:20:03Z |
-+----------+----------+--------------------------------------+----------+----------------------+
+<div class="highlight-python"><div class="highlight"><pre>+--------------+----------+--------------------------------------+----------+----------------------+
+| name         | status   | id                                   | flavor   | created              |
++==============+==========+======================================+==========+======================+
+| gvonlasz-002 | ACTIVE   | 211563da-7d18-41f1-85b7-eb959dbe1c75 | m1.small | 2014-09-12T19:50:55Z |
++--------------+----------+--------------------------------------+----------+----------------------+
 </pre></div>
 </div>
 <div class="section" id="json-format-output">

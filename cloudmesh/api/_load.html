@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -675,24 +676,29 @@ activate a cloud befor eyou can use them. This is discussed elsewhere.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span><span class="o">.</span><span class="n">cloudnames</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;alamo&#39;</span><span class="p">,</span> <span class="s">&#39;hp_east&#39;</span><span class="p">,</span> <span class="s">&#39;sierra&#39;</span><span class="p">,</span> <span class="s">&#39;aws&#39;</span><span class="p">,</span> <span class="s">&#39;hp&#39;</span><span class="p">,</span> <span class="s">&#39;india&#39;</span><span class="p">,</span> <span class="s">&#39;azure&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;aws&#39;</span><span class="p">,</span> <span class="s">&#39;azure&#39;</span><span class="p">,</span> <span class="s">&#39;devstack&#39;</span><span class="p">,</span> <span class="s">&#39;dreamhost&#39;</span><span class="p">,</span> <span class="s">&#39;hp&#39;</span><span class="p">,</span> <span class="s">&#39;hp_east&#39;</span><span class="p">,</span> <span class="s">&#39;india&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>In addition to information about clouds you will also find some
-information about yourself. Make sure YOu have specified the information
+information about yourself. Make sure You have specified the information
 in the yaml file.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span><span class="o">.</span><span class="n">firstname</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;Gregor&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;TBD&#39;</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span><span class="o">.</span><span class="n">lastname</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;von Laszewski&#39;</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;TBD&#39;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you see here TBD you need to edit the</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">~/.cloudmesh/cloudmesh.yaml</span></tt> file to add first and lastname.</p>
 <p>To obtain the futuregrid username use the command <tt class="docutils literal"><span class="pre">user.username()</span></tt></p>
 </div>
 <div class="section" id="api-for-cloudmesh-server-yaml">
@@ -706,13 +712,13 @@ function can get sub dictionaries.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;kind&#39;</span><span class="p">,</span> <span class="s">&#39;cloudmesh&#39;</span><span class="p">,</span> <span class="s">&#39;meta&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;kind&#39;</span><span class="p">,</span> <span class="s">&#39;meta&#39;</span><span class="p">,</span> <span class="s">&#39;cloudmesh&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;meta&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;yaml_version&#39;</span><span class="p">,</span> <span class="s">&#39;kind&#39;</span><span class="p">,</span> <span class="s">&#39;prefix&#39;</span><span class="p">,</span> <span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;filename&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;yaml_version&#39;</span><span class="p">,</span> <span class="s">&#39;kind&#39;</span><span class="p">,</span> <span class="s">&#39;filename&#39;</span><span class="p">,</span> <span class="s">&#39;location&#39;</span><span class="p">,</span> <span class="s">&#39;prefix&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;meta.filename&#39;</span><span class="p">)</span>
@@ -745,7 +751,7 @@ launcher as an example.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">config</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;kind&#39;</span><span class="p">,</span> <span class="s">&#39;cloudmesh&#39;</span><span class="p">,</span> <span class="s">&#39;meta&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;kind&#39;</span><span class="p">,</span> <span class="s">&#39;meta&#39;</span><span class="p">,</span> <span class="s">&#39;cloudmesh&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -763,7 +769,7 @@ launcher as an example.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;cloudmesh.launcher.recipies&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;mooc&#39;</span><span class="p">,</span> <span class="s">&#39;nagios&#39;</span><span class="p">,</span> <span class="s">&#39;slurm&#39;</span><span class="p">,</span> <span class="s">&#39;ganglia&#39;</span><span class="p">,</span> <span class="s">&#39;hadoop&#39;</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;mooc&#39;</span><span class="p">,</span> <span class="s">&#39;slurm&#39;</span><span class="p">,</span> <span class="s">&#39;hadoop&#39;</span><span class="p">,</span> <span class="s">&#39;ganglia&#39;</span><span class="p">,</span> <span class="s">&#39;nagios&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
@@ -771,19 +777,7 @@ launcher as an example.</p>
 </pre></div>
 </div>
 <pre class="literal-block">
-{'description': 'Deploys a Slurm cluster. One of the Vms is the Master, while the others register with the master as worker nodes. The master will be the first node in the list.n',
- 'image': '/static/img/launcher/mooc.png',
- 'label': 'slurm',
- 'name': 'Mooc',
- 'parameters': [{'nodes': {'type': 'integer', 'value': 1}},
-                {'other': {'type': 'float', 'value': 5.0}},
-                {'types': {'type': 'string',
-                           'value': 'enter vm or bare metal'}},
-                {'selector': {'type': 'selector',
-                              'value': ['vm', 'baremetal', 'xyz']}},
-                {'cloud': {'type': 'selector', 'value': ['india', 'sierra']}}],
- 'script': {'type': 'sh',
-            'value': 'echo &quot;hello&quot; {{ selector }} -np {{ nodes }}'}}
+OrderedDict([('name', 'Mooc'), ('description', 'Deploys a Slurm cluster. One of the Vms is the Master, while the others register with the master as worker nodes. The master will be the first node in the list.n'), ('label', 'slurm'), ('parameters', [OrderedDict([('nodes', OrderedDict([('type', 'integer'), ('value', 1), ('required', True)]))]), OrderedDict([('other', OrderedDict([('type', 'float'), ('value', 5.0), ('required', True)]))]), OrderedDict([('types', OrderedDict([('type', 'string'), ('value', 'enter vm or bare metal'), ('required', True)]))]), OrderedDict([('selector', OrderedDict([('type', 'selector'), ('value', ['vm', 'baremetal', 'xyz']), ('required', True)]))]), OrderedDict([('cloud', OrderedDict([('type', 'selector'), ('value', ['india', 'sierra']), ('required', True)]))])]), ('image', '/static/img/launcher/mooc.png'), ('script', OrderedDict([('type', 'sh'), ('value', 'ssh <a class="reference external" href="mailto:{username}&#37;&#52;&#48;{india">{username}<span>&#64;</span>{india</a>} &quot;ls -l&quot;')]))])
 </pre>
 </div>
 </div>

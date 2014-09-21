@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -685,14 +686,7 @@ mode, all log messages will print out on the screen.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm debug on
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Debug mode is on.
-</pre></div>
-</div>
 <div class="code python highlight-python"><div class="highlight"><pre>cm debug off
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_yaml.pyc:38:   INFO - Debug mode is off.
-Debug mode is off.
 </pre></div>
 </div>
 </div>
@@ -707,16 +701,10 @@ Debug mode is off.
 <div class="code python highlight-python"><div class="highlight"><pre>cm loglevel
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ERROR</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="set-a-log-level-between-debug-info-warning-error-or-critical">
 <h2>Set a log level between debug, info, warning, error, or critical.<a class="headerlink" href="#set-a-log-level-between-debug-info-warning-error-or-critical" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-python"><div class="highlight"><pre>cm loglevel debug
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>DEBUG mode is set.
 </pre></div>
 </div>
 </div>
@@ -737,9 +725,6 @@ below selects <em>[&#8216;cloudmesh&#8217;][&#8216;server&#8217;][&#8216;logleve
 <div class="code python highlight-python"><div class="highlight"><pre>cm yaml info-server cloudmesh.server.loglevel
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">DEBUG</span>
-</pre></div>
-</div>
 <p>You can see the <em>DEBUG</em> is the current setting of the log level in the
 Cloudmesh server.</p>
 <p>If you desire to change the log level to <em>ERROR</em>, you need to call
@@ -748,9 +733,6 @@ Cloudmesh server.</p>
 </pre></div>
 </div>
 <div class="code python highlight-python"><div class="highlight"><pre>cm yaml info-server cloudmesh.server.loglevel
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ERROR</span>
 </pre></div>
 </div>
 <p>Now you can see it has been changed to <em>ERROR</em>.</p>
@@ -764,15 +746,7 @@ this feature.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm color on
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_yaml.pyc:56:   INFO - color on.
-color on.
-</pre></div>
-</div>
 <div class="code python highlight-python"><div class="highlight"><pre>cm color off
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_yaml.pyc:63:   INFO - color off.
-color off.
 </pre></div>
 </div>
 </div>

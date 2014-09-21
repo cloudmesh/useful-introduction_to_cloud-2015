@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../overview.html#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -687,7 +688,7 @@ following lines.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm version
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>1.0.4
+<div class="highlight-python"><div class="highlight"><pre>1.0.6
 </pre></div>
 </div>
 </div>
@@ -702,7 +703,7 @@ execute the without !.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm version
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>1.0.4
+<div class="highlight-python"><div class="highlight"><pre>1.0.6
 </pre></div>
 </div>
 <p>We are using now one of the methods to call the cm commands in the
@@ -748,12 +749,17 @@ called GUI commands and cloud commands.</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>Documented commands (type help &lt;topic&gt;):
 ========================================
-EOF       edit      help       label   plugins  register        user
-banner    exec      image      list    project  script          var
-clear     exp       info       man     py       security_group  verbose
-cloud     flavor    init       metric  q        storm           version
-defaults  graphviz  inventory  open    quit     timer           vm
-dot2      group     keys       pause   rain     use             web
+EOF       dot2      help       list      plugins   script          verbose
+banner    edit      image      loglevel  project   security_group  version
+clear     exec      info       man       py        storm           vm
+cloud     exp       init       metric    q         timer           web
+color     flavor    inventory  notebook  quit      use             yaml
+debug     graphviz  key        open      rain      user
+defaults  group     label      pause     register  var
+
+Ipython Commands
+================
+notebook
 
 Gui Commands
 ============
@@ -761,9 +767,9 @@ web
 
 Cloud Commands
 ==============
-cloud     group  inventory  rain            storm  keys
-defaults  image  list       register        user   project
-flavor    init   metric     security_group  vm
+cloud     group  inventory  rain            storm  yaml      keys
+defaults  image  list       register        user   debug     project
+flavor    init   metric     security_group  vm     loglevel
 </pre></div>
 </div>
 </div>
@@ -776,23 +782,17 @@ flavor    init   metric     security_group  vm
 <div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>+---------+----------+
-| cloud   | active   |
-+=========+==========+
-| alamo   |          |
-+---------+----------+
-| aws     |          |
-+---------+----------+
-| azure   |          |
-+---------+----------+
-| hp      |          |
-+---------+----------+
-| hp_east |          |
-+---------+----------+
-| india   | True     |
-+---------+----------+
-| sierra  | True     |
-+---------+----------+
+<div class="highlight-python"><div class="highlight"><pre>+-----------+--------+
+| cloud     | active |
++-----------+--------+
+| aws       |        |
+| azure     |        |
+| devstack  |        |
+| dreamhost |        |
+| hp        |        |
+| hp_east   |        |
+| india     | True   |
++-----------+--------+
 </pre></div>
 </div>
 <p>Let us inspect the parameters. To limit the output we just display the
@@ -804,8 +804,8 @@ list command.</p>
 <div class="highlight-python"><div class="highlight"><pre>::
 
     Usage:
-        cloud [list] [--column=COLUMN]
-        cloud info [CLOUD|--all]
+        cloud [list] [--column=COLUMN] [--format=FORMAT]
+        cloud info [CLOUD|--all] [--format=FORMAT]
         cloud alias NAME [CLOUD]
         cloud select [CLOUD]
         cloud on [CLOUD]
@@ -820,23 +820,17 @@ command.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud list --column=active,label&quot;
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>+---------+----------+------------+
-| cloud   | active   | label      |
-+=========+==========+============+
-| alamo   |          | alamo      |
-+---------+----------+------------+
-| aws     |          | aws        |
-+---------+----------+------------+
-| azure   |          | waz        |
-+---------+----------+------------+
-| hp      |          | hpos       |
-+---------+----------+------------+
-| hp_east |          | hpeos      |
-+---------+----------+------------+
-| india   | True     | ios_havana |
-+---------+----------+------------+
-| sierra  | True     | sos        |
-+---------+----------+------------+
+<div class="highlight-python"><div class="highlight"><pre>+-----------+--------+--------------------+
+| cloud     | active | label              |
++-----------+--------+--------------------+
+| aws       |        | aws                |
+| azure     |        | waz                |
+| devstack  |        | localhost_icehouse |
+| dreamhost |        | dreamhost          |
+| hp        |        | hpos               |
+| hp_east   |        | hpeos              |
+| india     | True   | ios_havana         |
++-----------+--------+--------------------+
 </pre></div>
 </div>
 <p>Let us now demonstrate a common error by not using proper quoting. This

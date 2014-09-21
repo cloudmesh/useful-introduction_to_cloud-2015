@@ -145,6 +145,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cloudmesh-web">Cloudmesh Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-api">Cloudmesh API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cloudmesh-state">Cloudmesh State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -543,6 +544,7 @@
 <li><a class="reference internal" href="#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li><a class="reference internal" href="#cloudmesh-web">Cloudmesh Web</a></li>
 <li><a class="reference internal" href="#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li><a class="reference internal" href="#cloudmesh-api">Cloudmesh API</a></li>
 <li><a class="reference internal" href="#cloudmesh-state">Cloudmesh State</a></li>
 <li><a class="reference internal" href="#tutorials">Tutorials</a></li>
 <li><a class="reference internal" href="#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -643,6 +645,7 @@
 <li><a class="reference internal" href="#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li><a class="reference internal" href="#cloudmesh-web">Cloudmesh Web</a></li>
 <li><a class="reference internal" href="#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li><a class="reference internal" href="#cloudmesh-api">Cloudmesh API</a></li>
 <li><a class="reference internal" href="#cloudmesh-state">Cloudmesh State</a></li>
 <li><a class="reference internal" href="#tutorials">Tutorials</a></li>
 <li><a class="reference internal" href="#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
@@ -679,7 +682,7 @@ than 355 projects), Amazon Web Services, Azure, HP Cloud, Karlsruhe
 using various technologies.</p>
 <p>An high level architectural image is provided at</p>
 <div class="figure">
-<a class="reference internal image-reference" href="http://cloudmesh.github.io/_images/cloudmesh-arch-2013.png"><img alt="http://cloudmesh.github.io/_images/cloudmesh-arch-2013.png" src="http://cloudmesh.github.io/_images/cloudmesh-arch-2013.png" /></a>
+<a class="reference internal image-reference" href="../_images/cloudmesh-arch-2013.png"><img alt="../_images/cloudmesh-arch-2013.png" src="../_images/cloudmesh-arch-2013.png" style="width: 360.5px; height: 370.0px;" /></a>
 <p class="caption"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></p>
 </div>
 <p>The three layers of the Cloudmesh architecture include a Cloudmesh
@@ -819,6 +822,10 @@ information. This allows developers to interact and inspect information
 on a different level than just being able to start and stop virtual
 machines. Interfaces to HPC queues are also available. The Web
 services interfaces with the Task and Database Services.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/cm-splash.png"><img alt="../_images/cm-splash.png" src="../_images/cm-splash.png" style="width: 472.0px; height: 412.0px;" /></a>
+<p class="caption"><strong>Figure:</strong> <em>The Cloudmesh Web Interface</em></p>
+</div>
 </div>
 <div class="section" id="cloudmesh-shell">
 <h2>Cloudmesh Shell<a class="headerlink" href="#cloudmesh-shell" title="Permalink to this headline">¶</a></h2>
@@ -828,6 +835,50 @@ coordinated. This can be done with our cloudmesh shell that similar to
 matlab has its own shell environment, but can also be simply be
 called as a command on a regular Linux terminal. The Cloudmesh Shell
 services interfaces with the Task and Database Services.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+-------------------+--------+
+| cloud             | active |
++-------------------+--------+
+| alamo             | True   |
+| aws               |        |
+| azure             |        |
+| dreamhost         |        |
+| hp                |        |
+| hp_east           |        |
+| india             | True   |
+| india_eucalyptus  |        |
+| sierra            | True   |
+| sierra_eucalyptus |        |
++-------------------+--------+
+</pre></div>
+</div>
+</div>
+<div class="section" id="cloudmesh-api">
+<h2>Cloudmesh API<a class="headerlink" href="#cloudmesh-api" title="Permalink to this headline">¶</a></h2>
+<p>A convenient API is presented to interface to cloudmesh in python
+(shown here how to select an image on the cloud india):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#</span>
+<span class="c"># IMPORTS</span>
+<span class="c">#</span>
+<span class="kn">import</span> <span class="nn">cloudmesh</span>
+
+<span class="c">#</span>
+<span class="c"># INITIALIZATION</span>
+<span class="c">#</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s">&quot;mongo&quot;</span><span class="p">)</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+
+<span class="c">#</span>
+<span class="c"># GETTING INFORMATION ABOUT THE IMAGE</span>
+<span class="c">#</span>
+<span class="n">image</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s">&#39;india&#39;</span><span class="p">,</span><span class="s">&#39;futuregrid/ubuntu-14.04&#39;</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">image</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="cloudmesh-state">
 <h2>Cloudmesh State<a class="headerlink" href="#cloudmesh-state" title="Permalink to this headline">¶</a></h2>
@@ -939,6 +990,7 @@ other resources.</li>
 <li><a class="reference internal" href="#cloudmesh-iaas">Cloudmesh IaaS</a></li>
 <li><a class="reference internal" href="#cloudmesh-web">Cloudmesh Web</a></li>
 <li><a class="reference internal" href="#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li><a class="reference internal" href="#cloudmesh-api">Cloudmesh API</a></li>
 <li><a class="reference internal" href="#cloudmesh-state">Cloudmesh State</a></li>
 <li><a class="reference internal" href="#tutorials">Tutorials</a></li>
 <li><a class="reference internal" href="#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
