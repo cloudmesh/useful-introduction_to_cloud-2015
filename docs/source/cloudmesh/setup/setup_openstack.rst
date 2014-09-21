@@ -3,6 +3,8 @@ Quickstart for an Openstack VM
 
 .. highlight:: bash
 
+.. role:: pink
+
 .. note:: This setup is primarily used for testing, but it can also be
 	  useful for classes using OpenStack, when the call
 	  participants have access to an OpenStack cloud. 
@@ -20,7 +22,6 @@ Requirements
 We assume that you have set up an account on FutureSystems and are
 able to log into the machine with the name india.
 
-
 If you use a different cloud, you can adapt the instructions
 accordingly.
 
@@ -30,19 +31,34 @@ Starting the VM
 First, you have to start a VM on the cloud and assign it a public IP. 
 
 This can be done in multiple ways, using the command line, vagrant, or
-the horizon GUI. Let us assume you have set it up via the horizon
-GUI or the novaclient command line. This is described in the following document:
+the horizon GUI. Let us assume you have set it up via the horizon GUI
+or the novaclient command line. 
 
-More information about horizon on FutureSystems is available at `our
-manual page <../../iaas/openstack.html#horizon-gui.html>`_.
+To set up a mchine you could use the either of the folloing methods:
+
+* **Horizon**: see `our manual page
+  <../../iaas/openstack.html#horizon-gui.html>`_.
+
+* **nova**: see the :ref:`s-openstack`_
+
+* **cloudmsh**: see :ref:`s-cloudmesh-quickstart`_ and the cloudmesh
+  shell found elsewhere.
+
+.. note:: Please note that in the following document we use the
+	  :pink:`$USER` and :pink:`$PORTALNAME` are the same values
+	  and the portalname needs to be replaced with the portal name
+	  you obtained for FutureSystems. As the subsequent steps are
+	  all executed on india we can simply use the default
+	  :pink:`$USER` shell variable.
 
 We summarize the following steps, however like to point out that the
 best source for this is our previously pointed out document::
 
-  $ ssh <portalname>@india.futuresystems.org
+  $ ssh $PORTALNAME@india.futuresystems.org
   india$ module load novaclient
   india$ source ~/.futuregrid/openstack_havana/novarc
   india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+
 
 This assumes such a key exists in the location::
 

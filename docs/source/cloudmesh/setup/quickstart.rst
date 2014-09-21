@@ -1,3 +1,5 @@
+.. _s-cloudmesh-quickstart:
+
 Quick Start on your desktop
 ============================
 
@@ -112,7 +114,7 @@ We add the key to the database with::
 
    $ cm "key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub"
 
-where :p:`PORTALNAME` is your name for the FutuerSystems portal.
+where :pink:`PORTALNAME` is your name for the FutuerSystems portal.
 
 You may next need to specify your default project if you have not yet
 done so::
