@@ -3,6 +3,11 @@
 Quick Start on your desktop
 ============================
 
+A video bout the quickstart instalation is available on |video-cm-install| 
+
+.. sidebar::
+
+
 .. highlight:: bash
 
 .. role:: red
@@ -298,3 +303,5 @@ If you lost the cursor on your terminal, you can use the command::
 
 to bring the terminal in its default settings.
 
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+.. |video-cm-install| replace:: |video-image| :youtube:`lGiJifD0VgU`

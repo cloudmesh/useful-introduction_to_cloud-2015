@@ -1,6 +1,8 @@
 Screenshots
 ==========================================
 
+A shot video about the Cloudmesh GUI is available at |video-cm-gui|.
+
 Please note that cloudmesh supports a role based user policy
 model. Although you may see some screenshots of advanced features some
 of these features may not yet released to the users.
@@ -123,7 +125,8 @@ type displays or temperature of the rack.
       
    **Figure:** Temperature map of a rack
    
-
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+.. |video-cm-gui| replace:: |video-image| :youtube:`l_P4G85rysA`
 
 
 

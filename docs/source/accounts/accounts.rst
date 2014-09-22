@@ -31,6 +31,13 @@ create your own project or join an existing one
      - Titles of the Lessons
      - Description of the Lessons
    * - |video-portal-account| 
+     - 16:33 min
+     - Create a portal account in FutureSystems.
+     - This lesson explains you how to create a portal account which
+       is the first step in getting access to FutureSystems. You can
+       also view the prvious vidieos form FutureGrid as they still apply.
+       For written material, see section :ref:`s-account-create-account`.
+   * - |video-portal-account| 
      - 5:10 min
      - Create a portal account
      - This lesson explains you how to create a portal account which
@@ -58,6 +65,10 @@ create your own project or join an existing one
      - Join a project
      - This lesson explains you how to join a FutureSystems project.
        For written material, see section :ref:`s-account-join-project`.
+   * - |video-fs-accounts| 
+     - 17:53 min
+     - Account apication on FutureSystems for cloudmesh
+     - This lesson explains you how to join a FutureSystems project.
 
 
 Exercises
@@ -100,4 +111,9 @@ Creating FutureSystems Accounts and Projects
 .. |video-portal-sshkey| replace:: |video-image| :youtube:`4wjVwQbOlSU`
 .. |video-portal-join-proj| replace:: |video-image| :youtube:`5xQiPBwt58s`
 .. |video-portal-create-proj| replace:: |video-image| :youtube:`DzbLS6iCeTE`
+
+.. |video-fs-account| replace:: |video-image| :youtube:`CwHFaluDgzc`
+
  
+
+

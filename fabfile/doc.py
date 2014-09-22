@@ -25,6 +25,7 @@ def notebook():
 @task
 def convert():
     local("bin/convert")
+    local("bin/videos.py")
     
 @task
 def view(kind='html'):
