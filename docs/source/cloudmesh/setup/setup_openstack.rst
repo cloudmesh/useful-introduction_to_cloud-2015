@@ -218,21 +218,32 @@ data. Alternatively, if you already have yaml files on for example
 india.FutureSystems.org you can copy your local working yaml files from
 that machine to the virtual machine.
 
-Yet another alternative is to use the functionality provided by cloudmesh::
+Yet another alternative is to use the functionality provided by
+cloudmesh. Before we can use it we have to however create a key that
+we upload to the FutureSystems portal::
+
+ $ export PORTALNAME=<put your portal name here>
+ $ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
+
+Than lets add the key to the ssh agent::
+
+  $ eval `ssh-agent -s`
+  $ ssh-add
+  
+You will also need to add the key to your FutureSystems portal
+account. Please visit the portal and past the content of the public
+key in the appropriate field. YOu can do this by ::
+
+  $ cat ~/.ssh/id_rsa.pub 
+
+Next you can fetch the information you need to acces openstack form india::
 
   $ cm-iu user fetch
   $ cm-iu user create
 
 This will fetch your cloud credentials from FutureSystems and populate them 
-into the yaml config file. BEFORE you can do this, make sure you can log into 
-the FutureSystems resources, e.g. india. You will need a private key present 
-in the VM that the matching public ssh key had been registered to the FutureSystems. 
-Additionally you may need to excetue the following beforehand to add your 
-password protected key into the session::
+into the yaml config file. 
 
-  $ eval `ssh-agent -s`
-  $ ssh-add
-  
 To run cloudmesh you will need to start a number of services that you
 can do with::
 
