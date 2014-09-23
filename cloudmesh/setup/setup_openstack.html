@@ -862,21 +862,31 @@ either with emacs or vi:</p>
 data. Alternatively, if you already have yaml files on for example
 india.FutureSystems.org you can copy your local working yaml files from
 that machine to the virtual machine.</p>
-<p>Yet another alternative is to use the functionality provided by cloudmesh:</p>
+<p>Yet another alternative is to use the functionality provided by
+cloudmesh. Before we can use it we have to however create a key that
+we upload to the FutureSystems portal:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>&lt;put your portal name here&gt;
+<span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$PORTALNAME</span>-ubuntu-vm-key
+</pre></div>
+</div>
+<p>Than lets add the key to the ssh agent:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
+<span class="nv">$ </span>ssh-add
+</pre></div>
+</div>
+<p>You will also need to add the key to your FutureSystems portal
+account. Please visit the portal and past the content of the public
+key in the appropriate field. YOu can do this by</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cat ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>Next you can fetch the information you need to acces openstack form india:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm-iu user fetch
 <span class="nv">$ </span>cm-iu user create
 </pre></div>
 </div>
 <p>This will fetch your cloud credentials from FutureSystems and populate them
-into the yaml config file. BEFORE you can do this, make sure you can log into
-the FutureSystems resources, e.g. india. You will need a private key present
-in the VM that the matching public ssh key had been registered to the FutureSystems.
-Additionally you may need to excetue the following beforehand to add your
-password protected key into the session:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
-<span class="nv">$ </span>ssh-add
-</pre></div>
-</div>
+into the yaml config file.</p>
 <p>To run cloudmesh you will need to start a number of services that you
 can do with:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab mongo.boot
