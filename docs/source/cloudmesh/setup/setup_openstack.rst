@@ -105,7 +105,7 @@ Now you cab boot a VM and set public ip for external access::
 
   india$ nova floating-ip-create
 
-  india$ export MYIP=`nova floating-ip-list |fgrep "None" | cut -d '|' -f2`
+  india$ export MYIP=`nova floating-ip-list | fgrep "None" | cut -d '|' -f2 | head -1`
   india$ nova add-floating-ip $USER-001 $MYIP
   india$ nova show $USER-001
 
@@ -241,34 +241,38 @@ Next you can fetch the information you need to acces openstack form india::
   $ cm-iu user fetch
   $ cm-iu user create
 
-This will fetch your cloud credentials from FutureSystems and populate them 
-into the yaml config file. 
-
-To run cloudmesh you will need to start a number of services that you
-can do with::
-
-  $ fab mongo.boot
-
-In some cases you may see connection problems in the later step. In that case 
-please execute this command one again so the tables and security settings 
-are done properly.
-
-Once the mongo is initiated properly it's time to update the user data with::
-
-  $ fab user.mongo
-
-Before you start the server, you need to execute this so the server
-would be accessible from outside::
+This will fetch your cloud credentials from FutureSystems and populate
+them into the yaml config file. We als need to undertake some changes
+for the india OpenStack cloud configuration with ::
   
   $ fab india.configure
     
-And then start the server::
+To run cloudmesh you will need to start a number of services you will
+need to create the cloudmesh database. Here we will use the command::
+
+  $ fab mongo.reset
+
+Please note that this command will erase the previous database and you
+should be carefuly considering its use. When you initialize the
+cloudmesh server first this is the best method.  
+
+.. note:: Also note that this command will take a long time on
+	  machines that do not have SSD's due to the way mongo sets up
+	  the database. Be patient and do not interrup the program
+	  although it may run multiple minutes.
+
+
+Now you are ready to start all services for cloudmesh with::
 
   $ fab server.start
 
 Then the cloudmesh service should be available via::
 
    http://PUBLIC_IP_OF_THE_VM:5000
+
+If you forgot your IP, use the command::
+
+  $ echo $MYIP
 
 
 NOTE:
