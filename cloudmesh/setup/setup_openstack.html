@@ -751,7 +751,7 @@ india<span class="nv">$ </span>nova secgroup-list-rules default
 
 india<span class="nv">$ </span>nova floating-ip-create
 
-india<span class="nv">$ </span><span class="nb">export </span><span class="nv">MYIP</span><span class="o">=</span><span class="sb">`</span>nova floating-ip-list |fgrep <span class="s2">&quot;None&quot;</span> | cut -d <span class="s1">&#39;|&#39;</span> -f2<span class="sb">`</span>
+india<span class="nv">$ </span><span class="nb">export </span><span class="nv">MYIP</span><span class="o">=</span><span class="sb">`</span>nova floating-ip-list | fgrep <span class="s2">&quot;None&quot;</span> | cut -d <span class="s1">&#39;|&#39;</span> -f2 | head -1<span class="sb">`</span>
 india<span class="nv">$ </span>nova add-floating-ip <span class="nv">$USER</span>-001 <span class="nv">$MYIP</span>
 india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
 </pre></div>
@@ -885,31 +885,37 @@ key in the appropriate field. YOu can do this by</p>
 <span class="nv">$ </span>cm-iu user create
 </pre></div>
 </div>
-<p>This will fetch your cloud credentials from FutureSystems and populate them
-into the yaml config file.</p>
-<p>To run cloudmesh you will need to start a number of services that you
-can do with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab mongo.boot
-</pre></div>
-</div>
-<p>In some cases you may see connection problems in the later step. In that case
-please execute this command one again so the tables and security settings
-are done properly.</p>
-<p>Once the mongo is initiated properly it&#8217;s time to update the user data with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab user.mongo
-</pre></div>
-</div>
-<p>Before you start the server, you need to execute this so the server
-would be accessible from outside:</p>
+<p>This will fetch your cloud credentials from FutureSystems and populate
+them into the yaml config file. We als need to undertake some changes
+for the india OpenStack cloud configuration with</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab india.configure
 </pre></div>
 </div>
-<p>And then start the server:</p>
+<p>To run cloudmesh you will need to start a number of services you will
+need to create the cloudmesh database. Here we will use the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab mongo.reset
+</pre></div>
+</div>
+<p>Please note that this command will erase the previous database and you
+should be carefuly considering its use. When you initialize the
+cloudmesh server first this is the best method.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Also note that this command will take a long time on
+machines that do not have SSD&#8217;s due to the way mongo sets up
+the database. Be patient and do not interrup the program
+although it may run multiple minutes.</p>
+</div>
+<p>Now you are ready to start all services for cloudmesh with:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab server.start
 </pre></div>
 </div>
 <p>Then the cloudmesh service should be available via:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
+</pre></div>
+</div>
+<p>If you forgot your IP, use the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$MYIP</span>
 </pre></div>
 </div>
 <p>NOTE:</p>
