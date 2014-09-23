@@ -39,10 +39,25 @@ To set up a mchine you could use the either of the folloing methods:
 * **Horizon**: see `our manual page
   <../../iaas/openstack.html#horizon-gui.html>`_.
 
-* **nova**: see the :ref:`s-openstack`_
+* **nova**: see the :ref:`s-openstack`
 
-* **cloudmsh**: see :ref:`s-cloudmesh-quickstart`_ and the cloudmesh
+* **cloudmsh**: see :ref:`s-cloudmesh-quickstart` and the cloudmesh
   shell found elsewhere.
+
+
+.. note:: FutureSystems Portalname and Project ID
+          For this example we assume you have set the shell variable
+	  PORTALNAME to your FutureSystems portal username. This can
+	  be done as follwows. Let us assume your portal name is
+	  `albert`. Than you can set it with::
+
+              export PORTALNAME=albert
+
+         We also assume that you have a project id that you set to::
+
+              export PROJECTID=fg101
+ 
+         if it is the number 101.
 
 .. note:: Please note that in the following document we use the
 	  :pink:`$USER` and :pink:`$PORTALNAME` are the same values
@@ -51,14 +66,17 @@ To set up a mchine you could use the either of the folloing methods:
 	  all executed on india we can simply use the default
 	  :pink:`$USER` shell variable.
 
-We summarize the following steps, however like to point out that the
-best source for this is our previously pointed out document::
+However, we use here a commandline approach and use the tools already
+installed on india. Thus you do not have to install anything on your
+machine. We assume however that you have uploaded the public key of
+your machine to the FutureSystems portal so you can log into india.
+
+We summarize the following steps::
 
   $ ssh $PORTALNAME@india.futuresystems.org
   india$ module load novaclient
   india$ source ~/.futuregrid/openstack_havana/novarc
   india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
-
 
 This assumes such a key exists in the location::
 
@@ -66,9 +84,12 @@ This assumes such a key exists in the location::
 
 If you do not have such a key, you can generate it with::
 
- $ ssh-keygen -t rsa -C $USER-key
+ $ ssh-keygen -t rsa -C $USER-india-key
  
 Remember to set a passphrase once prompted to secure your private key.
+
+.. warning:: You must not use a passphrase less key! Please specify a
+	     strong passphrase.
 
 Next step is to open the necessary ports of the VM to be started::
 
@@ -78,7 +99,7 @@ Next step is to open the necessary ports of the VM to be started::
   india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
   india$ nova secgroup-list-rules default
 
-And then boot a VM and set public ip for external access::
+Now you cab boot a VM and set public ip for external access::
 
   india$ nova boot --flavor m1.small --image "futuregrid/ubuntu-14.04" --key_name $USER-india-key $USER-001
 
@@ -121,7 +142,12 @@ You should see a table similare like this::
   | config_drive                         |                                                                |
   +--------------------------------------+----------------------------------------------------------------+
 
-Looking at the status you will see if the VM is in ACTIVE state. Once this is the case you can login to it with::
+Looking at the status you will see if the VM is in ACTIVE
+state. Repeat the command::
+
+    india$ nova show $USER-001
+
+if necessary. Once this is the case you can login to it with::
 
   india$ ssh -i ~/.ssh/id_rsa -l ubuntu $MYIP
 

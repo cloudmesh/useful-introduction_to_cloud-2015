@@ -34,8 +34,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
     <link rel="up" title="Cloudmesh Setup" href="index.html" />
-    <link rel="next" title="Quickstart for an Openstack VM" href="setup_openstack.html" />
-    <link rel="prev" title="Quick Start on your desktop" href="quickstart.html" />
+    <link rel="next" title="Nosetests" href="nosetests.html" />
+    <link rel="prev" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" href="setup_vagrant.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -152,7 +152,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Setup</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quick Start on your desktop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#commands-without-description">Commands without description</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="quickstart.html#for-ubuntu-use">For ubuntu use</a></li>
 <li class="toctree-l5"><a class="reference internal" href="quickstart.html#for-osx-use">For OSX use</a></li>
@@ -160,6 +160,26 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#tips">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#starting-the-vm">Starting the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#preparation-of-the-vm">Preparation of the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-veewee-optional">Install Veewee (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-up">Vagrant up</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#futuregrid-portal-id">FutureGrid Portal ID</a></li>
+<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#base-image">Base Image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Creating the yaml file</a><ul>
@@ -183,26 +203,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#requirements">Requirements</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#starting-the-vm">Starting the VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#preparation-of-the-vm">Preparation of the VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_openstack.html#installation">Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-veewee-optional">Install Veewee (Optional)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-up">Vagrant up</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#futuregrid-portal-id">FutureGrid Portal ID</a></li>
-<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#base-image">Base Image</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a><ul>
@@ -566,11 +566,11 @@
               
                 
   <li>
-    <a href="quickstart.html" title="Previous Chapter: Quick Start on your desktop"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Quick Start on y...</span>
+    <a href="setup_vagrant.html" title="Previous Chapter: Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Setup Cloudmesh ...</span>
     </a>
   </li>
   <li>
-    <a href="setup_openstack.html" title="Next Chapter: Quickstart for an Openstack VM"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Quickstart for a... &raquo;</span>
+    <a href="nosetests.html" title="Next Chapter: Nosetests"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Nosetests &raquo;</span>
     </a>
   </li>
               

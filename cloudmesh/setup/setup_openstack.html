@@ -35,7 +35,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html" />
     <link rel="up" title="Cloudmesh Setup" href="index.html" />
     <link rel="next" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" href="setup_vagrant.html" />
-    <link rel="prev" title="Creating the yaml file" href="yaml.html" />
+    <link rel="prev" title="Quickstart on your desktop" href="quickstart.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -152,7 +152,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Setup</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quick Start on your desktop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#commands-without-description">Commands without description</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="quickstart.html#for-ubuntu-use">For ubuntu use</a></li>
 <li class="toctree-l5"><a class="reference internal" href="quickstart.html#for-osx-use">For OSX use</a></li>
@@ -160,6 +160,26 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#one-line-install-with-curl">One line install with curl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="quickstart.html#tips">Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Quickstart for an Openstack VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-the-vm">Starting the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preparation-of-the-vm">Preparation of the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-veewee-optional">Install Veewee (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-up">Vagrant up</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#futuregrid-portal-id">FutureGrid Portal ID</a></li>
+<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#base-image">Base Image</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating the yaml file</a><ul>
@@ -183,26 +203,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-devstack-to-the-yaml-file-tbd">Adding devstack to the yaml file (TBD)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="yaml.html#adding-dreamhost-to-the-yaml-file">Adding dreamhost to the yaml file</a></li>
-</ul>
-</li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Quickstart for an Openstack VM</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#starting-the-vm">Starting the VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#preparation-of-the-vm">Preparation of the VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#download-cloudmesh">Download cloudmesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-vagrant-and-virtualbox">Install Vagrant and VirtualBox</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#install-veewee-optional">Install Veewee (Optional)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-up">Vagrant up</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#futuregrid-portal-id">FutureGrid Portal ID</a></li>
-<li class="toctree-l5"><a class="reference internal" href="setup_vagrant.html#base-image">Base Image</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#vagrant-ssh">Vagrant ssh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="setup_vagrant.html#virtualenv-and-cm">Virtualenv and cm</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a><ul>
@@ -550,7 +550,7 @@
               
                 
   <li>
-    <a href="yaml.html" title="Previous Chapter: Creating the yaml file"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Creating the yam...</span>
+    <a href="quickstart.html" title="Previous Chapter: Quickstart on your desktop"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Quickstart on yo...</span>
     </a>
   </li>
   <li>
@@ -681,10 +681,29 @@ or the novaclient command line.</p>
 <p>To set up a mchine you could use the either of the folloing methods:</p>
 <ul class="simple">
 <li><strong>Horizon</strong>: see <a class="reference external" href="../../iaas/openstack.html#horizon-gui.html">our manual page</a>.</li>
-<li><strong>nova</strong>: see the <a href="#id1"><span class="problematic" id="id2">:ref:`s-openstack`_</span></a></li>
-<li><strong>cloudmsh</strong>: see <a href="#id3"><span class="problematic" id="id4">:ref:`s-cloudmesh-quickstart`_</span></a> and the cloudmesh
+<li><strong>nova</strong>: see the <a class="reference internal" href="../../iaas/openstack.html#s-openstack"><em>OpenStack on FutureSystems</em></a></li>
+<li><strong>cloudmsh</strong>: see <a class="reference internal" href="quickstart.html#s-cloudmesh-quickstart"><em>Quickstart on your desktop</em></a> and the cloudmesh
 shell found elsewhere.</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="docutils">
+<dt>FutureSystems Portalname and Project ID</dt>
+<dd><p class="first">For this example we assume you have set the shell variable
+PORTALNAME to your FutureSystems portal username. This can
+be done as follwows. Let us assume your portal name is
+<cite>albert</cite>. Than you can set it with:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>albert
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>We also assume that you have a project id that you set to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PROJECTID</span><span class="o">=</span>fg101
+</pre></div>
+</div>
+<p class="last">if it is the number 101.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Please note that in the following document we use the
@@ -694,8 +713,11 @@ you obtained for FutureSystems. As the subsequent steps are
 all executed on india we can simply use the default
 <span class="pink">$USER</span> shell variable.</p>
 </div>
-<p>We summarize the following steps, however like to point out that the
-best source for this is our previously pointed out document:</p>
+<p>However, we use here a commandline approach and use the tools already
+installed on india. Thus you do not have to install anything on your
+machine. We assume however that you have uploaded the public key of
+your machine to the FutureSystems portal so you can log into india.</p>
+<p>We summarize the following steps:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuresystems.org
 india<span class="nv">$ </span>module load novaclient
 india<span class="nv">$ </span><span class="nb">source</span> ~/.futuregrid/openstack_havana/novarc
@@ -707,10 +729,15 @@ india<span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <spa
 </pre></div>
 </div>
 <p>If you do not have such a key, you can generate it with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$USER</span>-key
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$USER</span>-india-key
 </pre></div>
 </div>
 <p>Remember to set a passphrase once prompted to secure your private key.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You must not use a passphrase less key! Please specify a
+strong passphrase.</p>
+</div>
 <p>Next step is to open the necessary ports of the VM to be started:</p>
 <div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
 india<span class="nv">$ </span>nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
@@ -719,7 +746,7 @@ india<span class="nv">$ </span>nova secgroup-add-rule default tcp 5000 5000 0.0.
 india<span class="nv">$ </span>nova secgroup-list-rules default
 </pre></div>
 </div>
-<p>And then boot a VM and set public ip for external access:</p>
+<p>Now you cab boot a VM and set public ip for external access:</p>
 <div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova boot --flavor m1.small --image <span class="s2">&quot;futuregrid/ubuntu-14.04&quot;</span> --key_name <span class="nv">$USER</span>-india-key <span class="nv">$USER</span>-001
 
 india<span class="nv">$ </span>nova floating-ip-create
@@ -762,7 +789,12 @@ india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
 +--------------------------------------+----------------------------------------------------------------+
 </pre></div>
 </div>
-<p>Looking at the status you will see if the VM is in ACTIVE state. Once this is the case you can login to it with:</p>
+<p>Looking at the status you will see if the VM is in ACTIVE
+state. Repeat the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
+</pre></div>
+</div>
+<p>if necessary. Once this is the case you can login to it with:</p>
 <div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>ssh -i ~/.ssh/id_rsa -l ubuntu <span class="nv">$MYIP</span>
 </pre></div>
 </div>
@@ -817,7 +849,7 @@ enable with:</p>
 </pre></div>
 </div>
 <p>Now we need to populate the cloudmesh.yaml file with your actual
-information. You can edit the file <a href="#id5"><span class="problematic" id="id6">``</span></a>~/.cloudmesh/cloudmesh.yaml`
+information. You can edit the file <a href="#id1"><span class="problematic" id="id2">``</span></a>~/.cloudmesh/cloudmesh.yaml`
 either with emacs or vi:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>emacs ~/.cloudmesh/cloudmesh.yaml
 </pre></div>

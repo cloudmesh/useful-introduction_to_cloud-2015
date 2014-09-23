@@ -364,7 +364,7 @@ you have specified a default cloud or have selected a cloud)
 
 .. code:: python
 
-    cm "vm delete --cloud=india Brain_2 --force"
+    cm "vm delete --cloud=india abc_2 --force"
 to delete a VM by group
 
 .. code:: python

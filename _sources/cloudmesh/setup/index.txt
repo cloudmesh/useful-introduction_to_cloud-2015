@@ -12,8 +12,8 @@ For development and class users we recommend the local setup.
    :maxdepth: -1
 
    quickstart
-   yaml
    setup_openstack
    setup_vagrant
+   yaml
    nosetests
 

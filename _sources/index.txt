@@ -1,10 +1,3 @@
-A short videa giving a bief overview about this Web site and Cloudmesh
-is available at |video-cm-intro|.
-
-
-.. |video-image| image:: /images/glyphicons_402_youtube.png 
-.. |video-cm-intro| replace:: |video-image| :youtube:`uGIPmiJ0cxg`
-
 
 Contents
 ======================================================================
@@ -15,7 +8,8 @@ Contents
    http://cloudmesh.github.io/introduction_to_cloud_computing/. If you
    look directly at the source in github, please go that link.
 
-
+A short video giving a bief overview about this Web site and Cloudmesh 
+is available at |video-cm-intro|.
 
 .. toctree::
    :maxdepth: 2
@@ -55,3 +49,7 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 * :ref:`notebooks`
+
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+.. |video-cm-intro| replace:: |video-image| :youtube:`uGIPmiJ0cxg`
+
