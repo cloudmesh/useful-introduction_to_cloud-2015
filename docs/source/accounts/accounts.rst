@@ -65,9 +65,9 @@ create your own project or join an existing one
      - Join a project
      - This lesson explains you how to join a FutureSystems project.
        For written material, see section :ref:`s-account-join-project`.
-   * - |video-fs-accounts| 
+   * - |video-fs-account|
      - 17:53 min
-     - Account apication on FutureSystems for cloudmesh
+     - Account application on FutureSystems for cloudmesh
      - This lesson explains you how to join a FutureSystems project.
 
 
@@ -106,13 +106,14 @@ Creating FutureSystems Accounts and Projects
 .. |video-image| image:: /images/glyphicons_402_youtube.png 
 
 .. |video-portal-account| replace:: |video-image| :youtube:`c7mjKI8mJws`
-
 .. |video-portal-openid| replace:: |video-image| :youtube:`rZzpCYWDEpI`
 .. |video-portal-sshkey| replace:: |video-image| :youtube:`4wjVwQbOlSU`
 .. |video-portal-join-proj| replace:: |video-image| :youtube:`5xQiPBwt58s`
 .. |video-portal-create-proj| replace:: |video-image| :youtube:`DzbLS6iCeTE`
-
 .. |video-fs-account| replace:: |video-image| :youtube:`CwHFaluDgzc`
+
+
+
 
  
 
