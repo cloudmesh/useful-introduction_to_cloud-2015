@@ -1,6 +1,6 @@
 .. _s-cloudmesh-quickstart:
 
-Quick Start on your desktop
+Quickstart on your desktop
 ============================
 
 A video bout the quickstart instalation is available on |video-cm-install| 
