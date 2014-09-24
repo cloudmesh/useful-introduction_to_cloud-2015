@@ -1,6 +1,15 @@
 Quickstart for an Openstack VM 
 ======================================================================
 
+
+A video about the contents of this page is available on |video-cm-openstack-setup|.
+
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+.. |video-cm-openstack-setup| replace:: |video-image| :youtube:`rcecpgm-47g`
+
+
+|video-fs-account|
+
 .. highlight:: bash
 
 .. role:: pink
