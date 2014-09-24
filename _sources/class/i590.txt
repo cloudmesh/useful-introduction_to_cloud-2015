@@ -25,7 +25,7 @@ Video Overview
 	       target="_blank"];
 
 	   c [label="Part C | Over view of the Cloudmesh Learning Web Site",
-	       URL="http://www.youtube.com/watch?v=njHHjRMb7V8", 
+	       URL="http://www.youtube.com/watch?v=uGIPmiJ0cxg", 
 	       target="_blank"];
 
 	   d1 [label="Part D.1 | Install Cloudmesh on a Desktop",
@@ -214,41 +214,6 @@ yet work. Cloudmesh is an evolving project and changes are expected.
 
 .. |video-cm-gui| replace:: |video-image| :youtube:`l_P4G85rysA`
 
-
-.. comment:
-
-   .. graphviz::
-
-      digraph foo {
-	   node [shape=record];
-
-
-	   a [label="Part A | b | c",
-	       URL="http://mycloudmesh.org/learning", 
-	       target="_blank"];
-
-	   av [label="video",
-	       URL="http://mycloudmesh.org/learning", 
-	       target="_blank"];
-
-	   b [label="Part B | b | c",
-	       URL="http://mycloudmesh.org/learning", 
-	       target="_blank"];
-
-	   bv [label="video",
-	       URL="http://mycloudmesh.org/learning", 
-	       target="_blank"];
-
-
-
-	   class -> a
-	   a->b;
-
-	   a->av;
-	   b->bv;
-      }
-
-   ..
 
 .. comment:
 
