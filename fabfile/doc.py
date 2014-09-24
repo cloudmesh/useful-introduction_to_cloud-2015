@@ -1,6 +1,7 @@
 from fabric.api import task, local, settings
 import sys
 import os
+import time
 
 browser = "firefox"
 
@@ -20,7 +21,10 @@ def clean():
 
 @task
 def notebook():
-    local("ipython notebook ")
+    local("ipython notebook &")
+    time.sleep(1)
+    local("{browser} docs/build/html/_index_notebooks.html".format(browser=browser))
+
     
 @task
 def convert():
