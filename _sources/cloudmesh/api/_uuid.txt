@@ -31,7 +31,7 @@ uuid1.
 
 .. parsed-literal::
 
-    UUID('f79f7a8f-41b5-11e4-89c6-600308a5f9d2')
+    UUID('cb40b7ae-43f5-11e4-b2f5-600308a5f9d2')
 
 
 
@@ -48,7 +48,7 @@ uuid4 creates random uuids.
 
 .. parsed-literal::
 
-    UUID('040260d7-2d16-4441-94a3-c5deaaa54f07')
+    UUID('41e3f670-c816-45cb-b74c-47f43c08a795')
 
 
 
@@ -64,7 +64,7 @@ use the function get\_unique\_name instaed.
 
 .. parsed-literal::
 
-    UUID('7e0b4d6c-63cb-4a7f-9123-afeb1a5c05db')
+    UUID('0ba9ce2e-8bb8-4503-9a4b-205c52d97c62')
 
 
 
@@ -76,7 +76,7 @@ use the function get\_unique\_name instaed.
 
 .. parsed-literal::
 
-    47490726933316444798735825843092800205L
+    82842630962728572160157755786553046L
 
 
 
@@ -95,7 +95,7 @@ we have a convenience function in cloudmesh.
 
 .. parsed-literal::
 
-    faab4f6e41b511e4809c600308a5f9d2
+    d1915dde43f511e4b2ca600308a5f9d2
 
 
 As you can see it is just like the uuid function (currently uuid1) with
@@ -112,7 +112,7 @@ distinctions. However this is rarely needed.
 
 .. parsed-literal::
 
-    'gregorfb899bc041b511e4b44b600308a5f9d2'
+    'gregord3280fa843f511e4a176600308a5f9d2'
 
 
 
@@ -154,6 +154,24 @@ username and activate the user account.
 .. code:: python
 
     mesh.activate(username)
+
+.. parsed-literal::
+
+    * india
+    Refreshing gvonlasz servers india ->
+    Refresh time: 0.290459156036
+    Store time: 0.074816942215
+
+
 .. code:: python
 
     mesh.vmname()
+
+
+
+.. parsed-literal::
+
+    u'gvonlasz_7'
+
+
+

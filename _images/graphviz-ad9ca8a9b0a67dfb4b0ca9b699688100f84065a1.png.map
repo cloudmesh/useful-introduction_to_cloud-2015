@@ -1,0 +1,13 @@
+<map id="foo" name="foo">
+<area shape="rect" id="node1" href="http://www.youtube.com/watch?v=CwHFaluDgzc" target="_blank" title="Part A | Account Application " alt="" coords="255,105,499,154"/>
+<area shape="rect" id="node2" href="http://www.youtube.com/watch?v=c7mjKI8mJws" target="_blank" title="Part A.1 | Account Application " alt="" coords="165,203,424,253"/>
+<area shape="rect" id="node6" href="http://www.youtube.com/watch?v=njHHjRMb7V8" target="_blank" title="Part B | Introduction to Cloudmesh " alt="" coords="233,598,524,647"/>
+<area shape="rect" id="node3" href="http://www.youtube.com/watch?v=rZzpCYWDEpI" target="_blank" title="Part A.2 | OpenID Upload " alt="" coords="184,302,407,351"/>
+<area shape="rect" id="node4" href="http://www.youtube.com/watch?v=4wjVwQbOlSU" target="_blank" title="Part A.3 | SSHkey Upload " alt="" coords="184,401,408,450"/>
+<area shape="rect" id="node5" href="http://www.youtube.com/watch?v=5xQiPBwt58s" target="_blank" title="Part A.4 | Project Join Request" alt="" coords="167,499,424,549"/>
+<area shape="rect" id="node7" href="http://www.youtube.com/watch?v=uGIPmiJ0cxg" target="_blank" title="Part C | Over view of the Cloudmesh Learning Web Site" alt="" coords="154,697,603,746"/>
+<area shape="rect" id="node8" href="http://www.youtube.com/watch?v=lGiJifD0VgU" target="_blank" title="Part D.1 | Install Cloudmesh on a Desktop" alt="" coords="30,795,375,845"/>
+<area shape="rect" id="node9" href="http://www.youtube.com/watch?v=rcecpgm-47g" target="_blank" title="Part D.1 | Install Cloudmesh on a VM" alt="" coords="399,795,709,845"/>
+<area shape="rect" id="node10" href="http://www.youtube.com/watch?v=l_P4G85rysA" target="_blank" title="Part E | The Cloudmesh Web Interface" alt="" coords="44,894,360,943"/>
+<area shape="rect" id="node11" href="http://www.youtube.com/watch?v=1dn_av-zC00" target="_blank" title="Part F | The Cloudmesh IPython Learning Server" alt="" coords="5,993,400,1042"/>
+</map>

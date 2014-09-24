@@ -104,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="">Class: Info I590</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#video-overview">Video Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-syllabus">Video Syllabus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#account-application-for-futuresystems">Account Application for FutureSystems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
@@ -119,6 +119,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cloudmesh-web-interface">Cloudmesh Web Interface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id2">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-ipython-learning-server">Cloudmesh IPython Learning Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -560,7 +564,7 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Class: Info I590</a><ul>
-<li><a class="reference internal" href="#video-overview">Video Overview</a></li>
+<li><a class="reference internal" href="#video-syllabus">Video Syllabus</a></li>
 <li><a class="reference internal" href="#account-application-for-futuresystems">Account Application for FutureSystems</a><ul>
 <li><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
@@ -575,6 +579,10 @@
 </li>
 <li><a class="reference internal" href="#cloudmesh-web-interface">Cloudmesh Web Interface</a><ul>
 <li><a class="reference internal" href="#id2">Exercises</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cloudmesh-ipython-learning-server">Cloudmesh IPython Learning Server</a><ul>
+<li><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -667,7 +675,7 @@
   
 <h4 class="nav-header"> &nbsp; Page Contents</h4><ul>
 <li><a class="reference internal" href="#">Class: Info I590</a><ul>
-<li><a class="reference internal" href="#video-overview">Video Overview</a></li>
+<li><a class="reference internal" href="#video-syllabus">Video Syllabus</a></li>
 <li><a class="reference internal" href="#account-application-for-futuresystems">Account Application for FutureSystems</a><ul>
 <li><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
@@ -682,6 +690,10 @@
 </li>
 <li><a class="reference internal" href="#cloudmesh-web-interface">Cloudmesh Web Interface</a><ul>
 <li><a class="reference internal" href="#id2">Exercises</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cloudmesh-ipython-learning-server">Cloudmesh IPython Learning Server</a><ul>
+<li><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -712,15 +724,30 @@
 <li>Community Group:
 <a class="reference external" href="https://plus.google.com/communities/117322030211467950209">https://plus.google.com/communities/117322030211467950209</a></li>
 </ul>
-<div class="section" id="video-overview">
-<h2>Video Overview<a class="headerlink" href="#video-overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="video-syllabus">
+<h2>Video Syllabus<a class="headerlink" href="#video-syllabus" title="Permalink to this headline">¶</a></h2>
 <p class="graphviz">
-<img src="../_images/graphviz-fef3e6b826cf1d89052558a6b8cff39dcded9f6a.png" alt="digraph foo {
+<img src="../_images/graphviz-ad9ca8a9b0a67dfb4b0ca9b699688100f84065a1.png" alt="digraph foo {
      node [shape=record];
-
 
      a [label=&quot;Part A | Account Application &quot;,
          URL=&quot;http://www.youtube.com/watch?v=CwHFaluDgzc&quot;,
+         target=&quot;_blank&quot;];
+
+     a1 [label=&quot;Part A.1 | Account Application &quot;,
+         URL=&quot;http://www.youtube.com/watch?v=c7mjKI8mJws&quot;,
+         target=&quot;_blank&quot;];
+
+     a2 [label=&quot;Part A.2 | OpenID Upload &quot;,
+         URL=&quot;http://www.youtube.com/watch?v=rZzpCYWDEpI&quot;,
+         target=&quot;_blank&quot;];
+
+     a3 [label=&quot;Part A.3 | SSHkey Upload &quot;,
+         URL=&quot;http://www.youtube.com/watch?v=4wjVwQbOlSU&quot;,
+         target=&quot;_blank&quot;];
+
+     a4 [label=&quot;Part A.4 | Project Join Request&quot;,
+         URL=&quot;http://www.youtube.com/watch?v=5xQiPBwt58s&quot;,
          target=&quot;_blank&quot;];
 
      b [label=&quot;Part B | Introduction to Cloudmesh &quot;,
@@ -743,21 +770,33 @@
          URL=&quot;http://www.youtube.com/watch?v=l_P4G85rysA&quot;,
          target=&quot;_blank&quot;];
 
+     f  [label=&quot;Part F | The Cloudmesh IPython Learning Server&quot;,
+         URL=&quot;http://www.youtube.com/watch?v=1dn_av-zC00&quot;,
+         target=&quot;_blank&quot;];
 
+     subgraph accounts {
+         a1 -&gt; a2 -&gt; a3 -&gt; a4
+     }
 
-
+     a -&gt; a1 [lhead=accounts];
+     a4 -&gt; b [ltail=accounts];
      class -&gt; a -&gt; b -&gt; c ;
      c -&gt; d1;
      c -&gt; d2;
-     d1 -&gt; e;
+     d1 -&gt; e -&gt; f ;
 }" usemap="#foo" />
 <map id="foo" name="foo">
-<area shape="rect" id="node1" href="http://www.youtube.com/watch?v=CwHFaluDgzc" target="_blank" title="Part A | Account Application " alt="" coords="231,105,475,154"/>
-<area shape="rect" id="node2" href="http://www.youtube.com/watch?v=njHHjRMb7V8" target="_blank" title="Part B | Introduction to Cloudmesh " alt="" coords="208,203,499,253"/>
-<area shape="rect" id="node3" href="http://www.youtube.com/watch?v=uGIPmiJ0cxg" target="_blank" title="Part C | Over view of the Cloudmesh Learning Web Site" alt="" coords="129,302,577,351"/>
-<area shape="rect" id="node4" href="http://www.youtube.com/watch?v=lGiJifD0VgU" target="_blank" title="Part D.1 | Install Cloudmesh on a Desktop" alt="" coords="5,401,349,450"/>
-<area shape="rect" id="node5" href="http://www.youtube.com/watch?v=rcecpgm-47g" target="_blank" title="Part D.1 | Install Cloudmesh on a VM" alt="" coords="373,401,684,450"/>
-<area shape="rect" id="node6" href="http://www.youtube.com/watch?v=l_P4G85rysA" target="_blank" title="Part E | The Cloudmesh Web Interface" alt="" coords="19,499,335,549"/>
+<area shape="rect" id="node1" href="http://www.youtube.com/watch?v=CwHFaluDgzc" target="_blank" title="Part A | Account Application " alt="" coords="255,105,499,154"/>
+<area shape="rect" id="node2" href="http://www.youtube.com/watch?v=c7mjKI8mJws" target="_blank" title="Part A.1 | Account Application " alt="" coords="165,203,424,253"/>
+<area shape="rect" id="node6" href="http://www.youtube.com/watch?v=njHHjRMb7V8" target="_blank" title="Part B | Introduction to Cloudmesh " alt="" coords="233,598,524,647"/>
+<area shape="rect" id="node3" href="http://www.youtube.com/watch?v=rZzpCYWDEpI" target="_blank" title="Part A.2 | OpenID Upload " alt="" coords="184,302,407,351"/>
+<area shape="rect" id="node4" href="http://www.youtube.com/watch?v=4wjVwQbOlSU" target="_blank" title="Part A.3 | SSHkey Upload " alt="" coords="184,401,408,450"/>
+<area shape="rect" id="node5" href="http://www.youtube.com/watch?v=5xQiPBwt58s" target="_blank" title="Part A.4 | Project Join Request" alt="" coords="167,499,424,549"/>
+<area shape="rect" id="node7" href="http://www.youtube.com/watch?v=uGIPmiJ0cxg" target="_blank" title="Part C | Over view of the Cloudmesh Learning Web Site" alt="" coords="154,697,603,746"/>
+<area shape="rect" id="node8" href="http://www.youtube.com/watch?v=lGiJifD0VgU" target="_blank" title="Part D.1 | Install Cloudmesh on a Desktop" alt="" coords="30,795,375,845"/>
+<area shape="rect" id="node9" href="http://www.youtube.com/watch?v=rcecpgm-47g" target="_blank" title="Part D.1 | Install Cloudmesh on a VM" alt="" coords="399,795,709,845"/>
+<area shape="rect" id="node10" href="http://www.youtube.com/watch?v=l_P4G85rysA" target="_blank" title="Part E | The Cloudmesh Web Interface" alt="" coords="44,894,360,943"/>
+<area shape="rect" id="node11" href="http://www.youtube.com/watch?v=1dn_av-zC00" target="_blank" title="Part F | The Cloudmesh IPython Learning Server" alt="" coords="5,993,400,1042"/>
 </map>
 </p>
 </div>
@@ -780,12 +819,24 @@
 <tbody valign="top">
 <tr class="row-even"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=CwHFaluDgzc">CwHFaluDgzc</a></td>
 <td>16:33 min</td>
-<td>Create a portal account in FutureSystems for class projects.</td>
+<td>Alternative 1: Create a portal account in FutureSystems for
+class projects.</td>
 <td>This lesson explains you how to create a portal account which
 is the first step in getting access to FutureSystems. You can
-also view the following videos form FutureGrid as they still apply.
-For written material, see section
-<a class="reference internal" href="../accounts/details.html#s-account-create-account"><em>Create a Portal account</em></a>.</td>
+also view the following videos form FutureGrid as they still
+apply.  For written material, see section
+<a class="reference internal" href="../accounts/details.html#s-account-create-account"><em>Create a Portal account</em></a>. and
+<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><em>Creating FutureSystems Accounts and Projects</em></a> They are listed in Alernative 2.</td>
+</tr>
+<tr class="row-odd"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=c7mjKI8mJws">c7mjKI8mJws</a> <img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=rZzpCYWDEpI">rZzpCYWDEpI</a>
+<img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=4wjVwQbOlSU">4wjVwQbOlSU</a> <img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=5xQiPBwt58s">5xQiPBwt58s</a></td>
+<td>5:10 min, 1:35 min, 2:39 min, 1:28 min</td>
+<td>Alternative 2: Create a portal account in FutureSystems for
+class projects with more details</td>
+<td>This lesson explains you how to create a portal account which
+is the first step in getting access to FutureSystems.  See
+Section <a class="reference internal" href="../accounts/details.html#s-account-create-account"><em>Create a Portal account</em></a> and
+<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><em>Creating FutureSystems Accounts and Projects</em></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -948,6 +999,40 @@ details.</td>
 yet work. Cloudmesh is an evolving project and changes are expected.</p>
 </div>
 </div>
+<div class="section" id="cloudmesh-ipython-learning-server">
+<h2>Cloudmesh IPython Learning Server<a class="headerlink" href="#cloudmesh-ipython-learning-server" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="5%" />
+<col width="15%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Video</th>
+<th class="head">Length</th>
+<th class="head">Titles of the Lessons</th>
+<th class="head">Description of the Lessons</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=1dn_av-zC00">1dn_av-zC00</a></td>
+<td>15:30 min</td>
+<td>The Cloudmesh IPython Lerning Server</td>
+<td>A lesson on how to IPython for directly executing the notebooks
+contained on on the Cloudmesh learning Web pages.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h3>Exercises<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Start the IPython server</li>
+<li>Print the version in IPython (locate the hello notebook)</li>
+<li>Find additinal notebooks and play with them.</li>
+</ol>
+</div>
+</div>
 </div>
 
 
@@ -1009,7 +1094,7 @@ yet work. Cloudmesh is an evolving project and changes are expected.</p>
 
        <ul>
 <li><a class="reference internal" href="#">Class: Info I590</a><ul>
-<li><a class="reference internal" href="#video-overview">Video Overview</a></li>
+<li><a class="reference internal" href="#video-syllabus">Video Syllabus</a></li>
 <li><a class="reference internal" href="#account-application-for-futuresystems">Account Application for FutureSystems</a><ul>
 <li><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
@@ -1024,6 +1109,10 @@ yet work. Cloudmesh is an evolving project and changes are expected.</p>
 </li>
 <li><a class="reference internal" href="#cloudmesh-web-interface">Cloudmesh Web Interface</a><ul>
 <li><a class="reference internal" href="#id2">Exercises</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cloudmesh-ipython-learning-server">Cloudmesh IPython Learning Server</a><ul>
+<li><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
 </ul>
