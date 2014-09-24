@@ -22,6 +22,9 @@ following areas:
 The material will allow you to easily get onto FutureSystems and either
 create your own project or join an existing one
 
+Videos for users in a class project
+----------------------------------------------------------------------
+
 .. list-table::
    :widths: 15 5 15 65
    :header-rows: 1
@@ -30,13 +33,31 @@ create your own project or join an existing one
      - Length
      - Titles of the Lessons
      - Description of the Lessons
-   * - |video-portal-account| 
+   * - |video-fs-account|
      - 16:33 min
-     - Create a portal account in FutureSystems.
+     - Create a portal account in FutureSystems for class projects.
      - This lesson explains you how to create a portal account which
        is the first step in getting access to FutureSystems. You can
-       also view the prvious vidieos form FutureGrid as they still apply.
-       For written material, see section :ref:`s-account-create-account`.
+       also view the following videos form FutureGrid as they still apply.
+       For written material, see section
+       :ref:`s-account-create-account`.
+
+If you attend a class the above video is probably sufficient. However,
+it laks some tetails. If you like to know more, please see the videos
+bellow. As you do not have to create a project so you can skip this video. 
+
+General videos
+----------------------------------------------------------------------
+
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
    * - |video-portal-account| 
      - 5:10 min
      - Create a portal account
@@ -65,10 +86,6 @@ create your own project or join an existing one
      - Join a project
      - This lesson explains you how to join a FutureSystems project.
        For written material, see section :ref:`s-account-join-project`.
-   * - |video-fs-account|
-     - 17:53 min
-     - Account application on FutureSystems for cloudmesh
-     - This lesson explains you how to join a FutureSystems project.
 
 
 Exercises
