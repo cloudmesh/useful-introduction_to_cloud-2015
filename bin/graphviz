@@ -1,0 +1,22 @@
+#! /usr/bin/env python
+
+import glob
+
+from sh import dot
+from sh import mkdir
+
+mkdir("-p", "docs/build/html/images/graphviz")
+files = glob.glob('docs/source/images/graphviz/*.dot')
+
+
+kind = "imap"
+for file in files:
+    data = {
+    	 'source': file,
+	 'dest': file.replace(".dot", "." + kind).replace("/source","/build/html"),
+	 'kind': kind,
+	 }
+    parameters = "-T {kind} -o {dest} {source}".format(**data).split(" ")
+    print dot, ' '.join(parameters)
+    dot(parameters)
+

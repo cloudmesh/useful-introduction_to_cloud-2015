@@ -42,9 +42,9 @@ Videos for users in a class project
        For written material, see section
        :ref:`s-account-create-account`.
 
-If you attend a class the above video is probably sufficient. However,
-it laks some tetails. If you like to know more, please see the videos
-bellow. As you do not have to create a project so you can skip this video. 
+If you attend a class the above video is probably sufficient. If you
+like to know more, please see the videos bellow. As you do not have to
+create a project so you can skip this video.
 
 General videos
 ----------------------------------------------------------------------

@@ -1,3 +1,5 @@
+.. _s-cloudmesh-vm-quickstart:
+
 Quickstart for an Openstack VM 
 ======================================================================
 
