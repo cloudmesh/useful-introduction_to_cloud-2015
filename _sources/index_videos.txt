@@ -15,6 +15,7 @@ Table
    ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__
    ok, `03 Cloudmesh: Quick Install <https://www.youtube.com/watch?v=lGiJifD0VgU>`__, `cloudmesh/setup/quickstart.rst <cloudmesh/setup/quickstart.html>`__, `lGiJifD0VgU <https://www.youtube.com/watch?v=lGiJifD0VgU>`__
    ok, `04 Cloudmesh: Web Interface <https://www.youtube.com/watch?v=l_P4G85rysA>`__, `cloudmesh/gui/screenshots.rst <cloudmesh/gui/screenshots.html>`__, `l_P4G85rysA <https://www.youtube.com/watch?v=l_P4G85rysA>`__
+   ok, `05 Cloudmesh: Setup on a OpenStack VM <https://www.youtube.com/watch?v=rcecpgm-47g>`__, `cloudmesh/setup/setup_openstack.rst <cloudmesh/setup/setup_openstack.html>`__, `rcecpgm-47g <https://www.youtube.com/watch?v=rcecpgm-47g>`__
    ok, `Eucalyptus <https://www.youtube.com/watch?v=D1v_twqWIxg>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `D1v_twqWIxg <https://www.youtube.com/watch?v=D1v_twqWIxg>`__
    ok, `HPC OpenMPI Batch jobs <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__, `hpc/screencasts.rst <hpc/screencasts.html>`__, `6oUsMyDt7gU <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__
    ok, `Hadoop <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__, `paas/hadoop.rst <paas/hadoop.html>`__, `PC8h1CtVzH4 <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__
@@ -36,6 +37,8 @@ Details
 01 Cloudmesh: Introduction
 ----------------------------------------------------------------------
 
+.. For written information see http://mycloudmesh.org/learning
+
 This video presents a small introduction about the learning material for cloudmesh that is hosted on mycloudmesh.org/learning. It includes:
 
 * information about publication formats for the web site in html, pdf, and epub
@@ -47,7 +50,7 @@ This video presents a small introduction about the learning material for cloudme
   * shell
   * GUI
 
-Updated: 2014-09-22T20:46:26.000Z
+Updated: 2014-09-23T15:40:52.000Z
 
 02 Cloudmesh: Account Creation on FutureSystems
 ----------------------------------------------------------------------
@@ -88,6 +91,24 @@ This video is teaching you about the features of the cloudmesh Web interface. It
 
 Updated: 2014-09-22T20:46:12.000Z
 
+05 Cloudmesh: Setup on a OpenStack VM
+----------------------------------------------------------------------
+
+.. More in information is available at mycloudmesh.org/learning
+
+This video teaches you on how to install cloudemesh on a virtual machine. This is especially useful if you like to just try it out or if you like to develop certain aspects without deploying it on your local desktop or Laptop. We will be addressing the following:
+
+a) deploying a virtual machine on Indiana Universities india cloud
+b) preparing the vm for cloudmesh
+c) deploying cloudmesh
+d) creating configuration files
+e) starting the cloudmesh services
+f) accessing the service via a public ip
+g) starting a vm via the portal
+h) exploring the portal
+
+Updated: 2014-09-24T02:33:56.000Z
+
 Eucalyptus
 ----------------------------------------------------------------------
 
@@ -119,9 +140,9 @@ Updated: 2014-09-22T13:04:44.000Z
 fg-create-project
 ----------------------------------------------------------------------
 
-fg-create-project
+.. For written information see http://mycloudmesh.org/learning
 
-Updated: 2013-12-01T22:37:44.000Z
+Updated: 2014-09-23T15:44:10.000Z
 
 fg-openstack
 ----------------------------------------------------------------------
@@ -146,28 +167,30 @@ Updated: 2013-12-01T22:37:44.000Z
 fg-portal-join-project
 ----------------------------------------------------------------------
 
-fg-portal-join-project
+.. For written information see http://mycloudmesh.org/learning
 
-Updated: 2013-12-01T22:37:44.000Z
+Updated: 2014-09-23T15:44:31.000Z
 
 fg-portal-openid
 ----------------------------------------------------------------------
 
-fg-portal-openid
+.. For written information see http://mycloudmesh.org/learning
 
-Updated: 2013-12-01T22:37:44.000Z
+Updated: 2014-09-23T15:43:23.000Z
 
 fg-portal-sshkey
 ----------------------------------------------------------------------
 
-fg-portal-sshkey
+.. For written information see http://mycloudmesh.org/learning
 
-Updated: 2014-02-12T00:12:27.000Z
+Updated: 2014-09-23T15:43:40.000Z
 
 futuregrid-get-portal-account
 ----------------------------------------------------------------------
 
+.. For written information see http://mycloudmesh.org/learning
+
 This video shows how to create an account on FutureGrid
 
-Updated: 2013-12-01T22:37:44.000Z
+Updated: 2014-09-23T15:42:36.000Z
 
