@@ -12,7 +12,7 @@ Table
    :widths: 10, 60, 20, 10
 
    ok, `01 Cloudmesh: Introduction <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__, `index.rst <index.html>`__, `uGIPmiJ0cxg <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__
-   ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__
+   ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `class/i590.rst <class/i590.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__
    ok, `03 Cloudmesh: Quick Install <https://www.youtube.com/watch?v=lGiJifD0VgU>`__, `cloudmesh/setup/quickstart.rst <cloudmesh/setup/quickstart.html>`__, `lGiJifD0VgU <https://www.youtube.com/watch?v=lGiJifD0VgU>`__
    ok, `04 Cloudmesh: Web Interface <https://www.youtube.com/watch?v=l_P4G85rysA>`__, `cloudmesh/gui/screenshots.rst <cloudmesh/gui/screenshots.html>`__, `l_P4G85rysA <https://www.youtube.com/watch?v=l_P4G85rysA>`__
    ok, `05 Cloudmesh: Setup on a OpenStack VM <https://www.youtube.com/watch?v=rcecpgm-47g>`__, `cloudmesh/setup/setup_openstack.rst <cloudmesh/setup/setup_openstack.html>`__, `rcecpgm-47g <https://www.youtube.com/watch?v=rcecpgm-47g>`__

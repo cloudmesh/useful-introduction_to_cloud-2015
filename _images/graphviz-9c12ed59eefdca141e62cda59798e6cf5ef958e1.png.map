@@ -1,0 +1,6 @@
+<map id="foo" name="foo">
+<area shape="rect" id="node1" href="http://mycloudmesh.org/learning" target="_blank" title="Part A | b | c" alt="" coords="38,105,167,154"/>
+<area shape="rect" id="node2" href="http://mycloudmesh.org/learning" target="_blank" title="video" alt="" coords="5,203,77,253"/>
+<area shape="rect" id="node3" href="http://mycloudmesh.org/learning" target="_blank" title="Part B | b | c" alt="" coords="101,203,229,253"/>
+<area shape="rect" id="node4" href="http://mycloudmesh.org/learning" target="_blank" title="video" alt="" coords="129,302,201,351"/>
+</map>

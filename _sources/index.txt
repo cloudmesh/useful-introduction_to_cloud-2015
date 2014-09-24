@@ -19,6 +19,9 @@ is available at |video-cm-intro|.
    about
    contact
    resources
+
+   class/index
+
    accounts/index
    cloudmesh/index
 

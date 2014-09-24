@@ -1,0 +1,260 @@
+Class: Info I590
+======================================================================
+
+* Fall 2014
+* Big Data OpenSource Software and Projects
+* http://bigdataopensourceprojects.soic.indiana.edu
+* Community Group:
+  https://plus.google.com/communities/117322030211467950209
+
+Video Overview
+----------------------------------------------------------------------
+
+.. graphviz::
+
+      digraph foo {
+	   node [shape=record];
+
+
+	   a [label="Part A | Account Application ",
+	       URL="http://www.youtube.com/watch?v=CwHFaluDgzc", 
+	       target="_blank"];
+
+	   b [label="Part B | Introduction to Cloudmesh ",
+	       URL="http://www.youtube.com/watch?v=njHHjRMb7V8", 
+	       target="_blank"];
+
+	   c [label="Part C | Over view of the Cloudmesh Learning Web Site",
+	       URL="http://www.youtube.com/watch?v=njHHjRMb7V8", 
+	       target="_blank"];
+
+	   d1 [label="Part D.1 | Install Cloudmesh on a Desktop",
+	       URL="http://www.youtube.com/watch?v=lGiJifD0VgU", 
+	       target="_blank"];
+
+	   d2 [label="Part D.1 | Install Cloudmesh on a VM",
+	       URL="http://www.youtube.com/watch?v=rcecpgm-47g", 
+	       target="_blank"];
+
+	   e  [label="Part E | The Cloudmesh Web Interface",
+	       URL="http://www.youtube.com/watch?v=l_P4G85rysA", 
+	       target="_blank"];
+
+
+
+
+	   class -> a -> b -> c ;
+	   c -> d1;
+	   c -> d2;
+	   d1 -> e;
+      }
+
+
+
+Account Application for FutureSystems
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-fs-account|
+     - 16:33 min
+     - Create a portal account in FutureSystems for class projects.
+     - This lesson explains you how to create a portal account which
+       is the first step in getting access to FutureSystems. You can
+       also view the following videos form FutureGrid as they still apply.
+       For written material, see section
+       :ref:`s-account-create-account`.
+
+If you attend a class the above video is probably sufficient. If you
+like to know more, please see the videos at
+:ref:`s-screencast-accounts`
+
+
+.. |video-fs-account| replace:: |video-image| :youtube:`CwHFaluDgzc`
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Create a portal account on FutureSystems.
+#. Identify an interesting project that you can conduct on
+   FutureSystems Cloud, HPC, or  Grid resources.
+#. Apply for a FutureSystems project or join a project.
+   See section :ref:`s-account-join-project`.
+#. Read up on what a ssh key is.
+   See section :ref:`s-using-ssh`.
+#. Upload a ssh key.
+   Do this via https://portal.futuregrid.org/my/ssh-keys
+#. Register your OpenID in the portal (for example if you use google).
+#. Upload a 220x220 pixel portrait of yours to the portal.
+   Do this via https://portal.futuregrid.org/my/edit
+#. Make sure you have uploaded a small Bio written in third person.
+   Do this via https://portal.futuregrid.org/my/Contact
+
+Cloudmesh Introduction
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-fs-gentle|
+     - 28:42 min
+     - A Gentle Introduction to Cloudmesh
+     - This lesson introduces you to cloudmesh. It provides you with
+       an overview, the motivation for cloudmesh and some
+       functionality requirements that motivated the architecture.
+       The lesson also includes pointers to future development of cloudmesh.
+   * - |video-fs-learning|
+     - 17:54 min
+     - An Overview about the Cloudmesh  Learning Web Pages
+     - This lesson gives a short overview about the Web site on which
+       cloudmesh is hosted. It also talks a bit abou the architecture.
+      
+.. |video-fs-gentle| replace:: |video-image| :youtube:`njHHjRMb7V8`
+.. |video-fs-learning| replace:: |video-image| :youtube:`uGIPmiJ0cxg`
+
+Excersises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. What is bare metal provisioning?
+#. Is there a difference between the terms raining and provisioning?
+#. Identify the different usage of the term provisioning in the
+   community. Give various concrete definitions used in the
+   community. With links.
+#. What is a hypervisor?
+#. What is IaaS, PaaS, BMaaS?
+#. What are prominent IaaS frameworks.
+#. What are Software tools you use to conduct Big Data Analysis?
+#. If you like to become a contributor to Cloudmesh, contact
+   laszewski@gmail.com.
+
+
+Cloudmesh Setup 
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-install|
+     - 17:15 min
+     - Alternative 1: Setup Cloudmesh on a local desktop or laptop.
+     - This lesson explains you how to setup cloudmesh on a local
+       desktop, it will require you to install certain programs on
+       your system. If you do not want to do that, you can use
+       Alternative 2. See Section :ref:`s-cloudmesh-quickstart` for
+       more details.
+   * - |video-cm-openstack-setup|
+     - 32:18 min
+     - Alternative 2: Setup Cloudmesh on a virtual machine.
+     - This lesson explains you how to setup cloudmesh on a virtual
+       machine in the IU cloud. In contrast to Alternative 1 no
+       software needs to be installed on your computer. The video also
+       contains a short introduction to the Web interface. See Section
+       :ref:`s-cloudmesh-vm-quickstart` for more details.
+
+
+.. |video-image| image:: /images/glyphicons_402_youtube.png 
+.. |video-cm-install| replace:: |video-image| :youtube:`lGiJifD0VgU`
+.. |video-cm-openstack-setup| replace:: |video-image| :youtube:`rcecpgm-47g`
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Chose one of the deployment methods below. 
+
+#. Install Cloudmesh on your computer (only if you like to use it on
+   your own machine and are aware that certain programs need to be
+   installed). See Alternative 1.
+#. Install Cloudmesh on a virtual machine. See Alternative 2
+
+Cloudmesh Web Interface
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-gui|
+     - 15:30 min
+     - The CLoudmesh Web Interface
+     - A lesson on how to use the Cloudmesh Web interface to manage
+       resources on a Cloud. See Section :ref:`s_screenshots` for more
+       details.
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Register a cloud (india).
+#. Refresh images, flavors and servers
+#. Start and delete a vm on india
+#. Refresh servers
+
+Note that some features of Cloudmesh have not bee activated or may not
+yet work. Cloudmesh is an evolving project and changes are expected.
+
+
+.. |video-cm-gui| replace:: |video-image| :youtube:`l_P4G85rysA`
+
+
+.. comment:
+
+   .. graphviz::
+
+      digraph foo {
+	   node [shape=record];
+
+
+	   a [label="Part A | b | c",
+	       URL="http://mycloudmesh.org/learning", 
+	       target="_blank"];
+
+	   av [label="video",
+	       URL="http://mycloudmesh.org/learning", 
+	       target="_blank"];
+
+	   b [label="Part B | b | c",
+	       URL="http://mycloudmesh.org/learning", 
+	       target="_blank"];
+
+	   bv [label="video",
+	       URL="http://mycloudmesh.org/learning", 
+	       target="_blank"];
+
+
+
+	   class -> a
+	   a->b;
+
+	   a->av;
+	   b->bv;
+      }
+
+   ..
+
+.. comment:
+
+   |image-test|
+
+   .. |image-test| image:: /../images/graphviz/g.svg
+      :width: 10%
+
+
