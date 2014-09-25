@@ -573,7 +573,7 @@ you simply click on the Google icon.
 .. _s-account-using-resources:
 
 Accessing FutureSystems Resources
-===========================
+======================================================
 
 To access and use resources, you must 
 
@@ -595,7 +595,7 @@ day.
 .. _s-account-manage-class:
 
 Manage a Class on FutureSystems
-===========================
+======================================================
 
 If you teach a class using FutureSystems resources we recommend you do
 the following:
