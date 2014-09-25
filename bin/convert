@@ -80,7 +80,7 @@ f.close()
 
 
 banner ("rm rst files")
-files = find_files(root, "_", ".rst")
+files = find_files(root, "_", ".rst") + find_files(root, "nb", ".rst") 
 execute_all("rm", files)
 
 banner ("convert ipython notebooks")
