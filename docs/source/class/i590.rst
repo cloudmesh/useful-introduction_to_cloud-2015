@@ -47,7 +47,7 @@ Video Syllabus
 	       URL="http://www.youtube.com/watch?v=lGiJifD0VgU", 
 	       target="_blank"];
 
-	   d2 [label="Part D.1 | Install Cloudmesh on a VM",
+	   d2 [label="Part D.2 | Install Cloudmesh on a VM",
 	       URL="http://www.youtube.com/watch?v=rcecpgm-47g", 
 	       target="_blank"];
 
@@ -67,7 +67,7 @@ Video Syllabus
 	   a4 -> b [ltail=accounts];
 	   class -> a -> b -> c ;
 	   c -> d1;
-	   c -> d2;
+	   c -> d2 -> f;
 	   d1 -> e -> f ;
       }
 

@@ -238,10 +238,10 @@ Use block storage
 You can create a block storage with the volume-create command. A
 volume is useful as you can store data in it and associate that
 particular volumen to a VM. Hence, if you delete the VM, your volume
-and the data on t is still there to be reused. To create one 5G volume
+and the data on it is still there to be reused. To create one 1G volume
 you can do ::
 
-       $ nova volume-create 5 --display-name $PORTALNAME-vol-001
+       $ nova volume-create 1 --display-name $PORTALNAME-vol-001
 
 To more conveniently identify the image we also specified a
 displayname. Please chose a uinque name so you can identify the volume
@@ -253,7 +253,7 @@ To list the volumes you can use::
        +--------------+-----------+---------------------+------+-------------+-------------+
        | ID           | Status    | Display Name        | Size | Volume Type | Attached to |
        +--------------+-----------+---------------------+------+-------------+-------------+
-       | 6d0d ... abc | available | $PORTALNAME-vol-001 |  5   | None        |             |
+       | 6d0d ... abc | available | $PORTALNAME-vol-001 |  1   | None        |             |
        +--------------+-----------+---------------------+------+-------------+-------------+
 
 To attach the volume to your instance you can use the volume-attach
@@ -283,7 +283,7 @@ Here's an example, mounting on /mnt::
        none            5.0M     0  5.0M   0% /run/lock
        none           1002M     0 1002M   0% /run/shm
        none            100M     0  100M   0% /run/user
-       /dev/vdb        4.8G   23M  4.2G   1% /mnt
+       /dev/vdb        4.8G   23M  0.8G   1% /mnt
 
 When you want to detach it, unmount /mnt first, go back to indias's
 login node and execute volume-detach::
