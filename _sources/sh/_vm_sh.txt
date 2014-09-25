@@ -2,6 +2,16 @@
 Provider
 ========
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_sh.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 **IMPORTANT:** THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT
 
 .. todo:: get the cloud credentials form a yaml file

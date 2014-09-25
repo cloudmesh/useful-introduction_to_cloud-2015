@@ -2,6 +2,9 @@
 CM Console for VM Management
 ============================
 
+.. note: notebook at
+http://localhost:8888/notebooks/docs/source/cloudmesh/cm/\ *cm*\ vm\_management.ipynb
+
 Initialization (Preparing on IPython)
 -------------------------------------
 
@@ -364,7 +367,7 @@ you have specified a default cloud or have selected a cloud)
 
 .. code:: python
 
-    cm "vm delete --cloud=india Brain_2 --force"
+    cm "vm delete --cloud=india abc_2 --force"
 to delete a VM by group
 
 .. code:: python

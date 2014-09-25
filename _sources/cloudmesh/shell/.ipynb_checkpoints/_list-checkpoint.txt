@@ -7,6 +7,16 @@ instances, projects, IaaS clouds available as part of your federated
 cloudmesh infrastructure. Some examples in this document lets you
 understand what information can be viewed in the cm command line shell.
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_list.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 .. code:: python
 
     import cloudmesh

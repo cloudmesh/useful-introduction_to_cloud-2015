@@ -2,6 +2,16 @@
 IPython
 =======
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_ipython.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 IPython is a python command shell with notebook features that can be
 accessed through a browser. Throughout the material presented here we
 will be using IPython to present some of the demonstrations. This also

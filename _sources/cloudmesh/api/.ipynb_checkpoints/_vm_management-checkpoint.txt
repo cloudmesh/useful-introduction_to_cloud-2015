@@ -2,6 +2,16 @@
 Cloudmesh API for VM Management
 ===============================
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_management.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 Cloudmesh supports the simple management of heterogeneous virtual
 machines from a variety of cloud frameworks, including Openstack, Azure,
 AWS, Eucalyptus and but also AWS compatible clouds. This page shows how

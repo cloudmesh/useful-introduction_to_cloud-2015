@@ -2,6 +2,16 @@
 Batch Queues
 ============
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 Cloudmesh includes a convenient interface to PBS qstat. It is using an
 ssh command to connect to the login node on which to execute qstat. The
 result of the call is available as a dict and you can print it to

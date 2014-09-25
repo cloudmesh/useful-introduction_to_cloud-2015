@@ -2,6 +2,9 @@
 CM Console for VM Management
 ============================
 
+.. note: notebook at
+http://localhost:8888/notebooks/docs/source/cloudmesh/cm/\ *cm*\ vm\_management.ipynb
+
 Initialization (Preparing on IPython)
 -------------------------------------
 

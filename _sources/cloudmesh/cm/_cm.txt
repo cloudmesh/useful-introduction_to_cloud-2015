@@ -2,6 +2,16 @@
 Cloudmesh ``cm`` Command
 ========================
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 iPython Execution of shell commands
 -----------------------------------
 

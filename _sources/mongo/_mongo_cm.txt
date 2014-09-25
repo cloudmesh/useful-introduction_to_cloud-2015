@@ -2,6 +2,16 @@
 Mongo
 =====
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_mongo_cm.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 In cloudmesh we used and support two kind of mongo client - mongoclient
 from pymongo, and mongoengine. The first one create a connection to
 mongo and raw queries from mongodb are performed directly. The second

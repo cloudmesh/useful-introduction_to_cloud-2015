@@ -59,6 +59,18 @@ Video Syllabus
 	       URL="http://www.youtube.com/watch?v=1dn_av-zC00", 
 	       target="_blank"];
 
+	   g  [label="Part G TBD | The Cloudmesh Command Shell interface",
+	       URL="http://www.youtube.com/watch?v=", 
+	       target="_blank"];
+
+	   h  [label="Part H TBD | The Cloudmesh Command Shell API",
+	       URL="http://www.youtube.com/watch?v=", 
+	       target="_blank"];
+
+	   i  [label="Part I TBD | The Cloudmesh Python API",
+	       URL="http://www.youtube.com/watch?v=", 
+	       target="_blank"];
+
            subgraph accounts {
 	       a1 -> a2 -> a3 -> a4 
            }
@@ -68,7 +80,7 @@ Video Syllabus
 	   class -> a -> b -> c ;
 	   c -> d1;
 	   c -> d2 -> f;
-	   d1 -> e -> f ;
+	   d1 -> e -> f -> g -> h -> i;
       }
 
 
@@ -277,6 +289,82 @@ Exercises
 #. Find additinal notebooks and play with them.
 
 .. |video-cm-ipython-learning| replace:: |video-image| :youtube:`1dn_av-zC00`
+
+.. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Cloudmesh The Cloudmesh Command Shell interface
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-shell|
+     - ??:?? min
+     - The Cloudmesh Command Shell interface
+     - TBD
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. TBD
+
+.. |video-cm-shell| replace:: |video-image| :youtube:`1dn_av-zC00`
+
+Cloudmesh The Cloudmesh Command Shell API
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-shell|
+     - ??:?? min
+     - The Cloudmesh Command Shell API
+     - TBD
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. TBD
+
+.. |video-cm-shell-api| replace:: |video-image| :youtube:`1dn_av-zC00`
+
+
+Cloudmesh The Cloudmesh Command Python API
+----------------------------------------------------------------------
+
+.. list-table::
+   :widths: 15 5 15 65
+   :header-rows: 1
+
+   * - Video
+     - Length
+     - Titles of the Lessons
+     - Description of the Lessons
+   * - |video-cm-shell|
+     - ??:?? min
+     - The Cloudmesh Command Python API
+     - TBD
+
+
+Exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. TBD
+
+.. |video-cm-python-api| replace:: |video-image| :youtube:`1dn_av-zC00`
+
 
 
 .. comment:

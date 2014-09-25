@@ -2,6 +2,21 @@
 Load Command
 ============
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_load.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
+.. code:: python
+
+    
+    .. note: notebook at http://localhost:8888/notebooks/docs/source/cloudmesh/api/_load.ipynb
+                
 Cloudmesh comes with a number of easy to use configuration files. All of
 them are yaml files. These configuration files are used to initialize
 cloudmesh in standalone mode. Hence, they are important when cloudmesh

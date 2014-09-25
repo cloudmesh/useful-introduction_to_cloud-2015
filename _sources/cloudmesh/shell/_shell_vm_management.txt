@@ -2,6 +2,16 @@
 Cloudmesh Shell for VM Management
 =================================
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_shell_vm_management.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 Initialization
 --------------
 

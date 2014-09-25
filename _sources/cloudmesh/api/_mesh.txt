@@ -2,6 +2,16 @@
 Cloudmesh Mesh
 ==============
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_mesh.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 .. warning:: this example is not yet fully completed
 
 .. code:: python

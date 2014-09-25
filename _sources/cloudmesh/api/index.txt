@@ -10,4 +10,5 @@ Cloudmesh API
    _uuid
    _load
    _pbs
-   _vm_management
+   _vm_api
+   _mesh

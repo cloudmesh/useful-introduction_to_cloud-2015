@@ -2,6 +2,16 @@
 ``project`` Command in Cloudmesh ``cm``
 =======================================
 
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
 The ``project`` command provides a list of default, active, or completed
 project fo a given user. You can update the project information with
 this command.
