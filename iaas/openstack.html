@@ -949,9 +949,9 @@ Offending key in ~/.ssh/known_hosts:3
 <p>You can create a block storage with the volume-create command. A
 volume is useful as you can store data in it and associate that
 particular volumen to a VM. Hence, if you delete the VM, your volume
-and the data on t is still there to be reused. To create one 5G volume
+and the data on it is still there to be reused. To create one 1G volume
 you can do</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova volume-create 5 --display-name <span class="nv">$PORTALNAME</span>-vol-001
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova volume-create 1 --display-name <span class="nv">$PORTALNAME</span>-vol-001
 </pre></div>
 </div>
 <p>To more conveniently identify the image we also specified a
@@ -962,7 +962,7 @@ more easily.</p>
 +--------------+-----------+---------------------+------+-------------+-------------+
 | ID           | Status    | Display Name        | Size | Volume Type | Attached to |
 +--------------+-----------+---------------------+------+-------------+-------------+
-| 6d0d ... abc | available | <span class="nv">$PORTALNAME</span>-vol-001 |  5   | None        |             |
+| 6d0d ... abc | available | <span class="nv">$PORTALNAME</span>-vol-001 |  1   | None        |             |
 +--------------+-----------+---------------------+------+-------------+-------------+
 </pre></div>
 </div>
@@ -993,7 +993,7 @@ tmpfs           201M  236K  201M   1% /run
 none            5.0M     0  5.0M   0% /run/lock
 none           1002M     0 1002M   0% /run/shm
 none            100M     0  100M   0% /run/user
-/dev/vdb        4.8G   23M  4.2G   1% /mnt
+/dev/vdb        4.8G   23M  0.8G   1% /mnt
 </pre></div>
 </div>
 <p>When you want to detach it, unmount /mnt first, go back to indias&#8217;s
