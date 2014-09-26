@@ -60,7 +60,7 @@ Video Syllabus
 	       target="_blank"];
 
 	   g  [label="Part G | The Cloudmesh Command Shell interface",
-	       URL="http://www.youtube.com/watch?v=", 
+	       URL="http://www.youtube.com/watch?v=8Pvz1HQ6T4", 
 	       target="_blank"];
 
 	   h  [label="Part H | The Cloudmesh Command Shell API",
@@ -303,7 +303,7 @@ Cloudmesh The Cloudmesh Command Shell interface
      - Titles of the Lessons
      - Description of the Lessons
    * - |video-cm-shell|
-     - ??:?? min
+     - 11:58 min
      - The Cloudmesh Command Shell interface
      - This video we will be introducing you to the cloudmesh
        command shell demonstrate to you that it is very easy to start
@@ -317,7 +317,7 @@ Exercises
 
 #. Start and delete a virtual machine
 
-.. |video-cm-shell| replace:: |video-image| :youtube:`1dn_av-zC00`
+.. |video-cm-shell| replace:: |video-image| :youtube:`f7xvKYZPMrs`
 
 Cloudmesh The Cloudmesh Command Shell API
 ----------------------------------------------------------------------
@@ -361,7 +361,7 @@ Cloudmesh The Cloudmesh Command Python API
      - Titles of the Lessons
      - Description
    * - |video-cm-python-api|
-     - ??:?? min
+     - 14:23 min
      - The Cloudmesh Command Python API
      - In this video we will be introducing you to the cloudmesh
        python API and demonstrate to you that it is very easy to start

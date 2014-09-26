@@ -18,6 +18,7 @@ Table
    ok, `04 Cloudmesh: Web Interface <https://www.youtube.com/watch?v=l_P4G85rysA>`__, `cloudmesh/gui/screenshots.rst <cloudmesh/gui/screenshots.html>`__, `l_P4G85rysA <https://www.youtube.com/watch?v=l_P4G85rysA>`__
    ok, `05 Cloudmesh: Setup on a OpenStack VM <https://www.youtube.com/watch?v=rcecpgm-47g>`__, `cloudmesh/setup/setup_openstack.rst <cloudmesh/setup/setup_openstack.html>`__, `rcecpgm-47g <https://www.youtube.com/watch?v=rcecpgm-47g>`__
    ok, `06 Cloudmesh: ipython <https://www.youtube.com/watch?v=1dn_av-zC00>`__, `class/i590.rst <class/i590.html>`__, `1dn_av-zC00 <https://www.youtube.com/watch?v=1dn_av-zC00>`__
+   ok, `07 Cloudmesh: shell and command <https://www.youtube.com/watch?v=f7xvKYZPMrs>`__, `class/i590.rst <class/i590.html>`__, `f7xvKYZPMrs <https://www.youtube.com/watch?v=f7xvKYZPMrs>`__
    ok, `09 Cloudmesh: Python API <https://www.youtube.com/watch?v=xOL_-Sfh9MA>`__, `class/i590.rst <class/i590.html>`__, `xOL_-Sfh9MA <https://www.youtube.com/watch?v=xOL_-Sfh9MA>`__
    ok, `Eucalyptus <https://www.youtube.com/watch?v=D1v_twqWIxg>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `D1v_twqWIxg <https://www.youtube.com/watch?v=D1v_twqWIxg>`__
    ok, `HPC OpenMPI Batch jobs <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__, `hpc/screencasts.rst <hpc/screencasts.html>`__, `6oUsMyDt7gU <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__
@@ -125,6 +126,13 @@ Updated: 2014-09-24T02:33:56.000Z
 This video is about 06 Cloudmesh: ipython
 
 Updated: 2014-09-24T15:05:42.000Z
+
+07 Cloudmesh: shell and command
+----------------------------------------------------------------------
+
+This video is about 07 Cloudmesh: shell and command
+
+Updated: 2014-09-26T09:37:38.000Z
 
 09 Cloudmesh: Python API
 ----------------------------------------------------------------------
