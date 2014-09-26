@@ -36,28 +36,14 @@ Preparation
 .. code:: python
 
     cm debug off
-
-.. parsed-literal::
-
-    Debug mode is off.
-
-
 .. code:: python
 
     cm loglevel error
-
-.. parsed-literal::
-
-    ERROR mode is set.
-
-
 Lets get the username
 
 .. code:: python
 
-    import cloudmesh
-    mesh = cloudmesh.mesh("mongo")
-    username = cloudmesh.load().username()
+    cm user id
 Help
 ----
 
@@ -66,36 +52,6 @@ Let us review the available commands
 .. code:: python
 
     cm help
-
-.. parsed-literal::
-
-    
-    Documented commands (type help <topic>):
-    ========================================
-    EOF       dot2      help       list      plugins   script          var    
-    banner    edit      image      loglevel  project   security_group  verbose
-    clear     exec      info       man       py        status          version
-    cloud     exp       init       metric    q         storm           vm     
-    color     flavor    inventory  notebook  quit      timer           web    
-    debug     graphviz  key        open      rain      use             yaml   
-    defaults  group     label      pause     register  user          
-    
-    Ipython Commands
-    ================
-    notebook
-    
-    Gui Commands
-    ============
-    web
-    
-    Cloud Commands
-    ==============
-    cloud     group  inventory  rain            status  vm     loglevel
-    defaults  image  list       register        storm   yaml   keys    
-    flavor    init   metric     security_group  user    debug  project 
-    
-
-
 Activating Clouds
 -----------------
 
@@ -105,42 +61,16 @@ which we describe in the registration section.
 
 Let us inspect which clouds are available by invoking the list command.
 
+.. code:: python
+
+    cm cloud list
 As you see we have a number of clouds, but none of them is already
 active. Thus we need to first activate a cloud. We assume that you have
 an account on FutureGrid. Let us activate the cloud india
 
 .. code:: python
 
-    cm cloud list
-
-.. parsed-literal::
-
-    +-----------+--------+
-    | cloud     | active |
-    +-----------+--------+
-    | aws       |        |
-    | azure     |        |
-    | devstack  |        |
-    | dreamhost |        |
-    | hp        |        |
-    | hp_east   |        |
-    | india     | True   |
-    +-----------+--------+
-
-
-.. code:: python
-
     cm cloud on india
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.339617013931
-    Store time: 0.00380802154541
-    [32mcloud 'india' activated.[0m
-
-
 We also have a conveniet interactive command to select a cloud to work
 with, that however does not work with ipython
 
@@ -156,22 +86,15 @@ To check if the cloud was activated, simply use the list command again.
 .. code:: python
 
     cm cloud list
+Start a VM
+----------
 
-.. parsed-literal::
+Now let us see how to start a VM on a cloud, here is how to start a VM
+on cloud india.
 
-    +-----------+--------+
-    | cloud     | active |
-    +-----------+--------+
-    | aws       |        |
-    | azure     |        |
-    | devstack  |        |
-    | dreamhost |        |
-    | hp        |        |
-    | hp_east   |        |
-    | india     | True   |
-    +-----------+--------+
+.. code:: python
 
-
+    cm "vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small"
 Set a default flavor or image
 -----------------------------
 
@@ -182,37 +105,9 @@ set default values for an image or a flavor.
 .. code:: python
 
     cm "cloud set flavor india --flavor=m1.small"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.327661037445
-    Store time: 0.00368309020996
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.190788030624
-    Store time: 0.00237011909485
-    [32m'm1.small' is selected[0m
-
-
 .. code:: python
 
     cm "cloud set image india --image=futuregrid/ubuntu-14.04"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.329149007797
-    Store time: 0.0026490688324
-    * india
-    Refreshing gvonlasz images india ->
-    Refresh time: 0.436063051224
-    Store time: 0.00921010971069
-    [32m'futuregrid/ubuntu-14.04' is selected[0m
-
-
 Get Flavors or Images
 ---------------------
 
@@ -220,126 +115,19 @@ Available flavors can be listed with the following command.
 
 .. code:: python
 
-    cm list flavor india
-
-.. parsed-literal::
-
-    +------+-----------+---------+-------+--------+----------------------+
-    |   id | name      |   vcpus |   ram |   disk | refresh time         |
-    +======+===========+=========+=======+========+======================+
-    |    1 | m1.tiny   |       1 |   512 |      0 | 2014-09-25T21-59-28Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    3 | m1.medium |       2 |  4096 |     40 | 2014-09-25T21-59-28Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    2 | m1.small  |       1 |  2048 |     20 | 2014-09-25T21-59-28Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    5 | m1.xlarge |       8 | 16384 |    160 | 2014-09-25T21-59-28Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    4 | m1.large  |       4 |  8192 |     80 | 2014-09-25T21-59-28Z |
-    +------+-----------+---------+-------+--------+----------------------+
-
-
+    cm "list flavor india"
 refresh option updates the data from the IaaS cloud. The cached data in
 the mongo database will be updated.
 
 .. code:: python
 
     cm "list flavor india --refresh"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.38128900528
-    Store time: 0.00343894958496
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.175014019012
-    Store time: 0.00224304199219
-    +------+-----------+---------+-------+--------+----------------------+
-    |   id | name      |   vcpus |   ram |   disk | refresh time         |
-    +======+===========+=========+=======+========+======================+
-    |    1 | m1.tiny   |       1 |   512 |      0 | 2014-09-25T21-59-36Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    3 | m1.medium |       2 |  4096 |     40 | 2014-09-25T21-59-36Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    2 | m1.small  |       1 |  2048 |     20 | 2014-09-25T21-59-36Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    5 | m1.xlarge |       8 | 16384 |    160 | 2014-09-25T21-59-36Z |
-    +------+-----------+---------+-------+--------+----------------------+
-    |    4 | m1.large  |       4 |  8192 |     80 | 2014-09-25T21-59-36Z |
-    +------+-----------+---------+-------+--------+----------------------+
-
-
 The ``list image`` command provides an available vm images on a selected
 cloud.
-
-.. todo:: Hyungro, update this example so it fits better in 80 column,
-maybe remove the id
 
 .. code:: python
 
     cm "list image india --column=name,updated"
-
-.. parsed-literal::
-
-    +----------------------------------------------------+----------------------+
-    | name                                               | updated              |
-    +====================================================+======================+
-    | salsahpc/cloud-mooc-m1-large-4GB                   | 2013-12-27T01:09:19Z |
-    +----------------------------------------------------+----------------------+
-    | CentOS6                                            | 2014-04-29T05:06:40Z |
-    +----------------------------------------------------+----------------------+
-    | SL64-blank-sparse10gb-C vmdk                       | 2014-02-05T16:57:37Z |
-    +----------------------------------------------------+----------------------+
-    | cglmoocs/ipython                                   | 2014-01-06T16:18:54Z |
-    +----------------------------------------------------+----------------------+
-    | futuregrid/centos-6                                | 2014-05-27T15:04:30Z |
-    +----------------------------------------------------+----------------------+
-    | DaLiAna-vm2014e-geant4.10.vmdk Jan best            | 2014-03-05T04:22:40Z |
-    +----------------------------------------------------+----------------------+
-    | ubuntu-13.10                                       | 2014-01-29T17:24:08Z |
-    +----------------------------------------------------+----------------------+
-    | futuregrid/ubuntu-14.04                            | 2014-09-12T20:16:05Z |
-    +----------------------------------------------------+----------------------+
-    | fg101/richieriee/my-ubuntu-01                      | 2014-07-24T01:10:37Z |
-    +----------------------------------------------------+----------------------+
-    | sl64-gluex-vm2014e-40gb.vmdk Justin                | 2014-03-13T17:21:09Z |
-    +----------------------------------------------------+----------------------+
-    | futuregrid/fedora-19                               | 2014-09-12T20:16:22Z |
-    +----------------------------------------------------+----------------------+
-    | fg10/jcharcal/centos6.5_x86_64                     | 2014-03-12T13:50:20Z |
-    +----------------------------------------------------+----------------------+
-    | balewski/kernel-2.6.32-431.5.1-sl65                | 2014-03-10T01:56:13Z |
-    +----------------------------------------------------+----------------------+
-    | SL64-blank-sparse40GB vmdk                         | 2014-02-05T16:57:23Z |
-    +----------------------------------------------------+----------------------+
-    | Ubuntu-12.04-blank2.vmdk                           | 2014-02-05T16:55:28Z |
-    +----------------------------------------------------+----------------------+
-    | balewski/ramdisk-2.6.32-431.5.1-sl65               | 2014-03-10T01:56:19Z |
-    +----------------------------------------------------+----------------------+
-    | sl6_x64-qemu  french ?bad                          | 2014-02-01T21:59:26Z |
-    +----------------------------------------------------+----------------------+
-    | balewski/sl6.5-blank-80gb-b works                  | 2014-03-10T15:48:27Z |
-    +----------------------------------------------------+----------------------+
-    | grp17Cent                                          | 2014-04-10T23:19:30Z |
-    +----------------------------------------------------+----------------------+
-    | futuregrid/ubuntu-12.04                            | 2014-09-12T20:16:01Z |
-    +----------------------------------------------------+----------------------+
-    | ndssl-vt/ubuntu-12.04-small                        | 2013-12-05T22:02:57Z |
-    +----------------------------------------------------+----------------------+
-    | futuregrid/fedora-20                               | 2014-09-12T20:15:43Z |
-    +----------------------------------------------------+----------------------+
-    | fg7/rynge/centos6-v1                               | 2014-05-01T21:42:25Z |
-    +----------------------------------------------------+----------------------+
-    | ubuntu12-comet                                     | 2014-09-23T20:30:16Z |
-    +----------------------------------------------------+----------------------+
-    | balewski/daliana-vm2014e2-sl6.5-geant4.10-root5.34 | 2014-03-10T02:05:55Z |
-    +----------------------------------------------------+----------------------+
-    | DaLiAna-vm2014d-SL64-A.vmdk                        | 2014-02-03T16:04:12Z |
-    +----------------------------------------------------+----------------------+
-
-
 Quick Start a VM
 ----------------
 
@@ -349,20 +137,6 @@ cloudmesh.
 .. code:: python
 
     cm "vm start --cloud=india"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.338720083237
-    Store time: 0.00374412536621
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_6 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: STARTED
-
-
 Start a VM
 ----------
 
@@ -375,34 +149,13 @@ on cloud india.
 .. code:: python
 
     cm "vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.35135102272
-    Store time: 0.00252389907837
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.174534082413
-    Store time: 0.00227618217468
-    Refreshing gvonlasz images india ->
-    Refresh time: 0.431704998016
-    Store time: 0.00950694084167
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_7 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: PENDING
-
-
 Delete a VM
 -----------
 
-If you know the id of the virtual machine that you want to destroy,
-*delete* command in cloudmesh simply terminate the instance.
+If you know the id or name of the virtual machine that you want to
+destroy, *delete* command in cloudmesh simply terminate the instance.
 
-``cm "vm delete [NAME] --cloud=india"``
+``cm "vm delete [NAME|--id=<id>] --cloud=india"``
 
 More options to launch a VM instance
 ------------------------------------
@@ -427,58 +180,6 @@ Available options are:
 .. code:: python
 
     cm "vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.38778591156
-    Store time: 0.00318717956543
-    * india
-    Refreshing gvonlasz flavors india ->
-    Refresh time: 0.166579008102
-    Store time: 0.00313711166382
-    Refreshing gvonlasz images india ->
-    Refresh time: 0.433362960815
-    Store time: 0.00941014289856
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_8 on cloud->india using image->futuregrid/ubuntu-12.04, flavor->m1.medium, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: STARTED
-
-
-Vitual Machine Name
--------------------
-
-In Cloudmesh, the default name of VM consists of your username and a
-number, for example, alex\_1. ``label`` command allows you to manage or
-modify the VM name as you wish.
-
-.. code:: python
-
-    cm label
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.36207485199
-    Store time: 0.00311088562012
-    next vm name:
-    gvonlasz_9
-
-
-``cm "label --prefix=gregor --id=40"``
-
-``cm label``
-
-If the user doesn’t provide a name while starting VMs, cloudmesh will
-generate labels for them. The default form to name VMs is prefix\_index,
-where prefix is a string and index is an non-negative integer. If a
-index is used, the index value will be automatically added by one
-waiting to be used for next VM. To check your current prefix and index
-
 Set default cloud
 -----------------
 
@@ -487,278 +188,20 @@ cloud or select a cloud to work with so that you don't have to type in a
 cloud everytime you need to specify a cloud, to set india as default
 cloud
 
-``cm "cloud set default india"``
+.. code:: python
 
+    cm "cloud set default india"
 to select a cloud
 
 .. code:: python
 
     cm "cloud select india"
-
-.. parsed-literal::
-
-    cloud 'india' is selected
-
-
 You can see a selected cloud as a temporarily default cloud to work
 with.
 
 For more details of using command cloud to set up a cloud
 
-.. code:: python
-
-    cm "cloud -h"
-
-.. parsed-literal::
-
-    ::
-    
-        Usage:
-            cloud [list] [--column=COLUMN] [--format=FORMAT]
-            cloud info [CLOUD|--all] [--format=FORMAT]
-            cloud alias NAME [CLOUD]
-            cloud select [CLOUD]
-            cloud on [CLOUD]
-            cloud off [CLOUD]
-            cloud add <cloudYAMLfile> [--force]
-            cloud remove [CLOUD|--all]
-            cloud default [CLOUD|--all]
-            cloud set flavor [CLOUD] [--flavor=flavorName|--flavorid=flavorID]
-            cloud set image [CLOUD] [--image=imageName|--imageid=imageID]
-            cloud set default [CLOUD]
-    
-        Arguments:
-    
-          CLOUD                  the name of a cloud
-          <cloudYAMLfile>        a yaml file (with full file path) containing
-                                 cloud information
-          NAME                   name for a cloud
-    
-        Options:
-    
-           --column=COLUMN       specify what information to display in
-                                 the columns of the list command. For
-                                 example, --column=active,label prints the
-                                 columns active and label. Available
-                                 columns are active, label, host,
-                                 type/version, type, heading, user,
-                                 credentials, defaults (all to diplay all,
-                                 semiall to display all except credentials
-                                 and defaults)
-    
-           --format=FORMAT       output format: table, json, csv
-    
-           --all                 display all available columns
-    
-           --force               if same cloud exists in database, it will be
-                                 overwritten
-    
-           --flavor=flavorName   provide flavor name
-    
-           --flavorid=flavorID   provide flavor id
-    
-           --image=imageName     provide image name
-    
-           --imageid=imageID     provide image id
-    
-        Description:
-    
-            The cloud command allows easy management of clouds in the
-            command shell. The following subcommands exist:
-    
-            cloud [list] [--column=COLUMN] [--json|--table]
-                lists the stored clouds, optionally, specify columns for more
-                cloud information. For example, --column=active,label
-    
-            cloud info [CLOUD|--all] [--json|--table]
-                provides the available information about the cloud in dict
-                format
-                options: specify CLOUD to display it, --all to display all,
-                         otherwise selected cloud will be used
-    
-            cloud alias NAME [CLOUD]
-                sets a new name for a cloud
-                options: CLOUD is the original label of the cloud, if
-                         it is not specified the default cloud is used.
-    
-    
-            cloud select [CLOUD]
-                selects a cloud to work with from a list of clouds.If CLOUD is
-                is specified the default cloud will be set to that value.
-    
-            cloud on [CLOUD]
-            cloud off [CLOUD]
-                activates or deactivates a cloud. if CLOUD is not
-                given, the default cloud will be used.
-    
-    
-            cloud add <cloudYAMLfile> [--force]
-                adds the cloud information to database that is
-                specified in the <cloudYAMLfile>. This file is a yaml. You
-                need to specify the full path. Inside the yaml, a
-                cloud is specified as follows:
-    
-                cloudmesh:
-                   clouds:
-                     cloud1: ...
-                     cloud2: ...
-    
-                For examples on how to specify the clouds, please see
-                cloudmesh.yaml
-    
-                options: --force. By default, existing cloud in
-                         database cannot be overwirtten, the --force
-                         allows overwriting the database values.
-    
-            cloud remove [CLOUD|--all]
-                remove a cloud from the database, The default cloud is
-                used if CLOUD is not specified.
-                This command should be used with caution. It is also
-                possible to remove all clouds with the option --all
-    
-            cloud default [CLOUD|--all]
-    
-                TODO
-    
-            cloud set flavor [CLOUD] [--flavor=flavorName|--flavorid=flavorID]
-    
-                sets the default flavor for a cloud. If the cloud is
-                not specified, it used the default cloud.
-    
-            cloud set image [CLOUD] [--image=imageName|--imageid=imageID]
-    
-                sets the default flavor for a cloud. If the cloud is
-                not specified, it used the default cloud.
-    
-            cloud set default [CLOUD]
-                sets the default cloud for a cloud. If the cloud is
-                not specified, it asks for the cloud interactively
-    
-    ::
-    
-        Usage:
-            cloud [list] [--column=COLUMN] [--format=FORMAT]
-            cloud info [CLOUD|--all] [--format=FORMAT]
-            cloud alias NAME [CLOUD]
-            cloud select [CLOUD]
-            cloud on [CLOUD]
-            cloud off [CLOUD]
-            cloud add <cloudYAMLfile> [--force]
-            cloud remove [CLOUD|--all]
-            cloud default [CLOUD|--all]
-            cloud set flavor [CLOUD] [--flavor=flavorName|--flavorid=flavorID]
-            cloud set image [CLOUD] [--image=imageName|--imageid=imageID]
-            cloud set default [CLOUD]
-    
-        Arguments:
-    
-          CLOUD                  the name of a cloud
-          <cloudYAMLfile>        a yaml file (with full file path) containing
-                                 cloud information
-          NAME                   name for a cloud
-    
-        Options:
-    
-           --column=COLUMN       specify what information to display in
-                                 the columns of the list command. For
-                                 example, --column=active,label prints the
-                                 columns active and label. Available
-                                 columns are active, label, host,
-                                 type/version, type, heading, user,
-                                 credentials, defaults (all to diplay all,
-                                 semiall to display all except credentials
-                                 and defaults)
-    
-           --format=FORMAT       output format: table, json, csv
-    
-           --all                 display all available columns
-    
-           --force               if same cloud exists in database, it will be
-                                 overwritten
-    
-           --flavor=flavorName   provide flavor name
-    
-           --flavorid=flavorID   provide flavor id
-    
-           --image=imageName     provide image name
-    
-           --imageid=imageID     provide image id
-    
-        Description:
-    
-            The cloud command allows easy management of clouds in the
-            command shell. The following subcommands exist:
-    
-            cloud [list] [--column=COLUMN] [--json|--table]
-                lists the stored clouds, optionally, specify columns for more
-                cloud information. For example, --column=active,label
-    
-            cloud info [CLOUD|--all] [--json|--table]
-                provides the available information about the cloud in dict
-                format
-                options: specify CLOUD to display it, --all to display all,
-                         otherwise selected cloud will be used
-    
-            cloud alias NAME [CLOUD]
-                sets a new name for a cloud
-                options: CLOUD is the original label of the cloud, if
-                         it is not specified the default cloud is used.
-    
-    
-            cloud select [CLOUD]
-                selects a cloud to work with from a list of clouds.If CLOUD is
-                is specified the default cloud will be set to that value.
-    
-            cloud on [CLOUD]
-            cloud off [CLOUD]
-                activates or deactivates a cloud. if CLOUD is not
-                given, the default cloud will be used.
-    
-    
-            cloud add <cloudYAMLfile> [--force]
-                adds the cloud information to database that is
-                specified in the <cloudYAMLfile>. This file is a yaml. You
-                need to specify the full path. Inside the yaml, a
-                cloud is specified as follows:
-    
-                cloudmesh:
-                   clouds:
-                     cloud1: ...
-                     cloud2: ...
-    
-                For examples on how to specify the clouds, please see
-                cloudmesh.yaml
-    
-                options: --force. By default, existing cloud in
-                         database cannot be overwirtten, the --force
-                         allows overwriting the database values.
-    
-            cloud remove [CLOUD|--all]
-                remove a cloud from the database, The default cloud is
-                used if CLOUD is not specified.
-                This command should be used with caution. It is also
-                possible to remove all clouds with the option --all
-    
-            cloud default [CLOUD|--all]
-    
-                TODO
-    
-            cloud set flavor [CLOUD] [--flavor=flavorName|--flavorid=flavorID]
-    
-                sets the default flavor for a cloud. If the cloud is
-                not specified, it used the default cloud.
-    
-            cloud set image [CLOUD] [--image=imageName|--imageid=imageID]
-    
-                sets the default flavor for a cloud. If the cloud is
-                not specified, it used the default cloud.
-    
-            cloud set default [CLOUD]
-                sets the default cloud for a cloud. If the cloud is
-                not specified, it asks for the cloud interactively
-    
-    
-
+cm "cloud -h"
 
 Refreshing VM status
 --------------------
@@ -769,84 +212,16 @@ status. To refresh cloud india's VMs information
 .. code:: python
 
     cm "list vm india --refresh"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.355957984924
-    Store time: 0.00385594367981
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.28297495842
-    Store time: 0.00341296195984
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | name         | status   | addresses                  | id                                   | flavor    | image                   | user_id   | metadata                   | key_name           | created              |
-    +==============+==========+============================+======================================+===========+=========================+===========+============================+====================+======================+
-    | gvonlasz_6   | ACTIVE   | 10.39.1.77                 | 64be48c2-ebfb-477f-abbc-0c9e2ca56658 | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:59:44Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_7   | ACTIVE   | 10.39.1.78                 | c8c03939-b525-42b8-98a3-efbc4d4b484a | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:59:49Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_8   | BUILD    |                            | 450e1600-5c16-4a67-9efe-212770f879ad | m1.medium | futuregrid/ubuntu-12.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:59:55Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_4   | ACTIVE   | 10.39.1.75                 | 58982c2a-9b5b-4bb3-b8c8-c862d29da8b8 | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:57:10Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_3   | ACTIVE   | 10.39.1.74                 | f7d98e4a-4c4a-4bd0-9544-9c92f151d95b | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:57:01Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_1   | ACTIVE   | 10.39.1.61                 | df2ac8ea-8d9c-4623-85c0-6c138b5fb9bc | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T00:10:43Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_5   | ACTIVE   | 10.39.1.76                 | bfe1f753-7abf-4c0c-8dd8-96c92651b105 | m1.medium | futuregrid/ubuntu-12.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:57:20Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz_2   | ACTIVE   | 10.39.1.69                 | adbc0f79-4098-446c-be73-c43bb4ff7c1c | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {u'cm_owner': u'gvonlasz'} | gvonlasz_flat-key  | 2014-09-26T01:37:32Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-    | gvonlasz-001 | ACTIVE   | 10.39.1.22, 149.165.159.24 | a7b1d029-df06-4003-a251-e45550c7dde4 | m1.small  | futuregrid/ubuntu-14.04 | gvonlasz  | {}                         | gvonlasz-india-key | 2014-09-23T18:49:50Z |
-    +--------------+----------+----------------------------+--------------------------------------+-----------+-------------------------+-----------+----------------------------+--------------------+----------------------+
-
-
 Starting multiple VMs
 ---------------------
 
 Sometimes we want to start more than one VM at the same time, we can
 choose the option --count=int where int is the number of VMs you want to
-start. For example, to start 5 VMs on india
+start. For example, to start 3 VMs on india
 
 .. code:: python
 
-    cm "vm start --cloud=india --count=5"
-
-.. parsed-literal::
-
-    * india
-    Refreshing gvonlasz servers india ->
-    Refresh time: 0.353671073914
-    Store time: 0.00467491149902
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_9 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: PENDING
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_10 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: PENDING
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_11 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: PENDING
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_12 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: PENDING
-    
-    # ######################################################################
-    # Starting vm->gvonlasz_13 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
-    # ######################################################################
-    job status: PENDING
-
-
+    cm "vm start --cloud=india --count=3"
 Deleting VMs
 ------------
 
@@ -855,9 +230,6 @@ more convenient way to do it. Cloudmesh shell provides several methods
 to find the VMs and delete them, you may think there are two phases of
 VM deletion, searching and deleting. Here are some examples:
 
-.. code:: python
-
-    %echo "$username" 
 to delete all VMs of cloud india
 
 ``cm "vm delete --cloud=india --force"``
@@ -868,7 +240,7 @@ you a list of VMs to delete and ask for your confirmation.
 to delete a VM by giving its name (you may always provide a cloud unless
 you have specified a default cloud or have selected a cloud)
 
-``cm "vm delete --cloud=india abc_2 --force"``
+``cm "vm delete --cloud=india sample_vm --force"``
 
 to delete a VM by group
 
@@ -879,7 +251,7 @@ For example, to delete VMs of cloud india that they are also in the
 group 'testgroup' and they have the prefix name 'abc' and their indices'
 range is no greater than 100
 
-``cm "vm delete --cloud=india --goup=testgroup --prefix=abc --range=,100 --force"``
+``cm "vm delete --cloud=india --goup=testgroup --prefix=sample --range=,100 --force"``
 
 Login to a VM
 -------------
@@ -903,3 +275,21 @@ may add the commands at the end following '--'(e.g. ls -a)
 For more details for command vm
 
 ``cm "vm -h"``
+
+Vitual Machine Name
+-------------------
+
+In Cloudmesh, the default name of VM consists of your username and a
+number, for example, alex\_1. ``label`` command allows you to manage or
+modify the VM name as you wish.
+
+.. code:: python
+
+    cm label
+``cm "label --prefix=gregor --id=40"``
+
+If the user doesn’t provide a name while starting VMs, cloudmesh will
+generate labels for them. The default form to name VMs is prefix\_index,
+where prefix is a string and index is an non-negative integer. If a
+index is used, the index value will be automatically added by one
+waiting to be used for next VM. To check your current prefix and index
