@@ -59,18 +59,19 @@ Video Syllabus
 	       URL="http://www.youtube.com/watch?v=1dn_av-zC00", 
 	       target="_blank"];
 
-	   g  [label="Part G TBD | The Cloudmesh Command Shell interface",
-	       URL="http://www.youtube.com/watch?v=", 
+	   g  [label="Part G | The Cloudmesh Command Shell interface",
+	       URL="http://www.youtube.com/watch?v=hdq-t-ggkXA", 
 	       target="_blank"];
 
-	   h  [label="Part H TBD | The Cloudmesh Command Shell API",
-	       URL="http://www.youtube.com/watch?v=", 
+	   h  [label="Part H | The Cloudmesh Command Shell API",
+	       URL="http://www.youtube.com/watch?v=mF33LYqC30c", 
 	       target="_blank"];
 
-	   i  [label="Part I TBD | The Cloudmesh Python API",
-	       URL="http://www.youtube.com/watch?v=", 
+	   i  [label="Part I | The Cloudmesh Python API",
+	       URL="http://www.youtube.com/watch?v=xOL_-Sfh9MA", 
 	       target="_blank"];
 
+           class [label="Class"];
            subgraph accounts {
 	       a1 -> a2 -> a3 -> a4 
            }
@@ -290,7 +291,6 @@ Exercises
 
 .. |video-cm-ipython-learning| replace:: |video-image| :youtube:`1dn_av-zC00`
 
-.. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Cloudmesh The Cloudmesh Command Shell interface
 ----------------------------------------------------------------------
@@ -304,17 +304,21 @@ Cloudmesh The Cloudmesh Command Shell interface
      - Titles of the Lessons
      - Description of the Lessons
    * - |video-cm-shell|
-     - ??:?? min
+     - 11:58 min
      - The Cloudmesh Command Shell interface
-     - TBD
+     - This video we will be introducing you to the cloudmesh
+       command shell demonstrate to you that it is very easy to start
+       virtual machines and access them via a command terminal. The
+       shell provides scripting or the execution of singe files. it is
+       fully integrated in a database framework leveraging mongo.
 
 
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. TBD
+#. Start and delete a virtual machine
 
-.. |video-cm-shell| replace:: |video-image| :youtube:`1dn_av-zC00`
+.. |video-cm-shell| replace:: |video-image| :youtube:`hdq-t-ggkXA`
 
 Cloudmesh The Cloudmesh Command Shell API
 ----------------------------------------------------------------------
@@ -327,18 +331,23 @@ Cloudmesh The Cloudmesh Command Shell API
      - Length
      - Titles of the Lessons
      - Description of the Lessons
-   * - |video-cm-shell|
-     - ??:?? min
+   * - |video-cm-shell-api|
+     - 9:44 min
      - The Cloudmesh Command Shell API
-     - TBD
+     - In this video we will be introducing you to the cloudmesh
+       command python API and demonstrate to you that it is very easy to start
+       virtual machines and access them via ssh. However python
+       programmer will want to use the Python API. Neverteless this
+       isnterface is nice for quick prototyping. 
+
 
 
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. TBD
+#. Start and delete a virtual machine
 
-.. |video-cm-shell-api| replace:: |video-image| :youtube:`1dn_av-zC00`
+.. |video-cm-shell-api| replace:: |video-image| :youtube:`mF33LYqC30c`
 
 
 Cloudmesh The Cloudmesh Command Python API
@@ -351,19 +360,25 @@ Cloudmesh The Cloudmesh Command Python API
    * - Video
      - Length
      - Titles of the Lessons
-     - Description of the Lessons
-   * - |video-cm-shell|
-     - ??:?? min
+     - Description
+   * - |video-cm-python-api|
+     - 14:23 min
      - The Cloudmesh Command Python API
-     - TBD
+     - In this video we will be introducing you to the cloudmesh
+       python API and demonstrate to you that it is very easy to start
+       virtual machines and access them via ssh. We will be using the
+       keys you registered earlier and introduce you to the
+       defaults. This makes it possible to start a VM with only two
+       parameters. We willl also teach you how to create public ips
+       and assign them to the vm.
 
 
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. TBD
+#. Start and delete a virtual machine
 
-.. |video-cm-python-api| replace:: |video-image| :youtube:`1dn_av-zC00`
+..  |video-cm-python-api| replace:: |video-image| :youtube:`xOL_-Sfh9MA`
 
 
 
