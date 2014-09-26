@@ -6,7 +6,7 @@ Cloudmesh Shell for VM Management
 
    <button type="button" class="btn btn-default navbar-btn">
 
-`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm-shell.ipynb>`__
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/shell/_vm-shell.ipynb>`__
 
 .. raw:: html
 
@@ -42,6 +42,23 @@ Let us inspect what is already available by invoking the list command
 .. code:: python
 
     print cloudmesh.shell("cloud list")
+
+.. parsed-literal::
+
+    +-----------+--------+
+    | cloud     | active |
+    +-----------+--------+
+    | aws       |        |
+    | azure     |        |
+    | devstack  |        |
+    | dreamhost |        |
+    | hp        |        |
+    | hp_east   |        |
+    | india     |        |
+    +-----------+--------+
+    
+
+
 As you see we have a number of clouds, but none of them is already
 active. Thus we need to first activate a cloud. We assume that you have
 an account on FutureGrid. Let us activate the cloud india
@@ -64,6 +81,23 @@ To check if the cloud was activated, simply use the list command again
 .. code:: python
 
     print cloudmesh.shell("cloud list")
+
+.. parsed-literal::
+
+    +-----------+--------+
+    | cloud     | active |
+    +-----------+--------+
+    | aws       |        |
+    | azure     |        |
+    | devstack  |        |
+    | dreamhost |        |
+    | hp        |        |
+    | hp_east   |        |
+    | india     | True   |
+    +-----------+--------+
+    
+
+
 Start a VM
 ----------
 
@@ -247,6 +281,28 @@ range is no greater than 100
 .. code:: python
 
     print cloudmesh.shell("vm delete --cloud=india --group=testgroup --prefix=abc --range=,100 --force")
+Login to a VM
+-------------
+
+To login to a VM, you need to assign a public id to the VM you started,
+for example, assign a public ip to a VM named test\_1 on cloud india:
+
+.. code:: python
+
+    cm "vm ip test_1 --cloud=india"
+Then you can login to this VM by(note here you need to provide the login
+name for your VM, it varys depend on the image you use while you start
+the VM, e.g. for ubuntu, you may type --ln=ubuntu):
+
+.. code:: python
+
+    cm "vm login test_1 --ln=ubuntu --cloud=india"
+If you just want to run some commands and get the return on the VM, you
+may add the commands at the end following '--'(e.g. ls -a)
+
+.. code:: python
+
+    cm "vm login test_1 --ln=ubuntu --cloud=india -- ls -a"
 For more details for command vm
 
 .. code:: python

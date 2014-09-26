@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Notes &mdash; my Cloudmesh Learning documentation</title>
+    <title>Provider &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -555,10 +555,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Notes</a><ul>
-<li><a class="reference internal" href="#specifying-a-custom-label">Specifying a custom label</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Provider</a></li>
 </ul>
 </ul>
 </li>
@@ -574,7 +571,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/proposed/_cm_shell_notes.txt"
+  <a href="../_sources/proposed/_vm_sh.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -638,10 +635,7 @@
   </ul>
   
 <h4 class="nav-header"> &nbsp; Page Contents</h4><ul>
-<li><a class="reference internal" href="#">Notes</a><ul>
-<li><a class="reference internal" href="#specifying-a-custom-label">Specifying a custom label</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Provider</a></li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -652,32 +646,62 @@
   <input type="hidden" name="area" value="default" />
 </form>
 <div id="sourcelink">
-  <a href="../_sources/proposed/_cm_shell_notes.txt"
+  <a href="../_sources/proposed/_vm_sh.txt"
      rel="nofollow">Source</a>
 </div>
         </div>
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="notes">
-<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="provider">
+<h1>Provider<a class="headerlink" href="#provider" title="Permalink to this headline">¶</a></h1>
+<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_sh.ipynb">Notebook</a></p>
+</button><p><strong>IMPORTANT:</strong> THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">get the cloud credentials form a yaml file</p>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">use the information to start a VM</p>
+</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">do this section later as we need flavors and images</p>
+</div>
+<p>Sometimes it may be useful to have access to the nova shell command from
+within python. However, at times you may not actually want to use it but
+rather print just jte arguments while simulating a call to the shell
+command. To support these two functions, we are offering a simple
+provider that returns either the real sh function, or a function that
+just prints its arguments.</p>
+<p>We start our program first with importing cloudmesh and the provider</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">userename</span> <span class="o">=</span> <span class="n">cloudmesch</span><span class="o">.</span><span class="n">user</span><span class="p">(</span><span class="s">&quot;mongo&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh.sh.openstack</span> <span class="kn">import</span> <span class="n">nova_provider</span>
 </pre></div>
 </div>
-<div class="section" id="specifying-a-custom-label">
-<h2>Specifying a custom label<a class="headerlink" href="#specifying-a-custom-label" title="Permalink to this headline">¶</a></h2>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sh</span> <span class="kn">import</span> <span class="n">fgrep</span>
+<p>Next we decide to load one of the providors. The values are &#8220;sh&#8221; and
+&#8220;simulator&#8221;. We chose the simulator. we name the function to boot a vm
+nova_boot.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span> <span class="o">=</span> <span class="n">nova_provider</span><span class="p">(</span><span class="s">&quot;simulator&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud list --column=label --format=json&quot;</span><span class="p">)</span>
+<p>Now we can boot a vm with the command</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">assert</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;alamo&#39;</span><span class="p">][</span><span class="s">&#39;label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">alamo</span>
+<div class="highlight-python"><div class="highlight"><pre>(&#39;a&#39;, &#39;b&#39;) {&#39;h&#39;: &#39;k&#39;}
 </pre></div>
 </div>
+<p>To use a real submission we can switch the vm_boot function with the
+provider</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span> <span class="o">=</span> <span class="n">nova_provider</span><span class="p">(</span><span class="s">&quot;sh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span><span class="p">(</span><span class="n">TODO</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 
@@ -739,10 +763,7 @@
 
 
        <ul>
-<li><a class="reference internal" href="#">Notes</a><ul>
-<li><a class="reference internal" href="#specifying-a-custom-label">Specifying a custom label</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Provider</a></li>
 </ul>
 
     </div>

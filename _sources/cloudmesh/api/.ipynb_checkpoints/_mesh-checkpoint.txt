@@ -31,26 +31,37 @@ After activation we can find out more information with th einfo command.
 
 .. code:: python
 
-    mesh.info()
+    mesh.activate(username)
 
 ::
 
 
     ---------------------------------------------------------------------------
-    AttributeError                            Traceback (most recent call last)
+    TypeError                                 Traceback (most recent call last)
 
-    <ipython-input-4-94fc62f94976> in <module>()
-    ----> 1 mesh.info()
+    <ipython-input-4-a24ffb702dc4> in <module>()
+    ----> 1 mesh.activate(username)
     
 
-    AttributeError: cm_mongo instance has no attribute 'info'
+    /Users/flat/ENV/lib/python2.7/site-packages/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc in activate(self, cm_user_id, names)
+        393         # In case of CLI, it could fail safe to the list from yaml file.
+        394         #
+    --> 395         cloudnames = self.active_clouds(cm_user_id)
+        396 
+        397         if cloudnames:
 
 
-.. todo:: this is not working
+    /Users/flat/ENV/lib/python2.7/site-packages/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mongo.pyc in active_clouds(self, cm_user_id)
+        347         # there will be entries in the db.
+        348         user = self.db_defaults.find_one({'cm_user_id': cm_user_id})
+    --> 349         if 'activeclouds' in user:
+        350             ret_clouds = user['activeclouds']
+        351         else:
 
-.. code:: python
 
-    mesh.activate(username)
+    TypeError: argument of type 'NoneType' is not iterable
+
+
 .. code:: python
 
     mesh.refresh()
@@ -67,5 +78,3 @@ After activation we can find out more information with th einfo command.
 
     TypeError: refresh() takes at least 2 arguments (1 given)
 
-
-.. todo:: This is not working

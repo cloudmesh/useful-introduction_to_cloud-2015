@@ -267,7 +267,7 @@ The cheatsheet is also available in our online documentation in the
 Section :ref:`s-cheatsheet`.
 
 All-in-one setup script
---------------------
+-------------------------
 
 Execute the following script only with care. Maybe its best if you
 copy one line at a time as documented earlier to avoid problems::
@@ -317,7 +317,7 @@ the bare code stays:
    of the page can  be ignored.
 
 Creating the pages locally
----------------------
+----------------------------------------------------------------------
 
 To create the pages locally simply go in the manual folder and saay
 make::
@@ -417,14 +417,14 @@ To change the prompt you can do something like::
     $ PS1="$ "
 
 Recording of typed in commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Simply use::
 
     $ script file.log
 
 Setup quicktime sound recording
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start up quicktime you will see the following window:
 

@@ -31,25 +31,6 @@ After activation we can find out more information with th einfo command.
 
 .. code:: python
 
-    mesh.info()
-
-::
-
-
-    ---------------------------------------------------------------------------
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-4-94fc62f94976> in <module>()
-    ----> 1 mesh.info()
-    
-
-    AttributeError: cm_mongo instance has no attribute 'info'
-
-
-.. todo:: this is not working
-
-.. code:: python
-
     mesh.activate(username)
 .. code:: python
 
@@ -61,11 +42,10 @@ After activation we can find out more information with th einfo command.
     ---------------------------------------------------------------------------
     TypeError                                 Traceback (most recent call last)
 
-    <ipython-input-7-6a9ebadaeb63> in <module>()
+    <ipython-input-9-6a9ebadaeb63> in <module>()
     ----> 1 mesh.refresh()
     
 
     TypeError: refresh() takes at least 2 arguments (1 given)
 
 
-.. todo:: This is not working

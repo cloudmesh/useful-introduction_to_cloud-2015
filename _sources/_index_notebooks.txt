@@ -27,5 +27,5 @@ Notebooks
    `_mongo_cm <mongo/_mongo_cm.html>`__, `_mongo_cm.ipynb <http://localhost:8888/notebooks/docs/source/mongo/_mongo_cm.ipynb>`__, mongo/_mongo_cm.ipynb
    `_cm_shell_boot <proposed/_cm_shell_boot.html>`__, `_cm_shell_boot.ipynb <http://localhost:8888/notebooks/docs/source/proposed/_cm_shell_boot.ipynb>`__, proposed/_cm_shell_boot.ipynb
    `_cm_shell_notes <proposed/_cm_shell_notes.html>`__, `_cm_shell_notes.ipynb <http://localhost:8888/notebooks/docs/source/proposed/_cm_shell_notes.ipynb>`__, proposed/_cm_shell_notes.ipynb
-   `_code_listings <python/_code_listings.html>`__, `_code_listings.ipynb <http://localhost:8888/notebooks/docs/source/python/_code_listings.ipynb>`__, python/_code_listings.ipynb
-   `_vm_sh <sh/_vm_sh.html>`__, `_vm_sh.ipynb <http://localhost:8888/notebooks/docs/source/sh/_vm_sh.ipynb>`__, sh/_vm_sh.ipynb
+   `_code_listings <proposed/_code_listings.html>`__, `_code_listings.ipynb <http://localhost:8888/notebooks/docs/source/proposed/_code_listings.ipynb>`__, proposed/_code_listings.ipynb
+   `_vm_sh <proposed/_vm_sh.html>`__, `_vm_sh.ipynb <http://localhost:8888/notebooks/docs/source/proposed/_vm_sh.ipynb>`__, proposed/_vm_sh.ipynb

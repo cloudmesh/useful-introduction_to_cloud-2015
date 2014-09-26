@@ -27,6 +27,9 @@ Python.
 .. code:: python
 
     import cloudmesh
+.. code:: python
+
+    from pprint import pprint
 Activating Clouds
 -----------------
 
@@ -49,6 +52,12 @@ server who is going to use cloud services.
 .. code:: python
 
     print username
+
+.. parsed-literal::
+
+    gvonlasz
+
+
 Activate the user account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -57,21 +66,55 @@ With the activation, the connection to IaaS cloud is established.
 .. code:: python
 
     mesh.activate(username)
-Start a VM
-----------
 
-Now let us see how to start VMs on a cloud, here is how to start a VM on
-cloud india.
+.. parsed-literal::
+
+    * india
+    Refreshing gvonlasz servers india ->
+    Refresh time: 0.305170059204
+    Store time: 0.00300216674805
+
+
+Register a cloud
+~~~~~~~~~~~~~~~~
 
 .. code:: python
 
-    result = mesh.start(cloud="india", cm_user_id=username, prefix=username, index=5, flavor="m1.small", image="futuregrid/ubuntu-14.04")
-You may don’t know what images or flavors are available on the cloud, or
-you don’t want to type a long line every time you start a VM, things can
-get a lot easier by performing some setting up.
+    cloudmesh.shell("cloud on india")
 
-Set a default flavor or image
------------------------------
+
+
+.. parsed-literal::
+
+    * india
+    Refreshing gvonlasz servers india ->
+    Refresh time: 0.282967090607
+    Store time: 0.00245690345764
+    [32mcloud 'india' activated.[0m
+
+
+
+.. code:: python
+
+    cloudmesh.shell("cloud list")
+
+
+
+.. parsed-literal::
+
+    +-----------+--------+
+    | cloud     | active |
+    +-----------+--------+
+    | aws       |        |
+    | azure     |        |
+    | devstack  |        |
+    | dreamhost |        |
+    | hp        |        |
+    | hp_east   |        |
+    | india     | True   |
+    +-----------+--------+
+
+
 
 Each cloud must have a default image and a default flavor to launch vm
 instances in a simple step. default function provides a way to set
@@ -86,32 +129,91 @@ You can execute a cell with a function name and a single question mark
 (??) provide a source code with a docstring of the function. Try
 *mesh.default?* or *mesh.default??*
 
-.. code:: python
-
-    defaults = mesh.default('india', 'image', image)
-.. code:: python
-
-    defaults = mesh.default('india', 'flavor', flavor)
 Get Flavors or Images
 ---------------------
+
+Cloudmesh retrieves information from a cache that need to be refreshed
+in case you like to get the newest values. At the beginning you have to
+call refresh so that he information from the cloud is populated into the
+cache.
+
+.. code:: python
+
+    mesh.refresh(username,types=['flavors', 'images'],names=["india"])
+
+.. parsed-literal::
+
+    * india
+    Refreshing gvonlasz flavors india ->
+    Refresh time: 0.179011821747
+    Store time: 0.00220489501953
+    Refreshing gvonlasz images india ->
+    Refresh time: 0.43066906929
+    Store time: 0.00897192955017
+
 
 Available flavors can be listed with the following function.
 
 .. code:: python
 
-    mesh.flavors(cm_user_id=username, clouds=["india"])
-refresh function updates the data from the IaaS cloud. The cached data
-in the mongo database will be updated.
+    flavors = mesh.flavors(cm_user_id=username, clouds=["india"])
+Let us display the names of the flavors
 
-.. code:: python
-
-    mesh.refresh(username,types=['flavors'],names=["india"])
 The functions about vm images provide an available vm images on a
 selected cloud.
 
 .. code:: python
 
-    mesh.images(clouds=['india'],cm_user_id=username)
+    for id in flavors["india"]:
+        print flavors["india"][id]["name"]
+
+.. parsed-literal::
+
+    m1.tiny
+    m1.medium
+    m1.small
+    m1.xlarge
+    m1.large
+
+
+.. code:: python
+
+    images = mesh.images(clouds=['india'],cm_user_id=username)
+.. code:: python
+
+    for id in images["india"]:
+        print images["india"][id]["name"]
+
+.. parsed-literal::
+
+    salsahpc/cloud-mooc-m1-large-4GB
+    CentOS6
+    SL64-blank-sparse10gb-C vmdk
+    cglmoocs/ipython
+    futuregrid/centos-6
+    DaLiAna-vm2014e-geant4.10.vmdk Jan best
+    ubuntu-13.10
+    futuregrid/ubuntu-14.04
+    fg101/richieriee/my-ubuntu-01
+    sl64-gluex-vm2014e-40gb.vmdk Justin
+    futuregrid/fedora-19
+    fg10/jcharcal/centos6.5_x86_64
+    balewski/kernel-2.6.32-431.5.1-sl65
+    SL64-blank-sparse40GB vmdk
+    Ubuntu-12.04-blank2.vmdk
+    balewski/ramdisk-2.6.32-431.5.1-sl65
+    sl6_x64-qemu  french ?bad
+    balewski/sl6.5-blank-80gb-b works
+    grp17Cent
+    futuregrid/ubuntu-12.04
+    ndssl-vt/ubuntu-12.04-small
+    futuregrid/fedora-20
+    fg7/rynge/centos6-v1
+    ubuntu12-comet
+    balewski/daliana-vm2014e2-sl6.5-geant4.10-root5.34
+    DaLiAna-vm2014d-SL64-A.vmdk
+
+
 Select a flavor
 ~~~~~~~~~~~~~~~
 
@@ -130,6 +232,46 @@ user it later. In this example, we choose Ubuntu trusty 14.04 image.
 .. code:: python
 
     image=mesh.image('india','futuregrid/ubuntu-14.04')
+Set a default flavor or image
+-----------------------------
+
+.. code:: python
+
+    defaults = mesh.default('india', 'image', image)
+.. code:: python
+
+    defaults = mesh.default('india', 'flavor', flavor)
+.. code:: python
+
+    pprint(defaults)
+
+.. parsed-literal::
+
+    {u'_id': ObjectId('54242b0b6d8fecaafd838a11'),
+     u'activeclouds': [u'india'],
+     u'cm_user_id': u'gvonlasz',
+     u'flavors': {u'india': u'2'},
+     u'group': None,
+     u'images': {u'india': u'ba327564-5969-4309-b3f3-b67764038e66'},
+     u'index': u'41',
+     u'key': u'flat-key',
+     u'pagestatus': {u'india': u'true'},
+     u'prefix': u'gvonlasz',
+     u'project': u'fg82',
+     u'registered_clouds': [u'india'],
+     u'securitygroup': u'development',
+     u'shell_print_format': u'table'}
+
+
+.. code:: python
+
+    image = "futuregrid/ubuntu-14.04"
+.. code:: python
+
+    flavor = "m1.small"
+.. code:: python
+
+    cloud = "india"
 Quick Start a VM
 ----------------
 
@@ -139,18 +281,94 @@ cloudmesh.
 .. code:: python
 
     result = mesh.start("india", username)
+.. code:: python
+
+    pprint (result)
+
+.. parsed-literal::
+
+    {'cloud': 'india',
+     'cm_user_id': 'gvonlasz',
+     'flavor': u'm1.small',
+     'flavor_id': u'2',
+     'image': u'futuregrid/ubuntu-14.04',
+     'image_id': u'ba327564-5969-4309-b3f3-b67764038e66',
+     'key': u'gvonlasz_flat-key',
+     'name': u'gvonlasz_41',
+     u'server': {u'OS-DCF:diskConfig': u'MANUAL',
+                 u'adminPass': u'J6fnixrXGk5e',
+                 u'id': u'7547ecc9-61b8-42a4-9dac-0064a7407a63',
+                 u'links': [{u'href': u'http://149.165.146.57:8774/v1.1/8bc7e259464944b3bf4d8b050d1ab935/servers/7547ecc9-61b8-42a4-9dac-0064a7407a63',
+                             u'rel': u'self'},
+                            {u'href': u'http://149.165.146.57:8774/8bc7e259464944b3bf4d8b050d1ab935/servers/7547ecc9-61b8-42a4-9dac-0064a7407a63',
+                             u'rel': u'bookmark'}],
+                 u'security_groups': [{u'name': u'default'}]}}
+
+
 Delete VM
 ---------
+
+.. code:: python
+
+    server = result['server']['id']
+.. code:: python
+
+    mesh.delete(cloud, server, username)
+
+
+
+.. parsed-literal::
+
+    {'release_unused_public_ips': True, 'vm_delete': {'msg': 'success'}}
+
+
 
 If you know the id of the virtual machine that you want to destroy,
 *delete* function in cloudmesh simply terminate the instance. This
 example deletes the vm that we just launched above by getting the id
 from the result dict.
 
+Start a VM
+----------
+
+Now let us see how to start VMs on a cloud, here is how to start a VM on
+cloud india.
+
 .. code:: python
 
-    server = result['server']['id']
-    mesh.delete(cloud, server, username)
+    result = mesh.start(cloud=cloud, 
+                        cm_user_id=username,
+                        flavor=flavor, 
+                        image=image)
+You may don’t know what images or flavors are available on the cloud, or
+you don’t want to type a long line every time you start a VM, things can
+get a lot easier by performing some setting up.
+
+.. code:: python
+
+    pprint (result)
+
+.. parsed-literal::
+
+    {'cloud': 'india',
+     'cm_user_id': 'gvonlasz',
+     'flavor': u'm1.small',
+     'flavor_id': u'2',
+     'image': u'futuregrid/ubuntu-14.04',
+     'image_id': u'ba327564-5969-4309-b3f3-b67764038e66',
+     'key': u'gvonlasz_flat-key',
+     'name': u'gvonlasz_42',
+     u'server': {u'OS-DCF:diskConfig': u'MANUAL',
+                 u'adminPass': u'ETrauXf83o7M',
+                 u'id': u'45b70984-12e1-40ec-a809-f46923ee3eac',
+                 u'links': [{u'href': u'http://149.165.146.57:8774/v1.1/8bc7e259464944b3bf4d8b050d1ab935/servers/45b70984-12e1-40ec-a809-f46923ee3eac',
+                             u'rel': u'self'},
+                            {u'href': u'http://149.165.146.57:8774/8bc7e259464944b3bf4d8b050d1ab935/servers/45b70984-12e1-40ec-a809-f46923ee3eac',
+                             u'rel': u'bookmark'}],
+                 u'security_groups': [{u'name': u'default'}]}}
+
+
+
 More options to launch a VM instance
 ------------------------------------
 
@@ -162,14 +380,14 @@ in the IPython Notebook cell.
 
 Available options are: with \* ``cloud``: cloud id e.g. india \*
 ``cm_user_id``: portal user id \* ``prefix``: The VM instance name
-starts \* ``index``: The number of vm instances (auto increment) \*
-``flavor``: flavor name e.g. m1.small \* ``image``: image name e.g.
-futuregrid/ubuntu-14.04 \* ``key``: key name to use \* ``meta``: data in
-python dict e.g. {"cm\_user\_id": username}
+starts \* ``index``: The number of vm instances (auto increment), if you
+set this make sure it is higher than the last index, as it will aslo set
+the default index \* ``flavor``: flavor name e.g. m1.small \* ``image``:
+image name e.g. futuregrid/ubuntu-14.04 \* ``key``: key name to use \*
+``meta``: data in python dict e.g. {"cm\_user\_id": username}
 
-.. code:: python
+``result = mesh.start("india", username, prefix=username)``
 
-    result = mesh.start("india", username, index=5, prefix=username)
 Vitual Machine Name
 -------------------
 
@@ -180,23 +398,34 @@ you to manage or modify the VM name as you wish.
 .. code:: python
 
     mesh.vmname()
+
+
+
+.. parsed-literal::
+
+    u'gvonlasz_43'
+
+
+
 ``vmname()`` without parameters returns the current VM name that you can
-use. If you want to use a different name, you can specify *prefix=''*
-and *idx=''* as parameters.
+use.
 
-.. code:: python
+If you want to use a different name, you can specify prefix='' and
+idx='' as parameters. However be aware that using this will also reset
+the default values. Thus if you specify a number that is smaller than
+the current number in the vms, you may overwrite in time the previos
+name and end up with duplicated names.
 
-    mesh.vmname(username, 10)
+``mesh.vmname(username, 10)``
+
 vmname\_next() returns a VM name with an increased index number.
 
-.. code:: python
+``mesh.vmname_next()``
 
-    mesh.vmname_next()
 There are some tricks to update the index number in *vmname()* function.
 
-.. code:: python
+``mesh.vmname(username, "+5")``
 
-    mesh.vmname(username, "+5")
 Assign a public IP address to the VM
 ------------------------------------
 
@@ -205,7 +434,28 @@ to the VM.
 
 .. code:: python
 
+    server = result['server']['id']
+.. code:: python
+
+    pprint (result['name'])
+
+.. parsed-literal::
+
+    u'gvonlasz_42'
+
+
+.. code:: python
+
     ip=mesh.assign_public_ip('india', server, username)
+.. code:: python
+
+    print ip
+
+.. parsed-literal::
+
+    149.165.158.31
+
+
 SSH to the VM
 -------------
 
@@ -215,10 +465,38 @@ Otherwise, you can simply use ssh\_execute() function.
 
 .. code:: python
 
-    mesh.wait(ipaddr=ip, command="uname -a", interval=5, retry=10)
+    result = mesh.wait(ipaddr=ip, interval=2, retry=10)
+
+.. parsed-literal::
+
+    0 try to execute via ssh...
+
+
+.. code:: python
+
+    print result
+
+.. parsed-literal::
+
+    True
+
+
 .. code:: python
 
     mesh.ssh_execute(ipaddr=ip, command="uname -a")
+
+
+
+.. parsed-literal::
+
+    Linux gvonlasz-42 3.13.0-35-generic #62-Ubuntu SMP Fri Aug 15 01:58:42 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+
+
+.. warning: there is currently a limitation if the ip has already been
+added previously added to your known host file. in that case you must
+remove it first from the ~/.ssh/known\_hosts file.
+
 Refreshing VM status
 --------------------
 
@@ -228,6 +506,28 @@ function.
 .. code:: python
 
     mesh.refresh(username, names=["india"],types=["servers"])
+
+.. parsed-literal::
+
+    * india
+    Refreshing gvonlasz servers india ->
+    Refresh time: 0.351860046387
+    Store time: 0.00319504737854
+
+
 .. code:: python
 
-    mesh.servers(clouds=["india"],cm_user_id=username)
+    for serverid in mesh.servers(clouds=["india"],cm_user_id=username)["india"].keys():
+        server =  mesh.servers(clouds=["india"],cm_user_id=username)["india"][serverid]
+        print server['name']
+
+.. parsed-literal::
+
+    gvonlasz_39
+    gvonlasz_42
+    gvonlasz_38
+    gvonlasz_40
+    gvonlasz-001
+    gvonlasz_38
+
+

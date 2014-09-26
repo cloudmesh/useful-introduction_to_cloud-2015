@@ -37,7 +37,7 @@ is available at |video-cm-intro|.
 
    ipython/index
    rst
-
+   management/index
 
    todo
 
