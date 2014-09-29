@@ -316,7 +316,7 @@ Cloudmesh Command Shell Interface
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start and delete a virtual machine
+#. Start and delete a virtual machine by using Cloudmesh Command Shell Interface
 
 .. |video-cm-shell| replace:: |video-image| :youtube:`hdq-t-ggkXA`
 
@@ -345,7 +345,7 @@ Cloudmesh Command Shell API
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start and delete a virtual machine
+#. Start and delete a virtual machine by using Cloudmesh Command Shell API
 
 .. |video-cm-shell-api| replace:: |video-image| :youtube:`mF33LYqC30c`
 
@@ -376,7 +376,7 @@ Cloudmesh Command Python API
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start and delete a virtual machine
+#. Start and delete a virtual machine by using Cloudmesh Python API
 
 ..  |video-cm-python-api| replace:: |video-image| :youtube:`xOL_-Sfh9MA`
 
