@@ -31,7 +31,7 @@ Quick Start
      activate them whnever you log in.
 
 
-* Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888
+* Create 'cloudmesh' secgroup to allow the access of 5000, 8888
   ports.
 
   .. note:: If you already have `cloudmesh` in your security group, you can
