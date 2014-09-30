@@ -15,12 +15,13 @@ Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
 Quick Start
 ------------
 
-* Create a FutureSystems portal ID, if you don't have.
-  (http://portal.futuregrid.org) Need more help for ssh? see :ref:`s-accounts`
+* Create a FutureSystems portal ID (if you don't have)
+  - http://portal.futuregrid.org 
+    Need more help? see :ref:`s-accounts`
 
 * Login to India OpenStack 
-   - ``ssh <username>@india.futuregrid.org`` Need more help for ssh? see
-     :ref:`s-using-ssh`
+   - ``ssh <username>@india.futuregrid.org`` 
+     Need more help for ssh? see :ref:`s-using-ssh`
 
 * Activate `cm-455`::
 
@@ -41,12 +42,12 @@ Quick Start
 
   ::
 
-      $ module load novaclient
-      $ source ~/.futuregrid/openstack_havana/novarc
-      $ nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
-      $ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
-      $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
-      $ nova secgroup-list-rules cloudmesh
+      module load novaclient
+      source ~/.futuregrid/openstack_havana/novarc
+      nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
+      nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
+      nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
+      nova secgroup-list-rules cloudmesh
 
 * Execute the following commands::
 
@@ -118,10 +119,10 @@ add rules for these port numbers.
 
 * Create 'cloudmesh' secgroup to allow the access of 5000, 8888 ports::
 
-  $ nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
-  $ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
-  $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
-  $ nova secgroup-list-rules cloudmesh
+  nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
+  nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
+  nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
+  nova secgroup-list-rules cloudmesh
   
 **If you already have `cloudmesh` in your security group, you can skip this
 section.**
@@ -132,19 +133,19 @@ SSH Key Registration
 If you have not registered your ssh key, you may need to do the following
 steps::
 
-  $ ssh $PORTALNAME@india.futuresystems.org
-  $ module load novaclient
-  $ source ~/.futuregrid/openstack_havana/novarc
+  ssh $PORTALNAME@india.futuresystems.org
+  module load novaclient
+  source ~/.futuregrid/openstack_havana/novarc
   
 *$PORTALNAME is your login id to FutureSystems*
 
 If you do not have a ssh key, you can generate one::
 
- $ ssh-keygen -t rsa -C $USER-india-key
+  ssh-keygen -t rsa -C $USER-india-key
 
 We assume your public key is `~/.ssh/id_rsa.pub`::
 
-  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+  nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 Start Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^
