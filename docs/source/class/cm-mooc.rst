@@ -110,7 +110,7 @@ libraries is required.
 Enable `cm-455`
 ^^^^^^^^^^^^^^^^^
 
-Now, we activate `cm-455` tools.
+Now, we activate the `cm-455` tool.
 
 * `cm-455`
    - ``source /share/project/FG455/MOOC/bin/activate``
