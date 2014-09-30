@@ -198,10 +198,10 @@ If you have already configured your IPython Notebook (ipynb), you can start with
 
 Once the server started, you can get access to the IPython Notebook via https://[public ip address]:8888
 
-Class material
-^^^^^^^^^^^^^^
+Class Material (IPython Notebooks)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-IPython Notebook files for the class is in **fg455* directory in the main tree of IPython Notebook.
+IPython Notebook files for the class is in **fg455** directory in the main tree of IPython Notebook.
 
 * https://[public ip address]:8888/fg455
 Original source is at https://github.com/cglmoocs/IPythonFiles
