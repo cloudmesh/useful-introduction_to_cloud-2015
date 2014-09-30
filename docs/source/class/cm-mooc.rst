@@ -19,7 +19,7 @@ Quick Start
   $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
   $ nova secgroup-list-rules cloudmesh
   
-**If you already have `cloudmesh` in your security group, you can skip this section.**
+  - **If you already have `cloudmesh` in your security group, you can skip this section.**
 
 * Execute the following commands::
 
