@@ -3,8 +3,9 @@ Cloudmesh MOOC Shell
 
 `cm-455` provides an easy way to start a Cloudmesh VM on OpenStack India. 
 You can start a virtual machine for Cloudmesh with a single command in `cm-455`.
-You can also enable IPython Notebook on the virtual machine with `cm notebook` commands.
-You may read the following instructions to enable this program on your terminal.
+You can also enable IPython Notebook on the virtual machine with `cm notebook`
+commands.  You may read the following instructions to enable this program on
+your terminal.
 
 Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
 
@@ -14,11 +15,12 @@ Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
 Quick Start
 ------------
 
-* Create a FutureSystems portal ID, if you don't
-  have. (http://portal.futuregrid.org) Need more help for ssh? see :ref:`s-accounts`
+* Create a FutureSystems portal ID, if you don't have.
+  (http://portal.futuregrid.org) Need more help for ssh? see :ref:`s-accounts`
 
 * Login to India OpenStack 
-   - ``ssh <username>@india.futuregrid.org`` Need more help for ssh? see :ref:`s-using-ssh`
+   - ``ssh <username>@india.futuregrid.org`` Need more help for ssh? see
+     :ref:`s-using-ssh`
 
 * Activate `cm-455`::
 
@@ -48,12 +50,10 @@ Quick Start
 
 * Execute the following commands::
 
-   cm-455 start
-   # wait approximately 5 minutes
-   cm-455 login # SSH to VMj
-   cm notebook create # provide your password to IPython Notebook on the virtual machine
-   # Exit (ctrl-c)
-   cm-455 notebook start
+   cm-455 start       # wait approximately 5 minutes after this command
+   cm-455 login       # SSH to VM
+   cm notebook create # provide your password to IPython Notebook on the
+   virtual machine and Exit (ctrl-c) cm-455 notebook start
 
 * Now you can access the IPython Notebook via a web browser:
   `https://[ip address]:8888`
@@ -61,18 +61,18 @@ Quick Start
   The clas material is contained in two directories. Dependent on the
   class please chose the directory suitable for you:
 
-  * **fg455**: directory  containing ipython notebooks for the class fg455
+  * **fg455**: directory containing ipython notebooks for the class fg455
   * **cloudmesh**: directory containing cloudmesh ipython notebooks
 
-* to stop the servises simply use::
+* to stop the services simply use::
 
    cm-455 stop 
 
 * to start it again simply use::
 
-   cm-455 notebook start
+   cm-455 start
 
-  there is no need to create the image or the notbook server
+  There is no need to create the image or the notbook server
 
 Detailed Instructions
 ----------------------------------------------------------------------
@@ -81,12 +81,14 @@ Detailed Instructions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The following instrunctions explain `cm-455` command in detail. 
-Start, login, stop of your virtual machine is really easy with `cm-455` command. 
+Start, login, stop of your virtual machine is really easy with `cm-455`
+command. 
 
 OpenStack Credential
 ^^^^^^^^^^^^^^^^^^^^
 
-Once you logged in India OpenStack, you may load your OpenStack credential first.
+Once you logged in India OpenStack, you may load your OpenStack credential
+first.
 
 * novarc file
    - ``source ~/.futuregrid/openstack_havana/novarc``
@@ -94,7 +96,8 @@ Once you logged in India OpenStack, you may load your OpenStack credential first
 OpenStack Heat   
 ^^^^^^^^^^^^^^^^^^
 
-We use OpenStack Heat Orchestration to start Cloudmesh VM, so loading heat libraries is required.
+We use OpenStack Heat Orchestration to start Cloudmesh VM, so loading heat
+libraries is required.
 
 * heatclient
    - ``module load heatclient``
@@ -110,7 +113,8 @@ Now, we activate `cm-455` tools.
 Security Group
 ^^^^^^^^^^^^^^^^^^^^^
 
-Cloudmesh, IPython Notebook requires to use 5000, 8888 port numbers. We need to add rules for these port numbers.
+Cloudmesh, IPython Notebook requires to use 5000, 8888 port numbers. We need to
+add rules for these port numbers.
 
 * Create 'cloudmesh' secgroup to allow the access of 5000, 8888 ports::
 
@@ -119,12 +123,14 @@ Cloudmesh, IPython Notebook requires to use 5000, 8888 port numbers. We need to 
   $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
   $ nova secgroup-list-rules cloudmesh
   
-**If you already have `cloudmesh` in your security group, you can skip this section.**
+**If you already have `cloudmesh` in your security group, you can skip this
+section.**
 
 SSH Key Registration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have not registered your ssh key, you may need to do the following steps::
+If you have not registered your ssh key, you may need to do the following
+steps::
 
   $ ssh $PORTALNAME@india.futuresystems.org
   $ module load novaclient
@@ -147,37 +153,40 @@ We can now start Cloudmesh VM on OpenStack India.
 
 ``cm-455 start``
 
-**It may take 5 minutes or so. You need to wait otherwise the environment is not ready to use in the next step.**
+**It may take 5 minutes or so. You need to wait otherwise the environment is
+not ready to use in the next step.**
 
 List VM
 ^^^^^^^^
 
-You can check the status of the VM by the following command
+You can check the status of the VM by the following commanf.
 
 ``cm-455 list``
 
 Stop Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you completed all your work, you may stop the VM by the following command
+If you completed all your work, you may stop the VM by the following command.
 
 ``cm-455 stop``
 
 Login Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can ssh to the VM by the following command
+You can ssh to the VM by the following command.
 
 ``cm-455 login``
 
 Create IPython Notebook Profile on Cloudmesh VM (Set Password)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have waited more than 5 minutes, you can now create IPython Notebook (ipynb) Profile with
+If you have waited more than 5 minutes, you can now create IPython Notebook
+(ipynb) Profile with,
 
 ``cm-455 notebook create``
 
-This step requires your password input for IPython Notebook and information of the self-assigned certificate to enable SSL.
+This step requires your password input for IPython Notebook and information of
+the self-assigned certificate to enable SSL.
 
 You can also do the same thing with ssh login.
 
@@ -187,21 +196,34 @@ Once you logged in, try `cm` program.
 
 ``cm notebook create``
 
-cm is Cloudmesh shell program. It allows you to create a IPython Notebook Profile.
+This command asks you the password of your IPython Notebook Server. You also
+need to create self-signed certificate.  You can create the certificate by
+providing some information.
+
+``exit``
+
+If you created the ipynb profile, you may exit from the VM. Let's get back to
+India and use `cm-455` command.
+
+  .. note:: `cm` is the Cloudmesh shell program. It allows you to create a
+  IPython Notebook Profile.
 
 Start IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have already configured your IPython Notebook (ipynb), you can start with
+If you have already configured your IPython Notebook (ipynb), you can start
+with,
 
 ``cm-455 notebook start``
 
-Once the server started, you can get access to the IPython Notebook via https://[public ip address]:8888
+Once the server started, you can get access to the IPython Notebook via
+https://[public ip address]:8888
 
 Class Material (IPython Notebooks)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-IPython Notebook files for the class is in **fg455** directory in the main tree of IPython Notebook.
+IPython Notebook files for the class is in **fg455** directory in the main tree
+of IPython Notebook.
 
 * https://[public ip address]:8888/fg455
 Original source is at https://github.com/cglmoocs/IPythonFiles
@@ -209,7 +231,8 @@ Original source is at https://github.com/cglmoocs/IPythonFiles
 Cloudmesh Notebook files are also available.
 
 *  https://[public ip address]:8888/cloudmesh
-Original source is at https://github.com/cloudmesh/introduction_to_cloud_computing
+Original source is at
+https://github.com/cloudmesh/introduction_to_cloud_computing
 
 You can import or export more notebook files.
 
