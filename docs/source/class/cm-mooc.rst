@@ -38,6 +38,7 @@ Quick Start
   skip this step.
 
   ::
+
       $ module load novaclient
       $ source ~/.futuregrid/openstack_havana/novarc
       $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
