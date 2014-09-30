@@ -9,7 +9,7 @@ Quick Start
 
 * Create a FutureSystems portal ID, if you don't have. (http://portal.futuregrid.org) 
 * Login to India OpenStack 
-  * ``ssh <username>@india.futuregrid.org``
+   - ``ssh <username>@india.futuregrid.org``
 * Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888 ports::
 
   $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
@@ -40,7 +40,7 @@ OpenStack Credential
 Once you logged in India OpenStack, you may load your OpenStack credential first.
 
 * novarc file
-  * ``source ~/.futuregrid/openstack_havana/novarc``
+   - ``source ~/.futuregrid/openstack_havana/novarc``
 
 OpenStack Heat   
 ------------------
@@ -48,7 +48,7 @@ OpenStack Heat
 We use OpenStack Heat Orchestration to start Cloudmesh VM, so loading heat libraries is required.
 
 * heatclient
-  * ``module load heatclient``
+   - ``module load heatclient``
   
 Enable `cm-mooc`
 -----------------
@@ -56,7 +56,7 @@ Enable `cm-mooc`
 Now, we Activate `cm-mooc` tools.
 
 * `cm-mooc`
-  * ``source /share/project/FG455/MOOC/bin/activate``
+   - ``source /share/project/FG455/MOOC/bin/activate``
 
 Security Group
 ---------------------
