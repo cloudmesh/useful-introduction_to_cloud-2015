@@ -37,6 +37,8 @@ Quick Start
    cm-mooc notebook create
    cm-mooc notebook start
    # Acccess to your IPython Notebook via a web browser: https://[ip address]:8888
+   # Class material: **fg455** directory
+   # Cloudmesh material: **cloudmesh** directory
    cm-mooc stop # Stop the VM
 
 
@@ -153,6 +155,21 @@ If you have already configured your IPython Notebook (ipynb), you can start with
 ``cm-mooc notebook start``
 
 Once the server started, you can get access to the IPython Notebook via https://[public ip address]:8888
+
+Class material
+--------------
+
+IPython Notebook files for the class is in **fg455* directory in the main tree of IPython Notebook.
+
+* https://[public ip address]:8888/fg455
+Original source is at https://github.com/cglmoocs/IPythonFiles
+
+Cloudmesh Notebook files are also available.
+
+*  https://[public ip address]:8888/cloudmesh
+Original source is at https://github.com/cloudmesh/introduction_to_cloud_computing
+
+You can import or export more notebook files.
 
 Stop IPython Notebook on Cloudmesh VM
 -----------------------------------------
