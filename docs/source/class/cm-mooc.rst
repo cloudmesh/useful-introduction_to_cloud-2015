@@ -38,8 +38,7 @@ Quickstart
      activate them whnever you log in.
 
 
-* Create 'cloudmesh' secgroup to allow the access of 5000, 8888
-  ports.
+* Create the 'cloudmesh' security group to add 5000, 8888 ports.
 
   .. note:: If you already have `cloudmesh` in your security group, you can
   skip this step.
@@ -163,6 +162,15 @@ We can now start Cloudmesh VM on OpenStack India.
 **It may take 5 minutes or so. You need to wait otherwise the environment is
 not ready to use in the next step.**
 
+  .. note:: Try Cloudmesh Web Site at http://[ip address]:5000
+  Your default password is: *cloudmesh*
+  To change the password, try the following commands::
+  
+    cm-455 login
+    cd ~/cloudmesh
+    fab user.mongo # set your password
+    fab server.start # restart the Cloudmesh server
+    
 List VM
 ^^^^^^^^
 
@@ -173,7 +181,7 @@ You can check the status of the VM by the following commanf.
 Stop Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you completed all your work, you may stop the VM by the following command.
+If you have completed all of your work in the VM, you may stop the VM by the following command.
 
 ``cm-455 stop``
 
