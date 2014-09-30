@@ -138,7 +138,7 @@ If you do not have a ssh key, you can generate one::
 
 We assume your public key is `~/.ssh/id_rsa.pub`::
 
-  $ nova keypair-add ^^pub-key ~/.ssh/id_rsa.pub $USER-india-key
+  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 Start Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^
