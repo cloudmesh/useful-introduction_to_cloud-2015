@@ -6,6 +6,9 @@ You can start a virtual machine for Cloudmesh with a single command in `cm-mooc`
 You can also enable IPython Notebook on the virtual machine with `cm notebook` commands.
 You may read the following instructions to enable this program on your terminal.
 
+Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
+.. |video-cm-mooc| replace:: |video-image| :youtube:`kFWGPqHrBCA`
+
 
 Quick Start
 ------------
