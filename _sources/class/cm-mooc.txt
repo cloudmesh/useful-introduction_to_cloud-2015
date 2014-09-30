@@ -58,9 +58,15 @@ Quick Start
   * **fg455**: directory  containing ipython notebooks for the class fg455
   * **cloudmesh**: directory containing cloudmesh ipython notebooks
 
-* to stop the servises. simple use::
+* to stop the servises simply use::
 
    cm-mooc stop 
+
+* to start it again simply use::
+
+   cm-mooc notebook start
+
+  there is no need to create the image or the notbook server
 
 Detailed Instructions
 ----------------------------------------------------------------------
