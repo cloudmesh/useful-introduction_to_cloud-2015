@@ -13,6 +13,12 @@ Quick Start
 * Create a FutureSystems portal ID, if you don't have. (http://portal.futuregrid.org) 
 * Login to India OpenStack 
    - ``ssh <username>@india.futuregrid.org``
+* Activate `cm-mooc`::
+
+   module load heatclient
+   source ~/.futuregrid/openstack_havana/novarc
+   source /share/project/FG455/MOOC/bin/activate
+   
 * Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888 ports::
 
   $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
@@ -26,9 +32,6 @@ Quick Start
 
 * Execute the following commands::
 
-   module load heatclient
-   source ~/.futuregrid/openstack_havana/novarc
-   source /share/project/FG455/MOOC/bin/activate
    cm-mooc start
    # wait approximately 5 minutes
    cm-mooc notebook create
