@@ -10,29 +10,37 @@ You may read the following instructions to enable this program on your terminal.
 Quick Start
 ------------
 
-* Create a FutureSystems portal ID, if you don't have. (http://portal.futuregrid.org) 
+* Create a FutureSystems portal ID, if you don't
+  have. (http://portal.futuregrid.org) Need more help for ssh? see :ref:`s-accounts`
+
 * Login to India OpenStack 
-   - ``ssh <username>@india.futuregrid.org`` `Need more help for ssh? <https://portal.futuregrid.org/manual/accessing-futuregrid-resources-ssh>`_
+   - ``ssh <username>@india.futuregrid.org`` Need more help for ssh? see :ref:`s-using-ssh`
+
 * Activate `cm-mooc`::
 
      module load heatclient
      source ~/.futuregrid/openstack_havana/novarc
      source /share/project/FG455/MOOC/bin/activate
    
-  .. note: It maye be useful to add the module load and the source commands into your 
-  .bashrc_profile so you do not forget to activate them whnever you log in.
+  .. note:: It maye be useful to add the module load and the source
+     commands into your .bashrc_profile so you do not forget to
+     activate them whnever you log in.
 
 
-* Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888 ports::
+* Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888
+  ports.
 
-  $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
-  $ nova secgroup-add-rule cloudmesh icmp -1 -1 0.0.0.0/0
-  $ nova secgroup-add-rule cloudmesh tcp 22 22 0.0.0.0/0
-  $ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
-  $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
-  $ nova secgroup-list-rules cloudmesh
-  
-  - **If you already have `cloudmesh` in your security group, you can skip this section.**
+  .. note:: If you already have `cloudmesh` in your security group, you can
+  skip this step.
+
+  ::
+
+      $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
+      $ nova secgroup-add-rule cloudmesh icmp -1 -1 0.0.0.0/0
+      $ nova secgroup-add-rule cloudmesh tcp 22 22 0.0.0.0/0
+      $ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
+      $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
+      $ nova secgroup-list-rules cloudmesh
 
 * Execute the following commands::
 
@@ -40,20 +48,31 @@ Quick Start
    # wait approximately 5 minutes
    cm-mooc notebook create
    cm-mooc notebook start
-   # Acccess to your IPython Notebook via a web browser: https://[ip address]:8888
-   # Class material: **fg455** directory
-   # Cloudmesh material: **cloudmesh** directory
-   cm-mooc stop # Stop the VM
 
+* Now you can access the IPython Notebook via a web browser:
+  `https://[ip address]:8888`
+  
+  The clas material is contained in two directories. Dependent on the
+  class please chose the directory suitable for you:
+
+  * **fg455**: directory  containing ipython notebooks for the class fg455
+  * **cloudmesh**: directory containing cloudmesh ipython notebooks
+
+* to stop the servises. simple use::
+
+   cm-mooc stop 
+
+Detailed Instructions
+----------------------------------------------------------------------
 
 `cm-mooc` Instruction
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The following instrunctions explain `cm-mooc` command in detail. 
 Start, login, stop of your virtual machine is really easy with `cm-mooc` command. 
 
 OpenStack Credential
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Once you logged in India OpenStack, you may load your OpenStack credential first.
 
@@ -61,7 +80,7 @@ Once you logged in India OpenStack, you may load your OpenStack credential first
    - ``source ~/.futuregrid/openstack_havana/novarc``
 
 OpenStack Heat   
-------------------
+^^^^^^^^^^^^^^^^^^
 
 We use OpenStack Heat Orchestration to start Cloudmesh VM, so loading heat libraries is required.
 
@@ -69,7 +88,7 @@ We use OpenStack Heat Orchestration to start Cloudmesh VM, so loading heat libra
    - ``module load heatclient``
   
 Enable `cm-mooc`
------------------
+^^^^^^^^^^^^^^^^^
 
 Now, we Activate `cm-mooc` tools.
 
@@ -77,7 +96,7 @@ Now, we Activate `cm-mooc` tools.
    - ``source /share/project/FG455/MOOC/bin/activate``
 
 Security Group
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Cloudmesh, IPython Notebook requires to use 5000, 8888 port numbers. We need to add rules for these port numbers.
 
@@ -93,7 +112,7 @@ Cloudmesh, IPython Notebook requires to use 5000, 8888 port numbers. We need to 
 **If you already have `cloudmesh` in your security group, you can skip this section.**
 
 SSH Key Registration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have not registered your ssh key, you may need to do the following steps::
 
@@ -109,10 +128,10 @@ If you do not have a ssh key, you can generate one::
 
 We assume your public key is `~/.ssh/id_rsa.pub`::
 
-  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+  $ nova keypair-add ^^pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 Start Cloudmesh VM
-------------------
+^^^^^^^^^^^^^^^^^^
 
 We can now start Cloudmesh VM on OpenStack India.
 
@@ -121,28 +140,28 @@ We can now start Cloudmesh VM on OpenStack India.
 **It may take 5 minutes or so. You need to wait otherwise the environment is not ready to use in the next step.**
 
 List VM
---------
+^^^^^^^^
 
 You can check the status of the VM by the following command
 
 ``cm-mooc list``
 
 Stop Cloudmesh VM
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 If you completed all your work, you may stop the VM by the following command
 
 ``cm-mooc stop``
 
 Login Cloudmesh VM
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can ssh to the VM by the following command
 
 ``cm-mooc login``
 
 Create IPython Notebook Profile on Cloudmesh VM (Set Password)
-------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have waited more than 5 minutes, you can now create IPython Notebook (ipynb) Profile with
 
@@ -152,7 +171,7 @@ This step requires your password input for IPython Notebook and information of t
 
 
 Start IPython Notebook on Cloudmesh VM
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have already configured your IPython Notebook (ipynb), you can start with
 
@@ -161,7 +180,7 @@ If you have already configured your IPython Notebook (ipynb), you can start with
 Once the server started, you can get access to the IPython Notebook via https://[public ip address]:8888
 
 Class material
---------------
+^^^^^^^^^^^^^^
 
 IPython Notebook files for the class is in **fg455* directory in the main tree of IPython Notebook.
 
@@ -176,11 +195,11 @@ Original source is at https://github.com/cloudmesh/introduction_to_cloud_computi
 You can import or export more notebook files.
 
 Stop IPython Notebook on Cloudmesh VM
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The simple command ``cm-mooc notebook stop`` kills the Ipython Notebook server.
 
 Help Message
--------------
+^^^^^^^^^^^^^
 
 ``cm-mooc -h``

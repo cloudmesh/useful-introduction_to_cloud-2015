@@ -7,3 +7,4 @@ Cloudmesh in Classes
    :glob:
 
    i590
+   cm-mooc
