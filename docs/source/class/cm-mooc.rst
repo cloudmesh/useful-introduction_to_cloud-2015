@@ -102,7 +102,7 @@ We use OpenStack Heat Orchestration to start Cloudmesh VM, so loading heat libra
 Enable `cm-455`
 ^^^^^^^^^^^^^^^^^
 
-Now, we Activate `cm-455` tools.
+Now, we activate `cm-455` tools.
 
 * `cm-455`
    - ``source /share/project/FG455/MOOC/bin/activate``
