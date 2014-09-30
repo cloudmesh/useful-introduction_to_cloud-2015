@@ -249,4 +249,6 @@ The simple command ``cm-455 notebook stop`` kills the Ipython Notebook server.
 Help Message
 ^^^^^^^^^^^^^
 
+You can see available commands to `cm-455` program.
+
 ``cm-455 -h``
