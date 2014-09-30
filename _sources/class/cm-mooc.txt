@@ -6,6 +6,10 @@ You can start a virtual machine for Cloudmesh with a single command in `cm-mooc`
 You can also enable IPython Notebook on the virtual machine with `cm notebook` commands.
 You may read the following instructions to enable this program on your terminal.
 
+Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
+
+.. |video-cm-mooc| replace:: |video-image| :youtube:`kFWGPqHrBCA`
+
 
 Quick Start
 ------------
@@ -27,7 +31,7 @@ Quick Start
      activate them whnever you log in.
 
 
-* Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888
+* Create 'cloudmesh' secgroup to allow the access of 5000, 8888
   ports.
 
   .. note:: If you already have `cloudmesh` in your security group, you can
@@ -35,9 +39,9 @@ Quick Start
 
   ::
 
-      $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
-      $ nova secgroup-add-rule cloudmesh icmp -1 -1 0.0.0.0/0
-      $ nova secgroup-add-rule cloudmesh tcp 22 22 0.0.0.0/0
+      $ module load novaclient
+      $ source ~/.futuregrid/openstack_havana/novarc
+      $ nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
       $ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
       $ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
       $ nova secgroup-list-rules cloudmesh
@@ -46,7 +50,9 @@ Quick Start
 
    cm-mooc start
    # wait approximately 5 minutes
-   cm-mooc notebook create
+   cm-mooc login # SSH to VMj
+   cm notebook create # provide your password to IPython Notebook on the virtual machine
+   # Exit (ctrl-c)
    cm-mooc notebook start
 
 * Now you can access the IPython Notebook via a web browser:
@@ -175,6 +181,15 @@ If you have waited more than 5 minutes, you can now create IPython Notebook (ipy
 
 This step requires your password input for IPython Notebook and information of the self-assigned certificate to enable SSL.
 
+You can also do the same thing with ssh login.
+
+``cm-mooc login``
+
+Once you logged in, try `cm` program.
+
+``cm notebook create``
+
+cm is Cloudmesh shell program. It allows you to create a IPython Notebook Profile.
 
 Start IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
