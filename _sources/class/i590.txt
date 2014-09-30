@@ -39,7 +39,7 @@ Video Syllabus
 	       URL="http://www.youtube.com/watch?v=njHHjRMb7V8", 
 	       target="_blank"];
 
-	   c [label="Part C | Over view of the Cloudmesh Learning Web Site",
+	   c [label="Part C | Overview of Cloudmesh Learning Web Site",
 	       URL="http://www.youtube.com/watch?v=uGIPmiJ0cxg", 
 	       target="_blank"];
 
@@ -103,10 +103,10 @@ Account Application for FutureSystems
        class projects.
      - This lesson explains you how to create a portal account which
        is the first step in getting access to FutureSystems. You can
-       also view the following videos form FutureGrid as they still
-       apply.  For written material, see section
+       also view the following videos from FutureGrid as they still
+       apply.  For written materials, see section
        :ref:`s-account-create-account`. and
-       :ref:`s-screencast-accounts` They are listed in Alernative 2.
+       :ref:`s-screencast-accounts` They are listed in Alternative 2.
    * - |video-portal-account| |video-portal-openid|
        |video-portal-sshkey| |video-portal-join-proj|
      - 5:10 min, 1:35 min, 2:39 min, 1:28 min
@@ -117,7 +117,7 @@ Account Application for FutureSystems
        Section :ref:`s-account-create-account` and
        :ref:`s-screencast-accounts`.
 
-If you attend a class the above video is probably sufficient. If you
+If you attend a class the above video clips are probably sufficient. If you
 like to know more, please see the videos at
 :ref:`s-screencast-accounts`
 
@@ -132,7 +132,7 @@ Exercises
 
 #. Create a portal account on FutureSystems.
 #. Identify an interesting project that you can conduct on
-   FutureSystems Cloud, HPC, or  Grid resources.
+   FutureSystems Cloud, HPC, or Grid resources.
 #. Apply for a FutureSystems project or join a project.
    See section :ref:`s-account-join-project`.
 #. Read up on what a ssh key is.
@@ -142,7 +142,7 @@ Exercises
 #. Register your OpenID in the portal (for example if you use google).
 #. Upload a 220x220 pixel portrait of yours to the portal.
    Do this via https://portal.futuregrid.org/my/edit
-#. Make sure you have uploaded a small Bio written in third person.
+#. Make sure you have uploaded a small Bio.
    Do this via https://portal.futuregrid.org/my/Contact
 
 Cloudmesh Introduction
@@ -165,9 +165,9 @@ Cloudmesh Introduction
        The lesson also includes pointers to future development of cloudmesh.
    * - |video-fs-learning|
      - 17:54 min
-     - An Overview about the Cloudmesh  Learning Web Pages
-     - This lesson gives a short overview about the Web site on which
-       cloudmesh is hosted. It also talks a bit abou the architecture.
+     - An Overview about the Cloudmesh Learning Web Pages
+     - This lesson gives a short overview about the web site on which
+       cloudmesh is hosted. It also talks a bit about the architecture.
       
 .. |video-fs-gentle| replace:: |video-image| :youtube:`njHHjRMb7V8`
 .. |video-fs-learning| replace:: |video-image| :youtube:`uGIPmiJ0cxg`
@@ -223,7 +223,7 @@ Cloudmesh Setup
 
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Chose one of the deployment methods below. 
+Choose one of the deployment methods below. 
 
 #. Install Cloudmesh on your computer (only if you like to use it on
    your own machine and are aware that certain programs need to be
@@ -243,8 +243,8 @@ Cloudmesh Web Interface
      - Description of the Lessons
    * - |video-cm-gui|
      - 15:30 min
-     - The CLoudmesh Web Interface
-     - A lesson on how to use the Cloudmesh Web interface to manage
+     - The Cloudmesh Web Interface
+     - A lesson on how to use the Cloudmesh Web Interface to manage
        resources on a Cloud. See Section :ref:`s_screenshots` for more
        details.
 
@@ -257,7 +257,7 @@ Exercises
 #. Start and delete a vm on india
 #. Refresh servers
 
-Note that some features of Cloudmesh have not bee activated or may not
+Note that some features of Cloudmesh have not been activated or may not
 yet work. Cloudmesh is an evolving project and changes are expected.
 
 
@@ -292,7 +292,7 @@ Exercises
 .. |video-cm-ipython-learning| replace:: |video-image| :youtube:`1dn_av-zC00`
 
 
-Cloudmesh The Cloudmesh Command Shell interface
+Cloudmesh Command Shell Interface
 ----------------------------------------------------------------------
 
 .. list-table::
@@ -305,22 +305,22 @@ Cloudmesh The Cloudmesh Command Shell interface
      - Description of the Lessons
    * - |video-cm-shell|
      - 11:58 min
-     - The Cloudmesh Command Shell interface
+     - The Cloudmesh Command Shell Interface
      - This video we will be introducing you to the cloudmesh
-       command shell demonstrate to you that it is very easy to start
+       command shell and demonstrate to you that it is very easy to start
        virtual machines and access them via a command terminal. The
-       shell provides scripting or the execution of singe files. it is
-       fully integrated in a database framework leveraging mongo.
+       shell provides scripting or the execution of single files. It is
+       fully integrated in a database framework leveraging mongodb.
 
 
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start and delete a virtual machine
+#. Start and delete a virtual machine by using Cloudmesh Command Shell Interface
 
 .. |video-cm-shell| replace:: |video-image| :youtube:`hdq-t-ggkXA`
 
-Cloudmesh The Cloudmesh Command Shell API
+Cloudmesh Command Shell API
 ----------------------------------------------------------------------
 
 .. list-table::
@@ -345,12 +345,12 @@ Cloudmesh The Cloudmesh Command Shell API
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start and delete a virtual machine
+#. Start and delete a virtual machine by using Cloudmesh Command Shell API
 
 .. |video-cm-shell-api| replace:: |video-image| :youtube:`mF33LYqC30c`
 
 
-Cloudmesh The Cloudmesh Command Python API
+Cloudmesh Command Python API
 ----------------------------------------------------------------------
 
 .. list-table::
@@ -369,14 +369,14 @@ Cloudmesh The Cloudmesh Command Python API
        virtual machines and access them via ssh. We will be using the
        keys you registered earlier and introduce you to the
        defaults. This makes it possible to start a VM with only two
-       parameters. We willl also teach you how to create public ips
+       parameters. We will also teach you how to create public ips
        and assign them to the vm.
 
 
 Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Start and delete a virtual machine
+#. Start and delete a virtual machine by using Cloudmesh Python API
 
 ..  |video-cm-python-api| replace:: |video-image| :youtube:`xOL_-Sfh9MA`
 

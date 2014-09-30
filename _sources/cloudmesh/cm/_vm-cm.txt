@@ -134,29 +134,24 @@ Quick Start a VM
 The ``vm start`` command provides a quick launch of a vm instance in
 cloudmesh.
 
-.. code:: python
-
-    cm "vm start --cloud=india"
-Start a VM
-----------
-
-In case you like not to use the defaults you can also specify the image
-and flavor
-
-Now let us see how to start a VM on a cloud, here is how to start a VM
-on cloud india.
+We use ``vmname`` to delete the vm instance later in this tutorial.
 
 .. code:: python
 
-    cm "vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small"
+    _vmname=!cm "label --raw"
+    vmname=_vmname[0]
+.. code:: python
+
+    cm "vm start --name={vmname} --cloud=india"
 Delete a VM
 -----------
 
 If you know the id or name of the virtual machine that you want to
 destroy, *delete* command in cloudmesh simply terminate the instance.
 
-``cm "vm delete [NAME|--id=<id>] --cloud=india"``
+.. code:: python
 
+    cm "vm delete {vmname} --cloud=india --force"
 More options to launch a VM instance
 ------------------------------------
 
@@ -221,7 +216,14 @@ start. For example, to start 3 VMs on india
 
 .. code:: python
 
-    cm "vm start --cloud=india --count=3"
+    import uuid;
+    temp_group_name="ipython-tutorial-cm-" + str(uuid.uuid4().get_hex().upper()[0:6])
+We use the temporary group name to delete the VMs later in this
+tutorial.
+
+.. code:: python
+
+    cm "vm start --cloud=india --count=3 --group={temp_group_name}"
 Deleting VMs
 ------------
 
@@ -230,6 +232,13 @@ more convenient way to do it. Cloudmesh shell provides several methods
 to find the VMs and delete them, you may think there are two phases of
 VM deletion, searching and deleting. Here are some examples:
 
+Let's start with deleting the VMs that we started in the previous
+example. We can delete them with the group name that we used.
+``temp_group_name``
+
+.. code:: python
+
+    cm "vm delete --cloud=india --group={temp_group_name} --force"
 to delete all VMs of cloud india
 
 ``cm "vm delete --cloud=india --force"``
@@ -259,6 +268,16 @@ Login to a VM
 To login to a VM, you need to assign a public id to the VM you started,
 for example, assign a public ip to a VM named test\_1 on cloud india:
 
+.. code:: python
+
+    _vmname=!cm "label --raw"
+    vmname=_vmname[0]
+.. code:: python
+
+    cm "vm start --cloud=india"
+.. code:: python
+
+    cm "vm ip {vmname} --cloud=india"
 ``cm "vm ip test_1 --cloud=india"``
 
 Then you can login to this VM by(note here you need to provide the login
@@ -270,11 +289,17 @@ the VM, e.g. for ubuntu, you may type --ln=ubuntu):
 If you just want to run some commands and get the return on the VM, you
 may add the commands at the end following '--'(e.g. ls -a)
 
-``cm "vm login test_1 --ln=ubuntu --cloud=india -- ls -a"``
+.. code:: python
 
+    cm "vm login {vmname} --ln=ubuntu --cloud=india -- ls -a"
 For more details for command vm
 
 ``cm "vm -h"``
+
+.. code:: python
+
+    cm "vm delete {vmname} --cloud=india"
+Stop the vm that we started for this tutorial.
 
 Vitual Machine Name
 -------------------

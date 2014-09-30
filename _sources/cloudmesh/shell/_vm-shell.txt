@@ -263,25 +263,6 @@ We use ``vmname`` to delete the vm instance later in this tutorial.
 .. code:: python
 
     print cloudmesh.shell("vm start --cloud=india --name={0}".format(vmname))
-
-.. parsed-literal::
-
-    * india
-    Refreshing hrlee servers india ->
-    Refresh time: 0.137162923813
-    Store time: 0.000595092773438
-    * sierra
-    Refreshing hrlee servers sierra ->
-    Refresh time: 1.83072495461
-    Store time: 0.000597953796387
-    
-    # ######################################################################
-    # Starting vm->albert_52 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->hrlee_fg20
-    # ######################################################################
-    job status: PENDING
-    
-
-
 Delete a VM
 -----------
 
@@ -290,7 +271,7 @@ destroy, *delete* command in cloudmesh simply terminate the instance.
 
 .. code:: python
 
-    cloudmesh.shell("vm delete {0} --cloud=india".format(vmname))
+    cloudmesh.shell("vm delete {0} --cloud=india --force".format(vmname))
 More options to launch a VM instance
 ------------------------------------
 
@@ -360,7 +341,8 @@ start. For example, to start 3 VMs on india
 
     import uuid;
     temp_group_name="ipython-tutorial-" + str(uuid.uuid4().get_hex().upper()[0:6])
-We use group name to delete the VMs later in this tutorial.
+We use the temporary group name to delete the VMs later in this
+tutorial.
 
 .. code:: python
 

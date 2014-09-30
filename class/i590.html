@@ -34,7 +34,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
     <link rel="up" title="Cloudmesh in Classes" href="index.html" />
-    <link rel="next" title="Cloud Accounts" href="../accounts/index.html" />
+    <link rel="next" title="Cloudmesh MOOC Shell" href="cm-mooc.html" />
     <link rel="prev" title="Cloudmesh in Classes" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -125,16 +125,38 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-interface">Cloudmesh The Cloudmesh Command Shell interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-command-shell-interface">Cloudmesh Command Shell Interface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-api">Cloudmesh The Cloudmesh Command Shell API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-command-shell-api">Cloudmesh Command Shell API</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id5">Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-python-api">Cloudmesh The Cloudmesh Command Python API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-command-python-api">Cloudmesh Command Python API</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id6">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cm-mooc.html">Cloudmesh MOOC Shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cm-mooc.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cm-mooc.html#detailed-instructions">Detailed Instructions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#cm-mooc-instruction"><cite>cm-mooc</cite> Instruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#openstack-credential">OpenStack Credential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#openstack-heat">OpenStack Heat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#enable-cm-mooc">Enable <cite>cm-mooc</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#security-group">Security Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#ssh-key-registration">SSH Key Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#start-cloudmesh-vm">Start Cloudmesh VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#list-vm">List VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#stop-cloudmesh-vm">Stop Cloudmesh VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#login-cloudmesh-vm">Login Cloudmesh VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#create-ipython-notebook-profile-on-cloudmesh-vm-set-password">Create IPython Notebook Profile on Cloudmesh VM (Set Password)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#start-ipython-notebook-on-cloudmesh-vm">Start IPython Notebook on Cloudmesh VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#class-material">Class material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#stop-ipython-notebook-on-cloudmesh-vm">Stop IPython Notebook on Cloudmesh VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cm-mooc.html#help-message">Help Message</a></li>
 </ul>
 </li>
 </ul>
@@ -307,7 +329,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#get-flavors-or-images">Get Flavors or Images</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#quick-start-a-vm">Quick Start a VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#id1">Start a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#delete-a-vm">Delete a VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/cm/_vm-cm.html#set-default-cloud">Set default cloud</a></li>
@@ -566,6 +587,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../rst.html#todo">Todo</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../management/create_image.html">How to setup a Cloudmesh Image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../management/create_image.html#boot-a-vm-from-an-existing-image-using-nova-commands">Boot a VM from an existing image using nova commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../management/create_image.html#setup-cloudmesh-on-the-new-vm">Setup Cloudmesh on the new VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../management/create_image.html#preparation-of-the-vm">Preparation of the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../management/create_image.html#install-cloudmesh">Install Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../management/create_image.html#create-an-image-from-the-new-vm">Create an image from the new VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../management/create_image.html#test-the-image">Test the image</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
 </ul>
 </ul>
@@ -602,15 +637,15 @@
 <li><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-interface">Cloudmesh The Cloudmesh Command Shell interface</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-shell-interface">Cloudmesh Command Shell Interface</a><ul>
 <li><a class="reference internal" href="#id4">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-api">Cloudmesh The Cloudmesh Command Shell API</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-shell-api">Cloudmesh Command Shell API</a><ul>
 <li><a class="reference internal" href="#id5">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-python-api">Cloudmesh The Cloudmesh Command Python API</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-python-api">Cloudmesh Command Python API</a><ul>
 <li><a class="reference internal" href="#id6">Exercises</a></li>
 </ul>
 </li>
@@ -629,7 +664,7 @@
     </a>
   </li>
   <li>
-    <a href="../accounts/index.html" title="Next Chapter: Cloud Accounts"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Cloud Accounts &raquo;</span>
+    <a href="cm-mooc.html" title="Next Chapter: Cloudmesh MOOC Shell"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Cloudmesh MOOC S... &raquo;</span>
     </a>
   </li>
               
@@ -691,6 +726,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
 </ul>
 
@@ -725,15 +761,15 @@
 <li><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-interface">Cloudmesh The Cloudmesh Command Shell interface</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-shell-interface">Cloudmesh Command Shell Interface</a><ul>
 <li><a class="reference internal" href="#id4">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-api">Cloudmesh The Cloudmesh Command Shell API</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-shell-api">Cloudmesh Command Shell API</a><ul>
 <li><a class="reference internal" href="#id5">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-python-api">Cloudmesh The Cloudmesh Command Python API</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-python-api">Cloudmesh Command Python API</a><ul>
 <li><a class="reference internal" href="#id6">Exercises</a></li>
 </ul>
 </li>
@@ -768,7 +804,7 @@
 <div class="section" id="video-syllabus">
 <h2>Video Syllabus<a class="headerlink" href="#video-syllabus" title="Permalink to this headline">¶</a></h2>
 <p class="graphviz">
-<img src="../_images/graphviz-d18073602f18bc20fc20f32834915f98f5842e8f.png" alt="digraph foo {
+<img src="../_images/graphviz-e32d937492633739a1ee5cc3231cf9d8f110f96a.png" alt="digraph foo {
      node [shape=record];
 
      a [label=&quot;Part A | Account Application &quot;,
@@ -795,7 +831,7 @@
          URL=&quot;http://www.youtube.com/watch?v=njHHjRMb7V8&quot;,
          target=&quot;_blank&quot;];
 
-     c [label=&quot;Part C | Over view of the Cloudmesh Learning Web Site&quot;,
+     c [label=&quot;Part C | Overview of Cloudmesh Learning Web Site&quot;,
          URL=&quot;http://www.youtube.com/watch?v=uGIPmiJ0cxg&quot;,
          target=&quot;_blank&quot;];
 
@@ -846,7 +882,7 @@
 <area shape="rect" id="node3" href="http://www.youtube.com/watch?v=rZzpCYWDEpI" target="_blank" title="Part A.2 | OpenID Upload " alt="" coords="104,302,327,351"/>
 <area shape="rect" id="node4" href="http://www.youtube.com/watch?v=4wjVwQbOlSU" target="_blank" title="Part A.3 | SSHkey Upload " alt="" coords="104,401,328,450"/>
 <area shape="rect" id="node5" href="http://www.youtube.com/watch?v=5xQiPBwt58s" target="_blank" title="Part A.4 | Project Join Request" alt="" coords="87,499,344,549"/>
-<area shape="rect" id="node7" href="http://www.youtube.com/watch?v=uGIPmiJ0cxg" target="_blank" title="Part C | Over view of the Cloudmesh Learning Web Site" alt="" coords="74,697,523,746"/>
+<area shape="rect" id="node7" href="http://www.youtube.com/watch?v=uGIPmiJ0cxg" target="_blank" title="Part C | Overview of Cloudmesh Learning Web Site" alt="" coords="90,697,507,746"/>
 <area shape="rect" id="node8" href="http://www.youtube.com/watch?v=lGiJifD0VgU" target="_blank" title="Part D.1 | Install Cloudmesh on a Desktop" alt="" coords="22,795,367,845"/>
 <area shape="rect" id="node9" href="http://www.youtube.com/watch?v=rcecpgm-47g" target="_blank" title="Part D.2 | Install Cloudmesh on a VM" alt="" coords="345,894,656,943"/>
 <area shape="rect" id="node10" href="http://www.youtube.com/watch?v=l_P4G85rysA" target="_blank" title="Part E | The Cloudmesh Web Interface" alt="" coords="4,894,320,943"/>
@@ -880,10 +916,10 @@
 class projects.</td>
 <td>This lesson explains you how to create a portal account which
 is the first step in getting access to FutureSystems. You can
-also view the following videos form FutureGrid as they still
-apply.  For written material, see section
+also view the following videos from FutureGrid as they still
+apply.  For written materials, see section
 <a class="reference internal" href="../accounts/details.html#s-account-create-account"><em>Create a Portal account</em></a>. and
-<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><em>Creating FutureSystems Accounts and Projects</em></a> They are listed in Alernative 2.</td>
+<a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><em>Creating FutureSystems Accounts and Projects</em></a> They are listed in Alternative 2.</td>
 </tr>
 <tr class="row-odd"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=c7mjKI8mJws">c7mjKI8mJws</a> <img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=rZzpCYWDEpI">rZzpCYWDEpI</a>
 <img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=4wjVwQbOlSU">4wjVwQbOlSU</a> <img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=5xQiPBwt58s">5xQiPBwt58s</a></td>
@@ -897,7 +933,7 @@ Section <a class="reference internal" href="../accounts/details.html#s-account-c
 </tr>
 </tbody>
 </table>
-<p>If you attend a class the above video is probably sufficient. If you
+<p>If you attend a class the above video clips are probably sufficient. If you
 like to know more, please see the videos at
 <a class="reference internal" href="../accounts/accounts.html#s-screencast-accounts"><em>Creating FutureSystems Accounts and Projects</em></a></p>
 <div class="section" id="exercises">
@@ -905,7 +941,7 @@ like to know more, please see the videos at
 <ol class="arabic simple">
 <li>Create a portal account on FutureSystems.</li>
 <li>Identify an interesting project that you can conduct on
-FutureSystems Cloud, HPC, or  Grid resources.</li>
+FutureSystems Cloud, HPC, or Grid resources.</li>
 <li>Apply for a FutureSystems project or join a project.
 See section <a class="reference internal" href="../accounts/details.html#s-account-join-project"><em>Join a Project</em></a>.</li>
 <li>Read up on what a ssh key is.
@@ -915,7 +951,7 @@ Do this via <a class="reference external" href="https://portal.futuregrid.org/my
 <li>Register your OpenID in the portal (for example if you use google).</li>
 <li>Upload a 220x220 pixel portrait of yours to the portal.
 Do this via <a class="reference external" href="https://portal.futuregrid.org/my/edit">https://portal.futuregrid.org/my/edit</a></li>
-<li>Make sure you have uploaded a small Bio written in third person.
+<li>Make sure you have uploaded a small Bio.
 Do this via <a class="reference external" href="https://portal.futuregrid.org/my/Contact">https://portal.futuregrid.org/my/Contact</a></li>
 </ol>
 </div>
@@ -947,9 +983,9 @@ The lesson also includes pointers to future development of cloudmesh.</td>
 </tr>
 <tr class="row-odd"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=uGIPmiJ0cxg">uGIPmiJ0cxg</a></td>
 <td>17:54 min</td>
-<td>An Overview about the Cloudmesh  Learning Web Pages</td>
-<td>This lesson gives a short overview about the Web site on which
-cloudmesh is hosted. It also talks a bit abou the architecture.</td>
+<td>An Overview about the Cloudmesh Learning Web Pages</td>
+<td>This lesson gives a short overview about the web site on which
+cloudmesh is hosted. It also talks a bit about the architecture.</td>
 </tr>
 </tbody>
 </table>
@@ -1009,7 +1045,7 @@ contains a short introduction to the Web interface. See Section
 </table>
 <div class="section" id="id1">
 <h3>Exercises<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Chose one of the deployment methods below.</p>
+<p>Choose one of the deployment methods below.</p>
 <ol class="arabic simple">
 <li>Install Cloudmesh on your computer (only if you like to use it on
 your own machine and are aware that certain programs need to be
@@ -1037,8 +1073,8 @@ installed). See Alternative 1.</li>
 <tbody valign="top">
 <tr class="row-even"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=l_P4G85rysA">l_P4G85rysA</a></td>
 <td>15:30 min</td>
-<td>The CLoudmesh Web Interface</td>
-<td>A lesson on how to use the Cloudmesh Web interface to manage
+<td>The Cloudmesh Web Interface</td>
+<td>A lesson on how to use the Cloudmesh Web Interface to manage
 resources on a Cloud. See Section <a class="reference internal" href="../cloudmesh/gui/screenshots.html#s-screenshots"><em>Screenshots</em></a> for more
 details.</td>
 </tr>
@@ -1052,7 +1088,7 @@ details.</td>
 <li>Start and delete a vm on india</li>
 <li>Refresh servers</li>
 </ol>
-<p>Note that some features of Cloudmesh have not bee activated or may not
+<p>Note that some features of Cloudmesh have not been activated or may not
 yet work. Cloudmesh is an evolving project and changes are expected.</p>
 </div>
 </div>
@@ -1090,8 +1126,8 @@ contained on on the Cloudmesh learning Web pages.</td>
 </ol>
 </div>
 </div>
-<div class="section" id="cloudmesh-the-cloudmesh-command-shell-interface">
-<h2>Cloudmesh The Cloudmesh Command Shell interface<a class="headerlink" href="#cloudmesh-the-cloudmesh-command-shell-interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cloudmesh-command-shell-interface">
+<h2>Cloudmesh Command Shell Interface<a class="headerlink" href="#cloudmesh-command-shell-interface" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
@@ -1109,24 +1145,24 @@ contained on on the Cloudmesh learning Web pages.</td>
 <tbody valign="top">
 <tr class="row-even"><td><img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=hdq-t-ggkXA">hdq-t-ggkXA</a></td>
 <td>11:58 min</td>
-<td>The Cloudmesh Command Shell interface</td>
+<td>The Cloudmesh Command Shell Interface</td>
 <td>This video we will be introducing you to the cloudmesh
-command shell demonstrate to you that it is very easy to start
+command shell and demonstrate to you that it is very easy to start
 virtual machines and access them via a command terminal. The
-shell provides scripting or the execution of singe files. it is
-fully integrated in a database framework leveraging mongo.</td>
+shell provides scripting or the execution of single files. It is
+fully integrated in a database framework leveraging mongodb.</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="id4">
 <h3>Exercises<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Start and delete a virtual machine</li>
+<li>Start and delete a virtual machine by using Cloudmesh Command Shell Interface</li>
 </ol>
 </div>
 </div>
-<div class="section" id="cloudmesh-the-cloudmesh-command-shell-api">
-<h2>Cloudmesh The Cloudmesh Command Shell API<a class="headerlink" href="#cloudmesh-the-cloudmesh-command-shell-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cloudmesh-command-shell-api">
+<h2>Cloudmesh Command Shell API<a class="headerlink" href="#cloudmesh-command-shell-api" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
@@ -1156,12 +1192,12 @@ isnterface is nice for quick prototyping.</td>
 <div class="section" id="id5">
 <h3>Exercises<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Start and delete a virtual machine</li>
+<li>Start and delete a virtual machine by using Cloudmesh Command Shell API</li>
 </ol>
 </div>
 </div>
-<div class="section" id="cloudmesh-the-cloudmesh-command-python-api">
-<h2>Cloudmesh The Cloudmesh Command Python API<a class="headerlink" href="#cloudmesh-the-cloudmesh-command-python-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cloudmesh-command-python-api">
+<h2>Cloudmesh Command Python API<a class="headerlink" href="#cloudmesh-command-python-api" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
@@ -1185,7 +1221,7 @@ python API and demonstrate to you that it is very easy to start
 virtual machines and access them via ssh. We will be using the
 keys you registered earlier and introduce you to the
 defaults. This makes it possible to start a VM with only two
-parameters. We willl also teach you how to create public ips
+parameters. We will also teach you how to create public ips
 and assign them to the vm.</td>
 </tr>
 </tbody>
@@ -1193,7 +1229,7 @@ and assign them to the vm.</td>
 <div class="section" id="id6">
 <h3>Exercises<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Start and delete a virtual machine</li>
+<li>Start and delete a virtual machine by using Cloudmesh Python API</li>
 </ol>
 </div>
 </div>
@@ -1244,6 +1280,7 @@ and assign them to the vm.</td>
 <li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
 </ul>
 
@@ -1279,15 +1316,15 @@ and assign them to the vm.</td>
 <li><a class="reference internal" href="#id3">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-interface">Cloudmesh The Cloudmesh Command Shell interface</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-shell-interface">Cloudmesh Command Shell Interface</a><ul>
 <li><a class="reference internal" href="#id4">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-shell-api">Cloudmesh The Cloudmesh Command Shell API</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-shell-api">Cloudmesh Command Shell API</a><ul>
 <li><a class="reference internal" href="#id5">Exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cloudmesh-the-cloudmesh-command-python-api">Cloudmesh The Cloudmesh Command Python API</a><ul>
+<li><a class="reference internal" href="#cloudmesh-command-python-api">Cloudmesh Command Python API</a><ul>
 <li><a class="reference internal" href="#id6">Exercises</a></li>
 </ul>
 </li>
