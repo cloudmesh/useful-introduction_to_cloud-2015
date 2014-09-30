@@ -12,7 +12,7 @@ Quick Start
 
 * Create a FutureSystems portal ID, if you don't have. (http://portal.futuregrid.org) 
 * Login to India OpenStack 
-   - ``ssh <username>@india.futuregrid.org``
+   - ``ssh <username>@india.futuregrid.org`` `Need more help for ssh? <https://portal.futuregrid.org/manual/accessing-futuregrid-resources-ssh>`_
 * Activate `cm-mooc`::
 
    module load heatclient
