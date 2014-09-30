@@ -12,7 +12,7 @@ Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
 .. |video-cm-mooc| replace:: |video-image| :youtube:`kFWGPqHrBCA`
 
 
-Quick Start
+Quickstart
 ------------
 
 * Create a FutureSystems portal ID (if you don't have)
