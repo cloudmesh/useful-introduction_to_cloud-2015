@@ -1,7 +1,10 @@
 Cloudmesh MOOC Shell
 ======================
 
-`cm-mooc` provides an easy way to start a Cloudmesh VM on OpenStack India. You may read the following instructions to enable this program on your terminal.
+`cm-mooc` provides an easy way to start a Cloudmesh VM on OpenStack India. 
+You can start a virtual machine for Cloudmesh with a single command in `cm-mooc`.
+You can also enable IPython Notebook on the virtual machine with `cm notebook` commands.
+You may read the following instructions to enable this program on your terminal.
 
 
 Quick Start
@@ -33,6 +36,12 @@ Quick Start
    # Acccess to your IPython Notebook via a web browser: https://[ip address]:8888
    cm-mooc stop # Stop the VM
 
+
+`cm-mooc` Instruction
+-----------------------
+
+The following instrunctions explain `cm-mooc` command in detail. 
+Start, login, stop of your virtual machine is really easy with `cm-mooc` command. 
 
 OpenStack Credential
 --------------------
