@@ -121,12 +121,14 @@ Security Group
 Cloudmesh, IPython Notebook requires to use 5000, 8888 port numbers. We need to
 add rules for these port numbers.
 
-* Create 'cloudmesh' secgroup to allow the access of 5000, 8888 ports::
+* Create 'cloudmesh' secgroup to allow the access of 5000, 8888 ports
+  
+  ::
 
-  nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
-  nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
-  nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
-  nova secgroup-list-rules cloudmesh
+    nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
+    nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
+    nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
+    nova secgroup-list-rules cloudmesh
   
 **If you already have `cloudmesh` in your security group, you can skip this
 section.**
