@@ -7,6 +7,7 @@ You can also enable IPython Notebook on the virtual machine with `cm notebook` c
 You may read the following instructions to enable this program on your terminal.
 
 Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
+
 .. |video-cm-mooc| replace:: |video-image| :youtube:`kFWGPqHrBCA`
 
 
