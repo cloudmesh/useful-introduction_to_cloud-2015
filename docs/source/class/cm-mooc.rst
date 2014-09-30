@@ -116,28 +116,28 @@ List VM
 
 You can check the status of the VM by the following command::
 
-``cm-mooc list``
+cm-mooc list
 
 Stop Cloudmesh VM
 ---------------------
 
 If you completed all your work, you may stop the VM by the following command::
 
-``cm-mooc stop``
+cm-mooc stop
 
 Login Cloudmesh VM
 --------------------------
 
 You can ssh to the VM by the following command::
 
-``cm-mooc login``
+cm-mooc login
 
 Create IPython Notebook Profile on Cloudmesh VM (Set Password)
 ------------------------------------------------------------------
 
 If you have waited more than 5 minutes, you can now create IPython Notebook (ipynb) Profile with::
 
-``cm-mooc notebook create``
+cm-mooc notebook create
 
 This step requires your password input for IPython Notebook and information of the self-assigned certificate to enable SSL.
 
@@ -147,7 +147,7 @@ Start IPython Notebook on Cloudmesh VM
 
 If you have already configured your IPython Notebook (ipynb), you can start with::
 
-``cm-mooc notebook start``
+cm-mooc notebook start
 
 Once the server started, you can get access to the IPython Notebook via https://[public ip address]:8888
 
