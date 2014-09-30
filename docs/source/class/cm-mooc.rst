@@ -239,7 +239,7 @@ Cloudmesh Notebook files are also available.
 Original source is at
 https://github.com/cloudmesh/introduction_to_cloud_computing
 
-You can import or export more notebook files.
+You can import or export more IPython Notebook files.
 
 Stop IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
