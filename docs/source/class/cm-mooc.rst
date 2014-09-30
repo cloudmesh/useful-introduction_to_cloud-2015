@@ -109,7 +109,7 @@ We can now start Cloudmesh VM
 
 ``cm-mooc start``
 
-** It may take 5 minutes or so. You need to wait otherwise the environment is not ready to use in the next step.
+**It may take 5 minutes or so. You need to wait otherwise the environment is not ready to use in the next step.**
 
 List VM
 --------
