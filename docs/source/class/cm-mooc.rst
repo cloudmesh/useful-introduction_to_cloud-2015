@@ -50,7 +50,9 @@ Quick Start
 
    cm-mooc start
    # wait approximately 5 minutes
-   cm-mooc notebook create
+   cm-mooc login # SSH to VMj
+   cm notebook create # provide your password to IPython Notebook on the virtual machine
+   # Exit (ctrl-c)
    cm-mooc notebook start
 
 * Now you can access the IPython Notebook via a web browser:
@@ -179,6 +181,15 @@ If you have waited more than 5 minutes, you can now create IPython Notebook (ipy
 
 This step requires your password input for IPython Notebook and information of the self-assigned certificate to enable SSL.
 
+You can also do the same thing with ssh login.
+
+``cm-mooc login``
+
+Once you logged in, try `cm` program.
+
+``cm notebook create``
+
+cm is Cloudmesh shell program. It allows you to create a IPython Notebook Profile.
 
 Start IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
