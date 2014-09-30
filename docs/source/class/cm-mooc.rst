@@ -137,11 +137,11 @@ SSH Key Registration
 If you have not registered your ssh key, you may need to do the following
 steps::
 
-  ssh $PORTALNAME@india.futuresystems.org
+  ssh $USER@india.futuresystems.org
   module load novaclient
   source ~/.futuregrid/openstack_havana/novarc
   
-*$PORTALNAME is your login id to FutureSystems*
+*$USER is your login id to FutureSystems*
 
 If you do not have a ssh key, you can generate one::
 
