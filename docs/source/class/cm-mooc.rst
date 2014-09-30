@@ -15,10 +15,14 @@ Quick Start
    - ``ssh <username>@india.futuregrid.org`` `Need more help for ssh? <https://portal.futuregrid.org/manual/accessing-futuregrid-resources-ssh>`_
 * Activate `cm-mooc`::
 
-   module load heatclient
-   source ~/.futuregrid/openstack_havana/novarc
-   source /share/project/FG455/MOOC/bin/activate
+     module load heatclient
+     source ~/.futuregrid/openstack_havana/novarc
+     source /share/project/FG455/MOOC/bin/activate
    
+  .. note: It maye be useful to add the module load and the source commands into your 
+  .bashrc_profile so you do not forget to activate them whnever you log in.
+
+
 * Create 'cloudmesh' secgroup to allow the access of 80, 5000, 8888 ports::
 
   $ nova secgroup-create cloudmesh "cloudmesh ports 80, 5000, 8888"
