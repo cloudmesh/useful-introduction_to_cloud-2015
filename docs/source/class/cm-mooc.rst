@@ -17,11 +17,11 @@ Quick Start
 
 * Create a FutureSystems portal ID (if you don't have)
    - http://portal.futuregrid.org 
-     Need more help? see :ref:`s-accounts`
+   Need more help? see :ref:`s-accounts`
 
 * Login to India OpenStack 
    - ``ssh <username>@india.futuregrid.org`` 
-     Need more help for ssh? see :ref:`s-using-ssh`
+   Need more help for ssh? see :ref:`s-using-ssh`
 
 * Activate `cm-455`::
 
