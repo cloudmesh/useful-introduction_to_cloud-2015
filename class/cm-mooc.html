@@ -821,13 +821,23 @@ nova secgroup-list-rules cloudmesh
 </div>
 </li>
 <li><p class="first">Execute the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-mooc start       # wait approximately 5 minutes after this command
-cm-mooc login       # SSH to VM
+<div class="highlight-python"><div class="highlight"><pre>cm-mooc start
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please wait approximately 5 minutes after this command.
+when you log into early the next command will fail.</p>
+</div>
+<p>after you have waited for 5 minutes you can execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm-mooc login       # SSH to VM
 cm notebook create # provide your password to IPython Notebook on the
 virtual machine and Exit (ctrl-c) cm-mooc notebook start
 </pre></div>
 </div>
-</li>
+<ul>
 <li><p class="first">Now you can access the IPython Notebook via a web browser:
 <cite>https://[ip address]:8888</cite></p>
 <p>The clas material is contained in two directories. Dependent on the

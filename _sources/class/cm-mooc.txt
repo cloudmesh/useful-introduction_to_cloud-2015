@@ -53,7 +53,13 @@ Quickstart
 
 * Execute the following commands::
 
-   cm-mooc start       # wait approximately 5 minutes after this command
+   cm-mooc start      
+
+.. warning:: Please wait approximately 5 minutes after this command.
+   when you log into early the next command will fail.
+	     
+after you have waited for 5 minutes you can execute::
+
    cm-mooc login       # SSH to VM
    cm notebook create # provide your password to IPython Notebook on the
    virtual machine and Exit (ctrl-c) cm-mooc notebook start
