@@ -1,8 +1,8 @@
 Cloudmesh MOOC Shell
 ======================
 
-`cm-455` provides an easy way to start a Cloudmesh VM on OpenStack India. 
-You can start a virtual machine for Cloudmesh with a single command in `cm-455`.
+`cm-mooc` provides an easy way to start a Cloudmesh VM on OpenStack India. 
+You can start a virtual machine for Cloudmesh with a single command in `cm-mooc`.
 You can also enable IPython Notebook on the virtual machine with `cm notebook`
 commands.  You may read the following instructions to enable this program on
 your terminal.
@@ -27,7 +27,7 @@ Quickstart
      
   .. note:: Need more help for ssh? see :ref:`s-using-ssh`
 
-* Activate `cm-455`::
+* Activate `cm-mooc`::
 
      module load heatclient
      source ~/.futuregrid/openstack_havana/novarc
@@ -45,7 +45,6 @@ Quickstart
 
   ::
 
-      module load novaclient
       source ~/.futuregrid/openstack_havana/novarc
       nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
       nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
@@ -54,10 +53,10 @@ Quickstart
 
 * Execute the following commands::
 
-   cm-455 start       # wait approximately 5 minutes after this command
-   cm-455 login       # SSH to VM
+   cm-mooc start       # wait approximately 5 minutes after this command
+   cm-mooc login       # SSH to VM
    cm notebook create # provide your password to IPython Notebook on the
-   virtual machine and Exit (ctrl-c) cm-455 notebook start
+   virtual machine and Exit (ctrl-c) cm-mooc notebook start
 
 * Now you can access the IPython Notebook via a web browser:
   `https://[ip address]:8888`
@@ -68,24 +67,24 @@ Quickstart
   * **fg455**: directory containing ipython notebooks for the class fg455
   * **cloudmesh**: directory containing cloudmesh ipython notebooks
 
-* to stop the services simply use::
+* to delete the services simply use::
 
-   cm-455 stop 
+   cm-mooc delete
 
 * to start it again simply use::
 
-   cm-455 start
+   cm-mooc start
 
   There is no need to create the image or the notbook server
 
 Detailed Instructions
 ----------------------------------------------------------------------
 
-`cm-455` Instruction
+`cm-mooc` Instruction
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following instrunctions explain `cm-455` command in detail. 
-Start, login, stop of your virtual machine is really easy with `cm-455`
+The following instrunctions explain `cm-mooc` command in detail. 
+Start, login, stop of your virtual machine is really easy with `cm-mooc`
 command. 
 
 OpenStack Credential
@@ -106,12 +105,12 @@ libraries is required.
 * heatclient
    - ``module load heatclient``
   
-Enable `cm-455`
+Enable `cm-mooc`
 ^^^^^^^^^^^^^^^^^
 
-Now, we activate the `cm-455` tool.
+Now, we activate the `cm-mooc` tool.
 
-* `cm-455`
+* `cm-mooc`
    - ``source /share/project/FG455/MOOC/bin/activate``
 
 Security Group
@@ -157,40 +156,40 @@ Start Cloudmesh VM
 
 We can now start Cloudmesh VM on OpenStack India.
 
-``cm-455 start``
+``cm-mooc start``
 
 **It may take 5 minutes or so. You need to wait otherwise the environment is
 not ready to use in the next step.**
 
-  .. note:: Try Cloudmesh Web Site at http://[ip address]:5000
-  Your default password is: *cloudmesh*
-  To change the password, try the following commands::
+.. note:: Try Cloudmesh Web Site at http://[ip address]:5000 Your
+   default password is: *cloudmesh* To change the password, try the
+   following commands::
   
-    cm-455 login
-    cd ~/cloudmesh
-    fab user.mongo # set your password
-    fab server.start # restart the Cloudmesh server
+     cm-mooc login
+     cd ~/cloudmesh
+     fab user.mongo # set your password
+     fab server.start # restart the Cloudmesh server
     
 List VM
 ^^^^^^^^
 
 You can check the status of the VM by the following commanf.
 
-``cm-455 list``
+``cm-mooc list``
 
-Stop Cloudmesh VM
+Delete the Mooc Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^
 
 If you have completed all of your work in the VM, you may stop the VM by the following command.
 
-``cm-455 stop``
+``cm-mooc delete``
 
 Login Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can ssh to the VM by the following command.
 
-``cm-455 login``
+``cm-mooc login``
 
 Create IPython Notebook Profile on Cloudmesh VM (Set Password)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -198,14 +197,14 @@ Create IPython Notebook Profile on Cloudmesh VM (Set Password)
 If you have waited more than 5 minutes, you can now create IPython Notebook
 (ipynb) Profile with,
 
-``cm-455 notebook create``
+``cm-mooc notebook create``
 
 This step requires your password input for IPython Notebook and information of
 the self-assigned certificate to enable SSL.
 
 You can also do the same thing with ssh login.
 
-``cm-455 login``
+``cm-mooc login``
 
 Once you logged in, try `cm` program.
 
@@ -218,7 +217,7 @@ providing some information.
 ``exit``
 
 If you created the ipynb profile, you may exit from the VM. Let's get back to
-India and use `cm-455` command.
+India and use `cm-mooc` command.
 
   .. note:: `cm` is the Cloudmesh shell program. It allows you to create a
   IPython Notebook Profile.
@@ -229,7 +228,7 @@ Start IPython Notebook on Cloudmesh VM
 If you have already configured your IPython Notebook (ipynb), you can start
 with,
 
-``cm-455 notebook start``
+``cm-mooc notebook start``
 
 Once the server started, you can get access to the IPython Notebook via
 https://[public ip address]:8888
@@ -254,11 +253,11 @@ You can import or export more IPython Notebook files.
 Stop IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The simple command ``cm-455 notebook stop`` kills the Ipython Notebook server.
+The simple command ``cm-mooc notebook stop`` kills the Ipython Notebook server.
 
 Help Message
 ^^^^^^^^^^^^^
 
-You can see available commands to `cm-455` program.
+You can see available commands to `cm-mooc` program.
 
-``cm-455 -h``
+``cm-mooc -h``
