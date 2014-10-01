@@ -774,44 +774,42 @@ your terminal.</p>
 <p>Tutorial Video Clip: <a class="reference external" href="http://youtu.be/kFWGPqHrBCA">http://youtu.be/kFWGPqHrBCA</a></p>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">Create a FutureSystems portal ID (if you don&#8217;t have)</p>
-<ul class="simple">
+<p>Create a FutureSystems portal ID (if you don&#8217;t have)</p>
+<blockquote>
+<div><ul class="simple">
 <li><a class="reference external" href="http://portal.futuregrid.org">http://portal.futuregrid.org</a></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Need more help? see <a class="reference internal" href="../accounts/details.html#s-accounts"><em>Account and Project Management</em></a></p>
 </div>
-</li>
-<li><p class="first">Login to India OpenStack</p>
-<ul class="simple">
+</div></blockquote>
+<p>Login to India OpenStack</p>
+<blockquote>
+<div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">&lt;username&gt;&#64;india.futuregrid.org</span></tt></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Need more help for ssh? see <a class="reference internal" href="../accounts/ssh.html#s-using-ssh"><em>Using SSH Keys</em></a></p>
 </div>
-</li>
-<li><p class="first">Activate <cite>cm-mooc</cite>:</p>
-<div class="highlight-python"><div class="highlight"><pre>module load heatclient
-source ~/.futuregrid/openstack_havana/novarc
-source /share/project/FG455/MOOC/bin/activate
+</div></blockquote>
+<p>Activate <cite>cm-mooc</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>   module load heatclient
+   source ~/.futuregrid/openstack_havana/novarc
+   source /share/project/FG455/MOOC/bin/activate
+
+.. note:: It maye be useful to add the module load and the source
+   commands into your .bashrc_profile so you do not forget to
+   activate them whnever you log in.
 </pre></div>
 </div>
+<p>Create the &#8216;cloudmesh&#8217; security group to add 5000, 8888 ports.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It maye be useful to add the module load and the source
-commands into your .bashrc_profile so you do not forget to
-activate them whnever you log in.</p>
+<p class="last">If you already have <cite>cloudmesh</cite> in your security group, you
+can skip this step.</p>
 </div>
-</li>
-<li><p class="first">Create the &#8216;cloudmesh&#8217; security group to add 5000, 8888 ports.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you already have <cite>cloudmesh</cite> in your security group, you can</p>
-</div>
-<p>skip this step.</p>
 <div class="highlight-python"><div class="highlight"><pre>source ~/.futuregrid/openstack_havana/novarc
 nova secgroup-create cloudmesh &quot;cloudmesh ports 5000, 8888&quot;
 nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
@@ -819,46 +817,45 @@ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
 nova secgroup-list-rules cloudmesh
 </pre></div>
 </div>
-</li>
-<li><p class="first">Execute the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-mooc start
+<p>Execute the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>india$ cm-mooc start
 </pre></div>
 </div>
-</li>
-</ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Please wait approximately 5 minutes after this command.
 when you log into early the next command will fail.</p>
 </div>
 <p>after you have waited for 5 minutes you can execute:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-mooc login       # SSH to VM
-cm notebook create # provide your password to IPython Notebook on the
-virtual machine and Exit (ctrl-c) cm-mooc notebook start
+<div class="highlight-python"><div class="highlight"><pre>india$ cm-mooc login       # SSH to VM
 </pre></div>
 </div>
-<ul>
-<li><p class="first">Now you can access the IPython Notebook via a web browser:
-<cite>https://[ip address]:8888</cite></p>
-<p>The clas material is contained in two directories. Dependent on the
+<p>Now that you are looged into the VM please execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>vm$ cm notebook create # provide your password to IPython Notebook on the
+</pre></div>
+</div>
+<p>Now you need to exit the virtual machine. You will now be back in
+india. In india you execute:</p>
+<blockquote>
+<div>india$ cm-mooc notebook start</div></blockquote>
+<dl class="docutils">
+<dt>Now you can access the IPython Notebook via a web browser:</dt>
+<dd><cite>https://[ip address]:8888</cite></dd>
+</dl>
+<p>If you forgot the ip address you can use the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>india$ cm-mooc info
+</pre></div>
+</div>
+<p>The class material is contained in two directories. Dependent on the
 class please chose the directory suitable for you:</p>
 <ul class="simple">
 <li><strong>fg455</strong>: directory containing ipython notebooks for the class fg455</li>
 <li><strong>cloudmesh</strong>: directory containing cloudmesh ipython notebooks</li>
 </ul>
-</li>
-<li><p class="first">to delete the services simply use:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-mooc delete
+<p>To delete the services (dangerous)  use:</p>
+<div class="highlight-python"><div class="highlight"><pre>india$ cm-mooc delete
 </pre></div>
 </div>
-</li>
-<li><p class="first">to start it again simply use:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-mooc start
-</pre></div>
-</div>
-<p>There is no need to create the image or the notbook server</p>
-</li>
-</ul>
 </div>
 <div class="section" id="detailed-instructions">
 <h2>Detailed Instructions<a class="headerlink" href="#detailed-instructions" title="Permalink to this headline">¶</a></h2>

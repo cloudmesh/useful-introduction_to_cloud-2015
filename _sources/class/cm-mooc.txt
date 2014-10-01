@@ -15,19 +15,19 @@ Tutorial Video Clip: http://youtu.be/kFWGPqHrBCA
 Quickstart
 ------------
 
-* Create a FutureSystems portal ID (if you don't have)
+Create a FutureSystems portal ID (if you don't have)
   
   - http://portal.futuregrid.org
     
   .. note:: Need more help? see :ref:`s-accounts`
 
-* Login to India OpenStack
+Login to India OpenStack
   
   - ``ssh <username>@india.futuregrid.org`` 
      
   .. note:: Need more help for ssh? see :ref:`s-using-ssh`
 
-* Activate `cm-mooc`::
+Activate `cm-mooc`::
 
      module load heatclient
      source ~/.futuregrid/openstack_havana/novarc
@@ -38,12 +38,12 @@ Quickstart
      activate them whnever you log in.
 
 
-* Create the 'cloudmesh' security group to add 5000, 8888 ports.
+Create the 'cloudmesh' security group to add 5000, 8888 ports.
 
-  .. note:: If you already have `cloudmesh` in your security group, you can
-  skip this step.
+.. note:: If you already have `cloudmesh` in your security group, you
+   can skip this step.
 
-  ::
+::
 
       source ~/.futuregrid/openstack_havana/novarc
       nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
@@ -51,37 +51,44 @@ Quickstart
       nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
       nova secgroup-list-rules cloudmesh
 
-* Execute the following commands::
+Execute the following commands::
 
-   cm-mooc start      
+   india$ cm-mooc start      
 
 .. warning:: Please wait approximately 5 minutes after this command.
    when you log into early the next command will fail.
 	     
 after you have waited for 5 minutes you can execute::
 
-   cm-mooc login       # SSH to VM
-   cm notebook create # provide your password to IPython Notebook on the
-   virtual machine and Exit (ctrl-c) cm-mooc notebook start
+   india$ cm-mooc login       # SSH to VM
 
-* Now you can access the IPython Notebook via a web browser:
-  `https://[ip address]:8888`
+Now that you are looged into the VM please execute:: 
+
+   vm$ cm notebook create # provide your password to IPython Notebook on the
   
-  The clas material is contained in two directories. Dependent on the
-  class please chose the directory suitable for you:
+Now you need to exit the virtual machine. You will now be back in
+india. In india you execute:
 
-  * **fg455**: directory containing ipython notebooks for the class fg455
-  * **cloudmesh**: directory containing cloudmesh ipython notebooks
+   india$ cm-mooc notebook start
 
-* to delete the services simply use::
+Now you can access the IPython Notebook via a web browser:
+  `https://[ip address]:8888`
 
-   cm-mooc delete
+If you forgot the ip address you can use the command::
 
-* to start it again simply use::
+    india$ cm-mooc info
+  
+The class material is contained in two directories. Dependent on the
+class please chose the directory suitable for you:
 
-   cm-mooc start
+* **fg455**: directory containing ipython notebooks for the class fg455
+* **cloudmesh**: directory containing cloudmesh ipython notebooks
 
-  There is no need to create the image or the notbook server
+
+To delete the services (dangerous)  use::
+
+   india$ cm-mooc delete
+
 
 Detailed Instructions
 ----------------------------------------------------------------------
