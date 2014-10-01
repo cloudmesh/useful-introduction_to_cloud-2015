@@ -142,15 +142,15 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">Cloudmesh MOOC Shell</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#detailed-instructions">Detailed Instructions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cm-455-instruction"><cite>cm-455</cite> Instruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cm-mooc-instruction"><cite>cm-mooc</cite> Instruction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#openstack-credential">OpenStack Credential</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#openstack-heat">OpenStack Heat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enable-cm-455">Enable <cite>cm-455</cite></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enable-cm-mooc">Enable <cite>cm-mooc</cite></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#security-group">Security Group</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ssh-key-registration">SSH Key Registration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#start-cloudmesh-vm">Start Cloudmesh VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#list-vm">List VM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#stop-cloudmesh-vm">Stop Cloudmesh VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-the-mooc-cloudmesh-vm">Delete the Mooc Cloudmesh VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#login-cloudmesh-vm">Login Cloudmesh VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#create-ipython-notebook-profile-on-cloudmesh-vm-set-password">Create IPython Notebook Profile on Cloudmesh VM (Set Password)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#start-ipython-notebook-on-cloudmesh-vm">Start IPython Notebook on Cloudmesh VM</a></li>
@@ -618,15 +618,15 @@
 <li><a class="reference internal" href="#">Cloudmesh MOOC Shell</a><ul>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#detailed-instructions">Detailed Instructions</a><ul>
-<li><a class="reference internal" href="#cm-455-instruction"><cite>cm-455</cite> Instruction</a></li>
+<li><a class="reference internal" href="#cm-mooc-instruction"><cite>cm-mooc</cite> Instruction</a></li>
 <li><a class="reference internal" href="#openstack-credential">OpenStack Credential</a></li>
 <li><a class="reference internal" href="#openstack-heat">OpenStack Heat</a></li>
-<li><a class="reference internal" href="#enable-cm-455">Enable <cite>cm-455</cite></a></li>
+<li><a class="reference internal" href="#enable-cm-mooc">Enable <cite>cm-mooc</cite></a></li>
 <li><a class="reference internal" href="#security-group">Security Group</a></li>
 <li><a class="reference internal" href="#ssh-key-registration">SSH Key Registration</a></li>
 <li><a class="reference internal" href="#start-cloudmesh-vm">Start Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#list-vm">List VM</a></li>
-<li><a class="reference internal" href="#stop-cloudmesh-vm">Stop Cloudmesh VM</a></li>
+<li><a class="reference internal" href="#delete-the-mooc-cloudmesh-vm">Delete the Mooc Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#login-cloudmesh-vm">Login Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#create-ipython-notebook-profile-on-cloudmesh-vm-set-password">Create IPython Notebook Profile on Cloudmesh VM (Set Password)</a></li>
 <li><a class="reference internal" href="#start-ipython-notebook-on-cloudmesh-vm">Start IPython Notebook on Cloudmesh VM</a></li>
@@ -728,15 +728,15 @@
 <li><a class="reference internal" href="#">Cloudmesh MOOC Shell</a><ul>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#detailed-instructions">Detailed Instructions</a><ul>
-<li><a class="reference internal" href="#cm-455-instruction"><cite>cm-455</cite> Instruction</a></li>
+<li><a class="reference internal" href="#cm-mooc-instruction"><cite>cm-mooc</cite> Instruction</a></li>
 <li><a class="reference internal" href="#openstack-credential">OpenStack Credential</a></li>
 <li><a class="reference internal" href="#openstack-heat">OpenStack Heat</a></li>
-<li><a class="reference internal" href="#enable-cm-455">Enable <cite>cm-455</cite></a></li>
+<li><a class="reference internal" href="#enable-cm-mooc">Enable <cite>cm-mooc</cite></a></li>
 <li><a class="reference internal" href="#security-group">Security Group</a></li>
 <li><a class="reference internal" href="#ssh-key-registration">SSH Key Registration</a></li>
 <li><a class="reference internal" href="#start-cloudmesh-vm">Start Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#list-vm">List VM</a></li>
-<li><a class="reference internal" href="#stop-cloudmesh-vm">Stop Cloudmesh VM</a></li>
+<li><a class="reference internal" href="#delete-the-mooc-cloudmesh-vm">Delete the Mooc Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#login-cloudmesh-vm">Login Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#create-ipython-notebook-profile-on-cloudmesh-vm-set-password">Create IPython Notebook Profile on Cloudmesh VM (Set Password)</a></li>
 <li><a class="reference internal" href="#start-ipython-notebook-on-cloudmesh-vm">Start IPython Notebook on Cloudmesh VM</a></li>
@@ -766,8 +766,8 @@
       
   <div class="section" id="cloudmesh-mooc-shell">
 <h1>Cloudmesh MOOC Shell<a class="headerlink" href="#cloudmesh-mooc-shell" title="Permalink to this headline">¶</a></h1>
-<p><cite>cm-455</cite> provides an easy way to start a Cloudmesh VM on OpenStack India.
-You can start a virtual machine for Cloudmesh with a single command in <cite>cm-455</cite>.
+<p><cite>cm-mooc</cite> provides an easy way to start a Cloudmesh VM on OpenStack India.
+You can start a virtual machine for Cloudmesh with a single command in <cite>cm-mooc</cite>.
 You can also enable IPython Notebook on the virtual machine with <cite>cm notebook</cite>
 commands.  You may read the following instructions to enable this program on
 your terminal.</p>
@@ -793,7 +793,7 @@ your terminal.</p>
 <p class="last">Need more help for ssh? see <a class="reference internal" href="../accounts/ssh.html#s-using-ssh"><em>Using SSH Keys</em></a></p>
 </div>
 </li>
-<li><p class="first">Activate <cite>cm-455</cite>:</p>
+<li><p class="first">Activate <cite>cm-mooc</cite>:</p>
 <div class="highlight-python"><div class="highlight"><pre>module load heatclient
 source ~/.futuregrid/openstack_havana/novarc
 source /share/project/FG455/MOOC/bin/activate
@@ -812,8 +812,7 @@ activate them whnever you log in.</p>
 <p class="last">If you already have <cite>cloudmesh</cite> in your security group, you can</p>
 </div>
 <p>skip this step.</p>
-<div class="highlight-python"><div class="highlight"><pre>module load novaclient
-source ~/.futuregrid/openstack_havana/novarc
+<div class="highlight-python"><div class="highlight"><pre>source ~/.futuregrid/openstack_havana/novarc
 nova secgroup-create cloudmesh &quot;cloudmesh ports 5000, 8888&quot;
 nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
 nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
@@ -822,10 +821,10 @@ nova secgroup-list-rules cloudmesh
 </div>
 </li>
 <li><p class="first">Execute the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-455 start       # wait approximately 5 minutes after this command
-cm-455 login       # SSH to VM
+<div class="highlight-python"><div class="highlight"><pre>cm-mooc start       # wait approximately 5 minutes after this command
+cm-mooc login       # SSH to VM
 cm notebook create # provide your password to IPython Notebook on the
-virtual machine and Exit (ctrl-c) cm-455 notebook start
+virtual machine and Exit (ctrl-c) cm-mooc notebook start
 </pre></div>
 </div>
 </li>
@@ -838,13 +837,13 @@ class please chose the directory suitable for you:</p>
 <li><strong>cloudmesh</strong>: directory containing cloudmesh ipython notebooks</li>
 </ul>
 </li>
-<li><p class="first">to stop the services simply use:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-455 stop
+<li><p class="first">to delete the services simply use:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm-mooc delete
 </pre></div>
 </div>
 </li>
 <li><p class="first">to start it again simply use:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-455 start
+<div class="highlight-python"><div class="highlight"><pre>cm-mooc start
 </pre></div>
 </div>
 <p>There is no need to create the image or the notbook server</p>
@@ -853,10 +852,10 @@ class please chose the directory suitable for you:</p>
 </div>
 <div class="section" id="detailed-instructions">
 <h2>Detailed Instructions<a class="headerlink" href="#detailed-instructions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="cm-455-instruction">
-<h3><cite>cm-455</cite> Instruction<a class="headerlink" href="#cm-455-instruction" title="Permalink to this headline">¶</a></h3>
-<p>The following instrunctions explain <cite>cm-455</cite> command in detail.
-Start, login, stop of your virtual machine is really easy with <cite>cm-455</cite>
+<div class="section" id="cm-mooc-instruction">
+<h3><cite>cm-mooc</cite> Instruction<a class="headerlink" href="#cm-mooc-instruction" title="Permalink to this headline">¶</a></h3>
+<p>The following instrunctions explain <cite>cm-mooc</cite> command in detail.
+Start, login, stop of your virtual machine is really easy with <cite>cm-mooc</cite>
 command.</p>
 </div>
 <div class="section" id="openstack-credential">
@@ -889,12 +888,12 @@ libraries is required.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="enable-cm-455">
-<h3>Enable <cite>cm-455</cite><a class="headerlink" href="#enable-cm-455" title="Permalink to this headline">¶</a></h3>
-<p>Now, we activate the <cite>cm-455</cite> tool.</p>
+<div class="section" id="enable-cm-mooc">
+<h3>Enable <cite>cm-mooc</cite><a class="headerlink" href="#enable-cm-mooc" title="Permalink to this headline">¶</a></h3>
+<p>Now, we activate the <cite>cm-mooc</cite> tool.</p>
 <ul>
 <li><dl class="first docutils">
-<dt><cite>cm-455</cite></dt>
+<dt><cite>cm-mooc</cite></dt>
 <dd><ul class="first last simple">
 <li><tt class="docutils literal"><span class="pre">source</span> <span class="pre">/share/project/FG455/MOOC/bin/activate</span></tt></li>
 </ul>
@@ -942,48 +941,46 @@ source ~/.futuregrid/openstack_havana/novarc
 <div class="section" id="start-cloudmesh-vm">
 <h3>Start Cloudmesh VM<a class="headerlink" href="#start-cloudmesh-vm" title="Permalink to this headline">¶</a></h3>
 <p>We can now start Cloudmesh VM on OpenStack India.</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">start</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">start</span></tt></p>
 <p><strong>It may take 5 minutes or so. You need to wait otherwise the environment is
 not ready to use in the next step.</strong></p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Try Cloudmesh Web Site at <a class="reference external" href="http://[ip">http://[ip</a> address]:5000</p>
-</div>
-<p>Your default password is: <em>cloudmesh</em>
-To change the password, try the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre>cm-455 login
+<p>Try Cloudmesh Web Site at <a class="reference external" href="http://[ip">http://[ip</a> address]:5000 Your
+default password is: <em>cloudmesh</em> To change the password, try the
+following commands:</p>
+<div class="last highlight-python"><div class="highlight"><pre>cm-mooc login
 cd ~/cloudmesh
 fab user.mongo # set your password
 fab server.start # restart the Cloudmesh server
 </pre></div>
 </div>
-</div></blockquote>
+</div>
 </div>
 <div class="section" id="list-vm">
 <h3>List VM<a class="headerlink" href="#list-vm" title="Permalink to this headline">¶</a></h3>
 <p>You can check the status of the VM by the following commanf.</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">list</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">list</span></tt></p>
 </div>
-<div class="section" id="stop-cloudmesh-vm">
-<h3>Stop Cloudmesh VM<a class="headerlink" href="#stop-cloudmesh-vm" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="delete-the-mooc-cloudmesh-vm">
+<h3>Delete the Mooc Cloudmesh VM<a class="headerlink" href="#delete-the-mooc-cloudmesh-vm" title="Permalink to this headline">¶</a></h3>
 <p>If you have completed all of your work in the VM, you may stop the VM by the following command.</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">stop</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">delete</span></tt></p>
 </div>
 <div class="section" id="login-cloudmesh-vm">
 <h3>Login Cloudmesh VM<a class="headerlink" href="#login-cloudmesh-vm" title="Permalink to this headline">¶</a></h3>
 <p>You can ssh to the VM by the following command.</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">login</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">login</span></tt></p>
 </div>
 <div class="section" id="create-ipython-notebook-profile-on-cloudmesh-vm-set-password">
 <h3>Create IPython Notebook Profile on Cloudmesh VM (Set Password)<a class="headerlink" href="#create-ipython-notebook-profile-on-cloudmesh-vm-set-password" title="Permalink to this headline">¶</a></h3>
 <p>If you have waited more than 5 minutes, you can now create IPython Notebook
 (ipynb) Profile with,</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">notebook</span> <span class="pre">create</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">notebook</span> <span class="pre">create</span></tt></p>
 <p>This step requires your password input for IPython Notebook and information of
 the self-assigned certificate to enable SSL.</p>
 <p>You can also do the same thing with ssh login.</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">login</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">login</span></tt></p>
 <p>Once you logged in, try <cite>cm</cite> program.</p>
 <p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">notebook</span> <span class="pre">create</span></tt></p>
 <p>This command asks you the password of your IPython Notebook Server. You also
@@ -991,7 +988,7 @@ need to create self-signed certificate.  You can create the certificate by
 providing some information.</p>
 <p><tt class="docutils literal"><span class="pre">exit</span></tt></p>
 <p>If you created the ipynb profile, you may exit from the VM. Let&#8217;s get back to
-India and use <cite>cm-455</cite> command.</p>
+India and use <cite>cm-mooc</cite> command.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -1004,7 +1001,7 @@ India and use <cite>cm-455</cite> command.</p>
 <h3>Start IPython Notebook on Cloudmesh VM<a class="headerlink" href="#start-ipython-notebook-on-cloudmesh-vm" title="Permalink to this headline">¶</a></h3>
 <p>If you have already configured your IPython Notebook (ipynb), you can start
 with,</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">notebook</span> <span class="pre">start</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">notebook</span> <span class="pre">start</span></tt></p>
 <p>Once the server started, you can get access to the IPython Notebook via
 <a class="reference external" href="https://[public">https://[public</a> ip address]:8888</p>
 </div>
@@ -1026,12 +1023,12 @@ of IPython Notebook.</p>
 </div>
 <div class="section" id="stop-ipython-notebook-on-cloudmesh-vm">
 <h3>Stop IPython Notebook on Cloudmesh VM<a class="headerlink" href="#stop-ipython-notebook-on-cloudmesh-vm" title="Permalink to this headline">¶</a></h3>
-<p>The simple command <tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">notebook</span> <span class="pre">stop</span></tt> kills the Ipython Notebook server.</p>
+<p>The simple command <tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">notebook</span> <span class="pre">stop</span></tt> kills the Ipython Notebook server.</p>
 </div>
 <div class="section" id="help-message">
 <h3>Help Message<a class="headerlink" href="#help-message" title="Permalink to this headline">¶</a></h3>
-<p>You can see available commands to <cite>cm-455</cite> program.</p>
-<p><tt class="docutils literal"><span class="pre">cm-455</span> <span class="pre">-h</span></tt></p>
+<p>You can see available commands to <cite>cm-mooc</cite> program.</p>
+<p><tt class="docutils literal"><span class="pre">cm-mooc</span> <span class="pre">-h</span></tt></p>
 </div>
 </div>
 </div>
@@ -1098,15 +1095,15 @@ of IPython Notebook.</p>
 <li><a class="reference internal" href="#">Cloudmesh MOOC Shell</a><ul>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#detailed-instructions">Detailed Instructions</a><ul>
-<li><a class="reference internal" href="#cm-455-instruction"><cite>cm-455</cite> Instruction</a></li>
+<li><a class="reference internal" href="#cm-mooc-instruction"><cite>cm-mooc</cite> Instruction</a></li>
 <li><a class="reference internal" href="#openstack-credential">OpenStack Credential</a></li>
 <li><a class="reference internal" href="#openstack-heat">OpenStack Heat</a></li>
-<li><a class="reference internal" href="#enable-cm-455">Enable <cite>cm-455</cite></a></li>
+<li><a class="reference internal" href="#enable-cm-mooc">Enable <cite>cm-mooc</cite></a></li>
 <li><a class="reference internal" href="#security-group">Security Group</a></li>
 <li><a class="reference internal" href="#ssh-key-registration">SSH Key Registration</a></li>
 <li><a class="reference internal" href="#start-cloudmesh-vm">Start Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#list-vm">List VM</a></li>
-<li><a class="reference internal" href="#stop-cloudmesh-vm">Stop Cloudmesh VM</a></li>
+<li><a class="reference internal" href="#delete-the-mooc-cloudmesh-vm">Delete the Mooc Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#login-cloudmesh-vm">Login Cloudmesh VM</a></li>
 <li><a class="reference internal" href="#create-ipython-notebook-profile-on-cloudmesh-vm-set-password">Create IPython Notebook Profile on Cloudmesh VM (Set Password)</a></li>
 <li><a class="reference internal" href="#start-ipython-notebook-on-cloudmesh-vm">Start IPython Notebook on Cloudmesh VM</a></li>
