@@ -775,25 +775,21 @@ your terminal.</p>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <p>Create a FutureSystems portal ID (if you don&#8217;t have)</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><a class="reference external" href="http://portal.futuregrid.org">http://portal.futuregrid.org</a></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Need more help? see <a class="reference internal" href="../accounts/details.html#s-accounts"><em>Account and Project Management</em></a></p>
 </div>
-</div></blockquote>
 <p>Login to India OpenStack</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">&lt;username&gt;&#64;india.futuregrid.org</span></tt></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Need more help for ssh? see <a class="reference internal" href="../accounts/ssh.html#s-using-ssh"><em>Using SSH Keys</em></a></p>
 </div>
-</div></blockquote>
 <p>Activate <cite>cm-mooc</cite>:</p>
 <div class="highlight-python"><div class="highlight"><pre>   module load heatclient
    source ~/.futuregrid/openstack_havana/novarc
@@ -836,8 +832,9 @@ when you log into early the next command will fail.</p>
 </div>
 <p>Now you need to exit the virtual machine. You will now be back in
 india. In india you execute:</p>
-<blockquote>
-<div>india$ cm-mooc notebook start</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>india$ cm-mooc notebook start
+</pre></div>
+</div>
 <dl class="docutils">
 <dt>Now you can access the IPython Notebook via a web browser:</dt>
 <dd><cite>https://[ip address]:8888</cite></dd>
