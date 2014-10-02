@@ -241,8 +241,8 @@ providing some information.
 If you created the ipynb profile, you may exit from the VM. Let's get back to
 India and use `cm-mooc` command.
 
-  .. note:: `cm` is the Cloudmesh shell program. It allows you to create a
-  IPython Notebook Profile.
+.. note:: `cm` is the Cloudmesh shell program. It allows you to create
+	  a IPython Notebook Profile.
 
 Start IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
