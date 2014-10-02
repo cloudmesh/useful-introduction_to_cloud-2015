@@ -17,15 +17,15 @@ Quickstart
 
 Create a FutureSystems portal ID (if you don't have)
   
-  - http://portal.futuregrid.org
+- http://portal.futuregrid.org
     
-  .. note:: Need more help? see :ref:`s-accounts`
+.. note:: Need more help? see :ref:`s-accounts`
 
 Login to India OpenStack
   
-  - ``ssh <username>@india.futuregrid.org`` 
+- ``ssh <username>@india.futuregrid.org`` 
      
-  .. note:: Need more help for ssh? see :ref:`s-using-ssh`
+.. note:: Need more help for ssh? see :ref:`s-using-ssh`
 
 Activate `cm-mooc`::
 
@@ -67,7 +67,7 @@ Now that you are looged into the VM please execute::
    vm$ cm notebook create # provide your password to IPython Notebook on the
   
 Now you need to exit the virtual machine. You will now be back in
-india. In india you execute:
+india. In india you execute::
 
    india$ cm-mooc notebook start
 
