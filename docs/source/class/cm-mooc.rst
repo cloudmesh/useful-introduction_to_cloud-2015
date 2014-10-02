@@ -272,6 +272,34 @@ https://github.com/cloudmesh/introduction_to_cloud_computing
 
 You can import or export more IPython Notebook files.
 
+Class Material (Java)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the previous section we have learned how to log into the
+virtual machine (`cm-mooc login`). After logging into the VM, navigate to the
+`~/JavaFiles` directory.
+
+The directory:: 
+
+   /home/ubuntu/JavaFiles
+
+has the course programs in Java.  To view the IPython Notebook
+programs navigate to the directory with::
+
+  cd  /home/ubuntu/IPythonFiles
+
+Below are the steps to execute the java programs on ~/JavaFiles::
+
+    javac <ClassName>.java
+    java  <ClassName> 
+
+Similarly for python navigate to home/ubuntu/IPythonFiles directory first cd into the directory::
+
+    cd  /home/ubuntu/IPythonFiles
+
+and than execute the desired program with::
+
+    python  <FileName>.py
+
 Stop IPython Notebook on Cloudmesh VM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
