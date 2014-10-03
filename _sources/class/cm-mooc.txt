@@ -31,12 +31,6 @@ information in Sthe Section :ref:`s-accounts`.
 
               export PORTALNAME=albert
 
-         We also assume that you have a project id that you set to::
-
-              export PROJECTID=fg101
- 
-         if it is the number 101.
-
 Next you need to login to the india login node
 with::
 
