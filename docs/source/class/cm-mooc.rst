@@ -102,12 +102,12 @@ Next you simply  execute the following commands::
 .. warning:: Please wait approximately 5 minutes after this command.
        when you log into early the next command will fail.
 
-List the VM INformation
+List the VM Information
 ----------------------------------------------------------------------
 
-You can check the status of the VM by the following command.
+You can check the status of the VM by the following command::
 
-``cm-mooc list``
+  cm-mooc list
 
 The status may report to you active, but that does not mean that all
 the software is installed yet. So please be patient and wait for some minutes.
