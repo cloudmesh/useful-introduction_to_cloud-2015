@@ -31,12 +31,6 @@ information in Sthe Section :ref:`s-accounts`.
 
               export PORTALNAME=albert
 
-         We also assume that you have a project id that you set to::
-
-              export PROJECTID=fg101
- 
-         if it is the number 101.
-
 Next you need to login to the india login node
 with::
 
@@ -184,20 +178,20 @@ The directory::
 has the course programs in Java.  To view the IPython Notebook
 programs navigate to the directory with::
 
-  cd  /home/ubuntu/IPythonFiles
+  vm$ cd /home/ubuntu/IPythonFiles
 
 Below are the steps to execute the java programs on ~/JavaFiles::
 
-    javac <ClassName>.java
-    java  <ClassName> 
+    vm$ javac <ClassName>.java
+    vm$ java  <ClassName> 
 
 Similarly for python navigate to home/ubuntu/IPythonFiles directory first cd into the directory::
 
-    cd  /home/ubuntu/IPythonFiles
+    vm$ cd /home/ubuntu/IPythonFiles
 
 and than execute the desired program with::
 
-    python  <FileName>.py
+    vm$ python  <FileName>.py
 
 Help
 ----------------------------------------------------------------------
