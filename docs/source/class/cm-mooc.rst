@@ -39,11 +39,9 @@ with::
 If you need more information about  ssh  see :ref:`s-using-ssh`.
 
 After you log into india you must activate openstack with the
-following commands::
+following command::
 
-  india$ module load heatclient
-  india$ source ~/.futuregrid/openstack_havana/novarc
-  india$ source /share/project/FG455/MOOC/bin/activate
+  india$ module load fg455
 
 This setp has to be executed every time yo log into india. 
 
@@ -74,9 +72,7 @@ Initializing `cm-mooc`
 .. note:: Do not forget to activate openstack if you have logied in
 	  new to india::
 
-	     india$ module load heatclient
-	     india$ source ~/.futuregrid/openstack_havana/novarc
-	     india$ source /share/project/FG455/MOOC/bin/activate
+	     india$ module load fg455
 
 First we initialize `cm-mooc` and open up some ports as part of the
 openstack default security group. Cloudmesh, IPython Notebook requires
