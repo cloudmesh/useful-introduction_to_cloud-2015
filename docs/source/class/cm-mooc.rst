@@ -18,15 +18,29 @@ Create a FutureSystems Account
 
 First you need to have an account on the FutureSystems portal at 
 
-    - http://portal.futuregrid.org
+* http://portal.futuregrid.org
 
-We refer to your portal username as PORTALNAME in this document please
-replace it with your portal login name.  We have discussed this in a
-previous session and you can find out more information in Sthe Section
-:ref:`s-accounts`. Next you need to login to the india login node
+We have discussed this in a previous session and you can find out more
+information in Sthe Section :ref:`s-accounts`.
+
+.. note:: FutureSystems Portalname and Project ID
+          For this example we assume you have set the shell variable
+	  PORTALNAME to your FutureSystems portal username. This can
+	  be done as follwows. Let us assume your portal name is
+	  `albert`. Than you can set it with::
+
+              export PORTALNAME=albert
+
+         We also assume that you have a project id that you set to::
+
+              export PROJECTID=fg101
+ 
+         if it is the number 101.
+
+Next you need to login to the india login node
 with::
 
-    localhost$ ssh PORTALNAME@india.futuregrid.org
+    localhost$ ssh $PORTALNAME@india.futuregrid.org
 
 If you need more information about  ssh  see :ref:`s-using-ssh`.
 
@@ -153,15 +167,15 @@ Using the class material
 The class material is contained in two directories. Dependent on the
 class please chose the directory suitable for you:
 
-    * **fg455**: directory containing ipython notebooks for the class fg455
-    * **cloudmesh**: directory containing cloudmesh ipython notebooks
-    * **JavaFiles**: directory containing cloudmesh java code
+* **fg455**: directory containing ipython notebooks for the class fg455
+* **cloudmesh**: directory containing cloudmesh ipython notebooks
+* **JavaFiles**: directory containing cloudmesh java code
 
 The source for these directories is maintained at 
 
-    * https://github.com/cglmoocs/IPythonFiles
-    * https://github.com/cglmoocs/JavaFiles
-    * https://github.com/cloudmesh/introduction_to_cloud_computing
+* https://github.com/cglmoocs/IPythonFiles
+* https://github.com/cglmoocs/JavaFiles
+* https://github.com/cloudmesh/introduction_to_cloud_computing
 
 The directory:: 
 
@@ -215,7 +229,7 @@ In case you do not need the VM anymore, you can delete the VM with::
 Optional: Starting the cloudmesh server
 ----------------------------------------------------------------------
 
-.. note:: If you are not needing the cloudmash server (e.g. you are
+.. warning:: If you are not needing the cloudmash server (e.g. you are
 	  part of the FG452 project) this part is not needed. You will
 	  only use the ipython notebook server
 
