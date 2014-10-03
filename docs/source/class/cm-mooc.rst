@@ -181,6 +181,10 @@ Below are the steps to execute the java programs on ~/JavaFiles::
     vm$ javac <ClassName>.java
     vm$ java  <ClassName> 
 
+For dependencies, please try set your CLASSPATH on ~/Dependencies::
+
+    vm$ export CLASSPATH=~/Dependencies:$CLASSPATH
+
 Similarly for python navigate to home/ubuntu/IPythonFiles directory first cd into the directory::
 
     vm$ cd /home/ubuntu/IPythonFiles
