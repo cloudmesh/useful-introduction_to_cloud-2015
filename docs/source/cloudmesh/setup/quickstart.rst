@@ -109,7 +109,7 @@ public key generated in your .ssh directory in the file::
 
 If you do not have such a key, you can generate it with::
 
-<  $ ssh-keygen -t rsa -C $PORTALNAME-key
+  $ ssh-keygen -t rsa -C $PORTALNAME-key
 
 The next steps will deploy the cloudmesh database::
 
