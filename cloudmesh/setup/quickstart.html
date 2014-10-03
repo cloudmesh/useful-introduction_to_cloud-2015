@@ -155,6 +155,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../class/cm-mooc.html#create-ipython-notebook-profile-on-cloudmesh-vm-set-password">Create IPython Notebook Profile on Cloudmesh VM (Set Password)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../class/cm-mooc.html#start-ipython-notebook-on-cloudmesh-vm">Start IPython Notebook on Cloudmesh VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../class/cm-mooc.html#class-material-ipython-notebooks">Class Material (IPython Notebooks)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../class/cm-mooc.html#class-material-java">Class Material (Java)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../class/cm-mooc.html#stop-ipython-notebook-on-cloudmesh-vm">Stop IPython Notebook on Cloudmesh VM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../class/cm-mooc.html#help-message">Help Message</a></li>
 </ul>
@@ -938,7 +939,7 @@ be uploaded to the FutureSystems portal.</p>
 <span class="nv">$ </span><span class="nb">cd </span>cloudmesh
 <span class="nv">$ </span>sudo ./install system
 <span class="c">#</span>
-<span class="c"># The commandrequires input</span>
+<span class="c"># The command requires input</span>
 <span class="c">#</span>
 <span class="nv">$ </span>./install requirements
 <span class="nv">$ </span>./install new
@@ -947,7 +948,7 @@ be uploaded to the FutureSystems portal.</p>
 <span class="nv">$ </span>cm-iu user create
 <span class="nv">$ </span>fab mongo.reset
 <span class="c">#</span>
-<span class="c"># The commandrequires input</span>
+<span class="c"># The command requires input</span>
 <span class="c">#</span>
 <span class="nv">$ </span>fab server.start
 <span class="nv">$ </span>cm cloud list
@@ -958,13 +959,16 @@ be uploaded to the FutureSystems portal.</p>
 </div>
 <div class="section" id="for-osx-use">
 <h3>For OSX use<a class="headerlink" href="#for-osx-use" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/cloudmesh/cloudmesh.git
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#</span>
+<span class="c"># make sure you installed xcode and do xcode-select --install</span>
+<span class="c">#</span>
+<span class="nv">$ </span>git clone https://github.com/cloudmesh/cloudmesh.git
 <span class="nv">$ </span>virtualenv ~/ENV
 <span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
 <span class="nv">$ </span><span class="nb">cd </span>cloudmesh
 <span class="nv">$ </span>./install system
 <span class="c">#</span>
-<span class="c"># The commandrequires input</span>
+<span class="c"># The command requires input</span>
 <span class="c">#</span>
 <span class="nv">$ </span>./install requirements
 <span class="nv">$ </span>./install new
@@ -973,7 +977,7 @@ be uploaded to the FutureSystems portal.</p>
 <span class="nv">$ </span>cm-iu user create
 <span class="nv">$ </span>fab mongo.reset
 <span class="c">#</span>
-<span class="c"># The commandrequires input</span>
+<span class="c"># The command requires input</span>
 <span class="c">#</span>
 <span class="nv">$ </span>fab server.start
 <span class="nv">$ </span>cm cloud list
