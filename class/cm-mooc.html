@@ -749,17 +749,33 @@ your terminal.</p>
 <h2>Create a FutureSystems Account<a class="headerlink" href="#create-a-futuresystems-account" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <p>First you need to have an account on the FutureSystems portal at</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><a class="reference external" href="http://portal.futuregrid.org">http://portal.futuregrid.org</a></li>
 </ul>
-</div></blockquote>
-<p>We refer to your portal username as PORTALNAME in this document please
-replace it with your portal login name.  We have discussed this in a
-previous session and you can find out more information in Sthe Section
-<a class="reference internal" href="../accounts/details.html#s-accounts"><em>Account and Project Management</em></a>. Next you need to login to the india login node
+<p>We have discussed this in a previous session and you can find out more
+information in Sthe Section <a class="reference internal" href="../accounts/details.html#s-accounts"><em>Account and Project Management</em></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="docutils">
+<dt>FutureSystems Portalname and Project ID</dt>
+<dd><p class="first">For this example we assume you have set the shell variable
+PORTALNAME to your FutureSystems portal username. This can
+be done as follwows. Let us assume your portal name is
+<cite>albert</cite>. Than you can set it with:</p>
+<div class="last highlight-python"><div class="highlight"><pre>export PORTALNAME=albert
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>We also assume that you have a project id that you set to:</p>
+<div class="highlight-python"><div class="highlight"><pre>export PROJECTID=fg101
+</pre></div>
+</div>
+<p class="last">if it is the number 101.</p>
+</div>
+<p>Next you need to login to the india login node
 with:</p>
-<div class="highlight-python"><div class="highlight"><pre>localhost$ ssh PORTALNAME@india.futuregrid.org
+<div class="highlight-python"><div class="highlight"><pre>localhost$ ssh $PORTALNAME@india.futuregrid.org
 </pre></div>
 </div>
 <p>If you need more information about  ssh  see <a class="reference internal" href="../accounts/ssh.html#s-using-ssh"><em>Using SSH Keys</em></a>.</p>
@@ -882,21 +898,17 @@ simple. Just type in the following into your browser url:</p>
 <h2>Using the class material<a class="headerlink" href="#using-the-class-material" title="Permalink to this headline">¶</a></h2>
 <p>The class material is contained in two directories. Dependent on the
 class please chose the directory suitable for you:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><strong>fg455</strong>: directory containing ipython notebooks for the class fg455</li>
 <li><strong>cloudmesh</strong>: directory containing cloudmesh ipython notebooks</li>
 <li><strong>JavaFiles</strong>: directory containing cloudmesh java code</li>
 </ul>
-</div></blockquote>
 <p>The source for these directories is maintained at</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><a class="reference external" href="https://github.com/cglmoocs/IPythonFiles">https://github.com/cglmoocs/IPythonFiles</a></li>
 <li><a class="reference external" href="https://github.com/cglmoocs/JavaFiles">https://github.com/cglmoocs/JavaFiles</a></li>
 <li><a class="reference external" href="https://github.com/cloudmesh/introduction_to_cloud_computing">https://github.com/cloudmesh/introduction_to_cloud_computing</a></li>
 </ul>
-</div></blockquote>
 <p>The directory:</p>
 <div class="highlight-python"><div class="highlight"><pre>/home/ubuntu/JavaFiles
 </pre></div>
@@ -948,8 +960,8 @@ following commands:</p>
 </div>
 <div class="section" id="optional-starting-the-cloudmesh-server">
 <h2>Optional: Starting the cloudmesh server<a class="headerlink" href="#optional-starting-the-cloudmesh-server" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
 <p class="last">If you are not needing the cloudmash server (e.g. you are
 part of the FG452 project) this part is not needed. You will
 only use the ipython notebook server</p>
