@@ -219,7 +219,7 @@ For ubuntu use
   $ cd cloudmesh
   $ sudo ./install system
   #
-  # The commandrequires input
+  # The command requires input
   #
   $ ./install requirements
   $ ./install new
@@ -228,7 +228,7 @@ For ubuntu use
   $ cm-iu user create
   $ fab mongo.reset
   #
-  # The commandrequires input
+  # The command requires input
   #
   $ fab server.start
   $ cm cloud list
@@ -241,13 +241,16 @@ For OSX use
 
 ::
 
+  #
+  # make sure you installed xcode and do xcode-select --install
+  #
   $ git clone https://github.com/cloudmesh/cloudmesh.git
   $ virtualenv ~/ENV
   $ source ~/ENV/bin/activate
   $ cd cloudmesh
   $ ./install system
   #
-  # The commandrequires input
+  # The command requires input
   #  
   $ ./install requirements
   $ ./install new
@@ -256,7 +259,7 @@ For OSX use
   $ cm-iu user create
   $ fab mongo.reset
   #
-  # The commandrequires input
+  # The command requires input
   #
   $ fab server.start
   $ cm cloud list
