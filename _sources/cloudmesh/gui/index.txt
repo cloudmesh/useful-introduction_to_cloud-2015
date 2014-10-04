@@ -7,3 +7,4 @@ Cloudmesh GUI
    :glob:
 
    screenshots
+   ssh

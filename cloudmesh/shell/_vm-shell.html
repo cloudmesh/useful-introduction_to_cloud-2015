@@ -429,6 +429,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../gui/screenshots.html#inventory">Inventory</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../gui/ssh.html">Enabeling ssh in the GUI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gui/ssh.html#safari">Safari</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gui/ssh.html#firefox">Firefox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gui/ssh.html#chrome">Chrome</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -957,9 +963,12 @@ a new VM with a few options.</p>
 <h2>Delete a VM<a class="headerlink" href="#delete-a-vm" title="Permalink to this headline">¶</a></h2>
 <p>If you know the id or name of the virtual machine that you want to
 destroy, <em>delete</em> command in cloudmesh simply terminate the instance.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm delete {0} --cloud=india --force&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vmname</span><span class="p">))</span>
-</pre></div>
+<p><tt class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">{0}</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;.format(vmname))</span></tt></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">do not execute the delete program as it deletes all vms of</p>
 </div>
+<p>the tennant in openstack.</p>
 </div>
 <div class="section" id="more-options-to-launch-a-vm-instance">
 <h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>

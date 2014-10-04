@@ -186,7 +186,7 @@ cm-mooc is a simple program to launch the virtual machine for Cloudmesh with IPy
 Source: https://github.com/cloudmesh/mooc/tree/fg455
 Documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/class/cm-mooc.html
 
-Updated: 2014-10-01T21:55:38.000Z
+Updated: 2014-10-03T16:27:15.000Z
 
 fg-create-project
 ----------------------------------------------------------------------

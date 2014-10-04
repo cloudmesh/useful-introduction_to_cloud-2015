@@ -269,9 +269,11 @@ Delete a VM
 If you know the id or name of the virtual machine that you want to
 destroy, *delete* command in cloudmesh simply terminate the instance.
 
-.. code:: python
+``cloudmesh.shell("vm delete {0} --cloud=india --force".format(vmname))``
 
-    cloudmesh.shell("vm delete {0} --cloud=india --force".format(vmname))
+.. warning:: do not execute the delete program as it deletes all vms of
+the tennant in openstack.
+
 More options to launch a VM instance
 ------------------------------------
 
