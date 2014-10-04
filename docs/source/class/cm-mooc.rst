@@ -185,6 +185,10 @@ A sample Make file is included in the directory::
 
     ~/JavaFiles/Section-4_Physics-Units-9-10-11/Unit-11_A-Calculated-Dice-Roll/Makefile
 
+For dependencies, please try set your CLASSPATH on ~/Dependencies::
+
+    vm$ export CLASSPATH=~/Dependencies:$CLASSPATH
+
 Similarly for python navigate to home/ubuntu/IPythonFiles directory first cd into the directory::
 
     vm$ cd /home/ubuntu/IPythonFiles
