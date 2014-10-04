@@ -909,8 +909,16 @@ programs navigate to the directory with:</p>
 </pre></div>
 </div>
 <p>Below are the steps to execute the java programs on ~/JavaFiles:</p>
-<div class="highlight-python"><div class="highlight"><pre>vm$ javac &lt;ClassName&gt;.java
-vm$ java  &lt;ClassName&gt;
+<div class="highlight-python"><div class="highlight"><pre>vm$ javac -classpath &lt;path to the jar file directory&gt; &lt;ClassName&gt;.java
+vm$ java  -classpath &lt;path to the jar file directory&gt; &lt;ClassName&gt;
+</pre></div>
+</div>
+<p>A sample Make file is included in the directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/JavaFiles/Section-4_Physics-Units-9-10-11/Unit-11_A-Calculated-Dice-Roll/Makefile
+</pre></div>
+</div>
+<p>For dependencies, please try set your CLASSPATH on ~/Dependencies:</p>
+<div class="highlight-python"><div class="highlight"><pre>vm$ export CLASSPATH=~/Dependencies:$CLASSPATH
 </pre></div>
 </div>
 <p>Similarly for python navigate to home/ubuntu/IPythonFiles directory first cd into the directory:</p>
