@@ -18,3 +18,4 @@ Cloudmesh
 
    veewee-requirements
 
+   faq
