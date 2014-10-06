@@ -151,15 +151,16 @@ If you forgot the ip address you can use the command::
 	india$ cm-mooc info
 
 
-Using the class material
+Using the class materials
 ----------------------------------------------------------------------
 
-The class material is contained in two directories. Dependent on the
-class please chose the directory suitable for you:
+You can find the class materials in the following directories. 
+Upon your choice of programming language, you can try python or 
+Java examples:
 
-* **fg455**: directory containing ipython notebooks for the class fg455
-* **cloudmesh**: directory containing cloudmesh ipython notebooks
-* **JavaFiles**: directory containing cloudmesh java code
+* **IPythonFiles**: directory containing IPython Notebooks for the class fg455
+* **JavaFiles**: directory containing cloudmesh Java code
+* **cloudmesh**: directory containing cloudmesh IPython Notebooks
 
 The source for these directories is maintained at 
 

@@ -271,7 +271,7 @@ destroy, *delete* command in cloudmesh simply terminate the instance.
 
 ``cloudmesh.shell("vm delete {0} --cloud=india --force".format(vmname))``
 
-.. warning:: do not execute the delete program as it deletes all vms of
+.. warning:: Do not execute the delete command as it deletes all vms of
 the tennant in openstack.
 
 More options to launch a VM instance
