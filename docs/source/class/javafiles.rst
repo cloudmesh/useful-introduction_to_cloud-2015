@@ -50,7 +50,7 @@ This course program is for the unit 9 in the section 4.:
 
 Example of the plotting data is:
 
-.. .. image:: /images/javafiles/higgs.png
+.. image:: /images/javafiles/higgs1.png
 
 .. note::
 
