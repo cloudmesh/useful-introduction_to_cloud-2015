@@ -10,14 +10,13 @@ In this documentation, we focus on how to run the Java programs on the virtual m
 If you don't know the running `cm-mooc` on India Futuresystems, please refer `cm-mooc </class/cm-mooc.html>`_.
 We assume that you have launched the virtual machine and you are staying in $HOME directory on the virtual machine.
 
-.. note::
-  To remind you how to use the virtual machine, please see the
+.. note:: To remind you how to use the virtual machine, please see the
   following commands::
 
-    desktop $ ssh -X $PORTALNAME@india.futuregrid.org
-    india $ module load fg455
-    india $ cm-mooc login
-    vm $ cd JavaFiles
+    localhost$ ssh -X $PORTALNAME@india.futuregrid.org
+    india$ module load fg455
+    india$ cm-mooc login
+    vm$ cd JavaFiles
 
 Run Programs
 -------------
@@ -36,7 +35,7 @@ Run Each Program
 ^^^^^^^^^^^^^^^^^^
 Makefile allows you to compile java programs easily, and to run.
 
-In each directory, please execute:
+In each directory, please execute::
   
   vm$ make      # compile
   vm$ make run  # run Java Program
@@ -44,7 +43,7 @@ In each directory, please execute:
 The Elusive Mr. Higgs
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This course program is for the unit 9 in the section 4.:
+This course program is for the unit 9 in the section 4.::
   
   vm$ cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
   vm$ make
@@ -63,11 +62,11 @@ Run Programs on a local machine
 
 Download programs and dependencies.:
 
-  - Programs::
+- Programs::
  
        $ git clone https://github.com/cglmoocs/JavaFiles.git
 
-  - Dependencies::
+- Dependencies::
 
        $ git clone https://github.com/cglmoocs/Dependencies.git
     

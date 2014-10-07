@@ -769,10 +769,10 @@ We assume that you have launched the virtual machine and you are staying in $HOM
 <p class="first admonition-title">Note</p>
 <p>To remind you how to use the virtual machine, please see the
 following commands:</p>
-<div class="last highlight-python"><div class="highlight"><pre>desktop $ ssh -X $PORTALNAME@india.futuregrid.org
-india $ module load fg455
-india $ cm-mooc login
-vm $ cd JavaFiles
+<div class="last highlight-python"><div class="highlight"><pre>localhost$ ssh -X $PORTALNAME@india.futuregrid.org
+india$ module load fg455
+india$ cm-mooc login
+vm$ cd JavaFiles
 </pre></div>
 </div>
 </div>
@@ -791,17 +791,19 @@ vm $ cd JavaFiles
 <h3>Run Each Program<a class="headerlink" href="#run-each-program" title="Permalink to this headline">¶</a></h3>
 <p>Makefile allows you to compile java programs easily, and to run.</p>
 <p>In each directory, please execute:</p>
-<blockquote>
-<div>vm$ make      # compile
-vm$ make run  # run Java Program</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>vm$ make      # compile
+vm$ make run  # run Java Program
+</pre></div>
+</div>
 </div>
 <div class="section" id="the-elusive-mr-higgs">
 <h3>The Elusive Mr. Higgs<a class="headerlink" href="#the-elusive-mr-higgs" title="Permalink to this headline">¶</a></h3>
 <p>This course program is for the unit 9 in the section 4.:</p>
-<blockquote>
-<div>vm$ cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
+<div class="highlight-python"><div class="highlight"><pre>vm$ cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
 vm$ make
-vm$ make run</div></blockquote>
+vm$ make run
+</pre></div>
+</div>
 <p>Example of the plotting data is:</p>
 <img alt="../_images/higgs1.png" src="../_images/higgs1.png" />
 <div class="admonition note">
@@ -813,8 +815,7 @@ vm$ make run</div></blockquote>
 <div class="section" id="run-programs-on-a-local-machine">
 <h2>Run Programs on a local machine<a class="headerlink" href="#run-programs-on-a-local-machine" title="Permalink to this headline">¶</a></h2>
 <p>Download programs and dependencies.:</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="first">Programs:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/cglmoocs/JavaFiles.git
 </pre></div>
@@ -826,7 +827,6 @@ vm$ make run</div></blockquote>
 </div>
 </li>
 </ul>
-</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Make sure that the dependencies are included in CLASSPATH for your Java.</p>
