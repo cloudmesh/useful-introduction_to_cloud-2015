@@ -8,3 +8,4 @@ Cloudmesh in Classes
 
    i590
    cm-mooc
+   javafiles
