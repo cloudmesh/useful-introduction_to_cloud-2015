@@ -11,7 +11,9 @@ If you don't know the running `cm-mooc` on India Futuresystems, please refer `cm
 We assume that you have launched the virtual machine and you are staying in $HOME directory on the virtual machine.
 
 .. note::
-  To remind you how to use the virtual machine, please see the following commands:
+  To remind you how to use the virtual machine, please see the
+  following commands::
+
     desktop $ ssh -X $PORTALNAME@india.futuregrid.org
     india $ module load fg455
     india $ cm-mooc login
@@ -26,9 +28,9 @@ X Window System (X11) should be enabled on your desktop to view plotting data. J
 Programs Location
 ^^^^^^^^^^^^^^^^^^
 
-On the VM, `JavaFiles` directory contains course programs.
+On the VM, `JavaFiles` directory contains course programs::
 
-`cd ~/JavaFiles`
+  vm$ cd ~/JavaFiles
 
 Run Each Program
 ^^^^^^^^^^^^^^^^^^
@@ -36,17 +38,17 @@ Makefile allows you to compile java programs easily, and to run.
 
 In each directory, please execute:
   
-  make      # compile
-  make run  # run Java Program
+  vm$ make      # compile
+  vm$ make run  # run Java Program
 
 The Elusive Mr. Higgs
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This course program is for the unit 9 in the section 4.:
   
-  cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
-  make
-  make run
+  vm$ cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
+  vm$ make
+  vm$ make run
 
 Example of the plotting data is:
 
@@ -61,10 +63,13 @@ Run Programs on a local machine
 
 Download programs and dependencies.:
 
-  - Programs: 
-    $ git clone https://github.com/cglmoocs/JavaFiles.git
-  - Dependencies:
-    $ git clone https://github.com/cglmoocs/Dependencies.git
+  - Programs::
+ 
+       $ git clone https://github.com/cglmoocs/JavaFiles.git
+
+  - Dependencies::
+
+       $ git clone https://github.com/cglmoocs/Dependencies.git
     
 .. note::
 

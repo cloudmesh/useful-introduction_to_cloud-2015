@@ -767,13 +767,14 @@ In this documentation, we focus on how to run the Java programs on the virtual m
 We assume that you have launched the virtual machine and you are staying in $HOME directory on the virtual machine.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<dl class="last docutils">
-<dt>To remind you how to use the virtual machine, please see the following commands:</dt>
-<dd>desktop $ ssh -X <a class="reference external" href="mailto:$PORTALNAME&#37;&#52;&#48;india&#46;futuregrid&#46;org">$PORTALNAME<span>&#64;</span>india<span>&#46;</span>futuregrid<span>&#46;</span>org</a>
+<p>To remind you how to use the virtual machine, please see the
+following commands:</p>
+<div class="last highlight-python"><div class="highlight"><pre>desktop $ ssh -X $PORTALNAME@india.futuregrid.org
 india $ module load fg455
 india $ cm-mooc login
-vm $ cd JavaFiles</dd>
-</dl>
+vm $ cd JavaFiles
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="run-programs">
@@ -781,24 +782,26 @@ vm $ cd JavaFiles</dd>
 <p>X Window System (X11) should be enabled on your desktop to view plotting data. Java and other libraries are pre-installed on the VM.</p>
 <div class="section" id="programs-location">
 <h3>Programs Location<a class="headerlink" href="#programs-location" title="Permalink to this headline">¶</a></h3>
-<p>On the VM, <cite>JavaFiles</cite> directory contains course programs.</p>
-<p><cite>cd ~/JavaFiles</cite></p>
+<p>On the VM, <cite>JavaFiles</cite> directory contains course programs:</p>
+<div class="highlight-python"><div class="highlight"><pre>vm$ cd ~/JavaFiles
+</pre></div>
+</div>
 </div>
 <div class="section" id="run-each-program">
 <h3>Run Each Program<a class="headerlink" href="#run-each-program" title="Permalink to this headline">¶</a></h3>
 <p>Makefile allows you to compile java programs easily, and to run.</p>
 <p>In each directory, please execute:</p>
 <blockquote>
-<div>make      # compile
-make run  # run Java Program</div></blockquote>
+<div>vm$ make      # compile
+vm$ make run  # run Java Program</div></blockquote>
 </div>
 <div class="section" id="the-elusive-mr-higgs">
 <h3>The Elusive Mr. Higgs<a class="headerlink" href="#the-elusive-mr-higgs" title="Permalink to this headline">¶</a></h3>
 <p>This course program is for the unit 9 in the section 4.:</p>
 <blockquote>
-<div>cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
-make
-make run</div></blockquote>
+<div>vm$ cd ~/JavaFiles/Section-4_Physica-Units-9-10-11/Unit-9_The-Elusive-Mr.Higgs/
+vm$ make
+vm$ make run</div></blockquote>
 <p>Example of the plotting data is:</p>
 <img alt="../_images/higgs1.png" src="../_images/higgs1.png" />
 <div class="admonition note">
@@ -811,11 +814,17 @@ make run</div></blockquote>
 <h2>Run Programs on a local machine<a class="headerlink" href="#run-programs-on-a-local-machine" title="Permalink to this headline">¶</a></h2>
 <p>Download programs and dependencies.:</p>
 <blockquote>
-<div><ul class="simple">
-<li>Programs:
-$ git clone <a class="reference external" href="https://github.com/cglmoocs/JavaFiles.git">https://github.com/cglmoocs/JavaFiles.git</a></li>
-<li>Dependencies:
-$ git clone <a class="reference external" href="https://github.com/cglmoocs/Dependencies.git">https://github.com/cglmoocs/Dependencies.git</a></li>
+<div><ul>
+<li><p class="first">Programs:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/cglmoocs/JavaFiles.git
+</pre></div>
+</div>
+</li>
+<li><p class="first">Dependencies:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/cglmoocs/Dependencies.git
+</pre></div>
+</div>
+</li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
