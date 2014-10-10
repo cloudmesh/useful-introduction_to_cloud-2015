@@ -7,7 +7,7 @@ In this documentation, we focus on how to run the Java programs on the virtual m
 `cm-mooc` virtual machine on India
 -----------------------------------
 
-If you don't know the running `cm-mooc` on India Futuresystems, please refer `cm-mooc </class/cm-mooc.html>`_.
+If you don't know the running `cm-mooc` on India Futuresystems, please refer `cm-mooc </introduction_to_cloud_computing/class/cm-mooc.html>`_.
 We assume that you have launched the virtual machine and you are staying in $HOME directory on the virtual machine.
 
 .. note:: To remind you how to use the virtual machine, please see the

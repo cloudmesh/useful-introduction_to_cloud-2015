@@ -153,7 +153,7 @@ If you forgot the ip address you can use the command::
 
 Using the class materials
 ----------------------------------------------------------------------
-
+JavaFiles, please see `the tutorial </introduction_to_cloud_computing/class/javafiles.html>`_.
 You can find the class materials in the following directories. 
 Upon your choice of programming language, you can try python or 
 Java examples:
