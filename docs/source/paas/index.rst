@@ -6,6 +6,6 @@ PaaS
    :maxdepth: 2
 
    hadoop
-
+   hadoop-setup
    
 

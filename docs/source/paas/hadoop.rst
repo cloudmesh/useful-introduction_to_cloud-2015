@@ -1,7 +1,7 @@
 .. _s-hadoop:
 
 **********************************************************************
-Using Hadoop in FutureGrid
+Using Hadoop in FutureSystems
 **********************************************************************
 
 .. sidebar:: Screencast
@@ -10,7 +10,7 @@ Using Hadoop in FutureGrid
    available at |video-hadoop|.
 
 
-We have various platforms that support Hadoop on FutureGrid. MyHadoop
+We have various platforms that support Hadoop on FutureSystems. MyHadoop
 is probably the easiest solution offered for you. It provides the
 advantage that it is integrated into the queuing system and allows
 hadoop jobs to be run as batch job. This is of especial interest for
@@ -38,40 +38,40 @@ open source implementation of MapReduce and HDFS (Hadoop Distributed
 File System).   
 
 This tutorial illustrates how to run Apache Hadoop thru the batch
-systems on FutureGrid using the MyHadoop tool.  
+systems on FutureSystems using the MyHadoop tool.  
 
-myHadoop on FutureGrid
+myHadoop on FutureSystems
 ----------------------------------------------------------------------
 
 `MyHadoop <http://sourceforge.net/projects/myhadoop/>`__ is a set of
 scripts that configure and instantiate Hadoop as a batch job. 
 
 myHadoop 0.20.2 is currently installed on Alamo, Hotel, India, and Sierra
-FutureGrid systems. 
+FutureSystems systems. 
 
 
 Login into a machine tha has myHadoop installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To run the example we need to firts log into a FutureGrid system that
+To run the example we need to firts log into a FutureSystems system that
 has myHadoop available.  In this tutorial, we are executing from the sierral machine::
 
        $ ssh portalname@sierra.futuregrid.org
 
-Note that this also works on other FutureGrid machines such as india.
+Note that this also works on other FutureSystems machines such as india.
 
 This machine accepts SSH public key and One Time Password (OTP) logins
 only.  If you do not have a public key set up, you will be prompted
-for a password.  This is *not* your FutureGrid password, but the One
+for a password.  This is *not* your FutureSystems password, but the One
 Time Password generated from your OTP token.  Do not type your
-FutureGrid password, it will not work.  If you do not have a token or
+FutureSystems password, it will not work.  If you do not have a token or
 public key, you will not be able to login.  The portalname is your
-account name that allows you to log into the FutureGrid portal.
+account name that allows you to log into the FutureSystems portal.
 
 Load the needed modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Next, we need to load the myHadoop module.  On some FutureGrid
+Next, we need to load the myHadoop module.  On some FutureSystems
 systems, you may also need to load the "torque" module as well if
 qstat is not already in your environment::
 
