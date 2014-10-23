@@ -20,6 +20,7 @@ Notebooks
    `_cm-debug <cloudmesh/cm/_cm-debug.html>`__, `_cm-debug.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-debug.ipynb>`__, cloudmesh/cm/_cm-debug.ipynb
    `_cm-project <cloudmesh/cm/_cm-project.html>`__, `_cm-project.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__, cloudmesh/cm/_cm-project.ipynb
    `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
+   `_cm_nova <cloudmesh/cm/_cm_nova.html>`__, `_cm_nova.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm_nova.ipynb>`__, cloudmesh/cm/_cm_nova.ipynb
    `_vm-cm <cloudmesh/cm/_vm-cm.html>`__, `_vm-cm.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_vm-cm.ipynb>`__, cloudmesh/cm/_vm-cm.ipynb
    `_list <cloudmesh/shell/_list.html>`__, `_list.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/shell/_list.ipynb>`__, cloudmesh/shell/_list.ipynb
    `_vm-shell <cloudmesh/shell/_vm-shell.html>`__, `_vm-shell.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/shell/_vm-shell.ipynb>`__, cloudmesh/shell/_vm-shell.ipynb

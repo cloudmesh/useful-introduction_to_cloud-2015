@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Using Hadoop in FutureGrid &mdash; my Cloudmesh Learning documentation</title>
+    <title>Using Hadoop in FutureSystems &mdash; my Cloudmesh Learning documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,7 +34,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html" />
     <link rel="up" title="PaaS" href="index.html" />
-    <link rel="next" title="HPC" href="../hpc/index.html" />
+    <link rel="next" title="Deploying a Hadoop Cluster on India OpenStack" href="hadoop-setup.html" />
     <link rel="prev" title="PaaS" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -496,9 +496,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">PaaS</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Using Hadoop in FutureGrid</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Hadoop in FutureSystems</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#running-hadoop-as-a-batch-job-using-myhadoop">Running Hadoop as a Batch Job using MyHadoop</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#myhadoop-on-futuregrid">myHadoop on FutureGrid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#myhadoop-on-futuresystems">myHadoop on FutureSystems</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#login-into-a-machine-tha-has-myhadoop-installed">Login into a machine tha has myHadoop installed</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#load-the-needed-modules">Load the needed modules</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#run-the-example">Run the Example</a></li>
@@ -512,6 +512,13 @@
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hadoop-setup.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hadoop-setup.html#cluster-preparation">Cluster Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hadoop-setup.html#deploying-hadoop">Deploying Hadoop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hadoop-setup.html#initializing-and-testing">Initializing and Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -628,9 +635,9 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Using Hadoop in FutureGrid</a><ul>
+<li><a class="reference internal" href="#">Using Hadoop in FutureSystems</a><ul>
 <li><a class="reference internal" href="#running-hadoop-as-a-batch-job-using-myhadoop">Running Hadoop as a Batch Job using MyHadoop</a><ul>
-<li><a class="reference internal" href="#myhadoop-on-futuregrid">myHadoop on FutureGrid</a><ul>
+<li><a class="reference internal" href="#myhadoop-on-futuresystems">myHadoop on FutureSystems</a><ul>
 <li><a class="reference internal" href="#login-into-a-machine-tha-has-myhadoop-installed">Login into a machine tha has myHadoop installed</a></li>
 <li><a class="reference internal" href="#load-the-needed-modules">Load the needed modules</a></li>
 <li><a class="reference internal" href="#run-the-example">Run the Example</a></li>
@@ -659,7 +666,7 @@
     </a>
   </li>
   <li>
-    <a href="../hpc/index.html" title="Next Chapter: HPC"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">HPC &raquo;</span>
+    <a href="hadoop-setup.html" title="Next Chapter: Deploying a Hadoop Cluster on India OpenStack"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Deploying a Hado... &raquo;</span>
     </a>
   </li>
               
@@ -734,9 +741,9 @@
   </ul>
   
 <h4 class="nav-header"> &nbsp; Page Contents</h4><ul>
-<li><a class="reference internal" href="#">Using Hadoop in FutureGrid</a><ul>
+<li><a class="reference internal" href="#">Using Hadoop in FutureSystems</a><ul>
 <li><a class="reference internal" href="#running-hadoop-as-a-batch-job-using-myhadoop">Running Hadoop as a Batch Job using MyHadoop</a><ul>
-<li><a class="reference internal" href="#myhadoop-on-futuregrid">myHadoop on FutureGrid</a><ul>
+<li><a class="reference internal" href="#myhadoop-on-futuresystems">myHadoop on FutureSystems</a><ul>
 <li><a class="reference internal" href="#login-into-a-machine-tha-has-myhadoop-installed">Login into a machine tha has myHadoop installed</a></li>
 <li><a class="reference internal" href="#load-the-needed-modules">Load the needed modules</a></li>
 <li><a class="reference internal" href="#run-the-example">Run the Example</a></li>
@@ -769,14 +776,14 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="using-hadoop-in-futuregrid">
-<span id="s-hadoop"></span><h1>Using Hadoop in FutureGrid<a class="headerlink" href="#using-hadoop-in-futuregrid" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="using-hadoop-in-futuresystems">
+<span id="s-hadoop"></span><h1>Using Hadoop in FutureSystems<a class="headerlink" href="#using-hadoop-in-futuresystems" title="Permalink to this headline">¶</a></h1>
 <div class="sidebar">
 <p class="first sidebar-title">Screencast</p>
 <p class="last">A screenncast of a subset of the information presented her is
 available at <img alt="video-image" src="../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=PC8h1CtVzH4">PC8h1CtVzH4</a>.</p>
 </div>
-<p>We have various platforms that support Hadoop on FutureGrid. MyHadoop
+<p>We have various platforms that support Hadoop on FutureSystems. MyHadoop
 is probably the easiest solution offered for you. It provides the
 advantage that it is integrated into the queuing system and allows
 hadoop jobs to be run as batch job. This is of especial interest for
@@ -796,32 +803,32 @@ Google paper <a class="reference external" href="http://labs.google.com/papers/m
 open source implementation of MapReduce and HDFS (Hadoop Distributed
 File System).</p>
 <p>This tutorial illustrates how to run Apache Hadoop thru the batch
-systems on FutureGrid using the MyHadoop tool.</p>
-<div class="section" id="myhadoop-on-futuregrid">
-<h3>myHadoop on FutureGrid<a class="headerlink" href="#myhadoop-on-futuregrid" title="Permalink to this headline">¶</a></h3>
+systems on FutureSystems using the MyHadoop tool.</p>
+<div class="section" id="myhadoop-on-futuresystems">
+<h3>myHadoop on FutureSystems<a class="headerlink" href="#myhadoop-on-futuresystems" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://sourceforge.net/projects/myhadoop/">MyHadoop</a> is a set of
 scripts that configure and instantiate Hadoop as a batch job.</p>
 <p>myHadoop 0.20.2 is currently installed on Alamo, Hotel, India, and Sierra
-FutureGrid systems.</p>
+FutureSystems systems.</p>
 <div class="section" id="login-into-a-machine-tha-has-myhadoop-installed">
 <h4>Login into a machine tha has myHadoop installed<a class="headerlink" href="#login-into-a-machine-tha-has-myhadoop-installed" title="Permalink to this headline">¶</a></h4>
-<p>To run the example we need to firts log into a FutureGrid system that
+<p>To run the example we need to firts log into a FutureSystems system that
 has myHadoop available.  In this tutorial, we are executing from the sierral machine:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh portalname@sierra.futuregrid.org
 </pre></div>
 </div>
-<p>Note that this also works on other FutureGrid machines such as india.</p>
+<p>Note that this also works on other FutureSystems machines such as india.</p>
 <p>This machine accepts SSH public key and One Time Password (OTP) logins
 only.  If you do not have a public key set up, you will be prompted
-for a password.  This is <em>not</em> your FutureGrid password, but the One
+for a password.  This is <em>not</em> your FutureSystems password, but the One
 Time Password generated from your OTP token.  Do not type your
-FutureGrid password, it will not work.  If you do not have a token or
+FutureSystems password, it will not work.  If you do not have a token or
 public key, you will not be able to login.  The portalname is your
-account name that allows you to log into the FutureGrid portal.</p>
+account name that allows you to log into the FutureSystems portal.</p>
 </div>
 <div class="section" id="load-the-needed-modules">
 <h4>Load the needed modules<a class="headerlink" href="#load-the-needed-modules" title="Permalink to this headline">¶</a></h4>
-<p>Next, we need to load the myHadoop module.  On some FutureGrid
+<p>Next, we need to load the myHadoop module.  On some FutureSystems
 systems, you may also need to load the &#8220;torque&#8221; module as well if
 qstat is not already in your environment:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ module load myhadoop
@@ -1130,9 +1137,9 @@ available at <img alt="video-image" src="../_images/glyphicons_402_youtube.png" 
 
 
        <ul>
-<li><a class="reference internal" href="#">Using Hadoop in FutureGrid</a><ul>
+<li><a class="reference internal" href="#">Using Hadoop in FutureSystems</a><ul>
 <li><a class="reference internal" href="#running-hadoop-as-a-batch-job-using-myhadoop">Running Hadoop as a Batch Job using MyHadoop</a><ul>
-<li><a class="reference internal" href="#myhadoop-on-futuregrid">myHadoop on FutureGrid</a><ul>
+<li><a class="reference internal" href="#myhadoop-on-futuresystems">myHadoop on FutureSystems</a><ul>
 <li><a class="reference internal" href="#login-into-a-machine-tha-has-myhadoop-installed">Login into a machine tha has myHadoop installed</a></li>
 <li><a class="reference internal" href="#load-the-needed-modules">Load the needed modules</a></li>
 <li><a class="reference internal" href="#run-the-example">Run the Example</a></li>
