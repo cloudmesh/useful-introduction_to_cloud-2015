@@ -128,7 +128,7 @@ e.g.::
 
 You may also provide cloud name, flavor or image in the command if you don't want to pre-set them. e.g.::
     
-    cm "cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04")
+    cm "cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04"
 
 to list the VMs you just created::
 
