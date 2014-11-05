@@ -277,6 +277,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#api">API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cm-shell">cm shell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cm-console">cm console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vm-test">vm test</a></li>
 </ul>
 </li>
 </ul>
@@ -516,7 +517,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../paas/hadoop-setup.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../paas/hadoop-setup.html#cluster-preparation">Cluster Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paas/hadoop-setup.html#cluster-preparation">Cluster Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../paas/hadoop-setup.html#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">cm cluster create: a convenient way to create a cluster of VMs</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../paas/hadoop-setup.html#deploying-hadoop">Deploying Hadoop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../paas/hadoop-setup.html#initializing-and-testing">Initializing and Testing</a></li>
 </ul>
@@ -641,6 +645,7 @@
 <li><a class="reference internal" href="#api">API</a></li>
 <li><a class="reference internal" href="#cm-shell">cm shell</a></li>
 <li><a class="reference internal" href="#cm-console">cm console</a></li>
+<li><a class="reference internal" href="#vm-test">vm test</a></li>
 </ul>
 </li>
 </ul>
@@ -737,6 +742,7 @@
 <li><a class="reference internal" href="#api">API</a></li>
 <li><a class="reference internal" href="#cm-shell">cm shell</a></li>
 <li><a class="reference internal" href="#cm-console">cm console</a></li>
+<li><a class="reference internal" href="#vm-test">vm test</a></li>
 </ul>
 </li>
 </ul>
@@ -766,13 +772,17 @@ creation, termination and others on cm console, cm API, and cm shell.</p>
 <h2>What does the test involve?<a class="headerlink" href="#what-does-the-test-involve" title="Permalink to this headline">¶</a></h2>
 <p>For API, shell, and cm, the nosetests checks activation, list, refresh, start
 , stop and other features of vm instances. With these tests, we can assure
-that Cloudmesh users can use and launch vm instances on any interfaces
+that Cloudmesh users can start or stop vm instances on any interfaces
 including web gui. The nosetest for the installation does perform actual
 process of the installation so all the required packages and files will be
 re-installed and re-configured.</p>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">your $HOME/.cloudmesh and packages will be re-installed.</p>
+</div>
 <p>Try to run the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nosetests -v --nocapture ~/cloudmesh/tests/test_cm.py
 </pre></div>
@@ -796,6 +806,21 @@ re-installed and re-configured.</p>
 <h2>cm console<a class="headerlink" href="#cm-console" title="Permalink to this headline">¶</a></h2>
 <p>Try to run the following command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nosetests -v --nocapture ~/cloudmesh/tests/test_cm_console.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="vm-test">
+<h2>vm test<a class="headerlink" href="#vm-test" title="Permalink to this headline">¶</a></h2>
+<p>This nosetest performs 14 tests regarding vm management.
+It includes:</p>
+<div class="highlight-bash"><div class="highlight"><pre>- activation <span class="nb">test</span> <span class="o">(</span><span class="sb">`</span>cloud on CLOUDNAME<span class="sb">`</span><span class="o">)</span>
+- vm creation <span class="o">(</span><span class="sb">`</span>vm start<span class="sb">`</span><span class="o">)</span>
+- vm list <span class="o">(</span><span class="sb">`</span>vm list<span class="sb">`</span><span class="o">)</span>
+- vm deletion <span class="o">(</span><span class="sb">`</span>vm delete<span class="sb">`</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Try to run the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nosetests -v --nocapture ~/cloudmesh/tests/test_cm_console_ext.py
 </pre></div>
 </div>
 </div>
@@ -866,6 +891,7 @@ re-installed and re-configured.</p>
 <li><a class="reference internal" href="#api">API</a></li>
 <li><a class="reference internal" href="#cm-shell">cm shell</a></li>
 <li><a class="reference internal" href="#cm-console">cm console</a></li>
+<li><a class="reference internal" href="#vm-test">vm test</a></li>
 </ul>
 </li>
 </ul>

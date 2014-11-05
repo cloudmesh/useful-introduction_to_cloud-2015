@@ -277,6 +277,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/nosetests.html#api">API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/nosetests.html#cm-shell">cm shell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/nosetests.html#cm-console">cm console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cloudmesh/setup/nosetests.html#vm-test">vm test</a></li>
 </ul>
 </li>
 </ul>
@@ -516,7 +517,10 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Deploying a Hadoop Cluster on India OpenStack</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">cm cluster create: a convenient way to create a cluster of VMs</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#deploying-hadoop">Deploying Hadoop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#initializing-and-testing">Initializing and Testing</a></li>
 </ul>
@@ -637,7 +641,10 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Deploying a Hadoop Cluster on India OpenStack</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a></li>
+<li><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a><ul>
+<li><a class="reference internal" href="#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">cm cluster create: a convenient way to create a cluster of VMs</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#deploying-hadoop">Deploying Hadoop</a></li>
 <li><a class="reference internal" href="#initializing-and-testing">Initializing and Testing</a></li>
 </ul>
@@ -732,7 +739,10 @@
 <h4 class="nav-header"> &nbsp; Page Contents</h4><ul>
 <li><a class="reference internal" href="#">Deploying a Hadoop Cluster on India OpenStack</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a></li>
+<li><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a><ul>
+<li><a class="reference internal" href="#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">cm cluster create: a convenient way to create a cluster of VMs</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#deploying-hadoop">Deploying Hadoop</a></li>
 <li><a class="reference internal" href="#initializing-and-testing">Initializing and Testing</a></li>
 </ul>
@@ -830,6 +840,59 @@ There are three functions we need to fill:</p>
 <ul class="simple">
 <li>Stores data files and makes them available to client applications</li>
 </ul>
+<div class="section" id="cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">
+<h3>cm cluster create: a convenient way to create a cluster of VMs<a class="headerlink" href="#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms" title="Permalink to this headline">¶</a></h3>
+<p>Cloudmesh provides a convenient way to create such a cluster of VMs
+(each of them can log into all others). Please follow the following
+steps:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Make sure you update your cloudmesh and the cloudmesh server is running.
+Open a terminal, execute the following commands, modify the values of the
+options according to your own environment and needs. Also you may execute
+these in cloudmesh CLI &#8216;cm&#8217;.</p>
+</div>
+<p>1 select cloud to work on, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;cloud select india&quot;
+</pre></div>
+</div>
+<p>2 activate the cloud, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;cloud on india&quot;
+</pre></div>
+</div>
+<p>3 set the default key to start VMs, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;key default test-key&quot;
+</pre></div>
+</div>
+<p>4 set the start name of VMs, which is prefix and index, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;label --prefix=test --id=1&quot;
+</pre></div>
+</div>
+<p>5 set image of VMs, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;default image --name=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+<p>6 set flavor of VMs, e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;default flavor --name=m1.small&quot;
+</pre></div>
+</div>
+<p>Then you may start the cluster with command &#8216;cluster create&#8217; by providing the following values:</p>
+<p>&#8211;count: specify amount of VMs in the cluster</p>
+<p>&#8211;group: specify a group name of the cluster, make sure it&#8217;s UNIQUE</p>
+<p>&#8211;ln: login name for VMs, e.g. ubuntu
+e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=3 --group=test --ln=ubuntu&quot;
+</pre></div>
+</div>
+<p>You may also provide cloud name, flavor or image in the command if you don&#8217;t want to pre-set them. e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+<p>to list the VMs you just created:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=test&quot;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="deploying-hadoop">
 <h2>Deploying Hadoop<a class="headerlink" href="#deploying-hadoop" title="Permalink to this headline">¶</a></h2>
@@ -1033,7 +1096,10 @@ operational and ready to run jobs.</p>
        <ul>
 <li><a class="reference internal" href="#">Deploying a Hadoop Cluster on India OpenStack</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a></li>
+<li><a class="reference internal" href="#cluster-preparation">Cluster Preparation</a><ul>
+<li><a class="reference internal" href="#cm-cluster-create-a-convenient-way-to-create-a-cluster-of-vms">cm cluster create: a convenient way to create a cluster of VMs</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#deploying-hadoop">Deploying Hadoop</a></li>
 <li><a class="reference internal" href="#initializing-and-testing">Initializing and Testing</a></li>
 </ul>

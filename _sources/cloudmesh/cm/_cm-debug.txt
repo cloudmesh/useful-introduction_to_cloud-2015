@@ -12,11 +12,11 @@ Command Shell Output Control
 
    </button>
 
-IPython Alias
-~~~~~~~~~~~~~
-
 The ``debug`` command provides to turn on the debug log level or to turn
 it off.
+
+IPython Alias
+~~~~~~~~~~~~~
 
 With the alias command we simply define a new command with the name cm
 that we can call directly from IPython. Here we make sure that the
