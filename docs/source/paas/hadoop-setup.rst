@@ -79,6 +79,61 @@ DataNode(s) for the HDFS file system
 
 -	Stores data files and makes them available to client applications
 
+cm cluster create: a convenient way to create a cluster of VMs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cloudmesh provides a convenient way to create such a cluster of VMs 
+(each of them can log into all others). Please follow the following 
+steps:
+
+.. important::
+    Make sure you update your cloudmesh and the cloudmesh server is running.
+    Open a terminal, execute the following commands, modify the values of the
+    options according to your own environment and needs. Also you may execute 
+    these in cloudmesh CLI 'cm'.
+
+1 select cloud to work on, e.g.::
+
+    cm "cloud select india"
+
+2 activate the cloud, e.g.::
+
+    cm "cloud on india"
+
+3 set the default key to start VMs, e.g.::
+
+    cm "key default test-key"
+
+4 set the start name of VMs, which is prefix and index, e.g.::
+
+    cm "label --prefix=test --id=1"
+
+5 set image of VMs, e.g.::
+
+    cm "default image --name=futuregrid/ubuntu-14.04"
+
+6 set flavor of VMs, e.g.::
+
+    cm "default flavor --name=m1.small"
+
+Then you may start the cluster with command 'cluster create' by providing the following values:
+
+--count: specify amount of VMs in the cluster
+
+--group: specify a group name of the cluster, make sure it's UNIQUE
+
+--ln: login name for VMs, e.g. ubuntu 
+e.g.::
+
+    cm "cluster create --count=3 --group=test --ln=ubuntu"
+
+You may also provide cloud name, flavor or image in the command if you don't want to pre-set them. e.g.::
+    
+    cm "cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04")
+
+to list the VMs you just created::
+
+    cm "vm list --refresh --group=test"
+
 Deploying Hadoop
 ----------------------------------------------------------------------
 
