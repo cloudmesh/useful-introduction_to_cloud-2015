@@ -10,5 +10,7 @@ Cloudmesh cm
    _cm-project
    _cm-debug
    _vm-cm
+   _cm-limits
+   _cm-cluster
    ipython
    _ipython
