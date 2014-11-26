@@ -12,5 +12,7 @@ Cloudmesh cm
    _vm-cm
    _cm-limits
    _cm-cluster
+   _cm-group
+   _cm-volume
    ipython
    _ipython
