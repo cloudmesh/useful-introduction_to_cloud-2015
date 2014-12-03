@@ -57,7 +57,8 @@ def html(theme_name='bootstrap'):
     clean()
     convert()
     local("cd docs; make html")
-
+    local("fab security.check")
+    
 @task
 def pdf():
     theme('simple')
