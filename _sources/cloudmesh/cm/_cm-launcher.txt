@@ -93,7 +93,7 @@ use ``bigdata_mooc`` as a desired cookbook.
 .. parsed-literal::
 
     * india
-    Refreshing hrlee servers india ->
+    Refreshing albert servers india ->
     Refresh time: 0.219480037689
     Store time: 0.0358941555023
 

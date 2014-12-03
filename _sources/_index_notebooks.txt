@@ -17,10 +17,14 @@ Notebooks
    `_pbs <cloudmesh/api/_pbs.html>`__, `_pbs.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__, cloudmesh/api/_pbs.ipynb
    `_uuid <cloudmesh/api/_uuid.html>`__, `_uuid.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_uuid.ipynb>`__, cloudmesh/api/_uuid.ipynb
    `_vm_api <cloudmesh/api/_vm_api.html>`__, `_vm_api.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_api.ipynb>`__, cloudmesh/api/_vm_api.ipynb
-   `_cluster_cm <cloudmesh/cm/_cluster_cm.html>`__, `_cluster_cm.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cluster_cm.ipynb>`__, cloudmesh/cm/_cluster_cm.ipynb
+   `_cm-cluster-new <cloudmesh/cm/_cm-cluster-new.html>`__, `_cm-cluster-new.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-cluster-new.ipynb>`__, cloudmesh/cm/_cm-cluster-new.ipynb
+   `_cm-cluster <cloudmesh/cm/_cm-cluster.html>`__, `_cm-cluster.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-cluster.ipynb>`__, cloudmesh/cm/_cm-cluster.ipynb
    `_cm-debug <cloudmesh/cm/_cm-debug.html>`__, `_cm-debug.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-debug.ipynb>`__, cloudmesh/cm/_cm-debug.ipynb
+   `_cm-group <cloudmesh/cm/_cm-group.html>`__, `_cm-group.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-group.ipynb>`__, cloudmesh/cm/_cm-group.ipynb
    `_cm-launcher <cloudmesh/cm/_cm-launcher.html>`__, `_cm-launcher.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-launcher.ipynb>`__, cloudmesh/cm/_cm-launcher.ipynb
+   `_cm-limits <cloudmesh/cm/_cm-limits.html>`__, `_cm-limits.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-limits.ipynb>`__, cloudmesh/cm/_cm-limits.ipynb
    `_cm-project <cloudmesh/cm/_cm-project.html>`__, `_cm-project.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__, cloudmesh/cm/_cm-project.ipynb
+   `_cm-volume <cloudmesh/cm/_cm-volume.html>`__, `_cm-volume.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-volume.ipynb>`__, cloudmesh/cm/_cm-volume.ipynb
    `_cm <cloudmesh/cm/_cm.html>`__, `_cm.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm.ipynb>`__, cloudmesh/cm/_cm.ipynb
    `_cm_nova <cloudmesh/cm/_cm_nova.html>`__, `_cm_nova.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm_nova.ipynb>`__, cloudmesh/cm/_cm_nova.ipynb
    `_vm-cm <cloudmesh/cm/_vm-cm.html>`__, `_vm-cm.ipynb <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_vm-cm.ipynb>`__, cloudmesh/cm/_vm-cm.ipynb

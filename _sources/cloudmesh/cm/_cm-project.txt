@@ -13,10 +13,10 @@
    </button>
 
 The ``project`` command provides a list of default, active, or completed
-project fo a given user. You can update the project information with
+project for a given user. You can update the project information with
 this command.
 
-..note:: that all your ``project`` command executions update your yaml
+.. note:: that all your ``project`` command executions update your yaml
 file (cloudmesh.yaml) and mongo db (user, defaults) both.
 
 IPython Alias

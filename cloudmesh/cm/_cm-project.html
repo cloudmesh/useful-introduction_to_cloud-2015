@@ -343,6 +343,33 @@
 <li class="toctree-l4"><a class="reference internal" href="_vm-cm.html#vitual-machine-name">Vitual Machine Name</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_cm-limits.html#limits-command"><tt class="docutils literal"><span class="pre">limits</span></tt> command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-limits.html#usage-command"><tt class="docutils literal"><span class="pre">usage</span></tt> command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-limits.html#quota-command"><tt class="docutils literal"><span class="pre">quota</span></tt> command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_cm-cluster.html#ipython-alias">IPython Alias</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm-cluster.html#preparation-optional">Preparation (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-cluster.html#default-keypair">Default keypair</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-cluster.html#vm-name">VM Name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-cluster.html#default-image">Default Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-cluster.html#default-flavor">Default Flavor</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_cm-cluster.html#create-cluster">Create Cluster</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-cluster.html#create-3-virtual-machines">Create 3 virtual machines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_cm-group.html#group-command"><tt class="docutils literal"><span class="pre">group</span></tt> command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_cm-group.html#working-with-group">Working with group</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -774,10 +801,13 @@
 <h1><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#project-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb">Notebook</a></p>
 </button><p>The <tt class="docutils literal"><span class="pre">project</span></tt> command provides a list of default, active, or completed
-project fo a given user. You can update the project information with
+project for a given user. You can update the project information with
 this command.</p>
-<p>..note:: that all your <tt class="docutils literal"><span class="pre">project</span></tt> command executions update your yaml
-file (cloudmesh.yaml) and mongo db (user, defaults) both.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">that all your <tt class="docutils literal"><span class="pre">project</span></tt> command executions update your yaml</p>
+</div>
+<p>file (cloudmesh.yaml) and mongo db (user, defaults) both.</p>
 <div class="section" id="ipython-alias">
 <h2>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h2>
 <p>With the alias command we simply define a new command with the name cm

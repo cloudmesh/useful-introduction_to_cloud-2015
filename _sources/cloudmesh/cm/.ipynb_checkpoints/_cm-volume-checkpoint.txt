@@ -1,0 +1,21 @@
+
+Managing Volumes with Cloudmesh ``cm``
+======================================
+
+Cloudmesh provides a command for managing volumes.
+
+.. note: Currently, the volume command supports only openstack clouds.
+
+Note: ! is used to run cm command in ipython notebook.
+
+Before using the volume command make sure to load the configurations by
+choosing a cloud using nova command, e.g.:
+
+.. code:: python
+
+    !cm nova set india
+for more detailed descriptions:
+
+.. code:: python
+
+    !cm volume help
