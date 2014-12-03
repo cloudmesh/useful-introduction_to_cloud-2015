@@ -2,8 +2,6 @@ from fabric.api import task, local
 import sys
 import os
 
-from build import cursor_on
-
 @task
 def check(search=""):
     check_list = [ ("openstack", "'OS_PASSWORD': '[a-zA-Z0-9]+'"),
@@ -14,7 +12,6 @@ def check(search=""):
         _grep(_search, platform)
     if search:
         _grep(search, 'CUSTOMIZED_SEARCH')
-    cursor_on()
     
 def _grep(search, platform):
     if not search:
