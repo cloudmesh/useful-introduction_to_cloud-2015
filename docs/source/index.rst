@@ -8,7 +8,7 @@ Contents
    http://cloudmesh.github.io/introduction_to_cloud_computing/. If you
    look directly at the source in github, please go that link.
 
-A short video giving a bief overview about this Web site and Cloudmesh 
+A short video giving a brief overview about this Web site and Cloudmesh 
 is available at |video-cm-intro|.
 
 .. toctree::
