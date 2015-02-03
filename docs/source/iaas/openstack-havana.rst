@@ -38,7 +38,7 @@ OpenStack on FutureSystems
 Login
 -------
 
-Currently FutureSystems has OpenStack Juno installed on India. To use
+Currently FutureSystems OpenStack Havana installed on India.  To use
 it you need to first log into india and prepare your Openstack
 credentials::
 
@@ -58,7 +58,7 @@ Creating the novarc file
 An initial novarc file is currently created for you automatically and
 can be activated wih ::
 
-    $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+    $ source ~/.futuregrid/openstack_havana/novarc
 
 
 In future this file will be created with the help of cloudmesh
@@ -97,15 +97,13 @@ uploaded images with the nova image-list command::
 
 You will see an output similar to::
 
-  +--------------------------------------+----------------------------+--------+--------+
-  | ID                                   | Name                       | Status | Server |
-  +--------------------------------------+----------------------------+--------+--------+
-  | 05a7e78f-d105-4c32-84c8-75562f61cfff | futuresystems/centos-7     | ACTIVE |        |
-  | b1bab925-6eaa-4928-bced-47d7607103c8 | futuresystems/fedora-21    | ACTIVE |        |
-  | c2a9788a-89f5-463d-96e5-61e144e05ba6 | futuresystems/ubuntu-12.04 | ACTIVE |        |
-  | 04a6d3aa-026b-4679-bd6b-7fef8a98e4be | futuresystems/ubuntu-14.04 | ACTIVE |        |
-  +--------------------------------------+----------------------------+--------+--------+
-  
+       +--------------------------------------+-------------------------+--------+--------+
+       | ID                                   | Name                    | Status | Server |
+       +--------------------------------------+-------------------------+--------+--------+
+       | 18c437e5-d65e-418f-a739-9604cef8ab33 | futuregrid/fedora-18    | ACTIVE |        |
+       | 1a5fd55e-79b9-4dd5-ae9b-ea10ef3156e9 | futuregrid/ubuntu-14.04 | ACTIVE |        |
+       +--------------------------------------+-------------------------+--------+--------+   
+
 
 Key management
 --------------
@@ -168,18 +166,12 @@ You will see the following output if everything went correctly::
 Booting an image
 ----------------------------------------------------------------------
 
-To boot an instance you will need first to identify the `$NET_ID`::
+To boot an instance you simply can now use the command::
 
-    $ NET_ID=$(nova net-list| awk '/ int-net / {print $2}')
+       $ nova boot --flavor m1.small \
+                   --image "futuregrid/ubuntu-14.04" \
+                   --key_name $PORTALNAME-key $PORTALNAME-001
 
-Now you can use the command::
-
-  $ nova boot --flavor m1.small \
-            --image "futuresystems/ubuntu-14.04" \
-            --nic net-id=$NET_ID \
-            --key_name $PORTALNAME-key $PORTALNAME-001
-
-	    
 Please note that the last parameter is a "label" for the VM and we
 recommend thst you use a unique label. If everything went correctly,
 you will see an output similar to::
@@ -240,7 +232,7 @@ If you see a warning similar to::
 
 you need to delete the offending host key from ~/.ssh/known_hosts.
 
-Using block storage
+Use block storage
 ----------------------------------------------------------------------
 
 You can create a block storage with the volume-create command. A
@@ -309,7 +301,7 @@ So far we only used the internal IP address, but you can also assign
 an external address, so that you can log in from other machines than
 india. Firts, Create an external ip address with::
 
-       $ nova floating-ip-create ext-net
+       $ nova floating-ip-create
 
        +-----------------+-------------+----------+------+
        | Ip              | Instance Id | Fixed Ip | Pool |
@@ -317,7 +309,7 @@ india. Firts, Create an external ip address with::
        | 198.202.120.193 | None        | None     | nova |
        +-----------------+-------------+----------+------+
 
-Next, attach it to your vm with ::
+Next, put it on your instance with::
 
        $ nova add-floating-ip $PORTALNAME-001 198.202.120.193
        $ nova floating-ip-list
@@ -330,14 +322,6 @@ Next, attach it to your vm with ::
 
 Now you should be able to ping and ssh from external and can use the
 given ip address.
-
-If you see a warning similar to::
-
-  Add correct host key in /home/$PORTALNAME/.ssh/known_hosts to get rid of this message.
-  Offending key in /home/$PORTALNAME/.ssh/known_hosts:3
-
- you need to delete the offending host key from .ssh/known_hosts.
-
 
 Make a snapshot of an instance
 ------------------------------
