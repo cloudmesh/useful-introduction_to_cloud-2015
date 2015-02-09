@@ -1,9 +1,11 @@
 d2to1
 pbr
-future
+futures
 pip
-sphinx
+sphinx 
+sphinx-autobuild
 sphinx_bootstrap_theme
+sphinx_rtd_theme
 sphinxcontrib-autorun
 sphinxcontrib-blockdiag
 sphinxcontrib-exceltable
@@ -24,4 +26,4 @@ nose
 autopep8
 markupsafe
 hieroglyph
-futures
+mkdocs

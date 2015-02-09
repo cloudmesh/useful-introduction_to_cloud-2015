@@ -11,7 +11,6 @@ Table
    :header: Status, Title, Page, Youtube ID
    :widths: 10, 60, 20, 10
 
-
    ok, `00 Cloudmesh: Relevance and Introduction <https://www.youtube.com/watch?v=njHHjRMb7V8>`__, `class/i590.rst <class/i590.html>`__, `njHHjRMb7V8 <https://www.youtube.com/watch?v=njHHjRMb7V8>`__
    ok, `01 Cloudmesh: Introduction <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__, `index.rst <index.html>`__, `uGIPmiJ0cxg <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__
    ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `class/i590.rst <class/i590.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__

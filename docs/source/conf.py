@@ -12,16 +12,22 @@
 # serve to show the default.
     
 import sys, os
-import sphinx_bootstrap_theme
+
+#bootstrap = True
+bootstrap = False
+
+if bootstrap: 
+    import sphinx_bootstrap_theme
+else:
+    import sphinx_rtd_theme
 
 
-
-try:
-    theme = os.environ['SPHINX_THEME']
-except:
-    print "please set the them environment var"
-    print "   SPHINX_THEME bootstrap"
-    sys.exit()
+#try:
+#    theme = os.environ['SPHINX_THEME']
+#except:
+#    print "please set the them environment var"
+#    print "   SPHINX_THEME bootstrap"
+#    sys.exit()
 
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -129,7 +135,8 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-if os.environ['SPHINX_THEME'] == 'bootstrap':
+#if os.environ['SPHINX_THEME'] == 'bootstrap':
+if bootstrap:
     html_theme = 'bootstrap'
 
     # Theme options are theme-specific and customize the look and feel
@@ -186,6 +193,9 @@ if os.environ['SPHINX_THEME'] == 'bootstrap':
     # Add any paths that contain custom themes here, relative to this directory.
     #html_theme_path = []
     html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+else:
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -219,7 +229,8 @@ html_static_path = ['_static']
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
 
-if os.environ['SPHINX_THEME'] == 'bootstrap':
+#if os.environ['SPHINX_THEME'] == 'bootstrap':
+if bootstrap:
     html_sidebars = {
        '**': ['menu.html',
                  'localtoc.html',
