@@ -58,6 +58,13 @@ following commands::
 
 .. note:: on OSX you can omit the sudo. 
 
+.. note:: OSX installation of python-LDAP may be an issue. You can use
+	  the following woraround::
+
+	    pip install python-ldap \
+	         --global-option=build_ext \
+                 --global-option="-I$(xcrun --show-sdk-path)/usr/include/sasl"
+	  
 To get access to IaaS cloud platforms, you need to create locally a
 new user that has access to various clouds. This can be done with::
 
