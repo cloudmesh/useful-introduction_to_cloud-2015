@@ -24,7 +24,7 @@ Setup OpenStack Environment
 In case you like to use the shell commandline tools you can load them
 with ::
 
-    $ module load novaclient
+    $ module load openstack
 
 Creating the novarc file
 ----------------------------------------------------------------------
