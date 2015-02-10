@@ -1,6 +1,17 @@
 Contact
 ======================================================================
 
+Important repositories are located at 
+
+* https://github.com/cloudmesh
+
+  * `Issues`_
+  * `Milestones`_
+  * `Code`_
+
+.. _Issues: https://github.com/cloudmesh/cloudmesh/issues?sort=updated&state=open
+.. _Milestones: https://github.com/cloudmesh/cloudmesh/issues/milestones
+.. _Code: https://github.com/cloudmesh/cloudmesh
 
 For more info please contact Gregor von Laszewski, laszewski@gmail.com
 
@@ -26,27 +37,10 @@ Contributors
 ----------------------------------------------------------------------
 
 * Gregor von Laszewski (laszewski@gmail.com)
-* Fugang Wang
+* Fugang Wang (kevinwangfg@gmail.com)
 * Hyungro Lee (hroe.lee@gmail.com)
 * Mark Xiao
 * Aravindha Varadharaju
-
-
-  Repository
-----------
-
-Important repositories are located at 
-
-* https://github.com/cloudmesh
-
-  * `Issues`_
-  * `Milestones`_
-  * `Code`_
-
-
-.. _Issues: https://github.com/cloudmesh/cloudmesh/issues?sort=updated&state=open
-.. _Milestones: https://github.com/cloudmesh/cloudmesh/issues/milestones
-.. _Code: https://github.com/cloudmesh/cloudmesh
 
 
 Support
