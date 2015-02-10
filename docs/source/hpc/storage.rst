@@ -4,10 +4,10 @@
 Storage Services
 ======================================================================
 
-Using Indiana University's Storage Services from FutureGrid
+Using Indiana University's Storage Services from FutureSystems
 ----------------------------------------------------------------------
 
-FutureGrid does not provide an HPSS server. However, if you have an IU
+FutureSystems does not provide an HPSS server. However, if you have an IU
 account (available only for IU faculty, staff, affilates, and
 students), you can use the following services from india:
 

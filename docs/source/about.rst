@@ -104,7 +104,7 @@ Suggestions include:
 
 * Cloud
 
-  * get an account on FutureGrid (possibly just a link)
+  * get an account on FutureSystems (possibly just a link)
   * use nova client from the command shell
   * python example on how to manage vms with cloud mesh API & shell
   * IaaS Intro (pick your IaaS)

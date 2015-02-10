@@ -152,7 +152,7 @@ FAQ
   * While using RST we have a nice search feature.
 
   * While using RST we can integrate auto-generate documentation form
-    FutureGrid code we develop such as RAIN and cloudmesh.
+    FutureSystems code we develop such as RAIN and cloudmesh.
 
 * Why not use Word and skydrive?
 

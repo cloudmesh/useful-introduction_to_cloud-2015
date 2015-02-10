@@ -204,7 +204,7 @@ This lecture will teach you how to use openstack on Indiana universities india m
 * starting virtual machines
 * stoping virtual machines
 
-..note:: this tutorial will be updated once we have switched from FutureGrid to FutureSystems
+..note:: this tutorial will be updated once we have switched from FutureSystems to FutureSystems
 
 Updated: 2014-09-22T20:20:05.000Z
 
@@ -241,7 +241,7 @@ futuregrid-get-portal-account
 
 .. For written information see http://mycloudmesh.org/learning
 
-This video shows how to create an account on FutureGrid
+This video shows how to create an account on FutureSystems
 
 Updated: 2014-09-23T15:42:36.000Z
 

@@ -80,7 +80,7 @@ Below is further information about networking:
    * - Resource
      - Network Switch
      - Link
-   * - FutureGrid Core
+   * - FutureSystems Core
      - Juniper EX8200
      -
    * - India

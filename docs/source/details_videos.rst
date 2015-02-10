@@ -64,7 +64,7 @@ Updated: 2013-12-01T22:37:44.000Z
 
 futuregrid-get-portal-account
 ======================================================================
-This video shows how to create an account on FutureGrid
+This video shows how to create an account on FutureSystems
 
 Updated: 2013-12-01T22:37:44.000Z
 

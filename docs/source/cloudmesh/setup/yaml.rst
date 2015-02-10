@@ -11,12 +11,12 @@ You must have installed cloudmesh as discussed in ??? and run::
 This will create a `~/.cloudmesh` directory with some basic yaml files
 that you will need to modify.
 
-Adding FutureGrid Openstack clouds on sierra and india to the yaml file
+Adding FutureSystems Openstack clouds on sierra and india to the yaml file
 ----------------------------------------------------------------------
 
-For FutureGrid we have additionally provided a script that
+For FutureSystems we have additionally provided a script that
 automatically creates some yaml files from the installation. In future
-FutureGrid will provide directly a yaml for cloudmesh so that this
+FutureSystems will provide directly a yaml for cloudmesh so that this
 step is unnecessary. Before you can execute this command you maust
 make sure that you can log into india and sierra via ssh. Once you
 have verified this for example with::
@@ -29,7 +29,7 @@ remote machines::
 
   $ ./install rc fetch
 
-First it will ask you which username you have on FutureGrid. The name
+First it will ask you which username you have on FutureSystems. The name
 may be different from your current local machine name. Please enter
 your name when you see::
 
@@ -45,7 +45,7 @@ The reason why we have separated the commands and not just created one
 command is to provide you with the ability to double check overwriting
 possibly an existing rc file.
 
-Adding FutureGrid OpenStack Clouds on alamo and hotel to the yaml file
+Adding FutureSystems OpenStack Clouds on alamo and hotel to the yaml file
 --------------------------------------------------------------------------
 
 We do not recommend adding these machines as they use the FG portal

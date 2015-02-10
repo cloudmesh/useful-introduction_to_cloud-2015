@@ -14,11 +14,6 @@ A video bout the quickstart instalation is available on |video-cm-install|
 
 .. role:: pink
 
-.. warning:: this tutorial is for the new FutureSystems
-	  infrastructure. However at this time we still use
-	  FutureGrid. Please replace all occurrences of FutureSystems
-	  with FutureGrid. 
-
 :red:`This quickstart is designed for Ubuntu 14.04 and OSX`.
 
 

@@ -36,7 +36,7 @@ can be activated wih ::
 
 
 In future this file will be created with the help of cloudmesh
-simplifying asccess to multiple heterogeneous cooulds on FutureGrid.
+simplifying asccess to multiple heterogeneous cooulds on FutureSystems.
 
 List flavors
 ------------
