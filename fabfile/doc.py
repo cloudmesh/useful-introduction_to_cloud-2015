@@ -2,12 +2,26 @@ from fabric.api import task, local, settings
 import sys
 import os
 import time
+import subprocess
 
 browser = "firefox"
 
 if sys.platform == 'darwin':
     browser = "open"
 
+
+def cmd_exists(cmd):
+    return subprocess.call("type " + cmd, shell=True, 
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE) == 0
+
+for cmd in ['pandoc','ipython']:    
+    if not cmd_exists(cmd):
+        print "ERROR: pandoc is not installed."
+        sys.exit()
+    else:
+        print cmd, "found. ok."
+
+    
 @task
 def all():
     html()
@@ -39,16 +53,21 @@ def view(kind='html'):
     else:
         local("open docs/build/epub/myCloudmesh.epub")
         
-def theme(name='bootstrap'):
+def theme(name='readthedocs'):
+    """set name to 'bootstrap' in case you want to use bootstrap.
+    This also requires the template sto be in the main dir"""
+    
     os.environ['SPHINX_THEME'] = name
     if os.environ['SPHINX_THEME'] == 'bootstrap':
         local('cp docs/source/_templates/layout_bootstrap.html docs/source/_templates/layout.html')
+    elif name is 'readthedocs':
+        return
     else:
         local('cp docs/source/_templates/layout_simple.html docs/source/_templates/layout.html')
     
 @task
-def html(theme_name='bootstrap'):
-    # disable Flask RSTPAGES due to sphins incompatibility
+def html(theme_name='readthedocs'):
+    # disable Flask RSTPAGES due to sphinx incompatibility
     os.environ['RSTPAGES'] = 'FALSE'
     theme(theme_name)
     # api()
@@ -80,7 +99,7 @@ def slides():
     local("cd docs; make slides")
     
 @task
-def fast(theme_name='bootstrap'):
+def fast(theme_name='readthedocs'):
     theme(theme_name)
     local("cd docs; make html")
 
