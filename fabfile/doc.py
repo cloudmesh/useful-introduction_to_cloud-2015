@@ -77,6 +77,7 @@ def html(theme_name='readthedocs'):
     convert()
     local("cd docs; make html")
     local("fab security.check")
+    local("touch docs/build/html/.nojekyll")
     
 @task
 def pdf():
