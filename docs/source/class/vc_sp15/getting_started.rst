@@ -6,6 +6,17 @@ FutureSystems provides cloud compute resources to students, scientists and
 researchers with a registered account and a project.  You can create a new
 FutureSystems account and create a new project or join an existing project.
 
+.. raw:: html
+
+        <object width="480" height="385"><param name="movie"
+        value="https://www.youtube.com/embed/oSlq0287m1Q"></param><param
+        name="allowFullScreen" value="true"></param><param
+        name="allowscriptaccess" value="always"></param><embed
+        src="https://www.youtube.com/embed/oSlq0287m1Q"
+        type="application/x-shockwave-flash" allowscriptaccess="always"
+        allowfullscreen="true" width="480"
+        height="385"></embed></object>
+
 Account Setup (Optional)
 ----------------------------
 
