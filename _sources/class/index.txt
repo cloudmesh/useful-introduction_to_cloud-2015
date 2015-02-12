@@ -9,3 +9,4 @@ Cloudmesh in Classes
    i590
    cm-mooc
    javafiles
+   vc_sp15/index
