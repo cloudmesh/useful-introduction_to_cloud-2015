@@ -1,8 +1,12 @@
 
-Contents
+Introduction to Cloud Computing with Cloudmesh 
 ======================================================================
 
-.. sidebar:: 
+
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
 
    This documentation is published at
    http://cloudmesh.github.io/introduction_to_cloud_computing/. If you
@@ -12,6 +16,7 @@ A short video giving a brief overview about this Web site and Cloudmesh
 is available at |video-cm-intro|.
 
 .. toctree::
+   :numbered:
    :maxdepth: 2
    :glob:
 

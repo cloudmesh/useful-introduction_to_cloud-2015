@@ -77,6 +77,7 @@ def html(theme_name='readthedocs'):
     convert()
     local("cd docs; make html")
     local("fab security.check")
+    local("touch docs/build/html/.nojekyll")
     
 @task
 def pdf():
@@ -110,10 +111,11 @@ def simple():
 @task
 def publish():
     """deploy the documentation on gh-pages"""
+    local("ghp-import -p docs/build/html")
     #html()
-    local('cd docs/build/html && git add .  && git commit -m "site generated" && git push origin gh-pages')
-    local('git commit -a -m "build site"')
-    local("git push origin master")
+    #local('cd docs/build/html && git add .  && git commit -m "site generated" && git push origin gh-pages')
+    #local('git commit -a -m "build site"')
+    #local("git push origin master")
 
 
 @task
