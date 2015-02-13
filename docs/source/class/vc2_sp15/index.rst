@@ -6,6 +6,8 @@ BigData Virtual Cluster (Spring 2015)
    :glob:
 
    openmpi
+   ipynb
+   docker
 
    ../lesson/collaboration/index
    ../lesson/deployment/index
