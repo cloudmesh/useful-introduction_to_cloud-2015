@@ -15,6 +15,7 @@ Tutorial: Docker Basic commands
 .. tip:: approximate time 30 minutes
 
 In this tutorial, we are going to learn basic commands of Docker software.
+Keep in mind that ``docker`` is a main program and ``container`` is an image that you would like to use. You may have several containers in your docker.
 
 Install Docker 
 ~~~~~~~~~~~~~~
@@ -78,8 +79,8 @@ So, if you open a web browser ``http://localhost`` or ``http://ip address of hos
 your connection forwards to the container 8080 port. ``-d`` option daemonizes
 the container.
 
-.. tip:: See ``Unable to find image 'tomcat:8.0' locally``?
-         Your Docker will find ``tomcat`` from Docker Hub and download to your local.
+.. tip:: Did you see ``Unable to find image 'tomcat:8.0' locally``?
+         Your Docker will find ``tomcat`` from Docker Hub and download it to your local.
 
 
 List Containers
@@ -99,7 +100,7 @@ Expected result looks like this::
 See Logs
 ~~~~~~~~
 
-You can find out details by looking into log messages. Use ``NAMES`` from previous command.
+You can find out details of your container by looking at log messages. Use ``NAMES`` from previous command.
 This example we use ``adoring_lalande`` for your tomcat:8.0 container.
 
 ::
