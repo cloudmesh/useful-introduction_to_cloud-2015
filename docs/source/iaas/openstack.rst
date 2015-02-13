@@ -42,7 +42,7 @@ Currently FutureSystems has OpenStack Juno installed on India. To use
 it you need to first log into india and prepare your Openstack
 credentials::
 
-       $ ssh $PORTALNAME@india.futuregrid.org
+       $ ssh $PORTALNAME@india.futuresystems.org
 
 Setup OpenStack Environment
 ---------------------------
@@ -55,7 +55,7 @@ with ::
 Creating the novarc file
 ----------------------------------------------------------------------
 
-An initial novarc file is currently created for you automatically and
+An initial openrc file is currently created for you automatically and
 can be activated wih ::
 
     $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
@@ -191,7 +191,7 @@ you will see an output similar to::
        | updated                     | 2013-05-15T20:32:03Z                 |
        | OS-EXT-STS:task_state       | scheduling                           |
        | key_name                    | $PORTALNAME-key                      |
-       | image                       | futuregrid/ubuntu-14.04              |
+       | image                       | futuresystems/ubuntu-14.04              |
        | hostId                      |                                      |
        | OS-EXT-STS:vm_state         | building                             |
        | flavor                      | m1.small                             |
@@ -339,8 +339,8 @@ key. Than you can issue on india the following command::
        +--------------+--------------------------------+--------+--------------+
        | ID           | Name                           | Status | Server       |
        +--------------+--------------------------------+--------+--------------+
-       | 18c43 ... 33 | futuregrid/fedora-18           | ACTIVE |              |
-       | 1a5fd ... e9 | futuregrid/ubuntu-14.04        | ACTIVE |              |
+       | 18c43 ... 33 | futuresystems/fedora-18           | ACTIVE |              |
+       | 1a5fd ... e9 | futuresystems/ubuntu-14.04        | ACTIVE |              |
        | f4337 ... 44 | fg101/$PORTALNAME/my-ubuntu-01 | ACTIVE | c0bd ... bcc |
        +--------------+--------------------------------+--------+--------------+
 
@@ -380,7 +380,7 @@ Create a file(mycloudinit.txt) containing these lines::
 Now boot your instance with --user-data mycloudinit.txt like this::
 
        $ nova boot --flavor m1.small \
-                   --image "futuregrid/ubuntu-14.04" \
+                   --image "futuresystems/ubuntu-14.04" \
                    --key_name $PORTALNAME-key \
                    --user-data mycloudinit.txt $PORTALNAME-002
 
@@ -390,7 +390,7 @@ Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack
 ---------------------------------------------------------------------------
 
 .. note:: We will try to provide the latest images. E.g., currently in india openstack 
-the ubuntu 14.04 image is officially available under name: futuregrid/ubuntu-14.04. So 
+the ubuntu 14.04 image is officially available under name: futuresystems/ubuntu-14.04. So 
 usually you can skip this section to simply use the one provided officially.
 
 Several versions of Ubuntu cloud images are available at
@@ -513,12 +513,12 @@ Alamo an older version of Openstack is run.
      - Description
    * - |image-horizon| 
      - Havana 
-     - `India <https://openstack-h.india.futuregrid.org/horizon>`_
+     - `India <https://openstack-j.india.futuresystems.org/horizon>`_
      - Native OpenStack
      - India offers a Graphical user interface to access
        OpenStack. For those interested in only managing a few images
        this may be a good way to start. The link to the GUI is 
-       https://openstack-h.india.futuregrid.org/horizon The password
+       https://openstack-j.india.futuresystems.org/horizon The password
        can be found by following the method discussed above.
 
 
