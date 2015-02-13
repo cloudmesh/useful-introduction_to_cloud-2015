@@ -133,7 +133,7 @@ You expect the result similar to:
         sudo su -
 
 Run a "Hello World" MPI program
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's try a simple example to try a MPI program. Here is hello.c:
 
