@@ -560,6 +560,11 @@ may be deactivated if you violate this policy.
 Upload an OpenId 
 ==================
 
+.. warning:: The Google OpenID is currrently not available. Google is
+	     changeing the way they handle SSO. You can still use
+	     other open ids.
+
+   
 Often users may not remember the password or username of the FG
 portal. However, they may have an easier time to remember their openid
 from for example google. It is possible to use your openid account and

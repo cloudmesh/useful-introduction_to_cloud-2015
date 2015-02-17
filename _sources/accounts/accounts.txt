@@ -8,6 +8,9 @@ Creating FutureSystems Accounts and Projects
    the Web site will be called FutureSystems to access resources and apply for accounts.
    Also be aware that the manual is located at http://mycloudmesh.org/learning
 
+.. warning:: The OpenID feature is at this time unavailable for google
+	     sign on.
+
 This series of screencasts will walk you through the account and
 project creation processes of FutureSystems. We have targeted the
 following areas:

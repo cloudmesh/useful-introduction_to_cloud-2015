@@ -6,5 +6,7 @@ IU Spring 2015
    :glob:
 
    overview
+   ../lesson/collaboration/index
    ../lesson/deployment/index
    ../lesson/virtualization/tools
+
