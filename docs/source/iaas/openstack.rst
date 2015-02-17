@@ -42,7 +42,7 @@ Currently FutureSystems has OpenStack Juno installed on India. To use
 it you need to first log into india and prepare your Openstack
 credentials::
 
-       $ ssh $PORTALNAME@india.futuregrid.org
+       $ ssh $PORTALNAME@india.futuresystems.org
 
 Setup OpenStack Environment
 ---------------------------
@@ -50,12 +50,12 @@ Setup OpenStack Environment
 In case you like to use the shell command line tools you can load them
 with ::
 
-    $ module load novaclient
+    $ module load openstack
 
 Creating the novarc file
 ----------------------------------------------------------------------
 
-An initial novarc file is currently created for you automatically and
+An initial openrc file is currently created for you automatically and
 can be activated wih ::
 
     $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
@@ -191,7 +191,7 @@ you will see an output similar to::
        | updated                     | 2013-05-15T20:32:03Z                 |
        | OS-EXT-STS:task_state       | scheduling                           |
        | key_name                    | $PORTALNAME-key                      |
-       | image                       | futuregrid/ubuntu-14.04              |
+       | image                       | futuresystems/ubuntu-14.04              |
        | hostId                      |                                      |
        | OS-EXT-STS:vm_state         | building                             |
        | flavor                      | m1.small                             |
@@ -221,17 +221,33 @@ command and monitor the Status field in the table::
 
        $ nova list
 
-       +-------------+----------------+--------+---------------------+
-       | ID          | Name           | Status | Networks            |
-       +-------------+----------------+--------+---------------------+
-       | e15 ... 3b7 | $PORTALNAME-001| ACTIVE | private=10.35.23.18 |
-       +-------------+----------------+--------+---------------------+
+       +-------------+-----------------+--------+------------+-------------+--------------------+
+       | ID          | Name            | Status | Task State | Power State | Networks           |
+       +-------------+-----------------+--------+------------+-------------+--------------------+
+       | c66 ... c73 | $PORTALNAME-001 | ACTIVE | -          | Running     | int-net=10.23.0.87 |
+       +-------------+-----------------+--------+------------+-------------+--------------------+
 
-Once it has changed from for example BUILD to ACTIVE, you can log
-in. Pleas use the IP address provided under networks. Note that the
-first address is private and can not be reached from outside india::
+Add floating IP address
+----------------------------------------------------------------------
 
-       $ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 10.35.23.18
+Internal IP is not reachable from external nework. So you need to add 
+a floating IP address to your instance. First, create a floating IP 
+address::
+
+       $ nova floating-ip-create ext-net
+       +-----------------+-----------+----------+---------+
+       | Ip              | Server Id | Fixed Ip | Pool    |
+       +-----------------+-----------+----------+---------+
+       | 149.165.158.149 | -         | -        | ext-net |
+       +-----------------+-----------+----------+---------+
+
+And then, add the IP address to your instance::
+
+       $ nova add-floating-ip $PORTALNAME-001 149.165.158.149
+
+Now, you should be able to login to your instance via ssh command like this::
+
+       $ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 149.165.158.149
 
 If you see a warning similar to::
 
@@ -302,43 +318,6 @@ login node and execute volume-detach::
        
        $ nova volume-detach $PORTALNAME-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
-Set up external access to your instance
----------------------------------------
-
-So far we only used the internal IP address, but you can also assign
-an external address, so that you can log in from other machines than
-india. Firts, Create an external ip address with::
-
-       $ nova floating-ip-create ext-net
-
-       +-----------------+-------------+----------+------+
-       | Ip              | Instance Id | Fixed Ip | Pool |
-       +-----------------+-------------+----------+------+
-       | 198.202.120.193 | None        | None     | nova |
-       +-----------------+-------------+----------+------+
-
-Next, attach it to your vm with ::
-
-       $ nova add-floating-ip $PORTALNAME-001 198.202.120.193
-       $ nova floating-ip-list
-
-       +-----------------+--------------------------------------+-------------+------+
-       | Ip              | Instance Id                          | Fixed Ip    | Pool |
-       +-----------------+--------------------------------------+-------------+------+
-       | 198.202.120.193 | c0bd849a-221a-4e53-bf7b-7097541a9bcc | 10.35.23.20 | nova |
-       +-----------------+--------------------------------------+-------------+------+
-
-Now you should be able to ping and ssh from external and can use the
-given ip address.
-
-If you see a warning similar to::
-
-  Add correct host key in /home/$PORTALNAME/.ssh/known_hosts to get rid of this message.
-  Offending key in /home/$PORTALNAME/.ssh/known_hosts:3
-
- you need to delete the offending host key from .ssh/known_hosts.
-
-
 Make a snapshot of an instance
 ------------------------------
 
@@ -360,8 +339,8 @@ key. Than you can issue on india the following command::
        +--------------+--------------------------------+--------+--------------+
        | ID           | Name                           | Status | Server       |
        +--------------+--------------------------------+--------+--------------+
-       | 18c43 ... 33 | futuregrid/fedora-18           | ACTIVE |              |
-       | 1a5fd ... e9 | futuregrid/ubuntu-14.04        | ACTIVE |              |
+       | 18c43 ... 33 | futuresystems/fedora-18           | ACTIVE |              |
+       | 1a5fd ... e9 | futuresystems/ubuntu-14.04        | ACTIVE |              |
        | f4337 ... 44 | fg101/$PORTALNAME/my-ubuntu-01 | ACTIVE | c0bd ... bcc |
        +--------------+--------------------------------+--------+--------------+
 
@@ -401,7 +380,7 @@ Create a file(mycloudinit.txt) containing these lines::
 Now boot your instance with --user-data mycloudinit.txt like this::
 
        $ nova boot --flavor m1.small \
-                   --image "futuregrid/ubuntu-14.04" \
+                   --image "futuresystems/ubuntu-14.04" \
                    --key_name $PORTALNAME-key \
                    --user-data mycloudinit.txt $PORTALNAME-002
 
@@ -411,7 +390,7 @@ Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack
 ---------------------------------------------------------------------------
 
 .. note:: We will try to provide the latest images. E.g., currently in india openstack 
-the ubuntu 14.04 image is officially available under name: futuregrid/ubuntu-14.04. So 
+the ubuntu 14.04 image is officially available under name: futuresystems/ubuntu-14.04. So 
 usually you can skip this section to simply use the one provided officially.
 
 Several versions of Ubuntu cloud images are available at
@@ -534,12 +513,12 @@ Alamo an older version of Openstack is run.
      - Description
    * - |image-horizon| 
      - Havana 
-     - `India <https://openstack-h.india.futuregrid.org/horizon>`_
+     - `India <https://openstack-j.india.futuresystems.org/horizon>`_
      - Native OpenStack
      - India offers a Graphical user interface to access
        OpenStack. For those interested in only managing a few images
        this may be a good way to start. The link to the GUI is 
-       https://openstack-h.india.futuregrid.org/horizon The password
+       https://openstack-j.india.futuresystems.org/horizon The password
        can be found by following the method discussed above.
 
 

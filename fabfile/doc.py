@@ -16,7 +16,7 @@ def cmd_exists(cmd):
 
 for cmd in ['pandoc','ipython']:    
     if not cmd_exists(cmd):
-        print "ERROR: pandoc is not installed."
+        print "ERROR: {} is not installed.".format(cmd)
         sys.exit()
     else:
         print cmd, "found. ok."
