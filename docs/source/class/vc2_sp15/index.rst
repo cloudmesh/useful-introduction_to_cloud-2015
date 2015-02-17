@@ -8,6 +8,7 @@ BigData Virtual Cluster (Spring 2015)
    openmpi
    ipynb
    docker
+   ansible
 
    ../lesson/collaboration/index
    ../lesson/deployment/index
