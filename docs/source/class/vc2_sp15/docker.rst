@@ -15,7 +15,8 @@ Tutorial: Docker Basic commands
 .. tip:: approximate time 30 minutes
 
 In this tutorial, we are going to learn basic commands of Docker software.
-Keep in mind that ``docker`` is a main program and ``container`` is an image that you would like to use. You may have several containers in your docker.
+Keep in mind that ``docker`` is a main program and ``container`` is an image
+that you would like to use. You may have several containers in your docker.
 
 Install Docker 
 ~~~~~~~~~~~~~~
@@ -48,8 +49,9 @@ Run a simple command "Hello, World".
 Obtain Shell Prompt in Docker Container
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Docker command has a sub-command ``run`` to execute containers with a few parameters.
-In this example, we use Ubuntu 14.04 image to get bash shell prompt.
+Docker command has a sub-command ``run`` to execute containers with a few
+parameters.  In this example, we use Ubuntu 14.04 image to get bash shell
+prompt.
 
 ::
 
@@ -67,20 +69,21 @@ Type ``exit`` to quit the shell and return to Docker host.
 Run Apache Tomcat Server
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-It's easy to deploy Apache Tomcat using Docker. Please run the following command:
-(sudo is supressed)
+It's easy to deploy Apache Tomcat using Docker. Please run the following
+command: (sudo is supressed)
 
 :: 
 
   docker run -d -p 80:8080 tomcat:8.0
 
 It downloads tomcat image from Docker Hub and connects 8888 port to 8080 port.
-So, if you open a web browser ``http://localhost`` or ``http://ip address of host``
-your connection forwards to the container 8080 port. ``-d`` option daemonizes
-the container.
+So, if you open a web browser ``http://localhost`` or ``http://ip address of
+host`` your connection forwards to the container 8080 port. ``-d`` option
+daemonizes the container.
 
 .. tip:: Did you see ``Unable to find image 'tomcat:8.0' locally``?
-         Your Docker will find ``tomcat`` from Docker Hub and download it to your local.
+         Your Docker will find ``tomcat`` from Docker Hub and download it to
+         your local.
 
 
 List Containers
@@ -100,8 +103,9 @@ Expected result looks like this::
 See Logs
 ~~~~~~~~
 
-You can find out details of your container by looking at log messages. Use ``NAMES`` from previous command.
-This example we use ``adoring_lalande`` for your tomcat:8.0 container.
+You can find out details of your container by looking at log messages. Use
+``NAMES`` from previous command.  This example we use ``adoring_lalande`` for
+your tomcat:8.0 container.
 
 ::
 
@@ -140,8 +144,10 @@ Expected result looks like this::
 Stop and Delete Container
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Like stopping and terminating a virtual instance, docker stops and deletes its container with two commands: ``stop`` and ``rm``
-We use ``NAMES`` from ``docker ps`` command. This example we use ``adoring_lalande`` for your tomcat:8.0 container.
+Like stopping and terminating a virtual instance, docker stops and deletes its
+container with two commands: ``stop`` and ``rm`` We use ``NAMES`` from ``docker
+ps`` command. This example we use ``adoring_lalande`` for your tomcat:8.0
+container.
 
 ::
   
@@ -156,9 +162,11 @@ After stopping the container, you can delete it.
 Review Docker Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We have learned some Docker commands. These are basic commands for Docker software.
+We have learned some Docker commands. These are basic commands for Docker
+software.
 
-* ``docker run``: runs a container. ``-it`` option allows you an interactive mode. ``-d`` option daemonizes your container.
+* ``docker run``: runs a container. ``-it`` option allows you an interactive
+  mode. ``-d`` option daemonizes your container.
 * ``docker logs``: displays log messages.
 * ``docker ps``: shows available containers.
 * ``docker search``: searches containers from Docker Hub.
@@ -168,7 +176,8 @@ We have learned some Docker commands. These are basic commands for Docker softwa
 Reference
 ~~~~~~~~~~
 
-The main tutorial from Docker is here: https://docs.docker.com/installation/ubuntulinux/
+The main tutorial from Docker is here:
+https://docs.docker.com/installation/ubuntulinux/
 
 Next Step
 ---------
