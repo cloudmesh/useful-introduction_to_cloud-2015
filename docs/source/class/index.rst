@@ -10,3 +10,4 @@ Cloudmesh in Classes
    cm-mooc
    javafiles
    vc_sp15/index
+   lessons
