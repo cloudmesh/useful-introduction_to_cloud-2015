@@ -216,8 +216,22 @@ if the --dir option is ommitted use ~/qsub as default. Install the configuration
 
    lpbs_install --uninstall
 
-THis will delete the instalation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.
+This will delete the instalation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.
 
+Excersie 5
+----------------------------------------------------------------------
+
+Use chef for deployment.
+
+Excersie 6
+----------------------------------------------------------------------
+
+Use pupet for deployment.
+
+Excersie 7
+----------------------------------------------------------------------
+
+Use ansible for deployment.
 
 
 
