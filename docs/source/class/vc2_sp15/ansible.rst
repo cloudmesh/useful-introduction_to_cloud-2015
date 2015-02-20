@@ -174,3 +174,5 @@ Next Step
 ---------
 
 In the next page, we learn Ansible Playbook on FutureSystems.
+
+`Writing Ansible Playbook for Cloudmesh<ansible_cloudmesh.html>`_
