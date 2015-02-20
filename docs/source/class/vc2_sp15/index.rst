@@ -7,8 +7,10 @@ BigData Virtual Cluster (Spring 2015)
 
    openmpi
    ipynb
-   docker
    ansible
+   ansible_cloudmesh
+   docker
+   docker_cloudmesh
 
    ../lesson/collaboration/index
    ../lesson/deployment/index
