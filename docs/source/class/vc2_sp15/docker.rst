@@ -76,7 +76,7 @@ command: (sudo is supressed)
 
   docker run -d -p 80:8080 tomcat:8.0
 
-It downloads tomcat image from Docker Hub and connects 8888 port to 8080 port.
+It downloads tomcat image from Docker Hub and connects 80 port to 8080 port.
 So, if you open a web browser ``http://localhost`` or ``http://ip address of
 host`` your connection forwards to the container 8080 port. ``-d`` option
 daemonizes the container.
@@ -182,6 +182,6 @@ https://docs.docker.com/installation/ubuntulinux/
 Next Step
 ---------
 
-In the next page, we deploy a [] cluster on FutureSystems using Cloudmesh.
+In the next page, we deploy Cloudmesh on FutureSystems using Docker.
 
-.. `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
+`Next Tutorial>> Deploying Cloudmesh using Docker <docker_cloudmesh.html>`_
