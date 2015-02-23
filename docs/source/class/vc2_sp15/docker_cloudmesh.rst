@@ -9,7 +9,7 @@ section, we introduce basic commands of ``docker`` to introduce Docker software
 on FutureSystems.  In the next section, we will explore advanced use of
 ``docker`` on FutureSystems.
 
-.. tip:: `Tutorial: Docker Basic commands<docker.html>`_
+.. note:: Need a basic tutorial for Docker? `Tutorial: Docker Basic commands <docker.html>`_
 
 Tutorial: Deploying Cloudmesh using Docker 
 --------------------------------------------------------------------

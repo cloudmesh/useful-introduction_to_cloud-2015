@@ -104,6 +104,7 @@ Now, register your hosts in the ``/etc/ansible/hosts`` default file. Your hosts
 file looks like this:
 
 ::
+
   cat /etc/ansible/hosts
 
   [local]
@@ -175,4 +176,5 @@ Next Step
 
 In the next page, we learn Ansible Playbook on FutureSystems.
 
-`Writing Ansible Playbook for Cloudmesh<ansible_cloudmesh.html>`_
+`Writing Ansible Playbook for Cloudmesh <ansible_cloudmesh.html>`_
+

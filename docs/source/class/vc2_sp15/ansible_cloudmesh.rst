@@ -1,4 +1,5 @@
-Writing Ansible Playbook for Cloudmesh on FutureSystems
+.. Writing Ansible Playbook for Cloudmesh on FutureSystems
+Writing Ansible Playbooks on FutureSystems
 ===============================================================
 
 Ansible Playbooks are automated scripts written in YAML data format.  Instead
