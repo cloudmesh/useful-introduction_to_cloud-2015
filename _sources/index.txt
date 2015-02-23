@@ -16,7 +16,6 @@ A short video giving a brief overview about this Web site and Cloudmesh
 is available at |video-cm-intro|.
 
 .. toctree::
-   :numbered:
    :maxdepth: 2
    :glob:
 

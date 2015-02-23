@@ -1,4 +1,4 @@
-Lesson: Topic
+Topic
 ======================================================================
 
 Overview
@@ -6,14 +6,14 @@ Overview
 
 This lesson will introduce you to a very important topic to ...
 
-Duration: 1 hour
+.. tip:: Duration: 1 hour
 
-Prerequisits
+Prerequisite
 ----------------------------------------------------------------------
 
 In order to conduct this lesson you should have knowledge of
 
-* How to .... . Describbed in lesson
+* How to .... . Described in lesson
 * Lesson ....
 
 Description
@@ -25,12 +25,16 @@ put the detailed dscription here
 Exercises
 ----------------------------------------------------------------------
 
-Excersise 1
-----------------------------------------------------------------------
+Exercise I
+^^^^^^^^^^^^^^^^^^
 
-Excersise 2
-----------------------------------------------------------------------
+Exercise II
+^^^^^^^^^^^^^^^^^^
 
+Next Step
+-----------
 
-  
+In the next page, ...
+
+`Link here <link>`_
 
