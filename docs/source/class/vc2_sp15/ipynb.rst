@@ -21,8 +21,8 @@ Tutorial: Deploying IPython Notebook Cluster with ``cm launcher``
 
 .. tip:: approximate time 10-15 minutes
 
-In this tutorial, we are going to deploy a IPython Notebook cluster using Cloudmesh
-``launcher`` command.
+In this tutorial, we are going to deploy a IPython Notebook cluster using
+Cloudmesh ``launcher`` command.
 
 Start Cluster
 ~~~~~~~~~~~~~~
@@ -36,8 +36,9 @@ Start Cluster
 Check Status of Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Initializing a cluster requires some time for installing packages, configuring networks, etc.
-While it is initiated, you can check the status of your cluster deployment.
+Initializing a cluster requires some time for installing packages, configuring
+networks, etc.  While it is initiated, you can check the status of your cluster
+deployment.
 
 ::
 
@@ -53,7 +54,8 @@ You expect the result similar to:
         | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-ipynb-DB8JDK | IPython Notebook cluster with OpenStack Heat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
         +--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
 
-* CREATE_IN_PROGRESS: cluster is not available because creating the cluster is in progress.
+* CREATE_IN_PROGRESS: cluster is not available because creating the cluster is
+  in progress.
 * CREATE_COMPLETE: cluster has been created and it is ready to use.
 
 Login to Cluster

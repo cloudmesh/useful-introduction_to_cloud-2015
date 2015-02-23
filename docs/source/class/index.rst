@@ -9,5 +9,6 @@ Cloudmesh in Classes
    i590
    cm-mooc
    javafiles
+   vc2_sp15/index
    vc_sp15/index
    lessons

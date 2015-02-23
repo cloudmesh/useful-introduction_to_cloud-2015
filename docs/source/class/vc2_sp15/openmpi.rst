@@ -36,8 +36,9 @@ Start Cluster
 Check Status of Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Initializing a cluster requires some time for installing packages, configuring networks, etc.
-While it is initiated, you can check the status of your cluster deployment.
+Initializing a cluster requires some time for installing packages, configuring
+networks, etc.  While it is initiated, you can check the status of your cluster
+deployment.
 
 ::
 
@@ -53,7 +54,8 @@ You expect the result similar to:
         | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-openmpi-DB8JDK | OpenMPI cluster with OpenStack Heat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
         +--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
 
-* CREATE_IN_PROGRESS: cluster is not available because creating the cluster is in progress.
+* CREATE_IN_PROGRESS: cluster is not available because creating the cluster is
+  in progress.
 * CREATE_COMPLETE: cluster has been created and it is ready to use.
 
 Login to Cluster
@@ -168,7 +170,8 @@ Since we are running Ubuntu 14.04 in this example, we complie with ``mpicc``:
 MPI hostfile
 ^^^^^^^^^^^^^^^^^^^
 
-We create a hostfile for MPI process which contains the hostnames (nodes) of the cluster.
+We create a hostfile for MPI process which contains the hostnames (nodes) of
+the cluster.
 
 ::
 
@@ -185,7 +188,8 @@ We create a hostfile for MPI process which contains the hostnames (nodes) of the
   mpi4
   mpi5
 
-.. tip:: If you have more than a single CPU per node, use slots=N where N is a number of processors.
+.. tip:: If you have more than a single CPU per node, use slots=N where N is a
+         number of processors.
          e.g. mpi1 slots=2
 
 Copy ``hello`` program to each node
