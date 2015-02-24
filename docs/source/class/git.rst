@@ -6,12 +6,14 @@ Overview
 
 This lesson show you how to submit and work on homework assignments.
 Assignments are to be worked on the
-`GitHub FutureSystems organization https://github.com/futuresystems`.
+`GitHub FutureSystems organization`_.
+
+.. _GitHub FutureSystems organization: https://github.com/futuresystems
 
 Contact
 ----------------------------------------------------------------------
 
-* `Badi' Abdul-Wahid badonald@iu.edu`
+* `Badi' Abdul-Wahid <badonald@iu.edu>`_
 * Hyungro Lee
 
 Preliminary Setup
@@ -20,10 +22,11 @@ Preliminary Setup
 Prerequisite: a GitHub account
 ^^^^^^^^^^^^^^^^^^
 
-Go to `GitHub https://github.com` and signup for an account.
+Go to `GitHub <https://github.com>`_ and signup for an account.
 
 This prerequisite is satisfied if you are able to
-* go to `github.com`
+
+* go to `https://github.com`
 * sign in
 
 Prerequisite: form a group to work with
@@ -38,21 +41,23 @@ Prerequisite: a FutureSystems account
 ^^^^^^^^^^^^^^^^^^
 
 You need a FutureSystems account to do your work.
-Go to the `FutureSystems portal https://portal.futuresystems.org`
+Go to the `FutureSystems portal <https://portal.futuresystems.org>`_
 and request an account if you do not yet have one.
-Additionally, see
-`further documentation http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/index.html`
-on aquiring an account.
+Additionally, see `further documentation`_ on aquiring an account.
+
+.. _further documentation:  http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/index.html
 
 This prerequisite is satisfied if you are able to accomplish the following
-* `ssh $USER@india.futuresystems.org`
+
+* ``ssh $USER@india.futuresystems.org``
 
 
 Getting access to repository
 ^^^^^^^^^^^^^^^^^^
 
-Send an email to `Badi' Abdul-Wahid badonald@iu.edu` and include the
+Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ and include the
 following information:
+
 * your github username
 * the course number you registered for
 
@@ -61,7 +66,8 @@ email the link.
 All members of a group will have access to this repository.
 
 This prerequisite is satisfied if are able to
-* go to `github.com/futuresystems`
+
+* go to `https://github.com/futuresystems`
 * see you repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
 * are in the ``students`` team
 
