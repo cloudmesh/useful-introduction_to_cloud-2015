@@ -40,7 +40,8 @@ Hadoop Cluster Installation with ``cm launcher``
 .. toctree::
    :maxdepth: 1
 
-   Tutorial 2.1. Deploying Hadoop Cluster with Cloudmesh ``launcher`` <hadoop_cluster_cm>
+   Tutorial 2.1. Deploying Hadoop Cluster with Cloudmesh ``launcher``
+   <hadoop_cluster_cm>
 
 Hadoop Cluster (Manual Installation)
 ------------------------------------
@@ -48,7 +49,8 @@ Hadoop Cluster (Manual Installation)
 .. toctree::
    :maxdepth: 1
 
-   Tutorial 2.2. Deploying Hadoop Cluster (Manual Installation) <hadoop_cluster_manual>
+   Tutorial 2.2. Deploying Hadoop Cluster (Manual Installation)
+   <hadoop_cluster_manual>
 
 Next Step
 ------------------------------------

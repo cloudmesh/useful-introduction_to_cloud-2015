@@ -36,8 +36,9 @@ Start Cluster
 Check Status of Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Initializing a cluster requires some time for installing packages, configuring networks, etc.
-While it is initiated, you can check the status of your cluster deployment.
+Initializing a cluster requires some time for installing packages,
+configuring networks, etc.  While it is initiated, you can check the
+status of your cluster deployment.
 
 ::
 
@@ -53,14 +54,16 @@ You expect the result similar to:
         | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-hadoop-DB8JDK | Hadoop cluster with OpenStack Heat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
         +--------------------------------------+-------------------------------+------------------------------------+--------------------+----------------------+----------+
 
-* CREATE_IN_PROGRESS: cluster is not available because creating the cluster is in progress.
+* CREATE_IN_PROGRESS: cluster is not available because creating the
+  cluster is in progress.
 * CREATE_COMPLETE: cluster has been created and it is ready to use.
 
 Login to Cluster
 ~~~~~~~~~~~~~~~~
 
-We use ``cm vm login`` command to ssh to one of the nodes in the cluster.
-Issue ``vm list`` first to see the list of virtual instances.
+We use ``cm vm login`` command to ssh to one of the nodes in the
+cluster.  Issue ``vm list`` first to see the list of virtual
+instances.
 
 * Checking a node name to login
 
