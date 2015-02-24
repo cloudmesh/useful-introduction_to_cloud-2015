@@ -81,7 +81,8 @@ On **Windows** using PuTTY:
 
 * **In Preparation**
 
-If you have not satisifed this section, please the the `documentation`_.
+If you have not satisifed this section, please the the `documentation`_
+for details on how to do so.
 
 .. _documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
 
