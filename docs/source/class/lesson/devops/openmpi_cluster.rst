@@ -1,4 +1,4 @@
-OpenMPI Virtual CLuster
+OpenMPI Virtual Cluster (Under Preparation)
 ======================================================================
 
 Introduction and Overview
