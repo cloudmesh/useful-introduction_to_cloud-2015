@@ -1,40 +1,17 @@
-Topic
-======================================================================
+Introduction and Overview
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Overview
-----------------------------------------------------------------------
+Creating a cross resource virtual cluster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This lesson will introduce you to a very important topic to ...
+‘A’ cluster on platform I
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-.. tip:: Duration: 1 hour
+‘B’ cluster on platform II
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Prerequisite
-----------------------------------------------------------------------
+‘C’ cluster on platform III
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-In order to conduct this lesson you should have knowledge of
-
-* How to .... . Described in lesson
-* Lesson ....
-
-Description
-----------------------------------------------------------------------
-
-put the detailed dscription here
-
-  
-Exercises
-----------------------------------------------------------------------
-
-Exercise I
-^^^^^^^^^^^^^^^^^^
-
-Exercise II
-^^^^^^^^^^^^^^^^^^
-
-Next Step
------------
-
-In the next page, ...
-
-`Link here <link>`_
-
+‘Master’ cluster with A+B+C on multiple platforms
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
