@@ -51,6 +51,28 @@ This prerequisite is satisfied if you are able to accomplish the following
 
 * ``ssh $USER@india.futuresystems.org``
 
+Prerequisite: an SSH key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You will need an SSH key to use both GitHub and FutureSystems.
+If you have followed the documentation for creating a FutureSystems
+account you should have created an SSH key in the process.
+
+The prerequisite is satisfied if:
+
+* You can log onto ``india.futuresystems.org``
+
+On **Mac OS X** you will have
+
+* The ``~/.ssh/id_rsa` and ``~/.ssh/id_rsa.pub`` files exists
+
+On **Windows** using PuTTY:
+
+* **In Preparation**
+
+If you have not satisifed this section, please the the `documentation`_.
+
+.. _documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
 
 Getting access to repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
