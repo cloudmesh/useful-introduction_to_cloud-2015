@@ -1,0 +1,13 @@
+Big Data Class (Spain)
+======================
+
+* FutureSystems Account
+* Login to India system
+* Create VM for cloudmesh
+  
+  - virtual cluster only
+  - hadoop cluster
+  - mongodb
+
+
+
