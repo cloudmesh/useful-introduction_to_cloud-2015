@@ -128,10 +128,17 @@ Using the Repository
 Now that you have an initialized repository you may use it for
 your assignments.
 
-There are several concepts to understand in order to submit assignments
+There are several concepts to understand in order to submit assignments:
+
+* ``add``-ing files to git
+* ``commit``-ing changes
+* ``push``-ing changes
+* ``pull``-ing changes
+* resolving conflicts
 
 ``git add``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 ``git commit``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,5 +150,13 @@ There are several concepts to understand in order to submit assignments
 
 ``git pull``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Resolving Conflicts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Exercise
+----------------------------------------------------------------------
 
 
