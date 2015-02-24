@@ -25,7 +25,7 @@ Table
    ok, `HPC OpenMPI Batch jobs <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__, `hpc/screencasts.rst <hpc/screencasts.html>`__, `6oUsMyDt7gU <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__
    ok, `Hadoop <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__, `paas/hadoop.rst <paas/hadoop.html>`__, `PC8h1CtVzH4 <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__
    ok, `SSH Add <https://www.youtube.com/watch?v=OwOKw3xKmEI>`__, `hpc/screencasts.rst <hpc/screencasts.html>`__, `OwOKw3xKmEI <https://www.youtube.com/watch?v=OwOKw3xKmEI>`__
-   ok, `cm-mooc: vm management for Cloudmesh with IPython Notebook <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__, `class/cm-mooc.rst <class/cm-mooc.html>`__, `kFWGPqHrBCA <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__
+   ok, `cm-mooc: vm management for Cloudmesh with IPython Notebook <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__, `class/cm-mooc/cm-mooc.rst <class/cm-mooc/cm-mooc.html>`__, `kFWGPqHrBCA <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__
    ok, `fg-create-project <https://www.youtube.com/watch?v=DzbLS6iCeTE>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `DzbLS6iCeTE <https://www.youtube.com/watch?v=DzbLS6iCeTE>`__
    ok, `fg-openstack <https://www.youtube.com/watch?v=xRVJfOaR23w>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `xRVJfOaR23w <https://www.youtube.com/watch?v=xRVJfOaR23w>`__
    ok, `fg-openstack-horizon-grizzly <https://www.youtube.com/watch?v=JkNlWAUlxF0>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `JkNlWAUlxF0 <https://www.youtube.com/watch?v=JkNlWAUlxF0>`__
