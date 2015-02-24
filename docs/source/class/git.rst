@@ -94,16 +94,44 @@ This prerequisite is satisfied if are able to
 * see you repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
 * are in the ``students`` team
 
-Using the Repository
+Initializing the Repository
 ----------------------------------------------------------------------
 
 Once you have access to a repository you should use it to work on
 assignments.
+You must do so from your FutureSystems account by logging into
+``india.futuresystems.org`` with ssh.::
 
-To use git you must use a commandline shell.
-If you are on Mac OS X, go to
-``Applications -> Utilities -> Terminal.app``.
-If you are on Windows
+  ssh $USER@india.futuresystems.org
+
+Given your repository url in ``URL``
+(for example: ``URL=git@github.com:futuresystems/my-repo.git``)
+you can download the repository like so::
+
+  git clone $URL
+
+Using the Repository
+----------------------------------------------------------------------
+
+Now that you have an initialized repository you may use it for
+your assignments.
+
+There are several concepts to understand in order to submit assignments
+
+``git add``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``git commit``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+``git push``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+``git pull``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 
 Prerequisite
