@@ -1,7 +1,6 @@
 Getting Started
 ===============
 
-
 FutureSystems provides cloud compute resources to students, scientists and
 researchers with a registered account and a project.  You can create a new
 FutureSystems account and create a new project or join an existing project.

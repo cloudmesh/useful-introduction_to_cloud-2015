@@ -6,11 +6,11 @@ Deploying Hadoop Cluster on India OpenStack
 Introduction
 ----------------------------------------------------------------------
 
-Hadoop Cluster is specialized computational cluster especially for MapReduce
-data analysis applications.  On FutureSystems OpenStack, Hadoop Cluster is
-offered to deal with distributed software on the cloud.  The size of Hadoop
-Cluster can be easily adjustable to provide efficient throughput for the
-computation.
+Hadoop Cluster is specialized computational cluster especially for
+MapReduce data analysis applications.  On FutureSystems OpenStack,
+Hadoop Cluster is offered to deal with distributed software on the
+cloud.  The size of Hadoop Cluster can be easily adjustable to provide
+efficient throughput for the computation.
 
 Prerequisite
 ~~~~~~~~~~~~

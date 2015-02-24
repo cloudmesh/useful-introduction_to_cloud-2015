@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Git &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Local PBS Queing System" href="lpbs.html"/>
+        <link rel="prev" title="Lessons" href="../lessons.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/openmpi.html">Deploying OpenMPI Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/ansible.html">Try Ansible Basic on FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/ansible_cloudmesh.html">Writing Ansible Playbooks on FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/docker.html">Try Docker Basic on FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaboration/index.html">Collaboration Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/index.html">Deployment Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization/tools.html">Virtualization Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">IU Spring 2015</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">IU Fall 2014 (Info I590)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc.html">Cloudmesh MOOC Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javafiles.html">JavaFiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+      
+    <li>Git</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/class/lesson/git.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="git">
+<h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<p>Git is a [[<a class="reference external" href="http://en.wikipedia.org/wiki/Revision_control][Version">http://en.wikipedia.org/wiki/Revision_control][Version</a>
+Control]] system (VCS).  The purpose of version is to track changes to
+a set of files and facilitate collaboration among individuals.  This
+provides users the ability to, given a <em>repository</em> of files</p>
+<ul class="simple">
+<li>track exactly what changes were made to a file</li>
+<li>who made the changes</li>
+<li>when a change was made</li>
+<li>undo changes that are later deemed unwanted</li>
+<li>collaborate with other people</li>
+</ul>
+<p>There are many implementation of version control systems, dating back
+to the 1970&#8217;s.  Some examples include
+[[<a class="reference external" href="http://en.wikipedia.org/wiki/Concurrent_Versions_System][Concurrent">http://en.wikipedia.org/wiki/Concurrent_Versions_System][Concurrent</a>
+Versions System (CSV)]],
+[[<a class="reference external" href="http://en.wikipedia.org/wiki/Apache_Subversion][Subversion">http://en.wikipedia.org/wiki/Apache_Subversion][Subversion</a> (SVN)]],
+[[<a class="reference external" href="http://en.wikipedia.org/wiki/Mercurial][Mercurial">http://en.wikipedia.org/wiki/Mercurial][Mercurial</a> (Hg)]], and
+[[<a class="reference external" href="http://en.wikipedia.org/wiki/Git_(software)][Git">http://en.wikipedia.org/wiki/Git_(software)][Git</a>]].  CSV and SVN are
+example of Client-Server version control managers, meaning that any
+changes made to a clients&#8217; repository is reflected on the server.  Hg
+and Git are known as Distributed version control systems: each copy of
+a repository and changes are share by explicitely <em>pushing</em> or
+<em>pulling</em> to and from other git repositories.  Additionally, a
+disributed VCS can mimic the behavior of a client-server VCS &#8211; by
+configuring a reference, original (the <em>origin</em>), repository &#8211; but
+the converse is not possible.</p>
+<p>This document describe how to use the basic git operations to track
+and share files (<em>clone</em>, <em>add</em>, <em>commit</em>, <em>push</em>, <em>pull</em>), describes
+how to <em>conflicts</em>, and provides resources for further learning.</p>
+<p>To follow a much more detailed description please refer the
+[[<a class="reference external" href="http://git-scm.com/book/en/v2][Git">http://git-scm.com/book/en/v2][Git</a> Pro]] book by Scott Chacon and
+Ben Straub.</p>
+<div class="section" id="responsibilities">
+<h2>Responsibilities<a class="headerlink" href="#responsibilities" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>upload documentation in .rst format</li>
+<li>documentation in IEEE format (MS Word) is acceptable</li>
+<li>make sure all students in group check in code</li>
+</ul>
+</div>
+<div class="section" id="basic-git">
+<h2>Basic Git<a class="headerlink" href="#basic-git" title="Permalink to this headline">¶</a></h2>
+<p>This section how to accomplish an operation with Git.  Using and
+example workflow, you will learn how to:</p>
+<ul class="simple">
+<li>set up a git repository using =init= or =clone=</li>
+<li>inform git to track content using =add= and =commit=</li>
+<li>view the state of the git repository using =status=</li>
+<li>synchronize with a remote repository using =pull= and =push=.</li>
+</ul>
+</div>
+<div class="section" id="getting-a-repository">
+<h2>Getting a Repository<a class="headerlink" href="#getting-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>:init:clone:</p>
+<p>There are two ways to get a repository.
+The first is to start a new one from scratch.
+To do so, create an empty directory, go into it, and initialize an empty repository.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir my_repo
+$ cd my_repo
+$ git init
+</pre></div>
+</div>
+<p>The alternative method is to copy a preexisting repository, to <em>clone</em> in git parlance.
+Take for example the git source code, which is itself managed by git.
+First a url is need, so head over to [[<a class="reference external" href="https://github.com/git/git][git's">https://github.com/git/git][git&#8217;s</a> GitHub page]], and look to the right to get the url.
+It looks like this: =https://github.com/git/git=.
+Now you can tell git to clone this repository, and then go into the resultant directory:</p>
+<blockquote>
+<div>$ git clone <a class="reference external" href="https://github.com/git/git">https://github.com/git/git</a>
+$ cd git</div></blockquote>
+</div>
+<div class="section" id="making-changes">
+<h2>Making Changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
+<p>:status:add:commit:</p>
+<blockquote>
+<div>Now that we have a repository to work with we can start adding files.</div></blockquote>
+<p>Let&#8217;s say I want to write a book and track the changes in git.
+First create a text file called =words.txt= and add some content.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nano words.txt # open and write some text
+$ cat words.txt  # show the contents of the file
+1 Fish
+2 Fish
+Red Fish
+Blue Fish
+</pre></div>
+</div>
+<p>Now let&#8217;s see the state of the git repository:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git status
+</pre></div>
+</div>
+<p>On branch master</p>
+<p>Initial commit</p>
+<p>Untracked files:
+(use &#8220;git add &lt;file&gt;...&#8221; to include in what will be committed):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">words</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>nothing added to commit but untracked files present (use &#8220;git add&#8221; to track)</p>
+<p>Now we have a file which we would like to track, but git does not know about it yet.
+We can tell because =words.txt= is listed as an =untracked file= and helpfully how to track it.
+Thus we need to inform git to <em>add</em> the file to the set of files it should monitor for changes.
+Do so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git add words.txt
+$ git status
+</pre></div>
+</div>
+<p>On branch master</p>
+<p>Initial commit</p>
+<p>Changes to be committed:
+(use &#8220;git rm &#8211;cached &lt;file&gt;...&#8221; to unstage)</p>
+<p>new file:   words.txt</p>
+<p>At this point the content is in a <em>staging area</em>.
+The staging area is like telling git of content we /wish/ to track, but since we have not yet /finished/
+telling git what to track, it has not yet been recorded.
+Since we are in fact done adding to git, <em>commit</em> the changes:</p>
+<blockquote>
+<div>$ git commit -m &#8220;counting fish&#8221;</div></blockquote>
+<p>Upon committing content to git we need specify a message to go along with the changes.
+In this case the message is simple: &#8220;counting fish&#8221;.
+A helpful commit message summarizes clearly what has changed.
+In this case, the newly tracked content counts fish, so the message is straighforward.
+These messages are very useful when looking through a list of changes to identify what has happened.</p>
+</div>
+<div class="section" id="the-staging-area">
+<h2>The Staging Area<a class="headerlink" href="#the-staging-area" title="Permalink to this headline">¶</a></h2>
+<p>At this point you may wonder why the <em>add</em> and <em>commit</em> operations are separate steps.
+The short answer is that git views content as being in one of three states: <em>untracked</em>, <em>staging</em>, or <em>tracked</em>.
+This is shown in the figure [[fig:states]] and is explained in further detail later.</p>
+<p>#+CAPTION: Content is seen by git as either <em>untracked</em>, <em>staging</em>, or <em>tracked</em>. Use the git subcommands =add= and =commit= to move content between states.
+#+LABEL: fig:states
+[[./images/states.png]]</p>
+</div>
+<div class="section" id="summary-of-commands">
+<h2>Summary of Commands<a class="headerlink" href="#summary-of-commands" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Operation                                                                | command                                        |</div>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-|</span></a>
+| Make a local copy of an existing repository                              | =git clone &lt;repo url&gt;=                         |
+| Tell git to track changes made to a local path                           | =git add &lt;path&gt;=                               |
+| Notify git of all changes made to a local path                           | =git commit -m &lt;msg&gt; &lt;path&gt;=                   |
+| Get the current status of the git repository                             | =git status=                                   |
+| List the commit messages of the entire repository                        | =git log=                                      |
+| List the commit messages of a file or directory                          | =git log &lt;path&gt;=                               |
+| Pull any changes made to the original remote repository (named <em>origin</em>) | =git pull origin=                              |
+| Push any local changes to the remote                                     | =git push origin &lt;branch&gt;=                     |
+| Tell git your name                                                       | =git config &#8211;global user.name FirstLast=    |
+| Tell git your email address                                              | =git config &#8211;global user.email <a class="reference external" href="mailto:name&#37;&#52;&#48;provider=">name<span>&#64;</span>provider=</a> |</p>
+</div>
+<div class="section" id="git-concepts">
+<h2>Git Concepts<a class="headerlink" href="#git-concepts" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the main concepts behind git.
+Understanding these concepts will make it easer to use git, and diagnose and fix any issues that arise.</p>
+<p>Blob
+Tree
+HEAD
+Staging area</p>
+</div>
+<div class="section" id="fixing-problems">
+<h2>Fixing Problems<a class="headerlink" href="#fixing-problems" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="using-git-on-futuresystems">
+<h2>Using Git on Futuresystems<a class="headerlink" href="#using-git-on-futuresystems" title="Permalink to this headline">¶</a></h2>
+<p>GVL: the next section may not be needed.</p>
+<ul class="simple">
+<li>Git Hosting</li>
+</ul>
+<p>** GitHub
+** Bitbucket
+** Sourceforge
+** Gitorious</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>[[<a class="reference external" href="http://git-scm.com/docs/gittutorial][Git">http://git-scm.com/docs/gittutorial][Git</a>]]</li>
+<li>[[<a class="reference external" href="https://www.atlassian.com/git/tutorials/][Atlassian">https://www.atlassian.com/git/tutorials/][Atlassian</a>]]</li>
+<li>[[<a class="reference external" href="http://rogerdudler.github.io/git-guide/][Roger">http://rogerdudler.github.io/git-guide/][Roger</a> Dudler]]</li>
+<li>[[<a class="reference external" href="http://www.vogella.com/tutorials/Git/article.html][Lars">http://www.vogella.com/tutorials/Git/article.html][Lars</a> Vogel]]</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lpbs.html" class="btn btn-neutral float-right" title="Local PBS Queing System"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../lessons.html" class="btn btn-neutral" title="Lessons"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
