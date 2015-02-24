@@ -14,7 +14,7 @@ Contact
 ----------------------------------------------------------------------
 
 * `Badi' Abdul-Wahid <badonald@iu.edu>`_
-* Hyungro Lee
+* `Hyungro Lee <lee212@iu.edu>`_
 
 Preliminary Setup
 ----------------------------------------------------------------------
