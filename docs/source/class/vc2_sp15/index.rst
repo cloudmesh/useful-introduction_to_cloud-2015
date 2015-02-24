@@ -45,6 +45,10 @@ Elemantary Linux Tools
 Elemantary Cloud Computing
 ======================================================================
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
   ../lesson/iaas/overview.rst
   ../lesson/iaas/openstack.rst
   ../lesson/iaas/cloudmesh.rst
@@ -55,6 +59,10 @@ Elemantary Cloud Computing
 Advanced Cloudmesh
 ======================================================================
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
   ../lesson/iaas/overview_advanced.rst
   ../lesson/iaas/cloudmesh_vm.rst
   ../lesson/iaas/cloudmesh_cluster.rst
@@ -62,6 +70,10 @@ Advanced Cloudmesh
 
 DevOps and Orchetration Tools
 ======================================================================
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
   ../lesson/devops/overview.rst
   ../lesson/devops/ansible.rst
@@ -73,6 +85,10 @@ DevOps and Orchetration Tools
 
 Virtual Clusters
 ======================================================================
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
   ../lesson/devops/overview_vc.rst
   ../lesson/devops/deployment.rst
@@ -88,7 +104,19 @@ Other Technologies
 Future
 ======================================================================
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
+  future
+
+
+To be Organized into the above
+======================================================================
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
 
    ../lesson/openmpi
    ../lesson/ipynb
