@@ -49,11 +49,11 @@ Elemantary Cloud Computing
    :maxdepth: 1
    :glob:
 
-   ../lesson/iaas/overview.rst
-   ../lesson/iaas/openstack.rst
-   ../lesson/iaas/cloudmesh.rst
-   ../lesson/iaas/cloudmesh_ipython.rst
-   ../lesson/iaas/cloudmesh_openstack.rst
+   ../lesson/iaas/overview
+   ../lesson/iaas/openstack
+   ../lesson/iaas/cloudmesh
+   ../lesson/iaas/cloudmesh_ipython
+   ../lesson/iaas/cloudmesh_openstack
 
 
 Advanced Cloudmesh
@@ -63,9 +63,9 @@ Advanced Cloudmesh
    :maxdepth: 1
    :glob:
 
-   ../lesson/iaas/overview_advanced.rst
-   ../lesson/iaas/cloudmesh_vm.rst
-   ../lesson/iaas/cloudmesh_cluster.rst
+   ../lesson/iaas/overview_advanced
+   ../lesson/iaas/cloudmesh_vm
+   ../lesson/iaas/cloudmesh_cluster
 
 
 DevOps and Orchetration Tools
@@ -75,12 +75,12 @@ DevOps and Orchetration Tools
    :maxdepth: 1
    :glob:
 
-   ../lesson/devops/overview.rst
-   ../lesson/devops/ansible.rst
-   ../lesson/devops/saltstack.rst
-   ../lesson/devops/puppet.rst
-   ../lesson/devops/chef.rst
-   ../lesson/devops/other.rst
+   ../lesson/devops/overview
+   ../lesson/devops/ansible
+   ../lesson/devops/saltstack
+   ../lesson/devops/puppet
+   ../lesson/devops/chef
+   ../lesson/devops/other
 
 
 Virtual Clusters
@@ -90,12 +90,12 @@ Virtual Clusters
    :maxdepth: 1
    :glob:
 
-   ../lesson/devops/overview_vc.rst
-   ../lesson/devops/deployment.rst
-   ../lesson/devops/hadoop.rst
-   ../lesson/devops/composite_cluster.rst
-   ../lesson/devops/openmpi_cluster.rst
-   ../lesson/devops/mongodb_cluster.rst
+   ../lesson/devops/overview_vc
+   ../lesson/devops/deployment
+   ../lesson/devops/hadoop
+   ../lesson/devops/composite_cluster
+   ../lesson/devops/openmpi_cluster
+   ../lesson/devops/mongodb_cluster
 
 
 Other Technologies
