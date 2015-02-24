@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Cloudmesh (under preparation)
-=======
 Cloudmesh for Beginners (Under Preparation)
->>>>>>> c29ddcbca4663a33feb903fffbfa5364a0199223
 ======================================================================
 
 Overview
