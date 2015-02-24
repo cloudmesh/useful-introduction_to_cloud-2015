@@ -1,8 +1,8 @@
-OpenMPI Virtual CLuster
+OpenMPI Virtual Cluster (under preparation)
 ======================================================================
 
-Introduction and Overview
+Introduction and Overview (under preparation)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-HPC Stack - MPI
+HPC Stack - MPI (under preparation)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
