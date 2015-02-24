@@ -80,15 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/openmpi.html">Deploying OpenMPI Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/ansible.html">Try Ansible Basic on FutureSystems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/ansible_cloudmesh.html">Writing Ansible Playbooks on FutureSystems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/docker.html">Try Docker Basic on FutureSystems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="collaboration/index.html">Collaboration Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deployment/index.html">Deployment Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="virtualization/tools.html">Virtualization Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/index.html">IU Spring 2015: Section II Practical Use of Big Data Software on OpenStack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">IU Spring 2015</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../i590.html">IU Fall 2014 (Info I590)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc.html">Cloudmesh MOOC Shell</a></li>
@@ -268,14 +260,17 @@ $ cd my_repo
 $ git init
 </pre></div>
 </div>
-<p>The alternative method is to copy a preexisting repository, to <em>clone</em> in git parlance.
-Take for example the git source code, which is itself managed by git.
-First a url is need, so head over to [[<a class="reference external" href="https://github.com/git/git][git's">https://github.com/git/git][git&#8217;s</a> GitHub page]], and look to the right to get the url.
-It looks like this: =https://github.com/git/git=.
-Now you can tell git to clone this repository, and then go into the resultant directory:</p>
-<blockquote>
-<div>$ git clone <a class="reference external" href="https://github.com/git/git">https://github.com/git/git</a>
-$ cd git</div></blockquote>
+<p>The alternative method is to copy a preexisting repository, to <em>clone</em>
+in git parlance.  Take for example the git source code, which is
+itself managed by git.  First a url is need, so head over to
+[[<a class="reference external" href="https://github.com/git/git][git's">https://github.com/git/git][git&#8217;s</a> GitHub page]], and look to the
+right to get the url.  It looks like this:
+=https://github.com/git/git=.  Now you can tell git to clone this
+repository, and then go into the resultant directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/git/git
+$ cd git
+</pre></div>
+</div>
 </div>
 <div class="section" id="making-changes">
 <h2>Making Changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
@@ -303,11 +298,13 @@ Blue Fish
 <div class="highlight-python"><div class="highlight"><pre><span class="n">words</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>nothing added to commit but untracked files present (use &#8220;git add&#8221; to track)</p>
-<p>Now we have a file which we would like to track, but git does not know about it yet.
-We can tell because =words.txt= is listed as an =untracked file= and helpfully how to track it.
-Thus we need to inform git to <em>add</em> the file to the set of files it should monitor for changes.
-Do so:</p>
+<p>nothing added to commit but untracked files present (use &#8220;git add&#8221; to
+track)</p>
+<p>Now we have a file which we would like to track, but git does not know
+about it yet.  We can tell because =words.txt= is listed as an
+=untracked file= and helpfully how to track it.  Thus we need to
+inform git to <em>add</em> the file to the set of files it should monitor for
+changes.  Do so:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git add words.txt
 $ git status
 </pre></div>
@@ -317,23 +314,28 @@ $ git status
 <p>Changes to be committed:
 (use &#8220;git rm &#8211;cached &lt;file&gt;...&#8221; to unstage)</p>
 <p>new file:   words.txt</p>
-<p>At this point the content is in a <em>staging area</em>.
-The staging area is like telling git of content we /wish/ to track, but since we have not yet /finished/
-telling git what to track, it has not yet been recorded.
-Since we are in fact done adding to git, <em>commit</em> the changes:</p>
-<blockquote>
-<div>$ git commit -m &#8220;counting fish&#8221;</div></blockquote>
-<p>Upon committing content to git we need specify a message to go along with the changes.
-In this case the message is simple: &#8220;counting fish&#8221;.
-A helpful commit message summarizes clearly what has changed.
-In this case, the newly tracked content counts fish, so the message is straighforward.
-These messages are very useful when looking through a list of changes to identify what has happened.</p>
+<p>At this point the content is in a <em>staging area</em>.  The staging area is
+like telling git of content we /wish/ to track, but since we have not
+yet /finished/ telling git what to track, it has not yet been
+recorded.  Since we are in fact done adding to git, <em>commit</em> the
+changes:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git commit -m &quot;counting fish&quot;
+</pre></div>
+</div>
+<p>Upon committing content to git we need specify a message to go along
+with the changes.  In this case the message is simple: &#8220;counting
+fish&#8221;.  A helpful commit message summarizes clearly what has changed.
+In this case, the newly tracked content counts fish, so the message is
+straighforward.  These messages are very useful when looking through a
+list of changes to identify what has happened.</p>
 </div>
 <div class="section" id="the-staging-area">
 <h2>The Staging Area<a class="headerlink" href="#the-staging-area" title="Permalink to this headline">¶</a></h2>
-<p>At this point you may wonder why the <em>add</em> and <em>commit</em> operations are separate steps.
-The short answer is that git views content as being in one of three states: <em>untracked</em>, <em>staging</em>, or <em>tracked</em>.
-This is shown in the figure [[fig:states]] and is explained in further detail later.</p>
+<p>At this point you may wonder why the <em>add</em> and <em>commit</em> operations are
+separate steps.  The short answer is that git views content as being
+in one of three states: <em>untracked</em>, <em>staging</em>, or <em>tracked</em>.  This is
+shown in the figure [[fig:states]] and is explained in further detail
+later.</p>
 <p>#+CAPTION: Content is seen by git as either <em>untracked</em>, <em>staging</em>, or <em>tracked</em>. Use the git subcommands =add= and =commit= to move content between states.
 #+LABEL: fig:states
 [[./images/states.png]]</p>

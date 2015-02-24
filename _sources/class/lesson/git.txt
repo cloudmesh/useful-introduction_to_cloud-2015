@@ -68,11 +68,13 @@ To do so, create an empty directory, go into it, and initialize an empty reposit
   $ cd my_repo
   $ git init
 
-The alternative method is to copy a preexisting repository, to *clone* in git parlance.
-Take for example the git source code, which is itself managed by git.
-First a url is need, so head over to [[https://github.com/git/git][git's GitHub page]], and look to the right to get the url.
-It looks like this: =https://github.com/git/git=.
-Now you can tell git to clone this repository, and then go into the resultant directory:
+The alternative method is to copy a preexisting repository, to *clone*
+in git parlance.  Take for example the git source code, which is
+itself managed by git.  First a url is need, so head over to
+[[https://github.com/git/git][git's GitHub page]], and look to the
+right to get the url.  It looks like this:
+=https://github.com/git/git=.  Now you can tell git to clone this
+repository, and then go into the resultant directory::
 
   $ git clone https://github.com/git/git
   $ cd git
@@ -105,12 +107,14 @@ Untracked files:
 
   words.txt
 
-nothing added to commit but untracked files present (use "git add" to track)
+nothing added to commit but untracked files present (use "git add" to
+track)
 
-Now we have a file which we would like to track, but git does not know about it yet.
-We can tell because =words.txt= is listed as an =untracked file= and helpfully how to track it.
-Thus we need to inform git to *add* the file to the set of files it should monitor for changes.
-Do so::
+Now we have a file which we would like to track, but git does not know
+about it yet.  We can tell because =words.txt= is listed as an
+=untracked file= and helpfully how to track it.  Thus we need to
+inform git to *add* the file to the set of files it should monitor for
+changes.  Do so::
 
   $ git add words.txt
   $ git status
@@ -124,25 +128,29 @@ Changes to be committed:
 
 new file:   words.txt
 
-
-At this point the content is in a *staging area*.
-The staging area is like telling git of content we /wish/ to track, but since we have not yet /finished/
-telling git what to track, it has not yet been recorded.
-Since we are in fact done adding to git, *commit* the changes:
+At this point the content is in a *staging area*.  The staging area is
+like telling git of content we /wish/ to track, but since we have not
+yet /finished/ telling git what to track, it has not yet been
+recorded.  Since we are in fact done adding to git, *commit* the
+changes::
 
   $ git commit -m "counting fish"
 
-Upon committing content to git we need specify a message to go along with the changes.
-In this case the message is simple: "counting fish".
-A helpful commit message summarizes clearly what has changed.
-In this case, the newly tracked content counts fish, so the message is straighforward.
-These messages are very useful when looking through a list of changes to identify what has happened.
+Upon committing content to git we need specify a message to go along
+with the changes.  In this case the message is simple: "counting
+fish".  A helpful commit message summarizes clearly what has changed.
+In this case, the newly tracked content counts fish, so the message is
+straighforward.  These messages are very useful when looking through a
+list of changes to identify what has happened.
 
 The Staging Area
 ----------------------------------------------------------------------
-At this point you may wonder why the *add* and *commit* operations are separate steps.
-The short answer is that git views content as being in one of three states: *untracked*, *staging*, or *tracked*.
-This is shown in the figure [[fig:states]] and is explained in further detail later.
+
+At this point you may wonder why the *add* and *commit* operations are
+separate steps.  The short answer is that git views content as being
+in one of three states: *untracked*, *staging*, or *tracked*.  This is
+shown in the figure [[fig:states]] and is explained in further detail
+later.
    
 
 #+CAPTION: Content is seen by git as either *untracked*, *staging*, or *tracked*. Use the git subcommands =add= and =commit= to move content between states.
