@@ -82,6 +82,7 @@ following information:
 
 * your github username
 * the course number you registered for
+* a description of your project
 
 A repository will then be created for your group and you will be
 email the link.
