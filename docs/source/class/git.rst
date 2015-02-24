@@ -30,7 +30,7 @@ This prerequisite is satisfied if you are able to
 * sign in
 
 Prerequisite: form a group to work with
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You need to form a group with other students.
 
@@ -38,7 +38,7 @@ This prerequisite is satisfied if you and other students have formed
 a group.
 
 Prerequisite: a FutureSystems account
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You need a FutureSystems account to do your work.
 Go to the `FutureSystems portal <https://portal.futuresystems.org>`_
@@ -53,7 +53,7 @@ This prerequisite is satisfied if you are able to accomplish the following
 
 
 Getting access to repository
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ and include the
 following information:
