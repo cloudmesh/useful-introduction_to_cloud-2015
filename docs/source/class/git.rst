@@ -8,6 +8,17 @@ This lesson show you how to submit and work on homework assignments.
 Assignments are to be worked on the
 `GitHub FutureSystems organization`_.
 
+Upon completion of this lession you will be able to use GitHub for
+submitting assignments for your course
+
+There are several prerequisites which are detailed below.
+In summary, they are:
+
+* a GitHub account
+* forming a group with other students
+* a FutureSystems account
+* an SSH key
+
 .. _GitHub FutureSystems organization: https://github.com/futuresystems
 
 Contact
