@@ -1,4 +1,4 @@
-Saltstack (under preparation)
+SaltStack (under preparation)
 ======================================================================
 
 Overview

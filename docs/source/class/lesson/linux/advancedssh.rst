@@ -1,40 +1,11 @@
-Topic
-======================================================================
-
-Overview
+Detailed discussion about SSH (Under Preparation)
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
+SSH Config (Under Preparation)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. tip:: Duration: 1 hour
+SSH Tunnel (Under Preparation)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Prerequisite
-----------------------------------------------------------------------
-
-In order to conduct this lesson you should have knowledge of
-
-* How to .... . Described in lesson
-* Lesson ....
-
-Description
-----------------------------------------------------------------------
-
-put the detailed dscription here
-
-  
-Exercises
-----------------------------------------------------------------------
-
-Exercise I
-^^^^^^^^^^^^^^^^^^
-
-Exercise II
-^^^^^^^^^^^^^^^^^^
-
-Next Step
------------
-
-In the next page, ...
-
-`Link here <link>`_
-
+Future: cm ssh (Under Preparation)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

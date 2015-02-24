@@ -1,4 +1,4 @@
-Deployment Topic(under preparation)
+Dynamic deployment of arbitrary X software on VC (under preparation)
 ======================================================================
 
 Overview

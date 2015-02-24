@@ -1,4 +1,4 @@
-Deployment Technologies
+Deployment Technologies (Under Preparation)
 ======================================================================
 
 yum, apt-get, rpm

@@ -1,4 +1,4 @@
-Openstack (under preparation)
+OpenStack for Beginners (Under Preparation)
 ======================================================================
 
 Overview
