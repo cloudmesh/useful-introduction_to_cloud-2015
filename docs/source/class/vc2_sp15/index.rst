@@ -1,6 +1,6 @@
 Section II Practical Use of Big Data Software on OpenStack
-.. BigData Virtual Cluster (Spring 2015)
 ======================================================================
+.. BigData Virtual Cluster (Spring 2015)
 
 .. toctree::
    :maxdepth: 2
