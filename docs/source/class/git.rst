@@ -133,34 +133,3 @@ There are several concepts to understand in order to submit assignments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-
-Prerequisite
-----------------------------------------------------------------------
-
-In order to conduct this lesson you should have knowledge of
-
-* How to .... . Described in lesson
-* Lesson ....
-
-Description
-----------------------------------------------------------------------
-
-put the detailed dscription here
-
-  
-Exercises
-----------------------------------------------------------------------
-
-Exercise I
-^^^^^^^^^^^^^^^^^^
-
-Exercise II
-^^^^^^^^^^^^^^^^^^
-
-Next Step
------------
-
-In the next page, ...
-
-`Link here <link>`_
-
