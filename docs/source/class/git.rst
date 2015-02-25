@@ -581,4 +581,32 @@ Resolving Conflicts
 Exercise
 ----------------------------------------------------------------------
 
+The goal of this exercise is for you and your team to become familiar
+with ``push``-ing and ``pull``-ing to and from your repository.
 
+Each person should log into ``india@futuresystems.org`` and clone the
+repository from GitHub.
+Next, each person should create a file ``<portalname>.txt`` in which
+they explain what the following commands do:
+
+* ``git clone``
+* ``git add``
+* ``git commit``
+* ``git push``
+* ``git pull``
+
+Additionally, this file should describe the difference between a
+remote and local repository.
+
+For example, Ada would create ``lovelace.txt`` and Albert ``emc2.txt``.
+
+Finally, each person should synchronize their changes with everyone else
+so that each team member has the other team member's file.
+This synchronization should be done with git such that the GitHub
+repository also has these changes.
+
+Be aware that individual participation counts.
+Each team member must contribute their file and this file must be
+unique.
+Please recall that git tracks **who** made a contribution and
+exactly **what** that change was.
