@@ -131,18 +131,49 @@ Getting access to repository
 Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ and include the
 following information:
 
-* your github username
-* the course number you registered for
-* a description of your project
+* the first and last name of each group member
+* the email address of each group member
+* the github username of each group member
+* the course number registered for
+* the project proposal approved by the instructor
+
+Please adhere to the following template for this email::
+
+  Subject: request futuresystems github project
+  Body:
+    <first name> <last name>, <email> <github username>
+    <first name> <last name>, <email> <github username>
+    ...
+    <course number>
+    
+    <project proposal>
+
+For example::
+
+  Subject: request futuresystems github project
+  Body:
+    Ada Lovelace, adalovelace@gmail.com lovelace
+    Albert Einstein, emc2@gmail.com albert
+    SP15-BL-BUEX-V594-37186
+
+    Development of a computer simulation of the Theory of General Relativity
+    etc...
+
+**IMPORTANT** please adhere to this format as improper formatting
+may not be seen and processed.
 
 A repository will then be created for your group and you will be
-email the link.
-All members of a group will have access to this repository.
+emailed the link.
+
+**IMPORTANT** All members of a group will have access to this
+repository and can make changes.
+This means that anybody in your group can modify the work of of
+everybody else in that group.
 
 This prerequisite is satisfied if are able to
 
 * go to `https://github.com/futuresystems`
-* see you repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
+* see your repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
 * are in the ``students`` team
 
 Initializing the Repository
