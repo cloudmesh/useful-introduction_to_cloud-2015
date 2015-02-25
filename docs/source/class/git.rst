@@ -524,6 +524,46 @@ Albert can then do the following::
 Albert now has all the changes Ada made.
 
 
+Concurrent Changes
+----------------------------------------------------------------------
+
+One feature of git is that is allows multiple people to work on the
+same repository concurrently.
+
+For instance, while Ada was adding the ``fish.txt`` file, Alber may
+have been writing about eggs.
+He would have cloned the repository, just like Ada, but added
+``eggs.txt`` instead::
+
+ $ nano eggs.txt
+ $ cat eggs.txt
+ Do you like green eggs and ham?
+ I do not like them, Sam-I-am.
+
+As Ada did, Albert would ``add`` and ``commit`` the change::
+
+ $ git add eggs.txt
+ $ git commit -m "added green eggs and ham"
+
+Now, when he pulls the changes that Ada made he sees that both
+``eggs.txt`` and ``fish.txt`` are present in his **local** repository::
+
+ $ ls
+ eggs.txt   fish.txt
+
+He can share his changes with Ada in the same fashion:
+
+  Albert: Hi Ada. I pushed my changes.
+
+  Ada: Great. I'll pull them now.
+
+Now, Ada does the ``pull``ing and sees Albert's changes::
+
+ $ git pull origin master
+ $ ls
+ eggs.txt   fish.txt
+
+
 
 Resolving Conflicts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
