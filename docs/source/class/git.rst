@@ -176,21 +176,23 @@ This prerequisite is satisfied if are able to
 * see your repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
 * are in the ``students`` team
 
-Initializing the Repository
+Initializing the Repository with ``git clone``
 ----------------------------------------------------------------------
 
 Once you have access to a repository you should use it to work on
 assignments.
 You must do so from your FutureSystems account by logging into
-``india.futuresystems.org`` with ssh.::
+``india.futuresystems.org`` with ssh.
+For instance, if your account name on FutureSystems is ``albert``::
 
-  ssh $USER@india.futuresystems.org
+  ssh albert@india.futuresystems.org
 
-Given your repository url in ``URL``
-(for example: ``URL=git@github.com:futuresystems/my-repo.git``)
+Once you have your repository url
+(for example: ``git@github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git``)
 you can download the repository like so::
 
-  git clone $URL
+  git clone git@github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git
+  cd class-bigdata-technology-spring-2015-ABCDE
 
 Using the Repository
 ----------------------------------------------------------------------
