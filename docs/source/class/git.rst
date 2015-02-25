@@ -200,7 +200,9 @@ Using the Repository
 Now that you have an initialized repository you may use it for
 your assignments.
 
-There are several concepts to understand in order to submit assignments:
+This section describes how to create and modify documents using git
+to track and share the changes among collaborators.
+Upon completion you will know how to do the following:
 
 * ``add``-ing files to git
 * ``commit``-ing changes
@@ -208,12 +210,152 @@ There are several concepts to understand in order to submit assignments:
 * ``pull``-ing changes
 * resolving conflicts
 
-``git add``
+
+Adding content to git (``git add``, ``git commit``, ``git status``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Now that you have a repository in your account on ``india`` let us
+create some content and notify git that changes to this content needs
+to be tracked.
+Tracking content makes it easy to share changes among collaborators,
+track precisely who made a change, what was changed, when something
+changed, and why a change was made.
 
-``git commit``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The commands we are using in this section are:
+
+* ``git add``
+* ``git commit``
+* ``git status``
+
+The concepts are:
+
+* untracked content
+* staging area
+* tracked content
+* what a **change** means in git terminology
+
+First let us create a file called ``fist.txt`` and write some lines::
+
+  $ nano fish.txt # open the file in the "nano" editor
+  $ cat fish.txt  # after saving, show the contents of the file
+  One fish
+  Two fish
+  Red fish
+  Blue fish
+
+At this stage the file exists but git is not tracking changes made.
+If it were to be deleted then it is gone for good.
+
+We can inspect the status of git using the ``git status`` command::
+
+  $ git status
+  On branch master
+
+  Initial commit
+
+  Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+          fish.txt
+
+  nothing added to commit but untracked files present (use "git add" to track)
+
+There is a lot of information here but the key pertinant point is the
+``Untracked files`` heading which lists all files that git sees exist
+but whose changes are not being tracked.
+There is also the helpful hint ``use "git add <file>..."`` indicating
+a possible next step.
+Let us do so::
+
+  $ git add fish.txt
+  On branch master
+
+  Initial commit
+
+  Changes to be committed:
+    (use "git rm --cached <file>..." to unstage)
+
+          new file:    fish.txt
+
+In order to understand what ``git add`` does, we need to know the
+difference between each of the three states that content may be in:
+
+* untracked
+* staging
+* tracked
+
+When the ``fish.txt`` file was created the content was *untracked*.
+That is, any modifications to ``fish.txt`` will not be logged.
+If it is deleted it cannot be recovered, it cannot be shared using
+git, and we cannot extract the "who", "what", "when", and "why"
+metadata associated with a change.
+
+By using ``git add`` content can be added to the staging area.
+Multiple files can be staged.
+Hypothetically, if two other files ``hello.txt`` and ``world.txt``
+were to be created they could be staged::
+
+  $ git status
+  On branch master
+
+  Initial commit
+
+  Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+        fish.txt
+	hello.txt
+	world.txt
+
+  nothing added to commit but untracked files present (use "git add" to track)
+  $ git add hello.txt
+  $ git add hello.txt
+  $ git status
+  On branch master
+  
+  Initial commit
+  
+  Changes to be committed:
+    (use "git rm --cached <file>..." to unstage)
+  
+          new file:   fish.txt
+          new file:   hello.txt
+          new file:   world.txt
+
+
+By using the staging area multiple files can be commited to git as a
+single **change**.
+Meaning: a **change** is the addition, deletion, of modification of
+content of one or more files.
+
+At this point, ignoring the hypothetical ``hello.txt`` and ``world.txt``
+files, we can now **commit** this change::
+
+  $ git commit -m "added counting fish"
+
+The ``git commit`` command recording everything in the **staging area**
+as a single **change**.
+When committing a change it is necessary to add a message describing
+the change.
+The change itself stores the **what** (what content changed), and
+**when** (time and date of a change), but you must provide a
+message that describes **why** a change was made.
+This message is then stored with the change and can be viewed by
+looking at the history of the repository.
+
+You can now see for yourself that git no longer sees any untracked
+content::
+
+  $ git status
+  On branch master
+  nothing to commit, working directory clean
+
+
+At this point you have used the ``git add``, ``git commit``, and
+``git status`` commands and should know the difference between the
+``untracked``, ``staging area``, and ``tracked`` states that content
+may be in, and understand what is meant by a "change."
+
 
 
 ``git push``
