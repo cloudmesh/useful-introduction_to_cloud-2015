@@ -34,7 +34,7 @@ For problems with FutureSystems please email
 Be aware that the assistant instructors are not recipiants of these
 emails so please carbon copy them so that they are aware of your issue.
 
-**IMPORTANT**
+.. note::
 Please be aware that questions addressed to staff should be sent
 between 9am and 4pm on business days.
 Questions outside those hours may not be addressed until the
@@ -166,15 +166,18 @@ A repository will then be created for your group and you will be
 emailed the link.
 
 
-**IMPORTANT** please adhere to this format as improper formatting
+.. warning::
+please adhere to this format as improper formatting
 may not be seen and processed.
 
-**IMPORTANT** All members of a group will have access to this
+.. warning::
+All members of a group will have access to this
 repository and can make changes.
 This means that anybody in your group can modify the work of of
 everybody else in that group.
 
-**IMPORTANT** This repository is publically viewable.
+.. warning::
+This repository is publically viewable.
 Any content is viewable by *THE ENTIRE WORLD* so please do not add any
 private information.
 
@@ -473,7 +476,7 @@ Here, ``origin`` is the shorthand name referring the the location
 of the **remote** repository that this **local** one was created
 from.
 
-**IMPORTANT**
+.. important::
 This means that **ANY** changes added via ``git commit`` are only
 commited to the **local** repository.
 These changes are **NOT YET** present at the **remote** (``origin``).
@@ -526,7 +529,7 @@ Albert can then do the following::
 
 Albert now has all the changes Ada made.
 
-**IMPORTANT**
+.. important::
 Only by using ``git push`` will your GitHub repository be updated.
 If you are trying to share your changes but your team-members cannot
 see them, make sure to ``git push origin remote``.
