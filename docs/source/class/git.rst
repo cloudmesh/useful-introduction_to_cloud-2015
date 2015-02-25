@@ -436,8 +436,93 @@ However, please try this out again later after making further commits.
      added counting fish
 
 
-``git pull``
+Sharing your changes via GitHub (``git push``, ``git pull``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section describes how to share you changes using git and GitHub.
+The commands covered are:
+
+* ``git push``
+* ``git pull``
+
+By the end of this section you will understand the difference between
+a **local** and **remote** repository and how to share changes made
+locally via a remote repository.
+
+Recall that earlier you initialized a repository using the ``git clone``
+command.
+Let us look in further detail at what this command does.
+
+First, you logged into ``india@futuresystems.org``.
+At this point, your git repository was not on ``india``.
+By executing the ``git clone`` command you created a **local** copy on
+``india`` of the **remote** repository hosted on the GitHub server.
+At this point there are two repositories: **local**  and **remote**
+(also known as ``origin``).
+You can inspect this for yourself.::
+
+ $ cd class-bigdata-technology-spring-2015-ABCDE
+ $ git remote -v
+ origin	git@github.com:futresystems/class-bigdata-technology-spring-2015-ABCDE.git (fetch)
+ origin	git@github.com:futresystems/class-bigdata-technology-spring-2015-ABCDE.git (push)
+
+Here, ``origin`` is the shorthand name referring the the location
+of the **remote** repository that this **local** one was created
+from.
+
+**IMPORTANT**
+This means that **ANY** changes added via ``git commit`` are only
+commited to the **local** repository.
+These changes are **NOT** reflected to the origin.
+
+In order to share your commits with the **remote** repository, you
+must ``push`` them.
+Like so::
+
+ $ git push origin master
+
+Let's break this down a bit.
+The first part is ``git push``, meaning that we are telling git
+to share our **local** changes with a **remote** repository.
+
+Now let us exame the ``origin`` and ``master`` parts of the command.
+Recall the output of ``git remote -v`` and ``git status`` after our
+commit earlier.
+The ``git remote`` command provides us with the name associated
+with the **remote** repository, namely ``origin``.
+From ``git status``, we get ``On branch master``.
+A repository can have multiple branches with different names
+such as (``release-2.0``, ``dev1.3``, etc).
+This is beyond the scope of this lesson, but it suffices to say
+that all our commits so far have been to the default branch which is
+called ``master``.
+
+Let us look at the command again::
+
+ $ git push origin master
+
+Translated into English, this says: "push the changes made to the current
+branch to the master branch of the repository called ``origin``".
+In other words, ``git push`` makes all changes made to the **local**
+available on the **remote** repository.
+
+At this point, the remote repository reflects the changes made by Ada.
+Now, Albert had previously cloned the repository at the same time as
+Ada, since they are working together.
+Since he cloned it before Ada ``push``ed her commits, his repository
+is out of date.
+However, Ada can now tell Albert that she made some change:
+  Ada: Hi Albert. I pushed some changes to the repo.
+
+  Albert: Thanks Ada. I'll pull them right away.
+
+Albert can then do the following::
+
+ $ cd class-bigdata-technology-spring-2015-ABCDE
+ $ git pull origin master
+
+Albert now has all the changes Ada made.
+
 
 
 Resolving Conflicts
