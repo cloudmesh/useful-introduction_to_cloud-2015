@@ -92,12 +92,12 @@ an account.
 If you have trouble uploading an SSH Key please first consult
 documentation on `how to upload an SSH Key`_ before contact support.
 
-.. _further documentation:  http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/index.html
+.. _FutureSystems documentation: http://futuregrid.github.io/manual/account.html#create-a-portal-account
 .. _how to upload an SSH Key: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
 
 This prerequisite is satisfied if you are able to accomplish the following:
 
-* log into `https://portal.futuresystems.org
+* log into https://portal.futuresystems.org
 * go to the ``Portal Account`` tab
 * the ``status`` row is all green in the ``My FutureGrid HPC account status`` section
 
