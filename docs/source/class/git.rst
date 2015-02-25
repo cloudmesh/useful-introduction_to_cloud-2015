@@ -170,6 +170,10 @@ repository and can make changes.
 This means that anybody in your group can modify the work of of
 everybody else in that group.
 
+**IMPORTANT** This repository is publically viewable.
+Any content is viewable by *THE ENTIRE WORLD* so please do not add any
+private information.
+
 This prerequisite is satisfied if are able to
 
 * go to `https://github.com/futuresystems`
