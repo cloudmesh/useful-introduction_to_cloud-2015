@@ -58,13 +58,24 @@ This prerequisite is satisfied if you are able to
 * go to `https://github.com`
 * sign in
 
-Prerequisite: form a group to work with
+Prerequisite: form a group and identify a project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You need to form a group with other students.
+You need to form a group with other students and determine a project
+to work on together.
+If you have difficulty on deciding a project please contact the
+instructors.
+The instructors need to approve your project so please send them
+a report detailing:
+
+* the names and email address of group members
+* a project title
+* the goal of the project
+* a list all deliverables
+* assignments of tasks to group members
 
 This prerequisite is satisfied if you and other students have formed
-a group.
+a group and your instructor has approved the project.
 
 Prerequisite: a FutureSystems account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
