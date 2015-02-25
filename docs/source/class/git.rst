@@ -24,8 +24,26 @@ In summary, they are:
 Contact
 ----------------------------------------------------------------------
 
+The assistant instructors for the course are:
+
 * `Badi' Abdul-Wahid <badonald@iu.edu>`_
 * `Hyungro Lee <lee212@iu.edu>`_
+
+For problems with FutureSystems please email `help@futuresystems.org`.
+Be aware that the assistant instructors are not recipiants of these
+emails so please carbon copy them so that they are aware of issue.
+
+**IMPORTANT**
+Please be aware that questions addressed to staff should be sent
+between 9am and 4pm on business days.
+Questions outside those hours may not be addressed until the
+following business day.
+Please keep this in mind and start working on your assignments early.
+
+For advanced conceptual support please contact
+
+* Gregor von Laszewski
+* Fugang Wang
 
 Preliminary Setup
 ----------------------------------------------------------------------
