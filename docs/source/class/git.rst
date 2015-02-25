@@ -1,4 +1,4 @@
-Topic
+Using Git and GitHub for collaboration
 ======================================================================
 
 Overview
