@@ -42,8 +42,8 @@ Please keep this in mind and start working on your assignments early.
 
 For advanced conceptual support please contact
 
-* Gregor von Laszewski
-* Fugang Wang
+* `Gregor von Laszewski <laszewski@gmail.com>`_
+* `Fugang Wang <kevinwangfg@gmail.com>`_
 
 Preliminary Setup
 ----------------------------------------------------------------------
