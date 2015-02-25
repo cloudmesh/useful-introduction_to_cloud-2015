@@ -577,6 +577,8 @@ Now, Ada does the ``pull``-ing and sees Albert's changes::
 Resolving Conflicts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**In preparation**
+
 
 Exercise
 ----------------------------------------------------------------------
