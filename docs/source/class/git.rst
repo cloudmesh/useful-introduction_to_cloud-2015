@@ -378,9 +378,57 @@ At this point you have used the ``git add``, ``git commit``, and
 may be in, and understand what is meant by a "change."
 
 
-
-``git push``
+Viewing Repository History (``git show``, ``git log``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Recall that a git "change" refers to **who** made a change, **what**
+what changed, **when** a change was made, and **why** a change was made.
+Each change is added to the others so that you can view the entire
+history, each change on top of its parent, of a repository.
+
+Try it out using ``git show`` to view the contents of a commit::
+
+ $ git show
+ commit 05b162b8e7ffe5eb8dda8822a691244a26ff2c0e
+ Author: Ada Lovelace <lovelace@gmail.com>
+ Date:   Wed Feb 25 12:40:20 2015 -0500
+
+     added counting fish
+
+ diff --git a/fish.txt b/fish.txt
+ new file mode 100644
+ index 0000000..77a5fea
+ --- /dev/null
+ +++ b/fish.txt
+ @@ -0,0 +1,4 @@
+ +One fish
+ +Two fish
+ +Red fish
+ +Blue fish
+
+
+As you can see there is a lot of information here.
+The pertinent points are:
+
+* **who**: the author name and email address is provided
+* **what**: you can see the exact change at the bottom
+* **when**: the date of the commit is given
+* **why**: the commit message you provide is given
+
+Additionally, you can see and overview containing the commit author,
+date, and message using ``git log`` to show the history.
+In this case there has only been one commit so that is all that will
+be shown.
+However, please try this out again later after making further commits.
+
+::
+
+ $ git log
+ commit 05b162b8e7ffe5eb8dda8822a691244a26ff2c0e
+ Author: Ada Lovelace <lovelace@gmail.com>
+ Date:   Wed Feb 25 12:40:20 2015 -0500
+
+     added counting fish
 
 
 ``git pull``
