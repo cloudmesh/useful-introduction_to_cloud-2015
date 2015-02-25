@@ -194,6 +194,27 @@ you can download the repository like so::
   git clone git@github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git
   cd class-bigdata-technology-spring-2015-ABCDE
 
+
+Prerequisite: Configuring your Git Identity (``git config``)
+----------------------------------------------------------------------
+
+Git needs to know your name and email address in order to track
+changes you make to a repository.
+This can be configured like so::
+
+ $ git config --global user.name "Ada Lovelace"
+ $ git config --global user.email lovelace@gmail.com
+
+Once you have done so you should have a ``~/.gitconfig`` file.
+You can check that this file exists and that it containts the correct
+information::
+
+ $ cat ~/.gitconfig
+ [user]
+     name = Ada Lovelace
+     email = lovelace@gmail.com
+
+
 Using the Repository
 ----------------------------------------------------------------------
 
