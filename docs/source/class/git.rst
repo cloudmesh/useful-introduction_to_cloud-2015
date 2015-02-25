@@ -159,11 +159,12 @@ For example::
     Development of a computer simulation of the Theory of General Relativity
     etc...
 
-**IMPORTANT** please adhere to this format as improper formatting
-may not be seen and processed.
-
 A repository will then be created for your group and you will be
 emailed the link.
+
+
+**IMPORTANT** please adhere to this format as improper formatting
+may not be seen and processed.
 
 **IMPORTANT** All members of a group will have access to this
 repository and can make changes.
