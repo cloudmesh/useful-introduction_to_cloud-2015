@@ -5,7 +5,7 @@ Overview
 ----------------------------------------------------------------------
 
 This lesson show you how to submit and work on homework assignments.
-Assignments are to be worked on the
+Assignments are to be worked on as part of the
 `GitHub FutureSystems organization`_.
 
 Upon completion of this lession you will be able to use GitHub for
@@ -29,9 +29,10 @@ The assistant instructors for the course are:
 * `Badi' Abdul-Wahid <badonald@iu.edu>`_
 * `Hyungro Lee <lee212@iu.edu>`_
 
-For problems with FutureSystems please email `help@futuresystems.org`.
+For problems with FutureSystems please email
+`help@futuresystems.org <help@futuresystems.org>`_.
 Be aware that the assistant instructors are not recipiants of these
-emails so please carbon copy them so that they are aware of issue.
+emails so please carbon copy them so that they are aware of your issue.
 
 **IMPORTANT**
 Please be aware that questions addressed to staff should be sent
@@ -120,7 +121,7 @@ On **Windows** using PuTTY:
 
 * **In Preparation**
 
-If you have not satisifed this section, please the the `documentation`_
+If you have not satisifed this section, please see the `documentation`_
 for details on how to do so.
 
 .. _documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
@@ -128,8 +129,8 @@ for details on how to do so.
 Getting access to repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ and include the
-following information:
+Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ (by 4pm on a business day)
+and include the following information:
 
 * the first and last name of each group member
 * the email address of each group member
@@ -148,7 +149,9 @@ Please adhere to the following template for this email::
     
     <project proposal>
 
-For example::
+For example, if Ada Lovelace and Albert Einstein are working together
+to develop a computer simulations of the theory of relativity, they
+would send the following (truncated) email::
 
   Subject: request futuresystems github project
   Body:
@@ -157,7 +160,7 @@ For example::
     SP15-BL-BUEX-V594-37186
 
     Development of a computer simulation of the Theory of General Relativity
-    etc...
+    [...]
 
 A repository will then be created for your group and you will be
 emailed the link.
@@ -178,8 +181,8 @@ private information.
 This prerequisite is satisfied if are able to
 
 * go to `https://github.com/futuresystems`
-* see your repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
-* are in the ``students`` team
+* find your repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
+* you are in the ``students`` team
 
 Initializing the Repository with ``git clone``
 ----------------------------------------------------------------------
@@ -211,7 +214,7 @@ This can be configured like so::
  $ git config --global user.email lovelace@gmail.com
 
 Once you have done so you should have a ``~/.gitconfig`` file.
-You can check that this file exists and that it containts the correct
+You can check that this file exists and that it contains the correct
 information::
 
  $ cat ~/.gitconfig
@@ -287,8 +290,8 @@ We can inspect the status of git using the ``git status`` command::
   nothing added to commit but untracked files present (use "git add" to track)
 
 There is a lot of information here but the key pertinant point is the
-``Untracked files`` heading which lists all files that git sees exist
-but whose changes are not being tracked.
+``Untracked files`` heading which lists all files that git sees but
+whose changes are not being tracked.
 There is also the helpful hint ``use "git add <file>..."`` indicating
 a possible next step.
 Let us do so::
@@ -313,7 +316,7 @@ difference between each of the three states that content may be in:
 When the ``fish.txt`` file was created the content was *untracked*.
 That is, any modifications to ``fish.txt`` will not be logged.
 If it is deleted it cannot be recovered, it cannot be shared using
-git, and we cannot extract the "who", "what", "when", and "why"
+git, and we cannot extract the **who**, **what**, **when**, and **why**
 metadata associated with a change.
 
 By using ``git add`` content can be added to the staging area.
@@ -420,7 +423,7 @@ The pertinent points are:
 * **when**: the date of the commit is given
 * **why**: the commit message you provide is given
 
-Additionally, you can see and overview containing the commit author,
+Additionally, you can see an overview containing the commit author,
 date, and message using ``git log`` to show the history.
 In this case there has only been one commit so that is all that will
 be shown.
@@ -473,7 +476,7 @@ from.
 **IMPORTANT**
 This means that **ANY** changes added via ``git commit`` are only
 commited to the **local** repository.
-These changes are **NOT** reflected to the origin.
+These changes are **NOT YET** present at the **remote** (``origin``).
 
 In order to share your commits with the **remote** repository, you
 must ``push`` them.
@@ -503,13 +506,13 @@ Let us look at the command again::
 
 Translated into English, this says: "push the changes made to the current
 branch to the master branch of the repository called ``origin``".
-In other words, ``git push`` makes all changes made to the **local**
-available on the **remote** repository.
+In other words, ``git push`` updates the **remote** repository with all
+**local** changes.
 
 At this point, the remote repository reflects the changes made by Ada.
 Now, Albert had previously cloned the repository at the same time as
 Ada, since they are working together.
-Since he cloned it before Ada ``push``ed her commits, his repository
+Since he cloned it before Ada ``push``-ed her commits, his repository
 is out of date.
 However, Ada can now tell Albert that she made some change:
   Ada: Hi Albert. I pushed some changes to the repo.
@@ -523,6 +526,12 @@ Albert can then do the following::
 
 Albert now has all the changes Ada made.
 
+**IMPORTANT**
+Only by using ``git push`` will your GitHub repository be updated.
+If you are trying to share your changes but your team-members cannot
+see them, make sure to ``git push origin remote``.
+
+
 
 Concurrent Changes
 ----------------------------------------------------------------------
@@ -530,7 +539,7 @@ Concurrent Changes
 One feature of git is that is allows multiple people to work on the
 same repository concurrently.
 
-For instance, while Ada was adding the ``fish.txt`` file, Alber may
+For instance, while Ada was adding the ``fish.txt`` file, Albert may
 have been writing about eggs.
 He would have cloned the repository, just like Ada, but added
 ``eggs.txt`` instead::
@@ -557,7 +566,7 @@ He can share his changes with Ada in the same fashion:
 
   Ada: Great. I'll pull them now.
 
-Now, Ada does the ``pull``ing and sees Albert's changes::
+Now, Ada does the ``pull``-ing and sees Albert's changes::
 
  $ git pull origin master
  $ ls
