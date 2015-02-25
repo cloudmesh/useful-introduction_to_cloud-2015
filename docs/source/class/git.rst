@@ -80,16 +80,26 @@ a group and your instructor has approved the project.
 Prerequisite: a FutureSystems account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You need a FutureSystems account to do your work.
+As all your work will be completed on FutureSystems, you will need
+a FutureSystems account in order to access and user resources.
 Go to the `FutureSystems portal <https://portal.futuresystems.org>`_
 and request an account if you do not yet have one.
-Additionally, see `further documentation`_ on aquiring an account.
+Then, you must request to be added to the course FutureSystems project.
+Finally, you must upload an SSH key.
+Please see the `FutureSystems documentation`_ for details on requesting
+an account.
+If you have trouble uploading an SSH Key please first consult
+documentation on `how to upload an SSH Key`_ before contact support.
 
 .. _further documentation:  http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/index.html
+.. _how to upload an SSH Key: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
 
-This prerequisite is satisfied if you are able to accomplish the following
+This prerequisite is satisfied if you are able to accomplish the following:
 
-* ``ssh $USER@india.futuresystems.org``
+* log into `https://portal.futuresystems.org
+* go to the ``Portal Account`` tab
+* the ``status`` row is all green in the ``My FutureGrid HPC account status`` section
+
 
 Prerequisite: an SSH key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
