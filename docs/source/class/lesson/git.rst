@@ -115,7 +115,7 @@ The prerequisite is satisfied if:
 
 On **Mac OS X** you will have
 
-* The ``~/.ssh/id_rsa` and ``~/.ssh/id_rsa.pub`` files exists
+* The ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub`` files exists
 
 On **Windows** using PuTTY:
 
