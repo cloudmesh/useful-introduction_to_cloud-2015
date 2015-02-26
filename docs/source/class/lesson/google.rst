@@ -5,7 +5,7 @@ This section describes how to use two Google products for getting
 help with the course.
 
 The first is `Google Hangouts`_ which is a video chat program,
-similar to Skype and Facetime.
+similar to Skype and FaceTime.
 The second i `Google Remote Desktop`_ which allows another person
 to access your computer.
 
@@ -34,7 +34,7 @@ In order to use Hangouts for the course you need the following
 prerequisites:
 
 * a desktop or laptop computer
-* a working microphone and video camers
+* a working microphone and video camera
 
 Installing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

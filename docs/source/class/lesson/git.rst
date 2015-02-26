@@ -8,7 +8,7 @@ This lesson show you how to submit and work on homework assignments.
 Assignments are to be worked on as part of the
 `GitHub FutureSystems organization`_.
 
-Upon completion of this lession you will be able to use GitHub for
+Upon completion of this lesson you will be able to use GitHub for
 submitting assignments for your course
 
 There are several prerequisites which are detailed below.
@@ -31,7 +31,7 @@ The assistant instructors for the course are:
 
 For problems with FutureSystems please email
 `help@futuresystems.org <help@futuresystems.org>`_.
-Be aware that the assistant instructors are not recipiants of these
+Be aware that the assistant instructors are not recipients of these
 emails so please carbon copy them so that they are aware of your issue.
 
 .. note::
@@ -52,7 +52,7 @@ Preliminary Setup
 Prerequisite: a GitHub account
 ^^^^^^^^^^^^^^^^^^
 
-Go to `GitHub <https://github.com>`_ and signup for an account.
+Go to `GitHub <https://github.com>`_ and sign up for an account.
 
 This prerequisite is satisfied if you are able to
 
@@ -121,7 +121,7 @@ On **Windows** using PuTTY:
 
 * **In Preparation**
 
-If you have not satisifed this section, please see the `documentation`_
+If you have not satisfied this section, please see the `documentation`_
 for details on how to do so.
 
 .. _documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
@@ -177,7 +177,7 @@ emailed the link.
    everybody else in that group.
 
 .. warning::
-   This repository is publically viewable.
+   This repository is publicly viewable.
    Any content is viewable by *THE ENTIRE WORLD* so please do not add any
    private information.
 
@@ -198,7 +198,7 @@ For instance, if your account name on FutureSystems is ``albert``::
 
   ssh albert@india.futuresystems.org
 
-Once you have your repository url
+Once you have your repository URL
 (for example: ``git@github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git``)
 you can download the repository like so::
 
@@ -292,7 +292,7 @@ We can inspect the status of git using the ``git status`` command::
 
   nothing added to commit but untracked files present (use "git add" to track)
 
-There is a lot of information here but the key pertinant point is the
+There is a lot of information here but the key pertinent point is the
 ``Untracked files`` heading which lists all files that git sees but
 whose changes are not being tracked.
 There is also the helpful hint ``use "git add <file>..."`` indicating
@@ -355,7 +355,7 @@ were to be created they could be staged::
           new file:   world.txt
 
 
-By using the staging area multiple files can be commited to git as a
+By using the staging area multiple files can be committed to git as a
 single **change**.
 Meaning: a **change** is the addition, deletion, of modification of
 content of one or more files.
@@ -478,7 +478,7 @@ from.
 
 .. important::
    This means that **ANY** changes added via ``git commit`` are only
-   commited to the **local** repository.
+   committed to the **local** repository.
    These changes are **NOT YET** present at the **remote** (``origin``).
 
 In order to share your commits with the **remote** repository, you
@@ -491,7 +491,7 @@ Let's break this down a bit.
 The first part is ``git push``, meaning that we are telling git
 to share our **local** changes with a **remote** repository.
 
-Now let us exame the ``origin`` and ``master`` parts of the command.
+Now let us examine the ``origin`` and ``master`` parts of the command.
 Recall the output of ``git remote -v`` and ``git status`` after our
 commit earlier.
 The ``git remote`` command provides us with the name associated
