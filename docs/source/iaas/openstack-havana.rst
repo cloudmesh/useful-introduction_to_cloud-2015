@@ -42,7 +42,7 @@ Currently FutureSystems OpenStack Havana installed on India.  To use
 it you need to first log into india and prepare your Openstack
 credentials::
 
-       $ ssh $PORTALNAME@india.futuregrid.org
+       $ ssh $PORTALNAME@india.futuresystems.org
 
 Setup OpenStack Environment
 ---------------------------

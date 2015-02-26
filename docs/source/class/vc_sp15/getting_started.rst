@@ -51,7 +51,7 @@ Access Cloud: OpenStack (Optional)
 ------------------------------------
 
 FutureSystems enables users to easily explore the most latest releases of cloud
-platforms. OpenStack Havana is currently available on *india.futuregrid.org* and
+platforms. OpenStack Havana is currently available on *india.futuresystems.org* and
 OpenStack Juno will be supported very soon.
 
  - Step 4: |openstackonfuturesystems| *(External link)*

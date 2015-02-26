@@ -19,7 +19,7 @@ Follow the steps until "List running images".
 
 For the sake of convenience, the steps without description is listed below::
 
-      $ ssh username@india.futuregrid.org
+      $ ssh username@india.futuresystems.org
       $ module load novaclient
       $ source ~/.futuregrid/openstack_havana/novarc
       $ nova flavor-list
