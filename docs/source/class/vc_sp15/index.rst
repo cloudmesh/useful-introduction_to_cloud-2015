@@ -1,4 +1,4 @@
-IU Spring 2015
+IU Spring 2015: Tutorials - Virtual Clusters
 ======================================================================
 
 .. toctree::
