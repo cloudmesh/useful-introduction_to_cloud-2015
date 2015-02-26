@@ -10,8 +10,11 @@ The second is |Google Remote Desktop link| which allows another person
 to access your computer.
 
 .. |Google Hangouts link| raw::html
+
    <a href="http://www.google.com/hangouts/" target="_blank">Google Hangouts</a>
+
 .. |Google Remote Desktop link| raw::html
+
    <a href="https://support.google.com/chrome/answer/1649523?hl=en" target="_blank">Google Remote Desktop</a>
 
 
@@ -24,8 +27,11 @@ To use both Google Hangouts and Google Remote Desktop you will need:
 * a Google Account (do so at |google_signup_link|)
 
 .. |google_chrome_link| raw::html
+
    <a href="https://www.google.com/chrome" target="_blank">www.google.com/chrome</a>
+
 .. |google_signup_link| raw::html
+
    <a href="https://accounts.google.com/signup" target="_blank">accounts.google.com/signup</a>
 
 
@@ -52,6 +58,7 @@ If you are not running Google Chrome, this will prompt you to install it.
 Follow the instructions to install the Hangouts extension for Chrome.
 
 .. |google_hangouts_link| raw::html
+
    <a href="http://www.google.com/hangouts/" target="_blank">www.google.com/hangouts</a>
 
 Using
@@ -68,6 +75,7 @@ You can then enter the email address of the people you wish to
 invite or send them an email with the link.
 
 .. |google_plus_link| raw::html
+
    <a href="https://plus.google.com/hangouts" target="_blank">plus.google.com/hangouts</a>
 
 
