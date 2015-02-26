@@ -18,8 +18,8 @@ Prerequisites
 
 To use both Google Hangouts and Google Remote Desktop you will need:
 
-* to install Google Chrome (do so at `https://www.google.com/chrome/`)
-* a Google Account (do so at `https://accounts.google.com/signup`)
+* to install Google Chrome (do so at https://www.google.com/chrome )
+* a Google Account (do so at https://accounts.google.com/signup )
 
 
 Google Hangouts
