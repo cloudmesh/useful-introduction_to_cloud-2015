@@ -138,12 +138,12 @@ Exercises
 #. Read up on what a ssh key is.
    See section :ref:`s-using-ssh`.
 #. Upload a ssh key.
-   Do this via https://portal.futuregrid.org/my/ssh-keys
+   Do this via https://portal.futuresystems.org/my/ssh-keys
 #. Register your OpenID in the portal (for example if you use google).
 #. Upload a 220x220 pixel portrait of yours to the portal.
-   Do this via https://portal.futuregrid.org/my/edit
+   Do this via https://portal.futuresystems.org/my/edit
 #. Make sure you have uploaded a small Bio.
-   Do this via https://portal.futuregrid.org/my/Contact
+   Do this via https://portal.futuresystems.org/my/Contact
 
 Cloudmesh Introduction
 ----------------------------------------------------------------------
