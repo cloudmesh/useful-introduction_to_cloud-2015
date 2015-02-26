@@ -13,7 +13,7 @@ Table
 
    ok, `00 Cloudmesh: Relevance and Introduction <https://www.youtube.com/watch?v=njHHjRMb7V8>`__, `class/i590.rst <class/i590.html>`__, `njHHjRMb7V8 <https://www.youtube.com/watch?v=njHHjRMb7V8>`__
    ok, `01 Cloudmesh: Introduction <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__, `index.rst <index.html>`__, `uGIPmiJ0cxg <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__
-   ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__
+   ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `class/i590.rst <class/i590.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__
    ok, `03 Cloudmesh: Quick Install <https://www.youtube.com/watch?v=lGiJifD0VgU>`__, `cloudmesh/setup/quickstart.rst <cloudmesh/setup/quickstart.html>`__, `lGiJifD0VgU <https://www.youtube.com/watch?v=lGiJifD0VgU>`__
    ok, `04 Cloudmesh: Web Interface <https://www.youtube.com/watch?v=l_P4G85rysA>`__, `cloudmesh/gui/screenshots.rst <cloudmesh/gui/screenshots.html>`__, `l_P4G85rysA <https://www.youtube.com/watch?v=l_P4G85rysA>`__
    ok, `05 Cloudmesh: Setup on a OpenStack VM <https://www.youtube.com/watch?v=rcecpgm-47g>`__, `cloudmesh/setup/setup_openstack.rst <cloudmesh/setup/setup_openstack.html>`__, `rcecpgm-47g <https://www.youtube.com/watch?v=rcecpgm-47g>`__
@@ -25,14 +25,14 @@ Table
    ok, `HPC OpenMPI Batch jobs <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__, `hpc/screencasts.rst <hpc/screencasts.html>`__, `6oUsMyDt7gU <https://www.youtube.com/watch?v=6oUsMyDt7gU>`__
    ok, `Hadoop <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__, `paas/hadoop.rst <paas/hadoop.html>`__, `PC8h1CtVzH4 <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__
    ok, `SSH Add <https://www.youtube.com/watch?v=OwOKw3xKmEI>`__, `hpc/screencasts.rst <hpc/screencasts.html>`__, `OwOKw3xKmEI <https://www.youtube.com/watch?v=OwOKw3xKmEI>`__
-   ok, `cm-mooc: vm management for Cloudmesh with IPython Notebook <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__, `class/cm-mooc.rst <class/cm-mooc.html>`__, `kFWGPqHrBCA <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__
+   ok, `cm-mooc: vm management for Cloudmesh with IPython Notebook <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__, `class/cm-mooc/cm-mooc.rst <class/cm-mooc/cm-mooc.html>`__, `kFWGPqHrBCA <https://www.youtube.com/watch?v=kFWGPqHrBCA>`__
    ok, `fg-create-project <https://www.youtube.com/watch?v=DzbLS6iCeTE>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `DzbLS6iCeTE <https://www.youtube.com/watch?v=DzbLS6iCeTE>`__
    ok, `fg-openstack <https://www.youtube.com/watch?v=xRVJfOaR23w>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `xRVJfOaR23w <https://www.youtube.com/watch?v=xRVJfOaR23w>`__
    ok, `fg-openstack-horizon-grizzly <https://www.youtube.com/watch?v=JkNlWAUlxF0>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `JkNlWAUlxF0 <https://www.youtube.com/watch?v=JkNlWAUlxF0>`__
-   ok, `fg-portal-join-project <https://www.youtube.com/watch?v=5xQiPBwt58s>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `5xQiPBwt58s <https://www.youtube.com/watch?v=5xQiPBwt58s>`__
-   ok, `fg-portal-openid <https://www.youtube.com/watch?v=rZzpCYWDEpI>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `rZzpCYWDEpI <https://www.youtube.com/watch?v=rZzpCYWDEpI>`__
-   ok, `fg-portal-sshkey <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `4wjVwQbOlSU <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__
-   ok, `futuregrid-get-portal-account <https://www.youtube.com/watch?v=c7mjKI8mJws>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `c7mjKI8mJws <https://www.youtube.com/watch?v=c7mjKI8mJws>`__
+   ok, `fg-portal-join-project <https://www.youtube.com/watch?v=5xQiPBwt58s>`__, `class/i590.rst <class/i590.html>`__, `5xQiPBwt58s <https://www.youtube.com/watch?v=5xQiPBwt58s>`__
+   ok, `fg-portal-openid <https://www.youtube.com/watch?v=rZzpCYWDEpI>`__, `class/i590.rst <class/i590.html>`__, `rZzpCYWDEpI <https://www.youtube.com/watch?v=rZzpCYWDEpI>`__
+   ok, `fg-portal-sshkey <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__, `class/i590.rst <class/i590.html>`__, `4wjVwQbOlSU <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__
+   ok, `futuregrid-get-portal-account <https://www.youtube.com/watch?v=c7mjKI8mJws>`__, `class/i590.rst <class/i590.html>`__, `c7mjKI8mJws <https://www.youtube.com/watch?v=c7mjKI8mJws>`__
 
 
 .. _videos_detail:

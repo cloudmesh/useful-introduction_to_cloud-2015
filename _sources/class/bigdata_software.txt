@@ -68,9 +68,12 @@ Detailed discussion about SSH
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ssh config
-
+~~~~~~~~~~~~
 ssh tunnel (new)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Future: cm ssh (future)
+
 
 Elementary Cloud Computing
 Overview and Introduction

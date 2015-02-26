@@ -1,5 +1,5 @@
-Cloudmesh MOOC Shell
-======================
+Cloudmesh MOOC Shell Overview
+======================================================================
 
 `cm-mooc` provides an easy way to start a Cloudmesh VM on OpenStack India. 
 You can start a virtual machine for Cloudmesh with a single command in `cm-mooc`.
