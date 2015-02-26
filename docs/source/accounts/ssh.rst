@@ -203,7 +203,7 @@ Next you need to upload the key to the portal. You must be logged into the porta
      - Log into the portal
      - |image25|
    * - Step 2
-     - Click in the "ssh key" button. or go directly to https://portal.futuregrid.org/my/ssh-keys
+     - Click in the "ssh key" button. or go directly to https://portal.futuresystems.org/my/ssh-keys
      - |image26|
    * - Step 3
      - Click in the "add a public key" link.
@@ -262,7 +262,7 @@ FutureSystems resource name.
 .. |image23| image:: ../images/cygwinfirst.png
    :width: 200px
 .. |image24| image:: ../images/register-sshkey.png
-   :target: https://portal.futuregrid.org/my/ssh-keys
+   :target: https://portal.futuresystems.org/my/ssh-keys
 .. |image25| image:: ../images/portalLogin_0.png
    :width: 200px
 .. |image26| image:: ../images/portalsshkey.png
