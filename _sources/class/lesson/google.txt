@@ -4,13 +4,15 @@ Google
 This section describes how to use two Google products for getting
 help with the course.
 
-The first is `Google Hangouts`_ which is a video chat program,
+The first is |Google Hangouts link|_ which is a video chat program,
 similar to Skype and FaceTime.
-The second i `Google Remote Desktop`_ which allows another person
+The second is |Google Remote Desktop link| which allows another person
 to access your computer.
 
-.. _Google Hangouts: http://www.google.com/hangouts/
-.. _Google Remote Desktop: https://support.google.com/chrome/answer/1649523?hl=en
+.. |Google Hangouts link| raw::html
+   <a href="http://www.google.com/hangouts/" target="_blank">Google Hangouts</a>
+.. |Google Remote Desktop link| raw::html
+   <a href="https://support.google.com/chrome/answer/1649523?hl=en" target="_blank">Google Remote Desktop</a>
 
 
 Prerequisites
@@ -18,8 +20,13 @@ Prerequisites
 
 To use both Google Hangouts and Google Remote Desktop you will need:
 
-* to install Google Chrome (do so at https://www.google.com/chrome )
-* a Google Account (do so at https://accounts.google.com/signup )
+* to install Google Chrome (do so at |google_chrome_link|)
+* a Google Account (do so at |google_signup_link|)
+
+.. |google_chrome_link| raw::html
+   <a href="https://www.google.com/chrome" target="_blank">www.google.com/chrome</a>
+.. |google_signup_link| raw::html
+   <a href="https://accounts.google.com/signup" target="_blank">accounts.google.com/signup</a>
 
 
 Google Hangouts
@@ -39,24 +46,29 @@ prerequisites:
 Installing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install Hangouts first go to http://www.google.com/hangouts/ and
+To install Hangouts first go to |google_hangouts_link| and
 click "Get Hangouts" and select the "Computers" target.
 If you are not running Google Chrome, this will prompt you to install it.
 Follow the instructions to install the Hangouts extension for Chrome.
-p
+
+.. |google_hangouts_link| raw::html
+   <a href="http://www.google.com/hangouts/" target="_blank">www.google.com/hangouts</a>
+
 Using
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once Hangouts is installed you may use it to start or join
 conversations via Google Plus.
 To start a conversation use Chrome to go to
+|google_plus_link|
 `Google Plus Hangouts webpage`_.
 Next go to the bottom right and click "Start a video Hangout".
 This will open a new window setting up the conversation.
 You can then enter the email address of the people you wish to
 invite or send them an email with the link.
 
-.. _Google Plus Hangouts webpage:  https://plus.google.com/hangouts
+.. |google_plus_link| raw::html
+   <a href="https://plus.google.com/hangouts" target="_blank">plus.google.com/hangouts</a>
 
 
 Google Remote Desktop
