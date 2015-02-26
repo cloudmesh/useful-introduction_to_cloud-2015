@@ -111,17 +111,17 @@ Creating FutureSystems Accounts and Projects
 
 #. Upload a ssh key.
 
-   Do this via https://portal.futuregrid.org/my/ssh-keys
+   Do this via https://portal.futuresystems.org/my/ssh-keys
 
 #. Register your OpenID in the portal (for example if you use google).
 
 #. Upload a 220x220 pixel portrait of yours to the portal.
 
-   Do this via https://portal.futuregrid.org/my/edit
+   Do this via https://portal.futuresystems.org/my/edit
 
 #. Make sure you have uploaded a small Bio written in third person.
 
-   Do this via https://portal.futuregrid.org/my/Contact
+   Do this via https://portal.futuresystems.org/my/Contact
 
 .. |video-image| image:: /images/glyphicons_402_youtube.png 
 

@@ -34,10 +34,10 @@ To access a remote machine you can use the command::
 
 In case you like and are able to forward X11 features back to you yo
 may want to log into the remote machine with the -Y or -X flags. Thus,
-to login into the machine india@futuregrid.org (on which you must have
+to login into the machine india@futuresystems.org (on which you must have
 an account, lets assume your account name is albert), you can say::
 
-  ssh -X albert@india.futuregrid.org
+  ssh -X albert@india.futuresystems.org
 
 The detailed manual pages to such commands can be found for example in
 the command shell when you type in `man` followed by the command
@@ -87,8 +87,8 @@ For vi such a reference card is available at
 Exercises
 ----------------------------------------------------------------------
 
-#. Get an account on the machine india.futuregrid.org
-#. Log into futuregrid.org
+#. Get an account on the machine india.futuresystems.org
+#. Log into futuresystems.org
 #. Try out some of the commands listed above
 #. Become aware of the disastrous consequences that you can do with
    the rm command

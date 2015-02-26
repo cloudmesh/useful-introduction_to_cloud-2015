@@ -203,7 +203,7 @@ Next you need to upload the key to the portal. You must be logged into the porta
      - Log into the portal
      - |image25|
    * - Step 2
-     - Click in the "ssh key" button. or go directly to https://portal.futuregrid.org/my/ssh-keys
+     - Click in the "ssh key" button. or go directly to https://portal.futuresystems.org/my/ssh-keys
      - |image26|
    * - Step 3
      - Click in the "add a public key" link.
@@ -241,11 +241,11 @@ around 30 minutes to update the ssh keys.
 
 To log into india simply type the usual ssh command such as:: 
 
-    $ ssh portalname@india.futuregrid.org
+    $ ssh portalname@india.futuresystems.org
 
 The first time you ssh into a machine you will see a message like this::
 
-    The authenticity of host 'india.futuregrid.org (192.165.148.5)' can't be established.
+    The authenticity of host 'india.futuresystems.org (192.165.148.5)' can't be established.
     RSA key fingerprint is 11:96:de:b7:21:eb:64:92:ab:de:e0:79:f3:fb:86:dd.
     Are you sure you want to continue connecting (yes/no)? yes 
 
@@ -262,7 +262,7 @@ FutureSystems resource name.
 .. |image23| image:: ../images/cygwinfirst.png
    :width: 200px
 .. |image24| image:: ../images/register-sshkey.png
-   :target: https://portal.futuregrid.org/my/ssh-keys
+   :target: https://portal.futuresystems.org/my/ssh-keys
 .. |image25| image:: ../images/portalLogin_0.png
    :width: 200px
 .. |image26| image:: ../images/portalsshkey.png

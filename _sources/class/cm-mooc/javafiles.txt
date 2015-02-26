@@ -13,7 +13,7 @@ We assume that you have launched the virtual machine and you are staying in $HOM
 .. note:: To remind you how to use the virtual machine, please see the
   following commands::
 
-    localhost$ ssh -X $PORTALNAME@india.futuregrid.org
+    localhost$ ssh -X $PORTALNAME@india.futuresystems.org
     india$ module load fg455
     india$ cm-mooc login
     vm$ cd JavaFiles

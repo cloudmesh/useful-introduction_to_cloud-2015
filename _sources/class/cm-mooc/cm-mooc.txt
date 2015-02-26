@@ -18,7 +18,7 @@ Create a FutureSystems Account
 
 First you need to have an account on the FutureSystems portal at 
 
-* http://portal.futuregrid.org
+* http://portal.futuresystems.org
 
 We have discussed this in a previous session and you can find out more
 information in Sthe Section :ref:`s-accounts`.
@@ -34,7 +34,7 @@ information in Sthe Section :ref:`s-accounts`.
 Next you need to login to the india login node
 with::
 
-    localhost$ ssh $PORTALNAME@india.futuregrid.org
+    localhost$ ssh $PORTALNAME@india.futuresystems.org
 
 If you need more information about  ssh  see :ref:`s-using-ssh`.
 

@@ -31,9 +31,9 @@
         <link rel="author" title="About these documents"
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
-        <link rel="up" title="Lessons" href="../lessons.html"/>
-        <link rel="next" title="Deploying IPython Notebook Cluster with Cloudmesh launcher" href="ipynb.html"/>
-        <link rel="prev" title="Deploying Cloudmesh using Docker on FutureSystems" href="docker_cloudmesh.html"/> 
+        <link rel="up" title="Collaboration Tools" href="collaboration/index.html"/>
+        <link rel="next" title="Deployment Technologies (Under Preparation)" href="deployment/index.html"/>
+        <link rel="prev" title="Shell Access" href="shell-access.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -80,8 +80,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc2_sp15/index.html">IU Spring 2015: Section II Practical Use of Big Data Software on OpenStack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">IU Spring 2015</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vc2_sp15/index.html">IU Spring 2015: Section II Practical Use of Big Data Software on OpenStack</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vc_sp15/index.html">IU Spring 2015: Tutorials - Virtual Clusters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../i590.html">IU Fall 2014 (Info I590)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
 </ul>
@@ -182,7 +182,9 @@
       
           <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
       
-          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+          <li><a href="../vc_sp15/index.html">IU Spring 2015: Tutorials - Virtual Clusters</a> &raquo;</li>
+      
+          <li><a href="collaboration/index.html">Collaboration Tools</a> &raquo;</li>
       
     <li>Using Git and GitHub for collaboration</li>
       <li class="wy-breadcrumbs-aside">
@@ -224,11 +226,14 @@ In summary, they are:</p>
 <a class="reference external" href="mailto:help&#37;&#52;&#48;futuresystems&#46;org">help<span>&#64;</span>futuresystems<span>&#46;</span>org</a>.
 Be aware that the assistant instructors are not recipiants of these
 emails so please carbon copy them so that they are aware of your issue.</p>
-<p>Please be aware that questions addressed to staff should be sent
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please be aware that questions addressed to staff should be sent
 between 9am and 4pm on business days.
 Questions outside those hours may not be addressed until the
 following business day.
 Please keep this in mind and start working on your assignments early.</p>
+</div>
 <p>For advanced conceptual support please contact</p>
 <ul class="simple">
 <li><a class="reference external" href="mailto:laszewski&#37;&#52;&#48;gmail&#46;com">Gregor von Laszewski</a></li>
@@ -340,15 +345,24 @@ Body:
 </div>
 <p>A repository will then be created for your group and you will be
 emailed the link.</p>
-<p>please adhere to this format as improper formatting
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">please adhere to this format as improper formatting
 may not be seen and processed.</p>
-<p>All members of a group will have access to this
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">All members of a group will have access to this
 repository and can make changes.
 This means that anybody in your group can modify the work of of
 everybody else in that group.</p>
-<p>This repository is publically viewable.
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This repository is publically viewable.
 Any content is viewable by <em>THE ENTIRE WORLD</em> so please do not add any
 private information.</p>
+</div>
 <p>This prerequisite is satisfied if are able to</p>
 <ul class="simple">
 <li>go to <cite>https://github.com/futuresystems</cite></li>
@@ -623,9 +637,12 @@ origin git@github.com:futresystems/class-bigdata-technology-spring-2015-ABCDE.gi
 <p>Here, <tt class="docutils literal"><span class="pre">origin</span></tt> is the shorthand name referring the the location
 of the <strong>remote</strong> repository that this <strong>local</strong> one was created
 from.</p>
-<p>This means that <strong>ANY</strong> changes added via <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt> are only
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This means that <strong>ANY</strong> changes added via <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt> are only
 commited to the <strong>local</strong> repository.
 These changes are <strong>NOT YET</strong> present at the <strong>remote</strong> (<tt class="docutils literal"><span class="pre">origin</span></tt>).</p>
+</div>
 <p>In order to share your commits with the <strong>remote</strong> repository, you
 must <tt class="docutils literal"><span class="pre">push</span></tt> them.
 Like so:</p>
@@ -670,9 +687,12 @@ $ git pull origin master
 </pre></div>
 </div>
 <p>Albert now has all the changes Ada made.</p>
-<p>Only by using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> will your GitHub repository be updated.
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Only by using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> will your GitHub repository be updated.
 If you are trying to share your changes but your team-members cannot
 see them, make sure to <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">remote</span></tt>.</p>
+</div>
 </div>
 </div>
 <div class="section" id="concurrent-changes">
@@ -752,10 +772,10 @@ exactly <strong>what</strong> that change was.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ipynb.html" class="btn btn-neutral float-right" title="Deploying IPython Notebook Cluster with Cloudmesh launcher"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deployment/index.html" class="btn btn-neutral float-right" title="Deployment Technologies (Under Preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="docker_cloudmesh.html" class="btn btn-neutral" title="Deploying Cloudmesh using Docker on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="shell-access.html" class="btn btn-neutral" title="Shell Access"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
