@@ -35,11 +35,11 @@ Be aware that the assistant instructors are not recipiants of these
 emails so please carbon copy them so that they are aware of your issue.
 
 .. note::
-Please be aware that questions addressed to staff should be sent
-between 9am and 4pm on business days.
-Questions outside those hours may not be addressed until the
-following business day.
-Please keep this in mind and start working on your assignments early.
+   Please be aware that questions addressed to staff should be sent
+   between 9am and 4pm on business days.
+   Questions outside those hours may not be addressed until the
+   following business day.
+   Please keep this in mind and start working on your assignments early.
 
 For advanced conceptual support please contact
 
@@ -167,19 +167,19 @@ emailed the link.
 
 
 .. warning::
-please adhere to this format as improper formatting
-may not be seen and processed.
+   please adhere to this format as improper formatting
+   may not be seen and processed.
 
 .. warning::
-All members of a group will have access to this
-repository and can make changes.
-This means that anybody in your group can modify the work of of
-everybody else in that group.
+   All members of a group will have access to this
+   repository and can make changes.
+   This means that anybody in your group can modify the work of of
+   everybody else in that group.
 
 .. warning::
-This repository is publically viewable.
-Any content is viewable by *THE ENTIRE WORLD* so please do not add any
-private information.
+   This repository is publically viewable.
+   Any content is viewable by *THE ENTIRE WORLD* so please do not add any
+   private information.
 
 This prerequisite is satisfied if are able to
 
@@ -477,9 +477,9 @@ of the **remote** repository that this **local** one was created
 from.
 
 .. important::
-This means that **ANY** changes added via ``git commit`` are only
-commited to the **local** repository.
-These changes are **NOT YET** present at the **remote** (``origin``).
+   This means that **ANY** changes added via ``git commit`` are only
+   commited to the **local** repository.
+   These changes are **NOT YET** present at the **remote** (``origin``).
 
 In order to share your commits with the **remote** repository, you
 must ``push`` them.
@@ -530,9 +530,9 @@ Albert can then do the following::
 Albert now has all the changes Ada made.
 
 .. important::
-Only by using ``git push`` will your GitHub repository be updated.
-If you are trying to share your changes but your team-members cannot
-see them, make sure to ``git push origin remote``.
+   Only by using ``git push`` will your GitHub repository be updated.
+   If you are trying to share your changes but your team-members cannot
+   see them, make sure to ``git push origin remote``.
 
 
 
