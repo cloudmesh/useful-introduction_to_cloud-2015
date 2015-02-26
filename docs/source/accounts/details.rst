@@ -131,7 +131,7 @@ complete the next steps.
 
 Here are a few tips that make it easy for you
 
-- On the portal's main page at https://portal.futuregrid.org appears a
+- On the portal's main page at https://portal.futuresystems.org appears a
    :menuselection:`Portal --> Register` :portal:`link
    <user/register>`.
 - Following you will be able to **Create a new account** on the
@@ -175,7 +175,7 @@ Here are a few tips that make it easy for you
    * - State
      - Description
    * - 1. Get Portal Account
-     - Apply for a portal account at https://portal.futuregrid.org/user/register
+     - Apply for a portal account at https://portal.futuresystems.org/user/register
    * - Check Identity
      - Administrator checks the data submitted.
    * - Reject
@@ -235,7 +235,7 @@ managers. The project agreements override the individuals agreement.
    * - State
      - Description
    * - 3a. Create new Project   
-     - Fill out the project form at https://portal.futuregrid.org/node/add/fg-projects
+     - Fill out the project form at https://portal.futuresystems.org/node/add/fg-projects
    * - Review   
      - Committee reviews the project and corresponds with project lead to improve
    * - 3a.1. Wait for e-mail    
@@ -266,8 +266,8 @@ information that has been entered on the form but not yet submitted.
 Examples for a project can be found also on the portal itself
 when looking at the list of projects conducted on Futuregrid:
 
-* All projects: https://portal.futuregrid.org/projects/all
-* Class Projects: https://portal.futuregrid.org/projects/keywords/course
+* All projects: https://portal.futuresystems.org/projects/all
+* Class Projects: https://portal.futuresystems.org/projects/keywords/course
 
 Recently we have increased the requirements for project
 approval. Hence it is important that you write a couple of paragraphs
@@ -488,7 +488,7 @@ your project page and remove the user name from the list of members or
 alumni. If the user is in no other valid project she will no longer be
 able to use FG.  If the user really needs to be removed from the
 system or from the portal, please fill out the `help form
-<https://portal.futuregrid.org/help>`__ with the username and the
+<https://portal.futuresystems.org/help>`__ with the username and the
 reason why he should be removed.  Naturally, if you detect that a user
 is acting maliciously, please inform us immediately. We will disable
 access. Put in your subject line the prefix URGENT.
@@ -500,7 +500,7 @@ It is important to regularly report results of your projects to
 FutureSystems. Please fill out this section and report upon the
 achievements of this project. You find your projects in a 
 
-* `list maintained in the portal <https://portal.futuregrid.org/manage-my-portal-account>`__ 
+* `list maintained in the portal <https://portal.futuresystems.org/manage-my-portal-account>`__ 
 
 Also upload references that you have produced for this project. You
 can upload when visiting your project and using the plus button in
@@ -516,7 +516,7 @@ Close a Project
 Closing a project is an important responsibility of every project
 lead.  Incase you forget which project you want to close, you can find the 
 
-* `list of projects you lead or manage <https://portal.futuregrid.org/manage-my-portal-account>`__
+* `list of projects you lead or manage <https://portal.futuresystems.org/manage-my-portal-account>`__
 
 on the Portal. Once you visit one of them, you have the option to add
 results.  Scroll down until you find the section "Project
@@ -544,7 +544,7 @@ after all.
 To upload the chosen public key:
 
 #. Copy your public identity into your system clipboard.
-#. Visit the `ssh-key panel of your account <https://portal.futuregrid.org/my/ssh-keys>`__.
+#. Visit the `ssh-key panel of your account <https://portal.futuresystems.org/my/ssh-keys>`__.
 #. Click the link that says Add a public key.
 
 
@@ -570,7 +570,7 @@ portal. However, they may have an easier time to remember their openid
 from for example google. It is possible to use your openid account and
 register it once you gain access to the portal. Please visit your 
 
-* `OpenID Page <https://portal.futuregrid.org/my/openid>`__
+* `OpenID Page <https://portal.futuresystems.org/my/openid>`__
 
 to add your favorite OpenID. For example, to add your Google OpenId
 you simply click on the Google icon.
@@ -620,7 +620,7 @@ the following:
 #. Give your students the signup code that you have chosen
    in the previous step. Communicate the signup code to the FutureSystems
    support team via a ticket submitted through
-   https://portal.futuregrid.org/help. Make sure you specify your
+   https://portal.futuresystems.org/help. Make sure you specify your
    project number. Often it is also helpful to send a list of students
    to us so that, it is easier for us to assist them during the application
    process. 
@@ -674,12 +674,12 @@ the following:
    unsaved running VMs or ongoing work may be lost. Please plan around this.
 
 #. We have created some forums for the three services that you can
-   find at https://portal.futuregrid.org/forum. These forums are read
+   find at https://portal.futuresystems.org/forum. These forums are read
    by the experts and the staff. We can create a forum for your class
    if you like directly on the FutureSystems portal.
 
 #. In case you need more direct support, do not hesitate to ask for
-   help https://portal.futuregrid.org/help
+   help https://portal.futuresystems.org/help
 
 #. Make sure you write a results section after your class is over. 
  
@@ -690,7 +690,7 @@ the following:
 Mini FAQ
 ==============
 
-* `Which Projects Do I Participate In? <https://portal.futuregrid.org/my/projects>`__
+* `Which Projects Do I Participate In? <https://portal.futuresystems.org/my/projects>`__
 
 * How can I :ref:`s-account-join-project`?
 
