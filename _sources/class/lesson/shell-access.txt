@@ -2,7 +2,7 @@ Shell Access
 ======================================================================
 
 This lesson describes how to provide access to your account on
-FutureSystems to a Teaching Assitant.
+FutureSystems to a Teaching Assistant.
 
 
 Prerequisites
