@@ -18,8 +18,8 @@ Prerequisites
 
 To use both Google Hangouts and Google Remote Desktop you will need:
 
-* to install Google Chrome (do so at `https://www.google.com/chrome/`)
-* a Google Account (do so at `https://accounts.google.com/signup`)
+* to install Google Chrome (do so at https://www.google.com/chrome )
+* a Google Account (do so at https://accounts.google.com/signup )
 
 
 Google Hangouts
@@ -43,18 +43,21 @@ To install Hangouts first go to http://www.google.com/hangouts/ and
 click "Get Hangouts" and select the "Computers" target.
 If you are not running Google Chrome, this will prompt you to install it.
 Follow the instructions to install the Hangouts extension for Chrome.
-
+p
 Using
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once Hangouts is installed you may use it to start or join
 conversations via Google Plus.
 To start a conversation use Chrome to go to
-`https://plus.google.com/hangouts`.
+`Google Plus Hangouts webpage`_.
 Next go to the bottom right and click "Start a video Hangout".
 This will open a new window setting up the conversation.
 You can then enter the email address of the people you wish to
 invite or send them an email with the link.
+
+.. _Google Plus Hangouts webpage:  https://plus.google.com/hangouts
+
 
 Google Remote Desktop
 ----------------------------------------------------------------------
@@ -68,7 +71,7 @@ There are two phases to using Remote Desktop:
 
 You can find more details on `Google Support`_.
 
-_Google Support: https://support.google.com/chrome/answer/1649523?hl=en
+.. _Google Support: https://support.google.com/chrome/answer/1649523?hl=en
 
 
 Setup: Installing
