@@ -241,11 +241,11 @@ around 30 minutes to update the ssh keys.
 
 To log into india simply type the usual ssh command such as:: 
 
-    $ ssh portalname@india.futuregrid.org
+    $ ssh portalname@india.futuresystems.org
 
 The first time you ssh into a machine you will see a message like this::
 
-    The authenticity of host 'india.futuregrid.org (192.165.148.5)' can't be established.
+    The authenticity of host 'india.futuresystems.org (192.165.148.5)' can't be established.
     RSA key fingerprint is 11:96:de:b7:21:eb:64:92:ab:de:e0:79:f3:fb:86:dd.
     Are you sure you want to continue connecting (yes/no)? yes 
 
