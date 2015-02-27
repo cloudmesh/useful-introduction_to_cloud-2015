@@ -2,7 +2,8 @@ Google
 ======================================================================
 
 This section describes how to use two Google products for getting
-help with the course.
+remote help with issues that may arise during the course.
+
 
 The first is |Google Hangouts link| which is a video chat program,
 similar to Skype and FaceTime.
@@ -35,16 +36,25 @@ To use both Google Hangouts and Google Remote Desktop you will need:
    <a href="https://accounts.google.com/signup" target="_blank">accounts.google.com/signup</a>
 
 
+.. note::
+   Please use a Gmail address for all your corespondance regarding
+   this course.
+
+
 Google Hangouts
 ----------------------------------------------------------------------
 
-Google Hangouts (shortened to "Hangouts") is a video chat program.
+Google Hangouts (shortened to "Hangouts") is a video chat program
+that will allow you to communicate with an instructor remotely.
+
+.. note::
+   We have discovered a possible problem when using Hangouts on
+   Mac OS X Yosemite.
 
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to use Hangouts for the course you need the following
-prerequisites:
+In order to use Hangouts for the course you need the following:
 
 * a desktop or laptop computer
 * a working microphone and video camera
@@ -83,16 +93,17 @@ Google Remote Desktop
 
 Google Remote Desktop (shortened to Remote Desktop) allows you to
 share your computer with others.
+
+.. warning::
+   Be aware that Remote Desktop gives someone total access to your
+   computer. Please be careful not to provide access to an
+   untrustworthy guest.
+
+
 There are two phases to using Remote Desktop:
 
 * Setup: install and configure Remote Desktop
 * Sharing: allow access to your computer
-
-You can find more details on |google_support_link|.
-
-.. |google_support_link| raw:: html
-
-   <a href="https://support.google.com/chrome/answer/1649523?hl=en" target="_blank">Google Support</a>
 
 
 Setup: Installing
@@ -100,7 +111,7 @@ Setup: Installing
 
 To install Remote Desktop opening Google Chrome and navigating to the
 |remote_desktop_link| site.
-Next, click "+ ADD TO CHROME" button in the upper right-hand corner.
+Next, click :guilabel:`+ ADD TO CHROME` button in the upper right-hand corner.
 
 .. |remote_desktop_link| raw:: html
 
@@ -133,3 +144,21 @@ Now click on the "Share" button in the "Remote Assistance" box.
 This will generate a code for the session which you will need to
 communicate to the person you are providing access to.
 Once they enter this code the session will begin.
+
+.. note::
+   The access code generated is valid only for the duration of
+   the session.
+
+.. warning::
+   As warned above, be aware this sharing gives total access
+   to your computer to the guest.
+
+
+Futher Information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can find more details on the |google_support_link|.
+
+.. |google_support_link| raw:: html
+
+   <a href="https://support.google.com/chrome/answer/1649523?hl=en" target="_blank">Google Support website</a>
