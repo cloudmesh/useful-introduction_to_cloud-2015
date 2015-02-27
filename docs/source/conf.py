@@ -15,13 +15,22 @@ import sys, os
 
 #bootstrap = True
 bootstrap = False
+rtd = True
+basicstrap = False
+readable = False
+better_theme = False
 
 if bootstrap: 
     import sphinx_bootstrap_theme
-else:
+elif rtd:
     import sphinx_rtd_theme
-
-
+elif basicstrap:
+    pass
+elif readable:
+    import sphinx_readable_theme
+elif better_theme:
+    from better import better_theme_path
+    
 #try:
 #    theme = os.environ['SPHINX_THEME']
 #except:
@@ -60,7 +69,18 @@ extensions.append('hieroglyph')
 
 todo_include_todos=True
 
+if basicstrap:
+    extensions += ['sphinxjp.themes.basicstrap']
 
+    html_theme = 'basicstrap'
+
+if readable:
+    html_theme_path = [sphinx_readable_theme.get_html_theme_path()]
+    html_theme = 'readable'
+
+if better_theme:
+    html_theme_path = [better_theme_path]
+    html_theme = 'better'
 
 extlinks = {
     'jira': ('https://jira.futuregrid.org/browse/%s','issue '),
@@ -193,7 +213,7 @@ if bootstrap:
     # Add any paths that contain custom themes here, relative to this directory.
     #html_theme_path = []
     html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-else:
+elif rtd:
     html_theme = 'sphinx_rtd_theme'
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -245,21 +265,21 @@ if bootstrap:
                  'sourcelink.html',
                 ],
     }
-else:
-    html_sidebars = {
-       '**': ['menu.html',
-                 'localtoc.html',
-                 'relations.html',
-                 'searchbox.html',
-                 'sourcelink.html',
-                ],
-       'index': ['menu.html',
-                 'localtoc.html',
-                 'relations.html',
-                 'searchbox.html',
-                 'sourcelink.html',
-                ],
-    }
+#else:
+#    html_sidebars = {
+#       '**': ['menu.html',
+#                 'localtoc.html',
+#                 'relations.html',
+#                 'searchbox.html',
+#                 'sourcelink.html',
+#                ],
+#       'index': ['menu.html',
+#                 'localtoc.html',
+#                 'relations.html',
+#                 'searchbox.html',
+#                 'sourcelink.html',
+#                ],
+#    }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
