@@ -8,10 +8,15 @@ Collaboration Tools
 ======================================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
   
-   ../lesson/collaboration/index
+   ../google
+   ../shell-access
+   ../git
+
+..
+   these sections don't belong under collab tools
    ../lesson/deployment/index
    ../lesson/virtualization/tools
 
