@@ -1,5 +1,5 @@
 **********************************************************************
-IU Spring 2015: Section II Practical Use of Big Data Software on OpenStack
+Spring 2015 - Big Data Applications and Technologies (``INFO-I 400``, ``INFO-I 590``)
 **********************************************************************
 .. BigData Virtual Cluster (Spring 2015)
 
