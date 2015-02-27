@@ -3,6 +3,13 @@ Spring 2015 - Big Data Applications and Technologies (``INFO-I 400``, ``INFO-I 5
 **********************************************************************
 .. BigData Virtual Cluster (Spring 2015)
 
+Contact
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ../contact
 
 Collaboration Tools
 ======================================================================
