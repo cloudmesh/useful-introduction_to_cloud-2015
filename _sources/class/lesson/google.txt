@@ -4,7 +4,7 @@ Google
 This section describes how to use two Google products for getting
 help with the course.
 
-The first is |Google Hangouts link|_ which is a video chat program,
+The first is |Google Hangouts link| which is a video chat program,
 similar to Skype and FaceTime.
 The second is |Google Remote Desktop link| which allows another person
 to access your computer.
@@ -67,8 +67,7 @@ Using
 Once Hangouts is installed you may use it to start or join
 conversations via Google Plus.
 To start a conversation use Chrome to go to
-|google_plus_link|
-`Google Plus Hangouts webpage`_.
+|google_plus_link|.
 Next go to the bottom right and click "Start a video Hangout".
 This will open a new window setting up the conversation.
 You can then enter the email address of the people you wish to
@@ -89,19 +88,23 @@ There are two phases to using Remote Desktop:
 * Setup: install and configure Remote Desktop
 * Sharing: allow access to your computer
 
-You can find more details on `Google Support`_.
+You can find more details on |google_support_link|.
 
-.. _Google Support: https://support.google.com/chrome/answer/1649523?hl=en
+.. |google_support_link| raw:: html
+
+   <a href="https://support.google.com/chrome/answer/1649523?hl=en" target="_blank">Google Support</a>
 
 
 Setup: Installing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To install Remote Desktop opening Google Chrome and navigating to the
-`Remote Desktop application`_ site.
+|remote_desktop_link| site.
 Next, click "+ ADD TO CHROME" button in the upper right-hand corner.
 
-.. _Remote Desktop application: https://chrome.google.com/webstore/detail/gbchcmhmhahfdphkhkmpfmihenigjmpp
+.. |remote_desktop_link| raw:: html
+
+   <a href="https://chrome.google.com/webstore/detail/gbchcmhmhahfdphkhkmpfmihenigjmpp" target="_blank">Remote Desktop application</a>
 
 
 Setup: Configuring

@@ -1,4 +1,4 @@
-IU Fall 2014 (Info I590)
+Fall 2014 - Big Data Opensource Software and Projects (``Info I590``)
 ======================================================================
 
 * Fall 2014
