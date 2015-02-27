@@ -88,19 +88,23 @@ There are two phases to using Remote Desktop:
 * Setup: install and configure Remote Desktop
 * Sharing: allow access to your computer
 
-You can find more details on `Google Support`_.
+You can find more details on |google_support_link|.
 
-.. _Google Support: https://support.google.com/chrome/answer/1649523?hl=en
+.. |google_support_link| raw:: html
+
+   <a href="https://support.google.com/chrome/answer/1649523?hl=en" target="_blank">Google Support</a>
 
 
 Setup: Installing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To install Remote Desktop opening Google Chrome and navigating to the
-`Remote Desktop application`_ site.
+|remote_desktop_link| site.
 Next, click "+ ADD TO CHROME" button in the upper right-hand corner.
 
-.. _Remote Desktop application: https://chrome.google.com/webstore/detail/gbchcmhmhahfdphkhkmpfmihenigjmpp
+.. |remote_desktop_link| raw:: html
+
+   <a href="https://chrome.google.com/webstore/detail/gbchcmhmhahfdphkhkmpfmihenigjmpp" target="_blank">Remote Desktop application</a>
 
 
 Setup: Configuring
