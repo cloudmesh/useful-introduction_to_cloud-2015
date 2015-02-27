@@ -50,6 +50,7 @@ that will allow you to communicate with an instructor remotely.
 .. note::
    We have discovered a possible problem when using Hangouts on
    Mac OS X Yosemite.
+.. see issue #7
 
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
