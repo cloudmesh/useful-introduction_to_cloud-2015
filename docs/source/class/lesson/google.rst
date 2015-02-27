@@ -112,7 +112,7 @@ Setup: Installing
 
 To install Remote Desktop opening Google Chrome and navigating to the
 |remote_desktop_link| site.
-Next, click :guilabel:`+ ADD TO CHROME` button in the upper right-hand corner.
+Next, click ``+ ADD TO CHROME`` button in the upper right-hand corner.
 
 .. |remote_desktop_link| raw:: html
 
