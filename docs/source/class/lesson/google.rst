@@ -4,7 +4,7 @@ Google
 This section describes how to use two Google products for getting
 help with the course.
 
-The first is |Google Hangouts link|_ which is a video chat program,
+The first is |Google Hangouts link| which is a video chat program,
 similar to Skype and FaceTime.
 The second is |Google Remote Desktop link| which allows another person
 to access your computer.
@@ -67,8 +67,7 @@ Using
 Once Hangouts is installed you may use it to start or join
 conversations via Google Plus.
 To start a conversation use Chrome to go to
-|google_plus_link|
-`Google Plus Hangouts webpage`_.
+|google_plus_link|.
 Next go to the bottom right and click "Start a video Hangout".
 This will open a new window setting up the conversation.
 You can then enter the email address of the people you wish to
