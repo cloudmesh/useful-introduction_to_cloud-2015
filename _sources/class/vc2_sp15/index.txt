@@ -11,9 +11,9 @@ Collaboration Tools
    :maxdepth: 1
    :glob:
   
-   ../google
-   ../shell-access
-   ../git
+   ../lesson/google
+   ../lesson/shell-access
+   ../lesson/git
 
 ..
    these sections don't belong under collab tools
