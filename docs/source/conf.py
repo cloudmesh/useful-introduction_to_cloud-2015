@@ -19,6 +19,7 @@ rtd = True
 basicstrap = False
 readable = False
 better_theme = False
+kr = False
 
 if bootstrap: 
     import sphinx_bootstrap_theme
@@ -30,7 +31,9 @@ elif readable:
     import sphinx_readable_theme
 elif better_theme:
     from better import better_theme_path
-    
+elif kr:
+    import sphinx_kr_theme
+        
 #try:
 #    theme = os.environ['SPHINX_THEME']
 #except:
@@ -81,6 +84,10 @@ if readable:
 if better_theme:
     html_theme_path = [better_theme_path]
     html_theme = 'better'
+
+if kr:
+    html_theme = 'kr'  # or 'kr_basic'
+    html_theme_path = [sphinx_kr_theme.get_html_theme_path()]
 
 extlinks = {
     'jira': ('https://jira.futuregrid.org/browse/%s','issue '),
