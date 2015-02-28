@@ -1,4 +1,4 @@
-IU Spring 2015: Tutorials - Virtual Clusters
+Spring 2015 - Big Data Open Source Overview (``BUEX-V 594``)
 ======================================================================
 
 .. toctree::

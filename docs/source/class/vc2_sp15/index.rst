@@ -4,19 +4,32 @@
 
 
 **********************************************************************
-|courseimg| IU Spring 2015: Section II Practical Use of Big Data Software on OpenStack
+|courseimg| Spring 2015 - Big Data Applications and Technologies (``INFO-I 400``, ``INFO-I 590``)
 **********************************************************************
 .. BigData Virtual Cluster (Spring 2015)
 
-   
+Contact
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ../contact
+
+>>>>>>> 667bbfa4b39d35b004e3286da21fae4631982c9f
 Collaboration Tools
 ======================================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
   
-   ../lesson/collaboration/index
+   ../lesson/google
+   ../lesson/shell-access
+   ../lesson/git
+
+..
+   these sections don't belong under collab tools
    ../lesson/deployment/index
    ../lesson/virtualization/tools
 

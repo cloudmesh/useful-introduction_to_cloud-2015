@@ -11,46 +11,18 @@ Assignments are to be worked on as part of the
 Upon completion of this lesson you will be able to use GitHub for
 submitting assignments for your course
 
-There are several prerequisites which are detailed below.
-In summary, they are:
+In order to use GitHub you will need (detailed below):
 
 * a GitHub account
 * forming a group with other students
-* a FutureSystems account
+* a FutureSystems account (see `Getting a FutureSystems account`_)
 * an SSH key
 
 .. _GitHub FutureSystems organization: https://github.com/futuresystems
+.. _Getting a FutureSystems account: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/details.html#quickstart
 
-Contact
+Getting a GitHub account
 ----------------------------------------------------------------------
-
-The assistant instructors for the course are:
-
-* `Badi' Abdul-Wahid <badonald@iu.edu>`_
-* `Hyungro Lee <lee212@iu.edu>`_
-
-For problems with FutureSystems please email
-`help@futuresystems.org <help@futuresystems.org>`_.
-Be aware that the assistant instructors are not recipients of these
-emails so please carbon copy them so that they are aware of your issue.
-
-.. note::
-   Please be aware that questions addressed to staff should be sent
-   between 9am and 4pm on business days.
-   Questions outside those hours may not be addressed until the
-   following business day.
-   Please keep this in mind and start working on your assignments early.
-
-For advanced conceptual support please contact
-
-* `Gregor von Laszewski <laszewski@gmail.com>`_
-* `Fugang Wang <kevinwangfg@gmail.com>`_
-
-Preliminary Setup
-----------------------------------------------------------------------
-
-Prerequisite: a GitHub account
-^^^^^^^^^^^^^^^^^^
 
 Go to `GitHub <https://github.com>`_ and sign up for an account.
 
@@ -59,8 +31,13 @@ This prerequisite is satisfied if you are able to
 * go to `https://github.com`
 * sign in
 
-Prerequisite: form a group and identify a project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+   Please use a GMail account to create your GitHub account.
+   You can find details on how to do so at
+   https://accounts.google.com/signup
+
+Form a Group and Identify a Project
+----------------------------------------------------------------------
 
 You need to form a group with other students and determine a project
 to work on together.
@@ -78,8 +55,8 @@ a report detailing:
 This prerequisite is satisfied if you and other students have formed
 a group and your instructor has approved the project.
 
-Prerequisite: a FutureSystems account
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Obtain a FutureSystems account
+----------------------------------------------------------------------
 
 As all your work will be completed on FutureSystems, you will need
 a FutureSystems account in order to access and user resources.
@@ -102,8 +79,8 @@ This prerequisite is satisfied if you are able to accomplish the following:
 * the ``status`` row is all green in the ``My FutureGrid HPC account status`` section
 
 
-Prerequisite: an SSH key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Have an SSH key
+----------------------------------------------------------------------
 
 You will need an SSH key to use both GitHub and FutureSystems.
 If you have followed the documentation for creating a FutureSystems
@@ -126,8 +103,48 @@ for details on how to do so.
 
 .. _documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
 
+
+Upload your SSH key to GitHub
+----------------------------------------------------------------------
+
+Now that you have an SSH key you need to upload it to GitHub in order
+to access your repository (once it is assigned).
+
+To add this key to GitHub, first copy your public ssh key.
+You can view the key by executing the following command::
+
+ $ cat ~/.ssh/id_rsa.pub
+
+You may see something like the following::
+
+  ssh-rsa AAA....... lovelace@gmail.com
+
+Copy this public key by selecting it and ``right-click -> Copy``.
+
+.. important::
+   This must be your **public** key.
+   Make sure you get the contents of ``id_rsa.pub`` and not
+   ``id_rsa``.
+
+Next go to your `GitHub account SSH keys`_ and click ``Add SSH key``
+on the top right.
+You will need to provide a title and the key.
+It is a good idea to use your name and course number in the title,
+for example, Ada could use ``Ada Lovelace BUEX-V 594``.
+Next paste the key into the ``Key`` field and click ``Add key``
+at the bottom.
+
+This section is successfully completed if your
+`GitHub account SSH keys`_ lists the key you provided with the
+title and a fingerprint such as::
+
+ d8:c3:dd:c8:2f:98:11:ca:[...]
+
+.. _GitHub account SSH keys: https://github.com/settings/ssh
+
+
 Getting access to repository
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------
 
 Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ (by 4pm on a business day)
 and include the following information:
@@ -187,6 +204,43 @@ This prerequisite is satisfied if are able to
 * find your repository (for example: ``class-bigdata-technology-spring-2015-ABCDE``)
 * you are in the ``students`` team
 
+Configuring your Git Identity (``git config``)
+----------------------------------------------------------------------
+
+You will need to configure git in order to use it properly.
+The following are required:
+
+* your name
+* your email address
+* your SSH keys (``id_rsa`` and ``id_rsa.pub``)
+
+.. note::
+   In order for git to function properly you will need to repeat the
+   configuration steps for each machine you use git on.
+
+Ada would configure your name and email like so::
+
+ $ git config --global user.name "Ada Lovelace"
+ $ git config --global user.email lovelace@gmail.com
+
+Additionally, you can configure an editor such as ``nano``,
+``emacs``, or ``vi``.
+Ada will use ``nano``::
+
+ $ git config --global core.editor nano
+
+Once you have done so you should have a ``~/.gitconfig`` file.
+You can check that this file exists and that it contains the correct
+information::
+
+ $ cat ~/.gitconfig
+ [core]
+     editor = nano
+ [user]
+     name = Ada Lovelace
+     email = lovelace@gmail.com
+
+
 Initializing the Repository with ``git clone``
 ----------------------------------------------------------------------
 
@@ -204,27 +258,6 @@ you can download the repository like so::
 
   git clone git@github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git
   cd class-bigdata-technology-spring-2015-ABCDE
-
-
-Prerequisite: Configuring your Git Identity (``git config``)
-----------------------------------------------------------------------
-
-Git needs to know your name and email address in order to track
-changes you make to a repository.
-This can be configured like so::
-
- $ git config --global user.name "Ada Lovelace"
- $ git config --global user.email lovelace@gmail.com
-
-Once you have done so you should have a ``~/.gitconfig`` file.
-You can check that this file exists and that it contains the correct
-information::
-
- $ cat ~/.gitconfig
- [user]
-     name = Ada Lovelace
-     email = lovelace@gmail.com
-
 
 Using the Repository
 ----------------------------------------------------------------------
