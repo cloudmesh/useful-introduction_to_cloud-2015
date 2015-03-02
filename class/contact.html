@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Provider &mdash; my Cloudmesh Learning documentation</title>
+  <title>&lt;no title&gt; &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -30,7 +30,10 @@
   
         <link rel="author" title="About these documents"
               href="../about.html"/>
-    <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html"/> 
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Applications and Technologies" href="vc2_sp15/index.html"/>
+        <link rel="next" title="Google" href="lesson/google.html"/>
+        <link rel="prev" title="Spring 2015 - Big Data Applications and Technologies" href="vc2_sp15/index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -75,12 +78,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../class/lessons.html">Lessons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/vc2_sp15/index.html"> Spring 2015 - Big Data Applications and Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/vc_sp15/index.html">Spring 2015 - Big Data Open Source Overview (<tt class="docutils literal"><span class="pre">BUEX-V</span> <span class="pre">594</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lessons.html">Lessons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vc2_sp15/index.html"> Spring 2015 - Big Data Applications and Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vc_sp15/index.html">Spring 2015 - Big Data Open Source Overview (<tt class="docutils literal"><span class="pre">BUEX-V</span> <span class="pre">594</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a><ul>
@@ -177,10 +180,14 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Provider</li>
+          <li><a href="index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="vc2_sp15/index.html"> Spring 2015 - Big Data Applications and Technologies</a> &raquo;</li>
+      
+    <li>&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/proposed/_vm_sh.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/class/contact.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -188,61 +195,42 @@
 </div>
           <div role="main">
             
-  <div class="section" id="provider">
-<h1>Provider<a class="headerlink" href="#provider" title="Permalink to this headline">¶</a></h1>
-<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_sh.ipynb">Notebook</a></p>
-</button><p><strong>IMPORTANT:</strong> THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">get the cloud credentials form a yaml file</p>
-</div>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">use the information to start a VM</p>
-</div>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first admonition-title">Todo</p>
-<p class="last">do this section later as we need flavors and images</p>
-</div>
-<p>Sometimes it may be useful to have access to the nova shell command from
-within python. However, at times you may not actually want to use it but
-rather print just jte arguments while simulating a call to the shell
-command. To support these two functions, we are offering a simple
-provider that returns either the real sh function, or a function that
-just prints its arguments.</p>
-<p>We start our program first with importing cloudmesh and the provider</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh.sh.openstack</span> <span class="kn">import</span> <span class="n">nova_provider</span>
-</pre></div>
-</div>
-<p>Next we decide to load one of the providors. The values are &#8220;sh&#8221; and
-&#8220;simulator&#8221;. We chose the simulator. we name the function to boot a vm
-nova_boot.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span> <span class="o">=</span> <span class="n">nova_provider</span><span class="p">(</span><span class="s">&quot;simulator&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Now we can boot a vm with the command</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre>(&#39;a&#39;, &#39;b&#39;) {&#39;h&#39;: &#39;k&#39;}
-</pre></div>
-</div>
-<p>To use a real submission we can switch the vm_boot function with the
-provider</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span> <span class="o">=</span> <span class="n">nova_provider</span><span class="p">(</span><span class="s">&quot;sh&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span><span class="p">(</span><span class="n">TODO</span><span class="p">)</span>
-</pre></div>
-</div>
+  <p>The instructors for the course are:</p>
+<ul class="simple">
+<li><a class="reference external" href="mailto:badi&#46;abdulwahid&#37;&#52;&#48;gmail&#46;com">Badi' Abdul-Wahid</a></li>
+<li><a class="reference external" href="mailto:lee212&#37;&#52;&#48;iu&#46;edu">Hyungro Lee</a></li>
+<li><a class="reference external" href="mailto:laszewski&#37;&#52;&#48;gmail&#46;com">Gregor von Laszewski</a> (advanced concepts)</li>
+<li><a class="reference external" href="mailto:kevinwangfg&#37;&#52;&#48;gmail&#46;com">Fugang Wang</a> (advanced concepts)</li>
+</ul>
+<p>For problems with FutureSystems please email
+<a class="reference external" href="mailto:help&#37;&#52;&#48;futuresystems&#46;org">help<span>&#64;</span>futuresystems<span>&#46;</span>org</a>.
+Be aware that the instructors are not recipients of emails
+sent to <a class="reference external" href="mailto:help&#37;&#52;&#48;futuresystems&#46;org">help<span>&#64;</span>futuresystems<span>&#46;</span>org</a>
+so make sure to carbon copy then otherwise they will not be aware of
+your issue.
+Additionally, make sure that the instructors are carbon copied on your
+replies.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please be aware that questions addressed to staff should be sent
+between 9am and 4pm on business days.
+Questions outside those hours may not be addressed until the
+following business day.
+Please keep this in mind and start working on your assignments early.</p>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lesson/google.html" class="btn btn-neutral float-right" title="Google"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="vc2_sp15/index.html" class="btn btn-neutral" title="Spring 2015 - Big Data Applications and Technologies"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

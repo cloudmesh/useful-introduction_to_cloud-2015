@@ -50,6 +50,7 @@ that will allow you to communicate with an instructor remotely.
 .. note::
    We have discovered a possible problem when using Hangouts on
    Mac OS X Yosemite.
+.. see issue #7
 
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -111,7 +112,7 @@ Setup: Installing
 
 To install Remote Desktop opening Google Chrome and navigating to the
 |remote_desktop_link| site.
-Next, click :guilabel:`+ ADD TO CHROME` button in the upper right-hand corner.
+Next, click ``+ ADD TO CHROME`` button in the upper right-hand corner.
 
 .. |remote_desktop_link| raw:: html
 
