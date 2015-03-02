@@ -32,7 +32,15 @@ First log into ``india.futuresystems.org``.
 You will need to have the public key of the person you are giving access to.
 Here is an example public key::
 
- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDsalgoFkAbLCkFVoZE5PLdlZB9fFGmqLX7mnhu6HRCdBGVdA5Z+683p5nD8rq8cOq5ZrHPxsoN1wfsN9yNKVdy2uYZnVfe4oROwYraHfYKZz/SpxsR+1NyzjBw/QOOUJoNLJ0v1X/9WwWWqopeTOsUOqDLQVV8ueyyy7yfWyBvMxNXbGGNzjZHS3II5qB8iY3A5dKLa+bzNM6Aq/7Bj3Ut8ZUn7AOmfohjfRaAwyGEH5mIPY/AlHZ9JRB7EetKYtA3OVobhaHdQlFiiS5zYx41sHeNaaMlH13FbvdLb8C2YhHhWpF+7dKF/Ickr1yFMeA3yvDZ154LRE+jFSteeQw7 example key
+ ssh-rsa
+ AAAAB3NzaC1yc2EAAAADAQABAAABAQDKTtes2ngM+L0og8zKugcxXwYWMkzUiPofW1qyZ
+ tSsO73a6ZEJR0opRRti24ooPP/+h7Scnbt8ATQP5Iz++FIUCyf5v9wo7Lvglq39FuGqaul
+ Iq5PI1Y5jr0zFLzfmjGCr+M5Cz0C9wO0r6C0vsabHqC28xltV+o683EqR1Yz+PpPcS4GNx
+ PCEXpTP1ZiF5/sNNrBMemO9rk22JybEoDSTWnbQizzptMx0BOgmhoiIQwwS7r7g07PBjdU
+ oBUK7XuccglMYF4HjE/1jR0MKosZBRfb29decjPef+1ndstMOrVTf89BHcmv3TVedfPlGe
+ o9CCQJfpaEC22B/2ZY0XGCt
+ user@example.com
+
 
 You need to modify the ``~/.ssh/authorized_keys`` file and add the public key::
 
