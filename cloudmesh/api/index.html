@@ -32,7 +32,7 @@
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Cloudmesh" href="../index.html"/>
-        <link rel="next" title="Cloudmesh API Initialization" href="_hello.html"/>
+        <link rel="next" title="Cloudmesh Shell" href="../shell/index.html"/>
         <link rel="prev" title="Install IPython Server" href="../cm/ipython.html"/> 
 
   
@@ -133,8 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
@@ -196,57 +195,7 @@
   <div class="section" id="cloudmesh-api">
 <h1>Cloudmesh API<a class="headerlink" href="#cloudmesh-api" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="_hello.html">Cloudmesh API Initialization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_hello.html#version">Version</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="_uuid.html">Defining Names</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_uuid.html#uuids">UUIDs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_uuid.html#machine-dependent-uuid">Machine dependent uuid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_uuid.html#random-uuid">Random Uuid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_uuid.html#cloudmesh-get-unique-name">Cloudmesh get_unique_name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_uuid.html#generating-vm-names">Generating VM names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_uuid.html#getting-the-next-vm-name">Getting the next vm name</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="_load.html">Load Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_load.html#api-for-cloudmesh-yaml">API for cloudmesh.yaml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_load.html#api-for-cloudmesh-server-yaml">API for cloudmesh_server.yaml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_load.html#api-for-cloudmesh-launcher-yaml">API for cloudmesh_launcher.yaml</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="_pbs.html">Batch Queues</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_pbs.html#qstat">QStat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_pbs.html#qinfo">QInfo</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="_vm_api.html">Cloudmesh API for VM Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#initialization">Initialization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#activating-clouds">Activating Clouds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="_vm_api.html#get-a-username">Get a username</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_vm_api.html#activate-the-user-account">Activate the user account</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_vm_api.html#register-a-cloud">Register a cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_vm_api.html#need-a-help-for-the-function">Need a help for the function?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#get-flavors-or-images">Get Flavors or Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="_vm_api.html#select-a-flavor">Select a flavor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_vm_api.html#select-an-image">Select an image</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#quick-start-a-vm">Quick Start a VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#delete-vm">Delete VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#start-a-vm">Start a VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#vitual-machine-name">Vitual Machine Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#assign-a-public-ip-address-to-the-vm">Assign a public IP address to the VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#ssh-to-the-vm">SSH to the VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_vm_api.html#refreshing-vm-status">Refreshing VM status</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="_mesh.html">Cloudmesh Mesh</a></li>
+<ul class="simple">
 </ul>
 </div>
 </div>
@@ -257,7 +206,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_hello.html" class="btn btn-neutral float-right" title="Cloudmesh API Initialization"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../shell/index.html" class="btn btn-neutral float-right" title="Cloudmesh Shell"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../cm/ipython.html" class="btn btn-neutral" title="Install IPython Server"><span class="fa fa-arrow-circle-left"></span> Previous</a>

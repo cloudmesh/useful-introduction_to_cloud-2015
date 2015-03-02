@@ -20,14 +20,15 @@ Using SSH Keys
 To access the various FutureSystem resources, you need to provide a public
 ssh key to FutureSystem.  We explain how to generate a ssh
 key, upload it to the FutureSystem portal and log onto the resources. This
-manual covers both UNIX and Windows Users.
+manual covers UNIX, Mac OS X, and Windows Users.
 
 .. _s-using-ssh-windows:
 
 Using SSH from Windows
 ----------------------------------------------------------------------
 
-.. hint:: |info-image| For Linux users, please skip to the section :ref:`s-ssh-generate` 
+.. hint:: |info-image| For Linux users, please skip to the section :ref:`s-ssh-generate`
+.. hint:: |info-image| For Mac users, please skip to the section :ref:`s-ssh-osx`
 
 
 Windows users need to have some special software to be able to use the
@@ -80,6 +81,19 @@ following simple steps.
        executing the command.
      - |image23|
      
+
+
+.. _s-ssh-osx:
+
+Using SSH on Mac OS X
+----------------------------------------------------------------------
+
+Mac OS X comes with an ssh client.
+In order to use it you need to open the ``Terminal.app`` application.
+Go to ``Finder``, then click ``Go`` in the menu bar at the top of the
+screen.
+Now click ``Utilities`` and then open the ``Terminal`` application.
+
 
 .. _s-ssh-generate:
 

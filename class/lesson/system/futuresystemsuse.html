@@ -133,8 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../ipython/_ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a><ul>
@@ -197,13 +196,128 @@
             
   <div class="section" id="use-of-futuresystems-under-preparation">
 <h1>Use of FutureSystems (Under Preparation)<a class="headerlink" href="#use-of-futuresystems-under-preparation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="getting-an-account-under-preparation">
-<h2>Getting an Account (Under preparation)<a class="headerlink" href="#getting-an-account-under-preparation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-an-account">
+<h2>Getting an Account<a class="headerlink" href="#getting-an-account" title="Permalink to this headline">¶</a></h2>
+<p>In order to use FutureSystems you will need to get an account.</p>
+<ol class="arabic simple">
+<li>Navigate to <a class="reference external" href="https://portal.futuresystems.org/">FutureSystems.org</a>.</li>
+<li>Click on <tt class="docutils literal"><span class="pre">Register</span></tt> at the top near the search bar</li>
+<li>Fill out the information. Asterisk-denoted (<tt class="docutils literal"><span class="pre">*</span></tt>) fields are required.</li>
+<li>Please be patient after clicking the <a href="#id1"><span class="problematic" id="id2">``</span></a>Create new account` button.
+It may take one or two business day for the account to be approved.</li>
+<li>Once your account is approved you will receive an email.</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">At this point you will not be able to use any
+FutureSystems resources.  You will need to join a project and
+enable remote login to do so.  Only when the status is all green in
+the <tt class="docutils literal"><span class="pre">My</span> <span class="pre">FutureGrid</span> <span class="pre">HPC</span> <span class="pre">account</span> <span class="pre">status</span></tt> of your <a class="reference external" href="https://portal.futuresystems.org/my/fg-account">portal account</a>
+information will you have access to resources.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please see <a class="reference internal" href="../../../accounts/accounts.html"><em>Creating FutureSystems Accounts and Projects</em></a> for additional details.</p>
+</div>
+</div>
+<div class="section" id="join-a-project">
+<h2>Join a Project<a class="headerlink" href="#join-a-project" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have a FutureSystems account you will need to join a
+project.</p>
+<ol class="arabic simple">
+<li>Navigate to <a class="reference external" href="https://portal.futuresystems.org/">FutureSystems.org</a> and log into your account.</li>
+<li>Click on the appropriate project name</li>
+<li>Click on the <tt class="docutils literal"><span class="pre">Join</span> <span class="pre">the</span> <span class="pre">project</span></tt> link on the right hand side.</li>
+<li>Upon approval you will recieve an email.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please see <a class="reference internal" href="../../../accounts/details.html#s-account-join-project"><em>Join a Project</em></a> for further details.</p>
+</div>
 </div>
 <div class="section" id="remote-login-under-preparation">
 <h2>Remote Login (Under preparation)<a class="headerlink" href="#remote-login-under-preparation" title="Permalink to this headline">¶</a></h2>
+<p>In order to login into your account on FutureSystems you will need:</p>
+<ul class="simple">
+<li>an account on FutureSystems (see above)</li>
+<li>an SSH client</li>
+</ul>
+<p>Login via <tt class="docutils literal"><span class="pre">india&#64;futuresystems.org</span></tt>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please see <a class="reference internal" href="../../../accounts/ssh.html"><em>Using SSH Keys</em></a> for instructions on
+configuring an SSH client.</p>
+</div>
 <div class="section" id="managing-keys-under-preparation">
 <h3>Managing keys (Under Preparation)<a class="headerlink" href="#managing-keys-under-preparation" title="Permalink to this headline">¶</a></h3>
+<p>Linux and OS X store the ssh identity files under <tt class="docutils literal"><span class="pre">~/.ssh</span></tt>.
+An invocation of <tt class="docutils literal"><span class="pre">ssh-keygen</span></tt> will by default choose to write
+<tt class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></tt>.
+This generated key consists of a <strong>public</strong> key and a <strong>private</strong> key.
+By providing your public key to FutureSystems you will be able to login
+to <tt class="docutils literal"><span class="pre">india&#64;futuresystems.org</span></tt> as described above.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Never share your private key with an untrusted party.</p>
+</div>
+<p>There are a few usefull operations on ssh keys:</p>
+<div class="section" id="change-the-password">
+<h4>Change the password<a class="headerlink" href="#change-the-password" title="Permalink to this headline">¶</a></h4>
+<p>You can change the password for the key by using the  the <tt class="docutils literal"><span class="pre">-p</span></tt> flag.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -p
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-comment">
+<h4>Change the comment<a class="headerlink" href="#change-the-comment" title="Permalink to this headline">¶</a></h4>
+<p>You can change the comment of an key by modifying the public key file.
+For example, Ada Lovelace wishes to replace an unimformative comment
+with her email address.
+She would execute the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cat ~/.ssh/id_rsa.pub
+ssh-rsa  AAAAB3N.... this is not informative
+$ nano ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa  AAAAB3N.... lovelace@gmail.com
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-fingerprint">
+<h4>Show fingerprint<a class="headerlink" href="#show-fingerprint" title="Permalink to this headline">¶</a></h4>
+<p>The fingerprint of a key can be used to authenticate the validity of
+the key.
+For example, if Ada were to share his public key with Albert Einstein,
+she would transmit the key.
+Albert could then compute the fingerprint and ensure that it matches.
+To do so, Albert would save the key to <tt class="docutils literal"><span class="pre">~/.ssh/ada.pub</span></tt> and execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -l -f ~/.ssh/ada.pub
+2048 6c:52:54:20:b9:85:04:d4:30:46:48:c7:c4:bc:fe:c7  lovelace@gmail.com (RSA)
+</pre></div>
+</div>
+<p>FutureSystems, for instance, uses fingerprints to identify keys once they have been uploaded.
+You may see this fingerprint on the <a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">FutureSystems portal</a>.</p>
+</div>
+<div class="section" id="delete-a-known-host">
+<h4>Delete a known host<a class="headerlink" href="#delete-a-known-host" title="Permalink to this headline">¶</a></h4>
+<p>Whenever you log into a new machine via SSH, the host key of the
+destination machine is added to <tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt>.
+The next time you try to log in this key will be checked.
+If it has changed you will need to remove the entry before attempting
+to log back in.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The host key may change if the machine undergoes a major upgrade or
+change.
+Another reason may be that a third party is performing a
+<a class="reference external" href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle attack</a>.</p>
+</div>
+<p>To remove a key for <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> from <tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -R india.futuresystems.org
+</pre></div>
+</div>
+<p>Windows (Under preparation)</p>
+</div>
 </div>
 <div class="section" id="putty-under-preparation">
 <h3>Putty (Under Preparation)<a class="headerlink" href="#putty-under-preparation" title="Permalink to this headline">¶</a></h3>
