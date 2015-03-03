@@ -62,6 +62,10 @@ If you have other hosts to configure, simply add a new block in the
 configuation file. If you would like know more about other keywords, please see
 ``ssh_config`` man page.
 
+.. note:: If you don't have a file like ``~/.ssh/id_rsa`` in your home
+          directory?  Please learn about creating a new ssh key 
+          `here <../system/futuresystemsuse.html#ssh>`_
+
 SSH Tunneling (Port Forwarding)
 ----------------------------------------------------------------------
 
@@ -70,7 +74,8 @@ and a remote machine, SSH tunneling rather than VPN is simple and useful to
 protect against sniffing and eavesdropping of network traffic.
 
 .. figure:: /images/lesson_ssh_tunnel.png
-   Exmple of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.
+
+   Example of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.
 
 You can transfer inbound traffic to outbound ports using SSH tunnel. SSH tunnel
 listens on a particular port and redirects incoming packets to the destination.
