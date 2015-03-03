@@ -23,8 +23,8 @@ Prerequisite
 
 In order to conduct this lesson you should have knowledge of basics of SSH.
 
-If you missed the lesson of basic SSH, go to `here
-../system/futuresystemsuse.html#ssh`_
+If you missed the lesson of basic SSH, go to 
+`here <../system/futuresystemsuse.html#ssh>`_
 
 SSH Configuration File
 ----------------------------------------------------------------------
@@ -48,7 +48,7 @@ configuration like this:
   IdentityFile ~/.ssh/id_rsa_india
 
 Once you have this configuration, you can simply run ``ssh india`` to get
-access ``''india.futuresystems.org``.  Let's see what these keywords are in the
+access ``india.futuresystems.org``.  Let's see what these keywords are in the
 configuration.
 
 * Host: is a label for your host. SSH recognizes your settings with this label.
@@ -70,6 +70,7 @@ and a remote machine, SSH tunneling rather than VPN is simple and useful to
 protect against sniffing and eavesdropping of network traffic.
 
 .. figure:: /images/lesson_ssh_tunnel.png
+   Exmple of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.
 
 You can transfer inbound traffic to outbound ports using SSH tunnel. SSH tunnel
 listens on a particular port and redirects incoming packets to the destination.
