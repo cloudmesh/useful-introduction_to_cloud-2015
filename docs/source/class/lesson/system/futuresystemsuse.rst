@@ -85,6 +85,8 @@ Managing keys
 This section describes how to generate secure keys for using
 OpenStack.
 You will need to log into ``india`` to follow.
+You may also find additional details in
+:doc:`../../../iaas/openstack`.
 
 .. sidebar:: Page Contents
 
