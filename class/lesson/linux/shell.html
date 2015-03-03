@@ -218,18 +218,21 @@
 <li><a class="reference internal" href="#nelle-s-pipeline-checking-files" id="id11">Nelle&#8217;s Pipeline: Checking Files</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#loops" id="id12">Loops</a></li>
-<li><a class="reference internal" href="#finding-things" id="id13">Finding Things</a></li>
-<li><a class="reference internal" href="#cheatsheet" id="id14">Cheatsheet</a></li>
+<li><a class="reference internal" href="#loops" id="id12">Loops</a><ul>
+<li><a class="reference internal" href="#nelle-s-pipeline-processing-files" id="id13">Nelle&#8217;s Pipeline: Processing Files</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exercises" id="id15">Exercises</a><ul>
-<li><a class="reference internal" href="#exercise-i" id="id16">Exercise I</a></li>
-<li><a class="reference internal" href="#exercise-ii" id="id17">Exercise II</a></li>
+<li><a class="reference internal" href="#finding-things" id="id14">Finding Things</a></li>
+<li><a class="reference internal" href="#cheatsheet" id="id15">Cheatsheet</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#further-reading" id="id18">Further Reading</a></li>
-<li><a class="reference internal" href="#next-step" id="id19">Next Step</a></li>
+<li><a class="reference internal" href="#exercises" id="id16">Exercises</a><ul>
+<li><a class="reference internal" href="#exercise-i" id="id17">Exercise I</a></li>
+<li><a class="reference internal" href="#exercise-ii" id="id18">Exercise II</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#further-reading" id="id19">Further Reading</a></li>
+<li><a class="reference internal" href="#next-step" id="id20">Next Step</a></li>
 </ul>
 </div>
 </div>
@@ -1480,12 +1483,877 @@ their names)?</p>
 </div>
 <div class="section" id="loops">
 <h3><a class="toc-backref" href="#id12">Loops</a><a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Learning Objectives</dt>
+<dd><ul class="first last simple">
+<li>Write a loop that applies one or more commands separately to each
+file in a set of files.</li>
+<li>Trace the values taken on by a loop variable during execution of
+the loop.</li>
+<li>Explain the difference between a variable&#8217;s name and its value.</li>
+<li>Explain why spaces and some punctuation characters shouldn&#8217;t be
+used in files&#8217; names.</li>
+<li>Demonstrate how to see what commands have recently been executed.</li>
+<li>Re-run recently executed commands without retyping them.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<p>Wildcards and tab completion are two ways to reduce typing (and typing
+mistakes). Another is to tell the shell to do something over and over
+again. Suppose we have several hundred genome data files named
+<tt class="docutils literal"><span class="pre">basilisk.dat</span></tt>, <tt class="docutils literal"><span class="pre">unicorn.dat</span></tt>, and so on. In this example, we&#8217;ll
+use the <tt class="docutils literal"><span class="pre">creatures</span></tt> directory which only has two example files, but
+the principles can be applied to many many more files at once. We
+would like to modify these files, but also save a version of the
+original files and rename them as <tt class="docutils literal"><span class="pre">original-basilisk.dat</span></tt> and
+<tt class="docutils literal"><span class="pre">original-unicorn.dat</span></tt>.  We can&#8217;t use:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mv *.dat original-*.dat
+</pre></div>
+</div>
+<p>because that would expand to:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mv basilisk.dat unicorn.dat original-*.dat
+</pre></div>
+</div>
+<p>This wouldn&#8217;t back up our files, instead we get an error:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv: target `original-*.dat&#39; is not a directory
+</pre></div>
+</div>
+<p>This a problem arises when <tt class="docutils literal"><span class="pre">mv</span></tt> receives more than two inputs. When
+this happens, it expects the last input to be a directory where it can
+move all the files it was passed to. Since there is no directory named
+<tt class="docutils literal"><span class="pre">original-*.dat</span></tt> in the <tt class="docutils literal"><span class="pre">creatures</span></tt> directory we get an error.</p>
+<p>Instead, we can use a <strong>loop</strong> to do some operation once for each
+thing in a list. Here&#8217;s a simple example that displays the first three
+lines of each file in turn:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for filename in basilisk.dat unicorn.dat
+&gt; do
+&gt;    head -3 $filename
+&gt; done
+COMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+</pre></div>
+</div>
+<p>When the shell sees the keyword <tt class="docutils literal"><span class="pre">for</span></tt>, it knows it is supposed to
+repeat a command (or group of commands) once for each thing in a list.
+In this case, the list is the two filenames. Each time through the
+loop, the name of the thing currently being operated on is assigned to
+the <strong>variable</strong> called <tt class="docutils literal"><span class="pre">filename</span></tt>. Inside the loop, we get the
+variable&#8217;s value by putting <tt class="docutils literal"><span class="pre">$</span></tt> in front of it: <tt class="docutils literal"><span class="pre">$filename</span></tt> is
+<tt class="docutils literal"><span class="pre">basilisk.dat</span></tt> the first time through the loop, <tt class="docutils literal"><span class="pre">unicorn.dat</span></tt> the
+second, and so on.</p>
+<p>By using the dollar sign we are telling the shell interpreter to treat
+<tt class="docutils literal"><span class="pre">filename</span></tt> as a variable name and substitute its value on its place,
+but not as some text or external command. When using variables it is
+also possible to put the names into curly braces to clearly delimit
+the variable name: <tt class="docutils literal"><span class="pre">$filename</span></tt> is equivalent to <tt class="docutils literal"><span class="pre">${filename}</span></tt>, but
+is different from <tt class="docutils literal"><span class="pre">${file}name</span></tt>. You may find this notation in other
+people&#8217;s programs.</p>
+<p>Finally, the command that&#8217;s actually being run is our old friend
+<tt class="docutils literal"><span class="pre">head</span></tt>, so this loop prints out the first three lines of each data
+file in turn.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Follow the Prompt</dt>
+<dd>The shell prompt changes from <tt class="docutils literal"><span class="pre">$</span></tt> to <tt class="docutils literal"><span class="pre">&gt;</span></tt> and back again as we
+were typing in our loop. The second prompt, <tt class="docutils literal"><span class="pre">&gt;</span></tt>, is different to
+remind us that we haven&#8217;t finished typing a complete command yet.</dd>
+</dl>
+</div>
+<p>We have called the variable in this loop <tt class="docutils literal"><span class="pre">filename</span></tt> in order to make
+its purpose clearer to human readers. The shell itself doesn&#8217;t care
+what the variable is called; if we wrote this loop as:</p>
+<div class="highlight-python"><div class="highlight"><pre>for x in basilisk.dat unicorn.dat
+do
+    head -3 $x
+done
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre>for temperature in basilisk.dat unicorn.dat
+do
+    head -3 $temperature
+done
+</pre></div>
+</div>
+<p>it would work exactly the same way. <em>Don&#8217;t do this.</em> Programs are only
+useful if people can understand them, so meaningless names (like
+<tt class="docutils literal"><span class="pre">x</span></tt>) or misleading names (like <tt class="docutils literal"><span class="pre">temperature</span></tt>) increase the odds
+that the program won&#8217;t do what its readers think it does.</p>
+<p>Here&#8217;s a slightly more complicated loop:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    echo $filename
+    head -100 $filename | tail -20
+done
+</pre></div>
+</div>
+<p>The shell starts by expanding <tt class="docutils literal"><span class="pre">*.dat</span></tt> to create the list of files it
+will process. The <strong>loop body</strong> then executes two commands for each of
+those files. The first, <tt class="docutils literal"><span class="pre">echo</span></tt>, just prints its command-line
+parameters to standard output. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ echo hello there
+</pre></div>
+</div>
+<p>prints:</p>
+<div class="highlight-python"><div class="highlight"><pre>hello there
+</pre></div>
+</div>
+<p>In this case, since the shell expands <tt class="docutils literal"><span class="pre">$filename</span></tt> to be the name of
+a file, <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$filename</span></tt> just prints the name of the file. Note that
+we can&#8217;t write this as:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    $filename
+    head -100 $filename | tail -20
+done
+</pre></div>
+</div>
+<p>because then the first time through the loop, when <tt class="docutils literal"><span class="pre">$filename</span></tt>
+expanded to <tt class="docutils literal"><span class="pre">basilisk.dat</span></tt>, the shell would try to run
+<tt class="docutils literal"><span class="pre">basilisk.dat</span></tt> as a program. Finally, the <tt class="docutils literal"><span class="pre">head</span></tt> and <tt class="docutils literal"><span class="pre">tail</span></tt>
+combination selects lines 81-100 from whatever file is being
+processed.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Spaces in Names</dt>
+<dd><p class="first">Filename expansion in loops is another reason you should not use
+spaces in filenames. Suppose our data files are named:</p>
+<div class="highlight-python"><div class="highlight"><pre>basilisk.dat
+red dragon.dat
+unicorn.dat
+</pre></div>
+</div>
+<p>If we try to process them using:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    head -100 $filename | tail -20
+done
+</pre></div>
+</div>
+<p>then the shell will expand <tt class="docutils literal"><span class="pre">*.dat</span></tt> to create:</p>
+<div class="highlight-python"><div class="highlight"><pre>basilisk.dat red dragon.dat unicorn.dat
+</pre></div>
+</div>
+<p>With older versions of Bash, or most other shells, <tt class="docutils literal"><span class="pre">filename</span></tt>
+will then be assigned the following values in turn:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">basilisk</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">red</span>
+<span class="n">dragon</span><span class="o">.</span><span class="n">dat</span>
+<span class="n">unicorn</span><span class="o">.</span><span class="n">dat</span>
+</pre></div>
+</div>
+<p>That&#8217;s a problem: <tt class="docutils literal"><span class="pre">head</span></tt> can&#8217;t read files called <tt class="docutils literal"><span class="pre">red</span></tt> and
+<tt class="docutils literal"><span class="pre">dragon.dat</span></tt> because they don&#8217;t exist, and won&#8217;t be asked to
+read the file <tt class="docutils literal"><span class="pre">red</span> <span class="pre">dragon.dat</span></tt>.</p>
+<p>We can make our script a little bit more robust by <strong>quoting</strong> our
+use of the variable:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    head -100 &quot;$filename&quot; | tail -20
+done
+</pre></div>
+</div>
+<p class="last">but it&#8217;s simpler just to avoid using spaces (or other special
+characters) in filenames.</p>
+</dd>
+</dl>
+</div>
+<p>Going back to our original file renaming problem, we can solve it
+using this loop:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    mv $filename original-$filename
+done
+</pre></div>
+</div>
+<p>This loop runs the <tt class="docutils literal"><span class="pre">mv</span></tt> command once for each filename. The first
+time, when <tt class="docutils literal"><span class="pre">$filename</span></tt> expands to <tt class="docutils literal"><span class="pre">basilisk.dat</span></tt>, the shell
+executes:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv basilisk.dat original-basilisk.dat
+</pre></div>
+</div>
+<p>The second time, the command is:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv unicorn.dat original-unicorn.dat
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Measure Twice, Run Once</dt>
+<dd><p class="first">A loop is a way to do many things at once &#8212; or to make many
+mistakes at once if it does the wrong thing. One way to check what
+a loop <em>would</em> do is to echo the commands it would run instead of
+actually running them. For example, we could write our file
+renaming loop like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
+do
+    echo mv $filename original-$filename
+done
+</pre></div>
+</div>
+<p>Instead of running <tt class="docutils literal"><span class="pre">mv</span></tt>, this loop runs <tt class="docutils literal"><span class="pre">echo</span></tt>, which prints
+out:</p>
+<div class="highlight-python"><div class="highlight"><pre>mv basilisk.dat original-basilisk.dat
+mv unicorn.dat original-unicorn.dat
+</pre></div>
+</div>
+<p class="last"><em>without</em> actually running those commands. We can then use
+up-arrow to redisplay the loop, back-arrow to get to the word
+<tt class="docutils literal"><span class="pre">echo</span></tt>, delete it, and then press &#8220;enter&#8221; to run the loop with
+the actual <tt class="docutils literal"><span class="pre">mv</span></tt> commands. This isn&#8217;t foolproof, but it&#8217;s a handy
+way to see what&#8217;s going to happen when you&#8217;re still learning how
+loops work.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="nelle-s-pipeline-processing-files">
+<h4><a class="toc-backref" href="#id13">Nelle&#8217;s Pipeline: Processing Files</a><a class="headerlink" href="#nelle-s-pipeline-processing-files" title="Permalink to this headline">¶</a></h4>
+<p>Nelle is now ready to process her data files. Since she&#8217;s still
+learning how to use the shell, she decides to build up the required
+commands in stages. Her first step is to make sure that she can select
+the right files &#8212; remember, these are ones whose names end in &#8216;A&#8217; or
+&#8216;B&#8217;, rather than &#8216;Z&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd north-pacific-gyre/2012-07-03
+$ for datafile in *[AB].txt
+&gt; do
+&gt;     echo $datafile
+&gt; done
+NENE01729A.txt
+NENE01729B.txt
+NENE01736A.txt
+...
+NENE02043A.txt
+NENE02043B.txt
+</pre></div>
+</div>
+<p>Her next step is to decide what to call the files that the
+<tt class="docutils literal"><span class="pre">goostats</span></tt> analysis program will create. Prefixing each input file&#8217;s
+name with &#8220;stats&#8221; seems simple, so she modifies her loop to do that:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt
+&gt; do
+&gt;     echo $datafile stats-$datafile
+&gt; done
+NENE01729A.txt stats-NENE01729A.txt
+NENE01729B.txt stats-NENE01729B.txt
+NENE01736A.txt stats-NENE01736A.txt
+...
+NENE02043A.txt stats-NENE02043A.txt
+NENE02043B.txt stats-NENE02043B.txt
+</pre></div>
+</div>
+<p>She hasn&#8217;t actually run <tt class="docutils literal"><span class="pre">goostats</span></tt> yet, but now she&#8217;s sure she can
+select the right files and generate the right output filenames.</p>
+<p>Typing in commands over and over again is becoming tedious, though,
+and Nelle is worried about making mistakes, so instead of re-entering
+her loop, she presses the up arrow. In response, the shell redisplays
+the whole loop on one line (using semi-colons to separate the pieces):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt; do echo $datafile stats-$datafile; done
+</pre></div>
+</div>
+<p>Using the left arrow key, Nelle backs up and changes the command
+<tt class="docutils literal"><span class="pre">echo</span></tt> to <tt class="docutils literal"><span class="pre">goostats</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt; do bash goostats $datafile stats-$datafile; done
+</pre></div>
+</div>
+<p>When she presses enter, the shell runs the modified command. However,
+nothing appears to happen &#8212; there is no output. After a moment,
+Nelle realizes that since her script doesn&#8217;t print anything to the
+screen any longer, she has no idea whether it is running, much less
+how quickly.  She kills the job by typing Control-C, uses up-arrow to
+repeat the command, and edits it to read:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ for datafile in *[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Beginning and End</dt>
+<dd>We can move to the beginning of a line in the shell by typing
+<tt class="docutils literal"><span class="pre">^A</span></tt> (which means Control-A) and to the end using <tt class="docutils literal"><span class="pre">^E</span></tt>.</dd>
+</dl>
+</div>
+<p>When she runs her program now, it produces one line of output every
+five seconds or so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">NENE01729A</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">NENE01729B</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">NENE01736A</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>1518 times 5 seconds, divided by 60, tells her that her script will
+take about two hours to run. As a final check, she opens another
+terminal window, goes into <tt class="docutils literal"><span class="pre">north-pacific-gyre/2012-07-03</span></tt>, and uses
+<tt class="docutils literal"><span class="pre">cat</span> <span class="pre">stats-NENE01729B.txt</span></tt> to examine one of the output files. It
+looks good, so she decides to get some coffee and catch up on her
+reading.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Those Who Know History Can Choose to Repeat It</dt>
+<dd><p class="first">Another way to repeat previous work is to use the <tt class="docutils literal"><span class="pre">history</span></tt>
+command to get a list of the last few hundred commands that have
+been executed, and then to use <tt class="docutils literal"><span class="pre">!123</span></tt> (where &#8220;123&#8221; is replaced
+by the command number) to repeat one of those commands. For
+example, if Nelle types this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ history | tail -5
+  456  ls -l NENE0*.txt
+  457  rm stats-NENE01729B.txt.txt
+  458  bash goostats NENE01729B.txt stats-NENE01729B.txt
+  459  ls -l NENE0*.txt
+  460  history
+</pre></div>
+</div>
+<p class="last">then she can re-run <tt class="docutils literal"><span class="pre">goostats</span></tt> on <tt class="docutils literal"><span class="pre">NENE01729B.txt</span></tt> simply by
+typing <tt class="docutils literal"><span class="pre">!458</span></tt>.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Variables in loops</dt>
+<dd><p class="first">Suppose that <tt class="docutils literal"><span class="pre">ls</span></tt> initially displays:</p>
+<div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat
+</pre></div>
+</div>
+<p>What is the output of:</p>
+<div class="highlight-python"><div class="highlight"><pre>for datafile in *.dat
+do
+    ls *.dat
+done
+</pre></div>
+</div>
+<p>Now, what is the output of:</p>
+<div class="highlight-python"><div class="highlight"><pre>for datafile in *.dat
+do
+  ls $datafile
+done
+</pre></div>
+</div>
+<p class="last">Why do these two loops give you different outputs?</p>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Saving to a file in a loop - part one</dt>
+<dd><p class="first">In the same directory, what is the effect of this loop?</p>
+<div class="highlight-python"><div class="highlight"><pre>for sugar in *.dat
+do
+    echo $sugar
+    cat $sugar &gt; xylose.dat
+done
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li>Prints <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt>, and <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt>,
+and copies <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> to create <tt class="docutils literal"><span class="pre">xylose.dat</span></tt>.</li>
+<li>Prints <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt>, and <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt>,
+and concatenates all three files to create <tt class="docutils literal"><span class="pre">xylose.dat</span></tt>.</li>
+<li>Prints <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt>, <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt>, and
+<tt class="docutils literal"><span class="pre">xylose.dat</span></tt>, and copies <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> to create
+<tt class="docutils literal"><span class="pre">xylose.dat</span></tt>.</li>
+<li>None of the above.</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Saving to a file in a loop - part two</dt>
+<dd><p class="first">In another directory, where <tt class="docutils literal"><span class="pre">ls</span></tt> returns:</p>
+<div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat   maltose.txt
+</pre></div>
+</div>
+<p>What would be the output of the following loop?</p>
+<div class="highlight-python"><div class="highlight"><pre>for datafile in *.dat
+do
+    cat $datafile &gt;&gt; sugar.dat
+done
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li>All of the text from <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt> and
+<tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> would be concatenated and saved to a file
+called <tt class="docutils literal"><span class="pre">sugar.dat</span></tt>.</li>
+<li>The text from <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> will be saved to a file called
+<tt class="docutils literal"><span class="pre">sugar.dat</span></tt>.</li>
+<li>All of the text from <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt>,
+<tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> and <tt class="docutils literal"><span class="pre">maltose.txt</span></tt> would be concatenated and
+saved to a file called <tt class="docutils literal"><span class="pre">sugar.dat</span></tt>.</li>
+<li>All of the text from <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt> and
+<tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> would be printed to the screen and saved to a
+file called <tt class="docutils literal"><span class="pre">sugar.dat</span></tt></li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Doing a Dry Run</dt>
+<dd><p class="first">Suppose we want to preview the commands the following loop will
+execute without actually running those commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>for file in *.dat
+do
+  analyze $file &gt; analyzed-$file
+done
+</pre></div>
+</div>
+<p>What is the difference between the the two loops below, and which
+one would we want to run?:</p>
+<div class="last highlight-python"><div class="highlight"><pre># Version 1
+for file in *.dat
+do
+  echo analyze $file &gt; analyzed-$file
+done
+# Version 2
+for file in *.dat
+do
+  echo &quot;analyze $file &gt; analyzed-$file&quot;
+done
+</pre></div>
+</div>
+</dd>
+</dl>
+</div></blockquote>
+<p>FIXME</p>
+<blockquote class="last">
+<div><p>Describe in words what the following loop does.</p>
+<div class="highlight-python"><div class="highlight"><pre>for how in frog11 prcb redig
+do
+    $how -limit 0.01 NENE01729B.txt
+done
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
 </div>
 <div class="section" id="finding-things">
-<h3><a class="toc-backref" href="#id13">Finding Things</a><a class="headerlink" href="#finding-things" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Finding Things</a><a class="headerlink" href="#finding-things" title="Permalink to this headline">¶</a></h3>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Learning Objectives</dt>
+<dd><ul class="first last simple">
+<li>Use <tt class="docutils literal"><span class="pre">grep</span></tt> to select lines from text files that match simple
+patterns.</li>
+<li>Use <tt class="docutils literal"><span class="pre">find</span></tt> to find files whose names match simple patterns.</li>
+<li>Use the output of one command as the command-line parameters to
+another command.</li>
+<li>Explain what is meant by &#8220;text&#8221; and &#8220;binary&#8221; files, and why many
+common tools don&#8217;t handle the latter well.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<p>You can guess someone&#8217;s age by how they talk about search: young
+people use &#8220;Google&#8221; as a verb, while crusty old Unix programmers use
+&#8220;grep&#8221;.  The word is a contraction of &#8220;global/regular
+expression/print&#8221;, a common sequence of operations in early Unix text
+editors. It is also the name of a very useful command-line program.</p>
+<p><tt class="docutils literal"><span class="pre">grep</span></tt> finds and prints lines in files that match a pattern. For our
+examples, we will use a file that contains three haikus taken from a
+1998 competition in <em>Salon</em> magazine. For this set of examples we&#8217;re
+going to be working in the writing subdirectory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd
+$ cd writing
+$ cat haiku.txt
+The Tao that is seen
+Is not the true Tao, until
+You bring fresh toner.
+
+With searching comes loss
+and the presence of absence:
+&quot;My Thesis&quot; not found.
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Forever, or Five Years</dt>
+<dd>We haven&#8217;t linked to the original haikus because they don&#8217;t appear
+to be on <em>Salon</em>&#8216;s site any longer. As <a class="reference external" href="http://www.clir.org/pubs/archives/ensuring.pdf">Jeff Rothenberg said</a>, &#8220;Digital
+information lasts forever &#8212; or five years, whichever comes
+first.&#8221;</dd>
+</dl>
+</div>
+<p>Let&#8217;s find lines that contain the word &#8220;not&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep not haiku.txt
+Is not the true Tao, until
+&quot;My Thesis&quot; not found
+Today it is not working
+</pre></div>
+</div>
+<p>Here, <tt class="docutils literal"><span class="pre">not</span></tt> is the pattern we&#8217;re searching for. It&#8217;s pretty simple:
+every alphanumeric character matches against itself. After the pattern
+comes the name or names of the files we&#8217;re searching in. The output is
+the three lines in the file that contain the letters &#8220;not&#8221;.</p>
+<p>Let&#8217;s try a different pattern: &#8220;day&#8221;.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep day haiku.txt
+Yesterday it worked
+Today it is not working
+</pre></div>
+</div>
+<p>This time, two lines that include the letters &#8220;day&#8221; are outputted.
+However, these letters are contained within larger words. To restrict
+matches to lines containing the word &#8220;day&#8221; on its own, we can give
+<tt class="docutils literal"><span class="pre">grep</span></tt> with the <tt class="docutils literal"><span class="pre">-w</span></tt> flag. This will limit matches to word
+boundaries.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -w day haiku.txt
+</pre></div>
+</div>
+<p>In this case, there aren&#8217;t any, so <tt class="docutils literal"><span class="pre">grep</span></tt>&#8216;s output is empty.</p>
+<p>Another useful option is <tt class="docutils literal"><span class="pre">-n</span></tt>, which numbers the lines that match:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -n it haiku.txt
+5:With searching comes loss
+9:Yesterday it worked
+10:Today it is not working
+</pre></div>
+</div>
+<p>Here, we can see that lines 5, 9, and 10 contain the letters &#8220;it&#8221;.</p>
+<p>We can combine flags as we do with other Unix commands. For example,
+since <tt class="docutils literal"><span class="pre">-i</span></tt> makes matching case-insensitive and <tt class="docutils literal"><span class="pre">-v</span></tt> inverts the
+match, using them both only prints lines that <em>don&#8217;t</em> match the
+pattern in any mix of upper and lower case:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -i -v the haiku.txt
+You bring fresh toner.
+
+With searching comes loss
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">grep</span></tt> has lots of other options. To find out what they are, we can
+type <tt class="docutils literal"><span class="pre">man</span> <span class="pre">grep</span></tt>. <tt class="docutils literal"><span class="pre">man</span></tt> is the Unix &#8220;manual&#8221; command: it prints a
+description of a command and its options, and (if you&#8217;re lucky)
+provides a few examples of how to use it.</p>
+<p>To navigate through the <tt class="docutils literal"><span class="pre">man</span></tt> pages, you may use the up and down
+arrow keys to move line-by-line, or try the &#8220;b&#8221; and spacebar keys to
+skip up and down by full page. Quit the <tt class="docutils literal"><span class="pre">man</span></tt> pages by typing &#8220;q&#8221;.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ man grep
+GREP(1)                                                                                              GREP(1)
+
+NAME
+grep, egrep, fgrep - print lines matching a pattern
+
+SYNOPSIS
+grep [OPTIONS] PATTERN [FILE...]
+grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+
+DESCRIPTION
+grep  searches the named input FILEs (or standard input if no files are named, or if a single hyphen-
+minus (-) is given as file name) for lines containing a match to the given PATTERN.  By default, grep
+prints the matching lines.
+...        ...        ...
+
+OPTIONS
+Generic Program Information
+--help Print  a  usage  message  briefly summarizing these command-line options and the bug-reporting
+address, then exit.
+
+-V, --version
+Print the version number of grep to the standard output stream.  This version number should be
+included in all bug reports (see below).
+
+Matcher Selection
+-E, --extended-regexp
+Interpret  PATTERN  as  an  extended regular expression (ERE, see below).  (-E is specified by
+POSIX.)
+
+-F, --fixed-strings
+Interpret PATTERN as a list of fixed strings, separated by newlines, any of  which  is  to  be
+matched.  (-F is specified by POSIX.)
+...        ...        ...
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Wildcards</dt>
+<dd><p class="first"><tt class="docutils literal"><span class="pre">grep</span></tt>&#8216;s real power doesn&#8217;t come from its options, though; it
+comes from the fact that patterns can include wildcards. (The
+technical name for these is <strong>regular expressions</strong>, which is what
+the &#8220;re&#8221; in &#8220;grep&#8221; stands for.) Regular expressions are both
+complex and powerful; if you want to do complex searches, please
+look at the lesson on <a class="reference external" href="http://software-carpentry.org">our website</a>. As a taster, we can find lines
+that have an &#8216;o&#8217; in the second position like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep -E &#39;^.o&#39; haiku.txt
+You bring fresh toner.
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<p class="last">We use the <tt class="docutils literal"><span class="pre">-E</span></tt> flag and put the pattern in quotes to prevent
+the shell from trying to interpret it. (If the pattern contained a
+&#8216;*&#8217;, for example, the shell would try to expand it before running
+<tt class="docutils literal"><span class="pre">grep</span></tt>.) The &#8216;^&#8217; in the pattern anchors the match to the start
+of the line. The &#8216;.&#8217; matches a single character (just like &#8216;?&#8217; in
+the shell), while the &#8216;o&#8217; matches an actual &#8216;o&#8217;.</p>
+</dd>
+</dl>
+</div>
+<p>While <tt class="docutils literal"><span class="pre">grep</span></tt> finds lines in files, the <tt class="docutils literal"><span class="pre">find</span></tt> command finds files
+themselves. Again, it has a lot of options; to show how the simplest
+ones work, we&#8217;ll use the directory tree shown below.</p>
+<div class="figure">
+<img alt="File Tree for Find Example" src="../../../_images/find-file-tree.svg" /><p class="caption">File Tree for Find Example</p>
+</div>
+<p>Nelle&#8217;s <tt class="docutils literal"><span class="pre">writing</span></tt> directory contains one file called <tt class="docutils literal"><span class="pre">haiku.txt</span></tt>
+and four subdirectories: <tt class="docutils literal"><span class="pre">thesis</span></tt> (which is sadly empty), <tt class="docutils literal"><span class="pre">data</span></tt>
+(which contains two files <tt class="docutils literal"><span class="pre">one.txt</span></tt> and <tt class="docutils literal"><span class="pre">two.txt</span></tt>), a <tt class="docutils literal"><span class="pre">tools</span></tt>
+directory that contains the programs <tt class="docutils literal"><span class="pre">format</span></tt> and <tt class="docutils literal"><span class="pre">stats</span></tt>, and an
+empty subdirectory called <tt class="docutils literal"><span class="pre">old</span></tt>.</p>
+<p>For our first command, let&#8217;s run <tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-type</span> <span class="pre">d</span></tt>. As always, the
+<tt class="docutils literal"><span class="pre">.</span></tt> on its own means the current working directory, which is where
+we want our search to start; <tt class="docutils literal"><span class="pre">-type</span> <span class="pre">d</span></tt> means &#8220;things that are
+directories&#8221;. Sure enough, <tt class="docutils literal"><span class="pre">find</span></tt>&#8216;s output is the names of the five
+directories in our little tree (including <tt class="docutils literal"><span class="pre">.</span></tt>):</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -type d
+./
+./data
+./thesis
+./tools
+./tools/old
+</pre></div>
+</div>
+<p>If we change <tt class="docutils literal"><span class="pre">-type</span> <span class="pre">d</span></tt> to <tt class="docutils literal"><span class="pre">-type</span> <span class="pre">f</span></tt>, we get a listing of all the
+files instead:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -type f
+./haiku.txt
+./tools/stats
+./tools/old/oldtool
+./tools/format
+./thesis/empty-draft.md
+./data/one.txt
+./data/two.txt
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">find</span></tt> automatically goes into subdirectories, their subdirectories,
+and so on to find everything that matches the pattern we&#8217;ve given
+it. If we don&#8217;t want it to, we can use <tt class="docutils literal"><span class="pre">-maxdepth</span></tt> to restrict the
+depth of search:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -maxdepth 1 -type f
+./haiku.txt
+</pre></div>
+</div>
+<p>The opposite of <tt class="docutils literal"><span class="pre">-maxdepth</span></tt> is <tt class="docutils literal"><span class="pre">-mindepth</span></tt>, which tells <tt class="docutils literal"><span class="pre">find</span></tt> to
+only report things that are at or below a certain depth. <tt class="docutils literal"><span class="pre">-mindepth</span> <span class="pre">2</span></tt>
+therefore finds all the files that are two or more levels below us:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -mindepth 2 -type f
+./data/one.txt
+./data/two.txt
+./tools/format
+./tools/stats
+</pre></div>
+</div>
+<p>Now let&#8217;s try matching by name:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -name *.txt
+./haiku.txt
+</pre></div>
+</div>
+<p>We expected it to find all the text files, but it only prints out
+<tt class="docutils literal"><span class="pre">./haiku.txt</span></tt>. The problem is that the shell expands wildcard
+characters like <tt class="docutils literal"><span class="pre">*</span></tt> <em>before</em> commands run. Since <tt class="docutils literal"><span class="pre">*.txt</span></tt> in the
+current directory expands to <tt class="docutils literal"><span class="pre">haiku.txt</span></tt>, the command we actually
+ran was:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -name haiku.txt
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">find</span></tt> did what we asked; we just asked for the wrong thing.</p>
+<p>To get what we want, let&#8217;s do what we did with <tt class="docutils literal"><span class="pre">grep</span></tt>: put <tt class="docutils literal"><span class="pre">*.txt</span></tt>
+in single quotes to prevent the shell from expanding the <tt class="docutils literal"><span class="pre">*</span></tt>
+wildcard.  This way, <tt class="docutils literal"><span class="pre">find</span></tt> actually gets the pattern <tt class="docutils literal"><span class="pre">*.txt</span></tt>, not
+the expanded filename <tt class="docutils literal"><span class="pre">haiku.txt</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ find . -name &#39;*.txt&#39;
+./data/one.txt
+./data/two.txt
+./haiku.txt
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Listing vs. Finding</dt>
+<dd><tt class="docutils literal"><span class="pre">ls</span></tt> and <tt class="docutils literal"><span class="pre">find</span></tt> can be made to do similar things given the
+right options, but under normal circumstances, <tt class="docutils literal"><span class="pre">ls</span></tt> lists
+everything it can, while <tt class="docutils literal"><span class="pre">find</span></tt> searches for things with certain
+properties and shows them.</dd>
+</dl>
+</div>
+<p>As we said earlier, the command line&#8217;s power lies in combining tools.
+We&#8217;ve seen how to do that with pipes; let&#8217;s look at another technique.
+As we just saw, <tt class="docutils literal"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*.txt'</span></tt> gives us a list of all text
+files in or below the current directory. How can we combine that with
+<tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span></tt> to count the lines in all those files?</p>
+<p>The simplest way is to put the <tt class="docutils literal"><span class="pre">find</span></tt> command inside <tt class="docutils literal"><span class="pre">$()</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wc -l $(find . -name &#39;*.txt&#39;)
+11 ./haiku.txt
+300 ./data/two.txt
+70 ./data/one.txt
+381 total
+</pre></div>
+</div>
+<p>When the shell executes this command, the first thing it does is run
+whatever is inside the <tt class="docutils literal"><span class="pre">$()</span></tt>. It then replaces the <tt class="docutils literal"><span class="pre">$()</span></tt>
+expression with that command&#8217;s output. Since the output of <tt class="docutils literal"><span class="pre">find</span></tt> is
+the three filenames <tt class="docutils literal"><span class="pre">./data/one.txt</span></tt>, <tt class="docutils literal"><span class="pre">./data/two.txt</span></tt>, and
+<tt class="docutils literal"><span class="pre">./haiku.txt</span></tt>, the shell constructs the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wc -l ./data/one.txt ./data/two.txt ./haiku.txt
+</pre></div>
+</div>
+<p>which is what we wanted. This expansion is exactly what the shell does
+when it expands wildcards like <tt class="docutils literal"><span class="pre">*</span></tt> and <tt class="docutils literal"><span class="pre">?</span></tt>, but lets us use any
+command we want as our own &#8220;wildcard&#8221;.</p>
+<p>It&#8217;s very common to use <tt class="docutils literal"><span class="pre">find</span></tt> and <tt class="docutils literal"><span class="pre">grep</span></tt> together. The first
+finds files that match a pattern; the second looks for lines inside
+those files that match another pattern. Here, for example, we can find
+PDB files that contain iron atoms by looking for the string &#8220;FE&#8221; in
+all the <tt class="docutils literal"><span class="pre">.pdb</span></tt> files above the current directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ grep FE $(find .. -name &#39;*.pdb&#39;)
+../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Binary Files</dt>
+<dd><p class="first">We have focused exclusively on finding things in text files. What
+if your data is stored as images, in databases, or in some other
+format? One option would be to extend tools like <tt class="docutils literal"><span class="pre">grep</span></tt> to
+handle those formats. This hasn&#8217;t happened, and probably won&#8217;t,
+because there are too many formats to support.</p>
+<p>The second option is to convert the data to text, or extract the
+text-ish bits from the data. This is probably the most common
+approach, since it only requires people to build one tool per data
+format (to extract information). On the one hand, it makes simple
+things easy to do. On the negative side, complex things are
+usually impossible. For example, it&#8217;s easy enough to write a
+program that will extract X and Y dimensions from image files for
+<tt class="docutils literal"><span class="pre">grep</span></tt> to play with, but how would you write something to find
+values in a spreadsheet whose cells contained formulas?</p>
+<p class="last">The third choice is to recognize that the shell and text
+processing have their limits, and to use a programming language
+such as Python instead. When the time comes to do this, don&#8217;t be
+too hard on the shell: many modern programming languages, Python
+included, have borrowed a lot of ideas from it, and imitation is
+also the sincerest form of praise.</p>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Conclusion</dt>
+<dd>The Unix shell is older than most of the people who use it. It has
+survived so long because it is one of the most productive
+programming environments ever created &#8212; maybe even <em>the</em> most
+productive. Its syntax may be cryptic, but people who have mastered
+it can experiment with different commands interactively, then use
+what they have learned to automate their work. Graphical user
+interfaces may be better at the first, but the shell is still
+unbeaten at the second. And as Alfred North Whitehead wrote in 1911,
+&#8220;Civilization advances by extending the number of important
+operations which we can perform without thinking about them.&#8221;</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Using grep</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre>The Tao that is seen
+Is not the true Tao, until
+You bring fresh toner.
+
+With searching comes loss
+and the presence of absence:
+&quot;My Thesis&quot; not found.
+
+Yesterday it worked
+Today it is not working
+Software is like that.
+</pre></div>
+</div>
+<p>From the above text, contained in the file <tt class="docutils literal"><span class="pre">haiku.txt</span></tt>, which
+command would result in the following output:</p>
+<div class="highlight-python"><div class="highlight"><pre>and the presence of absence
+</pre></div>
+</div>
+<ol class="last arabic simple">
+<li><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-E</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-w</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">of</span> <span class="pre">haiku.txt</span></tt></li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt><tt class="docutils literal"><span class="pre">find</span></tt> pipeline reading comprehension</dt>
+<dd><p class="first">Write a short explanatory comment for the following shell script:</p>
+<div class="last highlight-python"><div class="highlight"><pre>find . -name &#39;*.dat&#39; | wc -l | sort -n
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Matching <tt class="docutils literal"><span class="pre">ose.dat</span></tt> but not <tt class="docutils literal"><span class="pre">temp</span></tt></dt>
+<dd><p class="first">The <tt class="docutils literal"><span class="pre">-v</span></tt> flag to <tt class="docutils literal"><span class="pre">grep</span></tt> inverts pattern matching, so that only
+lines which do <em>not</em> match the pattern are printed. Given that,
+which of the following commands will find all files in <tt class="docutils literal"><span class="pre">/data</span></tt>
+whose names end in <tt class="docutils literal"><span class="pre">ose.dat</span></tt> (e.g., <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> or
+<tt class="docutils literal"><span class="pre">maltose.dat</span></tt>), but do <em>not</em> contain the word <tt class="docutils literal"><span class="pre">temp</span></tt>?</p>
+<ol class="last arabic simple">
+<li><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/data</span> <span class="pre">-name</span> <span class="pre">'*.dat'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">ose</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">temp</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">find</span> <span class="pre">/data</span> <span class="pre">-name</span> <span class="pre">ose.dat</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">temp</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">temp</span> <span class="pre">$(find</span> <span class="pre">/data</span> <span class="pre">-name</span> <span class="pre">'*ose.dat')</span></tt></li>
+<li>None of the above.</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Little Women</dt>
+<dd>You and your friend, having just finished reading <em>Little Women</em>
+by Louisa May Alcott, are in an argument. Of the four sisters in
+the book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was
+the most mentioned. You, however, are certain it was Amy. Luckily,
+you have a file <tt class="docutils literal"><span class="pre">LittleWomen.txt</span></tt> containing the full text of
+the novel. Using a<tt class="docutils literal"><span class="pre">for</span></tt> loop, how would you tabulate the
+number of times each of the four sisters is mentioned? Hint: one
+solution might employ the commands <tt class="docutils literal"><span class="pre">grep</span></tt> and <tt class="docutils literal"><span class="pre">wc</span></tt> and a
+<tt class="docutils literal"><span class="pre">|</span></tt>, while another might utilize <tt class="docutils literal"><span class="pre">grep</span></tt> options.</dd>
+</dl>
+</div>
 </div>
 <div class="section" id="cheatsheet">
-<h3><a class="toc-backref" href="#id14">Cheatsheet</a><a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Cheatsheet</a><a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h3>
 <p>uname
 head
 date
@@ -1532,23 +2400,23 @@ killall</p>
 </div>
 </div>
 <div class="section" id="exercises">
-<h2><a class="toc-backref" href="#id15">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-i">
-<h3><a class="toc-backref" href="#id16">Exercise I</a><a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Exercise I</a><a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="exercise-ii">
-<h3><a class="toc-backref" href="#id17">Exercise II</a><a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Exercise II</a><a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="further-reading">
-<h2><a class="toc-backref" href="#id18">Further Reading</a><a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Further Reading</a><a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
 <p>What is covered here is a small overview of using the commandline
 shell.
 For further reading please consult the <a class="reference external" href="http://www.tldp.org/LDP/Bash-Beginners-Guide/html/">Bash Guide for Beginners</a>
 Additionally, there are numerous shell summaries <a class="reference external" href="https://www.google.com/search?q=linux+shell+cheat+sheet">a Google Search away</a></p>
 </div>
 <div class="section" id="next-step">
-<h2><a class="toc-backref" href="#id19">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
 <p>In the next page, ...</p>
 <p><a class="reference external" href="link">Link here</a></p>
 </div>

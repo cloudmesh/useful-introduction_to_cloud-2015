@@ -75,7 +75,7 @@ protect against sniffing and eavesdropping of network traffic.
 
 .. figure:: /images/lesson_ssh_tunnel.png
 
-   Figure 1. Example of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.
+   Example of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.
 
 You can transfer inbound traffic to outbound ports using SSH tunnel. SSH tunnel
 listens on a particular port and redirects incoming packets to the destination.
