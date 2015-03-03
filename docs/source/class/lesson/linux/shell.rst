@@ -51,14 +51,60 @@ Introduction
 .. include:: shell-intro.rst
 
 
+Shell Usage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* How to .... . Described in lesson
-* Lesson ....
+Once you log into the appropriate machine you will be presented with
+the **prompt**, typically represented as the following::
 
-Description
-----------------------------------------------------------------------
+  $
 
-put the detailed dscription here
+At the **prompt** you enter a **command** to run a program.
+For instance, the ``whoami`` program indicates the username
+you logged in under.
+To see this type ``whoami`` and press enter (the result will be different
+but you should recognize your username)::
+
+  $ whoami
+  nelle
+
+
+.. tip::
+   On Windows you start a program by double-clicking an icon to
+   going to `Start --> <Program>` to launch it.
+   On OS X you might go to the dock at the bottom of the screen.
+   In a commandline shell you type the name of the program.
+
+
+When you execute the ``whoami`` command the shell:
+
+#. finds the program called ``whoami``
+#. runs that program
+#. displays the program's output
+#. displays a new shell prompt (ready for more commands)
+
+
+Files and Directories
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: shell-filedir.rst
+
+
+Creating Things
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pipes and Filters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Loops
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finding Things
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
 
   
 Exercises
