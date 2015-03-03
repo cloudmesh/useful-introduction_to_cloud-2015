@@ -101,7 +101,7 @@ Files and Directories
 .. include:: shell-filedir.rst
 
 
-Creating Things
+Creating and Deleting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: shell-create.rst
