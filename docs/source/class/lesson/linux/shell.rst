@@ -60,7 +60,7 @@ Introduction
 .. include:: shell-intro.rst
 
 
-Shell Usage
+Prompts and Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you log into the appropriate machine you will be presented with
@@ -79,10 +79,12 @@ but you should recognize your username)::
 
 
 .. tip::
-   On Windows you start a program by double-clicking an icon to
-   going to `Start --> <Program>` to launch it.
-   On OS X you might go to the dock at the bottom of the screen.
-   In a commandline shell you type the name of the program.
+ 
+   On Windows you start a program by double-clicking an icon to going
+   to `Start --> <Program>` to launch it (the commands described here
+   are Unix commands and are unlikely to work on Windows).  On OS X
+   you might go to the dock at the bottom of the screen.  In a
+   commandline shell you type the name of the program.
 
 
 When you execute the ``whoami`` command the shell:
@@ -99,7 +101,7 @@ Files and Directories
 .. include:: shell-filedir.rst
 
 
-Creating Things
+Creating and Deleting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: shell-create.rst
@@ -118,6 +120,21 @@ Finding Things
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: shell-find.rst
+
+
+Conclusion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Unix shell is older than most of the people who use it. It has
+survived so long because it is one of the most productive
+programming environments ever created --- maybe even *the* most
+productive. Its syntax may be cryptic, but people who have mastered
+it can experiment with different commands interactively, then use
+what they have learned to automate their work. Graphical user
+interfaces may be better at the first, but the shell is still
+unbeaten at the second. And as Alfred North Whitehead wrote in 1911,
+"Civilization advances by extending the number of important
+operations which we can perform without thinking about them."
 
 Cheatsheet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -192,18 +209,6 @@ kill
 pkill
 killall
 
-
-
-
-  
-Exercises
-----------------------------------------------------------------------
-
-Exercise I
-^^^^^^^^^^^^^^^^^^
-
-Exercise II
-^^^^^^^^^^^^^^^^^^
 
 Further Reading
 ----------------------------------------------------------------------
