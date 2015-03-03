@@ -55,7 +55,7 @@ In order to login into your account on FutureSystems you will need:
 - an account on FutureSystems (see above)
 - an SSH client
 
-Login via ``<portal_id>@india.futuresystems.org``.
+Login via ``$PORTALNAME@india.futuresystems.org``.
 
 .. tip::
    On Mac OS X open a terminal via `Applications --> Utilities --> Terminal`
@@ -64,7 +64,7 @@ Login via ``<portal_id>@india.futuresystems.org``.
    On Windows you will need to install `PuTTY`_.
 
 
-You will need to know your portal username (``portal_id``).
+You will need to know your portal username (``$PORTALNAME``).
 For instance, Albert has an account on FutureSystems and his username
 is ``albert``:
 The hostname will be ``india.futuresystems.org`` and he can log in
@@ -82,18 +82,84 @@ like so::
 Managing keys
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Linux and OS X store the ssh identity files under ``~/.ssh``.
-An invocation of ``ssh-keygen`` will by default choose to write
-``~/.ssh/id_rsa``.
-This generated key consists of a **public** key and a **private** key.
-By providing your public key to FutureSystems you will be able to login
-to ``india@futuresystems.org`` as described above.
+This section describes how to generate secure keys for using
+OpenStack.
+You will need to log into ``india`` to follow.
 
-.. warning::
-   Never share your private key with an untrusted party.
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
 
 
-There are a few usefull operations on ssh keys:
+.. tip::
+   Make sure you have loaded the approprate modules and setup your
+   environment::
+
+     $ module load openstack
+     $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+
+Create a key pair
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+In order to use OpenStack on ``india`` you will need an SSH key.
+First, check that ``~/.ssh/$PORTALNAME-key`` does not exist::
+
+  $ file ~/.ssh/albert-key
+
+If you get an error message like::
+
+  $ file ~/.ssh/albert-key
+  ~/albert-key: cannot open `~/.ssh/albert-key' (No such file or directory)
+
+then the file does not exist and you will need to create it (see below).
+If the file does exist you will see something like::
+
+  $ file ~/.ssh/albert-key
+  ~/.ssh/albert-key: ASCII text
+
+In order to create a key for OpenStack use the ``nova keypair-add``
+command and set the appropriate permissions::
+
+  $ nova keypair-add $PORTALNAME-key >~/.ssh/$PORTALNAME-key
+  $ chmod 600 ~/.ssh/$PORTALNAME-key
+
+.. tip:: Replace ``albert`` with whatever your ``$PORTALNAME`` is.
+
+.. caution::
+   This ``nova keypair-add`` command will overwrite any preexisting
+   file in ``~/.ssh/$PORTALNAME-key`` so make sure it does not exist
+   before executing this command.
+   
+
+Import a key pair
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+If you already have a key pair that you wish to use it can be
+imported into the cloud.
+For example, Albert has created a key whose public key is located at
+``~/.ssh/id_rsa.pub`` and he can import it using and naming it
+using his ``PORTALNAME`` ``albert``::
+
+  $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
+
+
+List added keys
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+You can query OpenStack to see what keys you have added and uploaded::
+
+  $ nova keypair-list
+  +-----------------+-------------------------------------------------+
+  | Name            | Fingerprint                                     |
+  +-----------------+-------------------------------------------------+
+  | $PORTALNAME-key | ab:a6:63:82:dd:08:d3:bc:c0:21:56:4c:e2:bb:22:ac |
+  +-----------------+-------------------------------------------------+
+
+Usefull SSH commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+The following is a short list of usefull SSH commands.
 
 Change the password
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
