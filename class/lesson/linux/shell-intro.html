@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview and Introduction (Under Preparation) &mdash; my Cloudmesh Learning documentation</title>
+  <title>What and Why &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -30,10 +30,7 @@
   
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
-    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
-        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../vc2_sp15/index.html"/>
-        <link rel="next" title="Shell (Under Preparation)" href="shell.html"/>
-        <link rel="prev" title="Use of FutureSystems (Under Preparation)" href="../system/futuresystemsuse.html"/> 
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul class="current">
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,9 +75,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
@@ -180,14 +177,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
-      
-          <li><a href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
-      
-    <li>Overview and Introduction (Under Preparation)</li>
+    <li>What and Why</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../../_sources/class/lesson/linux/overview.txt" rel="nofollow"> View page source</a>
+          <a href="../../../_sources/class/lesson/linux/shell-intro.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -195,66 +188,113 @@
 </div>
           <div role="main">
             
-  <div class="section" id="overview-and-introduction-under-preparation">
-<h1>Overview and Introduction (Under Preparation)<a class="headerlink" href="#overview-and-introduction-under-preparation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This lesson will introduce you to the basics of Linux usage.
-The topics covered will be :</p>
-<ul class="simple">
-<li><a class="reference internal" href="shell.html"><em>Shell (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="editors.html"><em>Editing Files (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="python.html"><em>Python Programming (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="packagemanagement.html"><em>Package Management (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="advancedssh.html"><em>Advanced SSH</em></a></li>
-<li><a class="reference internal" href="modules.html"><em>Software Modules (Under Preparation)</em></a></li>
+  <div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="last docutils">
+<dt>Learning Objectives</dt>
+<dd><ul class="first last simple">
+<li>Explain how the shell relates to the keyboard, the screen, the
+operating system, and users&#8217; programs.</li>
+<li>Explain when and why command-line interfaces should be used
+instead of graphical interfaces.</li>
 </ul>
+</dd>
+</dl>
 </div>
-<div class="section" id="prerequisite">
-<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
-<p>In order to conduct this lesson you should have an account on
-FutureSystems, as descibred in <a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems (Under Preparation)</em></a>.
-You should start by logging into you FutureSystems account.</p>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="shell">
-<h3>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="editing-files">
-<h3>Editing Files<a class="headerlink" href="#editing-files" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="python-programming">
-<h3>Python Programming<a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="package-management">
-<h3>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="advanced-ssh">
-<h3>Advanced SSH<a class="headerlink" href="#advanced-ssh" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="software-modules">
-<h3>Software Modules<a class="headerlink" href="#software-modules" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>Next: <a class="reference internal" href="shell.html"><em>Shell (Under Preparation)</em></a></p>
-</div>
+<p>Nelle Nemo, a marine biologist, has just returned from a six-month
+survey of the <a class="reference external" href="http://en.wikipedia.org/wiki/North_Pacific_Gyre">North Pacific
+Gyre</a>, where she has
+been sampling gelatinous marine life in the <a class="reference external" href="http://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch">Great Pacific Garbage
+Patch</a>. She
+has 300 samples in all, and now needs to:</p>
+<ol class="arabic simple">
+<li>Run each sample through an assay machine that will measure the
+relative abundance of 300 different proteins. The machine&#8217;s output
+for a single sample is a file with one line for each protein.</li>
+<li>Calculate statistics for each of the proteins separately using a
+program her supervisor wrote called <tt class="docutils literal"><span class="pre">goostat</span></tt>.</li>
+<li>Compare the statistics for each protein with corresponding statistics
+for each other protein using a program one of the other graduate
+students wrote called <tt class="docutils literal"><span class="pre">goodiff</span></tt>.</li>
+<li>Write up. Her supervisor would really like her to do this by the end
+of the month so that her paper can appear in an upcoming special
+issue of <em>Aquatic Goo Letters</em>.</li>
+</ol>
+<p>It takes about half an hour for the assay machine to process each
+sample. The good news is, it only takes two minutes to set each one up.
+Since her lab has eight assay machines that she can use in parallel,
+this step will &#8220;only&#8221; take about two weeks.</p>
+<p>The bad news is that if she has to run <tt class="docutils literal"><span class="pre">goostat</span></tt> and <tt class="docutils literal"><span class="pre">goodiff</span></tt> by
+hand, she&#8217;ll have to enter filenames and click &#8220;OK&#8221; 45,150 times (300
+runs of <tt class="docutils literal"><span class="pre">goostat</span></tt>, plus 300x299/2 runs of <tt class="docutils literal"><span class="pre">goodiff</span></tt>). At 30 seconds
+each, that will take more than two weeks. Not only would she miss her
+paper deadline, the chances of her typing all of those commands right
+are practically zero.</p>
+<p>The next few lessons will explore what she should do instead. More
+specifically, they explain how she can use a command shell to automate
+the repetitive steps in her processing pipeline so that her computer can
+work 24 hours a day while she writes her paper. As a bonus, once she has
+put a processing pipeline together, she will be able to use it again
+whenever she collects more data.</p>
+<div class="section" id="what-and-why">
+<h1>What and Why<a class="headerlink" href="#what-and-why" title="Permalink to this headline">¶</a></h1>
+<p>At a high level, computers do four things:</p>
+<ul class="simple">
+<li>run programs</li>
+<li>store data</li>
+<li>communicate with each other</li>
+<li>interact with us</li>
+</ul>
+<p>They can do the last of these in many different ways, including direct
+brain-computer links and speech interfaces. Since these are still in
+their infancy, most of us use windows, icons, mice, and pointers. These
+technologies didn&#8217;t become widespread until the 1980s, but their roots
+go back to Doug Engelbart&#8217;s work in the 1960s, which you can see in what
+has been called &#8220;<a class="reference external" href="http://www.youtube.com/watch?v=a11JDLBXtPQ">The Mother of All
+Demos</a>&#8221;.</p>
+<p>Going back even further, the only way to interact with early computers
+was to rewire them. But in between, from the 1950s to the 1980s, most
+people used line printers. These devices only allowed input and output
+of the letters, numbers, and punctuation found on a standard keyboard,
+so programming languages and interfaces had to be designed around that
+constraint.</p>
+<p>This kind of interface is called a <strong>command-line interface</strong>, or CLI,
+to distinguish it from the <strong>graphical user interface</strong>, or GUI, that
+most people now use. The heart of a CLI is a <strong>read-evaluate-print
+loop</strong>, or REPL: when the user types a command and then presses the
+enter (or return) key, the computer reads it, executes it, and prints
+its output. The user then types another command, and so on until the
+user logs off.</p>
+<p>This description makes it sound as though the user sends commands
+directly to the computer, and the computer sends output directly to the
+user. In fact, there is usually a program in between called a <strong>command
+shell</strong>. What the user types goes into the shell; it figures out what
+commands to run and orders the computer to execute them. Note, the
+reason why the shell is called <em>the shell</em>: it encloses the operating
+system in order to hide some of its complexity and make it simpler to
+interact with.</p>
+<p>A shell is a program like any other. What&#8217;s special about it is that its
+job is to run other programs rather than to do calculations itself. The
+most popular Unix shell is Bash, the Bourne Again SHell (so-called
+because it&#8217;s derived from a shell written by Stephen Bourne &#8212; this is
+what passes for wit among programmers). Bash is the default shell on
+most modern implementations of Unix, and in most packages that provide
+Unix-like tools for Windows.</p>
+<p>Using Bash or any other shell sometimes feels more like programming than
+like using a mouse. Commands are terse (often only a couple of
+characters long), their names are frequently cryptic, and their output
+is lines of text rather than something visual like a graph. On the other
+hand, the shell allows us to combine existing tools in powerful ways
+with only a few keystrokes and to set up pipelines to handle large
+volumes of data automatically. In addition, the command line is often
+the easiest way to interact with remote machines. As clusters and cloud
+computing become more popular for scientific data crunching, being able
+to drive them is becoming a necessary skill.</p>
 </div>
 
 
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="shell.html" class="btn btn-neutral float-right" title="Shell (Under Preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../system/futuresystemsuse.html" class="btn btn-neutral" title="Use of FutureSystems (Under Preparation)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
