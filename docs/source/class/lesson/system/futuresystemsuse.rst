@@ -47,7 +47,7 @@ project.
    Please see :ref:`s-account-join-project` for further details.
 
 
-Remote Login (Under preparation)
+Remote Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to login into your account on FutureSystems you will need:
@@ -55,13 +55,31 @@ In order to login into your account on FutureSystems you will need:
 - an account on FutureSystems (see above)
 - an SSH client
 
-Login via ``india@futuresystems.org``.
+Login via ``<portal_id>@india.futuresystems.org``.
 
-.. tip:: Please see :doc:`../../../accounts/ssh` for instructions on
-   configuring an SSH client.
+.. tip::
+   On Mac OS X open a terminal via `Applications --> Utilities --> Terminal`
+
+.. tip::
+   On Windows you will need to install `PuTTY`_.
 
 
-Managing keys (Under Preparation)
+You will need to know your portal username (``portal_id``).
+For instance, Albert has an account on FutureSystems and his username
+is ``albert``:
+The hostname will be ``india.futuresystems.org`` and he can log in
+like so::
+
+  ssh albert@india.futuresystems.org
+
+
+.. tip:: Please see :doc:`../../../accounts/ssh` for details on
+   configuring and using an SSH client.
+
+.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+
+Managing keys
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 Linux and OS X store the ssh identity files under ``~/.ssh``.
