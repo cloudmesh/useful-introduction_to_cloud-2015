@@ -4,36 +4,48 @@ Overview and Introduction (Under Preparation)
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
+This lesson will introduce you to the basics of Linux usage.
+The topics covered will be :
 
-.. tip:: Duration: 1 hour
+- :doc:`shell`
+- :doc:`editors`
+- :doc:`python`
+- :doc:`packagemanagement`
+- :doc:`advancedssh`
+- :doc:`modules`
 
 Prerequisite
 ----------------------------------------------------------------------
 
-In order to conduct this lesson you should have knowledge of
+In order to conduct this lesson you should have an account on
+FutureSystems, as descibred in :doc:`../system/futuresystemsuse`.
+You should start by logging into you FutureSystems account.
 
-* How to .... . Described in lesson
-* Lesson ....
 
 Description
 ----------------------------------------------------------------------
 
-put the detailed dscription here
 
-  
-Exercises
-----------------------------------------------------------------------
+Shell
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Exercise I
-^^^^^^^^^^^^^^^^^^
+Editing Files
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Exercise II
-^^^^^^^^^^^^^^^^^^
+Python Programming
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Package Management
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Advanced SSH
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Software Modules
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 Next Step
 -----------
 
-In the next page, ...
-
-`Link here <link>`_
+Next: :doc:`shell`

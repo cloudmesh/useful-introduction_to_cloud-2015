@@ -1,10 +1,10 @@
-Using yum, apt-get and brew (Under Preparation)
+Package Management (Under Preparation)
 ======================================================================
 
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
+This lesson will introduce you to using yum, apt-get and brew.
 
 .. tip:: Duration: 1 hour
 
