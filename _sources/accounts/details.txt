@@ -106,6 +106,10 @@ Project Management
 
 .. _s-account-create-account:
 
+.. important::
+
+   Make sure you have cookies enabled or you will not be able to log
+   in to your account.
 
 
 Create a Portal account

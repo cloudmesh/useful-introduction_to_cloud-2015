@@ -12,6 +12,12 @@ Getting an Account
 
 In order to use FutureSystems you will need to get an account.
 
+.. important::
+
+   Make sure you have cookies enabled or you will not be able to log
+   in to your account.
+
+
 #. Navigate to `FutureSystems.org <https://portal.futuresystems.org/>`_.
 #. Click on ``Register`` at the top near the search bar
 #. Fill out the information. Asterisk-denoted (``*``) fields are required.
