@@ -60,7 +60,7 @@ Introduction
 .. include:: shell-intro.rst
 
 
-Shell Usage
+Prompts and Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you log into the appropriate machine you will be presented with
@@ -79,10 +79,12 @@ but you should recognize your username)::
 
 
 .. tip::
-   On Windows you start a program by double-clicking an icon to
-   going to `Start --> <Program>` to launch it.
-   On OS X you might go to the dock at the bottom of the screen.
-   In a commandline shell you type the name of the program.
+ 
+   On Windows you start a program by double-clicking an icon to going
+   to `Start --> <Program>` to launch it (the commands described here
+   are Unix commands and are unlikely to work on Windows).  On OS X
+   you might go to the dock at the bottom of the screen.  In a
+   commandline shell you type the name of the program.
 
 
 When you execute the ``whoami`` command the shell:
