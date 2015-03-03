@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nelle’s Pipeline: Checking Files &mdash; my Cloudmesh Learning documentation</title>
+  <title>Learning Objectives &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -177,7 +177,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
-    <li>Nelle&#8217;s Pipeline: Checking Files</li>
+    <li>Learning Objectives</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../../_sources/class/lesson/linux/shell-pipefilter.txt" rel="nofollow"> View page source</a>
@@ -188,11 +188,10 @@
 </div>
           <div role="main">
             
-  <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Learning Objectives</dt>
-<dd><ul class="first last simple">
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
 <li>Redirect a command&#8217;s output to a file.</li>
 <li>Process a file instead of keyboard input using redirection.</li>
 <li>Construct command pipelines with two or more stages.</li>
@@ -200,9 +199,10 @@
 any input to process.</li>
 <li>Explain Unix&#8217;s &#8220;small pieces, loosely joined&#8221; philosophy.</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </div>
+<div class="section" id="globbing-wildcards">
+<h1>Globbing/Wildcards<a class="headerlink" href="#globbing-wildcards" title="Permalink to this headline">¶</a></h1>
 <p>Now that we know a few basic commands, we can finally look at the
 shell&#8217;s most powerful feature: the ease with which it lets us combine
 existing programs in new ways. We&#8217;ll start with a directory called
@@ -279,6 +279,9 @@ number of lines per file:</p>
 </div>
 <p>We can also use <tt class="docutils literal"><span class="pre">-w</span></tt> to get only the number of words, or <tt class="docutils literal"><span class="pre">-c</span></tt> to
 get only the number of characters.</p>
+</div>
+<div class="section" id="redirecting-output">
+<h1>Redirecting Output<a class="headerlink" href="#redirecting-output" title="Permalink to this headline">¶</a></h1>
 <p>Which of these files is shortest? It&#8217;s an easy question to answer when
 there are only six files, but what if there were 6000? Our first step
 toward a solution is to run the command:</p>
@@ -339,10 +342,25 @@ the first line of the file; <tt class="docutils literal"><span class="pre">-20</
 on. Since <tt class="docutils literal"><span class="pre">sorted-lengths.txt</span></tt> contains the lengths of our files
 ordered from least to greatest, the output of <tt class="docutils literal"><span class="pre">head</span></tt> must be the
 file with the fewest lines.</p>
-<p>If you think this is confusing, you&#8217;re in good company: even once you
-understand what <tt class="docutils literal"><span class="pre">wc</span></tt>, <tt class="docutils literal"><span class="pre">sort</span></tt>, and <tt class="docutils literal"><span class="pre">head</span></tt> do, all those
-intermediate files make it hard to follow what&#8217;s going on. We can make
-it easier to understand by running <tt class="docutils literal"><span class="pre">sort</span></tt> and <tt class="docutils literal"><span class="pre">head</span></tt> together:</p>
+</div>
+<div class="section" id="redirecting-input">
+<h1>Redirecting Input<a class="headerlink" href="#redirecting-input" title="Permalink to this headline">¶</a></h1>
+<p>As well as using <tt class="docutils literal"><span class="pre">&gt;</span></tt> to redirect a program&#8217;s output, we can use
+<tt class="docutils literal"><span class="pre">&lt;</span></tt> to redirect its input, i.e., to read from a file instead of from
+standard input. For example, instead of writing <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">ammonia.pdb</span></tt>, we
+could write <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">&lt;</span> <span class="pre">ammonia.pdb</span></tt>. In the first case, <tt class="docutils literal"><span class="pre">wc</span></tt> gets a
+command line parameter telling it what file to open. In the second,
+<tt class="docutils literal"><span class="pre">wc</span></tt> doesn&#8217;t have any command line parameters, so it reads from
+standard input, but we have told the shell to send the contents of
+<tt class="docutils literal"><span class="pre">ammonia.pdb</span></tt> to <tt class="docutils literal"><span class="pre">wc</span></tt>&#8216;s standard input.</p>
+</div>
+<div class="section" id="pipes">
+<h1>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h1>
+<p>If you think having use many intermediate files is confusing, you&#8217;re
+in good company: even once you understand what <tt class="docutils literal"><span class="pre">wc</span></tt>, <tt class="docutils literal"><span class="pre">sort</span></tt>, and
+<tt class="docutils literal"><span class="pre">head</span></tt> do, all those intermediate files make it hard to follow
+what&#8217;s going on. We can make it easier to understand by running
+<tt class="docutils literal"><span class="pre">sort</span></tt> and <tt class="docutils literal"><span class="pre">head</span></tt> together:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ sort -n lengths.txt | head -1
   9  methane.pdb
 </pre></div>
@@ -391,6 +409,9 @@ redirection with <tt class="docutils literal"><span class="pre">&gt;</span></tt>
 we run <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-1</span></tt>, we get three processes
 with data flowing from the files, through <tt class="docutils literal"><span class="pre">wc</span></tt> to <tt class="docutils literal"><span class="pre">sort</span></tt>, and from
 <tt class="docutils literal"><span class="pre">sort</span></tt> through <tt class="docutils literal"><span class="pre">head</span></tt> to the screen.</p>
+</div>
+<div class="section" id="filter">
+<h1>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h1>
 <p>This simple idea is why Unix has been so successful. Instead of
 creating enormous programs that try to do many different things, Unix
 programmers focus on creating lots of simple tools that each do one
@@ -406,20 +427,6 @@ input and writes lines of text to standard output can be combined with
 every other program that behaves this way as well. You can <em>and
 should</em> write your programs this way so that you and other people can
 put those programs into pipes to multiply their power.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Redirecting Input</dt>
-<dd>As well as using <tt class="docutils literal"><span class="pre">&gt;</span></tt> to redirect a program&#8217;s output, we can use
-<tt class="docutils literal"><span class="pre">&lt;</span></tt> to redirect its input, i.e., to read from a file instead of
-from standard input. For example, instead of writing <tt class="docutils literal"><span class="pre">wc</span>
-<span class="pre">ammonia.pdb</span></tt>, we could write <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">&lt;</span> <span class="pre">ammonia.pdb</span></tt>. In the first
-case, <tt class="docutils literal"><span class="pre">wc</span></tt> gets a command line parameter telling it what file to
-open. In the second, <tt class="docutils literal"><span class="pre">wc</span></tt> doesn&#8217;t have any command line
-parameters, so it reads from standard input, but we have told the
-shell to send the contents of <tt class="docutils literal"><span class="pre">ammonia.pdb</span></tt> to <tt class="docutils literal"><span class="pre">wc</span></tt>&#8216;s standard
-input.</dd>
-</dl>
 </div>
 <div class="section" id="nelle-s-pipeline-checking-files">
 <h1>Nelle&#8217;s Pipeline: Checking Files<a class="headerlink" href="#nelle-s-pipeline-checking-files" title="Permalink to this headline">¶</a></h1>
@@ -479,11 +486,12 @@ so instead, she&#8217;ll just be careful later on to select files using the
 wildcard expression <tt class="docutils literal"><span class="pre">*[AB].txt</span></tt>. As always, the &#8216;*&#8217; matches any
 number of characters; the expression <tt class="docutils literal"><span class="pre">[AB]</span></tt> matches either an &#8216;A&#8217; or
 a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</dt>
-<dd><p class="first">If we run <tt class="docutils literal"><span class="pre">sort</span></tt> on this file:</p>
+</div>
+<div class="section" id="excercises">
+<h1>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-does-sort-n-do">
+<h2>What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?<a class="headerlink" href="#what-does-sort-n-do" title="Permalink to this headline">¶</a></h2>
+<p>If we run <tt class="docutils literal"><span class="pre">sort</span></tt> on this file:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">10</span>
 <span class="mi">2</span>
 <span class="mi">19</span>
@@ -507,30 +515,33 @@ a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 <span class="mi">22</span>
 </pre></div>
 </div>
-<p class="last">Explain why <tt class="docutils literal"><span class="pre">-n</span></tt> has this effect.</p>
-</dd>
-<dt>What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?</dt>
-<dd><p class="first">What is the difference between:</p>
+<p>Explain why <tt class="docutils literal"><span class="pre">-n</span></tt> has this effect.</p>
+</div>
+<div class="section" id="what-does-mean">
+<h2>What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?<a class="headerlink" href="#what-does-mean" title="Permalink to this headline">¶</a></h2>
+<p>What is the difference between:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">wc</span> <span class="o">-</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">mydata</span><span class="o">.</span><span class="n">dat</span>
 </pre></div>
 </div>
 <p>and:</p>
-<div class="last highlight-python"><div class="highlight"><pre>wc -l mydata.dat
+<div class="highlight-python"><div class="highlight"><pre>wc -l mydata.dat
 </pre></div>
 </div>
-</dd>
-<dt>Piping commands together</dt>
-<dd><p class="first">In our current directory, we want to find the 3 files which have
+</div>
+<div class="section" id="piping-commands-together">
+<h2>Piping commands together<a class="headerlink" href="#piping-commands-together" title="Permalink to this headline">¶</a></h2>
+<p>In our current directory, we want to find the 3 files which have
 the least number of lines. Which command listed below would work?</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">&gt;</span> <span class="pre">head</span> <span class="pre">-3</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">1-3</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-3</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-3</span></tt></li>
 </ol>
-</dd>
-<dt>Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?</dt>
-<dd><p class="first">The command <tt class="docutils literal"><span class="pre">uniq</span></tt> removes adjacent duplicated lines from its
+</div>
+<div class="section" id="why-does-uniq-only-remove-adjacent-duplicates">
+<h2>Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this headline">¶</a></h2>
+<p>The command <tt class="docutils literal"><span class="pre">uniq</span></tt> removes adjacent duplicated lines from its
 input. For example, if a file <tt class="docutils literal"><span class="pre">salmon.txt</span></tt> contains:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">coho</span>
 <span class="n">coho</span>
@@ -547,13 +558,14 @@ input. For example, if a file <tt class="docutils literal"><span class="pre">sal
 <span class="n">steelhead</span>
 </pre></div>
 </div>
-<p class="last">Why do you think <tt class="docutils literal"><span class="pre">uniq</span></tt> only removes <em>adjacent</em> duplicated
+<p>Why do you think <tt class="docutils literal"><span class="pre">uniq</span></tt> only removes <em>adjacent</em> duplicated
 lines?  (Hint: think about very large data sets.) What other
 command could you combine with it in a pipe to remove all
 duplicated lines?</p>
-</dd>
-<dt>Pipe reading comprehension</dt>
-<dd><p class="first">A file called <tt class="docutils literal"><span class="pre">animals.txt</span></tt> contains the following data:</p>
+</div>
+<div class="section" id="pipe-reading-comprehension">
+<h2>Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Permalink to this headline">¶</a></h2>
+<p>A file called <tt class="docutils literal"><span class="pre">animals.txt</span></tt> contains the following data:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">deer</span>
 <span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">rabbit</span>
 <span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">raccoon</span>
@@ -566,12 +578,13 @@ duplicated lines?</p>
 </div>
 <p>What text passes through each of the pipes and the final redirect
 in the pipeline below?</p>
-<div class="last highlight-python"><div class="highlight"><pre>cat animals.txt | head -5 | tail -3 | sort -r &gt; final.txt
+<div class="highlight-python"><div class="highlight"><pre>cat animals.txt | head -5 | tail -3 | sort -r &gt; final.txt
 </pre></div>
 </div>
-</dd>
-<dt>Pipe construction</dt>
-<dd><p class="first">The command:</p>
+</div>
+<div class="section" id="pipe-construction">
+<h2>Pipe construction<a class="headerlink" href="#pipe-construction" title="Permalink to this headline">¶</a></h2>
+<p>The command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cut -d , -f 2 animals.txt
 </pre></div>
 </div>
@@ -586,11 +599,9 @@ in the pipeline below?</p>
 <span class="n">bear</span>
 </pre></div>
 </div>
-<p class="last">What other command(s) could be added to this in a pipeline to find
+<p>What other command(s) could be added to this in a pipeline to find
 out what animals the file contains (without any duplicates in
 their names)?</p>
-</dd>
-</dl>
 </div>
 </div>
 

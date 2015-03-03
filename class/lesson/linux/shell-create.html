@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; my Cloudmesh Learning documentation</title>
+  <title>Learning Objectives &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -177,7 +177,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li>Learning Objectives</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../../_sources/class/lesson/linux/shell-create.txt" rel="nofollow"> View page source</a>
@@ -188,20 +188,20 @@
 </div>
           <div role="main">
             
-  <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Learning Objectives</dt>
-<dd><ul class="first last simple">
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
 <li>Create a directory hierarchy that matches a given diagram.</li>
 <li>Create files in that hierarchy using an editor or by copying and
 renaming existing files.</li>
 <li>Display the contents of a directory using the command line.</li>
 <li>Delete specified files and/or directories.</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </div>
+<div class="section" id="creating-directories">
+<h1>Creating  Directories<a class="headerlink" href="#creating-directories" title="Permalink to this headline">¶</a></h1>
 <p>We now know how to explore files and directories, but how do we create
 them in the first place? Let&#8217;s go back to Nelle&#8217;s home directory,
 <tt class="docutils literal"><span class="pre">/users/nelle</span></tt>, and use <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-F</span></tt> to see what it contains:</p>
@@ -233,24 +233,20 @@ molecules/  solar.pdf
 <div class="highlight-python"><div class="highlight"><pre>$ ls -F thesis
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Touching Files</dt>
-<dd><p class="first">One of the simplest ways to create an empty file is via the
-<tt class="docutils literal"><span class="pre">touch</span></tt> command. Change the working directory to <tt class="docutils literal"><span class="pre">thesis</span></tt>
-using <tt class="docutils literal"><span class="pre">cd</span></tt>, then touch an empty file called <tt class="docutils literal"><span class="pre">draft.txt</span></tt>:</p>
+</div>
+<div class="section" id="creating-files">
+<h1>Creating Files<a class="headerlink" href="#creating-files" title="Permalink to this headline">¶</a></h1>
+<p>One of the simplest ways to create an empty file is via the <tt class="docutils literal"><span class="pre">touch</span></tt>
+command. Change the working directory to <tt class="docutils literal"><span class="pre">thesis</span></tt> using <tt class="docutils literal"><span class="pre">cd</span></tt>, then
+touch an empty file called <tt class="docutils literal"><span class="pre">draft.txt</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd thesis
 $ touch draft.txt
 </pre></div>
 </div>
 <p>If we check the directory contents now,:</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ ls -F .
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F .
 draft.txt
 </pre></div>
-</div>
-</dd>
-</dl>
 </div>
 <p>Let&#8217;s change our working directory to <tt class="docutils literal"><span class="pre">thesis</span></tt> using <tt class="docutils literal"><span class="pre">cd</span></tt>, then
 run a text editor called Nano to create a file called <tt class="docutils literal"><span class="pre">draft.txt</span></tt>:</p>
@@ -260,27 +256,13 @@ $ nano draft.txt
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<dl class="last docutils">
+<dl class="docutils">
 <dt>Which Editor?</dt>
-<dd><p class="first">When we say, &#8220;<tt class="docutils literal"><span class="pre">nano</span></tt> is a text editor,&#8221; we really do mean
-&#8220;text&#8221;: it can only work with plain character data, not tables,
-images, or any other human-friendly media. We use it in examples
-because almost anyone can drive it anywhere without training, but
-please use something more powerful for real work. On Unix systems
-(such as Linux and Mac OS X), many programmers use <a class="reference external" href="http://www.gnu.org/software/emacs/">Emacs</a> or <a class="reference external" href="http://www.vim.org/">Vim</a> (both of which are completely
-unintuitive, even by Unix standards), or a graphical editor such
-as <a class="reference external" href="http://projects.gnome.org/gedit/">Gedit</a>. On Windows, you
-may wish to use <a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a>.</p>
-<p>No matter what editor you use, you will need to know where it
-searches for and saves files. If you start it from the shell, it
-will (probably) use your current working directory as its default
-location. If you use your computer&#8217;s start menu, it may want to
-save files in your desktop or documents directory instead. You can
-change this by navigating to another directory the first time you
-&#8220;Save As...&#8221;</p>
-<p class="last">See also <a class="reference internal" href="editors.html"><em>Editing Files (Under Preparation)</em></a></p>
-</dd>
+<dd></dd>
 </dl>
+<p>A text editor is a program that edits plain text.
+Nano is one example of such a program, there are many more.</p>
+<p class="last">Editors will be covered in a later lesson: <a class="reference internal" href="editors.html"><em>Editing Files (Under Preparation)</em></a></p>
 </div>
 <p>Let&#8217;s type in a few lines of text, then use Control-O to write our
 data to disk:</p>
@@ -297,6 +279,9 @@ file called <tt class="docutils literal"><span class="pre">draft.txt</span></tt>
 draft.txt
 </pre></div>
 </div>
+</div>
+<div class="section" id="removing-files">
+<h1>Removing Files<a class="headerlink" href="#removing-files" title="Permalink to this headline">¶</a></h1>
 <p>Let&#8217;s tidy up by running <tt class="docutils literal"><span class="pre">rm</span> <span class="pre">draft.txt</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ rm draft.txt
 </pre></div>
@@ -307,8 +292,8 @@ file is gone:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
 <dl class="last docutils">
 <dt>Deleting Is Forever</dt>
 <dd>The Unix shell doesn&#8217;t have a trash bin that we can recover
@@ -320,6 +305,9 @@ but there&#8217;s no guarantee they&#8217;ll work in any particular situation,
 since the computer may recycle the file&#8217;s disk space right away.</dd>
 </dl>
 </div>
+</div>
+<div class="section" id="removing-directories">
+<h1>Removing Directories<a class="headerlink" href="#removing-directories" title="Permalink to this headline">¶</a></h1>
 <p>Let&#8217;s re-create that file and then move up one directory to
 <tt class="docutils literal"><span class="pre">/users/nelle</span></tt> using <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pwd
@@ -354,8 +342,8 @@ delete the file <tt class="docutils literal"><span class="pre">draft.txt</span><
 <div class="highlight-python"><div class="highlight"><pre>$ rmdir thesis
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
 <dl class="last docutils">
 <dt>With Great Power Comes Great Responsibility</dt>
 <dd><p class="first">Removing the files in a directory just so that we can remove the
@@ -371,6 +359,9 @@ lot of damage if used without care.</p>
 </dd>
 </dl>
 </div>
+</div>
+<div class="section" id="moving-files-and-directories">
+<h1>Moving Files and Directories<a class="headerlink" href="#moving-files-and-directories" title="Permalink to this headline">¶</a></h1>
 <p>Let&#8217;s create that directory and file one more time. (Note that this
 time we&#8217;re running <tt class="docutils literal"><span class="pre">nano</span></tt> with the path <tt class="docutils literal"><span class="pre">thesis/draft.txt</span></tt>, rather
 than going into the <tt class="docutils literal"><span class="pre">thesis</span></tt> directory and running <tt class="docutils literal"><span class="pre">nano</span></tt> on
@@ -421,6 +412,9 @@ lists that file or directory. We can use this to see that
 quotes.txt
 </pre></div>
 </div>
+</div>
+<div class="section" id="copying-files">
+<h1>Copying Files<a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h1>
 <p>The <tt class="docutils literal"><span class="pre">cp</span></tt> command works very much like <tt class="docutils literal"><span class="pre">mv</span></tt>, except it copies a
 file instead of moving it. We can check that it did the right thing
 using <tt class="docutils literal"><span class="pre">ls</span></tt> with two paths as parameters &#8212; like most Unix commands,
@@ -451,22 +445,29 @@ Nelle&#8217;s home directory is <tt class="docutils literal"><span class="pre">/
 equivalent to <tt class="docutils literal"><span class="pre">/home/nelle/data</span></tt>. This only works if it is the
 first character in the path: <tt class="docutils literal"><span class="pre">here/there/~/elsewhere</span></tt> is <em>not</em>
 <tt class="docutils literal"><span class="pre">/home/nelle/elsewhere</span></tt>.</dd>
-<dt>Renaming files</dt>
-<dd><p class="first">Suppose that you created a <tt class="docutils literal"><span class="pre">.txt</span></tt> file in your current directory
+</dl>
+</div>
+</div>
+<div class="section" id="excercises">
+<h1>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="renaming-files">
+<h2>Renaming files<a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that you created a <tt class="docutils literal"><span class="pre">.txt</span></tt> file in your current directory
 to contain a list of the statistical tests you will need to do to
 analyze your data, and named it: <tt class="docutils literal"><span class="pre">statstics.txt</span></tt></p>
 <p>After creating and saving this file you realize you misspelled the
 filename! You want to correct the mistake, which of the following
 commands could you use to do so?</p>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">mv</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">mv</span> <span class="pre">statstics.txt</span> <span class="pre">.</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">.</span></tt></li>
 </ol>
-</dd>
-<dt>Moving and Copying</dt>
-<dd><p class="first">What is the output of the closing <tt class="docutils literal"><span class="pre">ls</span></tt> command in the sequence
+</div>
+<div class="section" id="moving-and-copying">
+<h2>Moving and Copying<a class="headerlink" href="#moving-and-copying" title="Permalink to this headline">¶</a></h2>
+<p>What is the output of the closing <tt class="docutils literal"><span class="pre">ls</span></tt> command in the sequence
 shown below?</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pwd
 /home/jamie/data
@@ -478,50 +479,52 @@ $ cp recombine/proteins.dat ../proteins-saved.dat
 $ ls
 </pre></div>
 </div>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li><tt class="docutils literal"><span class="pre">proteins-saved.dat</span> <span class="pre">recombine</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">recombine</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">proteins.dat</span> <span class="pre">recombine</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">proteins-saved.dat</span></tt></li>
 </ol>
-</dd>
-<dt>Listing Directories and Files</dt>
-<dd><p class="first">Suppose that:</p>
+</div>
+<div class="section" id="listing-directories-and-files">
+<h2>Listing Directories and Files<a class="headerlink" href="#listing-directories-and-files" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls -F
 analyzed/  fructose.dat    raw/   sucrose.dat
 </pre></div>
 </div>
 <p>What command(s) could you run so that the commands below will
 produce the output shown?</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ ls
+<div class="highlight-python"><div class="highlight"><pre>$ ls
 analyzed/   raw/
 $ ls analyzed
 fructose.dat    sucrose.dat
 </pre></div>
 </div>
-</dd>
-<dt>Copy with Multiple Filenames</dt>
-<dd><p class="first">What does <tt class="docutils literal"><span class="pre">cp</span></tt> do when given several filenames and a directory
+</div>
+<div class="section" id="copy-with-multiple-filenames">
+<h2>Copy with Multiple Filenames<a class="headerlink" href="#copy-with-multiple-filenames" title="Permalink to this headline">¶</a></h2>
+<p>What does <tt class="docutils literal"><span class="pre">cp</span></tt> do when given several filenames and a directory
 name, as in:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ mkdir backup
 $ cp thesis/citations.txt thesis/quotations.txt backup
 </pre></div>
 </div>
 <p>What does <tt class="docutils literal"><span class="pre">cp</span></tt> do when given three or more filenames, as in:</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ ls -F
+<div class="highlight-python"><div class="highlight"><pre>$ ls -F
 intro.txt    methods.txt    survey.txt
 $ cp intro.txt methods.txt survey.txt
 </pre></div>
 </div>
-</dd>
-<dt>Listing Recursively and By Time</dt>
-<dd>The command <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span></tt> lists the contents of directories
-recursively, i.e., lists their sub-directories,
-sub-sub-directories, and so on in alphabetical order at each
-level. The command <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-t</span></tt> lists things by time of last change,
-with most recently changed files or directories first. In what
-order does <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span> <span class="pre">-t</span></tt> display things?</dd>
-</dl>
+</div>
+<div class="section" id="listing-recursively-and-by-time">
+<h2>Listing Recursively and By Time<a class="headerlink" href="#listing-recursively-and-by-time" title="Permalink to this headline">¶</a></h2>
+<p>The command <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span></tt> lists the contents of directories recursively,
+i.e., lists their sub-directories, sub-sub-directories, and so on in
+alphabetical order at each level. The command <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-t</span></tt> lists things
+by time of last change, with most recently changed files or
+directories first. In what order does <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span> <span class="pre">-t</span></tt> display things?</p>
+</div>
 </div>
 
 

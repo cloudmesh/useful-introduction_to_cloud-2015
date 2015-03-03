@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nelle’s Pipeline: Processing Files &mdash; my Cloudmesh Learning documentation</title>
+  <title>Learning Objectives &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -177,7 +177,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
-    <li>Nelle&#8217;s Pipeline: Processing Files</li>
+    <li>Learning Objectives</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../../_sources/class/lesson/linux/shell-loop.txt" rel="nofollow"> View page source</a>
@@ -188,11 +188,10 @@
 </div>
           <div role="main">
             
-  <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Learning Objectives</dt>
-<dd><ul class="first last simple">
+  <div class="section" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
 <li>Write a loop that applies one or more commands separately to each
 file in a set of files.</li>
 <li>Trace the values taken on by a loop variable during execution of
@@ -203,9 +202,10 @@ used in files&#8217; names.</li>
 <li>Demonstrate how to see what commands have recently been executed.</li>
 <li>Re-run recently executed commands without retyping them.</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </div>
+<div class="section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
 <p>Wildcards and tab completion are two ways to reduce typing (and typing
 mistakes). Another is to tell the shell to do something over and over
 again. Suppose we have several hundred genome data files named
@@ -253,6 +253,9 @@ the <strong>variable</strong> called <tt class="docutils literal"><span class="p
 variable&#8217;s value by putting <tt class="docutils literal"><span class="pre">$</span></tt> in front of it: <tt class="docutils literal"><span class="pre">$filename</span></tt> is
 <tt class="docutils literal"><span class="pre">basilisk.dat</span></tt> the first time through the loop, <tt class="docutils literal"><span class="pre">unicorn.dat</span></tt> the
 second, and so on.</p>
+</div>
+<div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
 <p>By using the dollar sign we are telling the shell interpreter to treat
 <tt class="docutils literal"><span class="pre">filename</span></tt> as a variable name and substitute its value on its place,
 but not as some text or external command. When using variables it is
@@ -266,7 +269,7 @@ file in turn.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <dl class="last docutils">
-<dt>Follow the Prompt</dt>
+<dt>The Prompt Changes</dt>
 <dd>The shell prompt changes from <tt class="docutils literal"><span class="pre">$</span></tt> to <tt class="docutils literal"><span class="pre">&gt;</span></tt> and back again as we
 were typing in our loop. The second prompt, <tt class="docutils literal"><span class="pre">&gt;</span></tt>, is different to
 remind us that we haven&#8217;t finished typing a complete command yet.</dd>
@@ -290,8 +293,12 @@ done
 </div>
 <p>it would work exactly the same way. <em>Don&#8217;t do this.</em> Programs are only
 useful if people can understand them, so meaningless names (like
-<tt class="docutils literal"><span class="pre">x</span></tt>) or misleading names (like <tt class="docutils literal"><span class="pre">temperature</span></tt>) increase the odds
-that the program won&#8217;t do what its readers think it does.</p>
+<tt class="docutils literal"><span class="pre">x</span></tt>) or misleading names (like <tt class="docutils literal"><span class="pre">temperature</span></tt> in this case)
+increase the odds that the program won&#8217;t do what its readers think it
+does.</p>
+</div>
+<div class="section" id="informative-loops">
+<h1>Informative Loops<a class="headerlink" href="#informative-loops" title="Permalink to this headline">¶</a></h1>
 <p>Here&#8217;s a slightly more complicated loop:</p>
 <div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
 do
@@ -326,11 +333,10 @@ expanded to <tt class="docutils literal"><span class="pre">basilisk.dat</span></
 <tt class="docutils literal"><span class="pre">basilisk.dat</span></tt> as a program. Finally, the <tt class="docutils literal"><span class="pre">head</span></tt> and <tt class="docutils literal"><span class="pre">tail</span></tt>
 combination selects lines 81-100 from whatever file is being
 processed.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Spaces in Names</dt>
-<dd><p class="first">Filename expansion in loops is another reason you should not use
+</div>
+<div class="section" id="spaces-in-names">
+<h1>Spaces in Names<a class="headerlink" href="#spaces-in-names" title="Permalink to this headline">¶</a></h1>
+<p>Filename expansion in loops is another reason you should not use
 spaces in filenames. Suppose our data files are named:</p>
 <div class="highlight-python"><div class="highlight"><pre>basilisk.dat
 red dragon.dat
@@ -348,8 +354,8 @@ done
 <div class="highlight-python"><div class="highlight"><pre>basilisk.dat red dragon.dat unicorn.dat
 </pre></div>
 </div>
-<p>With older versions of Bash, or most other shells, <tt class="docutils literal"><span class="pre">filename</span></tt>
-will then be assigned the following values in turn:</p>
+<p>With older versions of Bash, or most other shells, <tt class="docutils literal"><span class="pre">filename</span></tt> will
+then be assigned the following values in turn:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">basilisk</span><span class="o">.</span><span class="n">dat</span>
 <span class="n">red</span>
 <span class="n">dragon</span><span class="o">.</span><span class="n">dat</span>
@@ -357,21 +363,18 @@ will then be assigned the following values in turn:</p>
 </pre></div>
 </div>
 <p>That&#8217;s a problem: <tt class="docutils literal"><span class="pre">head</span></tt> can&#8217;t read files called <tt class="docutils literal"><span class="pre">red</span></tt> and
-<tt class="docutils literal"><span class="pre">dragon.dat</span></tt> because they don&#8217;t exist, and won&#8217;t be asked to
-read the file <tt class="docutils literal"><span class="pre">red</span> <span class="pre">dragon.dat</span></tt>.</p>
-<p>We can make our script a little bit more robust by <strong>quoting</strong> our
-use of the variable:</p>
+<tt class="docutils literal"><span class="pre">dragon.dat</span></tt> because they don&#8217;t exist, and won&#8217;t be asked to read
+the file <tt class="docutils literal"><span class="pre">red</span> <span class="pre">dragon.dat</span></tt>.</p>
+<p>We can make our script a little bit more robust by <strong>quoting</strong> our use
+of the variable:</p>
 <div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
 do
     head -100 &quot;$filename&quot; | tail -20
 done
 </pre></div>
 </div>
-<p class="last">but it&#8217;s simpler just to avoid using spaces (or other special
+<p>but it&#8217;s simpler just to avoid using spaces (or other special
 characters) in filenames.</p>
-</dd>
-</dl>
-</div>
 <p>Going back to our original file renaming problem, we can solve it
 using this loop:</p>
 <div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
@@ -419,6 +422,7 @@ way to see what&#8217;s going to happen when you&#8217;re still learning how
 loops work.</p>
 </dd>
 </dl>
+</div>
 </div>
 <div class="section" id="nelle-s-pipeline-processing-files">
 <h1>Nelle&#8217;s Pipeline: Processing Files<a class="headerlink" href="#nelle-s-pipeline-processing-files" title="Permalink to this headline">¶</a></h1>
@@ -481,7 +485,7 @@ repeat the command, and edits it to read:</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <dl class="last docutils">
-<dt>Beginning and End</dt>
+<dt>Moving to the Beginning and End</dt>
 <dd>We can move to the beginning of a line in the shell by typing
 <tt class="docutils literal"><span class="pre">^A</span></tt> (which means Control-A) and to the end using <tt class="docutils literal"><span class="pre">^E</span></tt>.</dd>
 </dl>
@@ -500,11 +504,11 @@ terminal window, goes into <tt class="docutils literal"><span class="pre">north-
 <tt class="docutils literal"><span class="pre">cat</span> <span class="pre">stats-NENE01729B.txt</span></tt> to examine one of the output files. It
 looks good, so she decides to get some coffee and catch up on her
 reading.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Those Who Know History Can Choose to Repeat It</dt>
-<dd><p class="first">Another way to repeat previous work is to use the <tt class="docutils literal"><span class="pre">history</span></tt>
+</div>
+<div class="section" id="history">
+<h1>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h1>
+<p>(Those who know history can choose to repeat it)</p>
+<p>Another way to repeat previous work is to use the <tt class="docutils literal"><span class="pre">history</span></tt>
 command to get a list of the last few hundred commands that have
 been executed, and then to use <tt class="docutils literal"><span class="pre">!123</span></tt> (where &#8220;123&#8221; is replaced
 by the command number) to repeat one of those commands. For
@@ -517,16 +521,14 @@ example, if Nelle types this:</p>
   460  history
 </pre></div>
 </div>
-<p class="last">then she can re-run <tt class="docutils literal"><span class="pre">goostats</span></tt> on <tt class="docutils literal"><span class="pre">NENE01729B.txt</span></tt> simply by
+<p>then she can re-run <tt class="docutils literal"><span class="pre">goostats</span></tt> on <tt class="docutils literal"><span class="pre">NENE01729B.txt</span></tt> simply by
 typing <tt class="docutils literal"><span class="pre">!458</span></tt>.</p>
-</dd>
-</dl>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Variables in loops</dt>
-<dd><p class="first">Suppose that <tt class="docutils literal"><span class="pre">ls</span></tt> initially displays:</p>
+<div class="section" id="excercises">
+<h1>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="variables-in-loops">
+<h2>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that <tt class="docutils literal"><span class="pre">ls</span></tt> initially displays:</p>
 <div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat
 </pre></div>
 </div>
@@ -544,15 +546,11 @@ do
 done
 </pre></div>
 </div>
-<p class="last">Why do these two loops give you different outputs?</p>
-</dd>
-</dl>
+<p>Why do these two loops give you different outputs?</p>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Saving to a file in a loop - part one</dt>
-<dd><p class="first">In the same directory, what is the effect of this loop?</p>
+<div class="section" id="saving-to-a-file-in-a-loop-part-one">
+<h2>Saving to a file in a loop - part one<a class="headerlink" href="#saving-to-a-file-in-a-loop-part-one" title="Permalink to this headline">¶</a></h2>
+<p>In the same directory, what is the effect of this loop?</p>
 <div class="highlight-python"><div class="highlight"><pre>for sugar in *.dat
 do
     echo $sugar
@@ -560,7 +558,7 @@ do
 done
 </pre></div>
 </div>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>Prints <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt>, and <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt>,
 and copies <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> to create <tt class="docutils literal"><span class="pre">xylose.dat</span></tt>.</li>
 <li>Prints <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt>, and <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt>,
@@ -570,14 +568,10 @@ and concatenates all three files to create <tt class="docutils literal"><span cl
 <tt class="docutils literal"><span class="pre">xylose.dat</span></tt>.</li>
 <li>None of the above.</li>
 </ol>
-</dd>
-</dl>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<dl class="last docutils">
-<dt>Saving to a file in a loop - part two</dt>
-<dd><p class="first">In another directory, where <tt class="docutils literal"><span class="pre">ls</span></tt> returns:</p>
+<div class="section" id="saving-to-a-file-in-a-loop-part-two">
+<h2>Saving to a file in a loop - part two<a class="headerlink" href="#saving-to-a-file-in-a-loop-part-two" title="Permalink to this headline">¶</a></h2>
+<p>In another directory, where <tt class="docutils literal"><span class="pre">ls</span></tt> returns:</p>
 <div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat   maltose.txt
 </pre></div>
 </div>
@@ -588,7 +582,7 @@ do
 done
 </pre></div>
 </div>
-<ol class="last arabic simple">
+<ol class="arabic simple">
 <li>All of the text from <tt class="docutils literal"><span class="pre">fructose.dat</span></tt>, <tt class="docutils literal"><span class="pre">glucose.dat</span></tt> and
 <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> would be concatenated and saved to a file
 called <tt class="docutils literal"><span class="pre">sugar.dat</span></tt>.</li>
@@ -601,15 +595,10 @@ saved to a file called <tt class="docutils literal"><span class="pre">sugar.dat<
 <tt class="docutils literal"><span class="pre">sucrose.dat</span></tt> would be printed to the screen and saved to a
 file called <tt class="docutils literal"><span class="pre">sugar.dat</span></tt></li>
 </ol>
-</dd>
-</dl>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>Doing a Dry Run</dt>
-<dd><p class="first">Suppose we want to preview the commands the following loop will
+<div class="section" id="doing-a-dry-run">
+<h2>Doing a Dry Run<a class="headerlink" href="#doing-a-dry-run" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we want to preview the commands the following loop will
 execute without actually running those commands:</p>
 <div class="highlight-python"><div class="highlight"><pre>for file in *.dat
 do
@@ -619,7 +608,7 @@ done
 </div>
 <p>What is the difference between the the two loops below, and which
 one would we want to run?:</p>
-<div class="last highlight-python"><div class="highlight"><pre># Version 1
+<div class="highlight-python"><div class="highlight"><pre># Version 1
 for file in *.dat
 do
   echo analyze $file &gt; analyzed-$file
@@ -631,19 +620,16 @@ do
 done
 </pre></div>
 </div>
-</dd>
-</dl>
-</div></blockquote>
-<p>FIXME</p>
-<blockquote class="last">
-<div><p>Describe in words what the following loop does.</p>
+</div>
+<div class="section" id="variable-commands">
+<h2>Variable Commands<a class="headerlink" href="#variable-commands" title="Permalink to this headline">¶</a></h2>
+<p>Describe in words what the following loop does.</p>
 <div class="highlight-python"><div class="highlight"><pre>for how in frog11 prcb redig
 do
     $how -limit 0.01 NENE01729B.txt
 done
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 </div>
 

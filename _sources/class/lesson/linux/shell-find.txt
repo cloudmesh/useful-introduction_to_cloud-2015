@@ -1,6 +1,5 @@
-.. tip::
-   Learning Objectives
-    -------------------
+Learning Objectives
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     -  Use ``grep`` to select lines from text files that match simple
        patterns.
@@ -9,6 +8,9 @@
        another command.
     -  Explain what is meant by "text" and "binary" files, and why many
        common tools don't handle the latter well.
+
+Searching File Contents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can guess someone's age by how they talk about search: young
 people use "Google" as a verb, while crusty old Unix programmers use
@@ -141,32 +143,34 @@ skip up and down by full page. Quit the ``man`` pages by typing "q".::
     matched.  (-F is specified by POSIX.)
     ...        ...        ...
 
-.. tip::
-   Wildcards
-    ---------
 
-    ``grep``'s real power doesn't come from its options, though; it
-    comes from the fact that patterns can include wildcards. (The
-    technical name for these is **regular expressions**, which is what
-    the "re" in "grep" stands for.) Regular expressions are both
-    complex and powerful; if you want to do complex searches, please
-    look at the lesson on `our website
-    <http://software-carpentry.org>`__. As a taster, we can find lines
-    that have an 'o' in the second position like this:
+Searching for Patterns in Files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    ::
+``grep``'s real power doesn't come from its options, though; it comes
+from the fact that patterns can include wildcards. (The technical name
+for these is **regular expressions**, which is what the "re" in "grep"
+stands for.) Regular expressions are both complex and powerful; if you
+want to do complex searches, please look at the lesson on `our website
+<http://software-carpentry.org>`__. As a taster, we can find lines
+that have an 'o' in the second position like this:
 
-        $ grep -E '^.o' haiku.txt
-        You bring fresh toner.
-        Today it is not working
-        Software is like that.
+::
 
-    We use the ``-E`` flag and put the pattern in quotes to prevent
-    the shell from trying to interpret it. (If the pattern contained a
-    '\*', for example, the shell would try to expand it before running
-    ``grep``.) The '^' in the pattern anchors the match to the start
-    of the line. The '.' matches a single character (just like '?' in
-    the shell), while the 'o' matches an actual 'o'.
+    $ grep -E '^.o' haiku.txt
+    You bring fresh toner.
+    Today it is not working
+    Software is like that.
+
+We use the ``-E`` flag and put the pattern in quotes to prevent the
+shell from trying to interpret it. (If the pattern contained a '\*',
+for example, the shell would try to expand it before running
+``grep``.) The '^' in the pattern anchors the match to the start of
+the line. The '.' matches a single character (just like '?' in the
+shell), while the 'o' matches an actual 'o'.
+
+Searching for Files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While ``grep`` finds lines in files, the ``find`` command finds files
 themselves. Again, it has a lot of options; to show how the simplest
@@ -226,6 +230,9 @@ therefore finds all the files that are two or more levels below us::
     ./tools/format
     ./tools/stats
 
+Searching for Files Matching a Pattern
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Now let's try matching by name::
 
     $ find . -name *.txt
@@ -265,6 +272,9 @@ We've seen how to do that with pipes; let's look at another technique.
 As we just saw, ``find . -name '*.txt'`` gives us a list of all text
 files in or below the current directory. How can we combine that with
 ``wc -l`` to count the lines in all those files?
+
+Subshell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The simplest way is to put the ``find`` command inside ``$()``::
 
@@ -322,87 +332,75 @@ all the ``.pdb`` files above the current directory::
     included, have borrowed a lot of ideas from it, and imitation is
     also the sincerest form of praise.
 
-.. tip::
-   Conclusion
-    ----------
 
-    The Unix shell is older than most of the people who use it. It has
-    survived so long because it is one of the most productive
-    programming environments ever created --- maybe even *the* most
-    productive. Its syntax may be cryptic, but people who have mastered
-    it can experiment with different commands interactively, then use
-    what they have learned to automate their work. Graphical user
-    interfaces may be better at the first, but the shell is still
-    unbeaten at the second. And as Alfred North Whitehead wrote in 1911,
-    "Civilization advances by extending the number of important
-    operations which we can perform without thinking about them."
+Excercises
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tip::
-   Using grep
-    ----------
+Using grep
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    ::
+::
 
-        The Tao that is seen
-        Is not the true Tao, until
-        You bring fresh toner.
+    The Tao that is seen
+    Is not the true Tao, until
+    You bring fresh toner.
 
-        With searching comes loss
-        and the presence of absence:
-        "My Thesis" not found.
+    With searching comes loss
+    and the presence of absence:
+    "My Thesis" not found.
 
-        Yesterday it worked
-        Today it is not working
-        Software is like that.
+    Yesterday it worked
+    Today it is not working
+    Software is like that.
 
-    From the above text, contained in the file ``haiku.txt``, which
-    command would result in the following output:
+From the above text, contained in the file ``haiku.txt``, which
+command would result in the following output:
 
-    ::
+::
 
-        and the presence of absence
+    and the presence of absence
 
-    1. ``grep of haiku.txt``
-    2. ``grep -E of haiku.txt``
-    3. ``grep -w of haiku.txt``
-    4. ``grep -i of haiku.txt``
+1. ``grep of haiku.txt``
+2. ``grep -E of haiku.txt``
+3. ``grep -w of haiku.txt``
+4. ``grep -i of haiku.txt``
 
-.. tip::
-   ``find`` pipeline reading comprehension
-    ---------------------------------------
 
-    Write a short explanatory comment for the following shell script::
+``find`` pipeline reading comprehension
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-        find . -name '*.dat' | wc -l | sort -n
+Write a short explanatory comment for the following shell script::
 
-.. tip::
-   Matching ``ose.dat`` but not ``temp``
-    -------------------------------------
+    find . -name '*.dat' | wc -l | sort -n
 
-    The ``-v`` flag to ``grep`` inverts pattern matching, so that only
-    lines which do *not* match the pattern are printed. Given that,
-    which of the following commands will find all files in ``/data``
-    whose names end in ``ose.dat`` (e.g., ``sucrose.dat`` or
-    ``maltose.dat``), but do *not* contain the word ``temp``?
 
-    1. ``find /data -name '*.dat' | grep ose | grep -v temp``
+Matching ``ose.dat`` but not ``temp``
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    2. ``find /data -name ose.dat | grep -v temp``
+The ``-v`` flag to ``grep`` inverts pattern matching, so that only
+lines which do *not* match the pattern are printed. Given that,
+which of the following commands will find all files in ``/data``
+whose names end in ``ose.dat`` (e.g., ``sucrose.dat`` or
+``maltose.dat``), but do *not* contain the word ``temp``?
 
-    3. ``grep -v temp $(find /data -name '*ose.dat')``
+1. ``find /data -name '*.dat' | grep ose | grep -v temp``
 
-    4. None of the above.
+2. ``find /data -name ose.dat | grep -v temp``
 
-.. tip::
-   Little Women
-    ------------
+3. ``grep -v temp $(find /data -name '*ose.dat')``
 
-    You and your friend, having just finished reading *Little Women*
-    by Louisa May Alcott, are in an argument. Of the four sisters in
-    the book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was
-    the most mentioned. You, however, are certain it was Amy. Luckily,
-    you have a file ``LittleWomen.txt`` containing the full text of
-    the novel. Using a\ ``for`` loop, how would you tabulate the
-    number of times each of the four sisters is mentioned? Hint: one
-    solution might employ the commands ``grep`` and ``wc`` and a
-    ``|``, while another might utilize ``grep`` options.
+4. None of the above.
+
+
+Little Women
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+You and your friend, having just finished reading *Little Women* by
+Louisa May Alcott, are in an argument. Of the four sisters in the
+book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the most
+mentioned. You, however, are certain it was Amy. Luckily, you have a
+file ``LittleWomen.txt`` containing the full text of the novel. Using
+a\ ``for`` loop, how would you tabulate the number of times each of
+the four sisters is mentioned? Hint: one solution might employ the
+commands ``grep`` and ``wc`` and a ``|``, while another might utilize
+``grep`` options.
