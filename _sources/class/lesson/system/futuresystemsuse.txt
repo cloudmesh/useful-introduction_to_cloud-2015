@@ -5,7 +5,6 @@ Use of FutureSystems (Under Preparation)
 
    .. contents::
       :local:
-   
 
 
 Getting an Account

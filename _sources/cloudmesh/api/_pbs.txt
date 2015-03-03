@@ -1,0 +1,90 @@
+
+Batch Queues
+============
+
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_pbs.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
+Cloudmesh includes a convenient interface to PBS qstat. It is using an
+ssh command to connect to the login node on which to execute qstat. The
+result of the call is available as a dict and you can print it to
+inspect it closer.
+
+In addition cloudmesh has a customization that alloes resources in
+FUturegrid to be seperated by machine. This is necessary as the login
+node on india is also in control of the queues on a number of machines
+instead of just one.
+
+The username for FutureGrid is loaded from the configuration yaml file
+in the example
+
+.. code:: python
+
+    import cloudmesh
+.. code:: python
+
+    username = cloudmesh.load().username()
+.. code:: python
+
+    india = cloudmesh.PBS(username, "india.futuregrid.org")
+QStat
+~~~~~
+
+.. code:: python
+
+    qstat = india.qstat()
+
+::
+
+
+    ---------------------------------------------------------------------------
+    RuntimeError                              Traceback (most recent call last)
+
+    <ipython-input-7-cfa496304576> in <module>()
+    ----> 1 qstat = india.qstat()
+    
+
+    /Users/flat/ENV/lib/python2.7/site-packages/cloudmesh-1.0-py2.7.egg/cloudmesh/pbs/pbs.pyc in qstat(self, refresh)
+        285             except:
+        286                 raise RuntimeError(
+    --> 287                     "can not execute pbs qstat on host {0}".format(self.host))
+        288             info = {}
+        289 
+
+
+    RuntimeError: can not execute pbs qstat on host india.futuregrid.org
+
+
+Next, let us list the nuber of clusters managed with the india PBS
+deployment
+
+.. code:: python
+
+    qstat.keys()
+.. code:: python
+
+    qstat["india.futuregrid.org"].keys()
+.. code:: python
+
+    for jobname in qstat["india.futuregrid.org"]:
+        job = qstat["india.futuregrid.org"][jobname]
+        print jobname, job["job_state"]
+QInfo
+~~~~~
+
+.. code:: python
+
+    qinfo = india.qinfo()
+To list the queue names, simply print the keys.
+
+.. code:: python
+
+    print qinfo["india.futuregrid.org"].keys()
+More information is available when you inspect the dict.

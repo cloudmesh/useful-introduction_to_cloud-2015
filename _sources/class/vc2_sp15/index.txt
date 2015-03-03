@@ -4,11 +4,11 @@
 
 
 **********************************************************************
-|courseimg| Spring 2015 - Big Data Applications and Technologies 
+|courseimg| Spring 2015 - Big Data Open Source Software Project
 **********************************************************************
-Althouh this material is prepared for the classes IU ``INFO-I 400``,
-``INFO-I 590``, they are of general interest to others. Please use
-them  to learn about BigData Applications and Technologies.
+Althouh this material is prepared for the classes IU ``BUEX-V 594``,
+they are of general interest to others. Please use
+them  to learn about BigData Software and Technologies.
 
 .. BigData Virtual Cluster (Spring 2015)
 

@@ -1,0 +1,34 @@
+
+Cloudmesh API Initialization
+============================
+
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_hello.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
+To access the many useful functions available in cloudmesh, we need to
+import the cloudmesh module.
+
+.. code:: python
+
+    import cloudmesh
+Version
+-------
+
+Cloudmesh has a version number that can be retrived with the version
+function
+
+.. code:: python
+
+    print cloudmesh.version()
+
+.. parsed-literal::
+
+    1.0
+
