@@ -48,7 +48,7 @@ System Access
       
 
 
-Elemantary Linux Tools
+Linux Basics
 ======================================================================
 
 .. toctree::
@@ -63,7 +63,7 @@ Elemantary Linux Tools
    ../lesson/linux/advancedssh
 
 
-Elemantary Cloud Computing
+Basics of OpenStack
 ======================================================================
 
 .. toctree::
@@ -72,6 +72,16 @@ Elemantary Cloud Computing
 
    ../lesson/iaas/overview
    ../lesson/iaas/openstack
+
+Basics of Cloudmesh
+======================================================================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+
+   ../lesson/iaas/overview_cloudmesh
    ../lesson/iaas/cloudmesh
    ../lesson/iaas/cloudmesh_ipython
    ../lesson/iaas/cloudmesh_openstack
@@ -89,7 +99,7 @@ Advanced Cloudmesh
    ../lesson/iaas/cloudmesh_cluster
 
 
-DevOps and Orchetration Tools
+IT Operations - Automation and Orchestration 
 ======================================================================
 
 .. toctree::
