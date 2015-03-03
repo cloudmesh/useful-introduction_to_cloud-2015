@@ -31,7 +31,7 @@
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
-        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project" href="../../vc2_sp15/index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../vc2_sp15/index.html"/>
         <link rel="next" title="Infrastructure as a Service (under preparation)" href="../iaas/overview.html"/>
         <link rel="prev" title="Using yum, apt-get and brew (Under Preparation)" href="packagemanagement.html"/> 
 
@@ -80,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
@@ -133,8 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../ipython/_ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a><ul>
@@ -182,7 +181,7 @@
       
           <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
       
-          <li><a href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project</a> &raquo;</li>
+          <li><a href="../../vc2_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
       
     <li>Advanced SSH</li>
       <li class="wy-breadcrumbs-aside">
@@ -218,8 +217,8 @@ establish SSH tunneling with a few examples.</p>
 <div class="section" id="prerequisite">
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct this lesson you should have knowledge of basics of SSH.</p>
-<p>If you missed the lesson of basic SSH, go to <a href="#id1"><span class="problematic" id="id2">`here
-../system/futuresystemsuse.html#ssh`_</span></a></p>
+<p>If you missed the lesson of basic SSH, go to
+<a class="reference external" href="../system/futuresystemsuse.html#ssh">here</a></p>
 </div>
 <div class="section" id="ssh-configuration-file">
 <h2>SSH Configuration File<a class="headerlink" href="#ssh-configuration-file" title="Permalink to this headline">¶</a></h2>
@@ -239,7 +238,7 @@ IdentityFile ~/.ssh/id_rsa_india
 </pre></div>
 </div>
 <p>Once you have this configuration, you can simply run <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">india</span></tt> to get
-access <tt class="docutils literal"><span class="pre">''india.futuresystems.org</span></tt>.  Let&#8217;s see what these keywords are in the
+access <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt>.  Let&#8217;s see what these keywords are in the
 configuration.</p>
 <ul class="simple">
 <li>Host: is a label for your host. SSH recognizes your settings with this label.</li>
@@ -259,7 +258,7 @@ configuation file. If you would like know more about other keywords, please see
 and a remote machine, SSH tunneling rather than VPN is simple and useful to
 protect against sniffing and eavesdropping of network traffic.</p>
 <div class="figure">
-<img alt="../../../_images/lesson_ssh_tunnel.png" src="../../../_images/lesson_ssh_tunnel.png" />
+<img alt="images/lesson_ssh_tunnel.pngExmpleofSSHtunneling-Local10010portsismirroredtoremote80ports." src="images/lesson_ssh_tunnel.pngExmpleofSSHtunneling-Local10010portsismirroredtoremote80ports." />
 </div>
 <p>You can transfer inbound traffic to outbound ports using SSH tunnel. SSH tunnel
 listens on a particular port and redirects incoming packets to the destination.
