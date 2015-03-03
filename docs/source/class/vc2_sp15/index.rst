@@ -2,10 +2,9 @@
 	   :width: 30
 
 
-
-**********************************************************************
-|courseimg| Spring 2015 - Big Data Open Source Software Project
-**********************************************************************
+*******************************************************************************
+|courseimg| Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)
+*******************************************************************************
 Althouh this material is prepared for the classes IU ``BUEX-V 594``,
 they are of general interest to others. Please use
 them  to learn about BigData Software and Technologies.
