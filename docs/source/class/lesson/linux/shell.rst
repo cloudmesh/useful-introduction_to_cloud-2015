@@ -4,14 +4,47 @@ Shell (Under Preparation)
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
+
+This lesson will introduce you to using the shell, which is required
+for using FutureSystems resources.
+
 
 .. tip:: Duration: 1 hour
 
-Prerequisite
+Description
 ----------------------------------------------------------------------
 
-In order to conduct this lesson you should have knowledge of
+A "shell" is a program that facilitates interaction between human and
+computer.
+By providing this level of abstraction certain tasks which may be
+otherwise cumbersome of time-consuming are relatively simple to
+accomplish.
+There are numerous types of shells.
+If you have ever used a computer you have used a shell.
+For instance, Windows and Mac OS X use a shell based on graphical
+representations with a mouse and keyboard for interaction.
+Touch-screen phones and tables also use another type of shell whose
+mode of interaction is through touch.
+In addition to these which you might be familiar with, we will be using
+a command shell to interact with the computer primarily through the
+keyboard.
+
+.. note:: Adventerous readers may be interested to know that both
+   Windows and Mac OS X provide a command shell.  On Windows you can
+   run ``cmd.exe`` from `Start --> Run`.  On OS X open `Applications
+   --> Utilities --> Terminal`.
+
+.. tip::
+   If you wish to follow along please log into your FutureSystems
+   account (see :doc:`../system/futuresystemsuse`).
+
+
+Introduction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: shell-intro.rst
+
+
 
 * How to .... . Described in lesson
 * Lesson ....
