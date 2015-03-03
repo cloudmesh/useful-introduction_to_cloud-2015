@@ -88,9 +88,18 @@ Exercises
 Exercise I
 ^^^^^^^^^^^^^^^^^^
 
+* Configure your FutureSystems account in SSH configuration file.
+
 Exercise II
 ^^^^^^^^^^^^^^^^^^
 
+* Assume that we have ``ssh -L 10010:remote:80
+  albert@exercise.futuresystems.org``. Define your SSH configuration to simply
+  use ``ssh tunnel_exercise`` in the shell.
+
+.. tip:: See the man page of ssh_config for ssh tunneling. ``LocalForward``
+   keyword will be required.  
+   
 Next Step
 -----------
 
