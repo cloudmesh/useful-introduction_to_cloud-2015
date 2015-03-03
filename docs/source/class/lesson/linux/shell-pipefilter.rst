@@ -1,6 +1,5 @@
-.. tip::
-   Learning Objectives
-    -------------------
+Learning Objectives
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     -  Redirect a command's output to a file.
     -  Process a file instead of keyboard input using redirection.
@@ -8,6 +7,9 @@
     -  Explain what usually happens if a program or pipeline isn't given
        any input to process.
     -  Explain Unix's "small pieces, loosely joined" philosophy.
+
+Globbing/Wildcards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we know a few basic commands, we can finally look at the
 shell's most powerful feature: the ease with which it lets us combine
@@ -86,6 +88,9 @@ number of lines per file::
 We can also use ``-w`` to get only the number of words, or ``-c`` to
 get only the number of characters.
 
+Redirecting Output
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Which of these files is shortest? It's an easy question to answer when
 there are only six files, but what if there were 6000? Our first step
 toward a solution is to run the command::
@@ -147,10 +152,27 @@ on. Since ``sorted-lengths.txt`` contains the lengths of our files
 ordered from least to greatest, the output of ``head`` must be the
 file with the fewest lines.
 
-If you think this is confusing, you're in good company: even once you
-understand what ``wc``, ``sort``, and ``head`` do, all those
-intermediate files make it hard to follow what's going on. We can make
-it easier to understand by running ``sort`` and ``head`` together::
+Redirecting Input
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As well as using ``>`` to redirect a program's output, we can use
+``<`` to redirect its input, i.e., to read from a file instead of from
+standard input. For example, instead of writing ``wc ammonia.pdb``, we
+could write ``wc < ammonia.pdb``. In the first case, ``wc`` gets a
+command line parameter telling it what file to open. In the second,
+``wc`` doesn't have any command line parameters, so it reads from
+standard input, but we have told the shell to send the contents of
+``ammonia.pdb`` to ``wc``'s standard input.
+
+
+Pipes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you think having use many intermediate files is confusing, you're
+in good company: even once you understand what ``wc``, ``sort``, and
+``head`` do, all those intermediate files make it hard to follow
+what's going on. We can make it easier to understand by running
+``sort`` and ``head`` together::
 
     $ sort -n lengths.txt | head -1
       9  methane.pdb
@@ -205,6 +227,9 @@ we run ``wc -l *.pdb | sort -n | head -1``, we get three processes
 with data flowing from the files, through ``wc`` to ``sort``, and from
 ``sort`` through ``head`` to the screen.
 
+Filter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This simple idea is why Unix has been so successful. Instead of
 creating enormous programs that try to do many different things, Unix
 programmers focus on creating lots of simple tools that each do one
@@ -222,19 +247,6 @@ every other program that behaves this way as well. You can *and
 should* write your programs this way so that you and other people can
 put those programs into pipes to multiply their power.
 
-.. tip::
-   Redirecting Input
-    -----------------
-
-    As well as using ``>`` to redirect a program's output, we can use
-    ``<`` to redirect its input, i.e., to read from a file instead of
-    from standard input. For example, instead of writing ``wc
-    ammonia.pdb``, we could write ``wc < ammonia.pdb``. In the first
-    case, ``wc`` gets a command line parameter telling it what file to
-    open. In the second, ``wc`` doesn't have any command line
-    parameters, so it reads from standard input, but we have told the
-    shell to send the contents of ``ammonia.pdb`` to ``wc``'s standard
-    input.
 
 Nelle's Pipeline: Checking Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -296,142 +308,145 @@ wildcard expression ``*[AB].txt``. As always, the '\*' matches any
 number of characters; the expression ``[AB]`` matches either an 'A' or
 a 'B', so this matches all the valid data files she has.
 
-.. tip::
-   What does ``sort -n`` do?
-    -------------------------
+Excercises
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    If we run ``sort`` on this file:
+What does ``sort -n`` do?
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    ::
+If we run ``sort`` on this file:
 
-        10
-        2
-        19
-        22
-        6
+::
 
-    the output is:
+    10
+    2
+    19
+    22
+    6
 
-    ::
+the output is:
 
-        10
-        19
-        2
-        22
-        6
+::
 
-    If we run ``sort -n`` on the same input, we get this instead:
+    10
+    19
+    2
+    22
+    6
 
-    ::
+If we run ``sort -n`` on the same input, we get this instead:
 
-        2
-        6
-        10
-        19
-        22
+::
 
-    Explain why ``-n`` has this effect.
+    2
+    6
+    10
+    19
+    22
 
-   What does ``<`` mean?
-    ---------------------
+Explain why ``-n`` has this effect.
 
-    What is the difference between:
 
-    ::
+What does ``<`` mean?
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-        wc -l < mydata.dat
+What is the difference between:
 
-    and:
+::
 
-    ::
+    wc -l < mydata.dat
 
-        wc -l mydata.dat
+and:
 
-   Piping commands together
-    ------------------------
+::
 
-    In our current directory, we want to find the 3 files which have
-    the least number of lines. Which command listed below would work?
+    wc -l mydata.dat
 
-    1. ``wc -l * > sort -n > head -3``
-    2. ``wc -l * | sort -n | head 1-3``
-    3. ``wc -l * | head -3 | sort -n``
-    4. ``wc -l * | sort -n | head -3``
+Piping commands together
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-   Why does ``uniq`` only remove adjacent duplicates?
-    --------------------------------------------------
+In our current directory, we want to find the 3 files which have
+the least number of lines. Which command listed below would work?
 
-    The command ``uniq`` removes adjacent duplicated lines from its
-    input. For example, if a file ``salmon.txt`` contains:
+1. ``wc -l * > sort -n > head -3``
+2. ``wc -l * | sort -n | head 1-3``
+3. ``wc -l * | head -3 | sort -n``
+4. ``wc -l * | sort -n | head -3``
 
-    ::
+Why does ``uniq`` only remove adjacent duplicates?
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-        coho
-        coho
-        steelhead
-        coho
-        steelhead
-        steelhead
+The command ``uniq`` removes adjacent duplicated lines from its
+input. For example, if a file ``salmon.txt`` contains:
 
-    then ``uniq salmon.txt`` produces:
+::
 
-    ::
+    coho
+    coho
+    steelhead
+    coho
+    steelhead
+    steelhead
 
-        coho
-        steelhead
-        coho
-        steelhead
+then ``uniq salmon.txt`` produces:
 
-    Why do you think ``uniq`` only removes *adjacent* duplicated
-    lines?  (Hint: think about very large data sets.) What other
-    command could you combine with it in a pipe to remove all
-    duplicated lines?
+::
 
-   Pipe reading comprehension
-    --------------------------
+    coho
+    steelhead
+    coho
+    steelhead
 
-    A file called ``animals.txt`` contains the following data:
+Why do you think ``uniq`` only removes *adjacent* duplicated
+lines?  (Hint: think about very large data sets.) What other
+command could you combine with it in a pipe to remove all
+duplicated lines?
 
-    ::
+Pipe reading comprehension
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-        2012-11-05,deer
-        2012-11-05,rabbit
-        2012-11-05,raccoon
-        2012-11-06,rabbit
-        2012-11-06,deer
-        2012-11-06,fox
-        2012-11-07,rabbit
-        2012-11-07,bear
+A file called ``animals.txt`` contains the following data:
 
-    What text passes through each of the pipes and the final redirect
-    in the pipeline below?
+::
 
-    ::
+    2012-11-05,deer
+    2012-11-05,rabbit
+    2012-11-05,raccoon
+    2012-11-06,rabbit
+    2012-11-06,deer
+    2012-11-06,fox
+    2012-11-07,rabbit
+    2012-11-07,bear
 
-        cat animals.txt | head -5 | tail -3 | sort -r > final.txt
+What text passes through each of the pipes and the final redirect
+in the pipeline below?
 
-   Pipe construction
-    -----------------
+::
 
-    The command:
+    cat animals.txt | head -5 | tail -3 | sort -r > final.txt
 
-    ::
+Pipe construction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-        $ cut -d , -f 2 animals.txt
+The command:
 
-    produces the following output:
+::
 
-    ::
+    $ cut -d , -f 2 animals.txt
 
-        deer
-        rabbit
-        raccoon
-        rabbit
-        deer
-        fox
-        rabbit
-        bear
+produces the following output:
 
-    What other command(s) could be added to this in a pipeline to find
-    out what animals the file contains (without any duplicates in
-    their names)?
+::
+
+    deer
+    rabbit
+    raccoon
+    rabbit
+    deer
+    fox
+    rabbit
+    bear
+
+What other command(s) could be added to this in a pipeline to find
+out what animals the file contains (without any duplicates in
+their names)?
