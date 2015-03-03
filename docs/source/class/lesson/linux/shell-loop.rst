@@ -1,6 +1,5 @@
-.. tip::
-   Learning Objectives
-    -------------------
+Learning Objectives
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     -  Write a loop that applies one or more commands separately to each
        file in a set of files.
@@ -11,6 +10,9 @@
        used in files' names.
     -  Demonstrate how to see what commands have recently been executed.
     -  Re-run recently executed commands without retyping them.
+
+Loops
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wildcards and tab completion are two ways to reduce typing (and typing
 mistakes). Another is to tell the shell to do something over and over
@@ -61,6 +63,9 @@ variable's value by putting ``$`` in front of it: ``$filename`` is
 ``basilisk.dat`` the first time through the loop, ``unicorn.dat`` the
 second, and so on.
 
+Variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 By using the dollar sign we are telling the shell interpreter to treat
 ``filename`` as a variable name and substitute its value on its place,
 but not as some text or external command. When using variables it is
@@ -74,7 +79,7 @@ Finally, the command that's actually being run is our old friend
 file in turn.
 
 .. tip::
-   Follow the Prompt
+   The Prompt Changes
     -----------------
 
     The shell prompt changes from ``$`` to ``>`` and back again as we
@@ -99,8 +104,12 @@ or::
 
 it would work exactly the same way. *Don't do this.* Programs are only
 useful if people can understand them, so meaningless names (like
-``x``) or misleading names (like ``temperature``) increase the odds
-that the program won't do what its readers think it does.
+``x``) or misleading names (like ``temperature`` in this case)
+increase the odds that the program won't do what its readers think it
+does.
+
+Informative Loops
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here's a slightly more complicated loop::
 
@@ -137,60 +146,59 @@ expanded to ``basilisk.dat``, the shell would try to run
 combination selects lines 81-100 from whatever file is being
 processed.
 
-.. tip::
-   Spaces in Names
-    ---------------
+Spaces in Names
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Filename expansion in loops is another reason you should not use
-    spaces in filenames. Suppose our data files are named:
+Filename expansion in loops is another reason you should not use
+spaces in filenames. Suppose our data files are named:
 
-    ::
+::
 
-        basilisk.dat
-        red dragon.dat
-        unicorn.dat
+    basilisk.dat
+    red dragon.dat
+    unicorn.dat
 
-    If we try to process them using:
+If we try to process them using:
 
-    ::
+::
 
-        for filename in *.dat
-        do
-            head -100 $filename | tail -20
-        done
+    for filename in *.dat
+    do
+        head -100 $filename | tail -20
+    done
 
-    then the shell will expand ``*.dat`` to create:
+then the shell will expand ``*.dat`` to create:
 
-    ::
+::
 
-        basilisk.dat red dragon.dat unicorn.dat
+    basilisk.dat red dragon.dat unicorn.dat
 
-    With older versions of Bash, or most other shells, ``filename``
-    will then be assigned the following values in turn:
+With older versions of Bash, or most other shells, ``filename`` will
+then be assigned the following values in turn:
 
-    ::
+::
 
-        basilisk.dat
-        red
-        dragon.dat
-        unicorn.dat
+    basilisk.dat
+    red
+    dragon.dat
+    unicorn.dat
 
-    That's a problem: ``head`` can't read files called ``red`` and
-    ``dragon.dat`` because they don't exist, and won't be asked to
-    read the file ``red dragon.dat``.
+That's a problem: ``head`` can't read files called ``red`` and
+``dragon.dat`` because they don't exist, and won't be asked to read
+the file ``red dragon.dat``.
 
-    We can make our script a little bit more robust by **quoting** our
-    use of the variable:
+We can make our script a little bit more robust by **quoting** our use
+of the variable:
 
-    ::
+::
 
-        for filename in *.dat
-        do
-            head -100 "$filename" | tail -20
-        done
+    for filename in *.dat
+    do
+        head -100 "$filename" | tail -20
+    done
 
-    but it's simpler just to avoid using spaces (or other special
-    characters) in filenames.
+but it's simpler just to avoid using spaces (or other special
+characters) in filenames.
 
 Going back to our original file renaming problem, we can solve it
 using this loop::
@@ -303,7 +311,7 @@ repeat the command, and edits it to read::
     $ for datafile in *[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
 
 .. tip::
-   Beginning and End
+   Moving to the Beginning and End
     -----------------
 
     We can move to the beginning of a line in the shell by typing
@@ -324,146 +332,150 @@ terminal window, goes into ``north-pacific-gyre/2012-07-03``, and uses
 looks good, so she decides to get some coffee and catch up on her
 reading.
 
-.. tip::
-   Those Who Know History Can Choose to Repeat It
-    ----------------------------------------------
+History
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Another way to repeat previous work is to use the ``history``
-    command to get a list of the last few hundred commands that have
-    been executed, and then to use ``!123`` (where "123" is replaced
-    by the command number) to repeat one of those commands. For
-    example, if Nelle types this:
+(Those who know history can choose to repeat it)
 
-    ::
+Another way to repeat previous work is to use the ``history``
+command to get a list of the last few hundred commands that have
+been executed, and then to use ``!123`` (where "123" is replaced
+by the command number) to repeat one of those commands. For
+example, if Nelle types this:
 
-        $ history | tail -5
-          456  ls -l NENE0*.txt
-          457  rm stats-NENE01729B.txt.txt
-          458  bash goostats NENE01729B.txt stats-NENE01729B.txt
-          459  ls -l NENE0*.txt
-          460  history
+::
 
-    then she can re-run ``goostats`` on ``NENE01729B.txt`` simply by
-    typing ``!458``.
+    $ history | tail -5
+      456  ls -l NENE0*.txt
+      457  rm stats-NENE01729B.txt.txt
+      458  bash goostats NENE01729B.txt stats-NENE01729B.txt
+      459  ls -l NENE0*.txt
+      460  history
 
-.. tip::
-   Variables in loops
-    ------------------
+then she can re-run ``goostats`` on ``NENE01729B.txt`` simply by
+typing ``!458``.
 
-    Suppose that ``ls`` initially displays:
+Excercises
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    ::
+Variables in loops
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-        fructose.dat    glucose.dat   sucrose.dat
+Suppose that ``ls`` initially displays:
 
-    What is the output of:
+::
 
-    ::
+    fructose.dat    glucose.dat   sucrose.dat
 
-        for datafile in *.dat
-        do
-            ls *.dat
-        done
+What is the output of:
 
-    Now, what is the output of:
+::
 
-    ::
+    for datafile in *.dat
+    do
+        ls *.dat
+    done
 
-        for datafile in *.dat
-        do
-          ls $datafile
-        done
+Now, what is the output of:
 
-    Why do these two loops give you different outputs?
+::
+
+    for datafile in *.dat
+    do
+      ls $datafile
+    done
+
+Why do these two loops give you different outputs?
 
 
-.. tip::
-   Saving to a file in a loop - part one
-    -------------------------------------
+Saving to a file in a loop - part one
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    In the same directory, what is the effect of this loop?
+In the same directory, what is the effect of this loop?
 
-    ::
+::
 
-        for sugar in *.dat
-        do
-            echo $sugar
-            cat $sugar > xylose.dat
-        done
+    for sugar in *.dat
+    do
+        echo $sugar
+        cat $sugar > xylose.dat
+    done
 
-    1. Prints ``fructose.dat``, ``glucose.dat``, and ``sucrose.dat``,
-       and copies ``sucrose.dat`` to create ``xylose.dat``.
-    2. Prints ``fructose.dat``, ``glucose.dat``, and ``sucrose.dat``,
-       and concatenates all three files to create ``xylose.dat``.
-    3. Prints ``fructose.dat``, ``glucose.dat``, ``sucrose.dat``, and
-       ``xylose.dat``, and copies ``sucrose.dat`` to create
-       ``xylose.dat``.
-    4. None of the above.
+1. Prints ``fructose.dat``, ``glucose.dat``, and ``sucrose.dat``,
+   and copies ``sucrose.dat`` to create ``xylose.dat``.
+2. Prints ``fructose.dat``, ``glucose.dat``, and ``sucrose.dat``,
+   and concatenates all three files to create ``xylose.dat``.
+3. Prints ``fructose.dat``, ``glucose.dat``, ``sucrose.dat``, and
+   ``xylose.dat``, and copies ``sucrose.dat`` to create
+   ``xylose.dat``.
+4. None of the above.
 
-.. tip::
-   Saving to a file in a loop - part two
-    -------------------------------------
 
-    In another directory, where ``ls`` returns:
+Saving to a file in a loop - part two
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    ::
+In another directory, where ``ls`` returns:
 
-        fructose.dat    glucose.dat   sucrose.dat   maltose.txt
+::
 
-    What would be the output of the following loop?
+    fructose.dat    glucose.dat   sucrose.dat   maltose.txt
 
-    ::
+What would be the output of the following loop?
 
-        for datafile in *.dat
-        do
-            cat $datafile >> sugar.dat
-        done
+::
 
-    1. All of the text from ``fructose.dat``, ``glucose.dat`` and
-       ``sucrose.dat`` would be concatenated and saved to a file
-       called ``sugar.dat``.
-    2. The text from ``sucrose.dat`` will be saved to a file called
-       ``sugar.dat``.
-    3. All of the text from ``fructose.dat``, ``glucose.dat``,
-       ``sucrose.dat`` and ``maltose.txt`` would be concatenated and
-       saved to a file called ``sugar.dat``.
-    4. All of the text from ``fructose.dat``, ``glucose.dat`` and
-       ``sucrose.dat`` would be printed to the screen and saved to a
-       file called ``sugar.dat``
+    for datafile in *.dat
+    do
+        cat $datafile >> sugar.dat
+    done
 
-.. tip::
-   Doing a Dry Run
-    ---------------
+1. All of the text from ``fructose.dat``, ``glucose.dat`` and
+   ``sucrose.dat`` would be concatenated and saved to a file
+   called ``sugar.dat``.
+2. The text from ``sucrose.dat`` will be saved to a file called
+   ``sugar.dat``.
+3. All of the text from ``fructose.dat``, ``glucose.dat``,
+   ``sucrose.dat`` and ``maltose.txt`` would be concatenated and
+   saved to a file called ``sugar.dat``.
+4. All of the text from ``fructose.dat``, ``glucose.dat`` and
+   ``sucrose.dat`` would be printed to the screen and saved to a
+   file called ``sugar.dat``
 
-    Suppose we want to preview the commands the following loop will
-    execute without actually running those commands::
 
-        for file in *.dat
-        do
-          analyze $file > analyzed-$file
-        done
+Doing a Dry Run
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    What is the difference between the the two loops below, and which
-    one would we want to run?::
+Suppose we want to preview the commands the following loop will
+execute without actually running those commands::
 
-        # Version 1
-        for file in *.dat
-        do
-          echo analyze $file > analyzed-$file
-        done
-        # Version 2
-        for file in *.dat
-        do
-          echo "analyze $file > analyzed-$file"
-        done
+    for file in *.dat
+    do
+      analyze $file > analyzed-$file
+    done
 
- FIXME
+What is the difference between the the two loops below, and which
+one would we want to run?::
 
-    Describe in words what the following loop does.
+    # Version 1
+    for file in *.dat
+    do
+      echo analyze $file > analyzed-$file
+    done
+    # Version 2
+    for file in *.dat
+    do
+      echo "analyze $file > analyzed-$file"
+    done
 
-    ::
 
-        for how in frog11 prcb redig
-        do
-            $how -limit 0.01 NENE01729B.txt
-        done
+Variable Commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Describe in words what the following loop does.
+
+::
+
+    for how in frog11 prcb redig
+    do
+        $how -limit 0.01 NENE01729B.txt
+    done
