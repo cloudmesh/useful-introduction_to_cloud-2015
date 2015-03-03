@@ -14,8 +14,17 @@ Overview
 This lesson will introduce you to using the shell, which is required
 for using FutureSystems resources.
 
+Acknowledgements
+----------------------------------------------------------------------
 
-.. tip:: Duration: 1 hour
+Parts of this lesson were adapted from the `Software Carpentry
+lesson`_ on using the Shell, which is distributed under a `Creative
+Commons Attribution licence v4`_ and is copywrite `Software Carpentry`_.
+
+.. _Software Carpentry lesson: http://swcarpentry.github.io/shell-novice/
+.. _Creative Commons Attribution licence v4: https://creativecommons.org/licenses/by/4.0/
+.. _Software Carpentry: http://software-carpentry.org/
+
 
 Description
 ----------------------------------------------------------------------
@@ -203,17 +212,6 @@ Additionally, there are numerous shell summaries `a Google Search away`_
 .. _Bash Guide for Beginners: http://www.tldp.org/LDP/Bash-Beginners-Guide/html/
 .. _a Google Search away: https://www.google.com/search?q=linux+shell+cheat+sheet
 
-
-Acknowledgements
-----------------------------------------------------------------------
-
-Parts of this lesson were adapted from the `Software Carpentry
-lesson`_ on using the Shell, which is distributed under a `Creative
-Commons Attribution licence v4`_ and is copywrite `Software Carpentry`_.
-
-.. _Software Carpentry lesson: http://swcarpentry.github.io/shell-novice/
-.. _Creative Commons Attribution licence v4: https://creativecommons.org/licenses/by/4.0/
-.. _Software Carpentry: http://software-carpentry.org/
 
 Next Step
 ----------------------------------------------------------------------
