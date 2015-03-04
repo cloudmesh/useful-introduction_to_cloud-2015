@@ -44,6 +44,11 @@ In addition to these which you might be familiar with, we will be using
 a command shell to interact with the computer primarily through the
 keyboard.
 
+.. tip::
+
+   Command line shell is often called a Command Line Interface, or CLI
+   for short.
+
 .. note:: Adventerous readers may be interested to know that both
    Windows and Mac OS X provide a command shell.  On Windows you can
    run ``cmd.exe`` from `Start --> Run`.  On OS X open `Applications
