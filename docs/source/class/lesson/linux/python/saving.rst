@@ -25,8 +25,11 @@ command::
 Congratulations, you have written a Python **module**.
 Files in which Python directives are stored are called **module**\s
 
-You can make this programs more interesting as well.
-Let's write a program that asks the user to enter a number, *n*, and prints out the *n*\-th number in the `Fibonacci sequence`_:
+You can make this programs more interesting as well.  Let's write a
+program that asks the user to enter a number, *n*, and prints out the
+*n*\-th number in the `Fibonacci sequence`_::
+
+   $ nano print_fibs.py
 
 .. include:: /class/lesson/linux/python/print_fibs.py
    :code: python
