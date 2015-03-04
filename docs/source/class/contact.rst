@@ -14,7 +14,7 @@ your issue.
 Additionally, make sure that the instructors are carbon copied on your
 replies.
 
-.. note::
+.. important::
    Please be aware that questions addressed to staff should be sent
    between 9am and 4pm on business days.
    Questions outside those hours may not be addressed until the
