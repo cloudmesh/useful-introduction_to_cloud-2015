@@ -1,4 +1,3 @@
-
 A "shell" is a program that facilitates interaction between human and
 computer.
 By providing this level of abstraction certain tasks which may be
