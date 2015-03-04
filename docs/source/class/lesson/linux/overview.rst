@@ -1,4 +1,4 @@
-Overview and Introduction (Under Preparation)
+Overview and Introduction
 ======================================================================
 
 .. sidebar:: Page Contents
