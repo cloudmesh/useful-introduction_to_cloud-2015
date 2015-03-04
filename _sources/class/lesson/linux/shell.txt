@@ -44,10 +44,16 @@ In addition to these which you might be familiar with, we will be using
 a command shell to interact with the computer primarily through the
 keyboard.
 
+.. tip::
+
+   Command line shell is often called a Command Line Interface, or CLI
+   for short.
+
 .. note:: Adventerous readers may be interested to know that both
    Windows and Mac OS X provide a command shell.  On Windows you can
    run ``cmd.exe`` from `Start --> Run`.  On OS X open `Applications
-   --> Utilities --> Terminal`.
+   --> Utilities --> Terminal`. Be aware that the Windows and OS X CLI
+   may be different than on FutureSystems.
 
 .. tip::
    If you wish to follow along please log into your FutureSystems
@@ -63,10 +69,21 @@ Introduction
 Prompts and Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Shell Concepts Introduced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``whoami``: display user id
+
+Prompt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Once you log into the appropriate machine you will be presented with
 the **prompt**, typically represented as the following::
 
   $
+
+Command
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the **prompt** you enter a **command** to run a program.
 For instance, the ``whoami`` program indicates the username
@@ -98,26 +115,73 @@ When you execute the ``whoami`` command the shell:
 Files and Directories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Shell Concepts Introduced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``pwd``: print working directory
+- ``ls``: list directory contents
+- ``cd``: change directory
+- ``TAB``: using tab-completion
+
 .. include:: shell-filedir.rst
 
 
 Creating and Deleting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Shell Concepts Introduced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``mkdir``: make a directory
+- ``nano``: a text editor
+- ``rm``: remove directory entries
+- ``rmdir``: remove directories
+- ``cp``: copy files
+- ``mv``: move files
+
 .. include:: shell-create.rst
 
 Pipes and Filters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Shell Concepts Introduced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``wc``: word count
+- ``*``: globbing
+- ``>``: redirection to file
+  ``stdout``: standard output stream
+- ``cat``: concatenate
+- ``sort``: sorting
+- ``|``: pipe
+- ``head``: get first few lines
+- ``uniq``: remove duplicate adjacent lines
+- ``cut``: cut selected portions of text
 
 .. include:: shell-pipefilter.rst
 
 Loops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Shell Concepts Introduced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``for``: starts a **for loop**
+- ``$name``: a variable called ``name``
+- ``echo``: display text
+
 .. include:: shell-loop.rst
 
 Finding Things
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Shell Concepts Introduced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``grep``: file pattern searcher
+- ``find``: walk a file hierarchy
+- ``man``: display manual pages
+- ``$()``: execute in a subshell
 
 .. include:: shell-find.rst
 

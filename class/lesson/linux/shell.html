@@ -201,118 +201,128 @@
 <p class="first sidebar-title">Page Contents</p>
 <div class="contents local last topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#overview" id="id10">Overview</a></li>
-<li><a class="reference internal" href="#acknowledgements" id="id11">Acknowledgements</a></li>
-<li><a class="reference internal" href="#description" id="id12">Description</a><ul>
-<li><a class="reference internal" href="#introduction" id="id13">Introduction</a><ul>
-<li><a class="reference internal" href="#learning-objectives" id="id14">Learning Objectives</a></li>
-<li><a class="reference internal" href="#nelle-pipeline" id="id15">Nelle Pipeline</a></li>
-<li><a class="reference internal" href="#what-and-why" id="id16">What and Why</a></li>
+<li><a class="reference internal" href="#overview" id="id15">Overview</a></li>
+<li><a class="reference internal" href="#acknowledgements" id="id16">Acknowledgements</a></li>
+<li><a class="reference internal" href="#description" id="id17">Description</a><ul>
+<li><a class="reference internal" href="#introduction" id="id18">Introduction</a><ul>
+<li><a class="reference internal" href="#learning-objectives" id="id19">Learning Objectives</a></li>
+<li><a class="reference internal" href="#nelle-pipeline" id="id20">Nelle Pipeline</a></li>
+<li><a class="reference internal" href="#what-and-why" id="id21">What and Why</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#prompts-and-commands" id="id17">Prompts and Commands</a></li>
-<li><a class="reference internal" href="#files-and-directories" id="id18">Files and Directories</a><ul>
-<li><a class="reference internal" href="#id1" id="id19">Learning Objectives</a></li>
-<li><a class="reference internal" href="#the-filesystem" id="id20">The Filesystem</a></li>
-<li><a class="reference internal" href="#what-s-in-a-name" id="id21">What&#8217;s In A Name?</a></li>
-<li><a class="reference internal" href="#parameters-and-arguments" id="id22">Parameters and Arguments</a></li>
-<li><a class="reference internal" href="#moving-around" id="id23">Moving around</a></li>
-<li><a class="reference internal" href="#nelle-s-pipeline-organizing-files" id="id24">Nelle&#8217;s Pipeline: Organizing Files</a></li>
+<li><a class="reference internal" href="#prompts-and-commands" id="id22">Prompts and Commands</a><ul>
+<li><a class="reference internal" href="#shell-concepts-introduced" id="id23">Shell Concepts Introduced</a></li>
+<li><a class="reference internal" href="#prompt" id="id24">Prompt</a></li>
+<li><a class="reference internal" href="#command" id="id25">Command</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#creating-and-deleting" id="id25">Creating and Deleting</a><ul>
-<li><a class="reference internal" href="#id2" id="id26">Learning Objectives</a></li>
-<li><a class="reference internal" href="#creating-directories" id="id27">Creating  Directories</a></li>
-<li><a class="reference internal" href="#creating-files" id="id28">Creating Files</a></li>
-<li><a class="reference internal" href="#removing-files" id="id29">Removing Files</a></li>
-<li><a class="reference internal" href="#removing-directories" id="id30">Removing Directories</a></li>
-<li><a class="reference internal" href="#moving-files-and-directories" id="id31">Moving Files and Directories</a></li>
-<li><a class="reference internal" href="#copying-files" id="id32">Copying Files</a></li>
-<li><a class="reference internal" href="#excercises" id="id33">Excercises</a><ul>
-<li><a class="reference internal" href="#renaming-files" id="id34">Renaming files</a></li>
-<li><a class="reference internal" href="#moving-and-copying" id="id35">Moving and Copying</a></li>
-<li><a class="reference internal" href="#listing-directories-and-files" id="id36">Listing Directories and Files</a></li>
-<li><a class="reference internal" href="#copy-with-multiple-filenames" id="id37">Copy with Multiple Filenames</a></li>
-<li><a class="reference internal" href="#listing-recursively-and-by-time" id="id38">Listing Recursively and By Time</a></li>
+<li><a class="reference internal" href="#files-and-directories" id="id26">Files and Directories</a><ul>
+<li><a class="reference internal" href="#id1" id="id27">Shell Concepts Introduced</a></li>
+<li><a class="reference internal" href="#id2" id="id28">Learning Objectives</a></li>
+<li><a class="reference internal" href="#the-filesystem" id="id29">The Filesystem</a></li>
+<li><a class="reference internal" href="#what-s-in-a-name" id="id30">What&#8217;s In A Name?</a></li>
+<li><a class="reference internal" href="#parameters-and-arguments" id="id31">Parameters and Arguments</a></li>
+<li><a class="reference internal" href="#moving-around" id="id32">Moving around</a></li>
+<li><a class="reference internal" href="#nelle-s-pipeline-organizing-files" id="id33">Nelle&#8217;s Pipeline: Organizing Files</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a class="reference internal" href="#pipes-and-filters" id="id39">Pipes and Filters</a><ul>
-<li><a class="reference internal" href="#id3" id="id40">Learning Objectives</a></li>
-<li><a class="reference internal" href="#globbing-wildcards" id="id41">Globbing/Wildcards</a></li>
-<li><a class="reference internal" href="#redirecting-output" id="id42">Redirecting Output</a></li>
-<li><a class="reference internal" href="#redirecting-input" id="id43">Redirecting Input</a></li>
-<li><a class="reference internal" href="#pipes" id="id44">Pipes</a></li>
-<li><a class="reference internal" href="#filter" id="id45">Filter</a></li>
-<li><a class="reference internal" href="#nelle-s-pipeline-checking-files" id="id46">Nelle&#8217;s Pipeline: Checking Files</a></li>
-<li><a class="reference internal" href="#id4" id="id47">Excercises</a><ul>
-<li><a class="reference internal" href="#what-does-sort-n-do" id="id48">What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</a></li>
-<li><a class="reference internal" href="#what-does-mean" id="id49">What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?</a></li>
-<li><a class="reference internal" href="#piping-commands-together" id="id50">Piping commands together</a></li>
-<li><a class="reference internal" href="#why-does-uniq-only-remove-adjacent-duplicates" id="id51">Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?</a></li>
-<li><a class="reference internal" href="#pipe-reading-comprehension" id="id52">Pipe reading comprehension</a></li>
-<li><a class="reference internal" href="#pipe-construction" id="id53">Pipe construction</a></li>
+<li><a class="reference internal" href="#creating-and-deleting" id="id34">Creating and Deleting</a><ul>
+<li><a class="reference internal" href="#id3" id="id35">Shell Concepts Introduced</a></li>
+<li><a class="reference internal" href="#id4" id="id36">Learning Objectives</a></li>
+<li><a class="reference internal" href="#creating-directories" id="id37">Creating  Directories</a></li>
+<li><a class="reference internal" href="#creating-files" id="id38">Creating Files</a></li>
+<li><a class="reference internal" href="#removing-files" id="id39">Removing Files</a></li>
+<li><a class="reference internal" href="#removing-directories" id="id40">Removing Directories</a></li>
+<li><a class="reference internal" href="#moving-files-and-directories" id="id41">Moving Files and Directories</a></li>
+<li><a class="reference internal" href="#copying-files" id="id42">Copying Files</a></li>
+<li><a class="reference internal" href="#excercises" id="id43">Excercises</a><ul>
+<li><a class="reference internal" href="#renaming-files" id="id44">Renaming files</a></li>
+<li><a class="reference internal" href="#moving-and-copying" id="id45">Moving and Copying</a></li>
+<li><a class="reference internal" href="#listing-directories-and-files" id="id46">Listing Directories and Files</a></li>
+<li><a class="reference internal" href="#copy-with-multiple-filenames" id="id47">Copy with Multiple Filenames</a></li>
+<li><a class="reference internal" href="#listing-recursively-and-by-time" id="id48">Listing Recursively and By Time</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#loops" id="id54">Loops</a><ul>
-<li><a class="reference internal" href="#id5" id="id55">Learning Objectives</a></li>
-<li><a class="reference internal" href="#id6" id="id56">Loops</a></li>
-<li><a class="reference internal" href="#variables" id="id57">Variables</a></li>
-<li><a class="reference internal" href="#informative-loops" id="id58">Informative Loops</a></li>
-<li><a class="reference internal" href="#spaces-in-names" id="id59">Spaces in Names</a></li>
-<li><a class="reference internal" href="#nelle-s-pipeline-processing-files" id="id60">Nelle&#8217;s Pipeline: Processing Files</a></li>
-<li><a class="reference internal" href="#history" id="id61">History</a></li>
-<li><a class="reference internal" href="#id7" id="id62">Excercises</a><ul>
-<li><a class="reference internal" href="#variables-in-loops" id="id63">Variables in loops</a></li>
-<li><a class="reference internal" href="#saving-to-a-file-in-a-loop-part-one" id="id64">Saving to a file in a loop - part one</a></li>
-<li><a class="reference internal" href="#saving-to-a-file-in-a-loop-part-two" id="id65">Saving to a file in a loop - part two</a></li>
-<li><a class="reference internal" href="#doing-a-dry-run" id="id66">Doing a Dry Run</a></li>
-<li><a class="reference internal" href="#variable-commands" id="id67">Variable Commands</a></li>
+<li><a class="reference internal" href="#pipes-and-filters" id="id49">Pipes and Filters</a><ul>
+<li><a class="reference internal" href="#id5" id="id50">Shell Concepts Introduced</a></li>
+<li><a class="reference internal" href="#id6" id="id51">Learning Objectives</a></li>
+<li><a class="reference internal" href="#globbing-wildcards" id="id52">Globbing/Wildcards</a></li>
+<li><a class="reference internal" href="#redirecting-output" id="id53">Redirecting Output</a></li>
+<li><a class="reference internal" href="#redirecting-input" id="id54">Redirecting Input</a></li>
+<li><a class="reference internal" href="#pipes" id="id55">Pipes</a></li>
+<li><a class="reference internal" href="#filter" id="id56">Filter</a></li>
+<li><a class="reference internal" href="#nelle-s-pipeline-checking-files" id="id57">Nelle&#8217;s Pipeline: Checking Files</a></li>
+<li><a class="reference internal" href="#id7" id="id58">Excercises</a><ul>
+<li><a class="reference internal" href="#what-does-sort-n-do" id="id59">What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</a></li>
+<li><a class="reference internal" href="#what-does-mean" id="id60">What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?</a></li>
+<li><a class="reference internal" href="#piping-commands-together" id="id61">Piping commands together</a></li>
+<li><a class="reference internal" href="#why-does-uniq-only-remove-adjacent-duplicates" id="id62">Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?</a></li>
+<li><a class="reference internal" href="#pipe-reading-comprehension" id="id63">Pipe reading comprehension</a></li>
+<li><a class="reference internal" href="#pipe-construction" id="id64">Pipe construction</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#finding-things" id="id68">Finding Things</a><ul>
-<li><a class="reference internal" href="#id8" id="id69">Learning Objectives</a></li>
-<li><a class="reference internal" href="#searching-file-contents" id="id70">Searching File Contents</a></li>
-<li><a class="reference internal" href="#searching-for-patterns-in-files" id="id71">Searching for Patterns in Files</a></li>
-<li><a class="reference internal" href="#searching-for-files" id="id72">Searching for Files</a></li>
-<li><a class="reference internal" href="#searching-for-files-matching-a-pattern" id="id73">Searching for Files Matching a Pattern</a></li>
-<li><a class="reference internal" href="#subshell" id="id74">Subshell</a></li>
-<li><a class="reference internal" href="#id9" id="id75">Excercises</a><ul>
-<li><a class="reference internal" href="#using-grep" id="id76">Using grep</a></li>
-<li><a class="reference internal" href="#find-pipeline-reading-comprehension" id="id77"><tt class="docutils literal"><span class="pre">find</span></tt> pipeline reading comprehension</a></li>
-<li><a class="reference internal" href="#matching-ose-dat-but-not-temp" id="id78">Matching <tt class="docutils literal"><span class="pre">ose.dat</span></tt> but not <tt class="docutils literal"><span class="pre">temp</span></tt></a></li>
-<li><a class="reference internal" href="#little-women" id="id79">Little Women</a></li>
+<li><a class="reference internal" href="#loops" id="id65">Loops</a><ul>
+<li><a class="reference internal" href="#id8" id="id66">Shell Concepts Introduced</a></li>
+<li><a class="reference internal" href="#id9" id="id67">Learning Objectives</a></li>
+<li><a class="reference internal" href="#id10" id="id68">Loops</a></li>
+<li><a class="reference internal" href="#variables" id="id69">Variables</a></li>
+<li><a class="reference internal" href="#informative-loops" id="id70">Informative Loops</a></li>
+<li><a class="reference internal" href="#spaces-in-names" id="id71">Spaces in Names</a></li>
+<li><a class="reference internal" href="#nelle-s-pipeline-processing-files" id="id72">Nelle&#8217;s Pipeline: Processing Files</a></li>
+<li><a class="reference internal" href="#history" id="id73">History</a></li>
+<li><a class="reference internal" href="#id11" id="id74">Excercises</a><ul>
+<li><a class="reference internal" href="#variables-in-loops" id="id75">Variables in loops</a></li>
+<li><a class="reference internal" href="#saving-to-a-file-in-a-loop-part-one" id="id76">Saving to a file in a loop - part one</a></li>
+<li><a class="reference internal" href="#saving-to-a-file-in-a-loop-part-two" id="id77">Saving to a file in a loop - part two</a></li>
+<li><a class="reference internal" href="#doing-a-dry-run" id="id78">Doing a Dry Run</a></li>
+<li><a class="reference internal" href="#variable-commands" id="id79">Variable Commands</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#conclusion" id="id80">Conclusion</a></li>
-<li><a class="reference internal" href="#cheatsheet" id="id81">Cheatsheet</a></li>
+<li><a class="reference internal" href="#finding-things" id="id80">Finding Things</a><ul>
+<li><a class="reference internal" href="#id12" id="id81">Shell Concepts Introduced</a></li>
+<li><a class="reference internal" href="#id13" id="id82">Learning Objectives</a></li>
+<li><a class="reference internal" href="#searching-file-contents" id="id83">Searching File Contents</a></li>
+<li><a class="reference internal" href="#searching-for-patterns-in-files" id="id84">Searching for Patterns in Files</a></li>
+<li><a class="reference internal" href="#searching-for-files" id="id85">Searching for Files</a></li>
+<li><a class="reference internal" href="#searching-for-files-matching-a-pattern" id="id86">Searching for Files Matching a Pattern</a></li>
+<li><a class="reference internal" href="#subshell" id="id87">Subshell</a></li>
+<li><a class="reference internal" href="#id14" id="id88">Excercises</a><ul>
+<li><a class="reference internal" href="#using-grep" id="id89">Using grep</a></li>
+<li><a class="reference internal" href="#find-pipeline-reading-comprehension" id="id90"><tt class="docutils literal"><span class="pre">find</span></tt> pipeline reading comprehension</a></li>
+<li><a class="reference internal" href="#matching-ose-dat-but-not-temp" id="id91">Matching <tt class="docutils literal"><span class="pre">ose.dat</span></tt> but not <tt class="docutils literal"><span class="pre">temp</span></tt></a></li>
+<li><a class="reference internal" href="#little-women" id="id92">Little Women</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#further-reading" id="id82">Further Reading</a></li>
-<li><a class="reference internal" href="#next-step" id="id83">Next Step</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion" id="id93">Conclusion</a></li>
+<li><a class="reference internal" href="#cheatsheet" id="id94">Cheatsheet</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#further-reading" id="id95">Further Reading</a></li>
+<li><a class="reference internal" href="#next-step" id="id96">Next Step</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="overview">
-<h2><a class="toc-backref" href="#id10">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>This lesson will introduce you to using the shell, which is required
 for using FutureSystems resources.</p>
 </div>
 <div class="section" id="acknowledgements">
-<h2><a class="toc-backref" href="#id11">Acknowledgements</a><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Acknowledgements</a><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p>Parts of this lesson were adapted from the <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Software Carpentry
 lesson</a> on using the Shell, which is distributed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative
 Commons Attribution licence v4</a> and is copywrite <a class="reference external" href="http://software-carpentry.org/">Software Carpentry</a>.</p>
 </div>
 <div class="section" id="description">
-<h2><a class="toc-backref" href="#id12">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>A &#8220;shell&#8221; is a program that facilitates interaction between human and
 computer.
 By providing this level of abstraction certain tasks which may be
@@ -327,12 +337,18 @@ mode of interaction is through touch.
 In addition to these which you might be familiar with, we will be using
 a command shell to interact with the computer primarily through the
 keyboard.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Command line shell is often called a Command Line Interface, or CLI
+for short.</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Adventerous readers may be interested to know that both
 Windows and Mac OS X provide a command shell.  On Windows you can
 run <tt class="docutils literal"><span class="pre">cmd.exe</span></tt> from <cite>Start &#8211;&gt; Run</cite>.  On OS X open <cite>Applications
-&#8211;&gt; Utilities &#8211;&gt; Terminal</cite>.</p>
+&#8211;&gt; Utilities &#8211;&gt; Terminal</cite>. Be aware that the Windows and OS X CLI
+may be different than on FutureSystems.</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
@@ -340,9 +356,9 @@ run <tt class="docutils literal"><span class="pre">cmd.exe</span></tt> from <cit
 account (see <a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems (Under Preparation)</em></a>).</p>
 </div>
 <div class="section" id="introduction">
-<h3><a class="toc-backref" href="#id13">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="learning-objectives">
-<h4><a class="toc-backref" href="#id14">Learning Objectives</a><a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id19">Learning Objectives</a><a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li>Explain how the shell relates to the keyboard, the screen, the
@@ -353,7 +369,7 @@ instead of graphical interfaces.</li>
 </div></blockquote>
 </div>
 <div class="section" id="nelle-pipeline">
-<h4><a class="toc-backref" href="#id15">Nelle Pipeline</a><a class="headerlink" href="#nelle-pipeline" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id20">Nelle Pipeline</a><a class="headerlink" href="#nelle-pipeline" title="Permalink to this headline">¶</a></h4>
 <p>Nelle Nemo, a marine biologist, has just returned from a six-month
 survey of the <a class="reference external" href="http://en.wikipedia.org/wiki/North_Pacific_Gyre">North Pacific
 Gyre</a>, where she has
@@ -391,7 +407,7 @@ put a processing pipeline together, she will be able to use it again
 whenever she collects more data.</p>
 </div>
 <div class="section" id="what-and-why">
-<h4><a class="toc-backref" href="#id16">What and Why</a><a class="headerlink" href="#what-and-why" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id21">What and Why</a><a class="headerlink" href="#what-and-why" title="Permalink to this headline">¶</a></h4>
 <p>At a high level, computers do four things:</p>
 <ul class="simple">
 <li>run programs</li>
@@ -447,12 +463,23 @@ to drive them is becoming a necessary skill.</p>
 </div>
 </div>
 <div class="section" id="prompts-and-commands">
-<h3><a class="toc-backref" href="#id17">Prompts and Commands</a><a class="headerlink" href="#prompts-and-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Prompts and Commands</a><a class="headerlink" href="#prompts-and-commands" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="shell-concepts-introduced">
+<h4><a class="toc-backref" href="#id23">Shell Concepts Introduced</a><a class="headerlink" href="#shell-concepts-introduced" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">whoami</span></tt>: display user id</li>
+</ul>
+</div>
+<div class="section" id="prompt">
+<h4><a class="toc-backref" href="#id24">Prompt</a><a class="headerlink" href="#prompt" title="Permalink to this headline">¶</a></h4>
 <p>Once you log into the appropriate machine you will be presented with
 the <strong>prompt</strong>, typically represented as the following:</p>
 <div class="highlight-python"><div class="highlight"><pre>$
 </pre></div>
 </div>
+</div>
+<div class="section" id="command">
+<h4><a class="toc-backref" href="#id25">Command</a><a class="headerlink" href="#command" title="Permalink to this headline">¶</a></h4>
 <p>At the <strong>prompt</strong> you enter a <strong>command</strong> to run a program.
 For instance, the <tt class="docutils literal"><span class="pre">whoami</span></tt> program indicates the username
 you logged in under.
@@ -478,10 +505,20 @@ commandline shell you type the name of the program.</p>
 <li>displays a new shell prompt (ready for more commands)</li>
 </ol>
 </div>
+</div>
 <div class="section" id="files-and-directories">
-<h3><a class="toc-backref" href="#id18">Files and Directories</a><a class="headerlink" href="#files-and-directories" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">Files and Directories</a><a class="headerlink" href="#files-and-directories" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
-<h4><a class="toc-backref" href="#id19">Learning Objectives</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id27">Shell Concepts Introduced</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">pwd</span></tt>: print working directory</li>
+<li><tt class="docutils literal"><span class="pre">ls</span></tt>: list directory contents</li>
+<li><tt class="docutils literal"><span class="pre">cd</span></tt>: change directory</li>
+<li><tt class="docutils literal"><span class="pre">TAB</span></tt>: using tab-completion</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h4><a class="toc-backref" href="#id28">Learning Objectives</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li>Explain the similarities and differences between a file and a
@@ -498,7 +535,7 @@ advantages.</li>
 </div></blockquote>
 </div>
 <div class="section" id="the-filesystem">
-<h4><a class="toc-backref" href="#id20">The Filesystem</a><a class="headerlink" href="#the-filesystem" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id29">The Filesystem</a><a class="headerlink" href="#the-filesystem" title="Permalink to this headline">¶</a></h4>
 <p>The part of the operating system responsible for managing files and
 directories is called the <strong>file system</strong>. It organizes our data into
 files, which hold information, and directories (also called
@@ -589,7 +626,7 @@ the shell thinks we&#8217;re trying to run a command called <tt class="docutils 
 doesn&#8217;t exist.</p>
 </div>
 <div class="section" id="what-s-in-a-name">
-<h4><a class="toc-backref" href="#id21">What&#8217;s In A Name?</a><a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id30">What&#8217;s In A Name?</a><a class="headerlink" href="#what-s-in-a-name" title="Permalink to this headline">¶</a></h4>
 <p>You may have noticed that all of Nelle&#8217;s files&#8217; names are &#8220;something
 dot something&#8221;. This is just a convention: we can call a file
 <tt class="docutils literal"><span class="pre">mythesis</span></tt> or almost anything else we want. However, most people use
@@ -608,7 +645,7 @@ cause the operating system to try to open it with a music player when
 someone double-clicks it.</p>
 </div>
 <div class="section" id="parameters-and-arguments">
-<h4><a class="toc-backref" href="#id22">Parameters and Arguments</a><a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id31">Parameters and Arguments</a><a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">¶</a></h4>
 <p>Now let&#8217;s take a look at what&#8217;s in Nelle&#8217;s <tt class="docutils literal"><span class="pre">data</span></tt> directory by
 running <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">data</span></tt>, i.e., the command <tt class="docutils literal"><span class="pre">ls</span></tt> with the
 <strong>arguments</strong> <tt class="docutils literal"><span class="pre">-F</span></tt> and <tt class="docutils literal"><span class="pre">data</span></tt>. The second argument &#8212; the one
@@ -652,7 +689,7 @@ of the filesystem, so it always refers to exactly one directory, no
 matter where we are when we run the command.</p>
 </div>
 <div class="section" id="moving-around">
-<h4><a class="toc-backref" href="#id23">Moving around</a><a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id32">Moving around</a><a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h4>
 <p>What if we want to change our current working directory? Before we do
 this, <tt class="docutils literal"><span class="pre">pwd</span></tt> shows us that we&#8217;re in <tt class="docutils literal"><span class="pre">/users/nelle</span></tt>, and <tt class="docutils literal"><span class="pre">ls</span></tt>
 without any arguments shows us that directory&#8217;s contents:</p>
@@ -739,7 +776,7 @@ track of.</dd>
 </div>
 </div>
 <div class="section" id="nelle-s-pipeline-organizing-files">
-<h4><a class="toc-backref" href="#id24">Nelle&#8217;s Pipeline: Organizing Files</a><a class="headerlink" href="#nelle-s-pipeline-organizing-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id33">Nelle&#8217;s Pipeline: Organizing Files</a><a class="headerlink" href="#nelle-s-pipeline-organizing-files" title="Permalink to this headline">¶</a></h4>
 <p>Knowing just this much about files and directories, Nelle is ready to
 organize the files that the protein assay machine will create. First,
 she creates a directory called <tt class="docutils literal"><span class="pre">north-pacific-gyre</span></tt> (to remind
@@ -786,9 +823,20 @@ completion</strong>, and we will see it in many other tools as we go on.</p>
 </div>
 </div>
 <div class="section" id="creating-and-deleting">
-<h3><a class="toc-backref" href="#id25">Creating and Deleting</a><a class="headerlink" href="#creating-and-deleting" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id2">
-<h4><a class="toc-backref" href="#id26">Learning Objectives</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h3><a class="toc-backref" href="#id34">Creating and Deleting</a><a class="headerlink" href="#creating-and-deleting" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4><a class="toc-backref" href="#id35">Shell Concepts Introduced</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">mkdir</span></tt>: make a directory</li>
+<li><tt class="docutils literal"><span class="pre">nano</span></tt>: a text editor</li>
+<li><tt class="docutils literal"><span class="pre">rm</span></tt>: remove directory entries</li>
+<li><tt class="docutils literal"><span class="pre">rmdir</span></tt>: remove directories</li>
+<li><tt class="docutils literal"><span class="pre">cp</span></tt>: copy files</li>
+<li><tt class="docutils literal"><span class="pre">mv</span></tt>: move files</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#id36">Learning Objectives</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li>Create a directory hierarchy that matches a given diagram.</li>
@@ -800,7 +848,7 @@ renaming existing files.</li>
 </div></blockquote>
 </div>
 <div class="section" id="creating-directories">
-<h4><a class="toc-backref" href="#id27">Creating  Directories</a><a class="headerlink" href="#creating-directories" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id37">Creating  Directories</a><a class="headerlink" href="#creating-directories" title="Permalink to this headline">¶</a></h4>
 <p>We now know how to explore files and directories, but how do we create
 them in the first place? Let&#8217;s go back to Nelle&#8217;s home directory,
 <tt class="docutils literal"><span class="pre">/users/nelle</span></tt>, and use <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-F</span></tt> to see what it contains:</p>
@@ -834,7 +882,7 @@ molecules/  solar.pdf
 </div>
 </div>
 <div class="section" id="creating-files">
-<h4><a class="toc-backref" href="#id28">Creating Files</a><a class="headerlink" href="#creating-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id38">Creating Files</a><a class="headerlink" href="#creating-files" title="Permalink to this headline">¶</a></h4>
 <p>One of the simplest ways to create an empty file is via the <tt class="docutils literal"><span class="pre">touch</span></tt>
 command. Change the working directory to <tt class="docutils literal"><span class="pre">thesis</span></tt> using <tt class="docutils literal"><span class="pre">cd</span></tt>, then
 touch an empty file called <tt class="docutils literal"><span class="pre">draft.txt</span></tt>:</p>
@@ -880,7 +928,7 @@ draft.txt
 </div>
 </div>
 <div class="section" id="removing-files">
-<h4><a class="toc-backref" href="#id29">Removing Files</a><a class="headerlink" href="#removing-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id39">Removing Files</a><a class="headerlink" href="#removing-files" title="Permalink to this headline">¶</a></h4>
 <p>Let&#8217;s tidy up by running <tt class="docutils literal"><span class="pre">rm</span> <span class="pre">draft.txt</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ rm draft.txt
 </pre></div>
@@ -906,7 +954,7 @@ since the computer may recycle the file&#8217;s disk space right away.</dd>
 </div>
 </div>
 <div class="section" id="removing-directories">
-<h4><a class="toc-backref" href="#id30">Removing Directories</a><a class="headerlink" href="#removing-directories" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id40">Removing Directories</a><a class="headerlink" href="#removing-directories" title="Permalink to this headline">¶</a></h4>
 <p>Let&#8217;s re-create that file and then move up one directory to
 <tt class="docutils literal"><span class="pre">/users/nelle</span></tt> using <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pwd
@@ -960,7 +1008,7 @@ lot of damage if used without care.</p>
 </div>
 </div>
 <div class="section" id="moving-files-and-directories">
-<h4><a class="toc-backref" href="#id31">Moving Files and Directories</a><a class="headerlink" href="#moving-files-and-directories" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id41">Moving Files and Directories</a><a class="headerlink" href="#moving-files-and-directories" title="Permalink to this headline">¶</a></h4>
 <p>Let&#8217;s create that directory and file one more time. (Note that this
 time we&#8217;re running <tt class="docutils literal"><span class="pre">nano</span></tt> with the path <tt class="docutils literal"><span class="pre">thesis/draft.txt</span></tt>, rather
 than going into the <tt class="docutils literal"><span class="pre">thesis</span></tt> directory and running <tt class="docutils literal"><span class="pre">nano</span></tt> on
@@ -1013,7 +1061,7 @@ quotes.txt
 </div>
 </div>
 <div class="section" id="copying-files">
-<h4><a class="toc-backref" href="#id32">Copying Files</a><a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id42">Copying Files</a><a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h4>
 <p>The <tt class="docutils literal"><span class="pre">cp</span></tt> command works very much like <tt class="docutils literal"><span class="pre">mv</span></tt>, except it copies a
 file instead of moving it. We can check that it did the right thing
 using <tt class="docutils literal"><span class="pre">ls</span></tt> with two paths as parameters &#8212; like most Unix commands,
@@ -1048,9 +1096,9 @@ first character in the path: <tt class="docutils literal"><span class="pre">here
 </div>
 </div>
 <div class="section" id="excercises">
-<h4><a class="toc-backref" href="#id33">Excercises</a><a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id43">Excercises</a><a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="renaming-files">
-<h5><a class="toc-backref" href="#id34">Renaming files</a><a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id44">Renaming files</a><a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h5>
 <p>Suppose that you created a <tt class="docutils literal"><span class="pre">.txt</span></tt> file in your current directory
 to contain a list of the statistical tests you will need to do to
 analyze your data, and named it: <tt class="docutils literal"><span class="pre">statstics.txt</span></tt></p>
@@ -1065,7 +1113,7 @@ commands could you use to do so?</p>
 </ol>
 </div>
 <div class="section" id="moving-and-copying">
-<h5><a class="toc-backref" href="#id35">Moving and Copying</a><a class="headerlink" href="#moving-and-copying" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id45">Moving and Copying</a><a class="headerlink" href="#moving-and-copying" title="Permalink to this headline">¶</a></h5>
 <p>What is the output of the closing <tt class="docutils literal"><span class="pre">ls</span></tt> command in the sequence
 shown below?</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pwd
@@ -1086,7 +1134,7 @@ $ ls
 </ol>
 </div>
 <div class="section" id="listing-directories-and-files">
-<h5><a class="toc-backref" href="#id36">Listing Directories and Files</a><a class="headerlink" href="#listing-directories-and-files" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id46">Listing Directories and Files</a><a class="headerlink" href="#listing-directories-and-files" title="Permalink to this headline">¶</a></h5>
 <p>Suppose that:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls -F
 analyzed/  fructose.dat    raw/   sucrose.dat
@@ -1102,7 +1150,7 @@ fructose.dat    sucrose.dat
 </div>
 </div>
 <div class="section" id="copy-with-multiple-filenames">
-<h5><a class="toc-backref" href="#id37">Copy with Multiple Filenames</a><a class="headerlink" href="#copy-with-multiple-filenames" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id47">Copy with Multiple Filenames</a><a class="headerlink" href="#copy-with-multiple-filenames" title="Permalink to this headline">¶</a></h5>
 <p>What does <tt class="docutils literal"><span class="pre">cp</span></tt> do when given several filenames and a directory
 name, as in:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ mkdir backup
@@ -1117,7 +1165,7 @@ $ cp intro.txt methods.txt survey.txt
 </div>
 </div>
 <div class="section" id="listing-recursively-and-by-time">
-<h5><a class="toc-backref" href="#id38">Listing Recursively and By Time</a><a class="headerlink" href="#listing-recursively-and-by-time" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id48">Listing Recursively and By Time</a><a class="headerlink" href="#listing-recursively-and-by-time" title="Permalink to this headline">¶</a></h5>
 <p>The command <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-R</span></tt> lists the contents of directories recursively,
 i.e., lists their sub-directories, sub-sub-directories, and so on in
 alphabetical order at each level. The command <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">-t</span></tt> lists things
@@ -1127,9 +1175,24 @@ directories first. In what order does <tt class="docutils literal"><span class="
 </div>
 </div>
 <div class="section" id="pipes-and-filters">
-<h3><a class="toc-backref" href="#id39">Pipes and Filters</a><a class="headerlink" href="#pipes-and-filters" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id3">
-<h4><a class="toc-backref" href="#id40">Learning Objectives</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h3><a class="toc-backref" href="#id49">Pipes and Filters</a><a class="headerlink" href="#pipes-and-filters" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4><a class="toc-backref" href="#id50">Shell Concepts Introduced</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">wc</span></tt>: word count</li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>: globbing</li>
+<li><tt class="docutils literal"><span class="pre">&gt;</span></tt>: redirection to file
+<tt class="docutils literal"><span class="pre">stdout</span></tt>: standard output stream</li>
+<li><tt class="docutils literal"><span class="pre">cat</span></tt>: concatenate</li>
+<li><tt class="docutils literal"><span class="pre">sort</span></tt>: sorting</li>
+<li><tt class="docutils literal"><span class="pre">|</span></tt>: pipe</li>
+<li><tt class="docutils literal"><span class="pre">head</span></tt>: get first few lines</li>
+<li><tt class="docutils literal"><span class="pre">uniq</span></tt>: remove duplicate adjacent lines</li>
+<li><tt class="docutils literal"><span class="pre">cut</span></tt>: cut selected portions of text</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4><a class="toc-backref" href="#id51">Learning Objectives</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li>Redirect a command&#8217;s output to a file.</li>
@@ -1142,7 +1205,7 @@ any input to process.</li>
 </div></blockquote>
 </div>
 <div class="section" id="globbing-wildcards">
-<h4><a class="toc-backref" href="#id41">Globbing/Wildcards</a><a class="headerlink" href="#globbing-wildcards" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id52">Globbing/Wildcards</a><a class="headerlink" href="#globbing-wildcards" title="Permalink to this headline">¶</a></h4>
 <p>Now that we know a few basic commands, we can finally look at the
 shell&#8217;s most powerful feature: the ease with which it lets us combine
 existing programs in new ways. We&#8217;ll start with a directory called
@@ -1221,7 +1284,7 @@ number of lines per file:</p>
 get only the number of characters.</p>
 </div>
 <div class="section" id="redirecting-output">
-<h4><a class="toc-backref" href="#id42">Redirecting Output</a><a class="headerlink" href="#redirecting-output" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id53">Redirecting Output</a><a class="headerlink" href="#redirecting-output" title="Permalink to this headline">¶</a></h4>
 <p>Which of these files is shortest? It&#8217;s an easy question to answer when
 there are only six files, but what if there were 6000? Our first step
 toward a solution is to run the command:</p>
@@ -1284,7 +1347,7 @@ ordered from least to greatest, the output of <tt class="docutils literal"><span
 file with the fewest lines.</p>
 </div>
 <div class="section" id="redirecting-input">
-<h4><a class="toc-backref" href="#id43">Redirecting Input</a><a class="headerlink" href="#redirecting-input" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id54">Redirecting Input</a><a class="headerlink" href="#redirecting-input" title="Permalink to this headline">¶</a></h4>
 <p>As well as using <tt class="docutils literal"><span class="pre">&gt;</span></tt> to redirect a program&#8217;s output, we can use
 <tt class="docutils literal"><span class="pre">&lt;</span></tt> to redirect its input, i.e., to read from a file instead of from
 standard input. For example, instead of writing <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">ammonia.pdb</span></tt>, we
@@ -1295,7 +1358,7 @@ standard input, but we have told the shell to send the contents of
 <tt class="docutils literal"><span class="pre">ammonia.pdb</span></tt> to <tt class="docutils literal"><span class="pre">wc</span></tt>&#8216;s standard input.</p>
 </div>
 <div class="section" id="pipes">
-<h4><a class="toc-backref" href="#id44">Pipes</a><a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id55">Pipes</a><a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h4>
 <p>If you think having use many intermediate files is confusing, you&#8217;re
 in good company: even once you understand what <tt class="docutils literal"><span class="pre">wc</span></tt>, <tt class="docutils literal"><span class="pre">sort</span></tt>, and
 <tt class="docutils literal"><span class="pre">head</span></tt> do, all those intermediate files make it hard to follow
@@ -1351,7 +1414,7 @@ with data flowing from the files, through <tt class="docutils literal"><span cla
 <tt class="docutils literal"><span class="pre">sort</span></tt> through <tt class="docutils literal"><span class="pre">head</span></tt> to the screen.</p>
 </div>
 <div class="section" id="filter">
-<h4><a class="toc-backref" href="#id45">Filter</a><a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id56">Filter</a><a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h4>
 <p>This simple idea is why Unix has been so successful. Instead of
 creating enormous programs that try to do many different things, Unix
 programmers focus on creating lots of simple tools that each do one
@@ -1369,7 +1432,7 @@ should</em> write your programs this way so that you and other people can
 put those programs into pipes to multiply their power.</p>
 </div>
 <div class="section" id="nelle-s-pipeline-checking-files">
-<h4><a class="toc-backref" href="#id46">Nelle&#8217;s Pipeline: Checking Files</a><a class="headerlink" href="#nelle-s-pipeline-checking-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id57">Nelle&#8217;s Pipeline: Checking Files</a><a class="headerlink" href="#nelle-s-pipeline-checking-files" title="Permalink to this headline">¶</a></h4>
 <p>Nelle has run her samples through the assay machines and created 1520
 files in the <tt class="docutils literal"><span class="pre">north-pacific-gyre/2012-07-03</span></tt> directory described
 earlier. As a quick sanity check, she types:</p>
@@ -1427,10 +1490,10 @@ wildcard expression <tt class="docutils literal"><span class="pre">*[AB].txt</sp
 number of characters; the expression <tt class="docutils literal"><span class="pre">[AB]</span></tt> matches either an &#8216;A&#8217; or
 a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 </div>
-<div class="section" id="id4">
-<h4><a class="toc-backref" href="#id47">Excercises</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id58">Excercises</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="what-does-sort-n-do">
-<h5><a class="toc-backref" href="#id48">What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</a><a class="headerlink" href="#what-does-sort-n-do" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id59">What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</a><a class="headerlink" href="#what-does-sort-n-do" title="Permalink to this headline">¶</a></h5>
 <p>If we run <tt class="docutils literal"><span class="pre">sort</span></tt> on this file:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">10</span>
 <span class="mi">2</span>
@@ -1458,7 +1521,7 @@ a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 <p>Explain why <tt class="docutils literal"><span class="pre">-n</span></tt> has this effect.</p>
 </div>
 <div class="section" id="what-does-mean">
-<h5><a class="toc-backref" href="#id49">What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?</a><a class="headerlink" href="#what-does-mean" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id60">What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?</a><a class="headerlink" href="#what-does-mean" title="Permalink to this headline">¶</a></h5>
 <p>What is the difference between:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">wc</span> <span class="o">-</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">mydata</span><span class="o">.</span><span class="n">dat</span>
 </pre></div>
@@ -1469,7 +1532,7 @@ a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 </div>
 </div>
 <div class="section" id="piping-commands-together">
-<h5><a class="toc-backref" href="#id50">Piping commands together</a><a class="headerlink" href="#piping-commands-together" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id61">Piping commands together</a><a class="headerlink" href="#piping-commands-together" title="Permalink to this headline">¶</a></h5>
 <p>In our current directory, we want to find the 3 files which have
 the least number of lines. Which command listed below would work?</p>
 <ol class="arabic simple">
@@ -1480,7 +1543,7 @@ the least number of lines. Which command listed below would work?</p>
 </ol>
 </div>
 <div class="section" id="why-does-uniq-only-remove-adjacent-duplicates">
-<h5><a class="toc-backref" href="#id51">Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?</a><a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id62">Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?</a><a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this headline">¶</a></h5>
 <p>The command <tt class="docutils literal"><span class="pre">uniq</span></tt> removes adjacent duplicated lines from its
 input. For example, if a file <tt class="docutils literal"><span class="pre">salmon.txt</span></tt> contains:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">coho</span>
@@ -1504,7 +1567,7 @@ command could you combine with it in a pipe to remove all
 duplicated lines?</p>
 </div>
 <div class="section" id="pipe-reading-comprehension">
-<h5><a class="toc-backref" href="#id52">Pipe reading comprehension</a><a class="headerlink" href="#pipe-reading-comprehension" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id63">Pipe reading comprehension</a><a class="headerlink" href="#pipe-reading-comprehension" title="Permalink to this headline">¶</a></h5>
 <p>A file called <tt class="docutils literal"><span class="pre">animals.txt</span></tt> contains the following data:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">deer</span>
 <span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">rabbit</span>
@@ -1523,7 +1586,7 @@ in the pipeline below?</p>
 </div>
 </div>
 <div class="section" id="pipe-construction">
-<h5><a class="toc-backref" href="#id53">Pipe construction</a><a class="headerlink" href="#pipe-construction" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id64">Pipe construction</a><a class="headerlink" href="#pipe-construction" title="Permalink to this headline">¶</a></h5>
 <p>The command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cut -d , -f 2 animals.txt
 </pre></div>
@@ -1546,9 +1609,17 @@ their names)?</p>
 </div>
 </div>
 <div class="section" id="loops">
-<h3><a class="toc-backref" href="#id54">Loops</a><a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id5">
-<h4><a class="toc-backref" href="#id55">Learning Objectives</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h3><a class="toc-backref" href="#id65">Loops</a><a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#id66">Shell Concepts Introduced</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">for</span></tt>: starts a <strong>for loop</strong></li>
+<li><tt class="docutils literal"><span class="pre">$name</span></tt>: a variable called <tt class="docutils literal"><span class="pre">name</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">echo</span></tt>: display text</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#id67">Learning Objectives</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li>Write a loop that applies one or more commands separately to each
@@ -1563,8 +1634,8 @@ used in files&#8217; names.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id6">
-<h4><a class="toc-backref" href="#id56">Loops</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#id68">Loops</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p>Wildcards and tab completion are two ways to reduce typing (and typing
 mistakes). Another is to tell the shell to do something over and over
 again. Suppose we have several hundred genome data files named
@@ -1614,7 +1685,7 @@ variable&#8217;s value by putting <tt class="docutils literal"><span class="pre"
 second, and so on.</p>
 </div>
 <div class="section" id="variables">
-<h4><a class="toc-backref" href="#id57">Variables</a><a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id69">Variables</a><a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
 <p>By using the dollar sign we are telling the shell interpreter to treat
 <tt class="docutils literal"><span class="pre">filename</span></tt> as a variable name and substitute its value on its place,
 but not as some text or external command. When using variables it is
@@ -1657,7 +1728,7 @@ increase the odds that the program won&#8217;t do what its readers think it
 does.</p>
 </div>
 <div class="section" id="informative-loops">
-<h4><a class="toc-backref" href="#id58">Informative Loops</a><a class="headerlink" href="#informative-loops" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id70">Informative Loops</a><a class="headerlink" href="#informative-loops" title="Permalink to this headline">¶</a></h4>
 <p>Here&#8217;s a slightly more complicated loop:</p>
 <div class="highlight-python"><div class="highlight"><pre>for filename in *.dat
 do
@@ -1694,7 +1765,7 @@ combination selects lines 81-100 from whatever file is being
 processed.</p>
 </div>
 <div class="section" id="spaces-in-names">
-<h4><a class="toc-backref" href="#id59">Spaces in Names</a><a class="headerlink" href="#spaces-in-names" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id71">Spaces in Names</a><a class="headerlink" href="#spaces-in-names" title="Permalink to this headline">¶</a></h4>
 <p>Filename expansion in loops is another reason you should not use
 spaces in filenames. Suppose our data files are named:</p>
 <div class="highlight-python"><div class="highlight"><pre>basilisk.dat
@@ -1784,7 +1855,7 @@ loops work.</p>
 </div>
 </div>
 <div class="section" id="nelle-s-pipeline-processing-files">
-<h4><a class="toc-backref" href="#id60">Nelle&#8217;s Pipeline: Processing Files</a><a class="headerlink" href="#nelle-s-pipeline-processing-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id72">Nelle&#8217;s Pipeline: Processing Files</a><a class="headerlink" href="#nelle-s-pipeline-processing-files" title="Permalink to this headline">¶</a></h4>
 <p>Nelle is now ready to process her data files. Since she&#8217;s still
 learning how to use the shell, she decides to build up the required
 commands in stages. Her first step is to make sure that she can select
@@ -1865,7 +1936,7 @@ looks good, so she decides to get some coffee and catch up on her
 reading.</p>
 </div>
 <div class="section" id="history">
-<h4><a class="toc-backref" href="#id61">History</a><a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id73">History</a><a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h4>
 <p>(Those who know history can choose to repeat it)</p>
 <p>Another way to repeat previous work is to use the <tt class="docutils literal"><span class="pre">history</span></tt>
 command to get a list of the last few hundred commands that have
@@ -1883,10 +1954,10 @@ example, if Nelle types this:</p>
 <p>then she can re-run <tt class="docutils literal"><span class="pre">goostats</span></tt> on <tt class="docutils literal"><span class="pre">NENE01729B.txt</span></tt> simply by
 typing <tt class="docutils literal"><span class="pre">!458</span></tt>.</p>
 </div>
-<div class="section" id="id7">
-<h4><a class="toc-backref" href="#id62">Excercises</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#id74">Excercises</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="variables-in-loops">
-<h5><a class="toc-backref" href="#id63">Variables in loops</a><a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id75">Variables in loops</a><a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h5>
 <p>Suppose that <tt class="docutils literal"><span class="pre">ls</span></tt> initially displays:</p>
 <div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat
 </pre></div>
@@ -1908,7 +1979,7 @@ done
 <p>Why do these two loops give you different outputs?</p>
 </div>
 <div class="section" id="saving-to-a-file-in-a-loop-part-one">
-<h5><a class="toc-backref" href="#id64">Saving to a file in a loop - part one</a><a class="headerlink" href="#saving-to-a-file-in-a-loop-part-one" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id76">Saving to a file in a loop - part one</a><a class="headerlink" href="#saving-to-a-file-in-a-loop-part-one" title="Permalink to this headline">¶</a></h5>
 <p>In the same directory, what is the effect of this loop?</p>
 <div class="highlight-python"><div class="highlight"><pre>for sugar in *.dat
 do
@@ -1929,7 +2000,7 @@ and concatenates all three files to create <tt class="docutils literal"><span cl
 </ol>
 </div>
 <div class="section" id="saving-to-a-file-in-a-loop-part-two">
-<h5><a class="toc-backref" href="#id65">Saving to a file in a loop - part two</a><a class="headerlink" href="#saving-to-a-file-in-a-loop-part-two" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id77">Saving to a file in a loop - part two</a><a class="headerlink" href="#saving-to-a-file-in-a-loop-part-two" title="Permalink to this headline">¶</a></h5>
 <p>In another directory, where <tt class="docutils literal"><span class="pre">ls</span></tt> returns:</p>
 <div class="highlight-python"><div class="highlight"><pre>fructose.dat    glucose.dat   sucrose.dat   maltose.txt
 </pre></div>
@@ -1956,7 +2027,7 @@ file called <tt class="docutils literal"><span class="pre">sugar.dat</span></tt>
 </ol>
 </div>
 <div class="section" id="doing-a-dry-run">
-<h5><a class="toc-backref" href="#id66">Doing a Dry Run</a><a class="headerlink" href="#doing-a-dry-run" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id78">Doing a Dry Run</a><a class="headerlink" href="#doing-a-dry-run" title="Permalink to this headline">¶</a></h5>
 <p>Suppose we want to preview the commands the following loop will
 execute without actually running those commands:</p>
 <div class="highlight-python"><div class="highlight"><pre>for file in *.dat
@@ -1981,7 +2052,7 @@ done
 </div>
 </div>
 <div class="section" id="variable-commands">
-<h5><a class="toc-backref" href="#id67">Variable Commands</a><a class="headerlink" href="#variable-commands" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id79">Variable Commands</a><a class="headerlink" href="#variable-commands" title="Permalink to this headline">¶</a></h5>
 <p>Describe in words what the following loop does.</p>
 <div class="highlight-python"><div class="highlight"><pre>for how in frog11 prcb redig
 do
@@ -1993,9 +2064,18 @@ done
 </div>
 </div>
 <div class="section" id="finding-things">
-<h3><a class="toc-backref" href="#id68">Finding Things</a><a class="headerlink" href="#finding-things" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id8">
-<h4><a class="toc-backref" href="#id69">Learning Objectives</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<h3><a class="toc-backref" href="#id80">Finding Things</a><a class="headerlink" href="#finding-things" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h4><a class="toc-backref" href="#id81">Shell Concepts Introduced</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">grep</span></tt>: file pattern searcher</li>
+<li><tt class="docutils literal"><span class="pre">find</span></tt>: walk a file hierarchy</li>
+<li><tt class="docutils literal"><span class="pre">man</span></tt>: display manual pages</li>
+<li><tt class="docutils literal"><span class="pre">$()</span></tt>: execute in a subshell</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#id82">Learning Objectives</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li>Use <tt class="docutils literal"><span class="pre">grep</span></tt> to select lines from text files that match simple
@@ -2009,7 +2089,7 @@ common tools don&#8217;t handle the latter well.</li>
 </div></blockquote>
 </div>
 <div class="section" id="searching-file-contents">
-<h4><a class="toc-backref" href="#id70">Searching File Contents</a><a class="headerlink" href="#searching-file-contents" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id83">Searching File Contents</a><a class="headerlink" href="#searching-file-contents" title="Permalink to this headline">¶</a></h4>
 <p>You can guess someone&#8217;s age by how they talk about search: young
 people use &#8220;Google&#8221; as a verb, while crusty old Unix programmers use
 &#8220;grep&#8221;.  The word is a contraction of &#8220;global/regular
@@ -2138,7 +2218,7 @@ matched.  (-F is specified by POSIX.)
 </div>
 </div>
 <div class="section" id="searching-for-patterns-in-files">
-<h4><a class="toc-backref" href="#id71">Searching for Patterns in Files</a><a class="headerlink" href="#searching-for-patterns-in-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id84">Searching for Patterns in Files</a><a class="headerlink" href="#searching-for-patterns-in-files" title="Permalink to this headline">¶</a></h4>
 <p><tt class="docutils literal"><span class="pre">grep</span></tt>&#8216;s real power doesn&#8217;t come from its options, though; it comes
 from the fact that patterns can include wildcards. (The technical name
 for these is <strong>regular expressions</strong>, which is what the &#8220;re&#8221; in &#8220;grep&#8221;
@@ -2159,7 +2239,7 @@ the line. The &#8216;.&#8217; matches a single character (just like &#8216;?&#82
 shell), while the &#8216;o&#8217; matches an actual &#8216;o&#8217;.</p>
 </div>
 <div class="section" id="searching-for-files">
-<h4><a class="toc-backref" href="#id72">Searching for Files</a><a class="headerlink" href="#searching-for-files" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id85">Searching for Files</a><a class="headerlink" href="#searching-for-files" title="Permalink to this headline">¶</a></h4>
 <p>While <tt class="docutils literal"><span class="pre">grep</span></tt> finds lines in files, the <tt class="docutils literal"><span class="pre">find</span></tt> command finds files
 themselves. Again, it has a lot of options; to show how the simplest
 ones work, we&#8217;ll use the directory tree shown below.</p>
@@ -2216,7 +2296,7 @@ therefore finds all the files that are two or more levels below us:</p>
 </div>
 </div>
 <div class="section" id="searching-for-files-matching-a-pattern">
-<h4><a class="toc-backref" href="#id73">Searching for Files Matching a Pattern</a><a class="headerlink" href="#searching-for-files-matching-a-pattern" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id86">Searching for Files Matching a Pattern</a><a class="headerlink" href="#searching-for-files-matching-a-pattern" title="Permalink to this headline">¶</a></h4>
 <p>Now let&#8217;s try matching by name:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ find . -name *.txt
 ./haiku.txt
@@ -2258,7 +2338,7 @@ files in or below the current directory. How can we combine that with
 <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span></tt> to count the lines in all those files?</p>
 </div>
 <div class="section" id="subshell">
-<h4><a class="toc-backref" href="#id74">Subshell</a><a class="headerlink" href="#subshell" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id87">Subshell</a><a class="headerlink" href="#subshell" title="Permalink to this headline">¶</a></h4>
 <p>The simplest way is to put the <tt class="docutils literal"><span class="pre">find</span></tt> command inside <tt class="docutils literal"><span class="pre">$()</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ wc -l $(find . -name &#39;*.txt&#39;)
 11 ./haiku.txt
@@ -2315,10 +2395,10 @@ also the sincerest form of praise.</p>
 </dl>
 </div>
 </div>
-<div class="section" id="id9">
-<h4><a class="toc-backref" href="#id75">Excercises</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id14">
+<h4><a class="toc-backref" href="#id88">Excercises</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="using-grep">
-<h5><a class="toc-backref" href="#id76">Using grep</a><a class="headerlink" href="#using-grep" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id89">Using grep</a><a class="headerlink" href="#using-grep" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-python"><div class="highlight"><pre>The Tao that is seen
 Is not the true Tao, until
 You bring fresh toner.
@@ -2345,14 +2425,14 @@ command would result in the following output:</p>
 </ol>
 </div>
 <div class="section" id="find-pipeline-reading-comprehension">
-<h5><a class="toc-backref" href="#id77"><tt class="docutils literal"><span class="pre">find</span></tt> pipeline reading comprehension</a><a class="headerlink" href="#find-pipeline-reading-comprehension" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id90"><tt class="docutils literal"><span class="pre">find</span></tt> pipeline reading comprehension</a><a class="headerlink" href="#find-pipeline-reading-comprehension" title="Permalink to this headline">¶</a></h5>
 <p>Write a short explanatory comment for the following shell script:</p>
 <div class="highlight-python"><div class="highlight"><pre>find . -name &#39;*.dat&#39; | wc -l | sort -n
 </pre></div>
 </div>
 </div>
 <div class="section" id="matching-ose-dat-but-not-temp">
-<h5><a class="toc-backref" href="#id78">Matching <tt class="docutils literal"><span class="pre">ose.dat</span></tt> but not <tt class="docutils literal"><span class="pre">temp</span></tt></a><a class="headerlink" href="#matching-ose-dat-but-not-temp" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id91">Matching <tt class="docutils literal"><span class="pre">ose.dat</span></tt> but not <tt class="docutils literal"><span class="pre">temp</span></tt></a><a class="headerlink" href="#matching-ose-dat-but-not-temp" title="Permalink to this headline">¶</a></h5>
 <p>The <tt class="docutils literal"><span class="pre">-v</span></tt> flag to <tt class="docutils literal"><span class="pre">grep</span></tt> inverts pattern matching, so that only
 lines which do <em>not</em> match the pattern are printed. Given that,
 which of the following commands will find all files in <tt class="docutils literal"><span class="pre">/data</span></tt>
@@ -2366,7 +2446,7 @@ whose names end in <tt class="docutils literal"><span class="pre">ose.dat</span>
 </ol>
 </div>
 <div class="section" id="little-women">
-<h5><a class="toc-backref" href="#id79">Little Women</a><a class="headerlink" href="#little-women" title="Permalink to this headline">¶</a></h5>
+<h5><a class="toc-backref" href="#id92">Little Women</a><a class="headerlink" href="#little-women" title="Permalink to this headline">¶</a></h5>
 <p>You and your friend, having just finished reading <em>Little Women</em> by
 Louisa May Alcott, are in an argument. Of the four sisters in the
 book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the most
@@ -2380,7 +2460,7 @@ commands <tt class="docutils literal"><span class="pre">grep</span></tt> and <tt
 </div>
 </div>
 <div class="section" id="conclusion">
-<h3><a class="toc-backref" href="#id80">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id93">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
 <p>The Unix shell is older than most of the people who use it. It has
 survived so long because it is one of the most productive
 programming environments ever created &#8212; maybe even <em>the</em> most
@@ -2393,7 +2473,7 @@ unbeaten at the second. And as Alfred North Whitehead wrote in 1911,
 operations which we can perform without thinking about them.&#8221;</p>
 </div>
 <div class="section" id="cheatsheet">
-<h3><a class="toc-backref" href="#id81">Cheatsheet</a><a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id94">Cheatsheet</a><a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h3>
 <p>uname
 head
 date
@@ -2440,14 +2520,14 @@ killall</p>
 </div>
 </div>
 <div class="section" id="further-reading">
-<h2><a class="toc-backref" href="#id82">Further Reading</a><a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id95">Further Reading</a><a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
 <p>What is covered here is a small overview of using the commandline
 shell.
 For further reading please consult the <a class="reference external" href="http://www.tldp.org/LDP/Bash-Beginners-Guide/html/">Bash Guide for Beginners</a>
 Additionally, there are numerous shell summaries <a class="reference external" href="https://www.google.com/search?q=linux+shell+cheat+sheet">a Google Search away</a></p>
 </div>
 <div class="section" id="next-step">
-<h2><a class="toc-backref" href="#id83">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id96">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
 <p>In the next page, ...</p>
 <p><a class="reference external" href="link">Link here</a></p>
 </div>
