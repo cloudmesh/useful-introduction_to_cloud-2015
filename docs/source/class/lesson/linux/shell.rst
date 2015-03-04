@@ -1,4 +1,4 @@
-Shell (Under Preparation)
+Shell
 ======================================================================
 
 .. sidebar:: Page Contents
