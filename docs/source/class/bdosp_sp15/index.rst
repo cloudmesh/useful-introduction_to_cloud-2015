@@ -23,6 +23,7 @@ Collaboration Tools
    :maxdepth: 1
    :glob:
   
+   ../lesson/collaboration/overview
    ../lesson/google
    ../lesson/shell-access
    ../lesson/git
