@@ -136,8 +136,14 @@ reading modulefiles.
 Cheatsheet
 ----------------------------------------------------------------------
 
-.. include:: cheatsheet.rst
+.. toctree::
+   :glob:
 
+   cheatsheet-shell
+   cheatsheet-editor
+   cheatsheet-python
+   cheatsheet-ssh
+   cheatsheet-modules
 
 Next Step
 -----------

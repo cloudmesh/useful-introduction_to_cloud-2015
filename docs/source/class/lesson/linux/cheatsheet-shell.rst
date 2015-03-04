@@ -1,3 +1,7 @@
+
+Shell
+----------------------------------------------------------------------
+
 .. tip::
 
    You can loop up information about commands by executing::
