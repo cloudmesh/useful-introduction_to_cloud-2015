@@ -74,7 +74,7 @@ run a text editor called Nano to create a file called ``draft.txt``::
 Let's type in a few lines of text, then use Control-O to write our
 data to disk:
 
-.. figure:: fig/nano-screenshot.png
+.. figure:: /images/nano-screenshot.png
    :alt: Nano in action
 
    Nano in action
