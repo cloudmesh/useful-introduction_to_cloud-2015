@@ -83,6 +83,7 @@ If you are you can type ``quit()`` and press Enter to exit.
 Installing Libraries
 ----------------------------------------------------------------------
 
+.. include:: /class/lesson/linux/python/pip-install.rst
 
 Resources
 ----------------------------------------------------------------------
