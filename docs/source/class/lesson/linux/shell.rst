@@ -52,7 +52,8 @@ keyboard.
 .. note:: Adventerous readers may be interested to know that both
    Windows and Mac OS X provide a command shell.  On Windows you can
    run ``cmd.exe`` from `Start --> Run`.  On OS X open `Applications
-   --> Utilities --> Terminal`.
+   --> Utilities --> Terminal`. Be aware that the Windows and OS X CLI
+   may be different than on FutureSystems.
 
 .. tip::
    If you wish to follow along please log into your FutureSystems
