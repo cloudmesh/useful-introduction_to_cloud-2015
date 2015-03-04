@@ -187,7 +187,7 @@ Shell Concepts Introduced
 
 
 Conclusion
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------
 
 The Unix shell is older than most of the people who use it. It has
 survived so long because it is one of the most productive
@@ -201,77 +201,9 @@ unbeaten at the second. And as Alfred North Whitehead wrote in 1911,
 operations which we can perform without thinking about them."
 
 Cheatsheet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------
 
-Information
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-uname
-head
-date
-uptime
-whoami
-man
-
-Directory Operations
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-pwd
-mkdir
-cd
-ls
-
-``ls`` Options
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
--a
--R
--r
--t
--S
--l
--1
--m
--Q
-
-Searching
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-grep
-grep -i
-grep -r
-grep -v
-grep -o
-find dir -name
-find dir -iname
-whereis
-locate
-
-File Operations
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-touch
-cat
-less
-file
-cp
-mv
-rm
-head
-tail
-chmod
-
-Permissions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Process Management
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-ps
-top
-kill
-pkill
-killall
+.. include:: shell-cheatsheet.rst
 
 
 Further Reading
