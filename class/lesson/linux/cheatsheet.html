@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview and Introduction (Under Preparation) &mdash; my Cloudmesh Learning documentation</title>
+  <title>Information &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -30,10 +30,7 @@
   
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
-    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
-        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdosp_sp15/index.html"/>
-        <link rel="next" title="Shell" href="shell.html"/>
-        <link rel="prev" title="Use of FutureSystems (Under Preparation)" href="../system/futuresystemsuse.html"/> 
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul class="current">
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,9 +75,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
@@ -180,14 +177,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
-      
-          <li><a href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
-      
-    <li>Overview and Introduction (Under Preparation)</li>
+    <li>Information</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../../_sources/class/lesson/linux/overview.txt" rel="nofollow"> View page source</a>
+          <a href="../../../_sources/class/lesson/linux/cheatsheet.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -195,84 +188,7 @@
 </div>
           <div role="main">
             
-  <div class="section" id="overview-and-introduction-under-preparation">
-<h1>Overview and Introduction (Under Preparation)<a class="headerlink" href="#overview-and-introduction-under-preparation" title="Permalink to this headline">¶</a></h1>
-<div class="sidebar">
-<p class="first sidebar-title">Page Contents</p>
-<div class="contents local last topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#overview" id="id1">Overview</a></li>
-<li><a class="reference internal" href="#prerequisite" id="id2">Prerequisite</a></li>
-<li><a class="reference internal" href="#description" id="id3">Description</a><ul>
-<li><a class="reference internal" href="#shell" id="id4">Shell</a></li>
-<li><a class="reference internal" href="#editing-files" id="id5">Editing Files</a></li>
-<li><a class="reference internal" href="#python-programming" id="id6">Python Programming</a></li>
-<li><a class="reference internal" href="#package-management" id="id7">Package Management</a></li>
-<li><a class="reference internal" href="#advanced-ssh" id="id8">Advanced SSH</a></li>
-<li><a class="reference internal" href="#software-modules" id="id9">Software Modules</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#cheatsheet" id="id10">Cheatsheet</a><ul>
-<li><a class="reference internal" href="#information" id="id11">Information</a></li>
-<li><a class="reference internal" href="#directory-operations" id="id12">Directory Operations</a><ul>
-<li><a class="reference internal" href="#ls-options" id="id13"><tt class="docutils literal"><span class="pre">ls</span></tt> Options</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#searching" id="id14">Searching</a><ul>
-<li><a class="reference internal" href="#grep-options" id="id15"><tt class="docutils literal"><span class="pre">grep</span></tt> Options</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#file-operations" id="id16">File Operations</a></li>
-<li><a class="reference internal" href="#process-management" id="id17">Process Management</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#next-step" id="id18">Next Step</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="overview">
-<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This lesson will introduce you to the basics of Linux usage.
-The topics covered will be :</p>
-<ul class="simple">
-<li><a class="reference internal" href="shell.html"><em>Shell</em></a></li>
-<li><a class="reference internal" href="editors.html"><em>Editing Files (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="python.html"><em>Python Programming (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="packagemanagement.html"><em>Package Management (Under Preparation)</em></a></li>
-<li><a class="reference internal" href="advancedssh.html"><em>Advanced SSH</em></a></li>
-<li><a class="reference internal" href="modules.html"><em>Software Modules (Under Preparation)</em></a></li>
-</ul>
-</div>
-<div class="section" id="prerequisite">
-<h2><a class="toc-backref" href="#id2">Prerequisite</a><a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
-<p>In order to conduct this lesson you should have an account on
-FutureSystems, as descibred in <a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems (Under Preparation)</em></a>.
-You should start by logging into you FutureSystems account.</p>
-</div>
-<div class="section" id="description">
-<h2><a class="toc-backref" href="#id3">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="shell">
-<h3><a class="toc-backref" href="#id4">Shell</a><a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="editing-files">
-<h3><a class="toc-backref" href="#id5">Editing Files</a><a class="headerlink" href="#editing-files" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="python-programming">
-<h3><a class="toc-backref" href="#id6">Python Programming</a><a class="headerlink" href="#python-programming" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="package-management">
-<h3><a class="toc-backref" href="#id7">Package Management</a><a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="advanced-ssh">
-<h3><a class="toc-backref" href="#id8">Advanced SSH</a><a class="headerlink" href="#advanced-ssh" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="software-modules">
-<h3><a class="toc-backref" href="#id9">Software Modules</a><a class="headerlink" href="#software-modules" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="cheatsheet">
-<h2><a class="toc-backref" href="#id10">Cheatsheet</a><a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h2>
-<div class="admonition tip">
+  <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>You can loop up information about commands by executing:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ man &lt;name&gt;
@@ -284,7 +200,7 @@ You should start by logging into you FutureSystems account.</p>
 </div>
 </div>
 <div class="section" id="information">
-<h3><a class="toc-backref" href="#id11">Information</a><a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h3>
+<h1>Information<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">uname</span></tt> display operating system name</li>
 <li><tt class="docutils literal"><span class="pre">date</span></tt> display the date</li>
@@ -294,7 +210,7 @@ You should start by logging into you FutureSystems account.</p>
 </ul>
 </div>
 <div class="section" id="directory-operations">
-<h3><a class="toc-backref" href="#id12">Directory Operations</a><a class="headerlink" href="#directory-operations" title="Permalink to this headline">¶</a></h3>
+<h1>Directory Operations<a class="headerlink" href="#directory-operations" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">pwd</span></tt> display working directory</li>
 <li><tt class="docutils literal"><span class="pre">mkdir</span></tt> make a directory</li>
@@ -302,7 +218,7 @@ You should start by logging into you FutureSystems account.</p>
 <li><tt class="docutils literal"><span class="pre">ls</span></tt> list directory contents</li>
 </ul>
 <div class="section" id="ls-options">
-<h4><a class="toc-backref" href="#id13"><tt class="docutils literal"><span class="pre">ls</span></tt> Options</a><a class="headerlink" href="#ls-options" title="Permalink to this headline">¶</a></h4>
+<h2><tt class="docutils literal"><span class="pre">ls</span></tt> Options<a class="headerlink" href="#ls-options" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">-a</span></tt> include directory entries whose name begins with a <tt class="docutils literal"><span class="pre">.</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">-R</span></tt> recuresively list subdirectories encountered</li>
@@ -317,7 +233,7 @@ You should start by logging into you FutureSystems account.</p>
 </div>
 </div>
 <div class="section" id="searching">
-<h3><a class="toc-backref" href="#id14">Searching</a><a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h3>
+<h1>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">grep</span></tt> print lines matching a pattern</li>
 <li><tt class="docutils literal"><span class="pre">find</span> <span class="pre">dir</span> <span class="pre">-name</span> <span class="pre">&quot;pattern&quot;</span></tt> search <tt class="docutils literal"><span class="pre">dir</span></tt> for files matching <tt class="docutils literal"><span class="pre">pattern</span></tt></li>
@@ -326,7 +242,7 @@ You should start by logging into you FutureSystems account.</p>
 <li><tt class="docutils literal"><span class="pre">locate</span></tt> find files by name</li>
 </ul>
 <div class="section" id="grep-options">
-<h4><a class="toc-backref" href="#id15"><tt class="docutils literal"><span class="pre">grep</span></tt> Options</a><a class="headerlink" href="#grep-options" title="Permalink to this headline">¶</a></h4>
+<h2><tt class="docutils literal"><span class="pre">grep</span></tt> Options<a class="headerlink" href="#grep-options" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">-i</span></tt> ignore case</li>
 <li><tt class="docutils literal"><span class="pre">-r</span></tt> recursive</li>
@@ -336,7 +252,7 @@ You should start by logging into you FutureSystems account.</p>
 </div>
 </div>
 <div class="section" id="file-operations">
-<h3><a class="toc-backref" href="#id16">File Operations</a><a class="headerlink" href="#file-operations" title="Permalink to this headline">¶</a></h3>
+<h1>File Operations<a class="headerlink" href="#file-operations" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">touch</span></tt> change file timestamps</li>
 <li><tt class="docutils literal"><span class="pre">cat</span></tt> concatenate files and print to <tt class="docutils literal"><span class="pre">stdout</span></tt></li>
@@ -352,7 +268,7 @@ You should start by logging into you FutureSystems account.</p>
 </ul>
 </div>
 <div class="section" id="process-management">
-<h3><a class="toc-backref" href="#id17">Process Management</a><a class="headerlink" href="#process-management" title="Permalink to this headline">¶</a></h3>
+<h1>Process Management<a class="headerlink" href="#process-management" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ps</span></tt> report a snapshot of current processes</li>
 <li><tt class="docutils literal"><span class="pre">top</span></tt> display linux process table</li>
@@ -362,25 +278,10 @@ You should start by logging into you FutureSystems account.</p>
 <li><tt class="docutils literal"><span class="pre">killall</span></tt> kill processes by name</li>
 </ul>
 </div>
-</div>
-<div class="section" id="next-step">
-<h2><a class="toc-backref" href="#id18">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>Next: <a class="reference internal" href="shell.html"><em>Shell</em></a></p>
-</div>
-</div>
 
 
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="shell.html" class="btn btn-neutral float-right" title="Shell"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../system/futuresystemsuse.html" class="btn btn-neutral" title="Use of FutureSystems (Under Preparation)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
