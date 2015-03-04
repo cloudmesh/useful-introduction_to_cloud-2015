@@ -6,6 +6,7 @@ Then at the shell prompt execute the following command::
 This will make the ``python`` and ``virtualenv`` commands available to
 you.
 
+
 .. tip::
 
    The details of what the ``module load`` command does are described
