@@ -34,33 +34,33 @@ Description
 Shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: shell-description.rst
+.. include:: /class/lesson/linux/shell-description.rst
 
 
 Editing Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: editors-description.rst
+.. include:: /class/lesson/linux/editors-description.rst
 
 Python Programming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: python-description.rst
+.. include:: /class/lesson/linux/python/description.rst
 
 Package Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: packagemanagement-description.rst
+.. include:: /class/lesson/linux/packagemanagement-description.rst
 
 Advanced SSH
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: advancedssh-description.rst
+.. include:: /class/lesson/linux/advancedssh-description.rst
 
 Software Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: modules-description.rst
+.. include:: /class/lesson/linux/modules-description.rst
 
 Cheatsheet
 ----------------------------------------------------------------------
