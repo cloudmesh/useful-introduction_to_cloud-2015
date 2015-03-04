@@ -14,11 +14,7 @@ them  to learn about BigData Software and Technologies.
 Contact
 ======================================================================
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   ../contact
+.. include:: ../contact.rst
 
 Collaboration Tools
 ======================================================================
