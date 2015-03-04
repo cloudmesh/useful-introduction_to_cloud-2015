@@ -3,7 +3,7 @@ Contact
 
 The instructors for the course are:
 
-* `Badi' Abdul-Wahid <badi.abdulwahid@gmail.com>`_
+* `Badi' Abdul-Wahid <badi@iu.edu>`_
 * `Hyungro Lee <lee212@iu.edu>`_
 * `Gregor von Laszewski <laszewski@gmail.com>`_ (advanced concepts)
 * `Fugang Wang <kevinwangfg@gmail.com>`_ (advanced concepts)
