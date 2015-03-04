@@ -1,7 +1,4 @@
-Contact
-===============================================================================
-
-The instructors for the course are:
+Please contact additional instructors for help:
 
 * `Badi' Abdul-Wahid <badi@iu.edu>`_
 * `Hyungro Lee <lee212@iu.edu>`_
