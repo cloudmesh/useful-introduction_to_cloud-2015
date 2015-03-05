@@ -1,4 +1,4 @@
-Use of FutureSystems (Under Preparation)
+Use of FutureSystems
 ----------------------------------------------------------------------
 
 .. sidebar:: Page Contents
@@ -240,8 +240,65 @@ Windows (Under preparation)
 Putty (Under Preparation)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-ssh (Under Preparation)
+SSH
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+Secure Shell, or SSH, is a protocol for securely connecting to a Shell
+on a remote computer.
 
+.. tip::
 
+   See :doc:`../linux/shell` for more details on what a shell is and
+   how to use it.
+
+This security is accomplished by encrypting the data that is sent
+between the two endpoints.  In order for this communication to be
+considered "safe", the machines need to identify each other.  The
+identity is usually accomplished through the use of a **key** file,
+which usually comes in pairs: a **public** key and a **private** key.
+This is usually called a **key pair**.  On Mac OS X and Linux a key
+pair can be created using the ``ssh-keygen`` command. You can test this out by opening a terminal and entering the following:
+
+.. code:: bash
+
+   $ ssh-keygen -f ~/test_identity
+
+What this does is actually create two file:
+
+- ``~/test_identity``
+- ``~/test_identity.pub``
+
+The second file, ending in ``.pub``, is the public key and needs to be
+shared with the machines you wish to access.  In the case of
+FutureSystems, you add the public key to your `SSH Keys
+<https://portal.futuresystems.org/my/ssh-keys>`_.  In the case of
+GitHub (see :doc:`../git`) you add it to your account.
+
+.. caution::
+
+   **Never** share the private key with anyone.  This is used to
+   identify you and can be used to completely regenerate the public
+   key. Try it for yourself with:
+
+   .. code:: bash
+
+      $ ssh-keygen -y -f ~/test_identity
+
+   and compare the output with ``~/test_identity.pub``
+
+.. tip::
+
+   A good practice for managing SSH keys is to create a key pair on
+   each machine you use and to add a comment indicating your contact
+   information and the machine this key belongs to.::
+
+     $ ssh-keygen -C 'host:relativity contact:albert@gmail.com'
+
+   In the above the comment is specified with the ``-C`` flag and the
+   body of the comment is within the single quotes.
+
+   The contact information is useful when sharing the key with others
+   as it helps them understand who you are.
+
+   The host information is useful for you if you have multiple
+   machines.
