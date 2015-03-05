@@ -1,6 +1,12 @@
 Using Git and GitHub for collaboration
 ======================================================================
 
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
+
+
 Overview
 ----------------------------------------------------------------------
 
