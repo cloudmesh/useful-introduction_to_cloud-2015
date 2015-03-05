@@ -1,6 +1,12 @@
 Google
 ======================================================================
 
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
+
+
 This section describes how to use two Google products for getting
 remote help with issues that may arise during the course.
 

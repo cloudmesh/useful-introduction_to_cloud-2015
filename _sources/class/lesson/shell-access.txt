@@ -1,6 +1,12 @@
 Shell Access
 ======================================================================
 
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
+
+
 This lesson describes how to provide access to your account on
 FutureSystems to a Teaching Assistant.
 
