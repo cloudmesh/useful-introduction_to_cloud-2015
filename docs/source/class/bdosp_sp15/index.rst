@@ -67,8 +67,10 @@ Basics of OpenStack
    :maxdepth: 1
    :glob:
 
-   ../lesson/iaas/overview
+   ../lesson/iaas/overview_openstack
    ../lesson/iaas/openstack
+   ../lesson/iaas/openstack_juno
+   ../lesson/iaas/other_iaas
 
 Basics of Cloudmesh
 ======================================================================
