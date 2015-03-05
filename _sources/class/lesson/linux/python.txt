@@ -1,4 +1,4 @@
-Python Programming (Under Preparation)
+Python Programming
 ======================================================================
 
 .. sidebar:: Page Contents

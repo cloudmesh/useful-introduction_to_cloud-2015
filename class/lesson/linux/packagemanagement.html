@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Package Management (Under Preparation) &mdash; my Cloudmesh Learning documentation</title>
+  <title>Package Management &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -33,7 +33,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
         <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdosp_sp15/index.html"/>
         <link rel="next" title="Advanced SSH" href="advancedssh.html"/>
-        <link rel="prev" title="IPython (Under Preparation)" href="ipython.html"/> 
+        <link rel="prev" title="IPython" href="ipython.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -184,7 +184,7 @@
       
           <li><a href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
       
-    <li>Package Management (Under Preparation)</li>
+    <li>Package Management</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../../_sources/class/lesson/linux/packagemanagement.txt" rel="nofollow"> View page source</a>
@@ -195,41 +195,61 @@
 </div>
           <div role="main">
             
-  <div class="section" id="package-management-under-preparation">
-<h1>Package Management (Under Preparation)<a class="headerlink" href="#package-management-under-preparation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="package-management">
+<h1>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>This lesson will introduce you to using yum, apt-get and brew.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Duration: 1 hour</p>
+<p class="last">Duration: 30 minutes</p>
 </div>
 </div>
 <div class="section" id="prerequisite">
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct this lesson you should have knowledge of</p>
 <ul class="simple">
-<li>How to .... . Described in lesson</li>
-<li>Lesson ....</li>
+<li>Using the linux shell (see <a class="reference internal" href="shell.html"><em>Shell</em></a>)</li>
+<li>Package installation using <tt class="docutils literal"><span class="pre">pip</span></tt> (see <a class="reference internal" href="python.html"><em>Python Programming</em></a>)</li>
 </ul>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>put the detailed dscription here</p>
+<p>If you use Windows of Mac OS X you are already familiar with the
+installation of programs for those systems. Package management is a
+slightly different angle to the sample problem: how do you get
+software, and everything it needs to run, installed on a computer.</p>
+<p>All three software packages, yum, apt-get, and brew, are attempts to
+solve this problem.</p>
+<p>If you want to install something on Windows or OS X, you typically go
+to the producer&#8217;s website, find a download link, and run the result.</p>
+<p>For example, I want to install Python. How would I accomplish this using <tt class="docutils literal"><span class="pre">brew</span></tt>?</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ brew search python
+boost-python    python          python3         wxpython        zpython
+...
+$ brew install python
+</pre></div>
 </div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-i">
-<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<p>Here I did not need to go to the Python webpage. I asked <tt class="docutils literal"><span class="pre">brew</span></tt> to
+search for python for me. It provided me with a list of options, and I
+then selected one to install.</p>
+<p>A package manager like yum, apt-get, and brew contains a <strong>database</strong>
+of software packages and their and their state: installed or not,
+version installed, version available, name, description.
+When you want to install a particular package, you need to know the name and then you can issue the appropriate install directive.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">In the case of <tt class="docutils literal"><span class="pre">yum</span></tt>, <tt class="docutils literal"><span class="pre">apt-get</span></tt>, and <tt class="docutils literal"><span class="pre">brew</span></tt>, the install
+directirve is the same: <tt class="docutils literal"><span class="pre">install</span></tt>.</p>
 </div>
-<div class="section" id="exercise-ii">
-<h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The key point of using package managers like these is the ability
+to automate the installation of many packages. If you need to
+install packages many times, you can save them to a shell script
+and then run the script on each machine instead of manually
+installing each by hand.</p>
 </div>
-</div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>In the next page, ...</p>
-<p><a class="reference external" href="link">Link here</a></p>
 </div>
 </div>
 
@@ -242,7 +262,7 @@
         <a href="advancedssh.html" class="btn btn-neutral float-right" title="Advanced SSH"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ipython.html" class="btn btn-neutral" title="IPython (Under Preparation)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ipython.html" class="btn btn-neutral" title="IPython"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
