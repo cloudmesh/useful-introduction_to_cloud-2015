@@ -1,4 +1,4 @@
-Overview and Introduction (Under Preparation)
+Overview and Introduction
 ======================================================================
 
 .. sidebar:: Page Contents
@@ -34,27 +34,45 @@ Description
 Shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. include:: /class/lesson/linux/shell-description.rst
+
+
 Editing Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: /class/lesson/linux/editors-description.rst
 
 Python Programming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. include:: /class/lesson/linux/python/description.rst
+
 Package Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: /class/lesson/linux/packagemanagement-description.rst
 
 Advanced SSH
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. include:: /class/lesson/linux/advancedssh-description.rst
+
 Software Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. include:: /class/lesson/linux/modules-description.rst
 
 Cheatsheet
 ----------------------------------------------------------------------
 
-.. include:: cheatsheet.rst
+.. toctree::
+   :glob:
 
+   cheatsheet-shell
+   cheatsheet-editor
+   cheatsheet-python
+   cheatsheet-ssh
+   cheatsheet-modules
 
 Next Step
 -----------

@@ -176,7 +176,7 @@ While ``grep`` finds lines in files, the ``find`` command finds files
 themselves. Again, it has a lot of options; to show how the simplest
 ones work, we'll use the directory tree shown below.
 
-.. figure:: fig/find-file-tree.svg
+.. figure:: /images/find-file-tree.svg
    :alt: File Tree for Find Example
 
    File Tree for Find Example

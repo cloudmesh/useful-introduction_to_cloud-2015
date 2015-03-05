@@ -57,7 +57,7 @@ data files), ``users`` (where users' personal directories are
 located), ``tmp`` (for temporary files that don't need to be stored
 long-term), and so on:
 
-.. figure:: fig/filesystem.svg
+.. figure:: /images/filesystem.svg
    :alt: The Filesystem
 
    The Filesystem
@@ -73,7 +73,7 @@ account on this machine. The Mummy's files are stored in
 ``/users/nelle``, which is why ``nelle`` is the last part of the
 directory's name.
 
-.. figure:: fig/home-directories.svg
+.. figure:: /images/home-directories.svg
    :alt: Home Directories
 
    Home Directories
@@ -91,7 +91,7 @@ stands for "listing"::
     data       north-pacific-gyre  solar.pdf
     Desktop    notes.txt           writing
 
-.. figure:: fig/homedir.svg
+.. figure:: /images/homedir.svg
    :alt: Nelle's Home Directory
 
    Nelle's Home Directory
