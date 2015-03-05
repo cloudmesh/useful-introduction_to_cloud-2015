@@ -4,17 +4,15 @@ IPython (Under Preparation)
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
-
-.. tip:: Duration: 1 hour
+This lesson will introduce you to using the IPython shell
 
 Prerequisite
 ----------------------------------------------------------------------
 
 In order to conduct this lesson you should have knowledge of
 
-* How to .... . Described in lesson
-* Lesson ....
+* the linux shell: :doc:`shell`
+* the Python language: :doc:`python`
 
 Description
 ----------------------------------------------------------------------
