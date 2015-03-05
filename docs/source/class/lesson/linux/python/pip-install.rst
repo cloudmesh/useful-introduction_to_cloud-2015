@@ -116,7 +116,7 @@ environment::
    Notice how the shell prompt changed upon activation.
 
 
-Using ``pip`` to install packages
+Using ``pip`` to install packages (in preparation)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ..
