@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Managing Volumes with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
+  <title>Calling Python from matlab &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -31,9 +31,9 @@
         <link rel="author" title="About these documents"
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
-        <link rel="up" title="Cloudmesh cm" href="index.html"/>
-        <link rel="next" title="Install IPython Server" href="ipython.html"/>
-        <link rel="prev" title="Managing multiple VMs with Cloudmesh cm" href="_cm-group.html"/> 
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Report" href="report.html"/>
+        <link rel="prev" title="Deploying OpenMPI Cluster with Cloudmesh launcher" href="openmpi.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -78,12 +78,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
@@ -91,14 +91,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/faq.html">Cloudmesh FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
@@ -133,8 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
@@ -180,14 +179,14 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
       
-          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       
-    <li>Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+    <li>Calling Python from matlab</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/cloudmesh/cm/_cm-volume.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/class/lesson/pyton_matlab.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -195,110 +194,49 @@
 </div>
           <div role="main">
             
-  <div class="section" id="managing-volumes-with-cloudmesh-cm">
-<h1>Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#managing-volumes-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
-<p>Cloudmesh provides a command for managing volumes.</p>
-<p>IPython Alias</p>
-<p>With the alias command we simply define a new command with the name cm
-that we can call directly from IPython. Here we make sure that the
-parameters are between &#8220;&#8221; so that they are properly set. Just execute
-the following lines.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+  <div class="section" id="calling-python-from-matlab">
+<h1>Calling Python from matlab<a class="headerlink" href="#calling-python-from-matlab" title="Permalink to this headline">¶</a></h1>
+<p>In some cases it may be needed that you call python from within
+matlab. To test it we use s aimple python function.  Let us assume you
+have cloudmesh_base installed previously in a terminal via:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install cloudmesh_base
 </pre></div>
 </div>
-<p>We are using now one of the methods to call the cm commands in the
-following sections.</p>
-<p>Before using the volume command make sure to load the configurations by
-choosing a cloud using nova command, e.g.:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;nova set india&quot;
+<p>Next let us start matlabfrom the terminal with the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$matlab
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">india</span> <span class="ow">is</span> <span class="nb">set</span>
+<p>Once the matlab IDE comes up, let us find out which verson of python
+is callable. To do so please type:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; pyversion
 </pre></div>
 </div>
-<p>for more detailed descriptions:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;volume&quot;
+<p>You will get a response such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>version: &#39;2.7&#39;
+executable: &#39;$HOME/ENV/bin/python&#39;
+library: &#39;/usr/lib/libpython2.7.dylib&#39;
+home: &#39;$HOME/ENV&#39;
+isloaded: 1
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>Error: Wrong Format
-
-Usage:
-    volume list
-    volume create &lt;size&gt;
-                  [--snapshot-id=&lt;snapshot-id&gt;]
-                  [--image-id=&lt;image-id&gt;]
-                  [--display-name=&lt;display-name&gt;]
-                  [--display-description=&lt;display-description&gt;]
-                  [--volume-type=&lt;volume-type&gt;]
-                  [--availability-zone=&lt;availability-zone&gt;]
-    volume delete &lt;volume&gt;
-    volume attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;
-    volume detach &lt;server&gt; &lt;volume&gt;
-    volume show &lt;volume&gt;
-    volume snapshot-list
-    volume snapshot-create &lt;volume-id&gt;
-                           [--force]
-                           [--display-name=&lt;display-name&gt;]
-                           [--display-description=&lt;display-description&gt;]
-    volume snapshot-delete &lt;snapshot&gt;
-    volume snapshot-show &lt;snapshot&gt;
-    volume help
-
-
-volume management
-
-Arguments:
-    &lt;size&gt;            Size of volume in GB
-    &lt;volume&gt;          Name or ID of the volume to delete
-    &lt;volume-id&gt;       ID of the volume to snapshot
-    &lt;server&gt;          Name or ID of server(VM).
-    &lt;device&gt;          Name of the device e.g. /dev/vdb. Use &quot;auto&quot; for
-                      autoassign (if supported)
-    &lt;snapshot&gt;        Name or ID of the snapshot
-
-Options:
-    --snapshot-id &lt;snapshot-id&gt;
-                            Optional snapshot id to create the volume from.
-                            (Default=None)
-    --image-id &lt;image-id&gt;
-                            Optional image id to create the volume from.
-                            (Default=None)
-    --display-name &lt;display-name&gt;
-                            Optional volume name. (Default=None)
-    --display-description &lt;display-description&gt;
-                            Optional volume description. (Default=None)
-    --volume-type &lt;volume-type&gt;
-                            Optional volume type. (Default=None)
-    --availability-zone &lt;availability-zone&gt;
-                            Optional Availability Zone for volume. (Default=None)
-    --force                 Optional flag to indicate whether to snapshot a volume
-                            even if its attached to an instance. (Default=False)
-
-Description:
-    volume list
-        List all the volumes
-    volume create &lt;size&gt; [options...]
-        Add a new volume
-    volume delete &lt;volume&gt;
-        Remove a volume
-    volume attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;
-        Attach a volume to a server
-    volume-detach &lt;server&gt; &lt;volume&gt;
-        Detach a volume from a server
-    volume show &lt;volume&gt;
-        Show details about a volume
-    volume snapshot-list
-        List all the snapshots
-    volume snapshot-create &lt;volume-id&gt; [options...]
-        Add a new snapshot
-    volume snapshot-delete &lt;snapshot&gt;
-        Remove a snapshot
-    volume-snapshot-show &lt;snapshot&gt;
-        Show details about a snapshot
-    volume help
-        Prints the nova manual
+<p>Make sure the version of python is as you expect.</p>
+<p>Now we can call the banner function included in cloudmesh_base as
+follows. First e need to import the module, than we need to just call
+the function:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; import py.cloudmesh_base.util.banner
+&gt;&gt; banner(&#39;hallo&#39;)
 </pre></div>
 </div>
+<p>The output will be:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># ####################################################</span>
+<span class="c"># hallo</span>
+<span class="c"># ####################################################</span>
+</pre></div>
+</div>
+<p>For more information of python matlab integration see:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.mathworks.com/help/matlab/getting-started_buik_wp-3.html">http://www.mathworks.com/help/matlab/getting-started_buik_wp-3.html</a></li>
+</ul>
 </div>
 
 
@@ -307,10 +245,10 @@ Description:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ipython.html" class="btn btn-neutral float-right" title="Install IPython Server"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="report.html" class="btn btn-neutral float-right" title="Report"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_cm-group.html" class="btn btn-neutral" title="Managing multiple VMs with Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="openmpi.html" class="btn btn-neutral" title="Deploying OpenMPI Cluster with Cloudmesh launcher"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

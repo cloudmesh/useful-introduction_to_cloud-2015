@@ -2,12 +2,13 @@
 	   :width: 30
 
 
-*******************************************************************************
-|courseimg| Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)
-*******************************************************************************
-Althouh this material is prepared for the classes IU ``BUEX-V 594``,
-they are of general interest to others. Please use
-them  to learn about BigData Software and Technologies.
+
+**********************************************************************
+|courseimg| Spring 2015 - Big Data Applications and Technologies 
+**********************************************************************
+Althouh this material is prepared for the classes IU ``INFO-I 400``,
+``INFO-I 590``, they are of general interest to others. Please use
+them  to learn about BigData Applications and Technologies.
 
 .. BigData Virtual Cluster (Spring 2015)
 
@@ -48,7 +49,7 @@ System Access
       
 
 
-Linux Basics
+Elemantary Linux Tools
 ======================================================================
 
 .. toctree::
@@ -63,7 +64,7 @@ Linux Basics
    ../lesson/linux/advancedssh
 
 
-Basics of OpenStack
+Elemantary Cloud Computing
 ======================================================================
 
 .. toctree::
@@ -72,16 +73,6 @@ Basics of OpenStack
 
    ../lesson/iaas/overview
    ../lesson/iaas/openstack
-
-Basics of Cloudmesh
-======================================================================
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-
-   ../lesson/iaas/overview_cloudmesh
    ../lesson/iaas/cloudmesh
    ../lesson/iaas/cloudmesh_ipython
    ../lesson/iaas/cloudmesh_openstack
@@ -99,7 +90,7 @@ Advanced Cloudmesh
    ../lesson/iaas/cloudmesh_cluster
 
 
-IT Operations - Automation and Orchestration 
+DevOps and Orchetration Tools
 ======================================================================
 
 .. toctree::
