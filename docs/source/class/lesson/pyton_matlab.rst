@@ -16,7 +16,7 @@ is callable. To do so please type::
 
    >> pyversion
 
- You will get a response such as::
+You will get a response such as::
  
     version: '2.7'
     executable: '$HOME/ENV/bin/python'
