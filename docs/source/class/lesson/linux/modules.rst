@@ -4,17 +4,16 @@ Software Modules (Under Preparation)
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
+This lesson will introduce you using Softare Modules on FutureSystems
 
-.. tip:: Duration: 1 hour
+.. tip:: Duration: 15 minutes
 
 Prerequisite
 ----------------------------------------------------------------------
 
 In order to conduct this lesson you should have knowledge of
 
-* How to .... . Described in lesson
-* Lesson ....
+* How to log into you FutureSystems account (see :doc:`../system/futuresystemsuse`)
 
 Description
 ----------------------------------------------------------------------

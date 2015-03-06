@@ -58,6 +58,7 @@ Linux Basics
    ../lesson/linux/ipython
    ../lesson/linux/packagemanagement
    ../lesson/linux/advancedssh
+   ../lesson/linux/modules
 
 
 Basics of OpenStack
