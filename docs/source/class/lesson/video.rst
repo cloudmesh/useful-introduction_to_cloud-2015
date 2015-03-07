@@ -17,12 +17,15 @@ System Access
 ======================================================================
 
    |Remote_Login_to_FutureSystems|
+   |Putty_Windows_SSH_Client|
 
 .. |Remote_Login_to_FutureSystems| raw:: html
 
    <a href="https://mix.office.com/watch/eddgjmovoty0" target="_blank">Remote Login to FutureSystems</a>
       
+.. |Putty_Windows_SSH_Client| raw:: html
 
+   <a href="https://mix.office.com/watch/9z30n7rs67x0" target="_blank">Putty- Windows SSH Client</a>
 
 Linux Basics
 ======================================================================
