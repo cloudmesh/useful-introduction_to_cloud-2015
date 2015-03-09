@@ -1,5 +1,5 @@
 *********************************************************************
-Big Data Applications and Analytics Shell 
+VM for Big Data Applications and Analytics
 *********************************************************************
 
 .. toctree::
