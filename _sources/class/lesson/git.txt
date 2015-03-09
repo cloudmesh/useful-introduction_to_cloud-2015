@@ -10,17 +10,18 @@ Using Git and GitHub for collaboration
 Overview
 ----------------------------------------------------------------------
 
-This lesson show you how to submit and work on homework assignments.
-Assignments are to be worked on as part of the
-`GitHub FutureSystems organization`_.
+This lesson show you how to submit and work on homework assignments
+using git version control and the GitHub collaboration platform.
+Assignments are to be worked on as part of the `GitHub FutureSystems
+organization`_.
 
 Upon completion of this lesson you will be able to use GitHub for
-submitting assignments for your course
+submitting assignments for your course.
 
 In order to use GitHub you will need (detailed below):
 
 * a GitHub account
-* forming a group with other students
+* to form a group with other students
 * a FutureSystems account (see `Getting a FutureSystems account`_)
 * an SSH key
 
@@ -38,7 +39,7 @@ This prerequisite is satisfied if you are able to
 * sign in
 
 .. note::
-   Please use a GMail account to create your GitHub account.
+   Please use a Gmail account to create your GitHub account.
    You can find details on how to do so at
    https://accounts.google.com/signup
 
@@ -55,7 +56,7 @@ a report detailing:
 * the names and email address of group members
 * a project title
 * the goal of the project
-* a list all deliverables
+* a list of all deliverables
 * assignments of tasks to group members
 
 This prerequisite is satisfied if you and other students have formed
@@ -82,7 +83,7 @@ This prerequisite is satisfied if you are able to accomplish the following:
 
 * log into https://portal.futuresystems.org
 * go to the ``Portal Account`` tab
-* the ``status`` row is all green in the ``My FutureGrid HPC account status`` section
+* the ``status`` row is all green in the account status section
 
 
 Have an SSH key
@@ -152,7 +153,7 @@ title and a fingerprint such as::
 Getting access to repository
 ----------------------------------------------------------------------
 
-Send an email to `Badi' Abdul-Wahid <badonald@iu.edu>`_ (by 4pm on a business day)
+Send an email to Badi' Abdul-Wahid (by 4pm on a business day)
 and include the following information:
 
 * the first and last name of each group member
@@ -190,8 +191,8 @@ emailed the link.
 
 
 .. warning::
-   please adhere to this format as improper formatting
-   may not be seen and processed.
+   Please adhere to this format as improper formatting
+   may result in your email being caught by spam filters.
 
 .. warning::
    All members of a group will have access to this
