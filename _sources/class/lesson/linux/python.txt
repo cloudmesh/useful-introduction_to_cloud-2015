@@ -41,7 +41,7 @@ Description
 
 .. include:: /class/lesson/linux/python/description.rst
 
-Acknowledgements
+Acknowledgments
 ----------------------------------------------------------------------
 
 Portions of this lesson have been adapted from the `official Python

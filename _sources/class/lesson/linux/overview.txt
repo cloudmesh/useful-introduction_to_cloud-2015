@@ -23,7 +23,7 @@ Prerequisite
 ----------------------------------------------------------------------
 
 In order to conduct this lesson you should have an account on
-FutureSystems, as descibred in :doc:`../system/futuresystemsuse`.
+FutureSystems, as described in :doc:`../system/futuresystemsuse`.
 You should start by logging into you FutureSystems account.
 
 

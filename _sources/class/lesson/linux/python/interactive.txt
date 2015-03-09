@@ -1,4 +1,4 @@
-Start by entring the interactive loop by executing the command::
+Start by entering the interactive loop by executing the command::
 
   $ python
 

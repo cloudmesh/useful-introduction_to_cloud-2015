@@ -220,20 +220,20 @@ alsaunmute  dbus-daemon           ex              igawk            mkdir        
 </pre></div>
 </div>
 <p>If we wished to add a new program it seems like putting it in <tt class="docutils literal"><span class="pre">/bin</span></tt> is the place to start.
-Let&#8217;s create an empty file <tt class="docutils literal"><span class="pre">/bin/hello-$PORTALID</span></tt>:</p>
+Let&#8217;s create an empty file <tt class="docutils literal"><span class="pre">/bin/hello-$PORTALNAME</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ touch /bin/hello-$(whoami)
 touch: cannot touch `/bin/hello-albert&#39;: Permission denied
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Recall that $PORTALID is your username on FutureSystems, which can
+<p class="last">Recall that $PORTALNAME is your username on FutureSystems, which can
 also be obtained using the <tt class="docutils literal"><span class="pre">whoami</span></tt> shell command.</p>
 </div>
 <p>It seems that this is not possible.  Since <tt class="docutils literal"><span class="pre">india</span></tt> is a shared
 resources not all users should be allowed to make changes that could
 affect everyone else.  Only a small number of users, the
-administrators, have the ability to globaly modify the system.</p>
+administrators, have the ability to globally modify the system.</p>
 <p>We can still create our program in our home directory:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ touch ~/hello-$(whoami)
 </pre></div>
@@ -261,7 +261,7 @@ Installing pip...............done.
 </pre></div>
 </div>
 <p>When using <tt class="docutils literal"><span class="pre">virtualenv</span></tt> you pass the directory where you which to
-create the virtual environemt, in this case <tt class="docutils literal"><span class="pre">venv</span></tt> in the current
+create the virtual environment, in this case <tt class="docutils literal"><span class="pre">venv</span></tt> in the current
 (home) directory.  We are then told that we must activate the virtual
 environment before using it and that the python program, setuptools,
 and pip are installed.</p>
@@ -271,7 +271,7 @@ activate  activate.csh  activate.fish  activate_this.py  easy_install
 easy_install-2.7  pip  pip-2.7  python  python2  python2.7
 </pre></div>
 </div>
-<p>It seens that there are several programs installed.  Let&#8217;s see where
+<p>It seems that there are several programs installed.  Let&#8217;s see where
 our current <tt class="docutils literal"><span class="pre">python</span></tt> is and what happens after activating this
 environment:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ which python

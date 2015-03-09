@@ -27,7 +27,7 @@ The "thing" we are ``print``ing in the case the the **string**
 numeric (any of the digits), white space (spaces, tabs, newlines,
 etc), syntactic directives (comma, colon, quotation, exclamation,
 etc), and so forth.  A string is just a sequence of the character and
-typically indicated by surounding the characters in double quotes.
+typically indicated by surrounding the characters in double quotes.
 
 So, what happened when you pressed Enter?  The interactive Python
 program read the line ``print "Hello world from Python!"``, split it into
@@ -104,7 +104,7 @@ numbers, or **float** for short).
 The mathematical operators compute the related mathematical operation
 to the provided numbers.  Some operators are:
 
-- ``*`` --- multipllication
+- ``*`` --- multiplication
 - ``/`` --- division
 - ``+`` --- addition
 - ``-`` --- subtraction
@@ -156,7 +156,7 @@ error:
      File "<stdin>", line 1, in <module>
    TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
 
-There are many different types beyond what we have seen so far, such as **dictionaries**\s, **list**\s, **set**\s. One handy way of using the interatctive python is to get the type of a value using ``type()``:
+There are many different types beyond what we have seen so far, such as **dictionaries**\s, **list**\s, **set**\s. One handy way of using the interactive python is to get the type of a value using ``type()``:
 
 .. code:: python
 

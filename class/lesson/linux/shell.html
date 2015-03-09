@@ -32,7 +32,7 @@
               href="../../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
         <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdosp_sp15/index.html"/>
-        <link rel="next" title="Python Programming (Under Preparation)" href="python.html"/>
+        <link rel="next" title="Python Programming" href="python.html"/>
         <link rel="prev" title="Modules (Under preparation)" href="cheatsheet-modules.html"/> 
 
   
@@ -202,7 +202,7 @@
 <div class="contents local last topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#overview" id="id15">Overview</a></li>
-<li><a class="reference internal" href="#acknowledgements" id="id16">Acknowledgements</a></li>
+<li><a class="reference internal" href="#acknowledgments" id="id16">Acknowledgments</a></li>
 <li><a class="reference internal" href="#description" id="id17">Description</a><ul>
 <li><a class="reference internal" href="#introduction" id="id18">Introduction</a><ul>
 <li><a class="reference internal" href="#learning-objectives" id="id19">Learning Objectives</a></li>
@@ -235,7 +235,7 @@
 <li><a class="reference internal" href="#removing-directories" id="id40">Removing Directories</a></li>
 <li><a class="reference internal" href="#moving-files-and-directories" id="id41">Moving Files and Directories</a></li>
 <li><a class="reference internal" href="#copying-files" id="id42">Copying Files</a></li>
-<li><a class="reference internal" href="#excercises" id="id43">Excercises</a><ul>
+<li><a class="reference internal" href="#exercises" id="id43">Exercises</a><ul>
 <li><a class="reference internal" href="#renaming-files" id="id44">Renaming files</a></li>
 <li><a class="reference internal" href="#moving-and-copying" id="id45">Moving and Copying</a></li>
 <li><a class="reference internal" href="#listing-directories-and-files" id="id46">Listing Directories and Files</a></li>
@@ -254,7 +254,7 @@
 <li><a class="reference internal" href="#pipes" id="id55">Pipes</a></li>
 <li><a class="reference internal" href="#filter" id="id56">Filter</a></li>
 <li><a class="reference internal" href="#nelle-s-pipeline-checking-files" id="id57">Nelle&#8217;s Pipeline: Checking Files</a></li>
-<li><a class="reference internal" href="#id7" id="id58">Excercises</a><ul>
+<li><a class="reference internal" href="#id7" id="id58">Exercises</a><ul>
 <li><a class="reference internal" href="#what-does-sort-n-do" id="id59">What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</a></li>
 <li><a class="reference internal" href="#what-does-mean" id="id60">What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?</a></li>
 <li><a class="reference internal" href="#piping-commands-together" id="id61">Piping commands together</a></li>
@@ -274,7 +274,7 @@
 <li><a class="reference internal" href="#spaces-in-names" id="id71">Spaces in Names</a></li>
 <li><a class="reference internal" href="#nelle-s-pipeline-processing-files" id="id72">Nelle&#8217;s Pipeline: Processing Files</a></li>
 <li><a class="reference internal" href="#history" id="id73">History</a></li>
-<li><a class="reference internal" href="#id11" id="id74">Excercises</a><ul>
+<li><a class="reference internal" href="#id11" id="id74">Exercises</a><ul>
 <li><a class="reference internal" href="#variables-in-loops" id="id75">Variables in loops</a></li>
 <li><a class="reference internal" href="#saving-to-a-file-in-a-loop-part-one" id="id76">Saving to a file in a loop - part one</a></li>
 <li><a class="reference internal" href="#saving-to-a-file-in-a-loop-part-two" id="id77">Saving to a file in a loop - part two</a></li>
@@ -292,7 +292,7 @@
 <li><a class="reference internal" href="#searching-for-files" id="id85">Searching for Files</a></li>
 <li><a class="reference internal" href="#searching-for-files-matching-a-pattern" id="id86">Searching for Files Matching a Pattern</a></li>
 <li><a class="reference internal" href="#subshell" id="id87">Subshell</a></li>
-<li><a class="reference internal" href="#id14" id="id88">Excercises</a><ul>
+<li><a class="reference internal" href="#id14" id="id88">Exercises</a><ul>
 <li><a class="reference internal" href="#using-grep" id="id89">Using grep</a></li>
 <li><a class="reference internal" href="#find-pipeline-reading-comprehension" id="id90"><tt class="docutils literal"><span class="pre">find</span></tt> pipeline reading comprehension</a></li>
 <li><a class="reference internal" href="#matching-ose-dat-but-not-temp" id="id91">Matching <tt class="docutils literal"><span class="pre">ose.dat</span></tt> but not <tt class="docutils literal"><span class="pre">temp</span></tt></a></li>
@@ -314,11 +314,11 @@
 <p>This lesson will introduce you to using the shell, which is required
 for using FutureSystems resources.</p>
 </div>
-<div class="section" id="acknowledgements">
-<h2><a class="toc-backref" href="#id16">Acknowledgements</a><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acknowledgments">
+<h2><a class="toc-backref" href="#id16">Acknowledgments</a><a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
 <p>Parts of this lesson were adapted from the <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Software Carpentry
 lesson</a> on using the Shell, which is distributed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative
-Commons Attribution licence v4</a> and is copywrite <a class="reference external" href="http://software-carpentry.org/">Software Carpentry</a>.</p>
+Commons Attribution license v4</a> and is copyright <a class="reference external" href="http://software-carpentry.org/">Software Carpentry</a>.</p>
 </div>
 <div class="section" id="description">
 <h2><a class="toc-backref" href="#id17">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -343,7 +343,7 @@ for short.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Adventerous readers may be interested to know that both
+<p class="last">Adventurous readers may be interested to know that both
 Windows and Mac OS X provide a command shell.  On Windows you can
 run <tt class="docutils literal"><span class="pre">cmd.exe</span></tt> from <cite>Start &#8211;&gt; Run</cite>.  On OS X open <cite>Applications
 &#8211;&gt; Utilities &#8211;&gt; Terminal</cite>. Be aware that the Windows and OS X CLI
@@ -352,7 +352,7 @@ may be different than on FutureSystems.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">If you wish to follow along please log into your FutureSystems
-account (see <a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems (Under Preparation)</em></a>).</p>
+account (see <a class="reference internal" href="../system/futuresystemsuse.html"><em>Use of FutureSystems</em></a>).</p>
 </div>
 <div class="section" id="introduction">
 <h3><a class="toc-backref" href="#id18">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
@@ -639,7 +639,7 @@ some program or other, and so on.</p>
 bytes: it&#8217;s up to us and our programs to interpret those bytes
 according to the rules for PDF documents, images, and so on.</p>
 <p>Naming a PNG image of a whale as <tt class="docutils literal"><span class="pre">whale.mp3</span></tt> doesn&#8217;t somehow
-magically turn it into a recording of whalesong, though it <em>might</em>
+magically turn it into a recording of whale song, though it <em>might</em>
 cause the operating system to try to open it with a music player when
 someone double-clicks it.</p>
 </div>
@@ -791,7 +791,7 @@ months and days, because the shell displays file and directory names
 in alphabetical order. If she used month names, December would come
 before July; if she didn&#8217;t use leading zeroes, November (&#8216;11&#8217;) would
 come before July (&#8216;7&#8217;).</p>
-<p>Each of her physical samples is labelled according to her lab&#8217;s
+<p>Each of her physical samples is labeled according to her lab&#8217;s
 convention with a unique ten-character ID, such as &#8220;NENE01729A&#8221;. This
 is what she used in her collection log to record the location, time,
 depth, and other characteristics of the sample, so she decides to use
@@ -1094,8 +1094,8 @@ first character in the path: <tt class="docutils literal"><span class="pre">here
 </dl>
 </div>
 </div>
-<div class="section" id="excercises">
-<h4><a class="toc-backref" href="#id43">Excercises</a><a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="exercises">
+<h4><a class="toc-backref" href="#id43">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="renaming-files">
 <h5><a class="toc-backref" href="#id44">Renaming files</a><a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h5>
 <p>Suppose that you created a <tt class="docutils literal"><span class="pre">.txt</span></tt> file in your current directory
@@ -1490,7 +1490,7 @@ number of characters; the expression <tt class="docutils literal"><span class="p
 a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 </div>
 <div class="section" id="id7">
-<h4><a class="toc-backref" href="#id58">Excercises</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id58">Exercises</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="what-does-sort-n-do">
 <h5><a class="toc-backref" href="#id59">What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?</a><a class="headerlink" href="#what-does-sort-n-do" title="Permalink to this headline">¶</a></h5>
 <p>If we run <tt class="docutils literal"><span class="pre">sort</span></tt> on this file:</p>
@@ -1954,7 +1954,7 @@ example, if Nelle types this:</p>
 typing <tt class="docutils literal"><span class="pre">!458</span></tt>.</p>
 </div>
 <div class="section" id="id11">
-<h4><a class="toc-backref" href="#id74">Excercises</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id74">Exercises</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="variables-in-loops">
 <h5><a class="toc-backref" href="#id75">Variables in loops</a><a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h5>
 <p>Suppose that <tt class="docutils literal"><span class="pre">ls</span></tt> initially displays:</p>
@@ -2095,7 +2095,7 @@ people use &#8220;Google&#8221; as a verb, while crusty old Unix programmers use
 expression/print&#8221;, a common sequence of operations in early Unix text
 editors. It is also the name of a very useful command-line program.</p>
 <p><tt class="docutils literal"><span class="pre">grep</span></tt> finds and prints lines in files that match a pattern. For our
-examples, we will use a file that contains three haikus taken from a
+examples, we will use a file that contains three haiku taken from a
 1998 competition in <em>Salon</em> magazine. For this set of examples we&#8217;re
 going to be working in the writing subdirectory:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd
@@ -2118,7 +2118,7 @@ Software is like that.
 <p class="first admonition-title">Tip</p>
 <dl class="last docutils">
 <dt>Forever, or Five Years</dt>
-<dd>We haven&#8217;t linked to the original haikus because they don&#8217;t appear
+<dd>We haven&#8217;t linked to the original haiku because they don&#8217;t appear
 to be on <em>Salon</em>&#8216;s site any longer. As <a class="reference external" href="http://www.clir.org/pubs/archives/ensuring.pdf">Jeff Rothenberg said</a>, &#8220;Digital
 information lasts forever &#8212; or five years, whichever comes
 first.&#8221;</dd>
@@ -2395,7 +2395,7 @@ also the sincerest form of praise.</p>
 </div>
 </div>
 <div class="section" id="id14">
-<h4><a class="toc-backref" href="#id88">Excercises</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id88">Exercises</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="using-grep">
 <h5><a class="toc-backref" href="#id89">Using grep</a><a class="headerlink" href="#using-grep" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-python"><div class="highlight"><pre>The Tao that is seen
@@ -2492,7 +2492,7 @@ Additionally, there are numerous shell summaries <a class="reference external" h
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python.html" class="btn btn-neutral float-right" title="Python Programming (Under Preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python.html" class="btn btn-neutral float-right" title="Python Programming"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="cheatsheet-modules.html" class="btn btn-neutral" title="Modules (Under preparation)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
