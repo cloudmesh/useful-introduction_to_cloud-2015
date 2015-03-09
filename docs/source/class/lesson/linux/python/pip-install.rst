@@ -36,7 +36,7 @@ It seems that there are many programs installed in ``/bin`` such as
   ...
 
 If we wished to add a new program it seems like putting it in ``/bin`` is the place to start.
-Let's create an empty file ``/bin/hello-$PORTALID``::
+Let's create an empty file ``/bin/hello-$PORTALNAME``::
 
   $ touch /bin/hello-$(whoami)
   touch: cannot touch `/bin/hello-albert': Permission denied
@@ -44,14 +44,14 @@ Let's create an empty file ``/bin/hello-$PORTALID``::
 
 .. tip::
 
-   Recall that $PORTALID is your username on FutureSystems, which can
+   Recall that $PORTALNAME is your username on FutureSystems, which can
    also be obtained using the ``whoami`` shell command.
 
 
 It seems that this is not possible.  Since ``india`` is a shared
 resources not all users should be allowed to make changes that could
 affect everyone else.  Only a small number of users, the
-administrators, have the ability to globaly modify the system.
+administrators, have the ability to globally modify the system.
 
 We can still create our program in our home directory::
 
@@ -85,7 +85,7 @@ Now lets create a virtual env::
 
 
 When using ``virtualenv`` you pass the directory where you which to
-create the virtual environemt, in this case ``venv`` in the current
+create the virtual environment, in this case ``venv`` in the current
 (home) directory.  We are then told that we must activate the virtual
 environment before using it and that the python program, setuptools,
 and pip are installed.
@@ -96,7 +96,7 @@ Let's see what we have::
   activate  activate.csh  activate.fish  activate_this.py  easy_install
   easy_install-2.7  pip  pip-2.7  python  python2  python2.7
 
-It seens that there are several programs installed.  Let's see where
+It seems that there are several programs installed.  Let's see where
 our current ``python`` is and what happens after activating this
 environment::
 

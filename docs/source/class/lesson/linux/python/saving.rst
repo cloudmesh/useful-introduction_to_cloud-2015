@@ -58,7 +58,7 @@ The first line it encounters is:
    import sys
 
 This line consists of the ``import`` keyword.
-Here ``import`` attempts to load the ``sys`` module, which has several usefull items.
+Here ``import`` attempts to load the ``sys`` module, which has several useful items.
 
 Next the interpreter sees the ``def`` keyword.  The begins the
 definition of a function, called ``fib`` here.  Our ``fib`` function
@@ -96,7 +96,7 @@ Next we have the block:
 
 
 If the interpreter is running this module then there will be a variable ``__name__`` whose value is ``__main__``.
-This **if statement** checks for this condition and executes ths block if the check passed.
+This **if statement** checks for this condition and executes this block if the check passed.
 
 .. tip::
 
@@ -119,7 +119,7 @@ The next line:
 
 does three different things.
 First it gets the value in the ``sys.argv`` array at index 1.
-This was the paramter `5` we originally passed to our program::
+This was the parameter `5` we originally passed to our program::
 
   $ python print_fibs.py 5
 
