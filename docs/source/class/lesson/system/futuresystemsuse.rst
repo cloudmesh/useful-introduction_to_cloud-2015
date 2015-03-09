@@ -47,7 +47,7 @@ project.
    <https://portal.futuresystems.org/>`_ and log into your account.
 #. Click on the appropriate project name
 #. Click on the ``Join the project`` link on the right hand side.
-#. Upon approval you will recieve an email.
+#. Upon approval you will receive an email.
 
 .. tip::
    Please see :ref:`s-account-join-project` for further details.
@@ -101,7 +101,7 @@ You may also find additional details in
 
 
 .. tip::
-   Make sure you have loaded the approprate modules and setup your
+   Make sure you have loaded the appropriate modules and setup your
    environment::
 
      $ module load openstack
@@ -164,10 +164,10 @@ You can query OpenStack to see what keys you have added and uploaded::
   | $PORTALNAME-key | ab:a6:63:82:dd:08:d3:bc:c0:21:56:4c:e2:bb:22:ac |
   +-----------------+-------------------------------------------------+
 
-Usefull SSH commands
+Useful SSH commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-The following is a short list of usefull SSH commands.
+The following is a short list of useful SSH commands.
 
 Change the password
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -181,7 +181,7 @@ Change the comment
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 You can change the comment of an key by modifying the public key file.
-For example, Ada Lovelace wishes to replace an unimformative comment
+For example, Ada Lovelace wishes to replace an uninformative comment
 with her email address.
 She would execute the following::
 
