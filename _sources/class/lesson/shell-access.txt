@@ -60,3 +60,9 @@ Now the Teaching Assistant can log into your account.
 .. caution::
    Be aware that this procedure allows someone to log into your account as you.
    Once this session is over, you should remove their public key from your ``~/.ssh/authorized_keys`` file.
+
+
+Exercise
+----------------------------------------------------------------------
+
+Add your own public ssh key to the authorized keys file on ``india``.
