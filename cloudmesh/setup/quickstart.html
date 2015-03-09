@@ -82,8 +82,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">Big Data Applications and Analytics Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
@@ -246,7 +246,7 @@ following commands:</p>
 the following woraround:</p>
 <div class="last highlight-bash"><div class="highlight"><pre>pip install python-ldap <span class="se">\</span>
      --global-option<span class="o">=</span>build_ext <span class="se">\</span>
-     --global-option<span class="o">=</span><span class="s2">&quot;-I$(xcrun --show-sdk-path)/usr/include/sasl&quot;</span>
+     --global-option<span class="o">=</span><span class="s2">&quot;-I</span><span class="k">$(</span>xcrun --show-sdk-path<span class="k">)</span><span class="s2">/usr/include/sasl&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -303,7 +303,7 @@ public key generated in your .ssh directory in the file:</p>
 </pre></div>
 </div>
 <p>We add the key to the database with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm <span class="s2">&quot;key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm <span class="s2">&quot;key add --keyname=</span><span class="nv">$PORTALNAME</span><span class="s2">-key ~/.ssh/id_rsa.pub&quot;</span>
 </pre></div>
 </div>
 <p>where <span class="pink">PORTALNAME</span> is your name for the FutuerSystems portal.</p>
@@ -328,36 +328,36 @@ command via a terminal:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ cm</span>
 
 <span class="o">======================================================</span>
-/ ___| | ___  _   _  __| |_ __ ___   ___  ___| |__
-| |   | |/ _ <span class="se">\|</span> | | |/ _<span class="sb">`</span> | <span class="s1">&#39;_ ` _ \ / _ \/ __| &#39;</span>_ <span class="se">\</span>
-| |___| | <span class="o">(</span>_<span class="o">)</span> | |_| | <span class="o">(</span>_| | | | | | |  __/<span class="se">\_</span>_ <span class="se">\ </span>| | |
-<span class="se">\_</span>___|_|<span class="se">\_</span>__/ <span class="se">\_</span>_,_|<span class="se">\_</span>_,_|_| |_| |_|<span class="se">\_</span>__||___/_| |_|
+/ ___<span class="p">|</span> <span class="p">|</span> ___  _   _  __<span class="p">|</span> <span class="p">|</span>_ __ ___   ___  ___<span class="p">|</span> <span class="p">|</span>__
+<span class="p">|</span> <span class="p">|</span>   <span class="p">|</span> <span class="p">|</span>/ _ <span class="se">\|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>/ _<span class="sb">`</span> <span class="p">|</span> <span class="s1">&#39;_ ` _ \ / _ \/ __| &#39;</span>_ <span class="se">\</span>
+<span class="p">|</span> <span class="p">|</span>___<span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="o">)</span> <span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>  __/<span class="se">\_</span>_ <span class="se">\ </span><span class="p">|</span> <span class="p">|</span> <span class="p">|</span>
+<span class="se">\_</span>___<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/ <span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__<span class="o">||</span>___/_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span>
 <span class="o">======================================================</span>
 Cloudmesh Shell
 
 cm&gt; cloud
 +--------------------------+----------+
-| cloud                    | active   |
+<span class="p">|</span> cloud                    <span class="p">|</span> active   <span class="p">|</span>
 +<span class="o">==========================</span>+<span class="o">==========</span>+
-| alamo                    |          |
+<span class="p">|</span> alamo                    <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| aws                      |          |
+<span class="p">|</span> aws                      <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| azure                    |          |
+<span class="p">|</span> azure                    <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| dreamhost                |          |
+<span class="p">|</span> dreamhost                <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| hp                       |          |
+<span class="p">|</span> hp                       <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| hp_east                  |          |
+<span class="p">|</span> hp_east                  <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| india_eucalyptus         |          |
+<span class="p">|</span> india_eucalyptus         <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| india                    |          |
+<span class="p">|</span> india                    <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| sierra_eucalyptus        |          |
+<span class="p">|</span> sierra_eucalyptus        <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
-| sierra                   |          |
+<span class="p">|</span> sierra                   <span class="p">|</span>          <span class="p">|</span>
 +--------------------------+----------+
 
 cm&gt; cloud on india
@@ -369,14 +369,14 @@ cm&gt; flavor india --refresh
 Refresh <span class="nb">time</span>: 0.190665006638
 Store <span class="nb">time</span>: 0.0578060150146
 +--------+------+--------------+---------+-------+--------+----------------------+
-| CLOUD  |   id | name         |   vcpus |   ram |   disk | cm_refresh           |
-|--------+------+--------------+---------+-------+--------+----------------------|
-| india |    1 | m1.tiny      |       1 |   512 |      0 | 2014-08-26T01-15-20Z |
-| india |    3 | m1.medium    |       2 |  4096 |     40 | 2014-08-26T01-15-20Z |
-| india |    2 | m1.small     |       1 |  2048 |     20 | 2014-08-26T01-15-20Z |
-| india |    4 | m1.large     |       4 |  8192 |     40 | 2014-08-26T01-15-20Z |
-| india |    7 | m1.memmedium |       1 |  4096 |     20 | 2014-08-26T01-15-20Z |
-| india |    6 | m1.memlarge  |       1 |  8192 |     20 | 2014-08-26T01-15-20Z |
+<span class="p">|</span> CLOUD  <span class="p">|</span>   id <span class="p">|</span> name         <span class="p">|</span>   vcpus <span class="p">|</span>   ram <span class="p">|</span>   disk <span class="p">|</span> cm_refresh           <span class="p">|</span>
+<span class="p">|</span>--------+------+--------------+---------+-------+--------+----------------------<span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">1</span> <span class="p">|</span> m1.tiny      <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>   <span class="m">512</span> <span class="p">|</span>      <span class="m">0</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">3</span> <span class="p">|</span> m1.medium    <span class="p">|</span>       <span class="m">2</span> <span class="p">|</span>  <span class="m">4096</span> <span class="p">|</span>     <span class="m">40</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">2</span> <span class="p">|</span> m1.small     <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>  <span class="m">2048</span> <span class="p">|</span>     <span class="m">20</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">4</span> <span class="p">|</span> m1.large     <span class="p">|</span>       <span class="m">4</span> <span class="p">|</span>  <span class="m">8192</span> <span class="p">|</span>     <span class="m">40</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">7</span> <span class="p">|</span> m1.memmedium <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>  <span class="m">4096</span> <span class="p">|</span>     <span class="m">20</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
+<span class="p">|</span> india <span class="p">|</span>    <span class="m">6</span> <span class="p">|</span> m1.memlarge  <span class="p">|</span>       <span class="m">1</span> <span class="p">|</span>  <span class="m">8192</span> <span class="p">|</span>     <span class="m">20</span> <span class="p">|</span> 2014-08-26T01-15-20Z <span class="p">|</span>
 +--------+------+--------------+---------+-------+--------+----------------------+
 </pre></div>
 </div>
@@ -452,7 +452,7 @@ be uploaded to the FutureSystems portal.</p>
 </div>
 <p>This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sSL https://cloudmesh.github.io/get/ubuntu/ | <span class="nv">username</span><span class="o">=</span><span class="nv">$PORTALNAME</span> sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sSL https://cloudmesh.github.io/get/ubuntu/ <span class="p">|</span> <span class="nv">username</span><span class="o">=</span><span class="nv">$PORTALNAME</span> sh
 </pre></div>
 </div>
 <p>It will install cloudmesh in the directory where you started it from
