@@ -1,4 +1,4 @@
-Cloudmesh MOOC Shell Overview
+Big Data Applications and Analytics Shell Overview
 ======================================================================
 
 `cm-mooc` provides an easy way to start a Cloudmesh VM on OpenStack India. 
