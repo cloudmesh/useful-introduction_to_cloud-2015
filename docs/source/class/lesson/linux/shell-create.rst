@@ -256,7 +256,7 @@ delete.
     ``/home/nelle/elsewhere``.
 
 
-Excercises
+Exercises
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Renaming files

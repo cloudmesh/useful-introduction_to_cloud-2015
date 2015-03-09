@@ -14,15 +14,15 @@ Overview
 This lesson will introduce you to using the shell, which is required
 for using FutureSystems resources.
 
-Acknowledgements
+Acknowledgments
 ----------------------------------------------------------------------
 
 Parts of this lesson were adapted from the `Software Carpentry
 lesson`_ on using the Shell, which is distributed under a `Creative
-Commons Attribution licence v4`_ and is copywrite `Software Carpentry`_.
+Commons Attribution license v4`_ and is copyright `Software Carpentry`_.
 
 .. _Software Carpentry lesson: http://swcarpentry.github.io/shell-novice/
-.. _Creative Commons Attribution licence v4: https://creativecommons.org/licenses/by/4.0/
+.. _Creative Commons Attribution license v4: https://creativecommons.org/licenses/by/4.0/
 .. _Software Carpentry: http://software-carpentry.org/
 
 
@@ -36,7 +36,7 @@ Description
    Command line shell is often called a Command Line Interface, or CLI
    for short.
 
-.. note:: Adventerous readers may be interested to know that both
+.. note:: Adventurous readers may be interested to know that both
    Windows and Mac OS X provide a command shell.  On Windows you can
    run ``cmd.exe`` from `Start --> Run`.  On OS X open `Applications
    --> Utilities --> Terminal`. Be aware that the Windows and OS X CLI

@@ -19,7 +19,7 @@ expression/print", a common sequence of operations in early Unix text
 editors. It is also the name of a very useful command-line program.
 
 ``grep`` finds and prints lines in files that match a pattern. For our
-examples, we will use a file that contains three haikus taken from a
+examples, we will use a file that contains three haiku taken from a
 1998 competition in *Salon* magazine. For this set of examples we're
 going to be working in the writing subdirectory::
 
@@ -42,7 +42,7 @@ going to be working in the writing subdirectory::
    Forever, or Five Years
     ----------------------
 
-    We haven't linked to the original haikus because they don't appear
+    We haven't linked to the original haiku because they don't appear
     to be on *Salon*'s site any longer. As `Jeff Rothenberg said
     <http://www.clir.org/pubs/archives/ensuring.pdf>`__, "Digital
     information lasts forever --- or five years, whichever comes
@@ -333,7 +333,7 @@ all the ``.pdb`` files above the current directory::
     also the sincerest form of praise.
 
 
-Excercises
+Exercises
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using grep

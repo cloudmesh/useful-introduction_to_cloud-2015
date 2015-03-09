@@ -308,7 +308,7 @@ wildcard expression ``*[AB].txt``. As always, the '\*' matches any
 number of characters; the expression ``[AB]`` matches either an 'A' or
 a 'B', so this matches all the valid data files she has.
 
-Excercises
+Exercises
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What does ``sort -n`` do?

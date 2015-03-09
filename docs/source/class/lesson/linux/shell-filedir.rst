@@ -132,7 +132,7 @@ bytes: it's up to us and our programs to interpret those bytes
 according to the rules for PDF documents, images, and so on.
 
 Naming a PNG image of a whale as ``whale.mp3`` doesn't somehow
-magically turn it into a recording of whalesong, though it *might*
+magically turn it into a recording of whale song, though it *might*
 cause the operating system to try to open it with a music player when
 someone double-clicks it.
 
@@ -288,7 +288,7 @@ in alphabetical order. If she used month names, December would come
 before July; if she didn't use leading zeroes, November ('11') would
 come before July ('7').
 
-Each of her physical samples is labelled according to her lab's
+Each of her physical samples is labeled according to her lab's
 convention with a unique ten-character ID, such as "NENE01729A". This
 is what she used in her collection log to record the location, time,
 depth, and other characteristics of the sample, so she decides to use
@@ -320,9 +320,9 @@ completion**, and we will see it in many other tools as we go on.
 
 ..
    .. figure:: fig/filesystem-challenge.svg
-      :alt: Filesystem for Challange Questions
+      :alt: Filesystem for Challenge Questions
 
-      Filesystem for Challange Questions
+      Filesystem for Challenge Questions
 
        Relative path resolution
        ------------------------

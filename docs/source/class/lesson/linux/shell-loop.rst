@@ -355,7 +355,7 @@ example, if Nelle types this:
 then she can re-run ``goostats`` on ``NENE01729B.txt`` simply by
 typing ``!458``.
 
-Excercises
+Exercises
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Variables in loops
