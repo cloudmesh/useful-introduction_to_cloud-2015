@@ -41,10 +41,14 @@ To use both Google Hangouts and Google Remote Desktop you will need:
 
    <a href="https://accounts.google.com/signup" target="_blank">accounts.google.com/signup</a>
 
+..
 
-.. note::
-   Please use a Gmail address for all your correspondence regarding
-   this course.
+  I haven't had this issue
+  ~ Badi 2015-03-09
+
+   .. note::
+      Please use a Gmail address for all your correspondence regarding
+      this course.
 
 
 Google Hangouts
