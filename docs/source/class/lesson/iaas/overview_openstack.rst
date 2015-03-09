@@ -16,7 +16,9 @@ Prerequisite
 
 In order to conduct this lesson you should have knowledge of
 
-* `Account on FutureSystems </class/lesson/system/futuresystemsuse.html>`_
+* `Account on FutureSystems <../system/futuresystemsuse.html>`_
+
+.. introduction_to_cloud_computing/class/lesson/system/futuresystemsuse.html>`_
 
 Description
 ----------------------------------------------------------------------
