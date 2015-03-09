@@ -8,7 +8,7 @@ Overview
 This lesson will introduce you to using a text editor in the command
 line shell.
 
-.. tip:: Duration: 1 hour
+.. tip:: Duration: 30 minutes
 
 Prerequisite
 ----------------------------------------------------------------------
