@@ -9,7 +9,8 @@ Althouh this material is prepared for the classes IU ``BUEX-V 594``,
 they are of general interest to others. Please use
 them  to learn about BigData Software and Technologies.
 
-.. BigData Virtual Cluster (Spring 2015)
+* Course Page: http://bigdataopensourceprojects.soic.indiana.edu/
+* IU Canvas: https://iu.instructure.com/courses/1453783
 
 Contact
 ======================================================================

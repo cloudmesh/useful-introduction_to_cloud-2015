@@ -1,9 +1,9 @@
-Fall 2014 - Big Data Opensource Software and Projects (``Info I590``)
+Fall 2014 - Big Data Applications and Analytics (``Info I590``)
 ======================================================================
 
 * Fall 2014
-* Big Data OpenSource Software and Projects
-* http://bigdataopensourceprojects.soic.indiana.edu
+* Big Data Applications and Analytics
+* https://bigdatacoursefall2014.appspot.com/course
 * Community Group:
   https://plus.google.com/communities/117322030211467950209
 
