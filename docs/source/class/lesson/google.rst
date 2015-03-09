@@ -43,7 +43,7 @@ To use both Google Hangouts and Google Remote Desktop you will need:
 
 
 .. note::
-   Please use a Gmail address for all your corespondance regarding
+   Please use a Gmail address for all your correspondence regarding
    this course.
 
 
@@ -161,7 +161,7 @@ Once they enter this code the session will begin.
    to your computer to the guest.
 
 
-Futher Information
+Further Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can find more details on the |google_support_link|.
