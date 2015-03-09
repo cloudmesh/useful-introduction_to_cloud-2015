@@ -54,6 +54,7 @@ Linux Basics
 
    ../lesson/linux/overview
    ../lesson/linux/shell
+   ../lesson/linux/editors
    ../lesson/linux/python
    ../lesson/linux/ipython
    ../lesson/linux/packagemanagement
