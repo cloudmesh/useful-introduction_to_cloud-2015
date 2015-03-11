@@ -25,13 +25,13 @@ Description
 
 OpenStack is an open source community project launched by Nasa and Rackspace in
 2010. Community developers gather together twice per year for the OpenStack
-      Design Summit and commit design and development process. It typically
-      happens after time-based release cycle, two times per year i.e. April and
-      October, and the latest release Juno is the 10th release of OpenStack
-      platform which includes new features e.g. Sahara, updates and bug fixes.
-      A new release Kilo is forthcoming in April, 2015, FutureSystems will be
-      upgrading from the Juno release (current version on FutureSystems) to the
-      Kilo release shortly after its debut.
+Design Summit and commit design and development process. It typically
+happens after time-based release cycle, two times per year i.e. April and
+October, and the latest release Juno is the 10th release of OpenStack
+platform which includes new features e.g. Sahara, updates and bug fixes.
+A new release Kilo is forthcoming in April, 2015, FutureSystems will be
+upgrading from the Juno release (current version on FutureSystems) to the
+Kilo release shortly after its debut.
 
 OpenStack is a component-based software and various projects with different
 code names deliver cloud services.  We only cover a few core components in this
