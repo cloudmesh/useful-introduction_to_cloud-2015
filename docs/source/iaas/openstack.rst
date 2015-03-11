@@ -227,14 +227,38 @@ command and monitor the Status field in the table::
        | c66 ... c73 | $PORTALNAME-001 | ACTIVE | -          | Running     | int-net=10.23.0.87 |
        +-------------+-----------------+--------+------------+-------------+--------------------+
 
+Once it has changed from for example BUILD to ACTIVE, you can log
+in. Pleas use the IP address provided under networks. Note that the
+first address is private and can not be reached from outside india::
+
+       $ ssh -l ubuntu -i ~/.ssh/$PORTALNAME-key 10.23.0.87
+
+If you see a warning similar to::
+
+       Add correct host key in ~/.ssh/known_hosts to get rid of this message.
+       Offending key in ~/.ssh/known_hosts:3
+
+you need to delete the offending host key from ~/.ssh/known_hosts.
+
 Add floating IP address
 ----------------------------------------------------------------------
 
-Internal IP is not reachable from external nework. So you need to add 
-a floating IP address to your instance. First, create a floating IP 
-address::
+The internal IP address is not reachable from external nework. If you 
+want to make your instance reachable from outside, you can use a 
+floating IP address.
+
+First, create a floating IP address::
 
        $ nova floating-ip-create ext-net
+       +-----------------+-----------+----------+---------+
+       | Ip              | Server Id | Fixed Ip | Pool    |
+       +-----------------+-----------+----------+---------+
+       | 149.165.158.149 | -         | -        | ext-net |
+       +-----------------+-----------+----------+---------+
+
+Check your floating ip list::
+
+       $ nova floating-ip-list
        +-----------------+-----------+----------+---------+
        | Ip              | Server Id | Fixed Ip | Pool    |
        +-----------------+-----------+----------+---------+
@@ -244,6 +268,16 @@ address::
 And then, add the IP address to your instance::
 
        $ nova add-floating-ip $PORTALNAME-001 149.165.158.149
+
+Check your floating ip list again to see if the ip address is added to your 
+instance::
+
+       # nova floating-ip-list
+       +-----------------+--------------------------------------+-------------+---------+
+       | Ip              | Server Id                            | Fixed Ip    | Pool    |
+       +-----------------+--------------------------------------+-------------+---------+
+       | 149.165.158.149 | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | 10.23.0.87  | ext-net |
+       +-----------------+--------------------------------------+-------------+---------+
 
 Now, you should be able to login to your instance via ssh command like this::
 
@@ -256,6 +290,26 @@ If you see a warning similar to::
 
 you need to delete the offending host key from ~/.ssh/known_hosts.
 
+Please do not forget to also delete your 001 vm if you no longer need
+it.
+
+Delete your instance
+--------------------
+
+You can delete your instance with::
+
+       $ nova delete $PORTALNAME-001
+
+If your instance is deleted, your floating ip address will become available,
+and `nova floating-ip-list` should show the output like this::
+
+       $ nova floating-ip-list
+       +-----------------+-----------+----------+---------+
+       | Ip              | Server Id | Fixed Ip | Pool    |
+       +-----------------+-----------+----------+---------+
+       | 149.165.158.149 | -         | -        | ext-net |
+       +-----------------+-----------+----------+---------+
+       
 Using block storage
 ----------------------------------------------------------------------
 
@@ -339,8 +393,8 @@ key. Than you can issue on india the following command::
        +--------------+--------------------------------+--------+--------------+
        | ID           | Name                           | Status | Server       |
        +--------------+--------------------------------+--------+--------------+
-       | 18c43 ... 33 | futuresystems/fedora-18           | ACTIVE |              |
-       | 1a5fd ... e9 | futuresystems/ubuntu-14.04        | ACTIVE |              |
+       | 18c43 ... 33 | futuresystems/fedora-20        | ACTIVE |              |
+       | 1a5fd ... e9 | futuresystems/ubuntu-14.04     | ACTIVE |              |
        | f4337 ... 44 | fg101/$PORTALNAME/my-ubuntu-01 | ACTIVE | c0bd ... bcc |
        +--------------+--------------------------------+--------+--------------+
 
@@ -413,16 +467,6 @@ You can upload the image with the glance client like this::
 Now your new image is listed on ``nova image-list`` and will be
 available when the status become "ACTIVE".
 
-Delete your instance
---------------------
-
-You can delete your instance with::
-
-       $ nova delete $PORTALNAME-002
-
-Please do not forget to also delete your 001 vm if you no longer need
-it.
-
    
 
 How to change your password
@@ -467,8 +511,8 @@ explain briefly how you can access them.
        export NOVA_KEY_DIR=$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)
        export EC2_ACCESS_KEY="Your EC2_ACCESS_KEY"
        export EC2_SECRET_KEY="Your EC2_SECRET_KEY"
-       export EC2_URL="http://i57r.idp.iu.futuregrid.org:8773/services/Cloud"
-       export S3_URL="http://i57r.idp.iu.futuregrid.org:3333"
+       export EC2_URL="http://i5r.idp.iu.futuregrid.org:8773/services/Cloud"
+       export S3_URL="http://i5r.idp.iu.futuregrid.org:3333"
        export EC2_USER_ID=11
        export EC2_PRIVATE_KEY=${NOVA_KEY_DIR}/pk.pem
        export EC2_CERT=${NOVA_KEY_DIR}/cert.pem
