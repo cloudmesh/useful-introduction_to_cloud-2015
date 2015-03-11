@@ -82,8 +82,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a><ul>
@@ -212,19 +212,102 @@ explore a few changes and updates in OpenStack Juno release.</p>
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct this lesson you should have knowledge of</p>
 <ul class="simple">
-<li><a href="#id1"><span class="problematic" id="id2">`Overview OpenStack `&lt;overview_openstack.html&gt;`_</span></a></li>
+<li><a class="reference external" href="overview_openstack.html">Overview OpenStack</a></li>
 </ul>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="rule-of-openstack-release">
 <h3>Rule of OpenStack Release<a class="headerlink" href="#rule-of-openstack-release" title="Permalink to this headline">¶</a></h3>
-<p>1st     Austin   2010     Object Storage
-...
-10th    Juno     2014     OpenStack Sahara</p>
+<p>Table 1. OpenStack Release</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="16%" />
+<col width="16%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Series</th>
+<th class="head">Name</th>
+<th class="head">Date</th>
+<th class="head">Major changes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1st</td>
+<td>Austin</td>
+<td>2010</td>
+<td>Object Storage</td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="row-even"><td>10th</td>
+<td>Juno</td>
+<td>2014</td>
+<td>OpenStack Sahara</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="openstack-sahara">
 <h3>OpenStack Sahara<a class="headerlink" href="#openstack-sahara" title="Permalink to this headline">¶</a></h3>
+<p>OpenStack Sahara (previously Savanna) project provides Apache Hadoop clusters
+on OpenStack to offer agile access to a big data platform. Sahara focuses on
+deploying a Hadoop cluster with easy and fast steps and configuring cluster
+topology from the user&#8217;s perspective. MapReduce, MapReduce.Streaming, Hive,
+Pig, Java, Spark, and Shell are supported for data processing on the cluster.</p>
+<p>A summary of OpenStack Sahara is:</p>
+<ul class="simple">
+<li>OpenStack Data Processing software</li>
+<li>Hadoop cluster provisioning and task operation</li>
+<li>Management in OpenStack Horizon (GUI) Dashboard</li>
+<li>OpenStack integrated project</li>
+<li>Available from Juno release</li>
+<li>Elastic Data Processing (EDP) for executing MapReduce tasks</li>
+<li>Similar to Amazon Elastic MapReduce (EMR)</li>
+</ul>
+<div class="figure">
+<img alt="../../../_images/lesson_openstack_sahara.png" src="../../../_images/lesson_openstack_sahara.png" />
+<p class="caption">Figure 1. Architecture of OpenStack Sahara</p>
+</div>
+<div class="section" id="reference">
+<h4>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Github: <a class="reference external" href="https://github.com/openstack/sahara">https://github.com/openstack/sahara</a></li>
+<li>Developer Guide: <a class="reference external" href="http://docs.openstack.org/developer/sahara/">http://docs.openstack.org/developer/sahara/</a></li>
+</ul>
+</div>
+<div class="section" id="sahara-vs-cloudmesh">
+<h4>Sahara vs Cloudmesh<a class="headerlink" href="#sahara-vs-cloudmesh" title="Permalink to this headline">¶</a></h4>
+<p>Table 2. Comparison between OpenStack Sahara and Cloudmesh Virtual Cluster</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Feature</th>
+<th class="head">Sahara</th>
+<th class="head">Cloudmesh</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>IaaS platform</td>
+<td>OpenStack</td>
+<td>OpenStack, Eucalyptus, Amazon, Azure, HP Cloud</td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="section" id="next-step">

@@ -82,8 +82,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a><ul>
@@ -215,9 +215,93 @@ components.</p>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack is an open source cloud IaaS platform which provides compute,
+storage, and networking resources with service components.  We explore these
+components with a few examples in this lesson to have a taste of OpenStack
+cloud on FutureSystems.</p>
+<p>OpenStack consists of the following set of core components:</p>
+<p>Table 1. Core components of OpenStack</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="19%" />
+<col width="32%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Project Name</th>
+<th class="head">Main task</th>
+<th class="head">Sample Command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Compute</td>
+<td>Nova</td>
+<td>vm management</td>
+<td>nova boot</td>
+</tr>
+<tr class="row-odd"><td>Storage</td>
+<td>Swift</td>
+<td>Data warehouse</td>
+<td>swift post</td>
+</tr>
+<tr class="row-even"><td>Network</td>
+<td>Neutron</td>
+<td>Network management</td>
+<td>neutron net-create</td>
+</tr>
+<tr class="row-odd"><td>Account</td>
+<td>Keystone</td>
+<td>Identity/Authentication</td>
+<td>keystone tenant-create</td>
+</tr>
+<tr class="row-even"><td>Web Interface</td>
+<td>Horizon</td>
+<td>Web User Interface</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>There are many other important components in OpenStack, for example, OpenStack
+Heat provides automated deployment service with AWS CloudFormation template,
+and OpenStack Telemetry (previously Ceilometer) offers a billing service based
+on the measured data. Block Storage service named Cinter and virtual machine
+image service named Glance are also major components in OpenStack.</p>
 </div>
 <div class="section" id="nova-compute">
 <h2>Nova Compute<a class="headerlink" href="#nova-compute" title="Permalink to this headline">¶</a></h2>
+<p>Nova Compute engine manages computing resources on OpenStack. It starts a
+virtual machine instance with a choice of a machine (i.e. small, medium, large,
+or cpu-intensive) and an image (i.e. Ubuntu, CentOS, etc.), and updates or
+terminates the instance.</p>
+<p>To have your own virtual machine (vm) instance on OpenStack cloud, you need to
+submit your request of a vm instance via a command line tool (Nova client) or
+on a dashboard Horizon.</p>
+<p>Let&#8217;s explore a few examples to allocate vm instances. In FutureSystems, you
+need to be on the India login node.  (India is a hostname for OpenStack on
+FutureSystems)</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh india.futuresystems.org
+</pre></div>
+</div>
+<div class="section" id="launching-a-new-instance">
+<h3>Launching a new instance<a class="headerlink" href="#launching-a-new-instance" title="Permalink to this headline">¶</a></h3>
+<p>Starting a new instance is simple. The following command starts a new instance
+named <em>tutorial1</em> with a Ubuntu 14.04 base image.  The size of the machine will
+be <strong>small</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name albert-india-key tutorial1
+</pre></div>
+</div>
+<p>Here are some explanations for the arguments.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">boot</span></tt> is a sub command to start a new server.</li>
+<li><tt class="docutils literal"><span class="pre">--flavor</span></tt> is a name for your machine size. <tt class="docutils literal"><span class="pre">m1.small</span></tt> typically has 1 vCPU and 2GB memories.</li>
+<li><tt class="docutils literal"><span class="pre">--image</span></tt> is a name for your base image. <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt> displays all registered image.</li>
+<li><tt class="docutils literal"><span class="pre">--key_name</span></tt> is a key name to use for SSH connection. This key should be
+registered on Nova Compute. Try <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></tt> to see registered keys.</li>
+<li><tt class="docutils literal"><span class="pre">tutorial1</span></tt> is a name for your vm instance.</li>
+</ul>
+</div>
 </div>
 <div class="section" id="swift-storage">
 <h2>Swift Storage<a class="headerlink" href="#swift-storage" title="Permalink to this headline">¶</a></h2>
