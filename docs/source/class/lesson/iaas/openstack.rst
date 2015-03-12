@@ -221,7 +221,8 @@ The following sub commands tell what you can do:
 * download: Download objects from containers
 * list: Lists the containers for the account or the objects for a container
 * post: Updates meta information for the account, container, or object; creates
-  containers if not present * stat: Displays information for the account,
+  containers if not present 
+* stat: Displays information for the account,
   container, or object
 * upload: Uploads files or directories to the given container
 * capabilities: List cluster capabilities
