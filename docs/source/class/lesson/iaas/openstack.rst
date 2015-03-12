@@ -246,19 +246,22 @@ Networking.
 * neutron subnet-list: List Current Neutron Subnets
 * neutron security-group-create <SEC-GROUP-NAME>: Create Neutron Security Group
 * neutron security-group-rule-create --direction <ingress OR egress> --ethertype <IPv4 or IPv6> --protocol <PROTOCOL> --port-range-min <PORT-NUMBER> --port-range-max <PORT-NUMBER> <SEC-GROUP-NAME>: Add Rules to Neutron Security Group
-
-Example 1, add a rule to the default Neutron Security Group to allow SSH access to instances::
-
-        neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol tcp --port-range-min 22 --port-range-max 22 default
-
-Example 2, add a rule to the default Neutron Security Group to allow ICMP communication to instances::
-
-        neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol icmp default
-
 * neutron floatingip-create <NET-NAME>: Create a Neutron Floating IP Pool
   - If you need N number of floating IP addresses, run this command N number of times:
 * neutron port-create <NET-NAME> --fixed-ip ip_address=<IP-ADDRESS>: Create a Neutron Port with a Fixed IP Address
-  
+
+Example 1. add a rule to the default Neutron Security Group to allow SSH access to instances::
+
+        neutron security-group-rule-create --direction ingress \
+        --ethertype IPv4 --protocol tcp \
+        --port-range-min 22 --port-range-max 22 default
+
+Example 2. add a rule to the default Neutron Security Group to allow ICMP communication to instances::
+
+        neutron security-group-rule-create --direction ingress \
+        --ethertype IPv4 --protocol icmp default
+
+ 
 Exercises
 ----------------------------------------------------------------------
 
