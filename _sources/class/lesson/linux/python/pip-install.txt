@@ -116,12 +116,60 @@ environment::
    Notice how the shell prompt changed upon activation.
 
 
-Using ``pip`` to install packages (in preparation)
+Fixing Bad Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..
+Let's now look at another important tool for Python development: the
+Python Package Index, or PyPI for short.  PyPI provides a large set of
+third-party python packages.  If you want to do something in python,
+first check pypi, as odd are someone already ran into the problem and
+created a package solving it.
 
-   Example using autopep8 to format python code
+I'm going to demonstrate creating a user python environment,
+installing a couple packages from pypi, and use them to examine some
+code.
+
+First, get the bad code like so::
+
+   $ wget --no-check-certificate http://git.io/pXqb -O bad_code_example.py
+
+Let's examine the code::
+
+  $ nano bad_code_example.py
+
+As you can see, this is very dense and hard to read.  Cleaning it up
+by hand would be a time-consuming and error-prone process.  Luckily,
+this is a common problem so there exist a couple packages to help in
+this situation.
+
+Using ``pip`` to install packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to install package from PyPI, use the ``pip`` command.
+We can search for PyPI for packages::
+
+  $ pip search autopep8 pylint
+
+It appears that the top two results are what we want so install them::
+
+  $ pip install autopep8 pylint
+
+This will cause ``pip`` to download the packages from PyPI, extract
+them, check their dependencies and install those as needed, then
+install the requested packages.
+
+
+Using ``autopep8``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We can now run the bad code through autopep8 to fix formatting
+problems::
+
+  $ autopep8 bad_code_example.py >code_example_autopep8.py
+
+Let's look at the result.
+This is considerably better than before.
+It is easy to tell what the example1 and example2 functions are doing.
 
 
 

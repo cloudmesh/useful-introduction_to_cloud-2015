@@ -79,8 +79,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../lessons.html">Lessons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../i590.html">Fall 2014 - Big Data Opensource Software and Projects (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../cm-mooc/index.html">Cloudmesh MOOC Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a><ul>
@@ -291,10 +291,54 @@ before it can be used.</p>
 <p class="last">Notice how the shell prompt changed upon activation.</p>
 </div>
 </div>
-<div class="section" id="using-pip-to-install-packages-in-preparation">
-<h1>Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages (in preparation)<a class="headerlink" href="#using-pip-to-install-packages-in-preparation" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>Example using autopep8 to format python code</div></blockquote>
+<div class="section" id="fixing-bad-code">
+<h1>Fixing Bad Code<a class="headerlink" href="#fixing-bad-code" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s now look at another important tool for Python development: the
+Python Package Index, or PyPI for short.  PyPI provides a large set of
+third-party python packages.  If you want to do something in python,
+first check pypi, as odd are someone already ran into the problem and
+created a package solving it.</p>
+<p>I&#8217;m going to demonstrate creating a user python environment,
+installing a couple packages from pypi, and use them to examine some
+code.</p>
+<p>First, get the bad code like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget --no-check-certificate http://git.io/pXqb -O bad_code_example.py
+</pre></div>
+</div>
+<p>Let&#8217;s examine the code:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nano bad_code_example.py
+</pre></div>
+</div>
+<p>As you can see, this is very dense and hard to read.  Cleaning it up
+by hand would be a time-consuming and error-prone process.  Luckily,
+this is a common problem so there exist a couple packages to help in
+this situation.</p>
+</div>
+<div class="section" id="using-pip-to-install-packages">
+<h1>Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages<a class="headerlink" href="#using-pip-to-install-packages" title="Permalink to this headline">¶</a></h1>
+<p>In order to install package from PyPI, use the <tt class="docutils literal"><span class="pre">pip</span></tt> command.
+We can search for PyPI for packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip search autopep8 pylint
+</pre></div>
+</div>
+<p>It appears that the top two results are what we want so install them:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install autopep8 pylint
+</pre></div>
+</div>
+<p>This will cause <tt class="docutils literal"><span class="pre">pip</span></tt> to download the packages from PyPI, extract
+them, check their dependencies and install those as needed, then
+install the requested packages.</p>
+</div>
+<div class="section" id="using-autopep8">
+<h1>Using <tt class="docutils literal"><span class="pre">autopep8</span></tt><a class="headerlink" href="#using-autopep8" title="Permalink to this headline">¶</a></h1>
+<p>We can now run the bad code through autopep8 to fix formatting
+problems:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ autopep8 bad_code_example.py &gt;code_example_autopep8.py
+</pre></div>
+</div>
+<p>Let&#8217;s look at the result.
+This is considerably better than before.
+It is easy to tell what the example1 and example2 functions are doing.</p>
 </div>
 
 

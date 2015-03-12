@@ -221,11 +221,13 @@
 <li><a class="reference internal" href="#writing-and-saving-programs" id="id17">Writing and Saving Programs</a></li>
 <li><a class="reference internal" href="#installing-libraries" id="id18">Installing Libraries</a><ul>
 <li><a class="reference internal" href="#virtual-environments" id="id19">Virtual Environments</a></li>
-<li><a class="reference internal" href="#using-pip-to-install-packages-in-preparation" id="id20">Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages (in preparation)</a></li>
+<li><a class="reference internal" href="#fixing-bad-code" id="id20">Fixing Bad Code</a></li>
+<li><a class="reference internal" href="#using-pip-to-install-packages" id="id21">Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages</a></li>
+<li><a class="reference internal" href="#using-autopep8" id="id22">Using <tt class="docutils literal"><span class="pre">autopep8</span></tt></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#resources" id="id21">Resources</a></li>
-<li><a class="reference internal" href="#exercises" id="id22">Exercises</a></li>
+<li><a class="reference internal" href="#resources" id="id23">Resources</a></li>
+<li><a class="reference internal" href="#exercises" id="id24">Exercises</a></li>
 </ul>
 </div>
 </div>
@@ -699,7 +701,7 @@ In this case you have two option:</p>
 <p>Often you can find a previous implementation of what you need.
 Since this is a common situation, there is a service supporting it:
 the <a class="reference external" href="https://pypi.python.org/pypi">Python Package Index</a> (or PyPi for short).</p>
-<p>Our task here is to install the <a href="#id23"><span class="problematic" id="id24">`autopep8`_</span></a> tool from PyPi.
+<p>Our task here is to install the <a href="#id25"><span class="problematic" id="id26">`autopep8`_</span></a> tool from PyPi.
 This will allow us to illustrate the use if virtual environments using
 the <tt class="docutils literal"><span class="pre">virtualenv</span></tt> command, and installing and uninstalling PyPi
 packages using <tt class="docutils literal"><span class="pre">pip</span></tt>.</p>
@@ -793,14 +795,58 @@ before it can be used.</p>
 <p class="last">Notice how the shell prompt changed upon activation.</p>
 </div>
 </div>
-<div class="section" id="using-pip-to-install-packages-in-preparation">
-<h3><a class="toc-backref" href="#id20">Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages (in preparation)</a><a class="headerlink" href="#using-pip-to-install-packages-in-preparation" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div>Example using autopep8 to format python code</div></blockquote>
+<div class="section" id="fixing-bad-code">
+<h3><a class="toc-backref" href="#id20">Fixing Bad Code</a><a class="headerlink" href="#fixing-bad-code" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s now look at another important tool for Python development: the
+Python Package Index, or PyPI for short.  PyPI provides a large set of
+third-party python packages.  If you want to do something in python,
+first check pypi, as odd are someone already ran into the problem and
+created a package solving it.</p>
+<p>I&#8217;m going to demonstrate creating a user python environment,
+installing a couple packages from pypi, and use them to examine some
+code.</p>
+<p>First, get the bad code like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget --no-check-certificate http://git.io/pXqb -O bad_code_example.py
+</pre></div>
+</div>
+<p>Let&#8217;s examine the code:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nano bad_code_example.py
+</pre></div>
+</div>
+<p>As you can see, this is very dense and hard to read.  Cleaning it up
+by hand would be a time-consuming and error-prone process.  Luckily,
+this is a common problem so there exist a couple packages to help in
+this situation.</p>
+</div>
+<div class="section" id="using-pip-to-install-packages">
+<h3><a class="toc-backref" href="#id21">Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages</a><a class="headerlink" href="#using-pip-to-install-packages" title="Permalink to this headline">¶</a></h3>
+<p>In order to install package from PyPI, use the <tt class="docutils literal"><span class="pre">pip</span></tt> command.
+We can search for PyPI for packages:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip search autopep8 pylint
+</pre></div>
+</div>
+<p>It appears that the top two results are what we want so install them:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install autopep8 pylint
+</pre></div>
+</div>
+<p>This will cause <tt class="docutils literal"><span class="pre">pip</span></tt> to download the packages from PyPI, extract
+them, check their dependencies and install those as needed, then
+install the requested packages.</p>
+</div>
+<div class="section" id="using-autopep8">
+<h3><a class="toc-backref" href="#id22">Using <tt class="docutils literal"><span class="pre">autopep8</span></tt></a><a class="headerlink" href="#using-autopep8" title="Permalink to this headline">¶</a></h3>
+<p>We can now run the bad code through autopep8 to fix formatting
+problems:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ autopep8 bad_code_example.py &gt;code_example_autopep8.py
+</pre></div>
+</div>
+<p>Let&#8217;s look at the result.
+This is considerably better than before.
+It is easy to tell what the example1 and example2 functions are doing.</p>
 </div>
 </div>
 <div class="section" id="resources">
-<h2><a class="toc-backref" href="#id21">Resources</a><a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">Resources</a><a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <p>There is much more to python than what we have covered here:</p>
 <ul class="simple">
 <li>conditional expression (<tt class="docutils literal"><span class="pre">if</span></tt>, <tt class="docutils literal"><span class="pre">if...then</span></tt>, <tt class="docutils literal"><span class="pre">if..elif...then</span></tt>)</li>
@@ -827,7 +873,7 @@ See also the <a class="reference external" href="https://docs.python.org/2/py-mo
 Additionally, <a class="reference external" href="https://www.google.com/?gws_rd=ssl#q=python+how+to">searching Google</a> is a valuable skill.</p>
 </div>
 <div class="section" id="exercises">
-<h2><a class="toc-backref" href="#id22">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id24">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <p>Write a python program called fizzbuzz.py that accepts an integer n
 from the command line.  Pass this integer to a function called
 fizzbuzz.</p>
