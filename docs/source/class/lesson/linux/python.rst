@@ -94,15 +94,11 @@ Resources
 Exercises
 ----------------------------------------------------------------------
 
-Exercise I
-^^^^^^^^^^^^^^^^^^
+Write a python program called fizzbuzz.py that accepts an integer n
+from the command line.  Pass this integer to a function called
+fizzbuzz.
 
-Exercise II
-^^^^^^^^^^^^^^^^^^
+The fizzbuzz function should then iterate from 1 to n.  If the ith
+number is a multiple of three, print "fizz", if a multiple of 5 print
+"buzz", if a multiple of both print "fizzbuzz", else print the value.
 
-Next Step
------------
-
-In the next page, ...
-
-`Link here <link>`_
