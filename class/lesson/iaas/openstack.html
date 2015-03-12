@@ -285,7 +285,7 @@ FutureSystems)</p>
 </pre></div>
 </div>
 <div class="section" id="launching-a-new-instance">
-<h3>Launching a new instance<a class="headerlink" href="#launching-a-new-instance" title="Permalink to this headline">¶</a></h3>
+<h3>Launching a New Instance<a class="headerlink" href="#launching-a-new-instance" title="Permalink to this headline">¶</a></h3>
 <p>Starting a new instance is simple. The following command starts a new instance
 named <em>tutorial1</em> with a Ubuntu 14.04 base image.  The size of the machine will
 be <strong>small</strong>.</p>
@@ -301,31 +301,180 @@ be <strong>small</strong>.</p>
 registered on Nova Compute. Try <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></tt> to see registered keys.</li>
 <li><tt class="docutils literal"><span class="pre">tutorial1</span></tt> is a name for your vm instance.</li>
 </ul>
+<div class="section" id="exercises">
+<h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Launch a new medium instance with a CentOS image.</li>
+<li>Allocate a floating ip address to the instance that you just launched.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="glance-image-management">
+<h2>Glance Image Management<a class="headerlink" href="#glance-image-management" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack Glance is a virtual machine (VM) image management tool which
+registers, manages, shares or deletes machine images. The registered VM image
+can be used to launch a compute instance from users if it is open to public.
+Typically various operating systems are provided as basic VM images and users
+can add a variation to the images for saving their work on a VM instance.
+The following sub commands tell what you can do:</p>
+<ul class="simple">
+<li>image-create: Create a new image</li>
+<li>image-delete: Delete specified image(s)</li>
+<li>image-download: Download a specific image</li>
+<li>image-list: List images you can access</li>
+<li>image-show: Describe a specific image</li>
+<li>image-update: Update a specific image</li>
+<li>member-create: Share a specific image with a tenant</li>
+<li>member-delete: Remove a shared image from a tenant</li>
+<li>member-list: Describe sharing permissions by image or tenant</li>
+<li>bash-completion: Prints all of the commands and options to stdout</li>
+</ul>
+<p>These commands are available in glance version 0.15.0.</p>
+<div class="section" id="creating-a-new-image">
+<h3>Creating a New Image<a class="headerlink" href="#creating-a-new-image" title="Permalink to this headline">¶</a></h3>
+<p>The following command will register Ubuntu 14.04 image to OpenStack cloud. You
+can download cloud images from Ubuntu Cloud.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ glance image-create \
+--name $PROJECT/$USER/myimages/ubuntu-14.04 \
+--disk-format qcow2 \
+--container-format bare \
+--file trusty-server-cloudimg-amd64-disk1.img
+</pre></div>
+</div>
+<p>If your image registered successfully, you will see ACTIVE status in the image-list command.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ glance image-list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="keystone-account-and-authenticaion">
+<h2>Keystone Account and Authenticaion<a class="headerlink" href="#keystone-account-and-authenticaion" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack Keystone manages user accounts and provides authentication service
+using tokens. If you need to add a new user or a group, you may use keystone
+client tool to register. As a developer, you use Keystone for user
+authentication with tokens when you send a service request via OpenStack API.
+The token is a convinient method to deal with authenticaion instead of a pair
+of username and password. Let&#8217;s explore a few basic commands of OpenStack
+Keystone.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Keystone commands are only available to administrator</p>
+</div>
+<div class="section" id="project-creation-tenant">
+<h3>Project Creation (Tenant)<a class="headerlink" href="#project-creation-tenant" title="Permalink to this headline">¶</a></h3>
+<p>OpenStack manages user accounts with a group. OpenStack represents a group as a
+<em>project</em> or a <em>tenant</em> interchangeably. Each user should participate in at
+least a single project, they can join multiple projects though. With a group of
+users, it is convenient to manage different settings across multiple groups.
+For example, you can set limits of 10 instances to project1 but project2 may
+have higher or smaller size of vm instances.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ keystone tenant-create --name=project1 --description=&quot;futuresystems project 1&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-creation">
+<h3>User Creation<a class="headerlink" href="#user-creation" title="Permalink to this headline">¶</a></h3>
+<p>To create a new user, you need a tenant (project) id, if you provide a
+group-based cloud service.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ keystone user-create --name=albert \
+  --pass=*** \
+  --tenant_id=*** \
+  --email=albert@futuresystems.org
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-users-or-projects">
+<h3>List of Users or Projects<a class="headerlink" href="#list-of-users-or-projects" title="Permalink to this headline">¶</a></h3>
+<p>Try <tt class="docutils literal"><span class="pre">user-list</span></tt> or <tt class="docutils literal"><span class="pre">tenant-list</span></tt> sub command to see a list of users or
+projects.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ keystone user-list
+
+or
+
+$ keystone tenant-list
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Try <tt class="docutils literal"><span class="pre">keystone</span></tt> command itself. The help message shows that available
+sub commands including tenant-create, user-create, user-list and
+tenant-list.</p>
+</div>
+</div>
+<div class="section" id="role-management">
+<h3>Role management<a class="headerlink" href="#role-management" title="Permalink to this headline">¶</a></h3>
+<p>Project members need to have different privileges to control allocated
+resources to the project.  For example, <em>albert</em> needs an admin permission to
+terminate or update other user&#8217;s vm instances in a same project.  OpenStack
+Keystone has a role management with a pair of a user and a project.</p>
+<p>The following commands are useful to manage roles in a project:</p>
+<ul class="simple">
+<li>role-create: Create new role</li>
+<li>role-delete: Delete role</li>
+<li>role-get: Display role details</li>
+<li>user-role-add: Add role to user</li>
+<li>user-role-list: List roles granted to a user</li>
+<li>user-role-remove: Remove role from user</li>
+</ul>
 </div>
 </div>
 <div class="section" id="swift-storage">
 <h2>Swift Storage<a class="headerlink" href="#swift-storage" title="Permalink to this headline">¶</a></h2>
+<p>Swift is an object storage service on OpenStack like Amazon Simple Storage
+Service (S3). If you are looking for a block storage, OpenStack Cinder is one
+for you.</p>
+<p>The following sub commands tell what you can do:</p>
+<ul class="simple">
+<li>delete: Delete a container or objects within a container</li>
+<li>download: Download objects from containers</li>
+<li>list: Lists the containers for the account or the objects for a container</li>
+<li>post: Updates meta information for the account, container, or object; creates
+containers if not present * stat: Displays information for the account,
+container, or object</li>
+<li>upload: Uploads files or directories to the given container</li>
+<li>capabilities: List cluster capabilities</li>
+<li>tempurl: Create a temporary URL</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Swift Storage is not available on FutureSystems.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Not to decide Swift or Cinder? If you need a large disk space mounted
+on your VM instance, Cinder is useful.  If you need to get access of a
+file across multiple servers using API? Swift is the answer.</p>
+</div>
 </div>
 <div class="section" id="neutron-network">
 <h2>Neutron Network<a class="headerlink" href="#neutron-network" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="glance-image-management">
-<h2>Glance Image Management<a class="headerlink" href="#glance-image-management" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-i">
-<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<p>Neutron is a OpenStack Networking service to manage NAT, firewall, etc. This
+type of tasks is for OpenStack cloud administrator. We briefly explore a few
+commands available on Neutron to understand basic services on OpenStack
+Networking.</p>
 <ul class="simple">
-<li>Launch a new large instance with a futuresystems/ubuntu-14.04 image.</li>
+<li>neutron net-list: List Current Neutron Networks</li>
+<li>neutron subnet-list: List Current Neutron Subnets</li>
+<li>neutron security-group-create &lt;SEC-GROUP-NAME&gt;: Create Neutron Security Group</li>
+<li>neutron security-group-rule-create &#8211;direction &lt;ingress OR egress&gt; &#8211;ethertype &lt;IPv4 or IPv6&gt; &#8211;protocol &lt;PROTOCOL&gt; &#8211;port-range-min &lt;PORT-NUMBER&gt; &#8211;port-range-max &lt;PORT-NUMBER&gt; &lt;SEC-GROUP-NAME&gt;: Add Rules to Neutron Security Group</li>
+</ul>
+<p>Example 1, add a rule to the default Neutron Security Group to allow SSH access to instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol tcp --port-range-min 22 --port-range-max 22 default
+</pre></div>
+</div>
+<p>Example 2, add a rule to the default Neutron Security Group to allow ICMP communication to instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol icmp default
+</pre></div>
+</div>
+<ul class="simple">
+<li>neutron floatingip-create &lt;NET-NAME&gt;: Create a Neutron Floating IP Pool
+- If you need N number of floating IP addresses, run this command N number of times:</li>
+<li>neutron port-create &lt;NET-NAME&gt; &#8211;fixed-ip ip_address=&lt;IP-ADDRESS&gt;: Create a Neutron Port with a Fixed IP Address</li>
 </ul>
 </div>
-<div class="section" id="exercise-ii">
-<h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Allocate a floating ip address to the instance that you just launched.</li>
-</ul>
-</div>
+<div class="section" id="id1">
+<h2>Exercises<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="next-step">
 <h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
