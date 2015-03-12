@@ -430,7 +430,8 @@ for you.</p>
 <li>download: Download objects from containers</li>
 <li>list: Lists the containers for the account or the objects for a container</li>
 <li>post: Updates meta information for the account, container, or object; creates
-containers if not present * stat: Displays information for the account,
+containers if not present</li>
+<li>stat: Displays information for the account,
 container, or object</li>
 <li>upload: Uploads files or directories to the given container</li>
 <li>capabilities: List cluster capabilities</li>
@@ -458,20 +459,21 @@ Networking.</p>
 <li>neutron subnet-list: List Current Neutron Subnets</li>
 <li>neutron security-group-create &lt;SEC-GROUP-NAME&gt;: Create Neutron Security Group</li>
 <li>neutron security-group-rule-create &#8211;direction &lt;ingress OR egress&gt; &#8211;ethertype &lt;IPv4 or IPv6&gt; &#8211;protocol &lt;PROTOCOL&gt; &#8211;port-range-min &lt;PORT-NUMBER&gt; &#8211;port-range-max &lt;PORT-NUMBER&gt; &lt;SEC-GROUP-NAME&gt;: Add Rules to Neutron Security Group</li>
-</ul>
-<p>Example 1, add a rule to the default Neutron Security Group to allow SSH access to instances:</p>
-<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol tcp --port-range-min 22 --port-range-max 22 default
-</pre></div>
-</div>
-<p>Example 2, add a rule to the default Neutron Security Group to allow ICMP communication to instances:</p>
-<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol icmp default
-</pre></div>
-</div>
-<ul class="simple">
 <li>neutron floatingip-create &lt;NET-NAME&gt;: Create a Neutron Floating IP Pool
 - If you need N number of floating IP addresses, run this command N number of times:</li>
 <li>neutron port-create &lt;NET-NAME&gt; &#8211;fixed-ip ip_address=&lt;IP-ADDRESS&gt;: Create a Neutron Port with a Fixed IP Address</li>
 </ul>
+<p>Example 1. add a rule to the default Neutron Security Group to allow SSH access to instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress \
+--ethertype IPv4 --protocol tcp \
+--port-range-min 22 --port-range-max 22 default
+</pre></div>
+</div>
+<p>Example 2. add a rule to the default Neutron Security Group to allow ICMP communication to instances:</p>
+<div class="highlight-python"><div class="highlight"><pre>neutron security-group-rule-create --direction ingress \
+--ethertype IPv4 --protocol icmp default
+</pre></div>
+</div>
 </div>
 <div class="section" id="id1">
 <h2>Exercises<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
