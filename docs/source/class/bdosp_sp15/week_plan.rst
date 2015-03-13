@@ -7,9 +7,12 @@ Week Plan
 ..   *  Lab Sessions (on Air)
 ..   *  Office hours (One-to-One by 9am/5pm or 9am/8pm)
 
-Week 1
+
+   
+Week 1 (available)
 ---------
 
+This week you will be learning about ...
 
 .. list-table:: Weekly Lesson Plan
    :widths: 15 10 30 10
@@ -24,6 +27,27 @@ Week 1
      - `10 mins <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_ 
      - Homework/Lab
 
+
+
+       
+Week 2 (under preparation)
+---------
+
+.. list-table:: Weekly Lesson Plan
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - Overview and Introduction
+     - TBD
+     - TBD
+     - Homework/Lab
+
+
+       
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+---------------+
 | Topic                                | Video                | Text             | Lab Session  | Length                   | Plan          |
 +======================================+======================+==================+==============+==========================+===============+
