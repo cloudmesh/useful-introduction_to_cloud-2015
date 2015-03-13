@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cloudmesh cm Command &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh cm" href="index.html"/>
+        <link rel="next" title="project Command in Cloudmesh cm" href="_cm-project.html"/>
+        <link rel="prev" title="Cloudmesh cm" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
+      
+    <li>Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/cm/_cm.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="cloudmesh-cm-command">
+<h1>Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command<a class="headerlink" href="#cloudmesh-cm-command" title="Permalink to this headline">¶</a></h1>
+<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm.ipynb">Notebook</a></p>
+</button><div class="section" id="ipython-execution-of-shell-commands">
+<h2>iPython Execution of shell commands<a class="headerlink" href="#ipython-execution-of-shell-commands" title="Permalink to this headline">¶</a></h2>
+<p>In this section we use one of the build in features of iPython. IPython
+provides various mechanisms to call programs within its shell. One of
+the ways to do so is to use the ! character at the beginning of a line
+to execute the command in the shell.</p>
+<p>However, there are more convenient ways to eliminate the ! sign at the
+beginning of a line. One way is to use the alias command, another is to
+use the %rehasx command.</p>
+<div class="section" id="ipython-alias">
+<h3>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h3>
+<p>With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters ar between &#8220;&#8221; so that they are properly set. Just execute the
+following lines.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+</pre></div>
+</div>
+<p>Now let us test the command and lets print the version of cloudmesh cm</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm version
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>1.0.6
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-rehashx">
+<h3>Python %rehashx<a class="headerlink" href="#python-rehashx" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the direct specification IPython has also a rehashx
+function, that loads the commands found in the $PATH variable so you can
+execute the without !.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>%rehashx
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm version
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>1.0.6
+</pre></div>
+</div>
+<p>We are using now one of the methods to call the cm commands in the
+following sections.</p>
+</div>
+</div>
+<div class="section" id="cm-command">
+<h2><tt class="docutils literal"><span class="pre">cm</span></tt> Command<a class="headerlink" href="#cm-command" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">cm</span></tt> command has a number of options that are useful to pass a
+script or a command directly into cm. Please however not that in some
+cases the command must be quoted to avoid confusion between flags used
+for cm and flags used for its subcommands. Let us invoke the -h flag to
+see which options cm has.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cm</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>cm.
+
+    Usage:
+      cm [-q] help
+      cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
+
+    Arguments:
+      COMMAND                  A command to be executed
+
+    Options:
+      --file=SCRIPT  -f  SCRIPT  Executes the script
+      -i                 After start keep the shell interactive,
+                         otherwise quit [default: False]
+      -b                 surpress the printing of the banner [default: False]
+</pre></div>
+</div>
+<div class="section" id="help">
+<h3>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h3>
+<p>Now let us execute the help command to see what other functions are
+supported. As cm is based on cmd3 that you can find in pypi it inherits
+a number of commands from cmd3. However, more importantly it also
+obtains a number of commands from cm itself. To more easily distinguish
+the categories of the cloud related commands we introduced two of them
+called GUI commands and cloud commands.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm help
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Documented commands (type help &lt;topic&gt;):
+========================================
+EOF       dot2      help       list      plugins   script          verbose
+banner    edit      image      loglevel  project   security_group  version
+clear     exec      info       man       py        storm           vm
+cloud     exp       init       metric    q         timer           web
+color     flavor    inventory  notebook  quit      use             yaml
+debug     graphviz  key        open      rain      user
+defaults  group     label      pause     register  var
+
+Ipython Commands
+================
+notebook
+
+Gui Commands
+============
+web
+
+Cloud Commands
+==============
+cloud     group  inventory  rain            storm  yaml      keys
+defaults  image  list       register        user   debug     project
+flavor    init   metric     security_group  vm     loglevel
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting-the-web-browser">
+<h3>Starting the Web Browser<a class="headerlink" href="#starting-the-web-browser" title="Permalink to this headline">¶</a></h3>
+<p>To start the browser, simply type the command</p>
+<pre>cm web</pre></div>
+<div class="section" id="listing-clouds">
+<h3>Listing Clouds<a class="headerlink" href="#listing-clouds" title="Permalink to this headline">¶</a></h3>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+-----------+--------+
+| cloud     | active |
++-----------+--------+
+| aws       |        |
+| azure     |        |
+| devstack  |        |
+| dreamhost |        |
+| hp        |        |
+| hp_east   |        |
+| india     | True   |
++-----------+--------+
+</pre></div>
+</div>
+<p>Let us inspect the parameters. To limit the output we just display the
+first 10 lines of the help/man page. We see the &#8211;column option in the
+list command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm help cloud | head -n 10
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>::
+
+    Usage:
+        cloud [list] [--column=COLUMN] [--format=FORMAT]
+        cloud info [CLOUD|--all] [--format=FORMAT]
+        cloud alias NAME [CLOUD]
+        cloud select [CLOUD]
+        cloud on [CLOUD]
+        cloud off [CLOUD]
+</pre></div>
+</div>
+<p>...</p>
+<p>For more information, read the help page. It essentially allows us to
+display some more useful information beyond to just document the active
+clouds. Let us also display the label. This is done with the following
+command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud list --column=active,label&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>+-----------+--------+--------------------+
+| cloud     | active | label              |
++-----------+--------+--------------------+
+| aws       |        | aws                |
+| azure     |        | waz                |
+| devstack  |        | localhost_icehouse |
+| dreamhost |        | dreamhost          |
+| hp        |        | hpos               |
+| hp_east   |        | hpeos              |
+| india     | True   | ios_havana         |
++-----------+--------+--------------------+
+</pre></div>
+</div>
+<p>Let us now demonstrate a common error by not using proper quoting. This
+occurs when you use option flags with the command. Here our current
+parser is unable to distinguish between the options passed to cm and the
+options as used in the cm command. You see the usage message that we do
+not have a &#8211;column in the cm command. To avoid thie use the &#8221; &#8221; as
+previously shown.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list --column=active,label
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Usage:
+      cm [-q] help
+      cm [-v] [-b] [--file=SCRIPT] [-i] [COMMAND ...]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="_cm-project.html" class="btn btn-neutral float-right" title="project Command in Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

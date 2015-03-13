@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying Virtual Cluster with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh cm" href="index.html"/>
+        <link rel="next" title="Managing multiple VMs with Cloudmesh cm" href="_cm-group.html"/>
+        <link rel="prev" title="Metric Commands in Cloudmesh cm" href="_cm-limits.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
+      
+    <li>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/cm/_cm-cluster.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
+<h1>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-cluster.ipynb">Notebook</a></p>
+</button><p>To support the creation of a virtual compute cluster (e.g. Hadoop or
+Slurm) on cloudmesh, we are offering the command <tt class="docutils literal"><span class="pre">cluster</span></tt> to start,
+configure, manage or update a number of virtual machines.</p>
+<div class="section" id="ipython-alias">
+<h2>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h2>
+<p>With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters ar between &#8220;&#8221; so that they are properly set. Just execute the
+following lines. If you do not use ipythin, you can skip this step.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+</pre></div>
+</div>
+<div class="section" id="preparation-optional">
+<h3>Preparation (Optional)<a class="headerlink" href="#preparation-optional" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">cluster</span></tt> command is available in the cloudmesh shell. There are
+certain steps to make sure you are all set to deploy a new cluster. You
+can SKIP these steps if you have configured cloudmesh previously.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster&quot;
+</pre></div>
+</div>
+<p>Before starting a cluster, please make sure you activate a cloud:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud on india&quot;
+</pre></div>
+</div>
+<p>Activation however does not select the cloud as the default cloud to
+start virtual machines. This is achieved by the select command</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud select india&quot;
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">default</span> <span class="pre">india</span></tt></p>
+</div>
+</div>
+<div class="section" id="default-keypair">
+<h2>Default keypair<a class="headerlink" href="#default-keypair" title="Permalink to this headline">¶</a></h2>
+<p>To gain access to the virtual machines, you need to have a key
+registered with the cloud. If you don&#8217;t have a default keypair, you need
+to set or need to specify which keypair you are going use for the vm.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;key default test-key&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="vm-name">
+<h2>VM Name<a class="headerlink" href="#vm-name" title="Permalink to this headline">¶</a></h2>
+<p>You can also define the name of VMs which contains a prefix and an index
+with the <tt class="docutils literal"><span class="pre">label</span></tt> command. However, the name of the vms must be unique.
+By default your username and a number will be used that will be
+automatically increased. Thus we recommend that you avoid using this
+command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;label --prefix=test --id=1&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-image">
+<h2>Default Image<a class="headerlink" href="#default-image" title="Permalink to this headline">¶</a></h2>
+<p>You can choose a default image to create a virtual machine. In this
+example, we use ubuntu-14.04 image as a default.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default image --name=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-flavor">
+<h2>Default Flavor<a class="headerlink" href="#default-flavor" title="Permalink to this headline">¶</a></h2>
+<p>You can chose a default flavor. However, make sure that the falvor
+actially works with the specified image. Some images require a minimal
+flavor.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default flavor --name=m1.small&quot;
+</pre></div>
+</div>
+<div class="section" id="create-cluster">
+<h3>Create Cluster<a class="headerlink" href="#create-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Then you may start the cluster with command &#8216;cluster create&#8217; by
+providing the following values:</p>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">--count</span></tt></div>
+<div class="line-block">
+<div class="line">specify amount of VMs in the cluster</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">--group</span></tt></div>
+<div class="line-block">
+<div class="line">specify a group name of the cluster, make sure it&#8217;s UNIQUE</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><tt class="docutils literal"><span class="pre">--ln</span></tt></div>
+<div class="line-block">
+<div class="line">login name for VMs, e.g. ubuntu</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-3-virtual-machines">
+<h2>Create 3 virtual machines<a class="headerlink" href="#create-3-virtual-machines" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-python"><div class="highlight"><pre>Let us create a cluster with the group name test that contains 3 virtual machines.
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=3 --group=test --ln=ubuntu&quot;
+</pre></div>
+</div>
+<p>You may also provide a cloud name, flavor or image as parameter in the
+command if you do not want to use the defaults. For example you can use
+the following do do so:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+<p>You can display the status of vms for the cluster with the <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></tt>
+command:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=test&quot;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_cm-limits.html" class="btn btn-neutral" title="Metric Commands in Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
