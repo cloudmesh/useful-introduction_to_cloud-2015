@@ -2,10 +2,17 @@
 Week Plan
 =========
 
+* Hangouts
+   * Teacher Interactions (on Air)
+   *  Lab Sessions (on Air)
+   *  Office hours (One-to-One by 9am/5pm or 9am/8pm)
+
 ==========      ==============================         =======         =========                  =================      ==============     ===============
 Week            Topic                                  Plan            Length                     Video                  Text               Lab Session
 ==========      ==============================         =======         =========                  =================      ==============     ===============
-Week 1          * Collaboration Tools                    Done                                                              
+Week 1          * Collaboration Tools                    Done                                     Videos in 1st          Study              Lab exercies
+                                                                                                  week                   materials          in 1st week
+                                                                                                                         in 1st week               
 
                    * Overview and Introduction                                                       * Lesson1_             * Study1_       * Lab1_
                    * Google                                                                          * Lesson2_             * Study2_       * Lab2_
