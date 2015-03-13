@@ -40,7 +40,8 @@ FutureSystems Access
 .. toctree::
    :maxdepth: 1
    :glob:
-  
+
+   ../lesson/hands_on_fg465
    ../lesson/system/overview
    ../lesson/system/futuresystemsuse
       
