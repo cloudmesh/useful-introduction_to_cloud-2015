@@ -15,61 +15,80 @@ Week 1
 +======================================+======================+==================+==============+==========================+===============+
 |   Collaboration Tools                |                      |                  |              |                          | Done          |
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|     Overview and Introduction        |  Lesson1_            | Study1_          |              | Video: 2 mins            |               |
-|                                      |                      |                  |              | Study: 10 mins           |               |    
+|     Overview and Introduction        |  Lesson1_            | Study1_          |              | 2 mins (Video)           |               |
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Study)          |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|     Google                           |                      |                  |              | Video: 4 mins            |               |
-|       -  Google+                     |  Lesson2_            | Study2_          |              | Study: 15 mins           |               |                       
+|     Google                           |                      |                  |              | 4 mins (Video)           |               |
+|       -  Google+                     |  Lesson2_            | Study2_          |              |                          |               |                       
+|                                      |                      |                  |              | 15 mins (Study)          |               |    
 |       -  Remote Desktop              |                      |                  |              |                          |               |
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|     Shell Access                     |  Lesson3_            | Study3_          |   Lab1_      | Video: 3 mins            |               |                                                                  
-|                                      |                      |                  |              | Study: 10 mins           |               |    
-|                                      |                      |                  |              | Lab: 5 mins              |               |    
+|     Shell Access                     |  Lesson3_            | Study3_          |   Lab1_      | 3 mins (Video)           |               |                                                                  
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Study)          |               |    
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 5 mins (Lab)             |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|     GitHub                           |  Lesson4_            | Study4_          |  Lab2_       | Video: 18 mins           |               |                                                                   
-|                                      |                      |                  |              | Study: 30 mins           |               |    
-|                                      |                      |                  |              | Lab: 10 mins             |               |    
+|     GitHub                           |  Lesson4_            | Study4_          |  Lab2_       | 18 mins (Video)          |               |                                                                   
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 30 mins (Study)          |               |    
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Lab)            |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
 |   System Access                      |                      |                  |              |                          |               | 
 |   to FutureSystems                   |                      |                  |              |                          |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|          Getting an Account          |                      |                  |              | Video: 16 mins           |               |    
-|            * ssh-keygen              | * Lesson5_           | * Study5_        |              | Study: 20 mins           |               |                                                                   
+|          Getting an Account          |                      |                  |              | 16 mins (Video)          |               |    
+|            * ssh-keygen              | * Lesson5_           | * Study5_        |              |                          |               |                                                                   
+|                                      |                      |                  |              | 20 mins (Study)          |               |    
 |            * Acccount Creation       | * Lesson6_           | * Study6_        |              |                          |               |                                                                   
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|          Remote Login                | Lesson7_             | Study7_          |              | Video: 6 mins            |               |                                                                   
-|                                      |                      |                  |              | Study: 10 mins           |               |    
+|          Remote Login                | Lesson7_             | Study7_          |              | 6 mins (Video)           |               |                                                                   
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Study)          |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|             Putty for Windows        | Lesson8_             | Study8_          |              | Video: 11 mins           |               |                                                                   
-|                                      |                      |                  |              | Study: 10 mins           |               |    
+|             Putty for Windows        | Lesson8_             | Study8_          |              | 11 mins (Video)          |               |                                                                   
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Study)          |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
 |   Linux Basics                       |                      |                  |              |                          |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|      Overview and                    | Lesson9_             | Study9_          |              | Video: 4 mins            |               |
-|      Introduction                    |                      |                  |              | Study: 5 mins            |               |    
+|      Overview and                    | Lesson9_             | Study9_          |              | 4 mins (Video)           |               |
+|                                      |                      |                  |              |                          |               |    
+|      Introduction                    |                      |                  |              | 5 mins (Study)           |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|      Tutorial: Learning              | Lesson10_            | Study10_         | Lab3_, Lab4_ | Video: 15 mins           |               |
-|                                      |                      |                  |              | Study: 30 mins           |               |    
-|      Shell Scripting                 |                      |                  | Lab5_, Lab6_ | Lab: 20 mins             |               |
+|      Tutorial: Learning              | Lesson10_            | Study10_         | Lab3_, Lab4_ | 15 mins (Video)          |               |
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 30 mins (Study)          |               |    
+|                                      |                      |                  |              |                          |               |    
+|      Shell Scripting                 |                      |                  | Lab5_, Lab6_ | 20 mins (Lab)            |               |
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|    Editors                           | Lesson11_            | Study11_         |              | Video: 5 mins            |               |
-|        * emacs, vi, and nano         |                      |                  |              | Study: 30 mins           |               |    
+|    Editors                           | Lesson11_            | Study11_         |              | 5 mins (Video)           |               |
+|                                      |                      |                  |              |                          |               |    
+|        * emacs, vi, and nano         |                      |                  |              | 30 mins (Study)          |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|    Python                            | Lesson12_            | Study12_         | Lab7_        | Video: 27 mins           |               |
-|        * virtualenv                  |                      |                  |              | Study: 1 hour            |               |    
-|        * Pypi                        |                      |                  |              | Lab: 30 mins             |               |    
+|    Python                            | Lesson12_            | Study12_         | Lab7_        | 27 mins (Video)          |               |
+|        * virtualenv                  |                      |                  |              |                          |               |    
+|        * Pypi                        |                      |                  |              | Study: 1 hour            |               |    
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 30 mins (Lab)            |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|    Package Managers                  | Lesson13_            | Study13_         |              | Video: 3 mins            |               |
-|        * yum, apt-get,               |                      |                  |              | Study: 10 mins           |               |    
-|          and brew                    |                      |                  |              |                          |               |    
+|    Package Managers                  | Lesson13_            | Study13_         |              | 3 mins (Video)           |               |
+|        * yum, apt-get,               |                      |                  |              |                          |               |    
+|          and brew                    |                      |                  |              |  10 mins (Study)         |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|    Advanced SSH                      | Lesson14_            | Study14_         | Lab8_, Lab9_ | Video: 3 mins            |               |
-|        * SSH Config                  |                      |                  |              | Study: 20 mins           |               |    
-|        * SSH Tunnel                  |                      |                  |              | Lab: 10 mins             |               |    
+|    Advanced SSH                      | Lesson14_            | Study14_         | Lab8_, Lab9_ | 3 mins (Video)           |               |
+|        * SSH Config                  |                      |                  |              |                          |               |    
+|        * SSH Tunnel                  |                      |                  |              | 20 mins (Study)          |               |    
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Lab)            |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-| Modules                              | Lesson15_            | Study15_         | Lab10_       | Video: 3 mins            |               |
-|                                      |                      |                  |              | Study: 10 mins           |               |    
-|                                      |                      |                  |              | Lab: 5 mins              |               |    
+| Modules                              | Lesson15_            | Study15_         | Lab10_       | 3 mins (Video)           |               |
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 10 mins (Study)          |               |    
+|                                      |                      |                  |              |                          |               |    
+|                                      |                      |                  |              | 5 mins (Lab)             |               |    
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+---------------+
 
 Length of the lessons in Week 1
