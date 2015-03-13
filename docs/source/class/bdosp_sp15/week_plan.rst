@@ -10,6 +10,20 @@ Week Plan
 Week 1
 ---------
 
+
+.. list-table:: Weekly Lesson Plan
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - Overview and Introduction
+     - `(2 mins) <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_  
+     - `(10 mins) <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_ 
+     - Homework/Lab
+
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+---------------+
 | Topic                                | Video                | Text             | Lab Session  | Length                   | Plan          |
 +======================================+======================+==================+==============+==========================+===============+
@@ -98,7 +112,7 @@ Length of the lessons in Week 1
 * Total of study materials: 4 hours and 30 minutes
 * Total of lab sessions: 1 hour and 20 minutes
 
-.. _Lesson1: https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1
+.. _Lesson1: `Python <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_
 .. _Lesson2: https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2 
 .. _Lesson3: https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx
 .. _Lesson4: https://www.youtube.com/watch?v=KrAjal1a30w&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=4
