@@ -68,7 +68,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.viewcode']
 
 extensions.append('sphinxcontrib.autorun')
-extensions.append('hieroglyph')
+#extensions.append('hieroglyph')
 
 todo_include_todos=True
 

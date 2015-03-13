@@ -25,7 +25,6 @@ fabric
 nose
 autopep8
 markupsafe
-hieroglyph
 mkdocs
 ghp-import
 jsonschema
