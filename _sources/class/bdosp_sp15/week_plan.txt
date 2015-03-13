@@ -2,10 +2,10 @@
 Week Plan
 =========
 
-* Hangouts
-   * Teacher Interactions (on Air)
-   *  Lab Sessions (on Air)
-   *  Office hours (One-to-One by 9am/5pm or 9am/8pm)
+.. * Hangouts or Adobe Connect
+..   * Teacher Interactions (on Air)
+..   *  Lab Sessions (on Air)
+..   *  Office hours (One-to-One by 9am/5pm or 9am/8pm)
 
 +---------------+--------------------------------------+----------------------+------------------+--------------+--------------------------+---------------+
 | Week          | Topic                                | Video                | Text             | Lab Session  | Length                   | Plan          |
