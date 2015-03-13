@@ -12,15 +12,15 @@ Week Plan
 +===============+======================================+======================+==================+==============+==========================+===============+
 | Week 1        |   Collaboration Tools                |                      |                  |              |                          | Done          |
 |               +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|               |     Overview and Introduction        |  Lesson1_            | Study1_          | Lab1_        |                          |               |
+|               |     Overview and Introduction        |  Lesson1_            | Study1_          |              |                          |               |
 |               +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
 |               |     Google                           |                      |                  |              |                          |               |
-|               |       -  Google+                     |  Lesson2_            | Study2_          | Lab2_        |                          |               |                       
+|               |       -  Google+                     |  Lesson2_            | Study2_          |              |                          |               |                       
 |               |       -  Remote Desktop              |                      |                  |              |                          |               |
 |               +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|               |     Shell Access                     |  Lesson3_            | Study3_          |              |                          |               |                                                                  
+|               |     Shell Access                     |  Lesson3_            | Study3_          |   Lab1_      |                          |               |                                                                  
 |               +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
-|               |     GitHub                           |  Lesson4_            | Study4_          |              |                          |               |                                                                   
+|               |     GitHub                           |  Lesson4_            | Study4_          |  Lab2_       |                          |               |                                                                   
 |               +--------------------------------------+----------------------+------------------+--------------+--------------------------+               +
 |               |   System Access                      |                      |                  |              |                          |               | 
 |               |   to FutureSystems                   |                      |                  |              |                          |               |    
@@ -62,8 +62,8 @@ Week Plan
 +---------------+--------------------------------------+----------------------+------------------+--------------+--------------------------+---------------+
 
 .. _Lesson1: https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1
-.. _Lesson2: https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2
-.. _Lesson3: https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=3
+.. _Lesson2: https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2 
+.. _Lesson3: https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx
 .. _Lesson4: https://www.youtube.com/watch?v=KrAjal1a30w&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=4
 .. _Lesson5: https://www.youtube.com/watch?v=pQb2VV1zNIc&feature=em-upload_owner
 .. _Lesson6: https://www.youtube.com/watch?v=X6zeVEALzTk
@@ -74,7 +74,7 @@ Week Plan
 .. _Lesson11: https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3
 .. _Lesson12: https://www.youtube.com/watch?v=e_RuGr1dL0c&index=7&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp
 .. _Lesson13: https://www.youtube.com/watch?v=Onn9SKdUDUc&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=4
-.. _Lesson14: https://www.youtube.com/watch?v=0mBERd57pZ8&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=5
+.. _Lesson14: https://www.youtube.com/watch?v=eYanElmtqMo&index=6&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp 
 .. _Lesson15: https://www.youtube.com/watch?v=0mBERd57pZ8&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=6
 .. _Study1: http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/collaboration/overview.html
 .. _Study2: http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/google.html
