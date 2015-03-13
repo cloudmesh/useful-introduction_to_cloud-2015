@@ -20,8 +20,8 @@ Week 1
      - Text
      - Homework
    * - Overview and Introduction
-     - `(2 mins) <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_  
-     - `(10 mins) <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_ 
+     - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_  
+     - `10 mins <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_ 
      - Homework/Lab
 
 +--------------------------------------+----------------------+------------------+--------------+--------------------------+---------------+
