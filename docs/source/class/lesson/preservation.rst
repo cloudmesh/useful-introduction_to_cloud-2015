@@ -19,16 +19,21 @@ Firts the biggest mistake you can make is to develop a VM by hand! This is you d
 Second, you must presere the runtime data of your programs you run in the VM. This is best achieved while using a source code repository such as git to preserve your code and a data backup to NFS in case you have an IU account. You can certainly back up your data alose remotely in case you are not an IU student. Please also note that data can npt be backed up indefenetly, and if you have special needs they can be discussed with the system administrators and your course teacher.
 Furthermore, you can also use volumes that you attach to the VMS. THis is a good practice as it allows you to detach the storage issue form the VM so it is less problematic whne the VM is broken but you still have access to the volume where the data resides.
 
-Summary Recommendations:
+Summary Recommendations
+------------------------------
 
-1. Backup, Backup, Backup. Its your responsibility.
+1. **Backup, Backup, Backup.** Its your responsibility.
 
 This is probably pretty clear you can backup the image and the data to your local machine. If something goes wrong, you still have a copy. However if a vm that has been backed up is compromised, do not just rerun it. fix the security issues first.
 
-2. Reproducability, Repreducibility, Repreducibility. Its your responsibility.
+2. **Reproducability, Repreducibility, Repreducibility.** Its your responsibility.
 
 We recommend that you never work on a VM that  you can not regenerate with a script or automatic tools facilitated by devops. If the image needs to be tweaked by hand you do something wrong. AUtomate everything.
 
-3. Security, Security, Security, Its your responsibility.
+3. **Security, Security, Security.** Its your responsibility.
 
 Its obvious that if a security issue occurs we **must** terminate the image. If you use 1 and 2 you will have no issue to deal with this.   
+
+4. **Responsible, Responsible, Responsible.** Its you!
+
+Remember its your resonsibility. 
