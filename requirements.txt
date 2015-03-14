@@ -1,8 +1,10 @@
-d2to1
-pbr
-futures
-pip
-sphinx 
+cloudmesh_base
+pyaml
+simplejson
+nose
+cmd3
+docopt
+sphinx
 sphinx-autobuild
 sphinx_bootstrap_theme
 sphinx_rtd_theme
@@ -18,7 +20,7 @@ blockdiagcontrib-class
 blockdiagcontrib-cisco
 nwdiag
 seqdiag
-sphinxcontrib-httpdomain 
+sphinxcontrib-httpdomain
 ipython
 sh
 fabric
