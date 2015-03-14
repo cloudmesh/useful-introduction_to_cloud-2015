@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -47,9 +49,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -59,8 +64,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -79,11 +85,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
@@ -159,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -184,7 +191,7 @@
       
           <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
       
-    <li>Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+    <li>Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/cm/_cm-limits.txt" rel="nofollow"> View page source</a>
@@ -193,18 +200,18 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="metric-commands-in-cloudmesh-cm">
-<h1>Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#metric-commands-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<h1>Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#metric-commands-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-limits.ipynb">Notebook</a></p>
-</button><p>The <tt class="docutils literal"><span class="pre">limits</span></tt> command provides active usage data with quota sizes.
+</button><p>The <code class="docutils literal"><span class="pre">limits</span></code> command provides active usage data with quota sizes.
 Resource utilization can be viewed with this command. For more details,
-<tt class="docutils literal"><span class="pre">quota</span></tt> command shows all quota information for a project, <tt class="docutils literal"><span class="pre">usage</span></tt>
+<code class="docutils literal"><span class="pre">quota</span></code> command shows all quota information for a project, <code class="docutils literal"><span class="pre">usage</span></code>
 command provides a usage report for a certain period.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last"><tt class="docutils literal"><span class="pre">limits</span></tt> command is only supported in OpenStack</p>
+<p class="last"><code class="docutils literal"><span class="pre">limits</span></code> command is only supported in OpenStack</p>
 </div>
 <p>IPython Alias</p>
 <p>With the alias command we simply define a new command with the name cm
@@ -217,11 +224,11 @@ following lines.</p>
 <p>We are using now one of the methods to call the cm commands in the
 following sections.</p>
 <div class="section" id="limits-command">
-<h2><tt class="docutils literal"><span class="pre">limits</span></tt> command<a class="headerlink" href="#limits-command" title="Permalink to this headline">¶</a></h2>
-<p>Simple execution of <tt class="docutils literal"><span class="pre">limits</span></tt> command displays vCPU cores, floating ip
+<h2><code class="docutils literal"><span class="pre">limits</span></code> command<a class="headerlink" href="#limits-command" title="Permalink to this headline">¶</a></h2>
+<p>Simple execution of <code class="docutils literal"><span class="pre">limits</span></code> command displays vCPU cores, floating ip
 addresses (public ip), memory sizes (in megabytes), security groups, and
 vm instances. Other usage data suppressed and can be observed by
-<tt class="docutils literal"><span class="pre">usage</span></tt> or <tt class="docutils literal"><span class="pre">quota</span></tt> command.</p>
+<code class="docutils literal"><span class="pre">usage</span></code> or <code class="docutils literal"><span class="pre">quota</span></code> command.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm limits
 </pre></div>
 </div>
@@ -242,8 +249,8 @@ Store time: 0.00192499160767
 </div>
 </div>
 <div class="section" id="usage-command">
-<h2><tt class="docutils literal"><span class="pre">usage</span></tt> command<a class="headerlink" href="#usage-command" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">usage</span></tt> command provides a short report for usage data of your cloud
+<h2><code class="docutils literal"><span class="pre">usage</span></code> command<a class="headerlink" href="#usage-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">usage</span></code> command provides a short report for usage data of your cloud
 platform. You can choose desired start and end dates of your report.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm usage
 </pre></div>
@@ -271,8 +278,8 @@ the usage value displays 1 day usage data between 11/19/2014 -
 11/20/2014.</p>
 </div>
 <div class="section" id="quota-command">
-<h2><tt class="docutils literal"><span class="pre">quota</span></tt> command<a class="headerlink" href="#quota-command" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">quota</span></tt> command shows limit policy on your resource usage towards your
+<h2><code class="docutils literal"><span class="pre">quota</span></code> command<a class="headerlink" href="#quota-command" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">quota</span></code> command shows limit policy on your resource usage towards your
 project.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm quota
 </pre></div>
@@ -311,7 +318,7 @@ account.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_cm-cluster.html" class="btn btn-neutral float-right" title="Deploying Virtual Cluster with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-cluster.html" class="btn btn-neutral float-right" title="Deploying Virtual Cluster with Cloudmesh cm">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_vm-cm.html" class="btn btn-neutral" title="CM Console for VM Management"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -327,7 +334,8 @@ account.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -352,7 +360,7 @@ account.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
