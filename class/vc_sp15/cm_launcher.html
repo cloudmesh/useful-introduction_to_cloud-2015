@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -44,9 +46,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +61,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -156,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="command-shell-orchestration-tool-launcher">
 <h1>Command Shell Orchestration Tool (Launcher)<a class="headerlink" href="#command-shell-orchestration-tool-launcher" title="Permalink to this headline">¶</a></h1>
@@ -209,9 +216,9 @@ launcher &#39;nagios&#39; added.
 </div>
 <div class="section" id="launcher-menu-command">
 <h2>Launcher menu command<a class="headerlink" href="#launcher-menu-command" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">menu</span></tt> command provides available local cookbooks that are registered
-by <tt class="docutils literal"><span class="pre">import</span></tt>. These cookbooks represent Chef Cookbooks registered in
-Cloudmesh. You can choose one of the names to start <tt class="docutils literal"><span class="pre">Launcher</span></tt>.</p>
+<p><code class="docutils literal"><span class="pre">menu</span></code> command provides available local cookbooks that are registered
+by <code class="docutils literal"><span class="pre">import</span></code>. These cookbooks represent Chef Cookbooks registered in
+Cloudmesh. You can choose one of the names to start <code class="docutils literal"><span class="pre">Launcher</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Registered Cookbooks can be found at:</p>
@@ -240,8 +247,8 @@ Cloudmesh. You can choose one of the names to start <tt class="docutils literal"
 <div class="section" id="launcher-start-command">
 <h2>Launcher start command<a class="headerlink" href="#launcher-start-command" title="Permalink to this headline">¶</a></h2>
 <p>If you decide which cookbook you are going to use, you are ready to
-create a new <tt class="docutils literal"><span class="pre">launcher</span></tt> with the cookbook name. In this tutorial, we
-use <tt class="docutils literal"><span class="pre">hadoop</span></tt> as a desired cookbook.</p>
+create a new <code class="docutils literal"><span class="pre">launcher</span></code> with the cookbook name. In this tutorial, we
+use <code class="docutils literal"><span class="pre">hadoop</span></code> as a desired cookbook.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm launcher start hadoop
 </pre></div>
 </div>
@@ -255,14 +262,14 @@ Store time: 0.0358941555023
 <div class="section" id="launcher-list-command">
 <h2>Launcher list command<a class="headerlink" href="#launcher-list-command" title="Permalink to this headline">¶</a></h2>
 <p>If your launcher has been successfully created, you can see it in the
-list of running launchers with <tt class="docutils literal"><span class="pre">list</span></tt> command.</p>
+list of running launchers with <code class="docutils literal"><span class="pre">list</span></code> command.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm launcher list
 </pre></div>
 </div>
 </div>
 <div class="section" id="launcher-stop-command">
 <h2>Launcher stop command<a class="headerlink" href="#launcher-stop-command" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">stop</span></tt> command terminates your launcher.</p>
+<p><code class="docutils literal"><span class="pre">stop</span></code> command terminates your launcher.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm launcher stop [name]
 </pre></div>
 </div>
@@ -270,8 +277,8 @@ list of running launchers with <tt class="docutils literal"><span class="pre">li
 <div class="section" id="launcher-export-command">
 <h2>Launcher export command<a class="headerlink" href="#launcher-export-command" title="Permalink to this headline">¶</a></h2>
 <p>Your loaded cookbooks in the database can be exported to a yaml file
-with <tt class="docutils literal"><span class="pre">export</span></tt> command. For example, we can generate a
-<tt class="docutils literal"><span class="pre">/tmp/cloudmesh_launcher.yaml</span></tt> file by exporting a registered
+with <code class="docutils literal"><span class="pre">export</span></code> command. For example, we can generate a
+<code class="docutils literal"><span class="pre">/tmp/cloudmesh_launcher.yaml</span></code> file by exporting a registered
 cookbooks in the database.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm launcher export /tmp/cloudmesh_launcher.yaml
 </pre></div>
@@ -292,7 +299,8 @@ cookbooks in the database.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -317,7 +325,7 @@ cookbooks in the database.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

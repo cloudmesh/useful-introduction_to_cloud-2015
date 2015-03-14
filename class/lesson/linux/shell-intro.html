@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -44,9 +46,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +61,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -156,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="learning-objectives">
 <h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
@@ -212,10 +219,10 @@ has 300 samples in all, and now needs to:</p>
 relative abundance of 300 different proteins. The machine&#8217;s output
 for a single sample is a file with one line for each protein.</li>
 <li>Calculate statistics for each of the proteins separately using a
-program her supervisor wrote called <tt class="docutils literal"><span class="pre">goostat</span></tt>.</li>
+program her supervisor wrote called <code class="docutils literal"><span class="pre">goostat</span></code>.</li>
 <li>Compare the statistics for each protein with corresponding statistics
 for each other protein using a program one of the other graduate
-students wrote called <tt class="docutils literal"><span class="pre">goodiff</span></tt>.</li>
+students wrote called <code class="docutils literal"><span class="pre">goodiff</span></code>.</li>
 <li>Write up. Her supervisor would really like her to do this by the end
 of the month so that her paper can appear in an upcoming special
 issue of <em>Aquatic Goo Letters</em>.</li>
@@ -224,9 +231,9 @@ issue of <em>Aquatic Goo Letters</em>.</li>
 sample. The good news is, it only takes two minutes to set each one up.
 Since her lab has eight assay machines that she can use in parallel,
 this step will &#8220;only&#8221; take about two weeks.</p>
-<p>The bad news is that if she has to run <tt class="docutils literal"><span class="pre">goostat</span></tt> and <tt class="docutils literal"><span class="pre">goodiff</span></tt> by
+<p>The bad news is that if she has to run <code class="docutils literal"><span class="pre">goostat</span></code> and <code class="docutils literal"><span class="pre">goodiff</span></code> by
 hand, she&#8217;ll have to enter filenames and click &#8220;OK&#8221; 45,150 times (300
-runs of <tt class="docutils literal"><span class="pre">goostat</span></tt>, plus 300x299/2 runs of <tt class="docutils literal"><span class="pre">goodiff</span></tt>). At 30 seconds
+runs of <code class="docutils literal"><span class="pre">goostat</span></code>, plus 300x299/2 runs of <code class="docutils literal"><span class="pre">goodiff</span></code>). At 30 seconds
 each, that will take more than two weeks. Not only would she miss her
 paper deadline, the chances of her typing all of those commands right
 are practically zero.</p>
@@ -306,7 +313,8 @@ to drive them is becoming a necessary skill.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -331,7 +339,7 @@ to drive them is becoming a necessary skill.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

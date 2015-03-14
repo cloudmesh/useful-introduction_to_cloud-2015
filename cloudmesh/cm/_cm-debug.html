@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -47,9 +49,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -59,8 +64,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -81,7 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -159,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -193,12 +200,12 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="command-shell-output-control">
 <h1>Command Shell Output Control<a class="headerlink" href="#command-shell-output-control" title="Permalink to this headline">¶</a></h1>
 <button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-debug.ipynb">Notebook</a></p>
-</button><p>The <tt class="docutils literal"><span class="pre">debug</span></tt> command provides to turn on the debug log level or to turn
+</button><p>The <code class="docutils literal"><span class="pre">debug</span></code> command provides to turn on the debug log level or to turn
 it off.</p>
 <div class="section" id="ipython-alias">
 <h2>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h2>
@@ -210,8 +217,8 @@ following lines.</p>
 </pre></div>
 </div>
 <div class="section" id="debug-command-in-cloudmesh-cm">
-<h3><tt class="docutils literal"><span class="pre">debug</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#debug-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
-<p>The <tt class="docutils literal"><span class="pre">debug</span> <span class="pre">on</span></tt> command changes the log level to <em>debug</em>. In <em>debug</em>
+<h3><code class="docutils literal"><span class="pre">debug</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#debug-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">debug</span> <span class="pre">on</span></code> command changes the log level to <em>debug</em>. In <em>debug</em>
 mode, all log messages will print out on the screen.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm debug on
 </pre></div>
@@ -221,10 +228,10 @@ mode, all log messages will print out on the screen.</p>
 </div>
 </div>
 <div class="section" id="loglevel-command-in-cloudmesh-cm">
-<h3><tt class="docutils literal"><span class="pre">loglevel</span></tt> Command in Cloudmesh cm<a class="headerlink" href="#loglevel-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">loglevel</span></tt> allows you to update a log level on Cloudmesh. We can chose
-one of five log levels: * <tt class="docutils literal"><span class="pre">DEBUG</span></tt> * <tt class="docutils literal"><span class="pre">INFO</span></tt> * <tt class="docutils literal"><span class="pre">WARNING</span></tt> *
-<tt class="docutils literal"><span class="pre">ERROR</span></tt> * <tt class="docutils literal"><span class="pre">CRITICAL</span></tt></p>
+<h3><code class="docutils literal"><span class="pre">loglevel</span></code> Command in Cloudmesh cm<a class="headerlink" href="#loglevel-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">loglevel</span></code> allows you to update a log level on Cloudmesh. We can chose
+one of five log levels: * <code class="docutils literal"><span class="pre">DEBUG</span></code> * <code class="docutils literal"><span class="pre">INFO</span></code> * <code class="docutils literal"><span class="pre">WARNING</span></code> *
+<code class="docutils literal"><span class="pre">ERROR</span></code> * <code class="docutils literal"><span class="pre">CRITICAL</span></code></p>
 <p>To view the current log level you can use the command:</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm loglevel
 </pre></div>
@@ -236,14 +243,14 @@ error, or critical after the loglevel comamnd:</p>
 </div>
 </div>
 <div class="section" id="yaml-command-in-cloudmesh-cm">
-<h3><tt class="docutils literal"><span class="pre">yaml</span></tt> Command in Cloudmesh cm<a class="headerlink" href="#yaml-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal"><span class="pre">yaml</span></code> Command in Cloudmesh cm<a class="headerlink" href="#yaml-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="update-a-value-in-a-yaml-file">
 <h2>Update a value in a yaml file<a class="headerlink" href="#update-a-value-in-a-yaml-file" title="Permalink to this headline">¶</a></h2>
 <p>You can change a value on a selected yaml file on the Cloudmesh cm
 shell. You may need to restart the Cloudmesh server to reflect the
-change. <tt class="docutils literal"><span class="pre">yaml</span> <span class="pre">info</span></tt> provides a current information of the yaml file
+change. <code class="docutils literal"><span class="pre">yaml</span> <span class="pre">info</span></code> provides a current information of the yaml file
 (cloudmesh.yaml).</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm yaml info
 </pre></div>
@@ -251,7 +258,7 @@ change. <tt class="docutils literal"><span class="pre">yaml</span> <span class="
 </div>
 <div class="section" id="view-the-value-of-the-selected-key-in-the-server-yaml-file">
 <h2>View the value of the selected key in the server yaml file<a class="headerlink" href="#view-the-value-of-the-selected-key-in-the-server-yaml-file" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">yaml</span> <span class="pre">info-server</span></tt> provides information about the server yaml file
+<p><code class="docutils literal"><span class="pre">yaml</span> <span class="pre">info-server</span></code> provides information about the server yaml file
 (cloudmesh_server.yaml). If you specify the key name in a dotted
 format, you can see the stored value in the yaml file. This example
 below selects <em>[&#8216;cloudmesh&#8217;][&#8216;server&#8217;][&#8216;loglevel&#8217;]</em> in the yaml file.</p>
@@ -264,7 +271,7 @@ Cloudmesh server.</p>
 <div class="section" id="change-the-value-of-the-selected-key">
 <h2>Change the value of the selected key<a class="headerlink" href="#change-the-value-of-the-selected-key" title="Permalink to this headline">¶</a></h2>
 <p>If you desire to change the log level to <em>ERROR</em>, you need to call
-<tt class="docutils literal"><span class="pre">replace-server</span></tt> option in the yaml command.</p>
+<code class="docutils literal"><span class="pre">replace-server</span></code> option in the yaml command.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm yaml replace-server cloudmesh.server.loglevel ERROR
 </pre></div>
 </div>
@@ -273,10 +280,10 @@ Cloudmesh server.</p>
 </div>
 <p>Now you can see it has been changed to <em>ERROR</em>.</p>
 <div class="section" id="color-command-in-cloudmesh-cm">
-<h3><tt class="docutils literal"><span class="pre">color</span></tt> Command in Cloudmesh cm<a class="headerlink" href="#color-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal"><span class="pre">color</span></code> Command in Cloudmesh cm<a class="headerlink" href="#color-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h3>
 <p>The Cloudmesh cm shell can enable color support in output messages.
 Warning, Error, Debug, Info, or other type of messages can be viewed
-with different colors. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">color</span> <span class="pre">on/off</span></tt> command enables or disables
+with different colors. <code class="docutils literal"><span class="pre">cm</span> <span class="pre">color</span> <span class="pre">on/off</span></code> command enables or disables
 this feature.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm color on
 </pre></div>
@@ -294,7 +301,7 @@ this feature.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_vm-cm.html" class="btn btn-neutral float-right" title="CM Console for VM Management"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_vm-cm.html" class="btn btn-neutral float-right" title="CM Console for VM Management">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_cm-project.html" class="btn btn-neutral" title="project Command in Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -310,7 +317,8 @@ this feature.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -335,7 +343,7 @@ this feature.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
