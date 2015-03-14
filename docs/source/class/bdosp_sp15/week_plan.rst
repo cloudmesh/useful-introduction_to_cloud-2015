@@ -5,6 +5,9 @@ Week Plan
 Week 1
 -------------------------------------------------------------------------------
 
+Gaining Access to FutureSystems and Core Technologies
+*******************************************************************************
+
 In this week, you will learn how to gain access to the FutureSystems resources.
 Some of the lessons have been prepared for the beginners to help understand the
 basics of Linux operating systems and the collaboration tools i.e. github,
