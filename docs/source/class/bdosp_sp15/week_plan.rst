@@ -24,7 +24,7 @@ utilities with various exercises.
      - Text
      - Homework
    * - **Overview and Introduction**
-     - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_,   
+     - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/collaboration/overview.html>`_
      - 
    * - **Google**
