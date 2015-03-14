@@ -1,6 +1,6 @@
-===============================================================================
-Weekly Plan
-===============================================================================
+=========
+Week Plan
+=========
    
 Week 1
 -------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ utilities with various exercises.
      - Text
      - Homework
    * - **Overview and Introduction**
-     - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_
+     - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_,   
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/collaboration/overview.html>`_
      - 
    * - **Google**
@@ -83,10 +83,10 @@ utilities with various exercises.
    * - **Shell Scripting**                                                         
      - `15 mins <https://www.youtube.com/watch?v=TBOG3wmU8ZA&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=2>`_
      - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html>`_
-     - - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#exercises>`_
-       - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id7>`_
-       - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id11>`_
-       - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id14>`_
+     - - `Ex1 <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#exercises>`_
+       - `Ex2 <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id7>`_
+       - `Ex3 <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id11>`_
+       - `Ex4 <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id14>`_
    * - **Editors**                            
         - emacs, vi, and nano                                           
      - `5 mins <https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3>`_
@@ -120,4 +120,4 @@ Length of the lessons in Week 1
 
 * Total of video lessons: 2 hours
 * Total of study materials: 4 hours and 30 minutes
-* Total of lab sessions: 1 hour and 30 minutes
+* Total of lab sessions: 1 hour and 20 minutes

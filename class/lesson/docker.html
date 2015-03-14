@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -47,9 +49,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -59,8 +64,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -79,9 +85,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -159,6 +165,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -193,7 +200,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="try-docker-basic-on-futuresystems">
 <h1>Try Docker Basic on FutureSystems<a class="headerlink" href="#try-docker-basic-on-futuresystems" title="Permalink to this headline">¶</a></h1>
@@ -201,9 +208,9 @@
 level virtualization.  Docker host runs software containers which deploy
 applications with its environments. You can easily share your application using
 Docker container across different platforms or operating systems.  This
-section, we introduce basic commands of <tt class="docutils literal"><span class="pre">docker</span></tt> to introduce Docker software
+section, we introduce basic commands of <code class="docutils literal"><span class="pre">docker</span></code> to introduce Docker software
 on FutureSystems.  In the next section, we will explore advanced use of
-<tt class="docutils literal"><span class="pre">docker</span></tt> on FutureSystems.</p>
+<code class="docutils literal"><span class="pre">docker</span></code> on FutureSystems.</p>
 <div class="section" id="tutorial-docker-basic-commands">
 <h2>Tutorial: Docker Basic commands<a class="headerlink" href="#tutorial-docker-basic-commands" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
@@ -211,7 +218,7 @@ on FutureSystems.  In the next section, we will explore advanced use of
 <p class="last">approximate time 30 minutes</p>
 </div>
 <p>In this tutorial, we are going to learn basic commands of Docker software.
-Keep in mind that <tt class="docutils literal"><span class="pre">docker</span></tt> is a main program and <tt class="docutils literal"><span class="pre">container</span></tt> is an image
+Keep in mind that <code class="docutils literal"><span class="pre">docker</span></code> is a main program and <code class="docutils literal"><span class="pre">container</span></code> is an image
 that you would like to use. You may have several containers in your docker.</p>
 <div class="section" id="install-docker">
 <h3>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h3>
@@ -235,7 +242,7 @@ curl -sSL <a class="reference external" href="https://get.docker.com/ubuntu/">ht
 </div>
 <div class="section" id="obtain-shell-prompt-in-docker-container">
 <h3>Obtain Shell Prompt in Docker Container<a class="headerlink" href="#obtain-shell-prompt-in-docker-container" title="Permalink to this headline">¶</a></h3>
-<p>Docker command has a sub-command <tt class="docutils literal"><span class="pre">run</span></tt> to execute containers with a few
+<p>Docker command has a sub-command <code class="docutils literal"><span class="pre">run</span></code> to execute containers with a few
 parameters.  In this example, we use Ubuntu 14.04 image to get bash shell
 prompt.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo docker run -i -t ubuntu:14.04 /bin/bash
@@ -245,7 +252,7 @@ prompt.</p>
 <div class="highlight-python"><div class="highlight"><pre>root@8110bb395822:/#
 </pre></div>
 </div>
-<p>Type <tt class="docutils literal"><span class="pre">exit</span></tt> to quit the shell and return to Docker host.</p>
+<p>Type <code class="docutils literal"><span class="pre">exit</span></code> to quit the shell and return to Docker host.</p>
 </div>
 <div class="section" id="run-apache-tomcat-server">
 <h3>Run Apache Tomcat Server<a class="headerlink" href="#run-apache-tomcat-server" title="Permalink to this headline">¶</a></h3>
@@ -255,19 +262,19 @@ command: (sudo is supressed)</p>
 </pre></div>
 </div>
 <p>It downloads tomcat image from Docker Hub and connects 80 port to 8080 port.
-So, if you open a web browser <tt class="docutils literal"><span class="pre">http://localhost</span></tt> or <tt class="docutils literal"><span class="pre">http://ip</span> <span class="pre">address</span> <span class="pre">of</span>
-<span class="pre">host</span></tt> your connection forwards to the container 8080 port. <tt class="docutils literal"><span class="pre">-d</span></tt> option
+So, if you open a web browser <code class="docutils literal"><span class="pre">http://localhost</span></code> or <code class="docutils literal"><span class="pre">http://ip</span> <span class="pre">address</span> <span class="pre">of</span>
+<span class="pre">host</span></code> your connection forwards to the container 8080 port. <code class="docutils literal"><span class="pre">-d</span></code> option
 daemonizes the container.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Did you see <tt class="docutils literal"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">image</span> <span class="pre">'tomcat:8.0'</span> <span class="pre">locally</span></tt>?
-Your Docker will find <tt class="docutils literal"><span class="pre">tomcat</span></tt> from Docker Hub and download it to
+<p class="last">Did you see <code class="docutils literal"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">image</span> <span class="pre">'tomcat:8.0'</span> <span class="pre">locally</span></code>?
+Your Docker will find <code class="docutils literal"><span class="pre">tomcat</span></code> from Docker Hub and download it to
 your local.</p>
 </div>
 </div>
 <div class="section" id="list-containers">
 <h3>List Containers<a class="headerlink" href="#list-containers" title="Permalink to this headline">¶</a></h3>
-<p>We use <tt class="docutils literal"><span class="pre">ps</span></tt> sub command to list available containers.</p>
+<p>We use <code class="docutils literal"><span class="pre">ps</span></code> sub command to list available containers.</p>
 <div class="highlight-python"><div class="highlight"><pre>docker ps
 </pre></div>
 </div>
@@ -280,7 +287,7 @@ your local.</p>
 <div class="section" id="see-logs">
 <h3>See Logs<a class="headerlink" href="#see-logs" title="Permalink to this headline">¶</a></h3>
 <p>You can find out details of your container by looking at log messages. Use
-<tt class="docutils literal"><span class="pre">NAMES</span></tt> from previous command.  This example we use <tt class="docutils literal"><span class="pre">adoring_lalande</span></tt> for
+<code class="docutils literal"><span class="pre">NAMES</span></code> from previous command.  This example we use <code class="docutils literal"><span class="pre">adoring_lalande</span></code> for
 your tomcat:8.0 container.</p>
 <div class="highlight-python"><div class="highlight"><pre>docker logs -f adoring_lalande
 </pre></div>
@@ -297,8 +304,8 @@ your tomcat:8.0 container.</p>
 </div>
 <div class="section" id="search-containers">
 <h3>Search Containers<a class="headerlink" href="#search-containers" title="Permalink to this headline">¶</a></h3>
-<p>If you are looking for other containers, <tt class="docutils literal"><span class="pre">search</span></tt> command is useful to find.</p>
-<p>For example, try to find <tt class="docutils literal"><span class="pre">ipython</span></tt> containers.</p>
+<p>If you are looking for other containers, <code class="docutils literal"><span class="pre">search</span></code> command is useful to find.</p>
+<p>For example, try to find <code class="docutils literal"><span class="pre">ipython</span></code> containers.</p>
 <div class="highlight-python"><div class="highlight"><pre>docker search ipython
 </pre></div>
 </div>
@@ -312,14 +319,14 @@ ipython/scipystack                                                              
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last"><tt class="docutils literal"><span class="pre">STARS</span></tt> indicates popular containers.</p>
+<p class="last"><code class="docutils literal"><span class="pre">STARS</span></code> indicates popular containers.</p>
 </div>
 </div>
 <div class="section" id="stop-and-delete-container">
 <h3>Stop and Delete Container<a class="headerlink" href="#stop-and-delete-container" title="Permalink to this headline">¶</a></h3>
 <p>Like stopping and terminating a virtual instance, docker stops and deletes its
-container with two commands: <tt class="docutils literal"><span class="pre">stop</span></tt> and <tt class="docutils literal"><span class="pre">rm</span></tt> We use <tt class="docutils literal"><span class="pre">NAMES</span></tt> from <tt class="docutils literal"><span class="pre">docker</span>
-<span class="pre">ps</span></tt> command. This example we use <tt class="docutils literal"><span class="pre">adoring_lalande</span></tt> for your tomcat:8.0
+container with two commands: <code class="docutils literal"><span class="pre">stop</span></code> and <code class="docutils literal"><span class="pre">rm</span></code> We use <code class="docutils literal"><span class="pre">NAMES</span></code> from <code class="docutils literal"><span class="pre">docker</span>
+<span class="pre">ps</span></code> command. This example we use <code class="docutils literal"><span class="pre">adoring_lalande</span></code> for your tomcat:8.0
 container.</p>
 <div class="highlight-python"><div class="highlight"><pre>docker stop adoring_lalande
 </pre></div>
@@ -334,13 +341,13 @@ container.</p>
 <p>We have learned some Docker commands. These are basic commands for Docker
 software.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">run</span></tt>: runs a container. <tt class="docutils literal"><span class="pre">-it</span></tt> option allows you an interactive
-mode. <tt class="docutils literal"><span class="pre">-d</span></tt> option daemonizes your container.</li>
-<li><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">logs</span></tt>: displays log messages.</li>
-<li><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">ps</span></tt>: shows available containers.</li>
-<li><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">search</span></tt>: searches containers from Docker Hub.</li>
-<li><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">stop</span></tt>: stops your container.</li>
-<li><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">rm</span></tt>: deletes your container image.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">run</span></code>: runs a container. <code class="docutils literal"><span class="pre">-it</span></code> option allows you an interactive
+mode. <code class="docutils literal"><span class="pre">-d</span></code> option daemonizes your container.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">logs</span></code>: displays log messages.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">ps</span></code>: shows available containers.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">search</span></code>: searches containers from Docker Hub.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">stop</span></code>: stops your container.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">rm</span></code>: deletes your container image.</li>
 </ul>
 </div>
 <div class="section" id="reference">
@@ -362,7 +369,7 @@ mode. <tt class="docutils literal"><span class="pre">-d</span></tt> option daemo
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="docker_cloudmesh.html" class="btn btn-neutral float-right" title="Deploying Cloudmesh using Docker on FutureSystems"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="docker_cloudmesh.html" class="btn btn-neutral float-right" title="Deploying Cloudmesh using Docker on FutureSystems">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ansible_cloudmesh.html" class="btn btn-neutral" title="Writing Ansible Playbooks on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -378,7 +385,8 @@ mode. <tt class="docutils literal"><span class="pre">-d</span></tt> option daemo
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -403,7 +411,7 @@ mode. <tt class="docutils literal"><span class="pre">-d</span></tt> option daemo
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

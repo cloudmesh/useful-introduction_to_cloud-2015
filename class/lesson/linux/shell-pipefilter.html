@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -44,9 +46,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +61,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -76,9 +82,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -156,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="learning-objectives">
 <h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
@@ -206,8 +213,8 @@ any input to process.</li>
 <p>Now that we know a few basic commands, we can finally look at the
 shell&#8217;s most powerful feature: the ease with which it lets us combine
 existing programs in new ways. We&#8217;ll start with a directory called
-<tt class="docutils literal"><span class="pre">molecules</span></tt> that contains six files describing some simple organic
-molecules. The <tt class="docutils literal"><span class="pre">.pdb</span></tt> extension indicates that these files are in
+<code class="docutils literal"><span class="pre">molecules</span></code> that contains six files describing some simple organic
+molecules. The <code class="docutils literal"><span class="pre">.pdb</span></code> extension indicates that these files are in
 Protein Data Bank format, a simple text format that specifies the type
 and position of each atom in the molecule.:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls molecules
@@ -215,11 +222,11 @@ cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
 </pre></div>
 </div>
-<p>Let&#8217;s go into that directory with <tt class="docutils literal"><span class="pre">cd</span></tt> and run the command <tt class="docutils literal"><span class="pre">wc</span>
-<span class="pre">*.pdb</span></tt>. <tt class="docutils literal"><span class="pre">wc</span></tt> is the &#8220;word count&#8221; command: it counts the number of
-lines, words, and characters in files. The <tt class="docutils literal"><span class="pre">*</span></tt> in <tt class="docutils literal"><span class="pre">*.pdb</span></tt> matches
-zero or more characters, so the shell turns <tt class="docutils literal"><span class="pre">*.pdb</span></tt> into a complete
-list of <tt class="docutils literal"><span class="pre">.pdb</span></tt> files:</p>
+<p>Let&#8217;s go into that directory with <code class="docutils literal"><span class="pre">cd</span></code> and run the command <code class="docutils literal"><span class="pre">wc</span>
+<span class="pre">*.pdb</span></code>. <code class="docutils literal"><span class="pre">wc</span></code> is the &#8220;word count&#8221; command: it counts the number of
+lines, words, and characters in files. The <code class="docutils literal"><span class="pre">*</span></code> in <code class="docutils literal"><span class="pre">*.pdb</span></code> matches
+zero or more characters, so the shell turns <code class="docutils literal"><span class="pre">*.pdb</span></code> into a complete
+list of <code class="docutils literal"><span class="pre">.pdb</span></code> files:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd molecules
 $ wc *.pdb
   20  156 1158 cubane.pdb
@@ -235,37 +242,37 @@ $ wc *.pdb
 <p class="first admonition-title">Tip</p>
 <dl class="last docutils">
 <dt>Wildcards</dt>
-<dd><p class="first"><tt class="docutils literal"><span class="pre">*</span></tt> is a <strong>wildcard</strong>. It matches zero or more characters, so
-<tt class="docutils literal"><span class="pre">*.pdb</span></tt> matches <tt class="docutils literal"><span class="pre">ethane.pdb</span></tt>, <tt class="docutils literal"><span class="pre">propane.pdb</span></tt>, and so on. On
-the other hand, <tt class="docutils literal"><span class="pre">p*.pdb</span></tt> only matches <tt class="docutils literal"><span class="pre">pentane.pdb</span></tt> and
-<tt class="docutils literal"><span class="pre">propane.pdb</span></tt>, because the &#8216;p&#8217; at the front only matches itself.</p>
-<p><tt class="docutils literal"><span class="pre">?</span></tt> is also a wildcard, but it only matches a single character.
-This means that <tt class="docutils literal"><span class="pre">p?.pdb</span></tt> matches <tt class="docutils literal"><span class="pre">pi.pdb</span></tt> or <tt class="docutils literal"><span class="pre">p5.pdb</span></tt>, but
-not <tt class="docutils literal"><span class="pre">propane.pdb</span></tt>. We can use any number of wildcards at a time:
-for example, <tt class="docutils literal"><span class="pre">p*.p?*</span></tt> matches anything that starts with a &#8216;p&#8217;
+<dd><p class="first"><code class="docutils literal"><span class="pre">*</span></code> is a <strong>wildcard</strong>. It matches zero or more characters, so
+<code class="docutils literal"><span class="pre">*.pdb</span></code> matches <code class="docutils literal"><span class="pre">ethane.pdb</span></code>, <code class="docutils literal"><span class="pre">propane.pdb</span></code>, and so on. On
+the other hand, <code class="docutils literal"><span class="pre">p*.pdb</span></code> only matches <code class="docutils literal"><span class="pre">pentane.pdb</span></code> and
+<code class="docutils literal"><span class="pre">propane.pdb</span></code>, because the &#8216;p&#8217; at the front only matches itself.</p>
+<p><code class="docutils literal"><span class="pre">?</span></code> is also a wildcard, but it only matches a single character.
+This means that <code class="docutils literal"><span class="pre">p?.pdb</span></code> matches <code class="docutils literal"><span class="pre">pi.pdb</span></code> or <code class="docutils literal"><span class="pre">p5.pdb</span></code>, but
+not <code class="docutils literal"><span class="pre">propane.pdb</span></code>. We can use any number of wildcards at a time:
+for example, <code class="docutils literal"><span class="pre">p*.p?*</span></code> matches anything that starts with a &#8216;p&#8217;
 and ends with &#8216;.&#8217;, &#8216;p&#8217;, and at least one more character (since the
 &#8216;?&#8217; has to match one character, and the final &#8216;*&#8217; can match any
-number of characters). Thus, <tt class="docutils literal"><span class="pre">p*.p?*</span></tt> would match
-<tt class="docutils literal"><span class="pre">preferred.practice</span></tt>, and even <tt class="docutils literal"><span class="pre">p.pi</span></tt> (since the first &#8216;*&#8217;
-can match no characters at all), but not <tt class="docutils literal"><span class="pre">quality.practice</span></tt>
-(doesn&#8217;t start with &#8216;p&#8217;) or <tt class="docutils literal"><span class="pre">preferred.p</span></tt> (there isn&#8217;t at least
+number of characters). Thus, <code class="docutils literal"><span class="pre">p*.p?*</span></code> would match
+<code class="docutils literal"><span class="pre">preferred.practice</span></code>, and even <code class="docutils literal"><span class="pre">p.pi</span></code> (since the first &#8216;*&#8217;
+can match no characters at all), but not <code class="docutils literal"><span class="pre">quality.practice</span></code>
+(doesn&#8217;t start with &#8216;p&#8217;) or <code class="docutils literal"><span class="pre">preferred.p</span></code> (there isn&#8217;t at least
 one character after the &#8216;.p&#8217;).</p>
 <p class="last">When the shell sees a wildcard, it expands the wildcard to create
 a list of matching filenames <em>before</em> running the command that was
 asked for. As an exception, if a wildcard expression does not
 match any file, Bash will pass the expression as a parameter to
-the command as it is. For example typing <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">*.pdf</span></tt> in the
+the command as it is. For example typing <code class="docutils literal"><span class="pre">ls</span> <span class="pre">*.pdf</span></code> in the
 molecules directory (which contains only files with names ending
-with <tt class="docutils literal"><span class="pre">.pdb</span></tt>) results in an error message that there is no file
-called <tt class="docutils literal"><span class="pre">*.pdf</span></tt>. However, generally commands like <tt class="docutils literal"><span class="pre">wc</span></tt> and
-<tt class="docutils literal"><span class="pre">ls</span></tt> see the lists of file names matching these expressions, but
+with <code class="docutils literal"><span class="pre">.pdb</span></code>) results in an error message that there is no file
+called <code class="docutils literal"><span class="pre">*.pdf</span></code>. However, generally commands like <code class="docutils literal"><span class="pre">wc</span></code> and
+<code class="docutils literal"><span class="pre">ls</span></code> see the lists of file names matching these expressions, but
 not the wildcards themselves. It is the shell, not the other
 programs, that deals with expanding wildcards, and this another
 example of orthogonal design.</p>
 </dd>
 </dl>
 </div>
-<p>If we run <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span></tt> instead of just <tt class="docutils literal"><span class="pre">wc</span></tt>, the output shows only the
+<p>If we run <code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span></code> instead of just <code class="docutils literal"><span class="pre">wc</span></code>, the output shows only the
 number of lines per file:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ wc -l *.pdb
   20  cubane.pdb
@@ -277,7 +284,7 @@ number of lines per file:</p>
  107  total
 </pre></div>
 </div>
-<p>We can also use <tt class="docutils literal"><span class="pre">-w</span></tt> to get only the number of words, or <tt class="docutils literal"><span class="pre">-c</span></tt> to
+<p>We can also use <code class="docutils literal"><span class="pre">-w</span></code> to get only the number of words, or <code class="docutils literal"><span class="pre">-c</span></code> to
 get only the number of characters.</p>
 </div>
 <div class="section" id="redirecting-output">
@@ -288,21 +295,21 @@ toward a solution is to run the command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ wc -l *.pdb &gt; lengths.txt
 </pre></div>
 </div>
-<p>The greater than symbol, <tt class="docutils literal"><span class="pre">&gt;</span></tt>, tells the shell to <strong>redirect</strong> the
+<p>The greater than symbol, <code class="docutils literal"><span class="pre">&gt;</span></code>, tells the shell to <strong>redirect</strong> the
 command&#8217;s output to a file instead of printing it to the screen. The
 shell will create the file if it doesn&#8217;t exist, or overwrite the
 contents of that file if it does. (This is why there is no screen
-output: everything that <tt class="docutils literal"><span class="pre">wc</span></tt> would have printed has gone into the
-file <tt class="docutils literal"><span class="pre">lengths.txt</span></tt> instead.) <tt class="docutils literal"><span class="pre">ls</span> <span class="pre">lengths.txt</span></tt> confirms that the
+output: everything that <code class="docutils literal"><span class="pre">wc</span></code> would have printed has gone into the
+file <code class="docutils literal"><span class="pre">lengths.txt</span></code> instead.) <code class="docutils literal"><span class="pre">ls</span> <span class="pre">lengths.txt</span></code> confirms that the
 file exists:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls lengths.txt
 lengths.txt
 </pre></div>
 </div>
-<p>We can now send the content of <tt class="docutils literal"><span class="pre">lengths.txt</span></tt> to the screen using
-<tt class="docutils literal"><span class="pre">cat</span> <span class="pre">lengths.txt</span></tt>. <tt class="docutils literal"><span class="pre">cat</span></tt> stands for &#8220;concatenate&#8221;: it prints the
+<p>We can now send the content of <code class="docutils literal"><span class="pre">lengths.txt</span></code> to the screen using
+<code class="docutils literal"><span class="pre">cat</span> <span class="pre">lengths.txt</span></code>. <code class="docutils literal"><span class="pre">cat</span></code> stands for &#8220;concatenate&#8221;: it prints the
 contents of files one after another. There&#8217;s only one file in this
-case, so <tt class="docutils literal"><span class="pre">cat</span></tt> just shows us what it contains:</p>
+case, so <code class="docutils literal"><span class="pre">cat</span></code> just shows us what it contains:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cat lengths.txt
   20  cubane.pdb
   12  ethane.pdb
@@ -313,7 +320,7 @@ case, so <tt class="docutils literal"><span class="pre">cat</span></tt> just sho
  107  total
 </pre></div>
 </div>
-<p>Now let&#8217;s use the <tt class="docutils literal"><span class="pre">sort</span></tt> command to sort its contents. We will also
+<p>Now let&#8217;s use the <code class="docutils literal"><span class="pre">sort</span></code> command to sort its contents. We will also
 use the -n flag to specify that the sort is numerical instead of
 alphabetical. This does <em>not</em> change the file; instead, it sends the
 sorted result to the screen:</p>
@@ -328,39 +335,39 @@ sorted result to the screen:</p>
 </pre></div>
 </div>
 <p>We can put the sorted list of lines in another temporary file called
-<tt class="docutils literal"><span class="pre">sorted-lengths.txt</span></tt> by putting <tt class="docutils literal"><span class="pre">&gt;</span> <span class="pre">sorted-lengths.txt</span></tt> after the
-command, just as we used <tt class="docutils literal"><span class="pre">&gt;</span> <span class="pre">lengths.txt</span></tt> to put the output of <tt class="docutils literal"><span class="pre">wc</span></tt>
-into <tt class="docutils literal"><span class="pre">lengths.txt</span></tt>. Once we&#8217;ve done that, we can run another command
-called <tt class="docutils literal"><span class="pre">head</span></tt> to get the first few lines in <tt class="docutils literal"><span class="pre">sorted-lengths.txt</span></tt>:</p>
+<code class="docutils literal"><span class="pre">sorted-lengths.txt</span></code> by putting <code class="docutils literal"><span class="pre">&gt;</span> <span class="pre">sorted-lengths.txt</span></code> after the
+command, just as we used <code class="docutils literal"><span class="pre">&gt;</span> <span class="pre">lengths.txt</span></code> to put the output of <code class="docutils literal"><span class="pre">wc</span></code>
+into <code class="docutils literal"><span class="pre">lengths.txt</span></code>. Once we&#8217;ve done that, we can run another command
+called <code class="docutils literal"><span class="pre">head</span></code> to get the first few lines in <code class="docutils literal"><span class="pre">sorted-lengths.txt</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ sort -n lengths.txt &gt; sorted-lengths.txt
 $ head -1 sorted-lengths.txt
   9  methane.pdb
 </pre></div>
 </div>
-<p>Using the parameter <tt class="docutils literal"><span class="pre">-1</span></tt> with <tt class="docutils literal"><span class="pre">head</span></tt> tells it that we only want
-the first line of the file; <tt class="docutils literal"><span class="pre">-20</span></tt> would get the first 20, and so
-on. Since <tt class="docutils literal"><span class="pre">sorted-lengths.txt</span></tt> contains the lengths of our files
-ordered from least to greatest, the output of <tt class="docutils literal"><span class="pre">head</span></tt> must be the
+<p>Using the parameter <code class="docutils literal"><span class="pre">-1</span></code> with <code class="docutils literal"><span class="pre">head</span></code> tells it that we only want
+the first line of the file; <code class="docutils literal"><span class="pre">-20</span></code> would get the first 20, and so
+on. Since <code class="docutils literal"><span class="pre">sorted-lengths.txt</span></code> contains the lengths of our files
+ordered from least to greatest, the output of <code class="docutils literal"><span class="pre">head</span></code> must be the
 file with the fewest lines.</p>
 </div>
 <div class="section" id="redirecting-input">
 <h1>Redirecting Input<a class="headerlink" href="#redirecting-input" title="Permalink to this headline">¶</a></h1>
-<p>As well as using <tt class="docutils literal"><span class="pre">&gt;</span></tt> to redirect a program&#8217;s output, we can use
-<tt class="docutils literal"><span class="pre">&lt;</span></tt> to redirect its input, i.e., to read from a file instead of from
-standard input. For example, instead of writing <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">ammonia.pdb</span></tt>, we
-could write <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">&lt;</span> <span class="pre">ammonia.pdb</span></tt>. In the first case, <tt class="docutils literal"><span class="pre">wc</span></tt> gets a
+<p>As well as using <code class="docutils literal"><span class="pre">&gt;</span></code> to redirect a program&#8217;s output, we can use
+<code class="docutils literal"><span class="pre">&lt;</span></code> to redirect its input, i.e., to read from a file instead of from
+standard input. For example, instead of writing <code class="docutils literal"><span class="pre">wc</span> <span class="pre">ammonia.pdb</span></code>, we
+could write <code class="docutils literal"><span class="pre">wc</span> <span class="pre">&lt;</span> <span class="pre">ammonia.pdb</span></code>. In the first case, <code class="docutils literal"><span class="pre">wc</span></code> gets a
 command line parameter telling it what file to open. In the second,
-<tt class="docutils literal"><span class="pre">wc</span></tt> doesn&#8217;t have any command line parameters, so it reads from
+<code class="docutils literal"><span class="pre">wc</span></code> doesn&#8217;t have any command line parameters, so it reads from
 standard input, but we have told the shell to send the contents of
-<tt class="docutils literal"><span class="pre">ammonia.pdb</span></tt> to <tt class="docutils literal"><span class="pre">wc</span></tt>&#8216;s standard input.</p>
+<code class="docutils literal"><span class="pre">ammonia.pdb</span></code> to <code class="docutils literal"><span class="pre">wc</span></code>&#8216;s standard input.</p>
 </div>
 <div class="section" id="pipes">
 <h1>Pipes<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h1>
 <p>If you think having use many intermediate files is confusing, you&#8217;re
-in good company: even once you understand what <tt class="docutils literal"><span class="pre">wc</span></tt>, <tt class="docutils literal"><span class="pre">sort</span></tt>, and
-<tt class="docutils literal"><span class="pre">head</span></tt> do, all those intermediate files make it hard to follow
+in good company: even once you understand what <code class="docutils literal"><span class="pre">wc</span></code>, <code class="docutils literal"><span class="pre">sort</span></code>, and
+<code class="docutils literal"><span class="pre">head</span></code> do, all those intermediate files make it hard to follow
 what&#8217;s going on. We can make it easier to understand by running
-<tt class="docutils literal"><span class="pre">sort</span></tt> and <tt class="docutils literal"><span class="pre">head</span></tt> together:</p>
+<code class="docutils literal"><span class="pre">sort</span></code> and <code class="docutils literal"><span class="pre">head</span></code> together:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ sort -n lengths.txt | head -1
   9  methane.pdb
 </pre></div>
@@ -371,15 +378,15 @@ left as the input to the command on the right. The computer might
 create a temporary file if it needs to, or copy data from one program
 to the other in memory, or something else entirely; we don&#8217;t have to
 know or care.</p>
-<p>We can use another pipe to send the output of <tt class="docutils literal"><span class="pre">wc</span></tt> directly to
-<tt class="docutils literal"><span class="pre">sort</span></tt>, which then sends its output to <tt class="docutils literal"><span class="pre">head</span></tt>:</p>
+<p>We can use another pipe to send the output of <code class="docutils literal"><span class="pre">wc</span></code> directly to
+<code class="docutils literal"><span class="pre">sort</span></code>, which then sends its output to <code class="docutils literal"><span class="pre">head</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ wc -l *.pdb | sort -n | head -1
   9  methane.pdb
 </pre></div>
 </div>
 <p>This is exactly like a mathematician nesting functions like <em>log(3x)</em>
 and saying &#8220;the log of three times <em>x</em>&#8221;. In our case, the calculation
-is &#8220;head of sort of line count of <tt class="docutils literal"><span class="pre">*.pdb</span></tt>&#8221;.</p>
+is &#8220;head of sort of line count of <code class="docutils literal"><span class="pre">*.pdb</span></code>&#8221;.</p>
 <p>Here&#8217;s what actually happens behind the scenes when we create a pipe.
 When a computer runs a program &#8212; any program &#8212; it creates a
 <strong>process</strong> in memory to hold the program&#8217;s software and its current
@@ -395,20 +402,20 @@ displayed on our screen. When we tell the shell to run a program, it
 creates a new process and temporarily sends whatever we type on our
 keyboard to that process&#8217;s standard input, and whatever the process
 sends to standard output to the screen.</p>
-<p>Here&#8217;s what happens when we run <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">&gt;</span> <span class="pre">lengths.txt</span></tt>. The
+<p>Here&#8217;s what happens when we run <code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">&gt;</span> <span class="pre">lengths.txt</span></code>. The
 shell starts by telling the computer to create a new process to run
-the <tt class="docutils literal"><span class="pre">wc</span></tt> program. Since we&#8217;ve provided some filenames as parameters,
-<tt class="docutils literal"><span class="pre">wc</span></tt> reads from them instead of from standard input. And since we&#8217;ve
-used <tt class="docutils literal"><span class="pre">&gt;</span></tt> to redirect output to a file, the shell connects the
+the <code class="docutils literal"><span class="pre">wc</span></code> program. Since we&#8217;ve provided some filenames as parameters,
+<code class="docutils literal"><span class="pre">wc</span></code> reads from them instead of from standard input. And since we&#8217;ve
+used <code class="docutils literal"><span class="pre">&gt;</span></code> to redirect output to a file, the shell connects the
 process&#8217;s standard output to that file.</p>
-<p>If we run <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt> instead, the shell creates two
-processes (one for each process in the pipe) so that <tt class="docutils literal"><span class="pre">wc</span></tt> and
-<tt class="docutils literal"><span class="pre">sort</span></tt> run simultaneously. The standard output of <tt class="docutils literal"><span class="pre">wc</span></tt> is fed
-directly to the standard input of <tt class="docutils literal"><span class="pre">sort</span></tt>; since there&#8217;s no
-redirection with <tt class="docutils literal"><span class="pre">&gt;</span></tt>, <tt class="docutils literal"><span class="pre">sort</span></tt>&#8216;s output goes to the screen. And if
-we run <tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-1</span></tt>, we get three processes
-with data flowing from the files, through <tt class="docutils literal"><span class="pre">wc</span></tt> to <tt class="docutils literal"><span class="pre">sort</span></tt>, and from
-<tt class="docutils literal"><span class="pre">sort</span></tt> through <tt class="docutils literal"><span class="pre">head</span></tt> to the screen.</p>
+<p>If we run <code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></code> instead, the shell creates two
+processes (one for each process in the pipe) so that <code class="docutils literal"><span class="pre">wc</span></code> and
+<code class="docutils literal"><span class="pre">sort</span></code> run simultaneously. The standard output of <code class="docutils literal"><span class="pre">wc</span></code> is fed
+directly to the standard input of <code class="docutils literal"><span class="pre">sort</span></code>; since there&#8217;s no
+redirection with <code class="docutils literal"><span class="pre">&gt;</span></code>, <code class="docutils literal"><span class="pre">sort</span></code>&#8216;s output goes to the screen. And if
+we run <code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-1</span></code>, we get three processes
+with data flowing from the files, through <code class="docutils literal"><span class="pre">wc</span></code> to <code class="docutils literal"><span class="pre">sort</span></code>, and from
+<code class="docutils literal"><span class="pre">sort</span></code> through <code class="docutils literal"><span class="pre">head</span></code> to the screen.</p>
 </div>
 <div class="section" id="filter">
 <h1>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h1>
@@ -417,7 +424,7 @@ creating enormous programs that try to do many different things, Unix
 programmers focus on creating lots of simple tools that each do one
 job well, and that work well with each other. This programming model
 is called &#8220;pipes and filters&#8221;. We&#8217;ve already seen pipes; a <strong>filter</strong>
-is a program like <tt class="docutils literal"><span class="pre">wc</span></tt> or <tt class="docutils literal"><span class="pre">sort</span></tt> that transforms a stream of input
+is a program like <code class="docutils literal"><span class="pre">wc</span></code> or <code class="docutils literal"><span class="pre">sort</span></code> that transforms a stream of input
 into a stream of output. Almost all of the standard Unix tools can
 work this way: unless told to do otherwise, they read from standard
 input, do something with what they&#8217;ve read, and write to standard
@@ -431,7 +438,7 @@ put those programs into pipes to multiply their power.</p>
 <div class="section" id="nelle-s-pipeline-checking-files">
 <h1>Nelle&#8217;s Pipeline: Checking Files<a class="headerlink" href="#nelle-s-pipeline-checking-files" title="Permalink to this headline">¶</a></h1>
 <p>Nelle has run her samples through the assay machines and created 1520
-files in the <tt class="docutils literal"><span class="pre">north-pacific-gyre/2012-07-03</span></tt> directory described
+files in the <code class="docutils literal"><span class="pre">north-pacific-gyre/2012-07-03</span></code> directory described
 earlier. As a quick sanity check, she types:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd north-pacific-gyre/2012-07-03
 $ wc -l *.txt
@@ -480,18 +487,18 @@ NENE01971Z.txt    NENE02040Z.txt
 <p>Sure enough, when she checks the log on her laptop, there&#8217;s no depth
 recorded for either of those samples. Since it&#8217;s too late to get the
 information any other way, she must exclude those two files from her
-analysis. She could just delete them using <tt class="docutils literal"><span class="pre">rm</span></tt>, but there are
+analysis. She could just delete them using <code class="docutils literal"><span class="pre">rm</span></code>, but there are
 actually some analyses she might do later where depth doesn&#8217;t matter,
 so instead, she&#8217;ll just be careful later on to select files using the
-wildcard expression <tt class="docutils literal"><span class="pre">*[AB].txt</span></tt>. As always, the &#8216;*&#8217; matches any
-number of characters; the expression <tt class="docutils literal"><span class="pre">[AB]</span></tt> matches either an &#8216;A&#8217; or
+wildcard expression <code class="docutils literal"><span class="pre">*[AB].txt</span></code>. As always, the &#8216;*&#8217; matches any
+number of characters; the expression <code class="docutils literal"><span class="pre">[AB]</span></code> matches either an &#8216;A&#8217; or
 a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 </div>
 <div class="section" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-does-sort-n-do">
-<h2>What does <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> do?<a class="headerlink" href="#what-does-sort-n-do" title="Permalink to this headline">¶</a></h2>
-<p>If we run <tt class="docutils literal"><span class="pre">sort</span></tt> on this file:</p>
+<h2>What does <code class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></code> do?<a class="headerlink" href="#what-does-sort-n-do" title="Permalink to this headline">¶</a></h2>
+<p>If we run <code class="docutils literal"><span class="pre">sort</span></code> on this file:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">10</span>
 <span class="mi">2</span>
 <span class="mi">19</span>
@@ -507,7 +514,7 @@ a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 <span class="mi">6</span>
 </pre></div>
 </div>
-<p>If we run <tt class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></tt> on the same input, we get this instead:</p>
+<p>If we run <code class="docutils literal"><span class="pre">sort</span> <span class="pre">-n</span></code> on the same input, we get this instead:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">2</span>
 <span class="mi">6</span>
 <span class="mi">10</span>
@@ -515,10 +522,10 @@ a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 <span class="mi">22</span>
 </pre></div>
 </div>
-<p>Explain why <tt class="docutils literal"><span class="pre">-n</span></tt> has this effect.</p>
+<p>Explain why <code class="docutils literal"><span class="pre">-n</span></code> has this effect.</p>
 </div>
 <div class="section" id="what-does-mean">
-<h2>What does <tt class="docutils literal"><span class="pre">&lt;</span></tt> mean?<a class="headerlink" href="#what-does-mean" title="Permalink to this headline">¶</a></h2>
+<h2>What does <code class="docutils literal"><span class="pre">&lt;</span></code> mean?<a class="headerlink" href="#what-does-mean" title="Permalink to this headline">¶</a></h2>
 <p>What is the difference between:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">wc</span> <span class="o">-</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">mydata</span><span class="o">.</span><span class="n">dat</span>
 </pre></div>
@@ -533,16 +540,16 @@ a &#8216;B&#8217;, so this matches all the valid data files she has.</p>
 <p>In our current directory, we want to find the 3 files which have
 the least number of lines. Which command listed below would work?</p>
 <ol class="arabic simple">
-<li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">&gt;</span> <span class="pre">head</span> <span class="pre">-3</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">1-3</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-3</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-3</span></tt></li>
+<li><code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">&gt;</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">&gt;</span> <span class="pre">head</span> <span class="pre">-3</span></code></li>
+<li><code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">1-3</span></code></li>
+<li><code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-3</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span></code></li>
+<li><code class="docutils literal"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-3</span></code></li>
 </ol>
 </div>
 <div class="section" id="why-does-uniq-only-remove-adjacent-duplicates">
-<h2>Why does <tt class="docutils literal"><span class="pre">uniq</span></tt> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this headline">¶</a></h2>
-<p>The command <tt class="docutils literal"><span class="pre">uniq</span></tt> removes adjacent duplicated lines from its
-input. For example, if a file <tt class="docutils literal"><span class="pre">salmon.txt</span></tt> contains:</p>
+<h2>Why does <code class="docutils literal"><span class="pre">uniq</span></code> only remove adjacent duplicates?<a class="headerlink" href="#why-does-uniq-only-remove-adjacent-duplicates" title="Permalink to this headline">¶</a></h2>
+<p>The command <code class="docutils literal"><span class="pre">uniq</span></code> removes adjacent duplicated lines from its
+input. For example, if a file <code class="docutils literal"><span class="pre">salmon.txt</span></code> contains:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">coho</span>
 <span class="n">coho</span>
 <span class="n">steelhead</span>
@@ -551,21 +558,21 @@ input. For example, if a file <tt class="docutils literal"><span class="pre">sal
 <span class="n">steelhead</span>
 </pre></div>
 </div>
-<p>then <tt class="docutils literal"><span class="pre">uniq</span> <span class="pre">salmon.txt</span></tt> produces:</p>
+<p>then <code class="docutils literal"><span class="pre">uniq</span> <span class="pre">salmon.txt</span></code> produces:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">coho</span>
 <span class="n">steelhead</span>
 <span class="n">coho</span>
 <span class="n">steelhead</span>
 </pre></div>
 </div>
-<p>Why do you think <tt class="docutils literal"><span class="pre">uniq</span></tt> only removes <em>adjacent</em> duplicated
+<p>Why do you think <code class="docutils literal"><span class="pre">uniq</span></code> only removes <em>adjacent</em> duplicated
 lines?  (Hint: think about very large data sets.) What other
 command could you combine with it in a pipe to remove all
 duplicated lines?</p>
 </div>
 <div class="section" id="pipe-reading-comprehension">
 <h2>Pipe reading comprehension<a class="headerlink" href="#pipe-reading-comprehension" title="Permalink to this headline">¶</a></h2>
-<p>A file called <tt class="docutils literal"><span class="pre">animals.txt</span></tt> contains the following data:</p>
+<p>A file called <code class="docutils literal"><span class="pre">animals.txt</span></code> contains the following data:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">deer</span>
 <span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">rabbit</span>
 <span class="mi">2012</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">05</span><span class="p">,</span><span class="n">raccoon</span>
@@ -618,7 +625,8 @@ their names)?</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -643,7 +651,7 @@ their names)?</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
