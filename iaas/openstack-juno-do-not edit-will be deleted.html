@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -46,12 +44,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        <a href="../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -61,9 +56,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul>
+        
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -82,9 +76,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../class/lessons.html">Lessons</a></li>
 </ul>
@@ -162,7 +156,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -193,7 +186,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="openstack-havana">
 <span id="s-openstack"></span><h1>OpenStack Havana<a class="headerlink" href="#openstack-havana" title="Permalink to this headline">¶</a></h1>
@@ -201,31 +194,31 @@
 <p class="first sidebar-title">Page Contents</p>
 <div class="contents local last topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#login" id="id2">Login</a></li>
-<li><a class="reference internal" href="#setup-openstack-environment" id="id3">Setup OpenStack Environment</a></li>
-<li><a class="reference internal" href="#creating-the-novarc-file" id="id4">Creating the novarc file</a></li>
-<li><a class="reference internal" href="#list-flavors" id="id5">List flavors</a></li>
-<li><a class="reference internal" href="#list-images" id="id6">List images</a></li>
-<li><a class="reference internal" href="#key-management" id="id7">Key management</a></li>
-<li><a class="reference internal" href="#managing-security-groups" id="id8">Managing security groups</a></li>
-<li><a class="reference internal" href="#booting-an-image" id="id9">Booting an image</a></li>
-<li><a class="reference internal" href="#list-running-images" id="id10">List running images</a></li>
-<li><a class="reference internal" href="#set-up-a-floating-ip-address" id="id11">Set up a floating IP address</a></li>
-<li><a class="reference internal" href="#use-block-storage" id="id12">Use block storage</a></li>
-<li><a class="reference internal" href="#set-up-external-access-to-your-instance" id="id13">Set up external access to your instance</a></li>
-<li><a class="reference internal" href="#make-a-snapshot-of-an-instance" id="id14">Make a snapshot of an instance</a></li>
-<li><a class="reference internal" href="#automate-some-initial-configuration" id="id15">Automate some initial configuration</a></li>
-<li><a class="reference internal" href="#get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack" id="id16">Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack</a></li>
-<li><a class="reference internal" href="#delete-your-instance" id="id17">Delete your instance</a></li>
-<li><a class="reference internal" href="#how-to-change-your-password" id="id18">How to change your password</a></li>
-<li><a class="reference internal" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" id="id19">Things to do when you need Euca2ools or EC2 interfaces</a></li>
-<li><a class="reference internal" href="#horizon-gui" id="id20">Horizon GUI</a></li>
-<li><a class="reference internal" href="#getting-rc-files-via-horizon" id="id21">Getting rc files via Horizon</a></li>
+<li><a class="reference internal" href="#login" id="id1">Login</a></li>
+<li><a class="reference internal" href="#setup-openstack-environment" id="id2">Setup OpenStack Environment</a></li>
+<li><a class="reference internal" href="#creating-the-novarc-file" id="id3">Creating the novarc file</a></li>
+<li><a class="reference internal" href="#list-flavors" id="id4">List flavors</a></li>
+<li><a class="reference internal" href="#list-images" id="id5">List images</a></li>
+<li><a class="reference internal" href="#key-management" id="id6">Key management</a></li>
+<li><a class="reference internal" href="#managing-security-groups" id="id7">Managing security groups</a></li>
+<li><a class="reference internal" href="#booting-an-image" id="id8">Booting an image</a></li>
+<li><a class="reference internal" href="#list-running-images" id="id9">List running images</a></li>
+<li><a class="reference internal" href="#set-up-a-floating-ip-address" id="id10">Set up a floating IP address</a></li>
+<li><a class="reference internal" href="#use-block-storage" id="id11">Use block storage</a></li>
+<li><a class="reference internal" href="#set-up-external-access-to-your-instance" id="id12">Set up external access to your instance</a></li>
+<li><a class="reference internal" href="#make-a-snapshot-of-an-instance" id="id13">Make a snapshot of an instance</a></li>
+<li><a class="reference internal" href="#automate-some-initial-configuration" id="id14">Automate some initial configuration</a></li>
+<li><a class="reference internal" href="#get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack" id="id15">Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack</a></li>
+<li><a class="reference internal" href="#delete-your-instance" id="id16">Delete your instance</a></li>
+<li><a class="reference internal" href="#how-to-change-your-password" id="id17">How to change your password</a></li>
+<li><a class="reference internal" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" id="id18">Things to do when you need Euca2ools or EC2 interfaces</a></li>
+<li><a class="reference internal" href="#horizon-gui" id="id19">Horizon GUI</a></li>
+<li><a class="reference internal" href="#getting-rc-files-via-horizon" id="id20">Getting rc files via Horizon</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="login">
-<h2><a class="toc-backref" href="#id2">Login</a><a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Login</a><a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
 <p>Currently we have OpenStack Havana installed on India. To use it you
 need to first log into sierra and prepare your openstack credentials
 (Make sure to replace the &#8216;username&#8217; with your actual FG username):</p>
@@ -234,7 +227,7 @@ need to first log into sierra and prepare your openstack credentials
 </div>
 </div>
 <div class="section" id="setup-openstack-environment">
-<h2><a class="toc-backref" href="#id3">Setup OpenStack Environment</a><a class="headerlink" href="#setup-openstack-environment" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Setup OpenStack Environment</a><a class="headerlink" href="#setup-openstack-environment" title="Permalink to this headline">¶</a></h2>
 <p>In case you like to use the shell commandline tools you can load them
 with</p>
 <div class="highlight-python"><div class="highlight"><pre>$ module load openstack
@@ -242,7 +235,7 @@ with</p>
 </div>
 </div>
 <div class="section" id="creating-the-novarc-file">
-<h2><a class="toc-backref" href="#id4">Creating the novarc file</a><a class="headerlink" href="#creating-the-novarc-file" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Creating the novarc file</a><a class="headerlink" href="#creating-the-novarc-file" title="Permalink to this headline">¶</a></h2>
 <p>An initial novarc file is currently created for you automatically and
 can be activated wih</p>
 <div class="highlight-python"><div class="highlight"><pre>$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
@@ -252,7 +245,7 @@ can be activated wih</p>
 simplifying asccess to multiple heterogeneous cooulds on FutureSystems.</p>
 </div>
 <div class="section" id="list-flavors">
-<h2><a class="toc-backref" href="#id5">List flavors</a><a class="headerlink" href="#list-flavors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">List flavors</a><a class="headerlink" href="#list-flavors" title="Permalink to this headline">¶</a></h2>
 <p>To list the flavors, please execute the following command</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova flavor-list
 </pre></div>
@@ -274,7 +267,7 @@ you follow the steps in this section and the account management
 section carefully.</p>
 </div>
 <div class="section" id="list-images">
-<h2><a class="toc-backref" href="#id6">List images</a><a class="headerlink" href="#list-images" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">List images</a><a class="headerlink" href="#list-images" title="Permalink to this headline">¶</a></h2>
 <p>After you got the flavor list, you can list the current set of
 uploaded images with the nova image-list command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova image-list
@@ -297,7 +290,7 @@ uploaded images with the nova image-list command:</p>
 </div>
 </div>
 <div class="section" id="key-management">
-<h2><a class="toc-backref" href="#id7">Key management</a><a class="headerlink" href="#key-management" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Key management</a><a class="headerlink" href="#key-management" title="Permalink to this headline">¶</a></h2>
 <p>To start a virtual machine you must first upload a key to the
 cloud. This can be easily done in the following way:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-add $USER-key &gt; ~/.ssh/$USER-key
@@ -318,7 +311,7 @@ your ~/.ssh directory that you may want to use. For example if you use
 rsa, your key will be located at ~/.ssh/id_rsa.pub.</p>
 </div>
 <div class="section" id="managing-security-groups">
-<h2><a class="toc-backref" href="#id8">Managing security groups</a><a class="headerlink" href="#managing-security-groups" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Managing security groups</a><a class="headerlink" href="#managing-security-groups" title="Permalink to this headline">¶</a></h2>
 <p>In the next step we need to make sure that the security groups allow
 us to log into the VMs. To do so we create the following policies as
 part of our default security policies. Not that whne you are in a
@@ -340,7 +333,7 @@ $ nova secgroup-list-rules default
 </div>
 </div>
 <div class="section" id="booting-an-image">
-<h2><a class="toc-backref" href="#id9">Booting an image</a><a class="headerlink" href="#booting-an-image" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Booting an image</a><a class="headerlink" href="#booting-an-image" title="Permalink to this headline">¶</a></h2>
 <p>To boot an instance you simply can now use the command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ NET_ID=$(nova net-list| awk &#39;/ int-net / {print $2}&#39;)
 $ nova boot --flavor m1.small \
@@ -385,7 +378,7 @@ $ nova boot --flavor m1.small \
 <p>Where USER is your login name on sierra.</p>
 </div>
 <div class="section" id="list-running-images">
-<h2><a class="toc-backref" href="#id10">List running images</a><a class="headerlink" href="#list-running-images" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">List running images</a><a class="headerlink" href="#list-running-images" title="Permalink to this headline">¶</a></h2>
 <p>To check if your instance is active you can repeatedly issue the list
 command and monitor the Status field in the table:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova list
@@ -400,7 +393,7 @@ command and monitor the Status field in the table:</p>
 <p>Once the Status becomes ACTIVE your instance should be ready.</p>
 </div>
 <div class="section" id="set-up-a-floating-ip-address">
-<h2><a class="toc-backref" href="#id11">Set up a floating IP address</a><a class="headerlink" href="#set-up-a-floating-ip-address" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Set up a floating IP address</a><a class="headerlink" href="#set-up-a-floating-ip-address" title="Permalink to this headline">¶</a></h2>
 <p>Create floating ip address.:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-create ext-net
 +-----------------+-------------+----------+---------+
@@ -426,7 +419,7 @@ Offending key in /home/&lt;$USER&gt;/.ssh/known_hosts:3
 <p>you need to delete the offending host key from .ssh/known_hosts.</p>
 </div>
 <div class="section" id="use-block-storage">
-<h2><a class="toc-backref" href="#id12">Use block storage</a><a class="headerlink" href="#use-block-storage" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Use block storage</a><a class="headerlink" href="#use-block-storage" title="Permalink to this headline">¶</a></h2>
 <p>You can create a block storage with the volume-create command. A
 valume is useful as you can store data in it and associate that
 particulare volumen to a VM. Hence, if you delete the VM, your volume
@@ -484,7 +477,7 @@ $ nova volume-detach $USER-001 6d0d8285-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 </div>
 </div>
 <div class="section" id="set-up-external-access-to-your-instance">
-<h2><a class="toc-backref" href="#id13">Set up external access to your instance</a><a class="headerlink" href="#set-up-external-access-to-your-instance" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Set up external access to your instance</a><a class="headerlink" href="#set-up-external-access-to-your-instance" title="Permalink to this headline">¶</a></h2>
 <p>So far we only used the internal IP address, but you can also assign
 an external address, so that you can log in from other machines than
 sierra. Firts, Create an external ip address with:</p>
@@ -512,7 +505,7 @@ $ nova floating-ip-list
 given ip address.</p>
 </div>
 <div class="section" id="make-a-snapshot-of-an-instance">
-<h2><a class="toc-backref" href="#id14">Make a snapshot of an instance</a><a class="headerlink" href="#make-a-snapshot-of-an-instance" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Make a snapshot of an instance</a><a class="headerlink" href="#make-a-snapshot-of-an-instance" title="Permalink to this headline">¶</a></h2>
 <p>To allow snapshots, you must use the following convention:</p>
 <ul class="simple">
 <li>use your project number fg### in the prefix of your snapshot name followed
@@ -544,7 +537,7 @@ $ nova image-list
 </div>
 </div>
 <div class="section" id="automate-some-initial-configuration">
-<h2><a class="toc-backref" href="#id15">Automate some initial configuration</a><a class="headerlink" href="#automate-some-initial-configuration" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Automate some initial configuration</a><a class="headerlink" href="#automate-some-initial-configuration" title="Permalink to this headline">¶</a></h2>
 <p>You may want to install some packages into the iamge, enable root, and
 add ssh authorized_keys. With the OpenStack cloud-init such steps can
 be simplified.</p>
@@ -576,7 +569,7 @@ ssh_authorized_keys:
 <p>You should be able to login to &lt;USER&gt;-002 as root, and the added packages are installed.</p>
 </div>
 <div class="section" id="get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack">
-<h2><a class="toc-backref" href="#id16">Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack</a><a class="headerlink" href="#get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Get the latest version of Ubuntu Cloud Image and upload it to the OpenStack</a><a class="headerlink" href="#get-the-latest-version-of-ubuntu-cloud-image-and-upload-it-to-the-openstack" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
 <p class="last">In future we will just host these images so we do not
@@ -597,11 +590,11 @@ example, downloading Ubuntu-13.04(Raring Ringtail)is like this:</p>
        --file raring-server-cloudimg-amd64-disk1.img
 </pre></div>
 </div>
-<p>Now your new image is listed on <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code>and will be
+<p>Now your new image is listed on <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt>and will be
 available when the status become &#8220;ACTIVE&#8221;.</p>
 </div>
 <div class="section" id="delete-your-instance">
-<h2><a class="toc-backref" href="#id17">Delete your instance</a><a class="headerlink" href="#delete-your-instance" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Delete your instance</a><a class="headerlink" href="#delete-your-instance" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">You can delete your instance with:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova delete $USER-002
@@ -613,7 +606,7 @@ it</p>
 </ol>
 </div>
 <div class="section" id="how-to-change-your-password">
-<h2><a class="toc-backref" href="#id18">How to change your password</a><a class="headerlink" href="#how-to-change-your-password" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">How to change your password</a><a class="headerlink" href="#how-to-change-your-password" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Sometimes, users accidentally send password to a collaborator/support
 for debugging, and then regret. When you put yourself in the
@@ -630,7 +623,7 @@ novarc file.</p>
 </ol>
 </div>
 <div class="section" id="things-to-do-when-you-need-euca2ools-or-ec2-interfaces">
-<h2><a class="toc-backref" href="#id19">Things to do when you need Euca2ools or EC2 interfaces</a><a class="headerlink" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Things to do when you need Euca2ools or EC2 interfaces</a><a class="headerlink" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" title="Permalink to this headline">¶</a></h2>
 <p>Even though the nova client and protocols will provide you with more
 advanced features, some users still want to access OpenStack with EC2
 compatible tools. One such tool are the euca2tools. We explain briefly
@@ -687,14 +680,14 @@ euca-describe-instances
 </div>
 </div>
 <div class="section" id="horizon-gui">
-<span id="s-openstack-horizon"></span><h2><a class="toc-backref" href="#id20">Horizon GUI</a><a class="headerlink" href="#horizon-gui" title="Permalink to this headline">¶</a></h2>
+<span id="s-openstack-horizon"></span><h2><a class="toc-backref" href="#id19">Horizon GUI</a><a class="headerlink" href="#horizon-gui" title="Permalink to this headline">¶</a></h2>
 <p>Horizon is a graphical user interface/dashbooard for OpenStack. For
 starting up VMs and stoping them by hand horizon may be a good
 mechanism to manage your Virtual machines.  We have currently the
 following horizon deployments available. However, please note that on
 Alamo an older version of openstack is run.</p>
-<table border="1" class="docutils" id="id1">
-<caption><span class="caption-text">Horizon endpoints</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils">
+<caption>Horizon endpoints</caption>
 <colgroup>
 <col width="9%" />
 <col width="9%" />
@@ -740,8 +733,8 @@ to Sierra and India it uses the FG portal name and password. To
 ensure the security of your portal account, we recommend that
 you do not store that password in any file on your local or
 remote hosts. Instead, if you need to use the password, obtain
-it interactively via the shell builtin command <code class="docutils literal"><span class="pre">read</span></code>, with
-the <code class="docutils literal"><span class="pre">-s</span></code> (silent) option. We also recommend that you not store
+it interactively via the shell builtin command <tt class="docutils literal"><span class="pre">read</span></tt>, with
+the <tt class="docutils literal"><span class="pre">-s</span></tt> (silent) option. We also recommend that you not store
 this password in a shell variable, but to ask for it every time
 it is needed. The link to the GUI is
 <a class="reference external" href="https://openstack.uc.futuregrid.org/dashboard/">https://openstack.uc.futuregrid.org/dashboard/</a> The password is
@@ -757,8 +750,8 @@ to Sierra and India it uses the FG portal name and password. To
 ensure the security of your portal account, we recommend that
 you do not store that password in any file on your local or
 remote hosts. Instead, if you need to use the password, obtain
-it interactively via the shell builtin command <code class="docutils literal"><span class="pre">read</span></code>, with
-the <code class="docutils literal"><span class="pre">-s</span></code> (silent) option. We also recommend that you not store
+it interactively via the shell builtin command <tt class="docutils literal"><span class="pre">read</span></tt>, with
+the <tt class="docutils literal"><span class="pre">-s</span></tt> (silent) option. We also recommend that you not store
 this password in a shell variable, but to ask for it every time
 it is needed.  The link to the GUI is
 <a class="reference external" href="https://openstack.futuregrid.tacc.utexas.edu/horizon">https://openstack.futuregrid.tacc.utexas.edu/horizon</a> The password is
@@ -768,7 +761,7 @@ the same as the portal password. It only supports EC2.</td>
 </table>
 </div>
 <div class="section" id="getting-rc-files-via-horizon">
-<h2><a class="toc-backref" href="#id21">Getting rc files via Horizon</a><a class="headerlink" href="#getting-rc-files-via-horizon" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Getting rc files via Horizon</a><a class="headerlink" href="#getting-rc-files-via-horizon" title="Permalink to this headline">¶</a></h2>
 <p>On alamo, you can also get your ec2 rc file from the &#8220;settings&#8221; menu.</p>
 </div>
 </div>
@@ -786,8 +779,7 @@ the same as the portal password. It only supports EC2.</td>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -812,7 +804,7 @@ the same as the portal password. It only supports EC2.</td>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
