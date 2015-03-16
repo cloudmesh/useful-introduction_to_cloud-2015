@@ -25,10 +25,26 @@ which we will add more content througout the semester:
    
    week_plan
 	     
-Office Hours
+Support
 ======================================================================
 
+Office hours will be held so that students may receive individual
+attention from instructors.  Additionally, hours will be made
+available for general discussions.
+
+.. note::
+
+   All times are in US Eastern Standard Time.
+
+Office Hours
+----------------------------------------------------------------------
+
 .. include:: ../office-hours.rst
+
+General Discussion
+----------------------------------------------------------------------
+
+.. include:: ../discussion-hours.rst
 
 Collaboration Tools
 ======================================================================

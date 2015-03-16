@@ -6,7 +6,6 @@
   2015-03-16: Big Data Open Source Software Project (BUEX-V 594)
 
 
-Office hours will be held in US Eastern time.
 
 Monday:
 
