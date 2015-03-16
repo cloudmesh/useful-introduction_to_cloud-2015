@@ -7,6 +7,35 @@ Use of FutureSystems
       :local:
 
 
+Overview
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section describes using SSH on and with FutureSystems.
+
+There are two ways SSH is used:
+
+- providing access to FutureSystems resources
+- once logged into FutureSystems, get access to OpenStack images and
+  running instances.
+
+Since all assignments and lessons will be done on FutureSystems, it is
+important that you can log on. Whether you are starting from Windows,
+Mac OS X, or Linux, only a few steps are needed.
+
+Once you can log into ``india.futuresystems.org``, SSH keys are used
+to manage access to OpenStack. At this point your computer is just a
+client to access FutureSystems resources. All commands are executed on
+FutureSystems.
+
+The steps, describes below, are:
+
+- get and account with FutureSystems (portal)
+- join a project (portal)
+- upload SSH public key (computer -> portal)
+- log into FutureSystems (computer -> ``india``)
+- manage keys for OpenStack (``india`` -> VM)
+
+
 Getting an Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
