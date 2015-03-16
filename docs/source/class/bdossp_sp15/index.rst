@@ -25,6 +25,11 @@ which we will add more content througout the semester:
    
    week_plan
 	     
+Office Hours
+======================================================================
+
+.. include:: ../office-hours.rst
+
 Collaboration Tools
 ======================================================================
 
