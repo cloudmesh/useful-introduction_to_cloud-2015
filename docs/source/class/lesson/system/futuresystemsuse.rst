@@ -56,6 +56,13 @@ project.
 Remote Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. important::
+
+   All coursework will be done on your FutureSystems account on
+   ``india``. You will to use PuTTY to access ``india`` and then you
+   can follow along with the other instructions.
+
+
 In order to login into your account on FutureSystems you will need:
 
 - an account on FutureSystems (see above)
@@ -83,6 +90,32 @@ like so::
    configuring and using an SSH client.
 
 .. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+
+Windows
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+In order to SSH into your FutureSystems account using Windows, you
+will need to install PuTTY and PuTTYgen from the `PuTTY project page`_
+
+Generate an key using PuTTYgen:
+
+#. open the application ``puttygen.exe``
+#. press "Generate"
+#. enter a desired passphrase (make sure they match!)
+#. save the private and public keys
+#. copy the displayed public key
+
+You can now upload your public key to the FutureSystems portal.
+
+To connect, open ``putty.exe`` and go to `Connection ---> SSH --->
+Auth` on the left and browse to add the private key.  Then go to the
+`Session` category and enter ``india.futuresystems.org`` for the Host
+Name and click "Open".  This will launch a terminal and allow you to
+connect using the passphrase specified in ``puttygen.exe``.
+
+.. _PuTTY project page: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
 
 
 Managing keys
@@ -234,11 +267,6 @@ To remove a key for ``india.futuresystems.org`` from ``~/.ssh/known_hosts``::
 .. _man-in-the-middle attack: http://en.wikipedia.org/wiki/Man-in-the-middle_attack
 
 
-Windows (Under preparation)
-
-
-Putty (Under Preparation)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 SSH
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
