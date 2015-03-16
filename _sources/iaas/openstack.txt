@@ -191,7 +191,7 @@ you will see an output similar to::
        | updated                     | 2013-05-15T20:32:03Z                 |
        | OS-EXT-STS:task_state       | scheduling                           |
        | key_name                    | $PORTALNAME-key                      |
-       | image                       | futuresystems/ubuntu-14.04              |
+       | image                       | futuresystems/ubuntu-14.04           |
        | hostId                      |                                      |
        | OS-EXT-STS:vm_state         | building                             |
        | flavor                      | m1.small                             |
@@ -543,12 +543,12 @@ Horizon GUI
 Horizon is a graphical user interface/dashbooard for OpenStack. For
 starting up VMs and stoping them by hand horizon may be a good
 mechanism to manage your Virtual machines.  We have currently the
-following horizon deployments available. However, please note that on
-Alamo an older version of Openstack is run.
- 
+following horizon deployments available. For more detail, see 
+`here /class/lesson/iaas/openstack_horizon.html`_.
+
 .. list-table:: Horizon endpoints
    :header-rows: 1
-   :widths: 10,10,10,10,70
+   :widths: 10,10,10,10,30
 
    * - Image
      - Version
@@ -556,13 +556,13 @@ Alamo an older version of Openstack is run.
      - Protocol
      - Description
    * - |image-horizon| 
-     - Havana 
+     - Juno
      - `India <https://openstack-j.india.futuresystems.org/horizon>`_
      - Native OpenStack
      - India offers a Graphical user interface to access
        OpenStack. For those interested in only managing a few images
        this may be a good way to start. The link to the GUI is 
-       https://openstack-j.india.futuresystems.org/horizon The password
+       https://openstack-j.india.futuresystems.org/horizon . The password
        can be found by following the method discussed above.
 
 
