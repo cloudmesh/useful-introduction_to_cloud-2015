@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -28,12 +28,10 @@
   
 
   
-
-  
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
-        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdosp_sp15/index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
         <link rel="next" title="OpenStack Juno (Under preparation)" href="openstack_juno.html"/>
         <link rel="prev" title="Overview and Introduction to OpenStack" href="overview_openstack.html"/> 
 
@@ -49,12 +47,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -64,9 +59,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -85,9 +79,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -165,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -189,7 +182,7 @@
       
           <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
       
-          <li><a href="../../bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
       
     <li>OpenStack for Beginners (Under Preparation)</li>
       <li class="wy-breadcrumbs-aside">
@@ -200,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="openstack-for-beginners-under-preparation">
 <h1>OpenStack for Beginners (Under Preparation)<a class="headerlink" href="#openstack-for-beginners-under-preparation" title="Permalink to this headline">¶</a></h1>
@@ -301,12 +294,12 @@ be <strong>small</strong>.</p>
 </div>
 <p>Here are some explanations for the arguments.</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">boot</span></code> is a sub command to start a new server.</li>
-<li><code class="docutils literal"><span class="pre">--flavor</span></code> is a name for your machine size. <code class="docutils literal"><span class="pre">m1.small</span></code> typically has 1 vCPU and 2GB memories.</li>
-<li><code class="docutils literal"><span class="pre">--image</span></code> is a name for your base image. <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code> displays all registered image.</li>
-<li><code class="docutils literal"><span class="pre">--key_name</span></code> is a key name to use for SSH connection. This key should be
-registered on Nova Compute. Try <code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></code> to see registered keys.</li>
-<li><code class="docutils literal"><span class="pre">tutorial1</span></code> is a name for your vm instance.</li>
+<li><tt class="docutils literal"><span class="pre">boot</span></tt> is a sub command to start a new server.</li>
+<li><tt class="docutils literal"><span class="pre">--flavor</span></tt> is a name for your machine size. <tt class="docutils literal"><span class="pre">m1.small</span></tt> typically has 1 vCPU and 2GB memories.</li>
+<li><tt class="docutils literal"><span class="pre">--image</span></tt> is a name for your base image. <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt> displays all registered image.</li>
+<li><tt class="docutils literal"><span class="pre">--key_name</span></tt> is a key name to use for SSH connection. This key should be
+registered on Nova Compute. Try <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></tt> to see registered keys.</li>
+<li><tt class="docutils literal"><span class="pre">tutorial1</span></tt> is a name for your vm instance.</li>
 </ul>
 <div class="section" id="exercises">
 <h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h4>
@@ -393,7 +386,7 @@ group-based cloud service.</p>
 </div>
 <div class="section" id="list-of-users-or-projects">
 <h3>List of Users or Projects<a class="headerlink" href="#list-of-users-or-projects" title="Permalink to this headline">¶</a></h3>
-<p>Try <code class="docutils literal"><span class="pre">user-list</span></code> or <code class="docutils literal"><span class="pre">tenant-list</span></code> sub command to see a list of users or
+<p>Try <tt class="docutils literal"><span class="pre">user-list</span></tt> or <tt class="docutils literal"><span class="pre">tenant-list</span></tt> sub command to see a list of users or
 projects.</p>
 <div class="highlight-python"><div class="highlight"><pre>$ keystone user-list
 
@@ -404,7 +397,7 @@ $ keystone tenant-list
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Try <code class="docutils literal"><span class="pre">keystone</span></code> command itself. The help message shows that available
+<p class="last">Try <tt class="docutils literal"><span class="pre">keystone</span></tt> command itself. The help message shows that available
 sub commands including tenant-create, user-create, user-list and
 tenant-list.</p>
 </div>
@@ -498,7 +491,7 @@ Networking.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="openstack_juno.html" class="btn btn-neutral float-right" title="OpenStack Juno (Under preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="openstack_juno.html" class="btn btn-neutral float-right" title="OpenStack Juno (Under preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="overview_openstack.html" class="btn btn-neutral" title="Overview and Introduction to OpenStack"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -514,8 +507,7 @@ Networking.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -540,7 +532,7 @@ Networking.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

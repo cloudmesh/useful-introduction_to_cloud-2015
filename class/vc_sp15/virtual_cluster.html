@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -49,12 +47,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -64,9 +59,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -87,7 +81,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -165,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -195,7 +188,7 @@
       
           <li><a href="mongodb_cluster.html">MongoDB Sharded Cluster</a> &raquo;</li>
       
-    <li>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
+    <li>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/class/vc_sp15/virtual_cluster.txt" rel="nofollow"> View page source</a>
@@ -204,12 +197,12 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
-<h1>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<h1>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <p>To support the creation of a virtual compute cluster on Cloudmesh, the command
-<code class="docutils literal"><span class="pre">cluster</span></code> can be used to start, configure, manage or update a number of
+<tt class="docutils literal"><span class="pre">cluster</span></tt> can be used to start, configure, manage or update a number of
 virtual machines.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -257,7 +250,7 @@ the following do do so:</p>
 <div class="highlight-python"><div class="highlight"><pre>cm cluster create virtual_cluster_ext --count=3 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuresystems/ubuntu-14.04
 </pre></div>
 </div>
-<p>You can display the status of vms for the cluster with the <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code>
+<p>You can display the status of vms for the cluster with the <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></tt>
 command:</p>
 <div class="highlight-python"><div class="highlight"><pre>cm vm list --refresh --group=virtual_cluster
 </pre></div>
@@ -265,7 +258,7 @@ command:</p>
 </div>
 <div class="section" id="id1">
 <h3>Login to Virtual Cluster<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">vm</span> <span class="pre">login</span></code> command can be used to ssh one of the nodes in the cluster.</p>
+<p><tt class="docutils literal"><span class="pre">vm</span> <span class="pre">login</span></tt> command can be used to ssh one of the nodes in the cluster.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm vm login albert_1 --ln=ubuntu
 </pre></div>
 </div>
@@ -274,7 +267,7 @@ command:</p>
 <div class="section" id="id2">
 <h3>Terminate Virtual Cluster<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>If you completed your task on the cluster, you may terminate the virtual cluster using Cloudmesh.</p>
-<p><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></code> simply shuts down a node(s) of the cluster.</p>
+<p><tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></tt> simply shuts down a node(s) of the cluster.</p>
 </div>
 </div>
 <div class="section" id="exercise">
@@ -285,8 +278,8 @@ command:</p>
 </ul>
 </div>
 <div class="section" id="cloudmesh-cluster-command">
-<h2>Cloudmesh <code class="docutils literal"><span class="pre">cluster</span></code> command<a class="headerlink" href="#cloudmesh-cluster-command" title="Permalink to this headline">¶</a></h2>
-<p>To create, list, or remove clusters, use <code class="docutils literal"><span class="pre">cm</span> <span class="pre">cluster</span></code> command.</p>
+<h2>Cloudmesh <tt class="docutils literal"><span class="pre">cluster</span></tt> command<a class="headerlink" href="#cloudmesh-cluster-command" title="Permalink to this headline">¶</a></h2>
+<p>To create, list, or remove clusters, use <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">cluster</span></tt> command.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">latest repository is required (dev1.3). Please <a class="reference external" href="cm_download.html">download latest cloudmesh</a></p>
@@ -294,45 +287,45 @@ command:</p>
 <div class="section" id="create-cluster">
 <h3>Create Cluster<a class="headerlink" href="#create-cluster" title="Permalink to this headline">¶</a></h3>
 <p>Cloudmesh provides a simple command to create a virtual cluster.
-<code class="docutils literal"><span class="pre">cluster</span> <span class="pre">create</span></code> can be executed along with the following options:</p>
+<tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">create</span></tt> can be executed along with the following options:</p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">--count</span></code></div>
+<div class="line"><tt class="docutils literal"><span class="pre">--count</span></tt></div>
 <div class="line-block">
 <div class="line">specify amount of VMs in the cluster</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">--cloud</span></code></div>
+<div class="line"><tt class="docutils literal"><span class="pre">--cloud</span></tt></div>
 <div class="line-block">
 <div class="line">specify a cloud name, e.g. india</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">--flavor</span></code></div>
+<div class="line"><tt class="docutils literal"><span class="pre">--flavor</span></tt></div>
 <div class="line-block">
 <div class="line">specify a flavor name among m1.tiny, m1.small, m1.medium, m1.large</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">--ln</span></code></div>
+<div class="line"><tt class="docutils literal"><span class="pre">--ln</span></tt></div>
 <div class="line-block">
 <div class="line">login name for VMs, e.g. ubuntu</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">--image</span></code></div>
+<div class="line"><tt class="docutils literal"><span class="pre">--image</span></tt></div>
 <div class="line-block">
-<div class="line">specify an image name.  <code class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></code> command allows you to find registered images.</div>
+<div class="line">specify an image name.  <tt class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></tt> command allows you to find registered images.</div>
 </div>
 </div>
 </div>
 <div class="section" id="list-cluster">
 <h3>List Cluster<a class="headerlink" href="#list-cluster" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">list</span> <span class="pre">[name]</span></code> shows running clusters with a number of nodes.</p>
+<p><tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">list</span> <span class="pre">[name]</span></tt> shows running clusters with a number of nodes.</p>
 </div>
 <div class="section" id="remove-cluster">
 <h3>Remove Cluster<a class="headerlink" href="#remove-cluster" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></code> automatically terminates all nodes of the cluster.</p>
+<p><tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></tt> automatically terminates all nodes of the cluster.</p>
 </div>
 </div>
 <div class="section" id="faq">
@@ -343,11 +336,11 @@ command:</p>
 </ol>
 </li>
 <li><ol class="first upperalpha">
-<li><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></code></li>
+<li><tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">remove</span> <span class="pre">[name]</span></tt></li>
 </ol>
 </li>
 <li><ol class="first upperalpha" start="17">
-<li>I cannot find <code class="docutils literal"><span class="pre">cluster</span></code> command on my cloudmesh.</li>
+<li>I cannot find <tt class="docutils literal"><span class="pre">cluster</span></tt> command on my cloudmesh.</li>
 </ol>
 </li>
 <li><ol class="first upperalpha">
@@ -380,7 +373,7 @@ command:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="hadoop_cluster.html" class="btn btn-neutral float-right" title="Deploying Hadoop Cluster">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="hadoop_cluster.html" class="btn btn-neutral float-right" title="Deploying Hadoop Cluster"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="mongodb_cluster.html" class="btn btn-neutral" title="MongoDB Sharded Cluster"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -396,8 +389,7 @@ command:</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -422,7 +414,7 @@ command:</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

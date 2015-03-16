@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -48,12 +46,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+        <a href="index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -63,9 +58,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -84,9 +78,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="class/index.html">Cloudmesh in Classes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="class/bdosp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="class/lessons.html">Lessons</a></li>
 </ul>
@@ -164,7 +158,6 @@
 <li class="toctree-l1"><a class="reference internal" href="todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -195,7 +188,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="restructuredtext">
 <h1>reStructuredText<a class="headerlink" href="#restructuredtext" title="Permalink to this headline">¶</a></h1>
@@ -242,8 +235,8 @@ Paragraph
    &quot;von Laszewski&quot;, &quot;Gregor&quot;, &quot;gray&quot;
 </pre></div>
 </div>
-<table border="1" class="docutils" id="id1">
-<caption><span class="caption-text">a title</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils">
+<caption>a title</caption>
 <colgroup>
 <col width="40%" />
 <col width="40%" />
@@ -378,7 +371,7 @@ interpreted as body elements.</p>
 </div>
 <div class="section" id="autorun">
 <h2>Autorun<a class="headerlink" href="#autorun" title="Permalink to this headline">¶</a></h2>
-<p>Autorun is an extension for <a href="#id2"><span class="problematic" id="id3">Sphinx_</span></a> that can execute the code from a
+<p>Autorun is an extension for <a href="#id1"><span class="problematic" id="id2">Sphinx_</span></a> that can execute the code from a
 runblock directive and attach the output of the execution to the document.</p>
 <p>For example:</p>
 <div class="highlight-python"><div class="highlight"><pre>.. runblock:: pycon
@@ -404,7 +397,7 @@ runblock directive and attach the output of the execution to the document.</p>
 </div>
 <p>Produces</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> date
-<span class="go">Fri Mar 13 19:47:57 EDT 2015</span>
+<span class="go">Mon Mar 16 11:59:24 EDT 2015</span>
 </pre></div>
 </div>
 <p>However, when it comes to excersises we do preferthe use of ipython
@@ -452,7 +445,7 @@ unique. for example if you place:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="management/index.html" class="btn btn-neutral float-right" title="Create Cloudmesh Development Image">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="management/index.html" class="btn btn-neutral float-right" title="Create Cloudmesh Development Image"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ipython/_ipython.html" class="btn btn-neutral" title="IPython"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -468,8 +461,7 @@ unique. for example if you place:</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -494,7 +486,7 @@ unique. for example if you place:</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
