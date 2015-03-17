@@ -27,8 +27,7 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
      - **Virtual Clusters I (First Appearance of Hadoop)**
      - 04/10
    * - Week 6
-     - Virtual Clusters II
-          - Composite Cluster with Sub-Clusters
+     - Virtual Clusters II (Composite Cluster with Sub-Clusters)
      - 04/17
    * - Week 7
      - **Other Technologies**
@@ -171,44 +170,44 @@ The Basics of OpenStack (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **Introduction and Overview**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **OpenStack for Beginners**
-          - Compute Engine (Nova)
-          - Storage (Swift, Cinder)
-          - Network (Neutron)
-          - Images (Glance)
-          - Authentication (Keystone)
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Introduction to OpenStack Juno Release**
-         - Introduction and Overview
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Other IaaS Platforms**
-         - Introduction and Overview
-         - Bare Metal Clouds
-         - Public Commercial Clouds
-              - Amazon Web Services (AWS)
-              - Microsoft Azure
-              - Google Compute Engine (GCE)
-              - HP Cloud
-         - Private Open-Source Clouds
-              - OpenNebula
-              - Eucalyptus
-              - CloudStack
-              - SaltStack
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **Introduction and Overview**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **OpenStack for Beginners**
+         - Compute Engine (Nova)
+         - Storage (Swift, Cinder)
+         - Network (Neutron)
+         - Images (Glance)
+         - Authentication (Keystone)
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Introduction to OpenStack Juno Release**
+        - Introduction and Overview
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Other IaaS Platforms**
+        - Introduction and Overview
+        - Bare Metal Clouds
+        - Public Commercial Clouds
+             - Amazon Web Services (AWS)
+             - Microsoft Azure
+             - Google Compute Engine (GCE)
+             - HP Cloud
+        - Private Open-Source Clouds
+             - OpenNebula
+             - Eucalyptus
+             - CloudStack
+             - SaltStack
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 Week 3
 -------------------------------------------------------------------------------
@@ -230,53 +229,53 @@ Cloudmesh - Cloud Management Software (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **Introduction and Overview**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Cloudmesh for Beginners**
-         - Installation
-         - Command Line Tools (CLI)
-         - Web Interface (GUI)
-         - REST APIs
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **IPython on Cloudmesh**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Using OpenStack on Cloudmesh**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **Introduction and Overview**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Cloudmesh for Beginners**
+        - Installation
+        - Command Line Tools (CLI)
+        - Web Interface (GUI)
+        - REST APIs
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **IPython on Cloudmesh**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Using OpenStack on Cloudmesh**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 .. list-table:: Advanced Cloudmesh
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **Introduction and Overview**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **VM Management**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Virtual Clusters with Cloudmesh**
-         - SSH Connections between nodes
-         - Host Configuration
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **Introduction and Overview**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **VM Management**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Virtual Clusters with Cloudmesh**
+        - SSH Connections between nodes
+        - Host Configuration
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 Week 4
 -------------------------------------------------------------------------------
@@ -290,27 +289,27 @@ IT Operations - Automation and Orchestration (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **DevOps**
-         - Ansible
-         - SaltStack
-         - Puppet
-         - Chef
-         - OpenStack Heat
-         - Ubuntu Juju
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Discussion**
-         - Orchestration vs Collective DevOps
-         - PaaS
-         - Cloudmesh
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **DevOps**
+        - Ansible
+        - SaltStack
+        - Puppet
+        - Chef
+        - OpenStack Heat
+        - Ubuntu Juju
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Discussion**
+        - Orchestration vs Collective DevOps
+        - PaaS
+        - Cloudmesh
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 
 
@@ -328,28 +327,28 @@ Virtual Clusters I (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **Introduction and Overview**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Hadoop Virtual Cluster**
-         - Cloudmesh
-         - Discusson
-         - Advanced Topics with Hadoop
-              - Zookeeper and HBase
-              - Yarn
-              - OpenStack Havana
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **Introduction and Overview**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Hadoop Virtual Cluster**
+        - Cloudmesh
+        - Discusson
+        - Advanced Topics with Hadoop
+             - Zookeeper and HBase
+             - Yarn
+             - OpenStack Havana
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 Week 6
 -------------------------------------------------------------------------------
@@ -363,29 +362,29 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **Composite Cluster with Sub-Clusters**
-         - Introduction and Overview
-         - Creating a Cross Resource Virtual Cluster
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **OpenMPI Virtual Cluster**
-         - Introduction and Overview
-         - HPC Stack - MPI
-         - Cloudmesh HPC
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **MongoDB Virtual Cluster**
-         - Introduction and Overview
-         - Sharded MongoDB
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **Composite Cluster with Sub-Clusters**
+        - Introduction and Overview
+        - Creating a Cross Resource Virtual Cluster
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **OpenMPI Virtual Cluster**
+        - Introduction and Overview
+        - HPC Stack - MPI
+        - Cloudmesh HPC
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **MongoDB Virtual Cluster**
+        - Introduction and Overview
+        - Sharded MongoDB
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 Week 7
 -------------------------------------------------------------------------------
@@ -399,41 +398,41 @@ Other Technologies (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **Virtualization Technologies**
-          - Introduction and Overview
-          - Hypervisors
-              - KVM
-              - Containers (LXC)
-              - Docker
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **VM Software**
-          - Vagrant
-          - Oracle VirtualBox
-          - VMWare
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Apache Big Data Stack (ABDS)**
-          - Apache ZooKepper
-          - Apache Storm
-          - Apache Mesos
-          - Apache HBase
-          - Apache Spark
-          - Apache Pig
-          - Apache Hive
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **Glossary**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **Virtualization Technologies**
+         - Introduction and Overview
+         - Hypervisors
+             - KVM
+             - Containers (LXC)
+             - Docker
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **VM Software**
+         - Vagrant
+         - Oracle VirtualBox
+         - VMWare
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Apache Big Data Stack (ABDS)**
+         - Apache ZooKepper
+         - Apache Storm
+         - Apache Mesos
+         - Apache HBase
+         - Apache Spark
+         - Apache Pig
+         - Apache Hive
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **Glossary**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
 Week 8
 -------------------------------------------------------------------------------
@@ -447,16 +446,16 @@ Future (under preparation)
    :widths: 15 10 30 10
    :header-rows: 1
 
-    * - Topic
-      - Video
-      - Text
-      - Homework
-    * - **What will the Future Bring**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
-    * - **GE Industrial Internet of Things (IIoT)**
-      - `00 mins <>`_
-      - `00 mins <>`_
-      - 
+   * - Topic
+     - Video
+     - Text
+     - Homework
+   * - **What will the Future Bring**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
+   * - **GE Industrial Internet of Things (IIoT)**
+     - `00 mins <>`_
+     - `00 mins <>`_
+     - 
 
