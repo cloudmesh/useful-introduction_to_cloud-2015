@@ -4,7 +4,7 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
 
 * Release Date: Every Friday 5pm
 
-.. list-table:: Schedule
+.. list-table:: Schedule Section 2 (HPC-ABDS Technologies)
    :widths: 10 30 10 
    :header-rows: 1
 
@@ -18,26 +18,24 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
      - The Basics of OpenStack
      - 03/20
    * - Week 3
-     - The Basics of Cloudmesh
+     - Cloudmesh - Cloud Management Software
      - 03/27
    * - Week 4
-     - Advanced Cloudmesh
+     - IT Operations - Automation and Orchestration
      - 04/03
    * - Week 5
-     - IT Operations - Automation and Orchestration
+     - Virtual Clusters I (First Appearance of Hadoop)
      - 04/10
    * - Week 6
-     - Virtual Clusters
+     - Virtual Clusters II
+          - Composite Cluster with Sub-Clusters
      - 04/17
    * - Week 7
-     - Composite Cluster with Sub-Clusters
+     - Other Technologies
      - 04/24
    * - Week 8
-     - Other Technologies
-     - 05/01
-   * - Week 9
      - Future
-     - 05/08
+     - 05/01
 
 Week 1 
 -------------------------------------------------------------------------------
@@ -169,7 +167,7 @@ Week 2
 The Basics of OpenStack (under preparation)
 *******************************************************************************
 
-.. list-table:: Sub Section
+.. list-table:: Basics of OpenStack
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -177,17 +175,47 @@ The Basics of OpenStack (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
+    * - **Introduction and Overview**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **OpenStack for Beginners**
+          - Compute Engine (Nova)
+          - Storage (Swift, Cinder)
+          - Network (Neutron)
+          - Images (Glance)
+          - Authentication (Keystone)
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Introduction to OpenStack Juno Release**
+         - Introduction and Overview
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Other IaaS Platforms**
+         - Introduction and Overview
+         - Bare Metal Clouds
+         - Public Commercial Clouds
+              - Amazon Web Services (AWS)
+              - Microsoft Azure
+              - Google Compute Engine (GCE)
+              - HP Cloud
+         - Private Open-Source Clouds
+              - OpenNebula
+              - Eucalyptus
+              - CloudStack
+              - SaltStack
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
 Week 3
 -------------------------------------------------------------------------------
 
 * Scheduled: 03/27
 
-The Basics of Cloudmesh (under preparation)
+Cloudmesh - Cloud Management Software (under preparation)
 *******************************************************************************
 
 .. Cloudmesh is a cloud resource management software written in Python. It
@@ -198,7 +226,7 @@ The Basics of Cloudmesh (under preparation)
         LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
         applied to enhance Web Service, Command Line Tools and Rest APIs.
 
-.. list-table:: Sub Section
+.. list-table:: Basics of Cloudmesh
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -206,21 +234,59 @@ The Basics of Cloudmesh (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
+    * - **Introduction and Overview**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Cloudmesh for Beginners**
+         - Installation
+         - Command Line Tools (CLI)
+         - Web Interface (GUI)
+         - REST APIs
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **IPython on Cloudmesh**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Using OpenStack on Cloudmesh**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
+.. list-table:: Advanced Cloudmesh
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+    * - Topic
+     - Video
+     - Text
+     - Homework
+    * - **Introduction and Overview**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **VM Management**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Virtual Clusters with Cloudmesh**
+         - SSH Connections between nodes
+         - Host Configuration
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
 Week 4
 -------------------------------------------------------------------------------
 
 * Scheduled: 04/03
 
-Advanced Cloudmesh (under preparation)
+IT Operations - Automation and Orchestration (under preparation)
 *******************************************************************************
 
-.. list-table:: Sub Section
+.. list-table:: IT Operations - Automation and Orchestration
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -228,10 +294,24 @@ Advanced Cloudmesh (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
+    * - **DevOps**
+         - Ansible
+         - SaltStack
+         - Puppet
+         - Chef
+         - OpenStack Heat
+         - Ubuntu Juju
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Discussion**
+         - Orchestration vs Collective DevOps
+         - PaaS
+         - Cloudmesh
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+
 
 
 Week 5 
@@ -239,10 +319,12 @@ Week 5
 
 * Scheduled: 04/10
 
-IT Operations - Automation and Orchestration (under preparation)
+Virtual Clusters I (under preparation)
 *******************************************************************************
 
-.. list-table:: Sub Section
+**First Appearance of Hadoop in This Week**
+
+.. list-table:: Virtual Clusters I
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -250,20 +332,34 @@ IT Operations - Automation and Orchestration (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
+    * - **Introduction and Overview**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Hadoop Virtual Cluster**
+         - Cloudmesh
+         - Discusson
+         - Advanced Topics with Hadoop
+              - Zookeeper and HBase
+              - Yarn
+              - OpenStack Havana
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
 Week 6
 -------------------------------------------------------------------------------
 
 * Scheduled: 04/17
 
-Virtual Clusters (under preparation)
+Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
 *******************************************************************************
 
-.. list-table:: Sub Section
+.. list-table:: Virtual Cluster II
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -271,22 +367,35 @@ Virtual Clusters (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
-
-**First Appearance of Hadoop in This Week**
+    * - **Composite Cluster with Sub-Clusters**
+         - Introduction and Overview
+         - Creating a Cross Resource Virtual Cluster
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **OpenMPI Virtual Cluster**
+         - Introduction and Overview
+         - HPC Stack - MPI
+         - Cloudmesh HPC
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **MongoDB Virtual Cluster**
+         - Introduction and Overview
+         - Sharded MongoDB
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
 Week 7
 -------------------------------------------------------------------------------
 
 * Scheduled: 04/24
 
-Composite Cluster with Sub-Clusters (under preparation)
+Other Technologies (under preparation)
 *******************************************************************************
 
-.. list-table:: Sub Section
+.. list-table:: Other Technologies
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -294,41 +403,47 @@ Composite Cluster with Sub-Clusters (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
+    * - **Virtualization Technologies**
+          - Introduction and Overview
+          - Hypervisors
+              - KVM
+              - Containers (LXC)
+              - Docker
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **VM Software**
+          - Vagrant
+          - Oracle VirtualBox
+          - VMWare
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Apache Big Data Stack (ABDS)**
+          - Apache ZooKepper
+          - Apache Storm
+          - Apache Mesos
+          - Apache HBase
+          - Apache Spark
+          - Apache Pig
+          - Apache Hive
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **Glossary**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
 Week 8
 -------------------------------------------------------------------------------
 
 * Scheduled: 05/01
 
-Other Technologies (under preparation)
-*******************************************************************************
-
-.. list-table:: Sub Section
-   :widths: 15 10 30 10
-   :header-rows: 1
-
-    * - Topic
-     - Video
-     - Text
-     - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
-
-Week 9
--------------------------------------------------------------------------------
-
-* Scheduled: 05/08
-
 Future (under preparation)
 *******************************************************************************
 
-.. list-table:: Sub Section
+.. list-table:: Future
    :widths: 15 10 30 10
    :header-rows: 1
 
@@ -336,8 +451,12 @@ Future (under preparation)
      - Video
      - Text
      - Homework
-    * - ...
-      - ...
-      - ...
-      - ...
+    * - **What will the Future Bring**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
+    * - **GE Industrial Internet of Things (IIoT)**
+      - `00 mins <>`_
+      - `00 mins <>`_
+      - 
 
