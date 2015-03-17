@@ -3,7 +3,7 @@
 ..
   Changes:
 
-  2015-03-17: Update days/times
+  2015-03-17: Update days/times, add Adobe Connect link
   2015-03-16: Big Data Open Source Software Project (BUEX-V 594)
 
 

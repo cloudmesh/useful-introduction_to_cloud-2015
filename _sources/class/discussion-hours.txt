@@ -1,6 +1,7 @@
 ..
   Changes
 
+  2015-03-17: add Adobe Connect link
   2015-03-16: Big Data Software Architecture (BUE-V 594)
 
 
