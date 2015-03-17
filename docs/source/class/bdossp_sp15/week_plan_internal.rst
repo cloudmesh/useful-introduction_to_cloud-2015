@@ -1,5 +1,5 @@
 ===============================================================================
-Weekly Plan (Internal Only for Sharing Schedule)
+Weekly Plan (Internal Use Only for Sharing Schedule)
 ===============================================================================
 
 * Release Date: Every Friday 5pm
@@ -7,7 +7,7 @@ Weekly Plan (Internal Only for Sharing Schedule)
 Week 1 
 -------------------------------------------------------------------------------
 
-* Live: 03/13 - 03/19
+* Live on 03/13
 
 Gaining Access to FutureSystems and Core Technologies
 *******************************************************************************
@@ -129,7 +129,7 @@ Length of the lessons in Week 1
 Week 2 
 -------------------------------------------------------------------------------
 
-* Scheduled: 03/20 - 03/26
+* Scheduled: 03/20
 
 The Basics of OpenStack (under preparation)
 *******************************************************************************
@@ -150,18 +150,18 @@ The Basics of OpenStack (under preparation)
 Week 3
 -------------------------------------------------------------------------------
 
-* Scheduled: 03/27 - 04/02
+* Scheduled: 03/27
 
 The Basics of Cloudmesh (under preparation)
 *******************************************************************************
 
-Cloudmesh is a cloud resource management software written in Python. It
-automates launching multiple VM instances across different cloud platforms
-including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
-Eucalyptus.  The web interface of Cloudmesh help users and administrators
-manage entire cloud resources. Most cutting-edge technologies such as Apache
-LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
-applied to enhance Web Service, Command Line Tools and Rest APIs.
+.. Cloudmesh is a cloud resource management software written in Python. It
+        automates launching multiple VM instances across different cloud platforms
+        including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
+        Eucalyptus.  The web interface of Cloudmesh help users and administrators
+        manage entire cloud resources. Most cutting-edge technologies such as Apache
+        LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
+        applied to enhance Web Service, Command Line Tools and Rest APIs.
 
 .. list-table:: Sub Section
    :widths: 15 10 30 10
@@ -180,7 +180,7 @@ applied to enhance Web Service, Command Line Tools and Rest APIs.
 Week 4
 -------------------------------------------------------------------------------
 
-* Scheduled: 04/03 - 04/09
+* Scheduled: 04/03
 
 Advanced Cloudmesh (under preparation)
 *******************************************************************************
@@ -202,7 +202,7 @@ Advanced Cloudmesh (under preparation)
 Week 5 
 -------------------------------------------------------------------------------
 
-* Scheduled: 04/10 - 04/16
+* Scheduled: 04/10
 
 IT Operations - Automation and Orchestration (under preparation)
 *******************************************************************************
@@ -223,7 +223,7 @@ IT Operations - Automation and Orchestration (under preparation)
 Week 6
 -------------------------------------------------------------------------------
 
-* Scheduled: 04/17 - 04/23
+* Scheduled: 04/17
 
 Virtual Clusters (under preparation)
 *******************************************************************************
@@ -246,7 +246,7 @@ Virtual Clusters (under preparation)
 Week 7
 -------------------------------------------------------------------------------
 
-* Scheduled: 04/24 - 04/30
+* Scheduled: 04/24
 
 Composite Cluster with Sub-Clusters (under preparation)
 *******************************************************************************
@@ -267,7 +267,7 @@ Composite Cluster with Sub-Clusters (under preparation)
 Week 8
 -------------------------------------------------------------------------------
 
-* Scheduled: 05/01 - 05/07
+* Scheduled: 05/01
 
 Other Technologies (under preparation)
 *******************************************************************************
@@ -288,7 +288,7 @@ Other Technologies (under preparation)
 Week 9
 -------------------------------------------------------------------------------
 
-* Scheduled: 05/08 - 05/14
+* Scheduled: 05/08
 
 Future (under preparation)
 *******************************************************************************
