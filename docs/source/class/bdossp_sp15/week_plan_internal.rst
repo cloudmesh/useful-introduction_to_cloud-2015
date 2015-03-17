@@ -27,8 +27,7 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
      - **Virtual Clusters I (First Appearance of Hadoop)**
      - 04/10
    * - Week 6
-     - Virtual Clusters II
-          - Composite Cluster with Sub-Clusters
+     - Virtual Clusters II (Composite Cluster with Sub-Clusters)
      - 04/17
    * - Week 7
      - **Other Technologies**
