@@ -4,6 +4,41 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
 
 * Release Date: Every Friday 5pm
 
+.. list-table:: Schedule
+   :widths: 10 30 10 
+   :header-rows: 1
+
+   * - Week
+     - Topic
+     - Due
+   * - Week 1
+     - Gaining Access to FutureSystems and Core Technologies
+     - 03/13
+   * - Week 2
+     - The Basics of OpenStack
+     - 03/20
+   * - Week 3
+     - The Basics of Cloudmesh
+     - 03/27
+   * - Week 4
+     - Advanced Cloudmesh
+     - 04/03
+   * - Week 5
+     - IT Operations - Automation and Orchestration
+     - 04/10
+   * - Week 6
+     - Virtual Clusters
+     - 04/17
+   * - Week 7
+     - Composite Cluster with Sub-Clusters
+     - 04/24
+   * - Week 8
+     - Other Technologies
+     - 05/01
+   * - Week 9
+     - Future
+     - 05/08
+
 Week 1 
 -------------------------------------------------------------------------------
 
