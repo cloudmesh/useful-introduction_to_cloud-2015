@@ -79,9 +79,9 @@ to source the appropriate files::
 Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Starting a new instance is simple. The following command starts a new instance
-named *tutorial1* with a Ubuntu 14.04 base image.  The size of the machine will
-be **small**.
+Starting a new instance is simple. The following command starts a new
+instance named *tutorial1* with a Ubuntu 14.04 base image.  The size
+of the machine will be **small**.
 
 .. note::
 
@@ -118,10 +118,13 @@ Boot the instance using the following command:
 Here are some explanations for the arguments.
 
 * ``boot`` is a sub command to start a new server.
-* ``--flavor`` is a name for your machine size. ``m1.small`` typically has 1 vCPU and 2GB memories.
-* ``--image`` is a name for your base image. ``nova image-list`` displays all registered image.
-* ``--key_name`` is a key name to use for SSH connection. This key should be
-  registered on Nova Compute. Try ``nova keypair-list`` to see registered keys.
+* ``--flavor`` is a name for your machine size. ``m1.small`` typically
+  has 1 vCPU and 2GB memories.
+* ``--image`` is a name for your base image. ``nova image-list``
+  displays all registered image.
+* ``--key_name`` is a key name to use for SSH connection. This key
+  should be registered on Nova Compute. Try ``nova keypair-list`` to
+  see registered keys.
 * ``tutorial1`` is a name for your vm instance.
 
 Exercises
