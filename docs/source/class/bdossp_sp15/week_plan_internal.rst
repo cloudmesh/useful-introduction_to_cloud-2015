@@ -12,29 +12,29 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
      - Topic
      - Due
    * - Week 1
-     - Gaining Access to FutureSystems and Core Technologies
+     - **Gaining Access to FutureSystems and Core Technologies**
      - 03/13
    * - Week 2
-     - The Basics of OpenStack
+     - **The Basics of OpenStack**
      - 03/20
    * - Week 3
-     - Cloudmesh - Cloud Management Software
+     - **Cloudmesh - Cloud Management Software**
      - 03/27
    * - Week 4
-     - IT Operations - Automation and Orchestration
+     - **IT Operations - Automation and Orchestration**
      - 04/03
    * - Week 5
-     - Virtual Clusters I (First Appearance of Hadoop)
+     - **Virtual Clusters I (First Appearance of Hadoop)**
      - 04/10
    * - Week 6
      - Virtual Clusters II
           - Composite Cluster with Sub-Clusters
      - 04/17
    * - Week 7
-     - Other Technologies
+     - **Other Technologies**
      - 04/24
    * - Week 8
-     - Future
+     - **Future**
      - 05/01
 
 Week 1 
@@ -172,9 +172,9 @@ The Basics of OpenStack (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **Introduction and Overview**
       - `00 mins <>`_
       - `00 mins <>`_
@@ -231,9 +231,9 @@ Cloudmesh - Cloud Management Software (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **Introduction and Overview**
       - `00 mins <>`_
       - `00 mins <>`_
@@ -260,9 +260,9 @@ Cloudmesh - Cloud Management Software (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **Introduction and Overview**
       - `00 mins <>`_
       - `00 mins <>`_
@@ -291,9 +291,9 @@ IT Operations - Automation and Orchestration (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **DevOps**
          - Ansible
          - SaltStack
@@ -329,9 +329,9 @@ Virtual Clusters I (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **Introduction and Overview**
       - `00 mins <>`_
       - `00 mins <>`_
@@ -364,9 +364,9 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **Composite Cluster with Sub-Clusters**
          - Introduction and Overview
          - Creating a Cross Resource Virtual Cluster
@@ -400,9 +400,9 @@ Other Technologies (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **Virtualization Technologies**
           - Introduction and Overview
           - Hypervisors
@@ -448,9 +448,9 @@ Future (under preparation)
    :header-rows: 1
 
     * - Topic
-     - Video
-     - Text
-     - Homework
+      - Video
+      - Text
+      - Homework
     * - **What will the Future Bring**
       - `00 mins <>`_
       - `00 mins <>`_
