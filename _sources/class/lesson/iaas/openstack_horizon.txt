@@ -35,11 +35,7 @@ Horizon on FutureSystems
      - Juno
      - India_OpenStack_Juno_
      - Native OpenStack
-     - India offers a Graphical user interface to access
-       OpenStack. For those interested in only managing a few images
-       this may be a good way to start. The link to the GUI is 
-       https://openstack-j.india.futuresystems.org/horizon . The password
-       can be found by following the method discussed above.
+     - GUI for OpenStack
 
 Getting Started
 -------------------------------------------------------------------------------
@@ -47,13 +43,21 @@ Getting Started
 * Open the following URL:
   India_OpenStack_Juno_
 
-* Use OS_USERNAME and OS_PASSWORD as a User Name and Password on Horizon.
-  You can find your OS_USERNAME and OS_PASSWORD in the
-  ~/.cloudmesh/clouds/india/juno/openrc.sh
+* Use ``OS_USERNAME`` and ``OS_PASSWORD`` as a User Name and Password on Horizon.
+  You can find your ``OS_USERNAME`` and ``OS_PASSWORD`` in the
+  ``~/.cloudmesh/clouds/india/juno/openrc.sh``
 
 .. note:: If you are using other versions of OpenStack on different cloud hosts,
           try to find your identity file with the following pattern of the path.
-          $HOME/.cloudmesh/clouds/[cloud host]/[openstack version]/[openrc.sh or novarc.sh]
+          ``$HOME/.cloudmesh/clouds/[cloud host]/[openstack version]/[openrc.sh or novarc.sh]``
+
+:: 
+   $ cat ~/.cloudmesh/clouds/india/juno/openrc.sh
+   export OS_USERNAME=albert
+   export OS_PASSWORD=**********
+   export OS_TENANT_NAME=fg465
+   export OS_AUTH_URL=https://i5r.idp.iu.futuregrid.org:5000/v2.0
+   export OS_CACERT=~/.cloudmesh/clouds/india/juno/cacert.pem
 
 * Select a project that you would like to use at the project selection link at
   the top left-hand corder of the page next to the OpenStack title image.

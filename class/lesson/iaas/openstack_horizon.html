@@ -229,11 +229,7 @@ Font-Awesome, Jasmine, Qunit, Rickshaw, etc.</p>
 <td>Juno</td>
 <td><a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">India_OpenStack_Juno</a></td>
 <td>Native OpenStack</td>
-<td>India offers a Graphical user interface to access
-OpenStack. For those interested in only managing a few images
-this may be a good way to start. The link to the GUI is
-<a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">https://openstack-j.india.futuresystems.org/horizon</a> . The password
-can be found by following the method discussed above.</td>
+<td>GUI for OpenStack</td>
 </tr>
 </tbody>
 </table>
@@ -243,16 +239,25 @@ can be found by following the method discussed above.</td>
 <ul class="simple">
 <li>Open the following URL:
 <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">India_OpenStack_Juno</a></li>
-<li>Use OS_USERNAME and OS_PASSWORD as a User Name and Password on Horizon.
-You can find your OS_USERNAME and OS_PASSWORD in the
-~/.cloudmesh/clouds/india/juno/openrc.sh</li>
+<li>Use <tt class="docutils literal"><span class="pre">OS_USERNAME</span></tt> and <tt class="docutils literal"><span class="pre">OS_PASSWORD</span></tt> as a User Name and Password on Horizon.
+You can find your <tt class="docutils literal"><span class="pre">OS_USERNAME</span></tt> and <tt class="docutils literal"><span class="pre">OS_PASSWORD</span></tt> in the
+<tt class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></tt></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you are using other versions of OpenStack on different cloud hosts,
 try to find your identity file with the following pattern of the path.
-$HOME/.cloudmesh/clouds/[cloud host]/[openstack version]/[openrc.sh or novarc.sh]</p>
+<tt class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/[cloud</span> <span class="pre">host]/[openstack</span> <span class="pre">version]/[openrc.sh</span> <span class="pre">or</span> <span class="pre">novarc.sh]</span></tt></p>
 </div>
+<dl class="docutils">
+<dt>::</dt>
+<dd>$ cat ~/.cloudmesh/clouds/india/juno/openrc.sh
+export OS_USERNAME=albert
+export OS_PASSWORD=**********
+export OS_TENANT_NAME=fg465
+export OS_AUTH_URL=https://i5r.idp.iu.futuregrid.org:5000/v2.0
+export OS_CACERT=~/.cloudmesh/clouds/india/juno/cacert.pem</dd>
+</dl>
 <ul class="simple">
 <li>Select a project that you would like to use at the project selection link at
 the top left-hand corder of the page next to the OpenStack title image.</li>
