@@ -69,6 +69,13 @@ necessary commands.::
 
   $ module load openstack
 
+Next, you need to set up your environment correctly to use some
+OpenStack commands. This has been configured for you so you just need
+to source the appropriate files::
+
+  $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+  $ source ~/.cloudmesh/clouds/india/juno/fg465
+
 Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
