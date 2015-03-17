@@ -64,6 +64,11 @@ FutureSystems)
 
   $ ssh india.futuresystems.org
 
+You should now load the ``openstack`` module to gain access to the
+necessary commands.::
+
+  $ module load openstack
+
 Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
