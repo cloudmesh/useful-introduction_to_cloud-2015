@@ -24,7 +24,6 @@ sphinxcontrib-httpdomain
 ipython
 sh
 fabric
-nose
 autopep8
 markupsafe
 mkdocs
