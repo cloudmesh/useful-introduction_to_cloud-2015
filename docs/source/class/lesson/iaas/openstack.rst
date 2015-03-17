@@ -127,7 +127,10 @@ Here are some explanations for the arguments.
 Exercises
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-* Launch a new medium instance with a CentOS image.
+* Launch a new medium instance with a CentOS image using a different
+  key (call it ``openstack-ex1-key``). Name the CentOS instance
+  ``tutorial1-ex1`` and make sure both instances are running using the
+  ``nova list`` command.
 * Allocate a floating ip address to the instance that you just launched.
 
 Glance Image Management
