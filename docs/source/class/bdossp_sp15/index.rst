@@ -32,6 +32,14 @@ Office hours will be held so that students may receive individual
 attention from instructors.  Additionally, hours will be made
 available for general discussions.
 
+Discussions will be done using Adobe Air.
+Make sure you are prepared to join the meeting by click on the following links:
+
+#. Adobe Connect Setup Instructions: https://ittraining.iu.edu/connectsetup/
+#. Installing Adobe Connect Plug-In: https://kb.iu.edu/d/bdoc
+#. Testing Connectivity: https://connect.iu.edu/common/help/en/support/meeting_test.htm
+
+
 .. note::
 
    All times are in US Eastern Standard Time.
