@@ -83,9 +83,37 @@ Starting a new instance is simple. The following command starts a new instance
 named *tutorial1* with a Ubuntu 14.04 base image.  The size of the machine will
 be **small**.
 
+.. note::
+
+   Make sure you have a ``~/.ssh`` directory and created a key for
+   OpenStack to use.
+   Create the directory if necessary::
+
+     $ test -d ~/.ssh || mkdir ~/.ssh
+
+   Generate a key for OpenStack::
+
+     $ nova keypair-add openstack-key >~/.ssh/openstack-key
+
+   Ensure the permissions are set correctly::
+
+     $ chmod 600 ~/.ssh/openstack-key
+
+   You can now see that your key is visible to OpenStack::
+
+     $ nova keypair-list
+     +---------------+-------------------------------------------------+
+     | Name          | Fingerprint                                     |
+     +---------------+-------------------------------------------------+
+     | openstack-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
+     +---------------+-------------------------------------------------+
+
+
+Boot the instance using the following command:
+
 ::
 
-  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name albert-india-key tutorial1
+  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name openstack-key tutorial1
 
 Here are some explanations for the arguments.
 
