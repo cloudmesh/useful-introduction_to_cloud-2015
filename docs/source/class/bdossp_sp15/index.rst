@@ -32,12 +32,30 @@ Office hours will be held so that students may receive individual
 attention from instructors.  Additionally, hours will be made
 available for general discussions.
 
+Discussions will be done using Adobe Connect.
+Make sure you are prepared to join the meeting by click on the following links:
+
+#. Adobe Connect Setup Instructions: https://ittraining.iu.edu/connectsetup/
+#. Installing Adobe Connect Plug-In: https://kb.iu.edu/d/bdoc
+#. Testing Connectivity: https://connect.iu.edu/common/help/en/support/meeting_test.htm
+
+
+You can join the meeting by clicking on `this link <https://connect.iu.edu/bdossp_sp15/>`_.
+
+
 .. note::
 
    All times are in US Eastern Standard Time.
 
+
+Additionally, there may be some technical issues when attempting to join a meeting, please see the following for guidance.
+
+.. include:: ../adobe-connect-tips.rst
+
 Office Hours
 ----------------------------------------------------------------------
+
+Office hours will begin the week of March 23, 2015.
 
 .. include:: ../office-hours.rst
 
@@ -187,4 +205,4 @@ To be Organized into the above
    ../lesson/ansible_cloudmesh
    ../lesson/docker
    ../lesson/docker_cloudmesh
-
+   ../lesson/labs

@@ -66,30 +66,125 @@ FutureSystems)
 
   $ ssh india.futuresystems.org
 
+You should now load the ``openstack`` module to gain access to the
+necessary commands.::
+
+  $ module load openstack
+
+Next, you need to set up your environment correctly to use some
+OpenStack commands. This has been configured for you so you just need
+to source the appropriate files::
+
+  $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+  $ source ~/.cloudmesh/clouds/india/juno/fg465
+
 Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Starting a new instance is simple. The following command starts a new instance
-named *tutorial1* with a Ubuntu 14.04 base image.  The size of the machine will
-be **small**.
+Starting a new instance is simple. The following command starts a new
+instance named *tutorial1* with a Ubuntu 14.04 base image.  The size
+of the machine will be **small**.
+
+.. note::
+
+   Make sure you have a ``~/.ssh`` directory and created a key for
+   OpenStack to use.
+   Create the directory if necessary::
+
+     $ test -d ~/.ssh || mkdir ~/.ssh
+
+   Generate a key for OpenStack::
+
+     $ nova keypair-add openstack-key >~/.ssh/openstack-key
+
+   Ensure the permissions are set correctly::
+
+     $ chmod 600 ~/.ssh/openstack-key
+
+   You can now see that your key is visible to OpenStack::
+
+     $ nova keypair-list
+     +---------------+-------------------------------------------------+
+     | Name          | Fingerprint                                     |
+     +---------------+-------------------------------------------------+
+     | openstack-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
+     +---------------+-------------------------------------------------+
+
+
+Boot the instance using the following command:
 
 ::
 
-  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name albert-india-key tutorial1
+  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name openstack-key tutorial1
 
 Here are some explanations for the arguments.
 
 * ``boot`` is a sub command to start a new server.
-* ``--flavor`` is a name for your machine size. ``m1.small`` typically has 1 vCPU and 2GB memories.
-* ``--image`` is a name for your base image. ``nova image-list`` displays all registered image.
-* ``--key_name`` is a key name to use for SSH connection. This key should be
-  registered on Nova Compute. Try ``nova keypair-list`` to see registered keys.
+* ``--flavor`` is a name for your machine size. ``m1.small`` typically
+  has 1 vCPU and 2GB memories.
+* ``--image`` is a name for your base image. ``nova image-list``
+  displays all registered image.
+* ``--key_name`` is a key name to use for SSH connection. This key
+  should be registered on Nova Compute. Try ``nova keypair-list`` to
+  see registered keys.
 * ``tutorial1`` is a name for your vm instance.
 
-Exercises
+
+Some useful ``nova`` subcommands are:
+
+* ``list``: list active servers
+* ``flavor-list``: list of available flavors
+* ``host-list``: available hosts
+* ``keypair-list``: keypairs for a user
+
+You can get more information by executing the ``nova -h`` command.
+
+
+If we want our machine to be accessible from outside the private
+network, we need to create a "floating IP address" and associate it
+with an instance.  Since floating ips come from some pool of available
+addresses, we can list the pools using the ``floating-ip-pool-list``
+subcommand::
+
+  $ nova floating-ip-pool-list
+  +---------+
+  | name    |
+  +---------+
+  | ext-net |
+  +---------+
+
+We then create an ip for our instance::
+
+  $ nova float-ip-create ext-net
+  +-----------------+-----------+----------+---------+
+  | Ip              | Server Id | Fixed Ip | Pool    |
+  +-----------------+-----------+----------+---------+
+  | 149.165.158.107 | -         | -        | ext-net |
+  +-----------------+-----------+----------+---------+
+
+Now that the ip has been created, associate it with our instance::
+
+  $ nova floating-ip-associate
+  usage: nova floating-ip-associate [--fixed-address <fixed_address>]
+                                    <server> <address>
+
+  $ nova floating-ip-associate tutorial1 149.165.158.107
+
+
+
+
+
+
+
+.. _lab-openstack-1:
+
+Lab - OpenStack - Launch an Instance
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-* Launch a new medium instance with a CentOS image.
+* Launch a new medium instance with a CentOS image using a different
+  key (call it ``openstack-ex1-key``). Name the CentOS instance
+  ``tutorial1-ex1`` and make sure both instances are running using the
+  ``nova list`` command.
 * Allocate a floating ip address to the instance that you just launched.
 
 Glance Image Management

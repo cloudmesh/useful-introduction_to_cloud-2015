@@ -94,6 +94,11 @@ Resources
 Exercises
 ----------------------------------------------------------------------
 
+.. _lab-python-1:
+
+Lab - Python - FizzBuzz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Write a python program called fizzbuzz.py that accepts an integer n
 from the command line.  Pass this integer to a function called
 fizzbuzz.
@@ -102,3 +107,16 @@ The fizzbuzz function should then iterate from 1 to n.  If the ith
 number is a multiple of three, print "fizz", if a multiple of 5 print
 "buzz", if a multiple of both print "fizzbuzz", else print the value.
 
+
+.. _lab-python-2:
+
+Lab - Python - Setup for FutureSystems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Create a virtualenv ``~/ENV``
+#. Modify your ``~/.bashrc`` shell file to activate your environment
+   upon login.
+#. Install the ``docopt`` python package using ``pip``
+#. Write a program that uses ``docopt`` to define a commandline
+   program. Hint: modify the FizzBuzz program.
+#. Demonstrate the program works and submit the code and output.

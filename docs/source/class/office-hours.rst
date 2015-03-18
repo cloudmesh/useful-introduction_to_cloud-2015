@@ -7,25 +7,6 @@
 
 
 
-Monday:
-
-- 9-10 am Badi
-
-Tuesday:
-
-- 9-10 am Gregor
-- 4-5 pm Badi
-
-Wednesday:
-
-- 9-10 am Badi
-- 5-6 pm Gregor
-
-Thursday:
-
-- 9-10 am Gregor
-- 5-6 pm Hyungro
-
-Friday:
-
-- 9-10 am Hyungro
+- Tuesdays 9-10 am
+- Wednesday 4-5 pm
+- Thursday 9-10 am
