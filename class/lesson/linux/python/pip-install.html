@@ -136,7 +136,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ipython/_ipython.html">IPython</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a><ul>
@@ -259,20 +260,20 @@ $ cd ~
 </pre></div>
 </div>
 <p>Now lets create a virtual env:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ virtualenv venv
+<div class="highlight-python"><div class="highlight"><pre>$ virtualenv ENV
 PYTHONHOME is set.  You *must* activate the virtualenv before using it
-New python executable in venv/bin/python
+New python executable in ENV/bin/python
 Installing setuptools............done.
 Installing pip...............done.
 </pre></div>
 </div>
 <p>When using <code class="docutils literal"><span class="pre">virtualenv</span></code> you pass the directory where you which to
-create the virtual environment, in this case <code class="docutils literal"><span class="pre">venv</span></code> in the current
+create the virtual environment, in this case <code class="docutils literal"><span class="pre">ENV</span></code> in the current
 (home) directory.  We are then told that we must activate the virtual
 environment before using it and that the python program, setuptools,
 and pip are installed.</p>
 <p>Let&#8217;s see what we have:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ls venv/bin
+<div class="highlight-python"><div class="highlight"><pre>$ ls ENV/bin
 activate  activate.csh  activate.fish  activate_this.py  easy_install
 easy_install-2.7  pip  pip-2.7  python  python2  python2.7
 </pre></div>
@@ -282,9 +283,9 @@ our current <code class="docutils literal"><span class="pre">python</span></code
 environment:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ which python
 /N/soft/python/2.7/bin/python
-$ source venv/bin/activate
-(venv) $ which python
-~/venv/bin/python
+$ source ENV/bin/activate
+(ENV) $ which python
+~/ENV/bin/python
 </pre></div>
 </div>
 <div class="admonition important">
@@ -345,6 +346,14 @@ problems:</p>
 <p>Let&#8217;s look at the result.
 This is considerably better than before.
 It is easy to tell what the example1 and example2 functions are doing.</p>
+<p>It is a good idea to develop a habit of using <code class="docutils literal"><span class="pre">autopep8</span></code> in your
+python-development workflow.  For instance: use <code class="docutils literal"><span class="pre">autopep8</span></code> to check
+a file, and if it passes, make any changes in place using the <code class="docutils literal"><span class="pre">-i</span></code>
+flag:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ autopep8 file.py    # check output to see of passes
+$ autopep8 -i file.py # update in place
+</pre></div>
+</div>
 </div>
 
 

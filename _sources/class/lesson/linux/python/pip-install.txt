@@ -77,22 +77,22 @@ into the home directory::
 
 Now lets create a virtual env::
 
-  $ virtualenv venv
+  $ virtualenv ENV
   PYTHONHOME is set.  You *must* activate the virtualenv before using it
-  New python executable in venv/bin/python
+  New python executable in ENV/bin/python
   Installing setuptools............done.
   Installing pip...............done.
 
 
 When using ``virtualenv`` you pass the directory where you which to
-create the virtual environment, in this case ``venv`` in the current
+create the virtual environment, in this case ``ENV`` in the current
 (home) directory.  We are then told that we must activate the virtual
 environment before using it and that the python program, setuptools,
 and pip are installed.
 
 Let's see what we have::
 
-  $ ls venv/bin
+  $ ls ENV/bin
   activate  activate.csh  activate.fish  activate_this.py  easy_install
   easy_install-2.7  pip  pip-2.7  python  python2  python2.7
 
@@ -102,9 +102,9 @@ environment::
 
   $ which python
   /N/soft/python/2.7/bin/python
-  $ source venv/bin/activate
-  (venv) $ which python
-  ~/venv/bin/python
+  $ source ENV/bin/activate
+  (ENV) $ which python
+  ~/ENV/bin/python
 
 .. important::
 
@@ -170,6 +170,15 @@ problems::
 Let's look at the result.
 This is considerably better than before.
 It is easy to tell what the example1 and example2 functions are doing.
+
+It is a good idea to develop a habit of using ``autopep8`` in your
+python-development workflow.  For instance: use ``autopep8`` to check
+a file, and if it passes, make any changes in place using the ``-i``
+flag::
+
+  $ autopep8 file.py    # check output to see of passes
+  $ autopep8 -i file.py # update in place
+
 
 
 
