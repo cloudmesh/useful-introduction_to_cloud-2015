@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -49,12 +47,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -64,9 +59,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -87,7 +81,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -139,7 +133,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
@@ -164,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -199,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="using-git-and-github-for-collaboration">
 <h1>Using Git and GitHub for collaboration<a class="headerlink" href="#using-git-and-github-for-collaboration" title="Permalink to this headline">¶</a></h1>
@@ -214,12 +208,12 @@
 <li><a class="reference internal" href="#have-an-ssh-key" id="id5">Have an SSH key</a></li>
 <li><a class="reference internal" href="#upload-your-ssh-key-to-github" id="id6">Upload your SSH key to GitHub</a></li>
 <li><a class="reference internal" href="#getting-access-to-repository" id="id7">Getting access to repository</a></li>
-<li><a class="reference internal" href="#configuring-your-git-identity-git-config" id="id8">Configuring your Git Identity (<code class="docutils literal"><span class="pre">git</span> <span class="pre">config</span></code>)</a></li>
-<li><a class="reference internal" href="#initializing-the-repository-with-git-clone" id="id9">Initializing the Repository with <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code></a></li>
+<li><a class="reference internal" href="#configuring-your-git-identity-git-config" id="id8">Configuring your Git Identity (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span></tt>)</a></li>
+<li><a class="reference internal" href="#initializing-the-repository-with-git-clone" id="id9">Initializing the Repository with <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt></a></li>
 <li><a class="reference internal" href="#using-the-repository" id="id10">Using the Repository</a><ul>
-<li><a class="reference internal" href="#adding-content-to-git-git-add-git-commit-git-status" id="id11">Adding content to git (<code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code>)</a></li>
-<li><a class="reference internal" href="#viewing-repository-history-git-show-git-log" id="id12">Viewing Repository History (<code class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code>)</a></li>
-<li><a class="reference internal" href="#sharing-your-changes-via-github-git-push-git-pull" id="id13">Sharing your changes via GitHub (<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code>)</a></li>
+<li><a class="reference internal" href="#adding-content-to-git-git-add-git-commit-git-status" id="id11">Adding content to git (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>)</a></li>
+<li><a class="reference internal" href="#viewing-repository-history-git-show-git-log" id="id12">Viewing Repository History (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt>)</a></li>
+<li><a class="reference internal" href="#sharing-your-changes-via-github-git-push-git-pull" id="id13">Sharing your changes via GitHub (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt>)</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#concurrent-changes" id="id14">Concurrent Changes</a><ul>
@@ -294,8 +288,8 @@ documentation on <a class="reference external" href="http://cloudmesh.github.io/
 <p>This prerequisite is satisfied if you are able to accomplish the following:</p>
 <ul class="simple">
 <li>log into <a class="reference external" href="https://portal.futuresystems.org">https://portal.futuresystems.org</a></li>
-<li>go to the <code class="docutils literal"><span class="pre">Portal</span> <span class="pre">Account</span></code> tab</li>
-<li>the <code class="docutils literal"><span class="pre">status</span></code> row is all green in the account status section</li>
+<li>go to the <tt class="docutils literal"><span class="pre">Portal</span> <span class="pre">Account</span></tt> tab</li>
+<li>the <tt class="docutils literal"><span class="pre">status</span></tt> row is all green in the account status section</li>
 </ul>
 </div>
 <div class="section" id="have-an-ssh-key">
@@ -305,11 +299,11 @@ If you have followed the documentation for creating a FutureSystems
 account you should have created an SSH key in the process.</p>
 <p>The prerequisite is satisfied if:</p>
 <ul class="simple">
-<li>You can log onto <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code></li>
+<li>You can log onto <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt></li>
 </ul>
 <p>On <strong>Mac OS X</strong> you will have</p>
 <ul class="simple">
-<li>The <code class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></code> and <code class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></code> files exists</li>
+<li>The <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></tt> and <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt> files exists</li>
 </ul>
 <p>On <strong>Windows</strong> using PuTTY:</p>
 <ul class="simple">
@@ -331,19 +325,19 @@ You can view the key by executing the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh-rsa AAA....... lovelace@gmail.com
 </pre></div>
 </div>
-<p>Copy this public key by selecting it and <code class="docutils literal"><span class="pre">right-click</span> <span class="pre">-&gt;</span> <span class="pre">Copy</span></code>.</p>
+<p>Copy this public key by selecting it and <tt class="docutils literal"><span class="pre">right-click</span> <span class="pre">-&gt;</span> <span class="pre">Copy</span></tt>.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">This must be your <strong>public</strong> key.
-Make sure you get the contents of <code class="docutils literal"><span class="pre">id_rsa.pub</span></code> and not
-<code class="docutils literal"><span class="pre">id_rsa</span></code>.</p>
+Make sure you get the contents of <tt class="docutils literal"><span class="pre">id_rsa.pub</span></tt> and not
+<tt class="docutils literal"><span class="pre">id_rsa</span></tt>.</p>
 </div>
-<p>Next go to your <a class="reference external" href="https://github.com/settings/ssh">GitHub account SSH keys</a> and click <code class="docutils literal"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>
+<p>Next go to your <a class="reference external" href="https://github.com/settings/ssh">GitHub account SSH keys</a> and click <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></tt>
 on the top right.
 You will need to provide a title and the key.
 It is a good idea to use your name and course number in the title,
-for example, Ada could use <code class="docutils literal"><span class="pre">Ada</span> <span class="pre">Lovelace</span> <span class="pre">BUEX-V</span> <span class="pre">594</span></code>.
-Next paste the key into the <code class="docutils literal"><span class="pre">Key</span></code> field and click <code class="docutils literal"><span class="pre">Add</span> <span class="pre">key</span></code>
+for example, Ada could use <tt class="docutils literal"><span class="pre">Ada</span> <span class="pre">Lovelace</span> <span class="pre">BUEX-V</span> <span class="pre">594</span></tt>.
+Next paste the key into the <tt class="docutils literal"><span class="pre">Key</span></tt> field and click <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">key</span></tt>
 at the bottom.</p>
 <p>This section is successfully completed if your
 <a class="reference external" href="https://github.com/settings/ssh">GitHub account SSH keys</a> lists the key you provided with the
@@ -410,18 +404,18 @@ private information.</p>
 <p>This prerequisite is satisfied if are able to</p>
 <ul class="simple">
 <li>go to <cite>https://github.com/futuresystems</cite></li>
-<li>find your repository (for example: <code class="docutils literal"><span class="pre">class-bigdata-technology-spring-2015-ABCDE</span></code>)</li>
-<li>you are in the <code class="docutils literal"><span class="pre">students</span></code> team</li>
+<li>find your repository (for example: <tt class="docutils literal"><span class="pre">class-bigdata-technology-spring-2015-ABCDE</span></tt>)</li>
+<li>you are in the <tt class="docutils literal"><span class="pre">students</span></tt> team</li>
 </ul>
 </div>
 <div class="section" id="configuring-your-git-identity-git-config">
-<h2><a class="toc-backref" href="#id8">Configuring your Git Identity (<code class="docutils literal"><span class="pre">git</span> <span class="pre">config</span></code>)</a><a class="headerlink" href="#configuring-your-git-identity-git-config" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Configuring your Git Identity (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">config</span></tt>)</a><a class="headerlink" href="#configuring-your-git-identity-git-config" title="Permalink to this headline">¶</a></h2>
 <p>You will need to configure git in order to use it properly.
 The following are required:</p>
 <ul class="simple">
 <li>your name</li>
 <li>your email address</li>
-<li>your SSH keys (<code class="docutils literal"><span class="pre">id_rsa</span></code> and <code class="docutils literal"><span class="pre">id_rsa.pub</span></code>)</li>
+<li>your SSH keys (<tt class="docutils literal"><span class="pre">id_rsa</span></tt> and <tt class="docutils literal"><span class="pre">id_rsa.pub</span></tt>)</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -433,13 +427,13 @@ configuration steps for each machine you use git on.</p>
 $ git config --global user.email lovelace@gmail.com
 </pre></div>
 </div>
-<p>Additionally, you can configure an editor such as <code class="docutils literal"><span class="pre">nano</span></code>,
-<code class="docutils literal"><span class="pre">emacs</span></code>, or <code class="docutils literal"><span class="pre">vi</span></code>.
-Ada will use <code class="docutils literal"><span class="pre">nano</span></code>:</p>
+<p>Additionally, you can configure an editor such as <tt class="docutils literal"><span class="pre">nano</span></tt>,
+<tt class="docutils literal"><span class="pre">emacs</span></tt>, or <tt class="docutils literal"><span class="pre">vi</span></tt>.
+Ada will use <tt class="docutils literal"><span class="pre">nano</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git config --global core.editor nano
 </pre></div>
 </div>
-<p>Once you have done so you should have a <code class="docutils literal"><span class="pre">~/.gitconfig</span></code> file.
+<p>Once you have done so you should have a <tt class="docutils literal"><span class="pre">~/.gitconfig</span></tt> file.
 You can check that this file exists and that it contains the correct
 information:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cat ~/.gitconfig
@@ -452,17 +446,17 @@ information:</p>
 </div>
 </div>
 <div class="section" id="initializing-the-repository-with-git-clone">
-<h2><a class="toc-backref" href="#id9">Initializing the Repository with <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code></a><a class="headerlink" href="#initializing-the-repository-with-git-clone" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Initializing the Repository with <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt></a><a class="headerlink" href="#initializing-the-repository-with-git-clone" title="Permalink to this headline">¶</a></h2>
 <p>Once you have access to a repository you should use it to work on
 assignments.
 You must do so from your FutureSystems account by logging into
-<code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> with ssh.
-For instance, if your account name on FutureSystems is <code class="docutils literal"><span class="pre">albert</span></code>:</p>
+<tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> with ssh.
+For instance, if your account name on FutureSystems is <tt class="docutils literal"><span class="pre">albert</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh albert@india.futuresystems.org
 </pre></div>
 </div>
 <p>Once you have your repository URL
-(for example: <code class="docutils literal"><span class="pre">git&#64;github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git</span></code>)
+(for example: <tt class="docutils literal"><span class="pre">git&#64;github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git</span></tt>)
 you can download the repository like so:</p>
 <div class="highlight-python"><div class="highlight"><pre>git clone git@github.com:futuresystems/class-bigdata-technology-spring-2015-ABCDE.git
 cd class-bigdata-technology-spring-2015-ABCDE
@@ -477,15 +471,15 @@ your assignments.</p>
 to track and share the changes among collaborators.
 Upon completion you will know how to do the following:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">add</span></code>-ing files to git</li>
-<li><code class="docutils literal"><span class="pre">commit</span></code>-ing changes</li>
-<li><code class="docutils literal"><span class="pre">push</span></code>-ing changes</li>
-<li><code class="docutils literal"><span class="pre">pull</span></code>-ing changes</li>
+<li><tt class="docutils literal"><span class="pre">add</span></tt>-ing files to git</li>
+<li><tt class="docutils literal"><span class="pre">commit</span></tt>-ing changes</li>
+<li><tt class="docutils literal"><span class="pre">push</span></tt>-ing changes</li>
+<li><tt class="docutils literal"><span class="pre">pull</span></tt>-ing changes</li>
 <li>resolving conflicts</li>
 </ul>
 <div class="section" id="adding-content-to-git-git-add-git-commit-git-status">
-<h3><a class="toc-backref" href="#id11">Adding content to git (<code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code>)</a><a class="headerlink" href="#adding-content-to-git-git-add-git-commit-git-status" title="Permalink to this headline">¶</a></h3>
-<p>Now that you have a repository in your account on <code class="docutils literal"><span class="pre">india</span></code> let us
+<h3><a class="toc-backref" href="#id11">Adding content to git (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>)</a><a class="headerlink" href="#adding-content-to-git-git-add-git-commit-git-status" title="Permalink to this headline">¶</a></h3>
+<p>Now that you have a repository in your account on <tt class="docutils literal"><span class="pre">india</span></tt> let us
 create some content and notify git that changes to this content needs
 to be tracked.
 Tracking content makes it easy to share changes among collaborators,
@@ -493,9 +487,9 @@ track precisely who made a change, what was changed, when something
 changed, and why a change was made.</p>
 <p>The commands we are using in this section are:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt></li>
 </ul>
 <p>The concepts are:</p>
 <ul class="simple">
@@ -504,7 +498,7 @@ changed, and why a change was made.</p>
 <li>tracked content</li>
 <li>what a <strong>change</strong> means in git terminology</li>
 </ul>
-<p>First let us create a file called <code class="docutils literal"><span class="pre">fist.txt</span></code> and write some lines:</p>
+<p>First let us create a file called <tt class="docutils literal"><span class="pre">fist.txt</span></tt> and write some lines:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nano fish.txt # open the file in the &quot;nano&quot; editor
 $ cat fish.txt  # after saving, show the contents of the file
 One fish
@@ -515,7 +509,7 @@ Blue fish
 </div>
 <p>At this stage the file exists but git is not tracking changes made.
 If it were to be deleted then it is gone for good.</p>
-<p>We can inspect the status of git using the <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> command:</p>
+<p>We can inspect the status of git using the <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git status
 On branch master
 
@@ -530,9 +524,9 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 </pre></div>
 </div>
 <p>There is a lot of information here but the key pertinent point is the
-<code class="docutils literal"><span class="pre">Untracked</span> <span class="pre">files</span></code> heading which lists all files that git sees but
+<tt class="docutils literal"><span class="pre">Untracked</span> <span class="pre">files</span></tt> heading which lists all files that git sees but
 whose changes are not being tracked.
-There is also the helpful hint <code class="docutils literal"><span class="pre">use</span> <span class="pre">&quot;git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...&quot;</span></code> indicating
+There is also the helpful hint <tt class="docutils literal"><span class="pre">use</span> <span class="pre">&quot;git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;...&quot;</span></tt> indicating
 a possible next step.
 Let us do so:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git add fish.txt
@@ -546,21 +540,21 @@ Changes to be committed:
         new file:    fish.txt
 </pre></div>
 </div>
-<p>In order to understand what <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code> does, we need to know the
+<p>In order to understand what <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt> does, we need to know the
 difference between each of the three states that content may be in:</p>
 <ul class="simple">
 <li>untracked</li>
 <li>staging</li>
 <li>tracked</li>
 </ul>
-<p>When the <code class="docutils literal"><span class="pre">fish.txt</span></code> file was created the content was <em>untracked</em>.
-That is, any modifications to <code class="docutils literal"><span class="pre">fish.txt</span></code> will not be logged.
+<p>When the <tt class="docutils literal"><span class="pre">fish.txt</span></tt> file was created the content was <em>untracked</em>.
+That is, any modifications to <tt class="docutils literal"><span class="pre">fish.txt</span></tt> will not be logged.
 If it is deleted it cannot be recovered, it cannot be shared using
 git, and we cannot extract the <strong>who</strong>, <strong>what</strong>, <strong>when</strong>, and <strong>why</strong>
 metadata associated with a change.</p>
-<p>By using <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code> content can be added to the staging area.
+<p>By using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt> content can be added to the staging area.
 Multiple files can be staged.
-Hypothetically, if two other files <code class="docutils literal"><span class="pre">hello.txt</span></code> and <code class="docutils literal"><span class="pre">world.txt</span></code>
+Hypothetically, if two other files <tt class="docutils literal"><span class="pre">hello.txt</span></tt> and <tt class="docutils literal"><span class="pre">world.txt</span></tt>
 were to be created they could be staged:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git status
 On branch master
@@ -594,12 +588,12 @@ Changes to be committed:
 single <strong>change</strong>.
 Meaning: a <strong>change</strong> is the addition, deletion, of modification of
 content of one or more files.</p>
-<p>At this point, ignoring the hypothetical <code class="docutils literal"><span class="pre">hello.txt</span></code> and <code class="docutils literal"><span class="pre">world.txt</span></code>
+<p>At this point, ignoring the hypothetical <tt class="docutils literal"><span class="pre">hello.txt</span></tt> and <tt class="docutils literal"><span class="pre">world.txt</span></tt>
 files, we can now <strong>commit</strong> this change:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git commit -m &quot;added counting fish&quot;
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code> command recording everything in the <strong>staging area</strong>
+<p>The <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt> command recording everything in the <strong>staging area</strong>
 as a single <strong>change</strong>.
 When committing a change it is necessary to add a message describing
 the change.
@@ -615,18 +609,18 @@ On branch master
 nothing to commit, working directory clean
 </pre></div>
 </div>
-<p>At this point you have used the <code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code>, and
-<code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> commands and should know the difference between the
-<code class="docutils literal"><span class="pre">untracked</span></code>, <code class="docutils literal"><span class="pre">staging</span> <span class="pre">area</span></code>, and <code class="docutils literal"><span class="pre">tracked</span></code> states that content
+<p>At this point you have used the <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt>, and
+<tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> commands and should know the difference between the
+<tt class="docutils literal"><span class="pre">untracked</span></tt>, <tt class="docutils literal"><span class="pre">staging</span> <span class="pre">area</span></tt>, and <tt class="docutils literal"><span class="pre">tracked</span></tt> states that content
 may be in, and understand what is meant by a &#8220;change.&#8221;</p>
 </div>
 <div class="section" id="viewing-repository-history-git-show-git-log">
-<h3><a class="toc-backref" href="#id12">Viewing Repository History (<code class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code>)</a><a class="headerlink" href="#viewing-repository-history-git-show-git-log" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Viewing Repository History (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt>)</a><a class="headerlink" href="#viewing-repository-history-git-show-git-log" title="Permalink to this headline">¶</a></h3>
 <p>Recall that a git &#8220;change&#8221; refers to <strong>who</strong> made a change, <strong>what</strong>
 what changed, <strong>when</strong> a change was made, and <strong>why</strong> a change was made.
 Each change is added to the others so that you can view the entire
 history, each change on top of its parent, of a repository.</p>
-<p>Try it out using <code class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></code> to view the contents of a commit:</p>
+<p>Try it out using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">show</span></tt> to view the contents of a commit:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git show
 commit 05b162b8e7ffe5eb8dda8822a691244a26ff2c0e
 Author: Ada Lovelace &lt;lovelace@gmail.com&gt;
@@ -655,7 +649,7 @@ The pertinent points are:</p>
 <li><strong>why</strong>: the commit message you provide is given</li>
 </ul>
 <p>Additionally, you can see an overview containing the commit author,
-date, and message using <code class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></code> to show the history.
+date, and message using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">log</span></tt> to show the history.
 In this case there has only been one commit so that is all that will
 be shown.
 However, please try this out again later after making further commits.</p>
@@ -669,25 +663,25 @@ Date:   Wed Feb 25 12:40:20 2015 -0500
 </div>
 </div>
 <div class="section" id="sharing-your-changes-via-github-git-push-git-pull">
-<h3><a class="toc-backref" href="#id13">Sharing your changes via GitHub (<code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>, <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code>)</a><a class="headerlink" href="#sharing-your-changes-via-github-git-push-git-pull" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Sharing your changes via GitHub (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt>, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt>)</a><a class="headerlink" href="#sharing-your-changes-via-github-git-push-git-pull" title="Permalink to this headline">¶</a></h3>
 <p>This section describes how to share you changes using git and GitHub.
 The commands covered are:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt></li>
 </ul>
 <p>By the end of this section you will understand the difference between
 a <strong>local</strong> and <strong>remote</strong> repository and how to share changes made
 locally via a remote repository.</p>
-<p>Recall that earlier you initialized a repository using the <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code>
+<p>Recall that earlier you initialized a repository using the <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt>
 command.
 Let us look in further detail at what this command does.</p>
-<p>First, you logged into <code class="docutils literal"><span class="pre">india&#64;futuresystems.org</span></code>.
-At this point, your git repository was not on <code class="docutils literal"><span class="pre">india</span></code>.
-By executing the <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code> command you created a <strong>local</strong> copy on
-<code class="docutils literal"><span class="pre">india</span></code> of the <strong>remote</strong> repository hosted on the GitHub server.
+<p>First, you logged into <tt class="docutils literal"><span class="pre">india&#64;futuresystems.org</span></tt>.
+At this point, your git repository was not on <tt class="docutils literal"><span class="pre">india</span></tt>.
+By executing the <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt> command you created a <strong>local</strong> copy on
+<tt class="docutils literal"><span class="pre">india</span></tt> of the <strong>remote</strong> repository hosted on the GitHub server.
 At this point there are two repositories: <strong>local</strong>  and <strong>remote</strong>
-(also known as <code class="docutils literal"><span class="pre">origin</span></code>).
+(also known as <tt class="docutils literal"><span class="pre">origin</span></tt>).
 You can inspect this for yourself.:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd class-bigdata-technology-spring-2015-ABCDE
 $ git remote -v
@@ -695,47 +689,47 @@ origin git@github.com:futresystems/class-bigdata-technology-spring-2015-ABCDE.gi
 origin git@github.com:futresystems/class-bigdata-technology-spring-2015-ABCDE.git (push)
 </pre></div>
 </div>
-<p>Here, <code class="docutils literal"><span class="pre">origin</span></code> is the shorthand name referring the the location
+<p>Here, <tt class="docutils literal"><span class="pre">origin</span></tt> is the shorthand name referring the the location
 of the <strong>remote</strong> repository that this <strong>local</strong> one was created
 from.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">This means that <strong>ANY</strong> changes added via <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code> are only
+<p class="last">This means that <strong>ANY</strong> changes added via <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt> are only
 committed to the <strong>local</strong> repository.
-These changes are <strong>NOT YET</strong> present at the <strong>remote</strong> (<code class="docutils literal"><span class="pre">origin</span></code>).</p>
+These changes are <strong>NOT YET</strong> present at the <strong>remote</strong> (<tt class="docutils literal"><span class="pre">origin</span></tt>).</p>
 </div>
 <p>In order to share your commits with the <strong>remote</strong> repository, you
-must <code class="docutils literal"><span class="pre">push</span></code> them.
+must <tt class="docutils literal"><span class="pre">push</span></tt> them.
 Like so:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git push origin master
 </pre></div>
 </div>
 <p>Let&#8217;s break this down a bit.
-The first part is <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code>, meaning that we are telling git
+The first part is <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt>, meaning that we are telling git
 to share our <strong>local</strong> changes with a <strong>remote</strong> repository.</p>
-<p>Now let us examine the <code class="docutils literal"><span class="pre">origin</span></code> and <code class="docutils literal"><span class="pre">master</span></code> parts of the command.
-Recall the output of <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> and <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> after our
+<p>Now let us examine the <tt class="docutils literal"><span class="pre">origin</span></tt> and <tt class="docutils literal"><span class="pre">master</span></tt> parts of the command.
+Recall the output of <tt class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></tt> and <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> after our
 commit earlier.
-The <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span></code> command provides us with the name associated
-with the <strong>remote</strong> repository, namely <code class="docutils literal"><span class="pre">origin</span></code>.
-From <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code>, we get <code class="docutils literal"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">master</span></code>.
+The <tt class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span></tt> command provides us with the name associated
+with the <strong>remote</strong> repository, namely <tt class="docutils literal"><span class="pre">origin</span></tt>.
+From <tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt>, we get <tt class="docutils literal"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">master</span></tt>.
 A repository can have multiple branches with different names
-such as (<code class="docutils literal"><span class="pre">release-2.0</span></code>, <code class="docutils literal"><span class="pre">dev1.3</span></code>, etc).
+such as (<tt class="docutils literal"><span class="pre">release-2.0</span></tt>, <tt class="docutils literal"><span class="pre">dev1.3</span></tt>, etc).
 This is beyond the scope of this lesson, but it suffices to say
 that all our commits so far have been to the default branch which is
-called <code class="docutils literal"><span class="pre">master</span></code>.</p>
+called <tt class="docutils literal"><span class="pre">master</span></tt>.</p>
 <p>Let us look at the command again:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git push origin master
 </pre></div>
 </div>
 <p>Translated into English, this says: &#8220;push the changes made to the current
-branch to the master branch of the repository called <code class="docutils literal"><span class="pre">origin</span></code>&#8221;.
-In other words, <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code> updates the <strong>remote</strong> repository with all
+branch to the master branch of the repository called <tt class="docutils literal"><span class="pre">origin</span></tt>&#8221;.
+In other words, <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> updates the <strong>remote</strong> repository with all
 <strong>local</strong> changes.</p>
 <p>At this point, the remote repository reflects the changes made by Ada.
 Now, Albert had previously cloned the repository at the same time as
 Ada, since they are working together.
-Since he cloned it before Ada <code class="docutils literal"><span class="pre">push</span></code>-ed her commits, his repository
+Since he cloned it before Ada <tt class="docutils literal"><span class="pre">push</span></tt>-ed her commits, his repository
 is out of date.
 However, Ada can now tell Albert that she made some change:</p>
 <blockquote>
@@ -750,9 +744,9 @@ $ git pull origin master
 <p>Albert now has all the changes Ada made.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">Only by using <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code> will your GitHub repository be updated.
+<p class="last">Only by using <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> will your GitHub repository be updated.
 If you are trying to share your changes but your team-members cannot
-see them, make sure to <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">remote</span></code>.</p>
+see them, make sure to <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">remote</span></tt>.</p>
 </div>
 </div>
 </div>
@@ -760,23 +754,23 @@ see them, make sure to <code class="docutils literal"><span class="pre">git</spa
 <h2><a class="toc-backref" href="#id14">Concurrent Changes</a><a class="headerlink" href="#concurrent-changes" title="Permalink to this headline">¶</a></h2>
 <p>One feature of git is that is allows multiple people to work on the
 same repository concurrently.</p>
-<p>For instance, while Ada was adding the <code class="docutils literal"><span class="pre">fish.txt</span></code> file, Albert may
+<p>For instance, while Ada was adding the <tt class="docutils literal"><span class="pre">fish.txt</span></tt> file, Albert may
 have been writing about eggs.
 He would have cloned the repository, just like Ada, but added
-<code class="docutils literal"><span class="pre">eggs.txt</span></code> instead:</p>
+<tt class="docutils literal"><span class="pre">eggs.txt</span></tt> instead:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nano eggs.txt
 $ cat eggs.txt
 Do you like green eggs and ham?
 I do not like them, Sam-I-am.
 </pre></div>
 </div>
-<p>As Ada did, Albert would <code class="docutils literal"><span class="pre">add</span></code> and <code class="docutils literal"><span class="pre">commit</span></code> the change:</p>
+<p>As Ada did, Albert would <tt class="docutils literal"><span class="pre">add</span></tt> and <tt class="docutils literal"><span class="pre">commit</span></tt> the change:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git add eggs.txt
 $ git commit -m &quot;added green eggs and ham&quot;
 </pre></div>
 </div>
 <p>Now, when he pulls the changes that Ada made he sees that both
-<code class="docutils literal"><span class="pre">eggs.txt</span></code> and <code class="docutils literal"><span class="pre">fish.txt</span></code> are present in his <strong>local</strong> repository:</p>
+<tt class="docutils literal"><span class="pre">eggs.txt</span></tt> and <tt class="docutils literal"><span class="pre">fish.txt</span></tt> are present in his <strong>local</strong> repository:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls
 eggs.txt   fish.txt
 </pre></div>
@@ -786,7 +780,7 @@ eggs.txt   fish.txt
 <div><p>Albert: Hi Ada. I pushed my changes.</p>
 <p>Ada: Great. I&#8217;ll pull them now.</p>
 </div></blockquote>
-<p>Now, Ada does the <code class="docutils literal"><span class="pre">pull</span></code>-ing and sees Albert&#8217;s changes:</p>
+<p>Now, Ada does the <tt class="docutils literal"><span class="pre">pull</span></tt>-ing and sees Albert&#8217;s changes:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git pull origin master
 $ ls
 eggs.txt   fish.txt
@@ -800,21 +794,21 @@ eggs.txt   fish.txt
 <div class="section" id="exercise">
 <h2><a class="toc-backref" href="#id16">Exercise</a><a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
 <p>The goal of this exercise is for you and your team to become familiar
-with <code class="docutils literal"><span class="pre">push</span></code>-ing and <code class="docutils literal"><span class="pre">pull</span></code>-ing to and from your repository.</p>
-<p>Each person should log into <code class="docutils literal"><span class="pre">india&#64;futuresystems.org</span></code> and clone the
+with <tt class="docutils literal"><span class="pre">push</span></tt>-ing and <tt class="docutils literal"><span class="pre">pull</span></tt>-ing to and from your repository.</p>
+<p>Each person should log into <tt class="docutils literal"><span class="pre">india&#64;futuresystems.org</span></tt> and clone the
 repository from GitHub.
-Next, each person should create a file <code class="docutils literal"><span class="pre">&lt;portalname&gt;.txt</span></code> in which
+Next, each person should create a file <tt class="docutils literal"><span class="pre">&lt;portalname&gt;.txt</span></tt> in which
 they explain what the following commands do:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code></li>
-<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt></li>
 </ul>
 <p>Additionally, this file should describe the difference between a
 remote and local repository.</p>
-<p>For example, Ada would create <code class="docutils literal"><span class="pre">lovelace.txt</span></code> and Albert <code class="docutils literal"><span class="pre">emc2.txt</span></code>.</p>
+<p>For example, Ada would create <tt class="docutils literal"><span class="pre">lovelace.txt</span></tt> and Albert <tt class="docutils literal"><span class="pre">emc2.txt</span></tt>.</p>
 <p>Finally, each person should synchronize their changes with everyone else
 so that each team member has the other team member&#8217;s file.
 This synchronization should be done with git such that the GitHub
@@ -833,7 +827,7 @@ exactly <strong>what</strong> that change was.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="google.html" class="btn btn-neutral float-right" title="Google">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="google.html" class="btn btn-neutral float-right" title="Google"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="docker_cloudmesh.html" class="btn btn-neutral" title="Deploying Cloudmesh using Docker on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -849,8 +843,7 @@ exactly <strong>what</strong> that change was.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -875,7 +868,7 @@ exactly <strong>what</strong> that change was.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

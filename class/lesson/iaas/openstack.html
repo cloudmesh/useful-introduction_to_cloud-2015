@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -49,12 +47,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -64,9 +59,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -87,7 +81,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -165,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -200,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="openstack-for-beginners-under-preparation">
 <h1>OpenStack for Beginners (Under Preparation)<a class="headerlink" href="#openstack-for-beginners-under-preparation" title="Permalink to this headline">¶</a></h1>
@@ -285,13 +278,17 @@ terminates the instance.</p>
 <p>To have your own virtual machine (vm) instance on OpenStack cloud, you need to
 submit your request of a vm instance via a command line tool (Nova client) or
 on a dashboard Horizon.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="openstack_horizon.html">Using Horizon on OpenStack</a></p>
+</div>
 <p>Let&#8217;s explore a few examples to allocate vm instances. In FutureSystems, you
 need to be on the India login node.  (India is a hostname for OpenStack on
 FutureSystems)</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh india.futuresystems.org
 </pre></div>
 </div>
-<p>You should now load the <code class="docutils literal"><span class="pre">openstack</span></code> module to gain access to the
+<p>You should now load the <tt class="docutils literal"><span class="pre">openstack</span></tt> module to gain access to the
 necessary commands.:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ module load openstack
 </pre></div>
@@ -310,7 +307,7 @@ instance named <em>tutorial1</em> with a Ubuntu 14.04 base image.  The size
 of the machine will be <strong>small</strong>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Make sure you have a <code class="docutils literal"><span class="pre">~/.ssh</span></code> directory and created a key for
+<p>Make sure you have a <tt class="docutils literal"><span class="pre">~/.ssh</span></tt> directory and created a key for
 OpenStack to use.
 Create the directory if necessary:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ test -d ~/.ssh || mkdir ~/.ssh
@@ -340,28 +337,28 @@ Create the directory if necessary:</p>
 </div>
 <p>Here are some explanations for the arguments.</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">boot</span></code> is a sub command to start a new server.</li>
-<li><code class="docutils literal"><span class="pre">--flavor</span></code> is a name for your machine size. <code class="docutils literal"><span class="pre">m1.small</span></code> typically
+<li><tt class="docutils literal"><span class="pre">boot</span></tt> is a sub command to start a new server.</li>
+<li><tt class="docutils literal"><span class="pre">--flavor</span></tt> is a name for your machine size. <tt class="docutils literal"><span class="pre">m1.small</span></tt> typically
 has 1 vCPU and 2GB memories.</li>
-<li><code class="docutils literal"><span class="pre">--image</span></code> is a name for your base image. <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code>
+<li><tt class="docutils literal"><span class="pre">--image</span></tt> is a name for your base image. <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt>
 displays all registered image.</li>
-<li><code class="docutils literal"><span class="pre">--key_name</span></code> is a key name to use for SSH connection. This key
-should be registered on Nova Compute. Try <code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></code> to
+<li><tt class="docutils literal"><span class="pre">--key_name</span></tt> is a key name to use for SSH connection. This key
+should be registered on Nova Compute. Try <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-list</span></tt> to
 see registered keys.</li>
-<li><code class="docutils literal"><span class="pre">tutorial1</span></code> is a name for your vm instance.</li>
+<li><tt class="docutils literal"><span class="pre">tutorial1</span></tt> is a name for your vm instance.</li>
 </ul>
-<p>Some useful <code class="docutils literal"><span class="pre">nova</span></code> subcommands are:</p>
+<p>Some useful <tt class="docutils literal"><span class="pre">nova</span></tt> subcommands are:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">list</span></code>: list active servers</li>
-<li><code class="docutils literal"><span class="pre">flavor-list</span></code>: list of available flavors</li>
-<li><code class="docutils literal"><span class="pre">host-list</span></code>: available hosts</li>
-<li><code class="docutils literal"><span class="pre">keypair-list</span></code>: keypairs for a user</li>
+<li><tt class="docutils literal"><span class="pre">list</span></tt>: list active servers</li>
+<li><tt class="docutils literal"><span class="pre">flavor-list</span></tt>: list of available flavors</li>
+<li><tt class="docutils literal"><span class="pre">host-list</span></tt>: available hosts</li>
+<li><tt class="docutils literal"><span class="pre">keypair-list</span></tt>: keypairs for a user</li>
 </ul>
-<p>You can get more information by executing the <code class="docutils literal"><span class="pre">nova</span> <span class="pre">-h</span></code> command.</p>
+<p>You can get more information by executing the <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">-h</span></tt> command.</p>
 <p>If we want our machine to be accessible from outside the private
 network, we need to create a &#8220;floating IP address&#8221; and associate it
 with an instance.  Since floating ips come from some pool of available
-addresses, we can list the pools using the <code class="docutils literal"><span class="pre">floating-ip-pool-list</span></code>
+addresses, we can list the pools using the <tt class="docutils literal"><span class="pre">floating-ip-pool-list</span></tt>
 subcommand:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-pool-list
 +---------+
@@ -392,9 +389,9 @@ $ nova floating-ip-associate tutorial1 149.165.158.107
 <span id="lab-openstack-1"></span><h4>Lab - OpenStack - Launch an Instance<a class="headerlink" href="#lab-openstack-launch-an-instance" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li>Launch a new medium instance with a CentOS image using a different
-key (call it <code class="docutils literal"><span class="pre">openstack-ex1-key</span></code>). Name the CentOS instance
-<code class="docutils literal"><span class="pre">tutorial1-ex1</span></code> and make sure both instances are running using the
-<code class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></code> command.</li>
+key (call it <tt class="docutils literal"><span class="pre">openstack-ex1-key</span></tt>). Name the CentOS instance
+<tt class="docutils literal"><span class="pre">tutorial1-ex1</span></tt> and make sure both instances are running using the
+<tt class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></tt> command.</li>
 <li>Allocate a floating ip address to the instance that you just launched.</li>
 </ul>
 </div>
@@ -476,7 +473,7 @@ group-based cloud service.</p>
 </div>
 <div class="section" id="list-of-users-or-projects">
 <h3>List of Users or Projects<a class="headerlink" href="#list-of-users-or-projects" title="Permalink to this headline">¶</a></h3>
-<p>Try <code class="docutils literal"><span class="pre">user-list</span></code> or <code class="docutils literal"><span class="pre">tenant-list</span></code> sub command to see a list of users or
+<p>Try <tt class="docutils literal"><span class="pre">user-list</span></tt> or <tt class="docutils literal"><span class="pre">tenant-list</span></tt> sub command to see a list of users or
 projects.</p>
 <div class="highlight-python"><div class="highlight"><pre>$ keystone user-list
 
@@ -487,7 +484,7 @@ $ keystone tenant-list
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Try <code class="docutils literal"><span class="pre">keystone</span></code> command itself. The help message shows that available
+<p class="last">Try <tt class="docutils literal"><span class="pre">keystone</span></tt> command itself. The help message shows that available
 sub commands including tenant-create, user-create, user-list and
 tenant-list.</p>
 </div>
@@ -581,7 +578,7 @@ Networking.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="openstack_juno.html" class="btn btn-neutral float-right" title="OpenStack Juno (Under preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="openstack_juno.html" class="btn btn-neutral float-right" title="OpenStack Juno (Under preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="overview_openstack.html" class="btn btn-neutral" title="Overview and Introduction to OpenStack"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -597,8 +594,7 @@ Networking.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -623,7 +619,7 @@ Networking.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

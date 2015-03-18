@@ -52,6 +52,7 @@ Getting Started
           ``$HOME/.cloudmesh/clouds/[cloud host]/[openstack version]/[openrc.sh or novarc.sh]``
 
 :: 
+
    $ cat ~/.cloudmesh/clouds/india/juno/openrc.sh
    export OS_USERNAME=albert
    export OS_PASSWORD=**********
@@ -71,3 +72,8 @@ period to see resource utilization, for example, how many VM instances were
 being used, or how many IP addresses were allocated.
 
 .. _India_OpenStack_Juno: https://openstack-j.india.futuresystems.org/horizon
+
+
+.. |image-horizon| image:: /images/fg-horizon.png 
+   :width: 100px 
+

@@ -56,6 +56,8 @@ To have your own virtual machine (vm) instance on OpenStack cloud, you need to
 submit your request of a vm instance via a command line tool (Nova client) or
 on a dashboard Horizon.
 
+.. note:: `Using Horizon on OpenStack <openstack_horizon.html>`_
+
 Let's explore a few examples to allocate vm instances. In FutureSystems, you
 need to be on the India login node.  (India is a hostname for OpenStack on
 FutureSystems)
