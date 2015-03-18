@@ -1,13 +1,7 @@
 ..
   Changes
 
-  2015-03-17: add Adobe Connect link
   2015-03-16: Big Data Software Architecture (BUE-V 594)
-
-
-General discussion will be held on Adobe connect.
-Please join the meeting by following `this link <https://connect.iu.edu/bdossp_discussion/>`_.
-
 
 Either of
 
