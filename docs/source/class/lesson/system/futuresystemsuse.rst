@@ -359,3 +359,22 @@ GitHub (see :doc:`../git`) you add it to your account.
 
    The host information is useful for you if you have multiple
    machines.
+
+
+.. _lab-futuresystems-access:
+
+Lab - Account Applications
+----------------------------------------------------------------------
+
+For this exercise, you need to log into your FutureSystems account.
+On Windows, use the PuTTY program.
+On Mac OS X use the Terminal application.
+
+Execute the following commands:
+
+- ``whoami``
+- ``uname -a``
+- ``pwd``
+
+Post the result (copy and paste the ASCII text of what you see in the
+screen to the homework system.

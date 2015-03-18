@@ -173,6 +173,69 @@ Shell Concepts Introduced
 .. include:: shell-find.rst
 
 
+Shell Scripting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One of the most power uses of the shell is via scripting.  Instead of
+using an interactive prompt, a series of commands can be written to a
+file and then executed.  This has the benefit that changes to scripts
+can be tracked, and script can be shared.
+
+Let's create a simple script::
+
+  $ nano script.sh
+
+Add the following::
+
+  me=$(whoami)
+  where=$(pwd)
+
+  echo "My name is $me"
+  echo "I am running in $where"
+
+  echo "Let's create a directory"
+  mkdir -v hello-script
+
+  echo "Now delete the directory"
+  rmdir hello-script
+
+
+You can now execute the script::
+
+  $ bash script.sh
+  My name is ada
+  I am running in /home/ada
+  Let's create a directory
+  /home/data/hello-directory
+  Now delete the directory"
+
+
+What happens is that you use the ``bash`` command, which is the name
+of the shell, and passed it the script you wrote.  Another way of
+executing a script is by making it executable and adding a "shebang"
+at the top of the file. Edit ``script.sh`` and make this the very
+first line::
+
+  #!/bin/bash
+
+This is called a "shebang" because the first character is a hash mark
+and the second the exclamation point, or "bang", symbol.
+
+Now make it executable::
+
+  $ chmod +x script.sh
+
+You can run the script directly now::
+
+  $ ./script.sh
+
+The shebang indicates the location of the executable that will
+interpret the script. Check for yourself that ``/bin/bash`` exists::
+
+  $ file /bin/bash
+
+
+
 Conclusion
 ----------------------------------------------------------------------
 
@@ -198,6 +261,24 @@ Additionally, there are numerous shell summaries `a Google Search away`_
 
 .. _Bash Guide for Beginners: http://www.tldp.org/LDP/Bash-Beginners-Guide/html/
 .. _a Google Search away: https://www.google.com/search?q=linux+shell+cheat+sheet
+
+
+.. _lab-shell:
+
+Lab - Shell Usage
+----------------------------------------------------------------------
+
+Log into ``india`` for this.
+
+#. Create a cirectory. Create a file in it and write "hello world" in it.
+#. Which commands are used to list the contents of a file?
+#. Why should you not use ``rm -r *`` or ``rm -r /``?
+#. Alias the ``rm`` command to ``rm -i``.
+#. Find a text editor you like. Common choices are emacs, vi, vim,
+   pico, nano, but there are many more.
+#. Write a simple shell script and execute it. The script should
+   create a file called ``hello.txt`` and write the string "Hello
+   World" to it.
 
 
 Next Step
