@@ -137,6 +137,43 @@ Some useful ``nova`` subcommands are:
 
 You can get more information by executing the ``nova -h`` command.
 
+
+If we want our machine to be accessible from outside the private
+network, we need to create a "floating IP address" and associate it
+with an instance.  Since floating ips come from some pool of available
+addresses, we can list the pools using the ``floating-ip-pool-list``
+subcommand::
+
+  $ nova floating-ip-pool-list
+  +---------+
+  | name    |
+  +---------+
+  | ext-net |
+  +---------+
+
+We then create an ip for our instance::
+
+  $ nova float-ip-create ext-net
+  +-----------------+-----------+----------+---------+
+  | Ip              | Server Id | Fixed Ip | Pool    |
+  +-----------------+-----------+----------+---------+
+  | 149.165.158.107 | -         | -        | ext-net |
+  +-----------------+-----------+----------+---------+
+
+Now that the ip has been created, associate it with our instance::
+
+  $ nova floating-ip-associate
+  usage: nova floating-ip-associate [--fixed-address <fixed_address>]
+                                    <server> <address>
+
+  $ nova floating-ip-associate tutorial1 149.165.158.107
+
+
+
+
+
+
+
 .. _lab-openstack-1:
 
 Lab - OpenStack - Launch an Instance
