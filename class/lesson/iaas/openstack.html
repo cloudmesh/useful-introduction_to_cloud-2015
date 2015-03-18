@@ -350,6 +350,44 @@ should be registered on Nova Compute. Try <code class="docutils literal"><span c
 see registered keys.</li>
 <li><code class="docutils literal"><span class="pre">tutorial1</span></code> is a name for your vm instance.</li>
 </ul>
+<p>Some useful <code class="docutils literal"><span class="pre">nova</span></code> subcommands are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">list</span></code>: list active servers</li>
+<li><code class="docutils literal"><span class="pre">flavor-list</span></code>: list of available flavors</li>
+<li><code class="docutils literal"><span class="pre">host-list</span></code>: available hosts</li>
+<li><code class="docutils literal"><span class="pre">keypair-list</span></code>: keypairs for a user</li>
+</ul>
+<p>You can get more information by executing the <code class="docutils literal"><span class="pre">nova</span> <span class="pre">-h</span></code> command.</p>
+<p>If we want our machine to be accessible from outside the private
+network, we need to create a &#8220;floating IP address&#8221; and associate it
+with an instance.  Since floating ips come from some pool of available
+addresses, we can list the pools using the <code class="docutils literal"><span class="pre">floating-ip-pool-list</span></code>
+subcommand:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-pool-list
++---------+
+| name    |
++---------+
+| ext-net |
++---------+
+</pre></div>
+</div>
+<p>We then create an ip for our instance:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova float-ip-create ext-net
++-----------------+-----------+----------+---------+
+| Ip              | Server Id | Fixed Ip | Pool    |
++-----------------+-----------+----------+---------+
+| 149.165.158.107 | -         | -        | ext-net |
++-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+<p>Now that the ip has been created, associate it with our instance:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-associate
+usage: nova floating-ip-associate [--fixed-address &lt;fixed_address&gt;]
+                                  &lt;server&gt; &lt;address&gt;
+
+$ nova floating-ip-associate tutorial1 149.165.158.107
+</pre></div>
+</div>
 <div class="section" id="lab-openstack-launch-an-instance">
 <span id="lab-openstack-1"></span><h4>Lab - OpenStack - Launch an Instance<a class="headerlink" href="#lab-openstack-launch-an-instance" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
