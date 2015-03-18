@@ -205,4 +205,4 @@ To be Organized into the above
    ../lesson/ansible_cloudmesh
    ../lesson/docker
    ../lesson/docker_cloudmesh
-
+   ../lesson/labs

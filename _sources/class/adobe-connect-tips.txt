@@ -19,7 +19,7 @@ following in mind:
 For the Hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When creating a meeting with Connect you may wish to ensure permisions allows access to the room and participants to speak.
+When creating a meeting with Connect you may wish to ensure permissions allows access to the room and participants to speak.
 
 - allow access: create the meeting with permissions set to allow
   anyone with the link to join.

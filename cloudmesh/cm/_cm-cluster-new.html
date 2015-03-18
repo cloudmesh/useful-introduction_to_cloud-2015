@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -44,9 +46,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +61,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -156,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,13 +193,13 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="deploying-data-intensive-cluster-on-cloudmesh-new">
 <h1>Deploying Data-Intensive Cluster on Cloudmesh (New)<a class="headerlink" href="#deploying-data-intensive-cluster-on-cloudmesh-new" title="Permalink to this headline">¶</a></h1>
 <button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-cluster.ipynb">Notebook</a></p>
 </button><p>To support a compute cluster (e.g. Hadoop or Slurm) on cloudmesh, we are
-offering a new command <tt class="docutils literal"><span class="pre">cluster</span></tt> to start, configure, manage or update
+offering a new command <code class="docutils literal"><span class="pre">cluster</span></code> to start, configure, manage or update
 compute nodes (vms).</p>
 <div class="section" id="ipython-alias">
 <h2>IPython Alias<a class="headerlink" href="#ipython-alias" title="Permalink to this headline">¶</a></h2>
@@ -209,7 +216,7 @@ following lines.</p>
 compute cluster on their virtualized environments with orchestration
 tools like Docker, Puppuet or Chef. It typically, however, requires
 additional tasks to configure networks and support large number of
-clusters manually. Cloudmesh offers <tt class="docutils literal"><span class="pre">cluster</span></tt> command with OpenStack
+clusters manually. Cloudmesh offers <code class="docutils literal"><span class="pre">cluster</span></code> command with OpenStack
 Heat to provide an automated and scalable clusters.</p>
 </div>
 </div>
@@ -248,23 +255,23 @@ or a file as a user script to run on the node. With this isolated user
 space for installing and configuring packages, you can easily setup a
 master and a worker node in Cloudmesh. If you need to install program a
 on a master node, for example, you can simply call
-<tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">write</span> <span class="pre">[cluster</span> <span class="pre">name]</span> <span class="pre">master</span></tt> with
-<tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">program</span> <span class="pre">a</span></tt> on a ubuntu image. We treat that there is
+<code class="docutils literal"><span class="pre">cluster</span> <span class="pre">write</span> <span class="pre">[cluster</span> <span class="pre">name]</span> <span class="pre">master</span></code> with
+<code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">program</span> <span class="pre">a</span></code> on a ubuntu image. We treat that there is
 a single master and all worker node(s) are same.</p>
 </div>
 <div class="section" id="confirmation-of-the-cluster-installation">
 <h2>Confirmation of the cluster installation<a class="headerlink" href="#confirmation-of-the-cluster-installation" title="Permalink to this headline">¶</a></h2>
 <p>To ensure everything is properly installed and configured, cloudmesh
 tries to check the installation with a few options. A cloudmesh user can
-define what to expect as a result so <tt class="docutils literal"><span class="pre">cloudmesh</span> <span class="pre">cluster</span></tt> can
+define what to expect as a result so <code class="docutils literal"><span class="pre">cloudmesh</span> <span class="pre">cluster</span></code> can
 understand whether it is successfully installed or not. Also, testing
 command or script can be executed to verify the installation with
-<tt class="docutils literal"><span class="pre">cloudmesh</span> <span class="pre">cluster</span></tt>. If there was error occured, rollback would be
+<code class="docutils literal"><span class="pre">cloudmesh</span> <span class="pre">cluster</span></code>. If there was error occured, rollback would be
 performed.</p>
 <div class="section" id="use-case-i-start-a-hadoop-cluster">
 <h3>Use Case I: Start a Hadoop Cluster<a class="headerlink" href="#use-case-i-start-a-hadoop-cluster" title="Permalink to this headline">¶</a></h3>
 <p>In this tutorial, we are going to start a hadoop cluster using cloudmesh
-<tt class="docutils literal"><span class="pre">cluster</span></tt> command.</p>
+<code class="docutils literal"><span class="pre">cluster</span></code> command.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">Continued</span>
 </pre></div>
 </div>
@@ -285,7 +292,8 @@ performed.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -310,7 +318,7 @@ performed.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

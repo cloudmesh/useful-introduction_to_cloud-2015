@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -44,9 +46,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        
+          <a href="../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +61,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../class/lessons.html">Lessons</a></li>
 </ul>
@@ -130,8 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ipython/_ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
@@ -156,6 +161,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +192,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="openstack-on-futuresystems">
 <span id="s-openstack"></span><h1>OpenStack on FutureSystems<a class="headerlink" href="#openstack-on-futuresystems" title="Permalink to this headline">¶</a></h1>
@@ -197,7 +203,7 @@ clouds. The interface cloudmesh provides is in regards to
 starting multiple virtual machines more convenient. Please
 try out the nova commands so you can appreciate what
 cloudmesh offers. For more information about cloudmesh see
-the Section <a class="reference internal" href="../cloudmesh/index.html#s-cloudmesh"><em>Cloudmesh</em></a>.</p>
+the Section <a class="reference internal" href="../cloudmesh/index.html#s-cloudmesh"><span>Cloudmesh</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -600,7 +606,7 @@ You can upload the image with the glance client like this:</p>
        --file trusty-server-cloudimg-amd64-disk1.img
 </pre></div>
 </div>
-<p>Now your new image is listed on <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt> and will be
+<p>Now your new image is listed on <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code> and will be
 available when the status become &#8220;ACTIVE&#8221;.</p>
 </div>
 <div class="section" id="delete-your-instance">
@@ -693,8 +699,8 @@ starting up VMs and stoping them by hand horizon may be a good
 mechanism to manage your Virtual machines.  We have currently the
 following horizon deployments available. However, please note that on
 Alamo an older version of Openstack is run.</p>
-<table border="1" class="docutils">
-<caption>Horizon endpoints</caption>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Horizon endpoints</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="9%" />
 <col width="9%" />
@@ -758,7 +764,7 @@ how you can use OpenStack on FutureSystems. This includes the following:</p>
 <td>Using OpenStack command line tools</td>
 <td><p class="first">This lesson explains you how to use the OpenStack Commandline
 tools on the FutureSystems cluster called sierra.futuregrid.org.
-For written material, see section <a class="reference internal" href="openstack-juno-do-not edit-will be deleted.html#s-openstack"><em>OpenStack Havana</em></a>.</p>
+For written material, see section <a class="reference internal" href="openstack-juno-do-not edit-will be deleted.html#s-openstack"><span>OpenStack Havana</span></a>.</p>
 <div class="last admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">please replace sierra with india.</p>
@@ -770,7 +776,7 @@ For written material, see section <a class="reference internal" href="openstack-
 <td>Using OpenStack horizon GUI</td>
 <td><p class="first">This lesson explains you how to use the OpenStack Horizon to
 access the FutureSystems OpenStack IaaS framework on sierra.futuregrid.org.
-For written material, see section <a class="reference internal" href="openstack-juno-do-not edit-will be deleted.html#s-openstack-horizon"><em>Horizon GUI</em></a>.</p>
+For written material, see section <a class="reference internal" href="openstack-juno-do-not edit-will be deleted.html#s-openstack-horizon"><span>Horizon GUI</span></a>.</p>
 <div class="last admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">please replace sierra with india.</p>
@@ -805,7 +811,8 @@ volume and attach it to the VM. Assign a public ip and log in.</li>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -830,7 +837,7 @@ volume and attach it to the VM. Assign a public ip and log in.</li>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

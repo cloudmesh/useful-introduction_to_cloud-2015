@@ -127,7 +127,9 @@ Here are some explanations for the arguments.
   see registered keys.
 * ``tutorial1`` is a name for your vm instance.
 
-Exercises
+.. _lab-openstack-1:
+
+Lab - OpenStack - Launch an Instance
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 * Launch a new medium instance with a CentOS image using a different
