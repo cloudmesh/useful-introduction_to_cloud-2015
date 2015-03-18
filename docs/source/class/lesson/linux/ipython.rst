@@ -43,7 +43,7 @@ Next load the python module::
 
 Load the virtual environment::
 
-  $ source ~/venv/bin/activate
+  $ source ~/ENV/bin/activate
 
 Install IPython::
 
