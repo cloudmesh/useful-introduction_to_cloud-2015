@@ -127,6 +127,16 @@ Here are some explanations for the arguments.
   see registered keys.
 * ``tutorial1`` is a name for your vm instance.
 
+
+Some useful ``nova`` subcommands are:
+
+* ``list``: list active servers
+* ``flavor-list``: list of available flavors
+* ``host-list``: available hosts
+* ``keypair-list``: keypairs for a user
+
+You can get more information by executing the ``nova -h`` command.
+
 .. _lab-openstack-1:
 
 Lab - OpenStack - Launch an Instance
