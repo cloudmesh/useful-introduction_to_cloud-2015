@@ -3,13 +3,8 @@
 ..
   Changes:
 
-  2015-03-17: Update days/times, add Adobe Connect link
   2015-03-16: Big Data Open Source Software Project (BUEX-V 594)
 
-
-
-Office hours will be held using Adobe Connect.
-You can access connect by following `this link <https://connect.iu.edu/bdossp_officehours/>`_.
 
 
 - Tuesdays 9-10 am
