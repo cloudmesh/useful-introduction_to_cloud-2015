@@ -211,21 +211,22 @@
 <li><a class="reference internal" href="#getting-an-account" id="id6">Getting an Account</a></li>
 <li><a class="reference internal" href="#join-a-project" id="id7">Join a Project</a></li>
 <li><a class="reference internal" href="#remote-login" id="id8">Remote Login</a><ul>
-<li><a class="reference internal" href="#windows" id="id9">Windows</a></li>
-<li><a class="reference internal" href="#managing-keys" id="id10">Managing keys</a><ul>
-<li><a class="reference internal" href="#create-a-key-pair" id="id11">Create a key pair</a></li>
-<li><a class="reference internal" href="#import-a-key-pair" id="id12">Import a key pair</a></li>
-<li><a class="reference internal" href="#list-added-keys" id="id13">List added keys</a></li>
+<li><a class="reference internal" href="#linux-and-osx" id="id9">Linux and OSX</a></li>
+<li><a class="reference internal" href="#windows" id="id10">Windows</a></li>
+<li><a class="reference internal" href="#managing-keys" id="id11">Managing keys</a><ul>
+<li><a class="reference internal" href="#create-a-key-pair" id="id12">Create a key pair</a></li>
+<li><a class="reference internal" href="#import-a-key-pair" id="id13">Import a key pair</a></li>
+<li><a class="reference internal" href="#list-added-keys" id="id14">List added keys</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#useful-ssh-commands" id="id14">Useful SSH commands</a><ul>
-<li><a class="reference internal" href="#change-the-password" id="id15">Change the password</a></li>
-<li><a class="reference internal" href="#change-the-comment" id="id16">Change the comment</a></li>
-<li><a class="reference internal" href="#show-fingerprint" id="id17">Show fingerprint</a></li>
-<li><a class="reference internal" href="#delete-a-known-host" id="id18">Delete a known host</a></li>
+<li><a class="reference internal" href="#useful-ssh-commands" id="id15">Useful SSH commands</a><ul>
+<li><a class="reference internal" href="#change-the-password" id="id16">Change the password</a></li>
+<li><a class="reference internal" href="#change-the-comment" id="id17">Change the comment</a></li>
+<li><a class="reference internal" href="#show-fingerprint" id="id18">Show fingerprint</a></li>
+<li><a class="reference internal" href="#delete-a-known-host" id="id19">Delete a known host</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ssh" id="id19">SSH</a></li>
+<li><a class="reference internal" href="#ssh" id="id20">SSH</a></li>
 </ul>
 </li>
 </ul>
@@ -313,9 +314,8 @@ can follow along with the other instructions.</p>
 <li>an account on FutureSystems (see above)</li>
 <li>an SSH client</li>
 </ul>
-<blockquote>
-<div>Linux and OSX</div></blockquote>
-<hr class="docutils" />
+<div class="section" id="linux-and-osx">
+<h3><a class="toc-backref" href="#id9">Linux and OSX</a><a class="headerlink" href="#linux-and-osx" title="Permalink to this headline">¶</a></h3>
 <p>We assume that Linux users are familiar on how to start a terminal. On
 Mac OS X open a terminal via <cite>Applications &#8211;&gt; Utilities &#8211;&gt;
 Terminal</cite>. Alternatively you can search for the term &#8220;terminal&#8221; in the
@@ -349,8 +349,9 @@ alternatively to the above command:</p>
 <p class="last">Please see <a class="reference internal" href="../../../accounts/ssh.html"><em>Using SSH Keys</em></a> for details on
 configuring and using an SSH client.</p>
 </div>
+</div>
 <div class="section" id="windows">
-<h3><a class="toc-backref" href="#id9">Windows</a><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Windows</a><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>In order to SSH into your FutureSystems account using Windows, you
 will need to install PuTTY and PuTTYgen from the <a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY project page</a></p>
 <p>Generate an key using PuTTYgen:</p>
@@ -369,7 +370,7 @@ Name and click &#8220;Open&#8221;.  This will launch a terminal and allow you to
 connect using the passphrase specified in <code class="docutils literal"><span class="pre">puttygen.exe</span></code>.</p>
 </div>
 <div class="section" id="managing-keys">
-<h3><a class="toc-backref" href="#id10">Managing keys</a><a class="headerlink" href="#managing-keys" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Managing keys</a><a class="headerlink" href="#managing-keys" title="Permalink to this headline">¶</a></h3>
 <p>This section describes how to generate secure keys for using
 OpenStack.
 You will need to log into <code class="docutils literal"><span class="pre">india</span></code> to follow.
@@ -379,9 +380,9 @@ You may also find additional details in
 <p class="first sidebar-title">Page Contents</p>
 <div class="contents local last topic" id="id4">
 <ul class="simple">
-<li><a class="reference internal" href="#create-a-key-pair" id="id20">Create a key pair</a></li>
-<li><a class="reference internal" href="#import-a-key-pair" id="id21">Import a key pair</a></li>
-<li><a class="reference internal" href="#list-added-keys" id="id22">List added keys</a></li>
+<li><a class="reference internal" href="#create-a-key-pair" id="id21">Create a key pair</a></li>
+<li><a class="reference internal" href="#import-a-key-pair" id="id22">Import a key pair</a></li>
+<li><a class="reference internal" href="#list-added-keys" id="id23">List added keys</a></li>
 </ul>
 </div>
 </div>
@@ -395,7 +396,7 @@ $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 </div>
 </div>
 <div class="section" id="create-a-key-pair">
-<h4><a class="toc-backref" href="#id20">Create a key pair</a><a class="headerlink" href="#create-a-key-pair" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id21">Create a key pair</a><a class="headerlink" href="#create-a-key-pair" title="Permalink to this headline">¶</a></h4>
 <p>In order to use OpenStack on <code class="docutils literal"><span class="pre">india</span></code> you will need an SSH key.
 First, check that <code class="docutils literal"><span class="pre">~/.ssh/$PORTALNAME-key</span></code> does not exist:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ file ~/.ssh/albert-key
@@ -430,7 +431,7 @@ before executing this command.</p>
 </div>
 </div>
 <div class="section" id="import-a-key-pair">
-<h4><a class="toc-backref" href="#id21">Import a key pair</a><a class="headerlink" href="#import-a-key-pair" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id22">Import a key pair</a><a class="headerlink" href="#import-a-key-pair" title="Permalink to this headline">¶</a></h4>
 <p>If you already have a key pair that you wish to use it can be
 imported into the cloud.
 For example, Albert has created a key whose public key is located at
@@ -441,7 +442,7 @@ using his <code class="docutils literal"><span class="pre">PORTALNAME</span></co
 </div>
 </div>
 <div class="section" id="list-added-keys">
-<h4><a class="toc-backref" href="#id22">List added keys</a><a class="headerlink" href="#list-added-keys" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id23">List added keys</a><a class="headerlink" href="#list-added-keys" title="Permalink to this headline">¶</a></h4>
 <p>You can query OpenStack to see what keys you have added and uploaded:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-list
 +-----------------+-------------------------------------------------+
@@ -454,10 +455,10 @@ using his <code class="docutils literal"><span class="pre">PORTALNAME</span></co
 </div>
 </div>
 <div class="section" id="useful-ssh-commands">
-<h3><a class="toc-backref" href="#id14">Useful SSH commands</a><a class="headerlink" href="#useful-ssh-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Useful SSH commands</a><a class="headerlink" href="#useful-ssh-commands" title="Permalink to this headline">¶</a></h3>
 <p>The following is a short list of useful SSH commands.</p>
 <div class="section" id="change-the-password">
-<h4><a class="toc-backref" href="#id15">Change the password</a><a class="headerlink" href="#change-the-password" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id16">Change the password</a><a class="headerlink" href="#change-the-password" title="Permalink to this headline">¶</a></h4>
 <p>You can change the password for the key by using the  the <code class="docutils literal"><span class="pre">-p</span></code> flag.
 For example:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -p
@@ -465,7 +466,7 @@ For example:</p>
 </div>
 </div>
 <div class="section" id="change-the-comment">
-<h4><a class="toc-backref" href="#id16">Change the comment</a><a class="headerlink" href="#change-the-comment" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id17">Change the comment</a><a class="headerlink" href="#change-the-comment" title="Permalink to this headline">¶</a></h4>
 <p>You can change the comment of an key by modifying the public key file.
 For example, Ada Lovelace wishes to replace an uninformative comment
 with her email address.
@@ -479,7 +480,7 @@ ssh-rsa  AAAAB3N.... lovelace@gmail.com
 </div>
 </div>
 <div class="section" id="show-fingerprint">
-<h4><a class="toc-backref" href="#id17">Show fingerprint</a><a class="headerlink" href="#show-fingerprint" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id18">Show fingerprint</a><a class="headerlink" href="#show-fingerprint" title="Permalink to this headline">¶</a></h4>
 <p>The fingerprint of a key can be used to authenticate the validity of
 the key.
 For example, if Ada were to share his public key with Albert Einstein,
@@ -494,7 +495,7 @@ To do so, Albert would save the key to <code class="docutils literal"><span clas
 You may see this fingerprint on the <a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">FutureSystems portal</a>.</p>
 </div>
 <div class="section" id="delete-a-known-host">
-<h4><a class="toc-backref" href="#id18">Delete a known host</a><a class="headerlink" href="#delete-a-known-host" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id19">Delete a known host</a><a class="headerlink" href="#delete-a-known-host" title="Permalink to this headline">¶</a></h4>
 <p>Whenever you log into a new machine via SSH, the host key of the
 destination machine is added to <code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code>.
 The next time you try to log in this key will be checked.
@@ -514,7 +515,7 @@ Another reason may be that a third party is performing a
 </div>
 </div>
 <div class="section" id="ssh">
-<h3><a class="toc-backref" href="#id19">SSH</a><a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">SSH</a><a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
 <p>Secure Shell, or SSH, is a protocol for securely connecting to a Shell
 on a remote computer.</p>
 <div class="admonition tip">
