@@ -36,7 +36,9 @@ You may wish to view a `Detailed discussion about SSH`_.
 .. _Detailed discussion about SSH: http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/advancedssh.html
 
 
-.. note:: In case you use OSX or Linux terminals to access
+.. note:: Futuresystems Portalname and Project ID
+
+          In case you use OSX or Linux terminals to access
 	  FutureSystems, we recommend that you define a portalname and project ID.
           This can be done as follwows. Let us assume your portal name is
 	  `albert`. Than you can set it with::
@@ -57,7 +59,7 @@ First log into ``india.futuresystems.org`` with::
 
   ssh $PORTALNAME@india.futuresystems.org
 
-  You will need to have the public key of the person you are giving access to.
+You will need to have the public key of the person you are giving access to.
 Here is an example public key. Please do not copy this key into thie
 file or do this if you do not understand what this is for::
 
@@ -88,4 +90,8 @@ Now the Teaching Assistant can log into your account.
 Exercise
 ----------------------------------------------------------------------
 
-Add your own public ssh key to the authorized keys file on ``india``.
+Communicate with a suport staff membera and ask them for their public
+key. Add this public key to your authorized keys file on
+``india``. Ask the staff memberto log into your account. You naturally
+need to give the staff member your portalname.
+Verify if he can browse to the project you have an issue with.
