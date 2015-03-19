@@ -238,16 +238,16 @@ FutureSystems to a Teaching Assistant.</p>
 <p>You may wish to view a <a class="reference external" href="http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/advancedssh.html">Detailed discussion about SSH</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<dl class="docutils">
-<dt>In case you use OSX or Linux terminals to access</dt>
-<dd><p class="first">FutureSystems, we recommend that you define a portalname and project ID.
+<p>Futuresystems Portalname and Project ID</p>
+<blockquote>
+<div><p>In case you use OSX or Linux terminals to access
+FutureSystems, we recommend that you define a portalname and project ID.
 This can be done as follwows. Let us assume your portal name is
 <cite>albert</cite>. Than you can set it with:</p>
-<div class="last highlight-python"><div class="highlight"><pre>export PORTALNAME=albert
+<div class="highlight-python"><div class="highlight"><pre>export PORTALNAME=albert
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 <p>We also assume that you have a project id that you set to:</p>
 <div class="highlight-python"><div class="highlight"><pre>export PROJECTID=fg101
 </pre></div>
@@ -259,11 +259,10 @@ This can be done as follwows. Let us assume your portal name is
 <h2><a class="toc-backref" href="#id2">Providing Access</a><a class="headerlink" href="#providing-access" title="Permalink to this headline">¶</a></h2>
 <p>First log into <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> with:</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh $PORTALNAME@india.futuresystems.org
-
-You will need to have the public key of the person you are giving access to.
 </pre></div>
 </div>
-<p>Here is an example public key. Please do not copy this key into thie
+<p>You will need to have the public key of the person you are giving access to.
+Here is an example public key. Please do not copy this key into thie
 file or do this if you do not understand what this is for:</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh-rsa
 AAAAB3NzaC1yc2EAAAADAQABAAABAQDKTtes2ngM+L0og8zKugcxXwYWMkzUiPofW1qyZ
@@ -290,7 +289,11 @@ Once this session is over, you should remove their public key from your <code cl
 </div>
 <div class="section" id="exercise">
 <h2><a class="toc-backref" href="#id3">Exercise</a><a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
-<p>Add your own public ssh key to the authorized keys file on <code class="docutils literal"><span class="pre">india</span></code>.</p>
+<p>Communicate with a suport staff membera and ask them for their public
+key. Add this public key to your authorized keys file on
+<code class="docutils literal"><span class="pre">india</span></code>. Ask the staff memberto log into your account. You naturally
+need to give the staff member your portalname.
+Verify if he can browse to the project you have an issue with.</p>
 </div>
 </div>
 
