@@ -98,35 +98,38 @@ In order to login into your account on FutureSystems you will need:
 - an SSH client
 
 
-Access from a Linux and OSX host
+  Linux and OSX host
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-.. tip::
-   On Mac OS X open a terminal via `Applications --> Utilities --> Terminal`
+We assume that Linux users are familiar on how to start a terminal. On
+Mac OS X open a terminal via `Applications --> Utilities -->
+Terminal`. Alternatively you can search for the term "terminal" in the
+spotlight search and locate the terminal application and click on it.
 
-.. note:: FutureSystems Portalname and Project ID
-          For this example we assume you have set the shell variable
-	  PORTALNAME to your FutureSystems portal username. This can
-	  be done as follwows. Let us assume your portal name is
-	  `albert`. Than you can set it with::
+To proceed you will need to know your FutureSystems Portalname and
+Project ID.
 
-              export PORTALNAME=albert
+For this example we assume you have set the shell variable
+PORTALNAME to your FutureSystems portal username. This can
+be done as follwows. Let us assume your portal name is
+`albert`. Than you can set it with::
 
-         We also assume that you have a project id that you set to::
+            export PORTALNAME=albert
+
+We also assume that you have a project id that you set to::
 
               export PROJECTID=fg101
  
-         if it is the number 101.
-	 
-Once you have set up your portal name you can log in via::
+if it is the number 101. Once you have set up your portal name you can
+log in via::
 
-  ssh $PORTALNAME@india.futuresystems.org
+  $ ssh $PORTALNAME@india.futuresystems.org
 
 Naturally, you could also directly place your portal name into the
 command. Thus if your portalname would be albert, you could do
 alternatively to the above command::
 
-  ssh albert@india.futuresystems.org
+  $ ssh albert@india.futuresystems.org
 
 
 .. tip:: Please see :doc:`../../../accounts/ssh` for details on
