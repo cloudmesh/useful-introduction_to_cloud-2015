@@ -6,7 +6,12 @@ Shell Access
    .. contents::
       :local:
 
-
+.. warning:: This section is for advanced access of the staff to your
+	     machine. We recommend that you do not do this section if
+	     you do not understand its implication and engage with the
+	     staff of the class **before** you do it. In many cases
+	     this will not be needed.
+	 
 This lesson describes how to provide access to your account on
 FutureSystems to a Teaching Assistant.
 
@@ -31,12 +36,30 @@ You may wish to view a `Detailed discussion about SSH`_.
 .. _Detailed discussion about SSH: http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/advancedssh.html
 
 
+.. note:: In case you use OSX or Linux terminals to access
+	  FutureSystems, we recommend that you define a portalname and project ID.
+          This can be done as follwows. Let us assume your portal name is
+	  `albert`. Than you can set it with::
+
+              export PORTALNAME=albert
+
+         We also assume that you have a project id that you set to::
+
+              export PROJECTID=fg101
+ 
+         if it is the number 101.
+
+
 Providing Access
 ----------------------------------------------------------------------
 
-First log into ``india.futuresystems.org``.
-You will need to have the public key of the person you are giving access to.
-Here is an example public key::
+First log into ``india.futuresystems.org`` with::
+
+  ssh $PORTALNAME@india.futuresystems.org
+
+  You will need to have the public key of the person you are giving access to.
+Here is an example public key. Please do not copy this key into thie
+file or do this if you do not understand what this is for::
 
  ssh-rsa
  AAAAB3NzaC1yc2EAAAADAQABAAABAQDKTtes2ngM+L0og8zKugcxXwYWMkzUiPofW1qyZ

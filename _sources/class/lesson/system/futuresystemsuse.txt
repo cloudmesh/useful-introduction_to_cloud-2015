@@ -97,28 +97,40 @@ In order to login into your account on FutureSystems you will need:
 - an account on FutureSystems (see above)
 - an SSH client
 
-Login via ``$PORTALNAME@india.futuresystems.org``.
+
+Access from a Linux and OSX host
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. tip::
    On Mac OS X open a terminal via `Applications --> Utilities --> Terminal`
 
-.. tip::
-   On Windows you will need to install `PuTTY`_.
+.. note:: FutureSystems Portalname and Project ID
+          For this example we assume you have set the shell variable
+	  PORTALNAME to your FutureSystems portal username. This can
+	  be done as follwows. Let us assume your portal name is
+	  `albert`. Than you can set it with::
 
+              export PORTALNAME=albert
 
-You will need to know your portal username (``$PORTALNAME``).
-For instance, Albert has an account on FutureSystems and his username
-is ``albert``:
-The hostname will be ``india.futuresystems.org`` and he can log in
-like so::
+         We also assume that you have a project id that you set to::
+
+              export PROJECTID=fg101
+ 
+         if it is the number 101.
+	 
+Once you have set up your portal name you can log in via::
+
+  ssh $PORTALNAME@india.futuresystems.org
+
+Naturally, you could also directly place your portal name into the
+command. Thus if your portalname would be albert, you could do
+alternatively to the above command::
 
   ssh albert@india.futuresystems.org
 
 
 .. tip:: Please see :doc:`../../../accounts/ssh` for details on
    configuring and using an SSH client.
-
-.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
 Windows
@@ -144,6 +156,7 @@ Name and click "Open".  This will launch a terminal and allow you to
 connect using the passphrase specified in ``puttygen.exe``.
 
 .. _PuTTY project page: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
 
