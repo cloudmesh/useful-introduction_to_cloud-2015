@@ -58,7 +58,7 @@ utilities with various exercises.
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Overview and Introduction**
      - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/collaboration/overview.html>`_
@@ -86,7 +86,7 @@ utilities with various exercises.
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **ssh-keygen**
      - `4 mins <https://www.youtube.com/watch?v=pQb2VV1zNIc&feature=em-upload_owner>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh>`_
@@ -111,7 +111,7 @@ utilities with various exercises.
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Overview and Introduction** 
      - `4 mins <https://www.youtube.com/watch?v=2uVZrGPCNcY&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=1>`_
      - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/overview.html>`_
@@ -173,7 +173,7 @@ The Basics of OpenStack (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Introduction and Overview**
      - `00 mins <>`_
      - `00 mins <>`_
@@ -232,7 +232,7 @@ Cloudmesh - Cloud Management Software (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Introduction and Overview**
      - `00 mins <>`_
      - `00 mins <>`_
@@ -261,7 +261,7 @@ Cloudmesh - Cloud Management Software (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Introduction and Overview**
      - `00 mins <>`_
      - `00 mins <>`_
@@ -292,7 +292,7 @@ IT Operations - Automation and Orchestration (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **DevOps**
         - Ansible
         - SaltStack
@@ -330,7 +330,7 @@ Virtual Clusters I (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Introduction and Overview**
      - `00 mins <>`_
      - `00 mins <>`_
@@ -365,7 +365,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Composite Cluster with Sub-Clusters**
         - Introduction and Overview
         - Creating a Cross Resource Virtual Cluster
@@ -401,7 +401,7 @@ Other Technologies (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **Virtualization Technologies**
          - Introduction and Overview
          - Hypervisors
@@ -449,7 +449,7 @@ Future (under preparation)
    * - Topic
      - Video
      - Text
-     - Homework
+     - Lab sessions
    * - **What will the Future Bring**
      - `00 mins <>`_
      - `00 mins <>`_
