@@ -188,8 +188,11 @@ The Basics of OpenStack (under preparation)
      - - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
        - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
+     - - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
        - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
-     - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
+     - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
+       - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
+       - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
      - 
@@ -203,14 +206,15 @@ The Basics of OpenStack (under preparation)
        - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
        - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
-     - 
+     - - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
+       - `60 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercises>`_
 
 Length of the lessons in Week 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Total of video lessons: 1 hour and 30 minutes
 * Total of study materials: 4 hours and 40 minutes
-* Total of lab sessions: 50 minutes
+* Total of lab sessions: 3 hours 20 minutes
 
 Week 3
 -------------------------------------------------------------------------------

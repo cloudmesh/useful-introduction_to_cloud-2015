@@ -1,4 +1,4 @@
-OpenStack Juno (Under preparation)
+OpenStack Juno
 ======================================================================
 
 Overview
@@ -32,6 +32,12 @@ Series  Name    Date    Major changes
 1st     Austin  2010    Object Storage
 ...     ...     ...     ...
 10th    Juno    2014    OpenStack Sahara
+
+                        OpenStack Trove
+11th    Kilo    2015    OpenStack Docker
+                        Plugin
+
+                        OpenStack Ironic
 ======= ======  ======  ===================
 
 OpenStack Sahara
@@ -57,7 +63,7 @@ A summary of OpenStack Sahara is:
 
    Figure 1. Architecture of OpenStack Sahara
 
-Reference
+References
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 * Github: https://github.com/openstack/sahara
@@ -78,7 +84,7 @@ IaaS platform           OpenStack       OpenStack, Eucalyptus, Amazon, Azure, HP
 Next Step
 -----------
 
-In the next page, Other IaaS Platforms will be discussed.
+In the next page, starting a web server on Amazon EC2 will be addressed.
 
-`Other Iaas Platforms <other_iaas.html>`_
+`Amazon Web Services (AWS) <aws_tutorial.html>`_
 
