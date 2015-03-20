@@ -186,7 +186,7 @@ The Basics of OpenStack (under preparation)
          - Authentication (Keystone)
      - 
      - - `1 hour </class/lesson/iaas/openstack.html>`_
-     - - `2 hours </iaas/index.html>`_
+       - `2 hours </iaas/index.html>`_
      - `50 mins </iaas/openstack.html#exercises>`_
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
