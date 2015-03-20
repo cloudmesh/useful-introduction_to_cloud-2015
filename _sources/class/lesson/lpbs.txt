@@ -1,10 +1,10 @@
-Local PBS Queing System
+Local PBS Queuing System
 ======================================================================
 
 Overview
 ----------------------------------------------------------------------
 
-Sometimes users may want to emulate the behavior of PBS on a local machine. This is usefule to develop sophisticated job specifications or to emulate a queuing system as available on supercomputers. Often the instalation of a full version of torque or other batch systems may be too much effort.
+Sometimes users may want to emulate the behavior of PBS on a local machine. This is useful to develop sophisticated job specifications or to emulate a queuing system as available on supercomputers. Often the installation of a full version of torque or other batch systems may be too much effort.
 
 A solution is to install LPBS available at
 
@@ -12,7 +12,7 @@ https://github.com/goerz/LPBS
 
 Duration: 1 hour
 
-Instalation
+Installation
 ----------------------------------------------------------------------
 
 LPBS is written in python and therefore can be installed easily with::
@@ -182,7 +182,7 @@ A simple script is::
 
 
 
-Prerequisits
+Prerequisites
 ----------------------------------------------------------------------
 
 We recommend that you use python 2.7.9, with virtualenv. 
@@ -190,25 +190,25 @@ We recommend that you use python 2.7.9, with virtualenv.
 Exercises
 ----------------------------------------------------------------------
 
-Excersise 1
+Exercise 1
 ----------------------------------------------------------------------
 
-Install LPBS on a virtual machine on india
+Install LPBS on a virtual machine on India
 
-Excersise 2
+Exercise 2
 ----------------------------------------------------------------------
 
-Install LPBS on multiple virtual machines on india. Develop a program that lists all jobs on the VMs
+Install LPBS on multiple virtual machines on India. Develop a program that lists all jobs on the VMs
 
-Excersie 3
+Exercise 3
 ----------------------------------------------------------------------
 
 Develop a python script that modifies the .bashrc file if $LPBS_HOME is not set in the environment.
 
-Excersie 4
+Exercise 4
 ----------------------------------------------------------------------
 
-Develop a python that conducts a full deployment of LPBS while using a single commandline. Use python docopts to pass the parameters. We expect the following to work::
+Develop a python that conducts a full deployment of LPBS while using a single command-line. Use python docopts to pass the parameters. We expect the following to work::
 
   lpbs_install [--dir=LPBS_HOME]
 
@@ -216,19 +216,19 @@ if the --dir option is ommitted use ~/qsub as default. Install the configuration
 
    lpbs_install --uninstall
 
-This will delete the instalation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.
+This will delete the installation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.
 
-Excersie 5
+Exercise 5
 ----------------------------------------------------------------------
 
 Use chef for deployment.
 
-Excersie 6
+Exercise 6
 ----------------------------------------------------------------------
 
-Use pupet for deployment.
+Use puppet for deployment.
 
-Excersie 7
+Exercise 7
 ----------------------------------------------------------------------
 
 Use ansible for deployment.
@@ -243,7 +243,7 @@ Use ansible for deployment.
 
 
 
-Acknowledgement
+Acknowledgment
 ----------------------------------------------------------------------
 
 The configuration files and job script are modifications of the once found at https://github.com/goerz/LPBS

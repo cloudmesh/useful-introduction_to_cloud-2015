@@ -24,7 +24,7 @@ Run Cloudmesh
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 It's easy to deploy Cloudmesh using Docker. Please run the following
-command: (sudo is supressed)
+command: (sudo is suppressed)
 
 :: 
 
