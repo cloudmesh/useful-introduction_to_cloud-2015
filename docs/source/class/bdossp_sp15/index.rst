@@ -18,7 +18,7 @@ Contact
 .. include:: ../contact.rst
 
 Besides this table of contents, we also have prepared a weekly plan to
-which we will add more content througout the semester:
+which we will add more content throughout the semester:
 
 .. toctree::
    :maxdepth: 1

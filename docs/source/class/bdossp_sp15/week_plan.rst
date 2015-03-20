@@ -55,7 +55,7 @@ utilities with various exercises.
      - `4 mins <https://www.youtube.com/watch?v=pQb2VV1zNIc&feature=em-upload_owner>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh>`_
      -  
-   * - **Acccount Creation**
+   * - **Account Creation**
      - `12 mins <https://www.youtube.com/watch?v=X6zeVEALzTk>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/accounts.html>`_
      - 

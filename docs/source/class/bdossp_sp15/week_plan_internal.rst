@@ -91,7 +91,7 @@ utilities with various exercises.
      - `4 mins <https://www.youtube.com/watch?v=pQb2VV1zNIc&feature=em-upload_owner>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh>`_
      -  
-   * - **Acccount Creation**
+   * - **Account Creation**
      - `12 mins <https://www.youtube.com/watch?v=X6zeVEALzTk>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/accounts.html>`_
      - 
@@ -175,8 +175,8 @@ The Basics of OpenStack (under preparation)
      - Text
      - Lab sessions
    * - **Introduction and Overview**
-     - `00 mins <>`_
-     - `00 mins <>`_
+     - `36 mins <https://mix.office.com/watch/t3n3ea312rxi>`_
+     - `10 mins </class/lesson/iaas/overview_openstack.html>`_
      - 
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
@@ -184,13 +184,14 @@ The Basics of OpenStack (under preparation)
          - Network (Neutron)
          - Images (Glance)
          - Authentication (Keystone)
-     - `00 mins <>`_
-     - `00 mins <>`_
      - 
+     - - `1 hour </class/lesson/iaas/openstack.html>`_
+     - - `2 hours </iaas/index.html>`_
+     - `50 mins </iaas/openstack.html#exercises>`_
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
-     - `00 mins <>`_
-     - `00 mins <>`_
+     - 
+     - `10 mins </class/lesson/iaas/openstack_juno.html>`_
      - 
    * - **Other IaaS Platforms**
         - Introduction and Overview
