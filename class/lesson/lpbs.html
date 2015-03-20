@@ -7,14 +7,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Local PBS Queing System &mdash; my Cloudmesh Learning documentation</title>
+  <title>Local PBS Queuing System &mdash; my Cloudmesh Learning documentation</title>
   
 
   
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -49,12 +47,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -64,9 +59,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -87,7 +81,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -139,7 +133,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
@@ -164,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -190,7 +184,7 @@
       
           <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       
-    <li>Local PBS Queing System</li>
+    <li>Local PBS Queuing System</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/class/lesson/lpbs.txt" rel="nofollow"> View page source</a>
@@ -199,19 +193,19 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
-  <div class="section" id="local-pbs-queing-system">
-<h1>Local PBS Queing System<a class="headerlink" href="#local-pbs-queing-system" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="local-pbs-queuing-system">
+<h1>Local PBS Queuing System<a class="headerlink" href="#local-pbs-queuing-system" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes users may want to emulate the behavior of PBS on a local machine. This is usefule to develop sophisticated job specifications or to emulate a queuing system as available on supercomputers. Often the instalation of a full version of torque or other batch systems may be too much effort.</p>
+<p>Sometimes users may want to emulate the behavior of PBS on a local machine. This is useful to develop sophisticated job specifications or to emulate a queuing system as available on supercomputers. Often the installation of a full version of torque or other batch systems may be too much effort.</p>
 <p>A solution is to install LPBS available at</p>
 <p><a class="reference external" href="https://github.com/goerz/LPBS">https://github.com/goerz/LPBS</a></p>
 <p>Duration: 1 hour</p>
 </div>
-<div class="section" id="instalation">
-<h2>Instalation<a class="headerlink" href="#instalation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>LPBS is written in python and therefore can be installed easily with:</p>
 <div class="highlight-python"><div class="highlight"><pre>pip install LPBS
 </pre></div>
@@ -376,28 +370,28 @@ exit 0
 </pre></div>
 </div>
 </div>
-<div class="section" id="prerequisits">
-<h2>Prerequisits<a class="headerlink" href="#prerequisits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>We recommend that you use python 2.7.9, with virtualenv.</p>
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="excersise-1">
-<h2>Excersise 1<a class="headerlink" href="#excersise-1" title="Permalink to this headline">¶</a></h2>
-<p>Install LPBS on a virtual machine on india</p>
+<div class="section" id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<p>Install LPBS on a virtual machine on India</p>
 </div>
-<div class="section" id="excersise-2">
-<h2>Excersise 2<a class="headerlink" href="#excersise-2" title="Permalink to this headline">¶</a></h2>
-<p>Install LPBS on multiple virtual machines on india. Develop a program that lists all jobs on the VMs</p>
+<div class="section" id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
+<p>Install LPBS on multiple virtual machines on India. Develop a program that lists all jobs on the VMs</p>
 </div>
-<div class="section" id="excersie-3">
-<h2>Excersie 3<a class="headerlink" href="#excersie-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
 <p>Develop a python script that modifies the .bashrc file if $LPBS_HOME is not set in the environment.</p>
 </div>
-<div class="section" id="excersie-4">
-<h2>Excersie 4<a class="headerlink" href="#excersie-4" title="Permalink to this headline">¶</a></h2>
-<p>Develop a python that conducts a full deployment of LPBS while using a single commandline. Use python docopts to pass the parameters. We expect the following to work:</p>
+<div class="section" id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p>Develop a python that conducts a full deployment of LPBS while using a single command-line. Use python docopts to pass the parameters. We expect the following to work:</p>
 <div class="highlight-python"><div class="highlight"><pre>lpbs_install [--dir=LPBS_HOME]
 </pre></div>
 </div>
@@ -405,22 +399,22 @@ exit 0
 <div class="highlight-python"><div class="highlight"><pre><span class="n">lpbs_install</span> <span class="o">--</span><span class="n">uninstall</span>
 </pre></div>
 </div>
-<p>This will delete the instalation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.</p>
+<p>This will delete the installation and the directory, as well as trying to remove the LPBS_HOME variable in .bashrc. If the later can not be found through an exception.</p>
 </div>
-<div class="section" id="excersie-5">
-<h2>Excersie 5<a class="headerlink" href="#excersie-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h2>
 <p>Use chef for deployment.</p>
 </div>
-<div class="section" id="excersie-6">
-<h2>Excersie 6<a class="headerlink" href="#excersie-6" title="Permalink to this headline">¶</a></h2>
-<p>Use pupet for deployment.</p>
+<div class="section" id="exercise-6">
+<h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h2>
+<p>Use puppet for deployment.</p>
 </div>
-<div class="section" id="excersie-7">
-<h2>Excersie 7<a class="headerlink" href="#excersie-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-7">
+<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h2>
 <p>Use ansible for deployment.</p>
 </div>
-<div class="section" id="acknowledgement">
-<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acknowledgment">
+<h2>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permalink to this headline">¶</a></h2>
 <p>The configuration files and job script are modifications of the once found at <a class="reference external" href="https://github.com/goerz/LPBS">https://github.com/goerz/LPBS</a></p>
 </div>
 </div>
@@ -431,7 +425,7 @@ exit 0
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="modules.html" class="btn btn-neutral float-right" title="Environment Modules (modules) on FutureSystems">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="Environment Modules (modules) on FutureSystems"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="labs.html" class="btn btn-neutral" title="Lab Sessions"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -447,8 +441,7 @@ exit 0
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -473,7 +466,7 @@ exit 0
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

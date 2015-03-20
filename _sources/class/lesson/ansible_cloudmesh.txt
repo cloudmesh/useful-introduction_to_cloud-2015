@@ -21,13 +21,13 @@ Tutorial: Writing Ansible Playbook
 .. tip:: approximate time 45 minutes
 
 In this tutorial, we are going to write a basic playbook of Ansible software.
-Keep in mind that ``ansible`` is a main program and ``playbook`` is a template
+Keep in mind that ``Ansible`` is a main program and ``playbook`` is a template
 that you would like to use. You may have several playbooks in your Ansible.
 
-First playbook for Mongodb Installation
+First playbook for MongoDB Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As a first example, we are going to write a playbook which installs mongodb
+As a first example, we are going to write a playbook which installs MongoDB
 server.  It includes the following tasks:
 
 * Import the public key used by the package management system
@@ -36,15 +36,15 @@ server.  It includes the following tasks:
 * Install the MongoDB packages
 * Start MongoDB
 
-*This tutorial is based on the manual installation of mongodb from the official
+*This tutorial is based on the manual installation of MongoDB from the official
 site: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*
 
-*We also assume that we install mongodb on Ubuntu OS.*
+*We also assume that we install MongoDB on Ubuntu OS.*
 
 Hosts and Users
 ^^^^^^^^^^^^^^^^
 
-First step is choosing hosts to install mongodb and a user account to run
+First step is choosing hosts to install MongoDB and a user account to run
 commands (tasks).  We start with the following lines in the example filename of
 ``mongodb.yaml``
 
@@ -55,7 +55,7 @@ commands (tasks).  We start with the following lines in the example filename of
     remote_user: root
 
 In a previous tutorial, we setup two machines with ``local`` group name. This
-tutorial uses that two machines for mongodb installation.  Also, we use
+tutorial uses that two machines for MongoDB installation.  Also, we use
 ``root`` account to complete Ansible tasks.
 
 .. note:: Indentation is important in YAML format. Do not ignore spaces start
@@ -77,7 +77,7 @@ http://docs.ansible.com/list_of_all_modules.html
 Step 1: Import the public key used by the package management system
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We need to import the Mongodb public GPG Key. This is going to be a first task
+We need to import the MongoDB public GPG Key. This is going to be a first task
 in our playbook.
 
 ::
@@ -90,7 +90,7 @@ in our playbook.
 Step 2: Create a list file for MongoDB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add a list of mongodb url with the following task:
+Add a list of MongoDB URL with the following task:
 
 ::
 
@@ -196,4 +196,4 @@ Next Step
 
 In the next page, we learn Basic Docker on FutureSystems.
 
-`Basic Docker On Futuresystems <docker.html>`_
+`Basic Docker On FutureSystems <docker.html>`_

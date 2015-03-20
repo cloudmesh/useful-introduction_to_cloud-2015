@@ -98,7 +98,7 @@ In order to login into your account on FutureSystems you will need:
 - an SSH client
 
 
-Linux and OSX
+ Linux and OSX
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 We assume that Linux users are familiar on how to start a terminal. On

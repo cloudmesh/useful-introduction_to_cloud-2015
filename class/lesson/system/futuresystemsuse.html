@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,8 +25,6 @@
   
   
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
   
 
   
@@ -49,12 +47,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -64,9 +59,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -87,7 +81,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -139,7 +133,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../ipython/_ipython.html">IPython</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a><ul>
@@ -164,7 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -199,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="use-of-futuresystems">
 <h1>Use of FutureSystems<a class="headerlink" href="#use-of-futuresystems" title="Permalink to this headline">¶</a></h1>
@@ -211,22 +205,21 @@
 <li><a class="reference internal" href="#getting-an-account" id="id6">Getting an Account</a></li>
 <li><a class="reference internal" href="#join-a-project" id="id7">Join a Project</a></li>
 <li><a class="reference internal" href="#remote-login" id="id8">Remote Login</a><ul>
-<li><a class="reference internal" href="#linux-and-osx" id="id9">Linux and OSX</a></li>
-<li><a class="reference internal" href="#windows" id="id10">Windows</a></li>
-<li><a class="reference internal" href="#managing-keys" id="id11">Managing keys</a><ul>
-<li><a class="reference internal" href="#create-a-key-pair" id="id12">Create a key pair</a></li>
-<li><a class="reference internal" href="#import-a-key-pair" id="id13">Import a key pair</a></li>
-<li><a class="reference internal" href="#list-added-keys" id="id14">List added keys</a></li>
+<li><a class="reference internal" href="#windows" id="id9">Windows</a></li>
+<li><a class="reference internal" href="#managing-keys" id="id10">Managing keys</a><ul>
+<li><a class="reference internal" href="#create-a-key-pair" id="id11">Create a key pair</a></li>
+<li><a class="reference internal" href="#import-a-key-pair" id="id12">Import a key pair</a></li>
+<li><a class="reference internal" href="#list-added-keys" id="id13">List added keys</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#useful-ssh-commands" id="id15">Useful SSH commands</a><ul>
-<li><a class="reference internal" href="#change-the-password" id="id16">Change the password</a></li>
-<li><a class="reference internal" href="#change-the-comment" id="id17">Change the comment</a></li>
-<li><a class="reference internal" href="#show-fingerprint" id="id18">Show fingerprint</a></li>
-<li><a class="reference internal" href="#delete-a-known-host" id="id19">Delete a known host</a></li>
+<li><a class="reference internal" href="#useful-ssh-commands" id="id14">Useful SSH commands</a><ul>
+<li><a class="reference internal" href="#change-the-password" id="id15">Change the password</a></li>
+<li><a class="reference internal" href="#change-the-comment" id="id16">Change the comment</a></li>
+<li><a class="reference internal" href="#show-fingerprint" id="id17">Show fingerprint</a></li>
+<li><a class="reference internal" href="#delete-a-known-host" id="id18">Delete a known host</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ssh" id="id20">SSH</a></li>
+<li><a class="reference internal" href="#ssh" id="id19">SSH</a></li>
 </ul>
 </li>
 </ul>
@@ -244,7 +237,7 @@ running instances.</li>
 <p>Since all assignments and lessons will be done on FutureSystems, it is
 important that you can log on. Whether you are starting from Windows,
 Mac OS X, or Linux, only a few steps are needed.</p>
-<p>Once you can log into <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>, SSH keys are used
+<p>Once you can log into <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt>, SSH keys are used
 to manage access to OpenStack. At this point your computer is just a
 client to access FutureSystems resources. All commands are executed on
 FutureSystems.</p>
@@ -253,8 +246,8 @@ FutureSystems.</p>
 <li>get and account with FutureSystems (portal)</li>
 <li>join a project (portal)</li>
 <li>upload SSH public key (computer -&gt; portal)</li>
-<li>log into FutureSystems (computer -&gt; <code class="docutils literal"><span class="pre">india</span></code>)</li>
-<li>manage keys for OpenStack (<code class="docutils literal"><span class="pre">india</span></code> -&gt; VM)</li>
+<li>log into FutureSystems (computer -&gt; <tt class="docutils literal"><span class="pre">india</span></tt>)</li>
+<li>manage keys for OpenStack (<tt class="docutils literal"><span class="pre">india</span></tt> -&gt; VM)</li>
 </ul>
 </div>
 <div class="section" id="getting-an-account">
@@ -267,8 +260,8 @@ in to your account.</p>
 </div>
 <ol class="arabic simple">
 <li>Navigate to <a class="reference external" href="https://portal.futuresystems.org/">FutureSystems.org</a>.</li>
-<li>Click on <code class="docutils literal"><span class="pre">Register</span></code> at the top near the search bar</li>
-<li>Fill out the information. Asterisk-denoted (<code class="docutils literal"><span class="pre">*</span></code>) fields are required.</li>
+<li>Click on <tt class="docutils literal"><span class="pre">Register</span></tt> at the top near the search bar</li>
+<li>Fill out the information. Asterisk-denoted (<tt class="docutils literal"><span class="pre">*</span></tt>) fields are required.</li>
 <li>Please be patient after clicking the <a href="#id1"><span class="problematic" id="id2">``</span></a>Create new account` button.
 It may take one or two business day for the account to be approved.</li>
 <li>Once your account is approved you will receive an email.</li>
@@ -278,7 +271,7 @@ It may take one or two business day for the account to be approved.</li>
 <p class="last">At this point you will not be able to use any
 FutureSystems resources.  You will need to join a project and
 enable remote login to do so.  Only when the status is all green in
-the <code class="docutils literal"><span class="pre">My</span> <span class="pre">FutureGrid</span> <span class="pre">HPC</span> <span class="pre">account</span> <span class="pre">status</span></code> of your <a class="reference external" href="https://portal.futuresystems.org/my/fg-account">portal account</a>
+the <tt class="docutils literal"><span class="pre">My</span> <span class="pre">FutureGrid</span> <span class="pre">HPC</span> <span class="pre">account</span> <span class="pre">status</span></tt> of your <a class="reference external" href="https://portal.futuresystems.org/my/fg-account">portal account</a>
 information will you have access to resources.</p>
 </div>
 <div class="admonition tip">
@@ -293,12 +286,12 @@ project.</p>
 <ol class="arabic simple">
 <li>Navigate to <a class="reference external" href="https://portal.futuresystems.org/">FutureSystems.org</a> and log into your account.</li>
 <li>Click on the appropriate project name</li>
-<li>Click on the <code class="docutils literal"><span class="pre">Join</span> <span class="pre">the</span> <span class="pre">project</span></code> link on the right hand side.</li>
+<li>Click on the <tt class="docutils literal"><span class="pre">Join</span> <span class="pre">the</span> <span class="pre">project</span></tt> link on the right hand side.</li>
 <li>Upon approval you will receive an email.</li>
 </ol>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Please see <a class="reference internal" href="../../../accounts/details.html#s-account-join-project"><span>Join a Project</span></a> for further details.</p>
+<p class="last">Please see <a class="reference internal" href="../../../accounts/details.html#s-account-join-project"><em>Join a Project</em></a> for further details.</p>
 </div>
 </div>
 <div class="section" id="remote-login">
@@ -306,7 +299,7 @@ project.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">All coursework will be done on your FutureSystems account on
-<code class="docutils literal"><span class="pre">india</span></code>. You will to use PuTTY to access <code class="docutils literal"><span class="pre">india</span></code> and then you
+<tt class="docutils literal"><span class="pre">india</span></tt>. You will to use PuTTY to access <tt class="docutils literal"><span class="pre">india</span></tt> and then you
 can follow along with the other instructions.</p>
 </div>
 <p>In order to login into your account on FutureSystems you will need:</p>
@@ -314,8 +307,9 @@ can follow along with the other instructions.</p>
 <li>an account on FutureSystems (see above)</li>
 <li>an SSH client</li>
 </ul>
-<div class="section" id="linux-and-osx">
-<h3><a class="toc-backref" href="#id9">Linux and OSX</a><a class="headerlink" href="#linux-and-osx" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Linux and OSX</div></blockquote>
+<hr class="docutils" />
 <p>We assume that Linux users are familiar on how to start a terminal. On
 Mac OS X open a terminal via <cite>Applications &#8211;&gt; Utilities &#8211;&gt;
 Terminal</cite>. Alternatively you can search for the term &#8220;terminal&#8221; in the
@@ -349,40 +343,39 @@ alternatively to the above command:</p>
 <p class="last">Please see <a class="reference internal" href="../../../accounts/ssh.html"><em>Using SSH Keys</em></a> for details on
 configuring and using an SSH client.</p>
 </div>
-</div>
 <div class="section" id="windows">
-<h3><a class="toc-backref" href="#id10">Windows</a><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Windows</a><a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>In order to SSH into your FutureSystems account using Windows, you
 will need to install PuTTY and PuTTYgen from the <a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY project page</a></p>
 <p>Generate an key using PuTTYgen:</p>
 <ol class="arabic simple">
-<li>open the application <code class="docutils literal"><span class="pre">puttygen.exe</span></code></li>
+<li>open the application <tt class="docutils literal"><span class="pre">puttygen.exe</span></tt></li>
 <li>press &#8220;Generate&#8221;</li>
 <li>enter a desired passphrase (make sure they match!)</li>
 <li>save the private and public keys</li>
 <li>copy the displayed public key</li>
 </ol>
 <p>You can now upload your public key to the FutureSystems portal.</p>
-<p>To connect, open <code class="docutils literal"><span class="pre">putty.exe</span></code> and go to <cite>Connection &#8212;&gt; SSH &#8212;&gt;
+<p>To connect, open <tt class="docutils literal"><span class="pre">putty.exe</span></tt> and go to <cite>Connection &#8212;&gt; SSH &#8212;&gt;
 Auth</cite> on the left and browse to add the private key.  Then go to the
-<cite>Session</cite> category and enter <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> for the Host
+<cite>Session</cite> category and enter <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> for the Host
 Name and click &#8220;Open&#8221;.  This will launch a terminal and allow you to
-connect using the passphrase specified in <code class="docutils literal"><span class="pre">puttygen.exe</span></code>.</p>
+connect using the passphrase specified in <tt class="docutils literal"><span class="pre">puttygen.exe</span></tt>.</p>
 </div>
 <div class="section" id="managing-keys">
-<h3><a class="toc-backref" href="#id11">Managing keys</a><a class="headerlink" href="#managing-keys" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Managing keys</a><a class="headerlink" href="#managing-keys" title="Permalink to this headline">¶</a></h3>
 <p>This section describes how to generate secure keys for using
 OpenStack.
-You will need to log into <code class="docutils literal"><span class="pre">india</span></code> to follow.
+You will need to log into <tt class="docutils literal"><span class="pre">india</span></tt> to follow.
 You may also find additional details in
 <a class="reference internal" href="../../../iaas/openstack.html"><em>OpenStack on FutureSystems</em></a>.</p>
 <div class="sidebar">
 <p class="first sidebar-title">Page Contents</p>
 <div class="contents local last topic" id="id4">
 <ul class="simple">
-<li><a class="reference internal" href="#create-a-key-pair" id="id21">Create a key pair</a></li>
-<li><a class="reference internal" href="#import-a-key-pair" id="id22">Import a key pair</a></li>
-<li><a class="reference internal" href="#list-added-keys" id="id23">List added keys</a></li>
+<li><a class="reference internal" href="#create-a-key-pair" id="id20">Create a key pair</a></li>
+<li><a class="reference internal" href="#import-a-key-pair" id="id21">Import a key pair</a></li>
+<li><a class="reference internal" href="#list-added-keys" id="id22">List added keys</a></li>
 </ul>
 </div>
 </div>
@@ -396,9 +389,9 @@ $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 </div>
 </div>
 <div class="section" id="create-a-key-pair">
-<h4><a class="toc-backref" href="#id21">Create a key pair</a><a class="headerlink" href="#create-a-key-pair" title="Permalink to this headline">¶</a></h4>
-<p>In order to use OpenStack on <code class="docutils literal"><span class="pre">india</span></code> you will need an SSH key.
-First, check that <code class="docutils literal"><span class="pre">~/.ssh/$PORTALNAME-key</span></code> does not exist:</p>
+<h4><a class="toc-backref" href="#id20">Create a key pair</a><a class="headerlink" href="#create-a-key-pair" title="Permalink to this headline">¶</a></h4>
+<p>In order to use OpenStack on <tt class="docutils literal"><span class="pre">india</span></tt> you will need an SSH key.
+First, check that <tt class="docutils literal"><span class="pre">~/.ssh/$PORTALNAME-key</span></tt> does not exist:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ file ~/.ssh/albert-key
 </pre></div>
 </div>
@@ -413,7 +406,7 @@ If the file does exist you will see something like:</p>
 ~/.ssh/albert-key: ASCII text
 </pre></div>
 </div>
-<p>In order to create a key for OpenStack use the <code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-add</span></code>
+<p>In order to create a key for OpenStack use the <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-add</span></tt>
 command and set the appropriate permissions:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-add $PORTALNAME-key &gt;~/.ssh/$PORTALNAME-key
 $ chmod 600 ~/.ssh/$PORTALNAME-key
@@ -421,28 +414,28 @@ $ chmod 600 ~/.ssh/$PORTALNAME-key
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Replace <code class="docutils literal"><span class="pre">albert</span></code> with whatever your <code class="docutils literal"><span class="pre">$PORTALNAME</span></code> is.</p>
+<p class="last">Replace <tt class="docutils literal"><span class="pre">albert</span></tt> with whatever your <tt class="docutils literal"><span class="pre">$PORTALNAME</span></tt> is.</p>
 </div>
 <div class="admonition caution">
 <p class="first admonition-title">Caution</p>
-<p class="last">This <code class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-add</span></code> command will overwrite any preexisting
-file in <code class="docutils literal"><span class="pre">~/.ssh/$PORTALNAME-key</span></code> so make sure it does not exist
+<p class="last">This <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">keypair-add</span></tt> command will overwrite any preexisting
+file in <tt class="docutils literal"><span class="pre">~/.ssh/$PORTALNAME-key</span></tt> so make sure it does not exist
 before executing this command.</p>
 </div>
 </div>
 <div class="section" id="import-a-key-pair">
-<h4><a class="toc-backref" href="#id22">Import a key pair</a><a class="headerlink" href="#import-a-key-pair" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id21">Import a key pair</a><a class="headerlink" href="#import-a-key-pair" title="Permalink to this headline">¶</a></h4>
 <p>If you already have a key pair that you wish to use it can be
 imported into the cloud.
 For example, Albert has created a key whose public key is located at
-<code class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></code> and he can import it using and naming it
-using his <code class="docutils literal"><span class="pre">PORTALNAME</span></code> <code class="docutils literal"><span class="pre">albert</span></code>:</p>
+<tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt> and he can import it using and naming it
+using his <tt class="docutils literal"><span class="pre">PORTALNAME</span></tt> <tt class="docutils literal"><span class="pre">albert</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-added-keys">
-<h4><a class="toc-backref" href="#id23">List added keys</a><a class="headerlink" href="#list-added-keys" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id22">List added keys</a><a class="headerlink" href="#list-added-keys" title="Permalink to this headline">¶</a></h4>
 <p>You can query OpenStack to see what keys you have added and uploaded:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-list
 +-----------------+-------------------------------------------------+
@@ -455,18 +448,18 @@ using his <code class="docutils literal"><span class="pre">PORTALNAME</span></co
 </div>
 </div>
 <div class="section" id="useful-ssh-commands">
-<h3><a class="toc-backref" href="#id15">Useful SSH commands</a><a class="headerlink" href="#useful-ssh-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Useful SSH commands</a><a class="headerlink" href="#useful-ssh-commands" title="Permalink to this headline">¶</a></h3>
 <p>The following is a short list of useful SSH commands.</p>
 <div class="section" id="change-the-password">
-<h4><a class="toc-backref" href="#id16">Change the password</a><a class="headerlink" href="#change-the-password" title="Permalink to this headline">¶</a></h4>
-<p>You can change the password for the key by using the  the <code class="docutils literal"><span class="pre">-p</span></code> flag.
+<h4><a class="toc-backref" href="#id15">Change the password</a><a class="headerlink" href="#change-the-password" title="Permalink to this headline">¶</a></h4>
+<p>You can change the password for the key by using the  the <tt class="docutils literal"><span class="pre">-p</span></tt> flag.
 For example:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -p
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-the-comment">
-<h4><a class="toc-backref" href="#id17">Change the comment</a><a class="headerlink" href="#change-the-comment" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id16">Change the comment</a><a class="headerlink" href="#change-the-comment" title="Permalink to this headline">¶</a></h4>
 <p>You can change the comment of an key by modifying the public key file.
 For example, Ada Lovelace wishes to replace an uninformative comment
 with her email address.
@@ -480,13 +473,13 @@ ssh-rsa  AAAAB3N.... lovelace@gmail.com
 </div>
 </div>
 <div class="section" id="show-fingerprint">
-<h4><a class="toc-backref" href="#id18">Show fingerprint</a><a class="headerlink" href="#show-fingerprint" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id17">Show fingerprint</a><a class="headerlink" href="#show-fingerprint" title="Permalink to this headline">¶</a></h4>
 <p>The fingerprint of a key can be used to authenticate the validity of
 the key.
 For example, if Ada were to share his public key with Albert Einstein,
 she would transmit the key.
 Albert could then compute the fingerprint and ensure that it matches.
-To do so, Albert would save the key to <code class="docutils literal"><span class="pre">~/.ssh/ada.pub</span></code> and execute:</p>
+To do so, Albert would save the key to <tt class="docutils literal"><span class="pre">~/.ssh/ada.pub</span></tt> and execute:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -l -f ~/.ssh/ada.pub
 2048 6c:52:54:20:b9:85:04:d4:30:46:48:c7:c4:bc:fe:c7  lovelace@gmail.com (RSA)
 </pre></div>
@@ -495,9 +488,9 @@ To do so, Albert would save the key to <code class="docutils literal"><span clas
 You may see this fingerprint on the <a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">FutureSystems portal</a>.</p>
 </div>
 <div class="section" id="delete-a-known-host">
-<h4><a class="toc-backref" href="#id19">Delete a known host</a><a class="headerlink" href="#delete-a-known-host" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id18">Delete a known host</a><a class="headerlink" href="#delete-a-known-host" title="Permalink to this headline">¶</a></h4>
 <p>Whenever you log into a new machine via SSH, the host key of the
-destination machine is added to <code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code>.
+destination machine is added to <tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt>.
 The next time you try to log in this key will be checked.
 If it has changed you will need to remove the entry before attempting
 to log back in.</p>
@@ -508,14 +501,14 @@ change.
 Another reason may be that a third party is performing a
 <a class="reference external" href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle attack</a>.</p>
 </div>
-<p>To remove a key for <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> from <code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code>:</p>
+<p>To remove a key for <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> from <tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -R india.futuresystems.org
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="ssh">
-<h3><a class="toc-backref" href="#id20">SSH</a><a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">SSH</a><a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
 <p>Secure Shell, or SSH, is a protocol for securely connecting to a Shell
 on a remote computer.</p>
 <div class="admonition tip">
@@ -529,16 +522,16 @@ considered &#8220;safe&#8221;, the machines need to identify each other.  The
 identity is usually accomplished through the use of a <strong>key</strong> file,
 which usually comes in pairs: a <strong>public</strong> key and a <strong>private</strong> key.
 This is usually called a <strong>key pair</strong>.  On Mac OS X and Linux a key
-pair can be created using the <code class="docutils literal"><span class="pre">ssh-keygen</span></code> command. You can test this out by opening a terminal and entering the following:</p>
+pair can be created using the <tt class="docutils literal"><span class="pre">ssh-keygen</span></tt> command. You can test this out by opening a terminal and entering the following:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ ssh-keygen -f ~/test_identity
 </pre></div>
 </div>
 <p>What this does is actually create two file:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">~/test_identity</span></code></li>
-<li><code class="docutils literal"><span class="pre">~/test_identity.pub</span></code></li>
+<li><tt class="docutils literal"><span class="pre">~/test_identity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">~/test_identity.pub</span></tt></li>
 </ul>
-<p>The second file, ending in <code class="docutils literal"><span class="pre">.pub</span></code>, is the public key and needs to be
+<p>The second file, ending in <tt class="docutils literal"><span class="pre">.pub</span></tt>, is the public key and needs to be
 shared with the machines you wish to access.  In the case of
 FutureSystems, you add the public key to your <a class="reference external" href="https://portal.futuresystems.org/my/ssh-keys">SSH Keys</a>.  In the case of
 GitHub (see <a class="reference internal" href="../git.html"><em>Using Git and GitHub for collaboration</em></a>) you add it to your account.</p>
@@ -550,7 +543,7 @@ key. Try it for yourself with:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ ssh-keygen -y -f ~/test_identity
 </pre></div>
 </div>
-<p class="last">and compare the output with <code class="docutils literal"><span class="pre">~/test_identity.pub</span></code></p>
+<p class="last">and compare the output with <tt class="docutils literal"><span class="pre">~/test_identity.pub</span></tt></p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
@@ -560,7 +553,7 @@ information and the machine this key belongs to.:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ssh-keygen -C &#39;host:relativity contact:albert@gmail.com&#39;
 </pre></div>
 </div>
-<p>In the above the comment is specified with the <code class="docutils literal"><span class="pre">-C</span></code> flag and the
+<p>In the above the comment is specified with the <tt class="docutils literal"><span class="pre">-C</span></tt> flag and the
 body of the comment is within the single quotes.</p>
 <p>The contact information is useful when sharing the key with others
 as it helps them understand who you are.</p>
@@ -577,9 +570,9 @@ On Windows, use the PuTTY program.
 On Mac OS X use the Terminal application.</p>
 <p>Execute the following commands:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">whoami</span></code></li>
-<li><code class="docutils literal"><span class="pre">uname</span> <span class="pre">-a</span></code></li>
-<li><code class="docutils literal"><span class="pre">pwd</span></code></li>
+<li><tt class="docutils literal"><span class="pre">whoami</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">uname</span> <span class="pre">-a</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">pwd</span></tt></li>
 </ul>
 <p>Post the result (copy and paste the ASCII text of what you see in the
 screen to the homework system.</p>
@@ -591,7 +584,7 @@ screen to the homework system.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../linux/overview.html" class="btn btn-neutral float-right" title="Overview and Introduction">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../linux/overview.html" class="btn btn-neutral float-right" title="Overview and Introduction"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="overview.html" class="btn btn-neutral" title="Overview and Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -607,8 +600,7 @@ screen to the homework system.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -633,7 +625,7 @@ screen to the homework system.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

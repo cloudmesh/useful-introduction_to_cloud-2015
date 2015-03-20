@@ -617,7 +617,7 @@ how you can use OpenStack on FutureSystems. This includes the following:
 .. |video-horizon| replace:: |video-image| :youtube:`JkNlWAUlxF0`
 .. |video-eucalyptus| replace:: |video-image| :youtube:`D1v_twqWIxg`
 
-Excersises
+Exercises
 ----------------------------------------------------------------------
 
 #. Create a VM on india and login

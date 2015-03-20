@@ -70,7 +70,7 @@ Run Apache Tomcat Server
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 It's easy to deploy Apache Tomcat using Docker. Please run the following
-command: (sudo is supressed)
+command: (sudo is suppressed)
 
 :: 
 
