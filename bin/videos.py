@@ -3,7 +3,7 @@
 from __future__ import print_function
 
 import os
-from cloudmesh_common.util import dotdict
+#from cloudmesh_common.util import dotdict
 from cloudmesh.util.youtube import youtube
 from sh import grep
 from pprint import pprint
