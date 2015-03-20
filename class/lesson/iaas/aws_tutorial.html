@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Other IaaS Cloud Platforms &mdash; my Cloudmesh Learning documentation</title>
+  <title>Amazon Web Services (AWS) &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -30,10 +30,7 @@
   
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
-    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
-        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
-        <link rel="next" title="Cloudmesh for Beginners (Under Preparation)" href="cloudmesh.html"/>
-        <link rel="prev" title="OpenStack Juno" href="openstack_juno.html"/> 
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul class="current">
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,8 +75,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
@@ -180,14 +177,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
-      
-          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
-      
-    <li>Other IaaS Cloud Platforms</li>
+    <li>Amazon Web Services (AWS)</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../../_sources/class/lesson/iaas/other_iaas.txt" rel="nofollow"> View page source</a>
+          <a href="../../../_sources/class/lesson/iaas/aws_tutorial.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -195,74 +188,194 @@
 </div>
           <div role="main">
             
-  <div class="section" id="other-iaas-cloud-platforms">
-<h1>Other IaaS Cloud Platforms<a class="headerlink" href="#other-iaas-cloud-platforms" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction-and-overview">
-<h2>Introduction and Overview<a class="headerlink" href="#introduction-and-overview" title="Permalink to this headline">¶</a></h2>
-<p>This lesson will introduce you to a very important topic to various IaaS Cloud
-Computing platforms.</p>
+  <div class="section" id="amazon-web-services-aws">
+<h1>Amazon Web Services (AWS)<a class="headerlink" href="#amazon-web-services-aws" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to a very important topic to Amazon Web Services
+(AWS). Amazon Elastic Compute Cloud (EC2) provides Infrastructure as a Service
+(IaaS) and other services e.g. Simple Storage Service (S3) supports storing
+objects (files) on cloud environments, are working together to offer dominant
+cloud services compared to other competitors, e.g. Microsoft Azure, or Google
+Compute Engine. In this lesson, we focus on a simple tutorial of starting a
+Apache HTTP Server using Amazon EC2 virtual machine instances. We expect that
+readers gain basic knowledge of using Amazon Cloud and have some experience of
+building services on the cloud.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Duration: 30 mins</p>
+<p class="last">Duration: 40 minutes</p>
 </div>
+</div>
+<div class="section" id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<p>In order to conduct this lesson you should have:</p>
+<ul class="simple">
+<li>Amazon Account</li>
+<li>SSH Client tool (e.g. putty, cygwin or terminal)</li>
+</ul>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>put the detailed dscription here</p>
+<p>We will create a EC2 instance on Amazon cloud, and start a Apache Web Server on
+the Ubuntu 14.04 machine image. Our conditions are:</p>
+<ul class="simple">
+<li>Ubuntu 14.04 LTS Server 64 bit (VM Image)</li>
+<li>t2.small Instance Type (1 vcpu + 2 gb memories)</li>
+<li>HTTP, HTTPS (80, 443) port opening using security groups</li>
+<li>SSH key pair authentication</li>
+<li>Use of package manager (i.e. apt-get) with switching to admin privileges</li>
+<li>Use Amazon Management Console (Web interface)
+- We may have other lessons for using a ec2 command line tool.</li>
+</ul>
 </div>
-<div class="section" id="bare-metal-clouds">
-<h2>Bare metal clouds<a class="headerlink" href="#bare-metal-clouds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Amazon provides web management tool, AWS Management console to use AWS cloud
+services. We will use this web interface to create a VM instance.</p>
+<div class="section" id="aws-management-console">
+<h3>AWS Management Console<a class="headerlink" href="#aws-management-console" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Sign in Amazon Web Services (AWS)
+<a class="reference external" href="http://aws.amazon.com">http://aws.amazon.com</a></p>
+</li>
+<li><p class="first">Sign up, if you don&#8217;t have an account
+- Free trial is available for using t2.micro instances (1 vCPU + 1 GB</p>
+<blockquote>
+<div><p>Memories)</p>
+</div></blockquote>
+</li>
+<li><p class="first">Find EC2 in AWS Management Console
+- EC2 is Amazon Compute Engine. We create a VM instance in the EC2 page.</p>
+</li>
+</ul>
 </div>
-<div class="section" id="commercial-open-source-clouds">
-<h2>Commercial/Open Source clouds<a class="headerlink" href="#commercial-open-source-clouds" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="amazon-web-services-aws">
-<h3>Amazon Web Services (AWS)<a class="headerlink" href="#amazon-web-services-aws" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="preparing-vm-instance">
+<h3>Preparing VM Instance<a class="headerlink" href="#preparing-vm-instance" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Select VM base image
+* Find Ubuntu 14.04 LTS Server 64Bit from Quick Start.
+* There are about 40,000 VM images available in Community AMIs.</p>
+</li>
+<li><p class="first">Choose an Instance Type
+- select t2.small or other preferred size of VM instance
+- OpenStack Flavor and Azure Size have similar format for the size of VM</p>
+<blockquote>
+<div><p>instances.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Skip to 6. Configure Security Group
+- Add a rule for HTTP and HTTPs
+- SSH (22) port is default</p>
+</li>
+<li><p class="first">Click &#8216;Review and Launch&#8217;
+- This is a last step before we choose SSH key pair.
+- Confirm your VM image, size and rules in the security group.</p>
+</li>
+</ul>
 </div>
-<div class="section" id="microsoft-azure">
-<h3>Microsoft Azure<a class="headerlink" href="#microsoft-azure" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ssh-key-pair">
+<h3>SSH Key Pair<a class="headerlink" href="#ssh-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>Amazon EC2 uses SSH key pair to get access of your VM instance.</p>
+<p>You have a few options. You can create a new key for your new VM instance or
+use a existing key.</p>
+<p>If you create a new key, carefully store your private key file.</p>
 </div>
-<div class="section" id="google-compute-engine-gce">
-<h3>Google Compute Engine (GCE)<a class="headerlink" href="#google-compute-engine-gce" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="launch-a-instance-and-ip-address">
+<h3>Launch a Instance and IP Address<a class="headerlink" href="#launch-a-instance-and-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>Once you successfully launched your instance, it will be available in a few
+seconds.</p>
+<ul>
+<li><p class="first">Find a IP Adddress or hostname
+- We need destination address to ssh into the server. You can find IP address</p>
+<blockquote>
+<div><p>or hostname in the Instances page.</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
-<div class="section" id="hp-cloud">
-<h3>HP Cloud<a class="headerlink" href="#hp-cloud" title="Permalink to this headline">¶</a></h3>
-<p>The following clouds are identified as an open source private cloud platform.</p>
+<div class="section" id="ssh-into-vm-instance">
+<h3>SSH into VM Instance<a class="headerlink" href="#ssh-into-vm-instance" title="Permalink to this headline">¶</a></h3>
+<p>Use your ssh client tool to login to the virtual server.</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ubuntu</span></tt> as a user name
+- We used Ubuntu 14.04 VM image which has a default username <tt class="docutils literal"><span class="pre">ubuntu</span></tt>.</p>
+<blockquote>
+<div><p>Once we logged into the VM instance, we can switch to other users e.g.
+<tt class="docutils literal"><span class="pre">root</span></tt> or create a new user.</p>
+</div></blockquote>
+</li>
+<li><p class="first">SSH private key
+- Make sure you are SSH&#8217;ing to the VM instance with your SSH key pair.</p>
+<blockquote>
+<div><p>Otherwise, your login won&#8217;t be accepted from the virtual server.</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
-<div class="section" id="opennebula">
-<h3>OpenNebula<a class="headerlink" href="#opennebula" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-and-run-apache-web-server">
+<h3>Install and Run Apache Web Server<a class="headerlink" href="#install-and-run-apache-web-server" title="Permalink to this headline">¶</a></h3>
+<p>We assume that you know how to use some basic linux commands.
+We will use the following commands 1) sudo, 2) su, 3) apt-get, and 4) service,
+to install and run Apache HTTP server.</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></tt>
+- This command updates a list of Linux package repositories.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span></tt>
+- We install Apache HTTP version 2 using package manager <tt class="docutils literal"><span class="pre">apt-get</span></tt>.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">restart</span></tt> (optional)
+- If you made a change on HTTP server, you may need to restart.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></tt> (optional)
+- If you switch a user to <tt class="docutils literal"><span class="pre">root</span></tt> with this command, you won&#8217;t need to issue</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">sudo</span></tt> command every time when you need admin privileges.</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
-<div class="section" id="eucalyptus">
-<h3>Eucalyptus<a class="headerlink" href="#eucalyptus" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="check-it-works-page-on-the-web">
+<h3>Check <tt class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></tt> Page on the Web<a class="headerlink" href="#check-it-works-page-on-the-web" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Open a web browser and type the IP address or hostname of your VM instance.
+- If you see <tt class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></tt> page, you have now working Apache Web Server on</p>
+<blockquote>
+<div><p>Amazon EC2.</p>
+</div></blockquote>
+</li>
+</ul>
 </div>
-<div class="section" id="cloudstack">
-<h3>CloudStack<a class="headerlink" href="#cloudstack" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="terminate-your-instance-important">
+<h3>Terminate your Instance <em>IMPORTANT</em><a class="headerlink" href="#terminate-your-instance-important" title="Permalink to this headline">¶</a></h3>
+<p>If you completed your jobs on Amazon cloud, you need to shutdown your instances
+and return the lease.  There is <tt class="docutils literal"><span class="pre">terminate</span> <span class="pre">instance</span></tt> command or menu. Amazon
+has hour-basis charging system, if you do not terminate your system, you will
+receive a charge of using cloud services e.g. EC2, S3, or CloudWatch.</p>
 </div>
-<div class="section" id="saltstack">
-<h3>SaltStack<a class="headerlink" href="#saltstack" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="exercise-ii">
-<h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
-</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Start a web server using CherryPy or other Python software using ec2
+command-line client tool.
+- tip1: you may need to install python packages, e.g. pip or virtualenv.
+- tip2: you may need to install and configure ec2 client tool.</li>
+<li>Save your data on S3 or Block Storage
+- You expect to understand how to use S3 or block storage service.</li>
+</ul>
 </div>
 <div class="section" id="next-step">
 <h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>In the next page, ...</p>
-<p><a class="reference external" href="link">Link here</a></p>
+<p>In the next page, starting a Flask web server on Microsoft Azure will be
+addressed.</p>
+<p><a class="reference external" href="azure_tutorial.html">Microsoft Azure</a></p>
 </div>
 </div>
 
 
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cloudmesh.html" class="btn btn-neutral float-right" title="Cloudmesh for Beginners (Under Preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="openstack_juno.html" class="btn btn-neutral" title="OpenStack Juno"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

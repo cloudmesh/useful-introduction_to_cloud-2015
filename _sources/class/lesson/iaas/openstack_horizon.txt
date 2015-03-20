@@ -66,10 +66,28 @@ Getting Started
 * Choose a component that you would like to use among Compute, Network, or
   Orchestration.
 
+Usage Summary
+-------------------------------------------------------------------------------
+
 The Overview page in the Compute tab shows current usage of OpenStack cloud
 resources on your account.  You can also have a summary reports for a certain
 period to see resource utilization, for example, how many VM instances were
 being used, or how many IP addresses were allocated.
+
+Exercises
+-------------------------------------------------------------------------------
+
+* Try other features on Horizon.
+  - See detailed information of your virtual server.
+  - Attach a floating ip address to your virtual server and confirm it is
+    accessible.
+
+Next Step
+-------------------------------------------------------------------------------
+
+In the next page, we explore other features of OpenStack.
+
+`Link here </introduction_to_cloud_computing/iaas/index.html>`_
 
 .. _India_OpenStack_Juno: https://openstack-j.india.futuresystems.org/horizon
 

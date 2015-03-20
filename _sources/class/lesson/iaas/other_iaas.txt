@@ -1,4 +1,4 @@
-Various IaaS Cloud Platforms (Under preparation)
+Other IaaS Cloud Platforms
 ======================================================================
 
 Introduction and Overview
@@ -7,7 +7,7 @@ Introduction and Overview
 This lesson will introduce you to a very important topic to various IaaS Cloud
 Computing platforms.
 
-.. tip:: Duration: 2-3 hours
+.. tip:: Duration: 30 mins
 
 .. Prerequisite
 .. -------------------------------------------------------------------
@@ -17,6 +17,7 @@ Computing platforms.
 
 Description
 ----------------------------------------------------------------------
+
 
 put the detailed dscription here
 
