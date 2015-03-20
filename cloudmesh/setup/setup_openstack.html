@@ -1,0 +1,562 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart for an Openstack VM &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh Setup" href="index.html"/>
+        <link rel="next" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" href="setup_vagrant.html"/>
+        <link rel="prev" title="Quickstart on your desktop" href="quickstart.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh Setup</a> &raquo;</li>
+      
+    <li>Quickstart for an Openstack VM</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/setup/setup_openstack.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="quickstart-for-an-openstack-vm">
+<span id="s-cloudmesh-vm-quickstart"></span><h1>Quickstart for an Openstack VM<a class="headerlink" href="#quickstart-for-an-openstack-vm" title="Permalink to this headline">¶</a></h1>
+<p>A video about the contents of this page is available on <img alt="video-image" src="../../_images/glyphicons_402_youtube.png" /> <a class="reference external" href="http://www.youtube.com/watch?v=rcecpgm-47g">rcecpgm-47g</a>.</p>
+<p><a href="#id3"><span class="problematic" id="id4">|video-fs-account|</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This setup is primarily used for testing, but it can also be
+useful for classes using OpenStack, when the call
+participants have access to an OpenStack cloud.</p>
+</div>
+<p>Setting up Cloudmesh on a VM is an especially convenient way during
+development and testing. To do so, you can follow the steps to run
+cloudmesh in a VM running Ubuntu 14.04 on FutureSystems <cite>India</cite>
+OpenStack. The instructions have been tested on a small instance
+and the whole process could take about half an hour before you
+can access the running server.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>We assume that you have set up an account on FutureSystems and are
+able to log into the machine with the name india.</p>
+<p>If you use a different cloud, you can adapt the instructions
+accordingly.</p>
+</div>
+<div class="section" id="starting-the-vm">
+<h2>Starting the VM<a class="headerlink" href="#starting-the-vm" title="Permalink to this headline">¶</a></h2>
+<p>First, you have to start a VM on the cloud and assign it a public IP.</p>
+<p>This can be done in multiple ways, using the command line, vagrant, or
+the horizon GUI. Let us assume you have set it up via the horizon GUI
+or the novaclient command line.</p>
+<p>To set up a mchine you could use the either of the folloing methods:</p>
+<ul class="simple">
+<li><strong>Horizon</strong>: see <a class="reference external" href="../../iaas/openstack.html#horizon-gui.html">our manual page</a>.</li>
+<li><strong>nova</strong>: see the <a class="reference internal" href="../../iaas/openstack-juno-do-not edit-will be deleted.html#s-openstack"><span>OpenStack Havana</span></a></li>
+<li><strong>cloudmsh</strong>: see <a class="reference internal" href="quickstart.html#s-cloudmesh-quickstart"><span>Quickstart on your desktop</span></a> and the cloudmesh
+shell found elsewhere.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="docutils">
+<dt>FutureSystems Portalname and Project ID</dt>
+<dd><p class="first">For this example we assume you have set the shell variable
+PORTALNAME to your FutureSystems portal username. This can
+be done as follwows. Let us assume your portal name is
+<cite>albert</cite>. Than you can set it with:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>albert
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>We also assume that you have a project id that you set to:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PROJECTID</span><span class="o">=</span>fg101
+</pre></div>
+</div>
+<p class="last">if it is the number 101.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please note that in the following document we use the
+<span class="pink">$USER</span> and <span class="pink">$PORTALNAME</span> are the same values
+and the portalname needs to be replaced with the portal name
+you obtained for FutureSystems. As the subsequent steps are
+all executed on india we can simply use the default
+<span class="pink">$USER</span> shell variable.</p>
+</div>
+<p>However, we use here a commandline approach and use the tools already
+installed on india. Thus you do not have to install anything on your
+machine. We assume however that you have uploaded the public key of
+your machine to the FutureSystems portal so you can log into india.</p>
+<p>We summarize the following steps:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuresystems.org
+india<span class="nv">$ </span>module load novaclient
+india<span class="nv">$ </span><span class="nb">source</span> ~/.futuregrid/openstack_havana/novarc
+india<span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <span class="nv">$USER</span>-india-key
+</pre></div>
+</div>
+<p>This assumes such a key exists in the location:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>If you do not have such a key, you can generate it with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$USER</span>-india-key
+</pre></div>
+</div>
+<p>Remember to set a passphrase once prompted to secure your private key.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You must not use a passphrase less key! Please specify a
+strong passphrase.</p>
+</div>
+<p>Next step is to open the necessary ports of the VM to be started:</p>
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp <span class="m">22</span> <span class="m">22</span> 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp <span class="m">8888</span> <span class="m">8888</span> 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp <span class="m">5000</span> <span class="m">5000</span> 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-list-rules default
+</pre></div>
+</div>
+<p>Now you cab boot a VM and set public ip for external access:</p>
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova boot --flavor m1.small --image <span class="s2">&quot;futuregrid/ubuntu-14.04&quot;</span> --key_name <span class="nv">$USER</span>-india-key <span class="nv">$USER</span>-001
+
+india<span class="nv">$ </span>nova floating-ip-create
+
+india<span class="nv">$ </span><span class="nb">export </span><span class="nv">MYIP</span><span class="o">=</span><span class="sb">`</span>nova floating-ip-list <span class="p">|</span> fgrep <span class="s2">&quot;None&quot;</span> <span class="p">|</span> cut -d <span class="s1">&#39;|&#39;</span> -f2 <span class="p">|</span> head -1<span class="sb">`</span>
+india<span class="nv">$ </span>nova add-floating-ip <span class="nv">$USER</span>-001 <span class="nv">$MYIP</span>
+india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
+</pre></div>
+</div>
+<p>You should see a table similare like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre>+--------------------------------------+----------------------------------------------------------------+
+<span class="p">|</span> Property                             <span class="p">|</span> Value                                                          <span class="p">|</span>
++--------------------------------------+----------------------------------------------------------------+
+<span class="p">|</span> status                               <span class="p">|</span> ACTIVE                                                         <span class="p">|</span>
+<span class="p">|</span> updated                              <span class="p">|</span> 2014-09-12T19:27:30Z                                           <span class="p">|</span>
+<span class="p">|</span> OS-EXT-STS:task_state                <span class="p">|</span> None                                                           <span class="p">|</span>
+<span class="p">|</span> private network                      <span class="p">|</span> 168.39.1.34, 192.165.159.40                                    <span class="p">|</span>
+<span class="p">|</span> key_name                             <span class="p">|</span> USER-key                                                       <span class="p">|</span>
+<span class="p">|</span> image                                <span class="p">|</span> futuregrid/ubuntu-14.04 <span class="o">(</span>02cf1545-dd83-493a-986e-583d53ee3728<span class="o">)</span> <span class="p">|</span>
+<span class="p">|</span> hostId                               <span class="p">|</span> hsakjfhsdlkjfhsdlkjhflskjdhflkjsdhflkjshfpoeuiyrewuohfkljsdkjk <span class="p">|</span>
+<span class="p">|</span> OS-EXT-STS:vm_state                  <span class="p">|</span> active                                                         <span class="p">|</span>
+<span class="p">|</span> OS-SRV-USG:launched_at               <span class="p">|</span> 2014-09-12T19:27:30.000000                                     <span class="p">|</span>
+<span class="p">|</span> flavor                               <span class="p">|</span> m1.small <span class="o">(</span>2<span class="o">)</span>                                                   <span class="p">|</span>
+<span class="p">|</span> id                                   <span class="p">|</span> 7e458cbd-d37d-443a-aa76-adc7fcad52ea                           <span class="p">|</span>
+<span class="p">|</span> security_groups                      <span class="p">|</span> <span class="o">[{</span>u<span class="s1">&#39;name&#39;</span>: u<span class="s1">&#39;default&#39;</span><span class="o">}]</span>                                        <span class="p">|</span>
+<span class="p">|</span> OS-SRV-USG:terminated_at             <span class="p">|</span> None                                                           <span class="p">|</span>
+<span class="p">|</span> user_id                              <span class="p">|</span> sjhkjsahflkjashfkljshfkdjsahfkjh                               <span class="p">|</span>
+<span class="p">|</span> name                                 <span class="p">|</span> USER-001                                                       <span class="p">|</span>
+<span class="p">|</span> created                              <span class="p">|</span> 2014-09-12T19:27:23Z                                           <span class="p">|</span>
+<span class="p">|</span> tenant_id                            <span class="p">|</span> abcd01234hfslkjhfdskjfhkjdshfkjs                               <span class="p">|</span>
+<span class="p">|</span> OS-DCF:diskConfig                    <span class="p">|</span> MANUAL                                                         <span class="p">|</span>
+<span class="p">|</span> metadata                             <span class="p">|</span> <span class="o">{}</span>                                                             <span class="p">|</span>
+<span class="p">|</span> os-extended-volumes:volumes_attached <span class="p">|</span> <span class="o">[]</span>                                                             <span class="p">|</span>
+<span class="p">|</span> accessIPv4                           <span class="p">|</span>                                                                <span class="p">|</span>
+<span class="p">|</span> accessIPv6                           <span class="p">|</span>                                                                <span class="p">|</span>
+<span class="p">|</span> progress                             <span class="p">|</span> <span class="m">0</span>                                                              <span class="p">|</span>
+<span class="p">|</span> OS-EXT-STS:power_state               <span class="p">|</span> <span class="m">1</span>                                                              <span class="p">|</span>
+<span class="p">|</span> OS-EXT-AZ:availability_zone          <span class="p">|</span> nova                                                           <span class="p">|</span>
+<span class="p">|</span> config_drive                         <span class="p">|</span>                                                                <span class="p">|</span>
++--------------------------------------+----------------------------------------------------------------+
+</pre></div>
+</div>
+<p>Looking at the status you will see if the VM is in ACTIVE
+state. Repeat the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
+</pre></div>
+</div>
+<p>if necessary. Once this is the case you can login to it with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>ssh -i ~/.ssh/id_rsa -l ubuntu <span class="nv">$MYIP</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="preparation-of-the-vm">
+<h2>Preparation of the VM<a class="headerlink" href="#preparation-of-the-vm" title="Permalink to this headline">¶</a></h2>
+<p>Next you have to update the operating system while logging into
+the VM:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install git
+</pre></div>
+</div>
+<p>To obtain cloudmesh you need to clone it from git hub and change to
+the cloudmesh directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>git clone https://github.com/cloudmesh/cloudmesh.git
+<span class="nv">$ </span><span class="nb">cd </span>cloudmesh
+</pre></div>
+</div>
+<p>The first thing you have to do is to fix some ip addresses on india
+with the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/fix-india-routing.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To start the installation of cloudmesh we first need to install a
+number of packages with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install system
+</pre></div>
+</div>
+<p>We also recommend that you run virtualenv in python which you can
+enable with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>virtualenv  --no-site-packages ~/ENV
+<span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
+</pre></div>
+</div>
+<p>Now let us install cloudmesh into this virtualenv:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>cloudmesh
+<span class="nv">$ </span>./install requirements
+<span class="nv">$ </span>./install new
+</pre></div>
+</div>
+<p>The last command will create a number of yaml files in the folder:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/.cloudmesh
+</pre></div>
+</div>
+<p>Next, install the cloudmesh server anad API with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install cloudmesh
+</pre></div>
+</div>
+<p>Now we need to populate the cloudmesh.yaml file with your actual
+information. You can edit the file <a href="#id1"><span class="problematic" id="id2">``</span></a>~/.cloudmesh/cloudmesh.yaml`
+either with emacs or vi:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>emacs ~/.cloudmesh/cloudmesh.yaml
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vi ~/.cloudmesh/cloudmesh.yaml
+</pre></div>
+</div>
+<p>In this file, update your user profile, name, project
+data. Alternatively, if you already have yaml files on for example
+india.FutureSystems.org you can copy your local working yaml files from
+that machine to the virtual machine.</p>
+<p>Yet another alternative is to use the functionality provided by
+cloudmesh. Before we can use it we have to however create a key that
+we upload to the FutureSystems portal:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>&lt;put your portal name here&gt;
+<span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$PORTALNAME</span>-ubuntu-vm-key
+</pre></div>
+</div>
+<p>Than lets add the key to the ssh agent:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent -s<span class="sb">`</span>
+<span class="nv">$ </span>ssh-add
+</pre></div>
+</div>
+<p>You will also need to add the key to your FutureSystems portal
+account. Please visit the portal and past the content of the public
+key in the appropriate field. YOu can do this by</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cat ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>Next you can fetch the information you need to acces openstack form india:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm-iu user fetch
+<span class="nv">$ </span>cm-iu user create
+</pre></div>
+</div>
+<p>This will fetch your cloud credentials from FutureSystems and populate
+them into the yaml config file. We als need to undertake some changes
+for the india OpenStack cloud configuration with</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab india.configure
+</pre></div>
+</div>
+<p>To run cloudmesh you will need to start a number of services you will
+need to create the cloudmesh database. Here we will use the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab mongo.reset
+</pre></div>
+</div>
+<p>Please note that this command will erase the previous database and you
+should be carefuly considering its use. When you initialize the
+cloudmesh server first this is the best method.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Also note that this command will take a long time on
+machines that do not have SSD&#8217;s due to the way mongo sets up
+the database. Be patient and do not interrup the program
+although it may run multiple minutes.</p>
+</div>
+<p>Now you are ready to start all services for cloudmesh with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>fab server.start
+</pre></div>
+</div>
+<p>Then the cloudmesh service should be available via:</p>
+<div class="highlight-bash"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
+</pre></div>
+</div>
+<p>If you forgot your IP, use the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$MYIP</span>
+</pre></div>
+</div>
+<p>NOTE:</p>
+<ol class="arabic simple">
+<li>As you might be copying your yaml files into the cloud please
+secure the VM (following good security practice, including but
+not limited to proper ssh settings disallowing password authentication,
+securing the location of your private key as well as setting a
+passphrase, etc.). As this method targets the scenario for rapid
+dev and testing, it will be a good idea that shutting the vm down
+after using.</li>
+<li>As the server is not secured by HTTPS, remember not to use your
+favorite password when you are asked to set a password for portal login.</li>
+<li>This method is only intended for development and testing, and not
+recommended for real production use.</li>
+</ol>
+<p>More information about more sophisticated install instructions are
+provided at</p>
+<ul class="simple">
+<li><a class="reference external" href="http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements">http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup_vagrant.html" class="btn btn-neutral float-right" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral" title="Quickstart on your desktop"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

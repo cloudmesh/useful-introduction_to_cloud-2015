@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Try Docker Basic on FutureSystems &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Deploying Cloudmesh using Docker on FutureSystems" href="docker_cloudmesh.html"/>
+        <link rel="prev" title="Writing Ansible Playbooks on FutureSystems" href="ansible_cloudmesh.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+      
+    <li>Try Docker Basic on FutureSystems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/class/lesson/docker.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="try-docker-basic-on-futuresystems">
+<h1>Try Docker Basic on FutureSystems<a class="headerlink" href="#try-docker-basic-on-futuresystems" title="Permalink to this headline">¶</a></h1>
+<p>Docker is an image-based resource isolation software by using operating system
+level virtualization.  Docker host runs software containers which deploy
+applications with its environments. You can easily share your application using
+Docker container across different platforms or operating systems.  This
+section, we introduce basic commands of <code class="docutils literal"><span class="pre">docker</span></code> to introduce Docker software
+on FutureSystems.  In the next section, we will explore advanced use of
+<code class="docutils literal"><span class="pre">docker</span></code> on FutureSystems.</p>
+<div class="section" id="tutorial-docker-basic-commands">
+<h2>Tutorial: Docker Basic commands<a class="headerlink" href="#tutorial-docker-basic-commands" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">approximate time 30 minutes</p>
+</div>
+<p>In this tutorial, we are going to learn basic commands of Docker software.
+Keep in mind that <code class="docutils literal"><span class="pre">docker</span></code> is a main program and <code class="docutils literal"><span class="pre">container</span></code> is an image
+that you would like to use. You may have several containers in your docker.</p>
+<div class="section" id="install-docker">
+<h3>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h3>
+<p>We use Ubuntu package tool <cite>apt-get</cite> to download and install Docker.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
+sudo apt-get install docker.io
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To get the latest version, try this:
+curl -sSL <a class="reference external" href="https://get.docker.com/ubuntu/">https://get.docker.com/ubuntu/</a> | sudo sh</p>
+</div>
+</div>
+<div class="section" id="test-docker">
+<h3>Test Docker<a class="headerlink" href="#test-docker" title="Permalink to this headline">¶</a></h3>
+<p>Run a simple command &#8220;Hello, World&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo docker run -it ubuntu echo &quot;Hello, World&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="obtain-shell-prompt-in-docker-container">
+<h3>Obtain Shell Prompt in Docker Container<a class="headerlink" href="#obtain-shell-prompt-in-docker-container" title="Permalink to this headline">¶</a></h3>
+<p>Docker command has a sub-command <code class="docutils literal"><span class="pre">run</span></code> to execute containers with a few
+parameters.  In this example, we use Ubuntu 14.04 image to get bash shell
+prompt.</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo docker run -i -t ubuntu:14.04 /bin/bash
+</pre></div>
+</div>
+<p>Expected result looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>root@8110bb395822:/#
+</pre></div>
+</div>
+<p>Type <code class="docutils literal"><span class="pre">exit</span></code> to quit the shell and return to Docker host.</p>
+</div>
+<div class="section" id="run-apache-tomcat-server">
+<h3>Run Apache Tomcat Server<a class="headerlink" href="#run-apache-tomcat-server" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s easy to deploy Apache Tomcat using Docker. Please run the following
+command: (sudo is supressed)</p>
+<div class="highlight-python"><div class="highlight"><pre>docker run -d -p 80:8080 tomcat:8.0
+</pre></div>
+</div>
+<p>It downloads tomcat image from Docker Hub and connects 80 port to 8080 port.
+So, if you open a web browser <code class="docutils literal"><span class="pre">http://localhost</span></code> or <code class="docutils literal"><span class="pre">http://ip</span> <span class="pre">address</span> <span class="pre">of</span>
+<span class="pre">host</span></code> your connection forwards to the container 8080 port. <code class="docutils literal"><span class="pre">-d</span></code> option
+daemonizes the container.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Did you see <code class="docutils literal"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">image</span> <span class="pre">'tomcat:8.0'</span> <span class="pre">locally</span></code>?
+Your Docker will find <code class="docutils literal"><span class="pre">tomcat</span></code> from Docker Hub and download it to
+your local.</p>
+</div>
+</div>
+<div class="section" id="list-containers">
+<h3>List Containers<a class="headerlink" href="#list-containers" title="Permalink to this headline">¶</a></h3>
+<p>We use <code class="docutils literal"><span class="pre">ps</span></code> sub command to list available containers.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker ps
+</pre></div>
+</div>
+<p>Expected result looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS              PORTS                    NAMES
+4690a7973fef        tomcat:8.0                   &quot;catalina.sh run&quot;   8 seconds ago       Up 5 seconds        0.0.0.0:8888-&gt;8080/tcp   adoring_lalande
+</pre></div>
+</div>
+</div>
+<div class="section" id="see-logs">
+<h3>See Logs<a class="headerlink" href="#see-logs" title="Permalink to this headline">¶</a></h3>
+<p>You can find out details of your container by looking at log messages. Use
+<code class="docutils literal"><span class="pre">NAMES</span></code> from previous command.  This example we use <code class="docutils literal"><span class="pre">adoring_lalande</span></code> for
+your tomcat:8.0 container.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker logs -f adoring_lalande
+</pre></div>
+</div>
+<p>Logs look like:</p>
+<div class="highlight-python"><div class="highlight"><pre>13-Feb-2015 03:02:57.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.18
+13-Feb-2015 03:02:57.526 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2015 11:56:07 UTC
+13-Feb-2015 03:02:57.526 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.18.0
+13-Feb-2015 03:02:57.526 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+13-Feb-2015 03:02:57.526 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.13.0-44-generic
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="search-containers">
+<h3>Search Containers<a class="headerlink" href="#search-containers" title="Permalink to this headline">¶</a></h3>
+<p>If you are looking for other containers, <code class="docutils literal"><span class="pre">search</span></code> command is useful to find.</p>
+<p>For example, try to find <code class="docutils literal"><span class="pre">ipython</span></code> containers.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker search ipython
+</pre></div>
+</div>
+<p>Expected result looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>NAME                                DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+ipython/scipyserver                 IPython notebook server with the full SciP...   36                   [OK]
+ipython/notebook                    The most recent version of IPython, config...   35                   [OK]
+ipython/scipystack                                                                  10                   [OK]
+...
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><code class="docutils literal"><span class="pre">STARS</span></code> indicates popular containers.</p>
+</div>
+</div>
+<div class="section" id="stop-and-delete-container">
+<h3>Stop and Delete Container<a class="headerlink" href="#stop-and-delete-container" title="Permalink to this headline">¶</a></h3>
+<p>Like stopping and terminating a virtual instance, docker stops and deletes its
+container with two commands: <code class="docutils literal"><span class="pre">stop</span></code> and <code class="docutils literal"><span class="pre">rm</span></code> We use <code class="docutils literal"><span class="pre">NAMES</span></code> from <code class="docutils literal"><span class="pre">docker</span>
+<span class="pre">ps</span></code> command. This example we use <code class="docutils literal"><span class="pre">adoring_lalande</span></code> for your tomcat:8.0
+container.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker stop adoring_lalande
+</pre></div>
+</div>
+<p>After stopping the container, you can delete it.</p>
+<div class="highlight-python"><div class="highlight"><pre>docker rm adoring_lalande
+</pre></div>
+</div>
+</div>
+<div class="section" id="review-docker-commands">
+<h3>Review Docker Commands<a class="headerlink" href="#review-docker-commands" title="Permalink to this headline">¶</a></h3>
+<p>We have learned some Docker commands. These are basic commands for Docker
+software.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">run</span></code>: runs a container. <code class="docutils literal"><span class="pre">-it</span></code> option allows you an interactive
+mode. <code class="docutils literal"><span class="pre">-d</span></code> option daemonizes your container.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">logs</span></code>: displays log messages.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">ps</span></code>: shows available containers.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">search</span></code>: searches containers from Docker Hub.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">stop</span></code>: stops your container.</li>
+<li><code class="docutils literal"><span class="pre">docker</span> <span class="pre">rm</span></code>: deletes your container image.</li>
+</ul>
+</div>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<p>The main tutorial from Docker is here:
+<a class="reference external" href="https://docs.docker.com/installation/ubuntulinux/">https://docs.docker.com/installation/ubuntulinux/</a></p>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we deploy Cloudmesh on FutureSystems using Docker.</p>
+<p><a class="reference external" href="docker_cloudmesh.html">Next Tutorial&gt;&gt; Deploying Cloudmesh using Docker</a></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docker_cloudmesh.html" class="btn btn-neutral float-right" title="Deploying Cloudmesh using Docker on FutureSystems">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ansible_cloudmesh.html" class="btn btn-neutral" title="Writing Ansible Playbooks on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
