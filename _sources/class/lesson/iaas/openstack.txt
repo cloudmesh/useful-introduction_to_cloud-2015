@@ -1,4 +1,4 @@
-OpenStack for Beginners (Under Preparation)
+OpenStack for Beginners
 ======================================================================
 
 Overview
@@ -342,18 +342,24 @@ Networking.
 * neutron net-list: List Current Neutron Networks
 * neutron subnet-list: List Current Neutron Subnets
 * neutron security-group-create <SEC-GROUP-NAME>: Create Neutron Security Group
-* neutron security-group-rule-create --direction <ingress OR egress> --ethertype <IPv4 or IPv6> --protocol <PROTOCOL> --port-range-min <PORT-NUMBER> --port-range-max <PORT-NUMBER> <SEC-GROUP-NAME>: Add Rules to Neutron Security Group
+* neutron security-group-rule-create --direction <ingress OR egress>
+  --ethertype <IPv4 or IPv6> --protocol <PROTOCOL> --port-range-min
+  <PORT-NUMBER> --port-range-max <PORT-NUMBER> <SEC-GROUP-NAME>: Add Rules to
+  Neutron Security Group
 * neutron floatingip-create <NET-NAME>: Create a Neutron Floating IP Pool
   - If you need N number of floating IP addresses, run this command N number of times:
-* neutron port-create <NET-NAME> --fixed-ip ip_address=<IP-ADDRESS>: Create a Neutron Port with a Fixed IP Address
+* neutron port-create <NET-NAME> --fixed-ip ip_address=<IP-ADDRESS>: Create a
+  Neutron Port with a Fixed IP Address
 
-Example 1. add a rule to the default Neutron Security Group to allow SSH access to instances::
+Example 1. add a rule to the default Neutron Security Group to allow SSH access
+to instances::
 
         neutron security-group-rule-create --direction ingress \
         --ethertype IPv4 --protocol tcp \
         --port-range-min 22 --port-range-max 22 default
 
-Example 2. add a rule to the default Neutron Security Group to allow ICMP communication to instances::
+Example 2. add a rule to the default Neutron Security Group to allow ICMP
+communication to instances::
 
         neutron security-group-rule-create --direction ingress \
         --ethertype IPv4 --protocol icmp default
@@ -362,10 +368,21 @@ Example 2. add a rule to the default Neutron Security Group to allow ICMP commun
 Exercises
 ----------------------------------------------------------------------
 
+1. Try to run Python CherryPy or Apache Web Server in your virtual server.
+   It requires:
+   - VM instance creation
+   - CherryPY or HTTP Server installation using package manager (pip or apt-get)
+   - HTTP, HTTPs ports open using security groups
+   - Floating IP allocation 
+
+.. note:: Return your leased resources after your practice is completed. 1)
+        Terminate your instance, 2) Deallocate IP address
+
 Next Step
 -----------
 
-In the next page, ...
+In the next page, we will learn how to start a virtual server using OpenStack
+Horizon.
 
-`Link here <link>`_
+`OpenStack horizon <openstack_horizon.html>`_
 

@@ -175,16 +175,18 @@ The Basics of OpenStack (under preparation)
      - Text
      - Lab sessions
    * - **Introduction and Overview**
-     - `36 mins <https://mix.office.com/watch/t3n3ea312rxi>`_
+     - `37 mins <https://mix.office.com/watch/t3n3ea312rxi>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
      - 
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
+         - Web Dashboard (Horizon)
          - Storage (Swift, Cinder)
          - Network (Neutron)
          - Images (Glance)
          - Authentication (Keystone)
-     - 
+     - - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
+       - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
        - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
      - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
@@ -194,21 +196,21 @@ The Basics of OpenStack (under preparation)
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
    * - **Other IaaS Platforms**
-        - Introduction and Overview
-        - Bare Metal Clouds
         - Public Commercial Clouds
              - Amazon Web Services (AWS)
              - Microsoft Azure
-             - Google Compute Engine (GCE)
-             - HP Cloud
-        - Private Open-Source Clouds
-             - OpenNebula
-             - Eucalyptus
-             - CloudStack
-             - SaltStack
-     - `00 mins <>`_
-     - `00 mins <>`_
+     - - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
+       - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
+     - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
+       - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
      - 
+
+Length of the lessons in Week 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Total of video lessons: 1 hour and 30 minutes
+* Total of study materials: 4 hours and 40 minutes
+* Total of lab sessions: 50 minutes
 
 Week 3
 -------------------------------------------------------------------------------
