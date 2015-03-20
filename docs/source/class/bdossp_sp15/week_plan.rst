@@ -10,8 +10,8 @@ Gaining Access to FutureSystems and Core Technologies
 
 In this week, you will learn how to gain access to the FutureSystems resources.
 Some of the lessons have been prepared for the beginners to help understand the
-basics of Linux operating systems and the collaboration tools i.e. github,
-google hangout and remote desktop. Please watch video lessons and read online
+basics of Linux operating systems and the collaboration tools i.e. GitHub,
+Google hangout and remote desktop. Please watch video lessons and read online
 materials on this page. It also covers Unix shell scripting, SSH and other
 utilities with various exercises.
 
@@ -38,7 +38,7 @@ utilities with various exercises.
      - `3 mins <https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/shell-access.html>`_
      - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/shell-access.html#exercise>`_
-   * - **Github**
+   * - **GitHub**
      - `18 mins <https://www.youtube.com/watch?v=KrAjal1a30w&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=4>`_
      - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/git.html>`_
      - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/git.html#exercise>`_
@@ -88,7 +88,7 @@ utilities with various exercises.
        - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id11>`_
        - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id14>`_
    * - **Editors**                            
-        - emacs, vi, and nano                                           
+        - Emacs, vi, and nano                                           
      - `5 mins <https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3>`_
      - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/editors.html>`_
      -

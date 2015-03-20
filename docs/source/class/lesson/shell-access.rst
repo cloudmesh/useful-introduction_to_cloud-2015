@@ -60,7 +60,7 @@ First log into ``india.futuresystems.org`` with::
   ssh $PORTALNAME@india.futuresystems.org
 
 You will need to have the public key of the person you are giving access to.
-Here is an example public key. Please do not copy this key into thie
+Here is an example public key. Please do not copy this key into this
 file or do this if you do not understand what this is for::
 
  ssh-rsa
@@ -90,8 +90,8 @@ Now the Teaching Assistant can log into your account.
 Exercise
 ----------------------------------------------------------------------
 
-Communicate with a suport staff membera and ask them for their public
+Communicate with a support staff members and ask them for their public
 key. Add this public key to your authorized keys file on
-``india``. Ask the staff memberto log into your account. You naturally
+``india``. Ask the staff member to log into your account. You naturally
 need to give the staff member your portalname.
 Verify if he can browse to the project you have an issue with.
