@@ -163,7 +163,7 @@ Week 2
 
 * Scheduled: 03/20
 
-The Basics of OpenStack (under preparation)
+The Basics of OpenStack
 *******************************************************************************
 
 .. list-table:: Basics of OpenStack

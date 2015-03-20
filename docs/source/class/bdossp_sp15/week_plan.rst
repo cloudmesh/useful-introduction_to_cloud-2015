@@ -2,7 +2,7 @@
 Weekly Plan
 ===============================================================================
    
-Week 1
+week 1
 -------------------------------------------------------------------------------
 
 Gaining Access to FutureSystems and Core Technologies
@@ -121,3 +121,72 @@ Length of the lessons in Week 1
 * Total of video lessons: 2 hours
 * Total of study materials: 4 hours and 30 minutes
 * Total of lab sessions: 1 hour and 30 minutes
+
+week 2
+-------------------------------------------------------------------------------
+
+Introduction to OpenStack and Public Clouds
+-------------------------------------------------------------------------------
+
+OpenStack is a open-source cloud computing software platform and a
+community-driven project. You can use OpenStack to build a cloud infrastructure
+in your public or private network, or you can simply use cloud software for
+your services. The lessons in this week are specifically prepared to try
+OpenStack Software and give you the confidence and understanding of using IaaS
+cloud platforms. There are tutorial lessons to explore OpenStack web dashboard
+(Horizon) and compute engine (Nova) including Public Clouds e.g. Amazon EC2 or
+Microsoft Azure.
+
+The Basics of OpenStack
+*******************************************************************************
+
+.. list-table:: Basics of OpenStack
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **Introduction and Overview**
+     - `37 mins <https://mix.office.com/watch/t3n3ea312rxi>`_
+     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
+     - 
+   * - **OpenStack for Beginners**
+         - Compute Engine (Nova)
+         - Web Dashboard (Horizon)
+         - Storage (Swift, Cinder)
+         - Network (Neutron)
+         - Images (Glance)
+         - Authentication (Keystone)
+     - - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
+       - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
+     - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
+     - - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
+       - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
+     - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
+       - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
+       - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
+   * - **Introduction to OpenStack Juno Release**
+        - Introduction and Overview
+     - 
+     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
+     - 
+   * - **Other IaaS Platforms**
+        - Public Commercial Clouds
+             - Amazon Web Services (AWS)
+             - Microsoft Azure
+     - - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
+       - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
+     - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
+       - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
+     - - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
+       - `60 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercises>`_
+
+Length of the lessons in Week 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Total of video lessons: 1 hour and 30 minutes
+* Total of study materials: 4 hours and 40 minutes
+* Total of lab sessions: 3 hours 20 minutes
+
