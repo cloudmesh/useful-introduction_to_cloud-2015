@@ -48,7 +48,8 @@ You can join the meeting by clicking on `this link <https://connect.iu.edu/bdoss
    All times are in US Eastern Standard Time.
 
 
-Additionally, there may be some technical issues when attempting to join a meeting, please see the following for guidance.
+Additionally, there may be some technical issues when attempting to join a
+meeting, please see the following for guidance.
 
 .. include:: ../adobe-connect-tips.rst
 
@@ -63,6 +64,12 @@ General Discussion
 ----------------------------------------------------------------------
 
 .. include:: ../discussion-hours.rst
+
+Course Help 
+----------------------------------------------------------------------
+
+We have coursehelp@futuresystems.org to help students on course.
+Technical issues, course projects or web site will be supported.
 
 Collaboration Tools
 ======================================================================
