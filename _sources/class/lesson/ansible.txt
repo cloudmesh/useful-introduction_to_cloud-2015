@@ -71,7 +71,7 @@ SSH Configuration
 
 Since Ansible works with SSH, you need to make sure your node(s) are accessible by your control machine.
 
-Key Pair Creation
+KeyPair Creation
 ^^^^^^^^^^^^^^^^^^^
 
 With ``ssh-keygen`` command, we create a default key without a password.

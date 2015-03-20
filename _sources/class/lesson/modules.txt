@@ -1,7 +1,7 @@
 Environment Modules (modules) on FutureSystems
 ===============================================================================
 
-If you need to use ``nova`` client tool on India FutureSystems?  Try ``module
+If you need to use ``nova`` client tool on India Futuresystems?  Try ``module
 load openstack``. It will automatically enable ``nova`` client tool on your
 terminal.  While you are using ``nova`` client tool, you may want to switch
 other versions of ``nova``.  It is also possible with the environment modules.

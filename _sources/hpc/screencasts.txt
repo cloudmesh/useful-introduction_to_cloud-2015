@@ -1,5 +1,5 @@
 Batch Jobs including Hadoop  on FutureSystems
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This series of screencasts will walk you through the various ways on
 how you can use batch jobs on FutureSystems. This includes the following:
@@ -36,7 +36,7 @@ how you can use batch jobs on FutureSystems. This includes the following:
 
 
 Batch Jobs including Hadoop  on FutureSystems
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This series of screencasts will walk you through the various ways on
 how you can use batch jobs on FutureSystems. This includes the following:

@@ -56,7 +56,7 @@ a report detailing:
 * the names and email address of group members
 * a project title
 * the goal of the project
-* a list of all deliverable
+* a list of all deliverables
 * assignments of tasks to group members
 
 This prerequisite is satisfied if you and other students have formed
@@ -101,7 +101,7 @@ On **Mac OS X** you will have
 
 * The ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub`` files exists
 
-On **Windows** using Putty:
+On **Windows** using PuTTY:
 
 * **In Preparation**
 
@@ -158,13 +158,13 @@ and include the following information:
 
 * the first and last name of each group member
 * the email address of each group member
-* the GitHub username of each group member
+* the github username of each group member
 * the course number registered for
 * the project proposal approved by the instructor
 
 Please adhere to the following template for this email::
 
-  Subject: request FutureSystems GitHub project
+  Subject: request futuresystems github project
   Body:
     <first name> <last name>, <email> <github username>
     <first name> <last name>, <email> <github username>
@@ -177,7 +177,7 @@ For example, if Ada Lovelace and Albert Einstein are working together
 to develop a computer simulations of the theory of relativity, they
 would send the following (truncated) email::
 
-  Subject: request FutureSystems GitHub project
+  Subject: request futuresystems github project
   Body:
     Ada Lovelace, adalovelace@gmail.com lovelace
     Albert Einstein, emc2@gmail.com albert
@@ -201,8 +201,8 @@ emailed the link.
    everybody else in that group.
 
 .. warning::
-   This repository is publicly view-able.
-   Any content is view-able by *THE ENTIRE WORLD* so please do not add any
+   This repository is publicly viewable.
+   Any content is viewable by *THE ENTIRE WORLD* so please do not add any
    private information.
 
 This prerequisite is satisfied if are able to
