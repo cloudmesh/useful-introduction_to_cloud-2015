@@ -161,7 +161,6 @@ Microsoft Azure.
        - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
-       - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
      - `2 mins <https://mix.office.com/watch/t3n3ea312rxi>`_ (slide 9)
@@ -176,12 +175,13 @@ Microsoft Azure.
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
        - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
      - - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
-       - `60 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercises>`_
+       - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercises>`_
 
+..        - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
 Length of the lessons in Week 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Total of video lessons: 1 hour and 30 minutes
 * Total of study materials: 4 hours and 40 minutes
-* Total of lab sessions: 3 hours 20 minutes
+* Total of lab sessions: 1 hours 40 minutes
 
