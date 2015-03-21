@@ -7,7 +7,7 @@ Overview
 This lesson will introduce you to a very important topic to OpenStack core
 components.
 
-.. tip:: Duration: 2 hours
+.. tip:: Duration: 1 hour
 
 Prerequisite
 ----------------------------------------------------------------------
