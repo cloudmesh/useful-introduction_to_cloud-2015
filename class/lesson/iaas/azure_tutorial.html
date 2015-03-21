@@ -220,17 +220,31 @@ key pair access)</li>
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>We will create a VM instance on Azure cloud, and start a Flask Web Framework on
 the Ubuntu 14.04 machine image. Our conditions are:</p>
-<ul class="simple">
-<li>Ubuntu 14.04 LTS Server 64 bit (VM Image)</li>
-<li>A1 Size (1 vcpu + 1.75 gb memory)</li>
-<li>HTTP, HTTPS (80, 443) port opening using security groups</li>
-<li>Password authentication for the first login</li>
-<li>SSH key pair authentication after password authentication is disabled</li>
-<li>Use of package manager (i.e. apt-get) with switching to admin privileges</li>
-<li>Use of Python packages</li>
-<li>Editors e.g. vi, nano, emacs</li>
-<li>Use Azure Management Portal (Web interface)
-- We might have other lessons for using an azure command line tool.</li>
+<ul>
+<li><p class="first">Ubuntu 14.04 LTS Server 64 bit (VM Image)</p>
+</li>
+<li><p class="first">A1 Size (1 vcpu + 1.75 gb memory)</p>
+</li>
+<li><p class="first">HTTP, HTTPS (80, 443) port opening using security groups</p>
+</li>
+<li><p class="first">Password authentication for the first login</p>
+</li>
+<li><p class="first">SSH key pair authentication after password authentication is disabled</p>
+</li>
+<li><p class="first">Use of package manager (i.e. apt-get) with switching to admin privileges</p>
+</li>
+<li><p class="first">Use of Python packages</p>
+</li>
+<li><p class="first">Editors e.g. vi, nano, emacs</p>
+</li>
+<li><dl class="first docutils">
+<dt>Use Azure Management Portal (Web interface)</dt>
+<dd><ul class="first last simple">
+<li>We might have other lessons for using an azure command line tool.</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 <div class="section" id="getting-started">
@@ -240,62 +254,103 @@ control Azure cloud services. We will use this web interface to create, list or
 delete a VM instance.</p>
 <div class="section" id="azure-management-portal">
 <h3>Azure Management Portal<a class="headerlink" href="#azure-management-portal" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Sign in Azure Management Portal
-<a class="reference external" href="http://manage.windowsazure.com">http://manage.windowsazure.com</a></li>
-<li>Sign up, if you don&#8217;t have an account</li>
-<li>Register a new subscription
-- 1-month Free trial is available
-- Pay-as-you-go is available</li>
-<li>go to Azure Management Portal
-- Find the Virtual Machines page. We create a VM instance in the page.</li>
+<ul>
+<li><p class="first">Sign in Azure Management Portal
+<a class="reference external" href="http://manage.windowsazure.com">http://manage.windowsazure.com</a></p>
+</li>
+<li><p class="first">Sign up, if you don&#8217;t have an account</p>
+</li>
+<li><dl class="first docutils">
+<dt>Register a new subscription</dt>
+<dd><ul class="first last simple">
+<li>1-month Free trial is available</li>
+<li>Pay-as-you-go is available</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>go to Azure Management Portal</dt>
+<dd><ul class="first last simple">
+<li>Find the Virtual Machines page. We create a VM instance in the page.</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 <div class="section" id="preparing-vm-instance">
 <h3>Preparing VM Instance<a class="headerlink" href="#preparing-vm-instance" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">Select a VM base image from Gallery
-* Gallery is a repositofy for VM images
-* Choose <tt class="docutils literal"><span class="pre">Ubuntu</span></tt> tab.
-* There are a few VMs available. Select Ubuntu 14.04 LTS.
-* Community VMs are also available.</p>
+<li><dl class="first docutils">
+<dt>Select a VM base image from Gallery</dt>
+<dd><ul class="first last simple">
+<li>Gallery is a repositofy for VM images</li>
+<li>Choose <tt class="docutils literal"><span class="pre">Ubuntu</span></tt> tab.</li>
+<li>There are a few VMs available. Select Ubuntu 14.04 LTS.</li>
+<li>Community VMs are also available.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Provide a name for your VM instance
-- Your VM instance need a name. This name is also used for dns name.</p>
-<blockquote>
-<div><p>For example, if you created a VM instance with <tt class="docutils literal"><span class="pre">tutorial-azure</span></tt>,
-you may have dns name, <tt class="docutils literal"><span class="pre">tutorial-azure.cloudapp.net</span></tt>.</p>
-</div></blockquote>
-<ul class="simple">
+<li><dl class="first docutils">
+<dt>Provide a name for your VM instance</dt>
+<dd><ul class="first last simple">
+<li>Your VM instance need a name. This name is also used for dns name.
+For example, if you created a VM instance with <tt class="docutils literal"><span class="pre">tutorial-azure</span></tt>,
+you may have dns name, <tt class="docutils literal"><span class="pre">tutorial-azure.cloudapp.net</span></tt>.</li>
 <li>Azure provides a unique dns address using the name in this format <tt class="docutils literal"><span class="pre">[unique</span>
 <span class="pre">vm</span> <span class="pre">name].cloudapp.net</span></tt>.  Unque name means that there is no duplication
 across entire Azure cloud services.</li>
 </ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Choose a size of your VM instance
-- select A1 (1core, 1.75 memory) or other preferred size of VM instance
-- OpenStack Flavor and Amazon Instance types have similar format for the size</p>
-<blockquote>
-<div><p>of VM instances.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Choose a size of your VM instance</dt>
+<dd><ul class="first last simple">
+<li>select A1 (1core, 1.75 memory) or other preferred size of VM instance</li>
+<li>OpenStack Flavor and Amazon Instance types have similar format for the size
+of VM instances.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Choose a region
-- It is a physical location of your VM instance.
-- Geological different data centers provide better network access if you&#8217;re</p>
-<blockquote>
-<div><p>close to them. Choose a location based on the location for your service.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Choose a region</dt>
+<dd><ul class="first last simple">
+<li>It is a physical location of your VM instance.</li>
+<li>Geological different data centers provide better network access if you&#8217;re
+close to them. Choose a location based on the location for your service.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Add a rule
-- SSH (22) port is default
-- HTTP (80) and HTTPs (443)</p>
+<li><dl class="first docutils">
+<dt>Add a rule</dt>
+<dd><ul class="first last simple">
+<li>SSH (22) port is default</li>
+<li>HTTP (80) and HTTPs (443)</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Choose <tt class="docutils literal"><span class="pre">provide</span> <span class="pre">password</span></tt> and disable <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">key</span> <span class="pre">pair</span> <span class="pre">authentication</span></tt>
-- We use <tt class="docutils literal"><span class="pre">azureuser</span></tt> as a user name.
-- We provide a password instead of key authentication file e.g. pem.</p>
+<li><dl class="first docutils">
+<dt>Choose <tt class="docutils literal"><span class="pre">provide</span> <span class="pre">password</span></tt> and disable <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">key</span> <span class="pre">pair</span> <span class="pre">authentication</span></tt></dt>
+<dd><ul class="first last simple">
+<li>We use <tt class="docutils literal"><span class="pre">azureuser</span></tt> as a user name.</li>
+<li>We provide a password instead of key authentication file e.g. pem.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Click &#8216;Complete&#8217;
-- Confirm your VM image, size and rules.</p>
+<li><dl class="first docutils">
+<dt>Click &#8216;Complete&#8217;</dt>
+<dd><ul class="first last simple">
+<li>Confirm your VM image, size and rules.</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -304,14 +359,15 @@ across entire Azure cloud services.</li>
 <p>Once you successfully launched your instance, it will be available in a few
 moments.</p>
 <ul>
-<li><p class="first">Find a IP Adddress or hostname
-- We need destination address to ssh into the server. You can find IP address</p>
-<blockquote>
-<div><p>or hostname in the Instances page.</p>
-</div></blockquote>
-<ul class="simple">
+<li><dl class="first docutils">
+<dt>Find a IP Adddress or hostname</dt>
+<dd><ul class="first last simple">
+<li>We need destination address to ssh into the server. You can find IP address
+or hostname in the Instances page.</li>
 <li>Typically you have a dns name like <tt class="docutils literal"><span class="pre">[your</span> <span class="pre">vm</span> <span class="pre">name].cloudapps.net</span></tt>.</li>
 </ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -319,18 +375,24 @@ moments.</p>
 <h3>SSH into VM Instance<a class="headerlink" href="#ssh-into-vm-instance" title="Permalink to this headline">¶</a></h3>
 <p>Use your ssh client tool to login to the virtual server.</p>
 <ul>
-<li><p class="first"><tt class="docutils literal"><span class="pre">azureuser</span></tt> as a user name
-- We specified this name as login name when we deploy a VM instance.</p>
-<blockquote>
-<div><p>Once we logged into the VM instance, we can switch to other users e.g.
-<tt class="docutils literal"><span class="pre">root</span></tt> or create a new user.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">azureuser</span></tt> as a user name</dt>
+<dd><ul class="first last simple">
+<li>We specified this name as login name when we deploy a VM instance.
+Once we logged into the VM instance, we can switch to other users e.g.
+<tt class="docutils literal"><span class="pre">root</span></tt> or create a new user.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Password Authentication
-- We login to the VM instance using the passowrd that we provided in the</p>
-<blockquote>
-<div><p>process of vm creation.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Password Authentication</dt>
+<dd><ul class="first last simple">
+<li>We login to the VM instance using the passowrd that we provided in the
+process of vm creation.</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -339,33 +401,61 @@ moments.</p>
 <p>Since we used password authentication, we need to switch it to SSH key pair
 authentication.  This requires a few steps with <tt class="docutils literal"><span class="pre">root</span></tt>.</p>
 <ul>
-<li><p class="first">Create a new SSH key pair
-- If you use Windows OS, try <tt class="docutils literal"><span class="pre">puttygen.exe</span></tt>
-- Store your private key in a safe place.
-- Copy your public key string. We need to provide this to SSH on the VM instance.</p>
+<li><dl class="first docutils">
+<dt>Create a new SSH key pair</dt>
+<dd><ul class="first last simple">
+<li>If you use Windows OS, try <tt class="docutils literal"><span class="pre">puttygen.exe</span></tt></li>
+<li>Store your private key in a safe place.</li>
+<li>Copy your public key string. We need to provide this to SSH on the VM instance.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Move to $HOME/.ssh directory
-- There is a <tt class="docutils literal"><span class="pre">authorized_keys</span></tt> file which holds a list of public key strings.</p>
-<blockquote>
-<div><p>If you register your public key in this file, you will be able to login to
-this machine using a pair, your private key.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Move to $HOME/.ssh directory</dt>
+<dd><ul class="first last simple">
+<li>There is a <tt class="docutils literal"><span class="pre">authorized_keys</span></tt> file which holds a list of public key strings.
+If you register your public key in this file, you will be able to login to
+this machine using a pair, your private key.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Run <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">[your</span> <span class="pre">public</span> <span class="pre">key</span> <span class="pre">string]</span> <span class="pre">&gt;&gt;</span> <span class="pre">$HOME/.ssh/authorized_keys</span></tt>
-- This way, you register your public key to your virtual server.</p>
+<li><dl class="first docutils">
+<dt>Run <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">[your</span> <span class="pre">public</span> <span class="pre">key</span> <span class="pre">string]</span> <span class="pre">&gt;&gt;</span> <span class="pre">$HOME/.ssh/authorized_keys</span></tt></dt>
+<dd><ul class="first last simple">
+<li>This way, you register your public key to your virtual server.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Open <tt class="docutils literal"><span class="pre">/etc/ssh/sshd_config</span></tt> with your editor e.g. nano, emacs, or vi.
-- e.g. <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">vi</span> <span class="pre">/etc/ssh/sshd_config</span></tt></p>
+<li><dl class="first docutils">
+<dt>Open <tt class="docutils literal"><span class="pre">/etc/ssh/sshd_config</span></tt> with your editor e.g. nano, emacs, or vi.</dt>
+<dd><ul class="first last simple">
+<li>e.g. <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">vi</span> <span class="pre">/etc/ssh/sshd_config</span></tt></li>
+</ul>
+</dd>
+</dl>
 </li>
 <li><p class="first">Change <tt class="docutils literal"><span class="pre">PasswordAuthentication</span> <span class="pre">yes</span></tt> to <tt class="docutils literal"><span class="pre">PasswordAuthentication</span> <span class="pre">no</span></tt>
 and save the file.</p>
 </li>
-<li><p class="first">Run <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">ssh</span> <span class="pre">restart</span></tt>
-- This command restarts a SSH server on your virtual server.</p>
+<li><dl class="first docutils">
+<dt>Run <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">ssh</span> <span class="pre">restart</span></tt></dt>
+<dd><ul class="first last simple">
+<li>This command restarts a SSH server on your virtual server.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Your password login is disabled.
-- After the command above, you won&#8217;t allow to use password to login.
-- SSH key login is only allowed.</p>
+<li><dl class="first docutils">
+<dt>Your password login is disabled.</dt>
+<dd><ul class="first last simple">
+<li>After the command above, you won&#8217;t allow to use password to login.</li>
+<li>SSH key login is only allowed.</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -378,24 +468,47 @@ from the Flask official site.</p>
 Python. We will use the following commands 1) sudo, 2) su, 3) apt-get, and 4)
 service, 5) python to install and run Flask.</p>
 <ul>
-<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></tt>
-- This command updates a list of Linux package repositories.</p>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></tt></dt>
+<dd><ul class="first last simple">
+<li>This command updates a list of Linux package repositories.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-pip</span></tt>
-- We install Python package manager <tt class="docutils literal"><span class="pre">pip</span></tt>.</p>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-pip</span></tt></dt>
+<dd><ul class="first last simple">
+<li>We install Python package manager <tt class="docutils literal"><span class="pre">pip</span></tt>.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualenv</span></tt>
-- We install Python virtualenv software <tt class="docutils literal"><span class="pre">virtualenv</span></tt>.</p>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualenv</span></tt></dt>
+<dd><ul class="first last simple">
+<li>We install Python virtualenv software <tt class="docutils literal"><span class="pre">virtualenv</span></tt>.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Create a new virtualenv
-- <tt class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">$HOME/FLASK</span></tt></p>
+<li><dl class="first docutils">
+<dt>Create a new virtualenv</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">$HOME/FLASK</span></tt></li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Enable <tt class="docutils literal"><span class="pre">FLASK</span></tt> environment for Python
-- <tt class="docutils literal"><span class="pre">source</span> <span class="pre">$HOME/FLASK/bin/activate</span></tt>
-- If you see <strong>(FLASK)</strong> label in front of your prompt, you are now in the</p>
-<blockquote>
-<div><p><tt class="docutils literal"><span class="pre">FLASK</span></tt> environment.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Enable <tt class="docutils literal"><span class="pre">FLASK</span></tt> environment for Python</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">source</span> <span class="pre">$HOME/FLASK/bin/activate</span></tt></li>
+<li>If you see <strong>(FLASK)</strong> label in front of your prompt, you are now in the
+<tt class="docutils literal"><span class="pre">FLASK</span></tt> environment.</li>
+</ul>
+</dd>
+</dl>
 </li>
 <li><p class="first">Write a python script in <tt class="docutils literal"><span class="pre">hello.py</span></tt></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
@@ -410,12 +523,15 @@ service, 5) python to install and run Flask.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Test your python program
-- <tt class="docutils literal"><span class="pre">python</span> <span class="pre">hello.py</span></tt>
-- If you see  <tt class="docutils literal"><span class="pre">*</span> <span class="pre">Running</span> <span class="pre">on</span> <span class="pre">http://localhost:5000/</span></tt>,</p>
-<blockquote>
-<div><p>you successfully run your Flask on the localhost with 5000 port number.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Test your python program</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">python</span> <span class="pre">hello.py</span></tt></li>
+<li>If you see  <tt class="docutils literal"><span class="pre">*</span> <span class="pre">Running</span> <span class="pre">on</span> <span class="pre">http://localhost:5000/</span></tt>,
+you successfully run your Flask on the localhost with 5000 port number.</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -424,42 +540,54 @@ service, 5) python to install and run Flask.</p>
 <p>We will make a small change to provide Flask in public.
 This way, anyone on the internet can see your <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World!</span></tt> message.</p>
 <ul>
-<li><p class="first">Switch to <tt class="docutils literal"><span class="pre">root</span></tt> account to use system port 80.
-- <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></tt>
-- <em>80 or 443 port is reserved port range to system administrator i.e. ``root``</em>
-- Now you are in <tt class="docutils literal"><span class="pre">root</span></tt> account. Try <tt class="docutils literal"><span class="pre">pwd</span></tt> command to confirm that you</p>
-<blockquote>
+<li><dl class="first docutils">
+<dt>Switch to <tt class="docutils literal"><span class="pre">root</span></tt> account to use system port 80.</dt>
+<dd><ul class="first simple">
+<li><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></tt></li>
+<li><em>80 or 443 port is reserved port range to system administrator i.e. ``root``</em></li>
+<li>Now you are in <tt class="docutils literal"><span class="pre">root</span></tt> account. Try <tt class="docutils literal"><span class="pre">pwd</span></tt> command to confirm that you</li>
+</ul>
+<blockquote class="last">
 <div><p>are in <tt class="docutils literal"><span class="pre">/root</span></tt></p>
 </div></blockquote>
+</dd>
+</dl>
 </li>
-<li><p class="first">Move to <tt class="docutils literal"><span class="pre">azureuser</span></tt> home directory and enable virtualenv
-- <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">/home/azureuser</span></tt>
-- <tt class="docutils literal"><span class="pre">source</span> <span class="pre">/home/azureuser/FLASK/bin/activate</span></tt>
-- If you see <strong>(FLASK)</strong> label in front of your prompt, you are now in the</p>
-<blockquote>
-<div><p><tt class="docutils literal"><span class="pre">FLASK</span></tt> environment.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Move to <tt class="docutils literal"><span class="pre">azureuser</span></tt> home directory and enable virtualenv</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">/home/azureuser</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">source</span> <span class="pre">/home/azureuser/FLASK/bin/activate</span></tt></li>
+<li>If you see <strong>(FLASK)</strong> label in front of your prompt, you are now in the
+<tt class="docutils literal"><span class="pre">FLASK</span></tt> environment.</li>
+</ul>
+</dd>
+</dl>
 </li>
-<li><p class="first">Change <tt class="docutils literal"><span class="pre">app.run()</span></tt> function to <tt class="docutils literal"><span class="pre">app.run(host='0.0.0.0',</span> <span class="pre">port=80)</span></tt>
-- <tt class="docutils literal"><span class="pre">0.0.0.0</span></tt> is a way to specify <em>any IPv4-host at all</em>. You Flask will</p>
-<blockquote>
-<div><p>provide web service through your internal/external network of your virtual
-server.</p>
-</div></blockquote>
-<ul class="simple">
+<li><dl class="first docutils">
+<dt>Change <tt class="docutils literal"><span class="pre">app.run()</span></tt> function to <tt class="docutils literal"><span class="pre">app.run(host='0.0.0.0',</span> <span class="pre">port=80)</span></tt></dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">0.0.0.0</span></tt> is a way to specify <em>any IPv4-host at all</em>. You Flask will
+provide web service through your internal/external network of your virtual
+server.</li>
 <li><tt class="docutils literal"><span class="pre">port=80</span></tt> is a way to tell Flask that you are using HTTP default port.</li>
 </ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
 <div class="section" id="check-hello-world-page-on-the-web">
 <h3>Check <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World!</span></tt> Page on the Web<a class="headerlink" href="#check-hello-world-page-on-the-web" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">Open a web browser and type the IP address or hostname of your VM instance.
-- If you see <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World!</span></tt> page, you have now working Flask Web Framework</p>
-<blockquote>
-<div><p>on Azure.</p>
-</div></blockquote>
+<li><dl class="first docutils">
+<dt>Open a web browser and type the IP address or hostname of your VM instance.</dt>
+<dd><ul class="first last simple">
+<li>If you see <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World!</span></tt> page, you have now working Flask Web Framework
+on Azure.</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
