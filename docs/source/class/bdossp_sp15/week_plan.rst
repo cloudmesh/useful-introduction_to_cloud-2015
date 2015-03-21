@@ -162,7 +162,7 @@ The Basics of OpenStack
      - - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
        - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
-     - - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
+       - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
        - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
