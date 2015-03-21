@@ -78,9 +78,9 @@ Exercises
 -------------------------------------------------------------------------------
 
 * Try other features on Horizon.
-  - See detailed information of your virtual server.
-  - Attach a floating ip address to your virtual server and confirm it is
-    accessible.
+   - See detailed information of your virtual server.
+   - Attach a floating ip address to your virtual server and confirm it is
+     accessible.
 
 Next Step
 -------------------------------------------------------------------------------
