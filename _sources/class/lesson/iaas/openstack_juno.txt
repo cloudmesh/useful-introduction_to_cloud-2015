@@ -9,7 +9,7 @@ release.  The latest release Juno is the 10th release of OpenStack platform
 which includes new features e.g. Sahara, updates and bug fixes.  We will
 explore a few changes and updates in OpenStack Juno release.
 
-.. tip:: Duration: 20 minutes
+.. tip:: Duration: 10 minutes
 
 Prerequisite
 ----------------------------------------------------------------------

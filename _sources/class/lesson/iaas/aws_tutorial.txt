@@ -15,7 +15,7 @@ readers gain basic knowledge of using Amazon Cloud and have some experience of
 building services on the cloud.
 
 
-.. tip:: Duration: 40 minutes
+.. tip:: Duration: 30 minutes
 
 Prerequisite
 ----------------------------------------------------------------------

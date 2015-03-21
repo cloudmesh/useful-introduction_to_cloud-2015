@@ -13,7 +13,7 @@ on Azure Virtual Machine. We expect that readers gain basic knowledge of using
 Azure cloud services and have some experience of building services on the
 cloud.
 
-.. tip:: Duration: 40 minutes
+.. tip:: Duration: 50 minutes
 
 Prerequisite
 ----------------------------------------------------------------------
