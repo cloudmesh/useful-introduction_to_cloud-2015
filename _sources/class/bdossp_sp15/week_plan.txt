@@ -155,10 +155,8 @@ The Basics of OpenStack
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
          - Web Dashboard (Horizon)
-         - Storage (Swift, Cinder)
+         - Storage (Swift)
          - Network (Neutron)
-         - Images (Glance)
-         - Authentication (Keystone)
      - - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
        - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
