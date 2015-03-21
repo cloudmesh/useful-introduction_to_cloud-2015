@@ -146,7 +146,7 @@ Microsoft Azure.
      - Text
      - Lab sessions
    * - **Introduction and Overview**
-     - `37 mins <https://mix.office.com/watch/t3n3ea312rxi>`_
+     - `12 mins <https://mix.office.com/watch/u7uovy9i06jo>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
      - 
    * - **OpenStack for Beginners**
@@ -154,7 +154,8 @@ Microsoft Azure.
          - Web Dashboard (Horizon)
          - Storage (Swift)
          - Network (Neutron)
-     - - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
+     - - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
+       - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
        - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
