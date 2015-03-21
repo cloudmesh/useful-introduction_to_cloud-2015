@@ -246,13 +246,18 @@ cloud resources and return the lease.  There is ``delete Cloud Service``
 command or menu. If you do not terminate your resources, you will receive a
 charge of using cloud services e.g. Virtual Machine, Cloud Service, or Storage.
 
-Exercises
+Exercise1
 -------------------------------------------------------------------------------
 
 * Try to start a virtual server with Windows Server 2008 R2 SP1. Use Remote
   Desktop to log in. 
 
-.. * Start a one of community VM images. It needs some preparation before starting
+Exercise2
+-------------------------------------------------------------------------------
+
+**Additional (Optional) Study Material**
+
+* Start a one of community VM images. It needs some preparation before starting
   a virtual machine. Get some experience with using VM Depot which is a open
   repository for Azure VM images.
 

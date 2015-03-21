@@ -175,9 +175,28 @@ Microsoft Azure.
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
        - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
      - - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
-       - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercises>`_
+       - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise1>`_
 
-..        - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
+.. list-table:: Additional (optional) Further Study Materials
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     -
+     -
+     - Lab sessions
+   * - **OpenStack for Beginners**
+         - Compute Engine (Nova)
+     -
+     -
+     - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
+   * - **Other IaaS Platforms**
+        - Public Commercial Clouds
+             - Microsoft Azure
+     -
+     -
+     - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise2>`_
+
 Length of the lessons in Week 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
