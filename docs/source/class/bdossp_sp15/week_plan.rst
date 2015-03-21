@@ -126,7 +126,7 @@ week 2
 -------------------------------------------------------------------------------
 
 Introduction to OpenStack and Public Clouds
--------------------------------------------------------------------------------
+*******************************************************************************
 
 OpenStack is a open-source cloud computing software platform and a
 community-driven project. You can use OpenStack to build a cloud infrastructure
@@ -136,9 +136,6 @@ OpenStack Software and give you the confidence and understanding of using IaaS
 cloud platforms. There are tutorial lessons to explore OpenStack web dashboard
 (Horizon) and compute engine (Nova) including Public Clouds e.g. Amazon EC2 or
 Microsoft Azure.
-
-The Basics of OpenStack
-*******************************************************************************
 
 .. list-table:: Basics of OpenStack
    :widths: 15 10 30 10
