@@ -193,7 +193,7 @@ The Basics of OpenStack
        - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
-     - `2 mins <https://mix.office.com/watch/t3n3ea312rxi>`_ (Starts at slide 9)
+     - `2 mins <https://mix.office.com/watch/t3n3ea312rxi>`_ (slide 9)
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
    * - **Other IaaS Platforms**
