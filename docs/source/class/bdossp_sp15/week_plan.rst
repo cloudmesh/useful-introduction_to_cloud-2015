@@ -163,7 +163,7 @@ Microsoft Azure.
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
-     - `2 mins <https://mix.office.com/watch/t3n3ea312rxi>`_ (slide 9)
+     - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
    * - **Other IaaS Platforms**
