@@ -370,10 +370,11 @@ Exercises
 
 1. Try to run Python CherryPy or Apache Web Server in your virtual server.
    It requires:
-   - VM instance creation
-   - CherryPY or HTTP Server installation using package manager (pip or apt-get)
-   - HTTP, HTTPs ports open using security groups
-   - Floating IP allocation 
+
+- VM instance creation
+- CherryPY or HTTP Server installation using package manager (pip or apt-get)
+- HTTP, HTTPs ports open using security groups
+- Floating IP allocation 
 
 .. note:: Return your leased resources after your practice is completed. 1)
         Terminate your instance, 2) Deallocate IP address
