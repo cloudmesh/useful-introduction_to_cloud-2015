@@ -9,8 +9,6 @@ open-source IaaS cloud platform. FutureSystems currently supports OpenStack
 Juno release which is a the latest version of OpenStack software.  Through this
 lesson, readers are expected to learn basic usage of OpenStack on FutureSystems.
 
-.. tip:: Duration: 1 - 2 hour
-
 Prerequisite
 ----------------------------------------------------------------------
 
