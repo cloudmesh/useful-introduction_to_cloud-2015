@@ -192,8 +192,8 @@ Microsoft Azure.
    :header-rows: 1
 
    * - Topic
-     -
-     -
+     - Video
+     - Text
      - Lab sessions
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
