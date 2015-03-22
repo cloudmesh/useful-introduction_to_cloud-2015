@@ -152,16 +152,20 @@ Microsoft Azure.
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
          - Web Dashboard (Horizon)
-         - Storage (Swift)
          - Network (Neutron)
      - - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
-       - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
-       - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
-       - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
+   * - Storage (Swift)
+     - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
+     -
+     -
+   * - Network (Neutron)
+     - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
+     -
+     -
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
      - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
@@ -169,14 +173,16 @@ Microsoft Azure.
      - 
    * - **Other IaaS Platforms**
         - Public Commercial Clouds
-             - Amazon Web Services (AWS)
-             - Microsoft Azure
-     - - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
-       - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
-     - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
-       - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
-     - - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
-       - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise1>`_
+     -
+     -
+   * - Amazon Web Services (AWS)
+     - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
+     - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
+     - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
+   * - Microsoft Azure
+     - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
+     - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
+     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise1>`_
 
 .. list-table:: Additional (optional) Further Study Materials
    :widths: 15 10 30 10
@@ -189,7 +195,7 @@ Microsoft Azure.
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
      -
-     -
+     - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
      - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
    * - **Other IaaS Platforms**
         - Public Commercial Clouds
