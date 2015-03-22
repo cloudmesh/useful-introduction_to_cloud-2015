@@ -175,6 +175,7 @@ Microsoft Azure.
         - Public Commercial Clouds
      -
      -
+     -
    * - Amazon Web Services (AWS)
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
