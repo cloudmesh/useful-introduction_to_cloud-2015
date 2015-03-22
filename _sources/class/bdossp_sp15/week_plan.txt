@@ -150,13 +150,17 @@ Microsoft Azure.
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
      - 
    * - **OpenStack for Beginners**
-         - Compute Engine (Nova)
-         - Web Dashboard (Horizon)
      - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
-     - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
-       - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
-     - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
-       - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
+     -
+     -
+   * - **Compute Engine (Nova)**
+     -
+     - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
+     - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
+   * - **Web Dashboard (Horizon)**
+     - 
+     - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
+     - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
    * - **Storage (Swift)**
      - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#swift-storage>`_
