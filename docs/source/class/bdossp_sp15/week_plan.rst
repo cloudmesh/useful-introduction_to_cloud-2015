@@ -170,11 +170,10 @@ Microsoft Azure.
      - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
-   * - **Other IaaS Platforms**
-        - Public Commercial Clouds
-     -
-     -
-     -
+
+.. list-table:: Other IaaS Platforms - Public Commercial Clouds
+   :widths: 15 10 30 10
+   :header-rows: 1
    * - Amazon Web Services (AWS)
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_

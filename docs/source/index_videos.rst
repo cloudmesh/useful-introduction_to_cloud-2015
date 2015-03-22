@@ -11,7 +11,6 @@ Table
    :header: Status, Title, Page, Youtube ID
    :widths: 10, 60, 20, 10
 
-   -, `None <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `4wjVwQbOlSU <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__
    ok, `00 Cloudmesh: Relevance and Introduction <https://www.youtube.com/watch?v=njHHjRMb7V8>`__, `class/i590.rst <class/i590.html>`__, `njHHjRMb7V8 <https://www.youtube.com/watch?v=njHHjRMb7V8>`__
    ok, `01 Cloudmesh: Introduction <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__, `index.rst <index.html>`__, `uGIPmiJ0cxg <https://www.youtube.com/watch?v=uGIPmiJ0cxg>`__
    ok, `02 Cloudmesh: Account Creation on FutureSystems <https://www.youtube.com/watch?v=CwHFaluDgzc>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `CwHFaluDgzc <https://www.youtube.com/watch?v=CwHFaluDgzc>`__
@@ -32,7 +31,7 @@ Table
    ok, `fg-openstack-horizon-grizzly <https://www.youtube.com/watch?v=JkNlWAUlxF0>`__, `iaas/openstack.rst <iaas/openstack.html>`__, `JkNlWAUlxF0 <https://www.youtube.com/watch?v=JkNlWAUlxF0>`__
    ok, `fg-portal-join-project <https://www.youtube.com/watch?v=5xQiPBwt58s>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `5xQiPBwt58s <https://www.youtube.com/watch?v=5xQiPBwt58s>`__
    ok, `fg-portal-openid <https://www.youtube.com/watch?v=rZzpCYWDEpI>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `rZzpCYWDEpI <https://www.youtube.com/watch?v=rZzpCYWDEpI>`__
-   ok, `fg-portal-sshkey <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__, `class/i590.rst <class/i590.html>`__, `4wjVwQbOlSU <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__
+   ok, `fg-portal-sshkey <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `4wjVwQbOlSU <https://www.youtube.com/watch?v=4wjVwQbOlSU>`__
    ok, `futuregrid-get-portal-account <https://www.youtube.com/watch?v=c7mjKI8mJws>`__, `accounts/accounts.rst <accounts/accounts.html>`__, `c7mjKI8mJws <https://www.youtube.com/watch?v=c7mjKI8mJws>`__
 
 
@@ -40,13 +39,6 @@ Table
 
 Details
 ======================================================================
-
-None
-----------------------------------------------------------------------
-
-None
-
-Updated: None
 
 00 Cloudmesh: Relevance and Introduction
 ----------------------------------------------------------------------
