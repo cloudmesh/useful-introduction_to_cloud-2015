@@ -157,16 +157,15 @@ Microsoft Azure.
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
      - - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
-   * - Storage (Swift)
+   * - **Storage (Swift)**
      - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#swift-storage>`_
      -
-   * - Network (Neutron)
+   * - **Network (Neutron)**
      - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#neutron-network>`_
      -
    * - **Introduction to OpenStack Juno Release**
-        - Introduction and Overview
      - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
@@ -179,11 +178,11 @@ Microsoft Azure.
      - Video
      - Text
      - Lab sessions
-   * - Amazon Web Services (AWS)
+   * - **Amazon Web Services (AWS)**
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
      - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
-   * - Microsoft Azure
+   * - **Microsoft Azure**
      - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
      - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise1>`_
