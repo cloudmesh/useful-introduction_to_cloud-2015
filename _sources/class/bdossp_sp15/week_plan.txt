@@ -215,6 +215,6 @@ Length of the lessons in Week 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Total of video lessons: 1 hour and 30 minutes
-* Total of study materials: 4 hours and 40 minutes
+* Total of study materials: 3 hours and 15 minutes
 * Total of lab sessions: 1 hours 40 minutes
 
