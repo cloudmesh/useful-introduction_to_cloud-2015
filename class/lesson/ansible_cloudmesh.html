@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Writing Ansible Playbooks on FutureSystems &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Lessons" href="../lessons.html"/>
+        <link rel="next" title="Try Docker Basic on FutureSystems" href="docker.html"/>
+        <link rel="prev" title="Try Ansible Basic on FutureSystems" href="ansible.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+      
+    <li>Writing Ansible Playbooks on FutureSystems</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/class/lesson/ansible_cloudmesh.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="writing-ansible-playbooks-on-futuresystems">
+<h1>Writing Ansible Playbooks on FutureSystems<a class="headerlink" href="#writing-ansible-playbooks-on-futuresystems" title="Permalink to this headline">¶</a></h1>
+<p>Ansible Playbooks are automated scripts written in YAML data format.  Instead
+of using manual commands to setup multiple remote machines, you can utilize
+Ansible Playbooks to configure your entire systems. YAML syntax is easy to read
+and express the data structure of certain Ansible functions. You simply write
+some tasks, for example, installing software, configuring default settings, and
+starting the software, in a Ansible Playbook.  With a few examples in this
+tutorial, you will understand how it works and how to write your own Playbooks.</p>
+<blockquote>
+<div>There are also several examples of using Ansible <a class="reference external" href="http://docs.ansible.com/playbooks.html">Playbooks</a> from the official site. It covers
+from basic usage of Ansible Playbooks to advanced usage such as applying
+patches and updates with different roles and groups.</div></blockquote>
+<div class="section" id="tutorial-writing-ansible-playbook">
+<h2>Tutorial: Writing Ansible Playbook<a class="headerlink" href="#tutorial-writing-ansible-playbook" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">approximate time 45 minutes</p>
+</div>
+<p>In this tutorial, we are going to write a basic playbook of Ansible software.
+Keep in mind that <tt class="docutils literal"><span class="pre">Ansible</span></tt> is a main program and <tt class="docutils literal"><span class="pre">playbook</span></tt> is a template
+that you would like to use. You may have several playbooks in your Ansible.</p>
+<div class="section" id="first-playbook-for-mongodb-installation">
+<h3>First playbook for MongoDB Installation<a class="headerlink" href="#first-playbook-for-mongodb-installation" title="Permalink to this headline">¶</a></h3>
+<p>As a first example, we are going to write a playbook which installs MongoDB
+server.  It includes the following tasks:</p>
+<ul class="simple">
+<li>Import the public key used by the package management system</li>
+<li>Create a list file for MongoDB</li>
+<li>Reload local package database</li>
+<li>Install the MongoDB packages</li>
+<li>Start MongoDB</li>
+</ul>
+<p><em>This tutorial is based on the manual installation of MongoDB from the official
+site: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</em></p>
+<p><em>We also assume that we install MongoDB on Ubuntu OS.</em></p>
+<div class="section" id="hosts-and-users">
+<h4>Hosts and Users<a class="headerlink" href="#hosts-and-users" title="Permalink to this headline">¶</a></h4>
+<p>First step is choosing hosts to install MongoDB and a user account to run
+commands (tasks).  We start with the following lines in the example filename of
+<tt class="docutils literal"><span class="pre">mongodb.yaml</span></tt></p>
+<div class="highlight-python"><div class="highlight"><pre>---
+- hosts: local
+  remote_user: root
+</pre></div>
+</div>
+<p>In a previous tutorial, we setup two machines with <tt class="docutils literal"><span class="pre">local</span></tt> group name. This
+tutorial uses that two machines for MongoDB installation.  Also, we use
+<tt class="docutils literal"><span class="pre">root</span></tt> account to complete Ansible tasks.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Indentation is important in YAML format. Do not ignore spaces start
+with in each line.</p>
+</div>
+</div>
+<div class="section" id="tasks">
+<h4>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h4>
+<p>A list of tasks contains commands or configurations to be executed on remote
+machines in a sequential order.  Each task comes with a <tt class="docutils literal"><span class="pre">name</span></tt> and a
+<tt class="docutils literal"><span class="pre">module</span></tt> to run your command or configuration.  You provide a description of
+your task in <tt class="docutils literal"><span class="pre">name</span></tt> section and choose a <tt class="docutils literal"><span class="pre">module</span></tt> for your task.  There are
+several modules that you can use, for example, <tt class="docutils literal"><span class="pre">shell</span></tt> module simply executes
+a command without considering a return value.  You may use <tt class="docutils literal"><span class="pre">apt</span></tt> or <tt class="docutils literal"><span class="pre">yum</span></tt>
+module which is one of the packaging modules to install software. You can find
+an entire list of modules here:
+<a class="reference external" href="http://docs.ansible.com/list_of_all_modules.html">http://docs.ansible.com/list_of_all_modules.html</a></p>
+</div>
+<div class="section" id="step-1-import-the-public-key-used-by-the-package-management-system">
+<h4>Step 1: Import the public key used by the package management system<a class="headerlink" href="#step-1-import-the-public-key-used-by-the-package-management-system" title="Permalink to this headline">¶</a></h4>
+<p>We need to import the MongoDB public GPG Key. This is going to be a first task
+in our playbook.</p>
+<div class="highlight-python"><div class="highlight"><pre>tasks:
+  - name: Import the public key used by the package management system
+    shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-create-a-list-file-for-mongodb">
+<h4>Step 2: Create a list file for MongoDB<a class="headerlink" href="#step-2-create-a-list-file-for-mongodb" title="Permalink to this headline">¶</a></h4>
+<p>Add a list of MongoDB URL with the following task:</p>
+<div class="highlight-python"><div class="highlight"><pre>- name: Create a list file for MongoDB
+  shell: echo &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; | tee /etc/apt/sources.list.d/mongodb.list
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-reload-local-package-database">
+<h4>Step 3: Reload local package database<a class="headerlink" href="#step-3-reload-local-package-database" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre>- name: Reload local package database
+  shell: apt-get update
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-install-the-mongodb-packages">
+<h4>Step 4: Install the MongoDB packages<a class="headerlink" href="#step-4-install-the-mongodb-packages" title="Permalink to this headline">¶</a></h4>
+<p>We use <tt class="docutils literal"><span class="pre">apt</span></tt> module to install <tt class="docutils literal"><span class="pre">mongodb-org</span></tt> package.
+<tt class="docutils literal"><span class="pre">notify</span></tt> action is added to start <tt class="docutils literal"><span class="pre">mongod</span></tt> after the completion of this task.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><ul class="first last simple">
+<li>name: install mongodb
+apt: pkg=mongodb-org state=latest
+notify:
+- start mongodb</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="step-5-start-mongodb">
+<h4>Step 5: Start MongoDB<a class="headerlink" href="#step-5-start-mongodb" title="Permalink to this headline">¶</a></h4>
+<p>We use <tt class="docutils literal"><span class="pre">handlers</span></tt> here to start or restart services. It is similar to <tt class="docutils literal"><span class="pre">tasks</span></tt> but will run only once.</p>
+<div class="highlight-python"><div class="highlight"><pre>handlers:
+  - name: start mongodb
+    service: name=mongod state=started
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="a-playbook-for-mongodb">
+<h3>A playbook for Mongodb<a class="headerlink" href="#a-playbook-for-mongodb" title="Permalink to this headline">¶</a></h3>
+<p>Our first playbook looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>cat mongodb.yaml
+
+---
+- hosts: local
+  remote_user: root
+  tasks:
+  - name: Import the public key used by the package management system
+    shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  - name: Create a list file for MongoDB
+    shell: echo &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; | tee /etc/apt/sources.list.d/mongodb.list
+  - name: Reload local package database
+    shell: apt-get update
+  - name: install mongodb
+    apt: pkg=mongodb-org state=latest
+    notify:
+    - start mongodb
+  handlers:
+    - name: start mongodb
+      service: name=mongod state=started
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-playbook">
+<h3>Run Playbook<a class="headerlink" href="#run-playbook" title="Permalink to this headline">¶</a></h3>
+<p>We use <tt class="docutils literal"><span class="pre">ansible-playbook</span></tt> command to run our playbook.</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible-playbook mongodb.yaml
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-mongodb">
+<h3>Test Mongodb<a class="headerlink" href="#test-mongodb" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s try to run &#8216;mongo&#8217; to enter mongodb shell.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mongo
+MongoDB shell version: 2.6.7
+connecting to: test
+&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="terms">
+<h3>Terms<a class="headerlink" href="#terms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Module: Ansible library to run or manage services, packages, files or commands.</li>
+<li>Handler: A task for notifier.</li>
+<li>Task: Ansible job to run a command, check files, or update configurations.</li>
+<li>Playbook: a list of tasks for Ansible nodes. YAML format used.</li>
+<li>YAML: Human readable generic data serialization.</li>
+</ul>
+</div>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<p>The main tutorial from Ansible is here: <a class="reference external" href="http://docs.ansible.com/playbooks_intro.html">http://docs.ansible.com/playbooks_intro.html</a></p>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<p>In the next page, we learn Basic Docker on FutureSystems.</p>
+<p><a class="reference external" href="docker.html">Basic Docker On FutureSystems</a></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docker.html" class="btn btn-neutral float-right" title="Try Docker Basic on FutureSystems"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ansible.html" class="btn btn-neutral" title="Try Ansible Basic on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
