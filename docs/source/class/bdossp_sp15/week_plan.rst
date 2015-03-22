@@ -160,11 +160,11 @@ Microsoft Azure.
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
    * - Storage (Swift)
      - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
-     -
+     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#swift-storage>`_
      -
    * - Network (Neutron)
      - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
-     -
+     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#neutron-network>`_
      -
    * - **Introduction to OpenStack Juno Release**
         - Introduction and Overview
