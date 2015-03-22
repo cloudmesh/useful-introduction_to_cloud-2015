@@ -174,6 +174,11 @@ Microsoft Azure.
 .. list-table:: Other IaaS Platforms - Public Commercial Clouds
    :widths: 15 10 30 10
    :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
    * - Amazon Web Services (AWS)
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
