@@ -152,7 +152,6 @@ Microsoft Azure.
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
          - Web Dashboard (Horizon)
-         - Network (Neutron)
      - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
      - - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
        - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
