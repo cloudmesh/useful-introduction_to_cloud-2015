@@ -13,33 +13,33 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
      - Due
    * - Week 1
      - **Gaining Access to FutureSystems and Core Technologies**
-     - 03/13
+     - 03/20
    * - Week 2
      - **The Basics of OpenStack**
-     - 03/20
+     - 03/27
    * - Week 3
      - **Cloudmesh - Cloud Management Software**
-     - 03/27
+     - 04/03
    * - Week 4
      - **IT Operations - Automation and Orchestration**
-     - 04/03
+     - 04/10
    * - Week 5
      - **Virtual Clusters I (First Appearance of Hadoop)**
-     - 04/10
+     - 04/17
    * - Week 6
      - **Virtual Clusters II (Composite Cluster with Sub-Clusters)**
-     - 04/17
+     - 04/24
    * - Week 7
      - **Other Technologies**
-     - 04/24
+     - 05/01
    * - Week 8
      - **Future**
-     - 05/01
+     - N/A
 
 Week 1 
 -------------------------------------------------------------------------------
 
-* Live on 03/13
+.. * Live on 03/13
 
 Gaining Access to FutureSystems and Core Technologies
 *******************************************************************************
