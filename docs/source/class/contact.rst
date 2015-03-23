@@ -1,3 +1,8 @@
+
+We have coursehelp@futuresystems.org to help students on course.
+Technical issues, course projects or web site will be supported.
+
+
 Please contact additional instructors for help:
 
 * `Badi' Abdul-Wahid <badi@iu.edu>`_
@@ -20,3 +25,5 @@ replies.
    Questions outside those hours may not be addressed until the
    following business day.
    Please keep this in mind and start working on your assignments early.
+
+Technical issues, course projects or web site will be supported.

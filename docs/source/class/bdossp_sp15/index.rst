@@ -65,11 +65,6 @@ General Discussion
 
 .. include:: ../discussion-hours.rst
 
-Course Help 
-----------------------------------------------------------------------
-
-We have coursehelp@futuresystems.org to help students on course.
-Technical issues, course projects or web site will be supported.
 
 Collaboration Tools
 ======================================================================
