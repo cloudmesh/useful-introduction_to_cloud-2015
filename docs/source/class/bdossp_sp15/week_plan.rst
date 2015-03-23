@@ -187,7 +187,6 @@ utilities with various exercises.
      - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/modules.html#exercises>`_
      - 03/20
      - 03/27
-     - 04/03
 
 Length of the lessons in Week 1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
