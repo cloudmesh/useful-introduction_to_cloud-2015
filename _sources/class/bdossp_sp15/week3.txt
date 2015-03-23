@@ -54,7 +54,7 @@ Cloudmesh - Cloud Management Software (under preparation)
      - `30 mins </introduction_to_cloud_computing/cloudmesh/api/index.html>`_
      - 
    * - **IPython on Cloudmesh**
-     - ` 15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
+     - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
      - 
      - 
    * - **Using OpenStack on Cloudmesh**
