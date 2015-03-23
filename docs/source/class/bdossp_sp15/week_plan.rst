@@ -2,6 +2,43 @@
 Weekly Plan
 ===============================================================================
    
+Overview of the schedule
+
+* Release Date: Every Friday 5pm
+
+.. list-table:: Schedule Section 2 (HPC-ABDS Technologies)
+   :widths: 10 30 10 
+   :header-rows: 1
+
+   * - Week
+     - Topic
+     - Due
+   * - Week 1
+     - **Gaining Access to FutureSystems and Core Technologies**
+     - 03/20
+   * - Week 2
+     - **The Basics of OpenStack**
+     - 03/27
+   * - Week 3
+     - **Cloudmesh - Cloud Management Software**
+     - 04/03
+   * - Week 4
+     - **IT Operations - Automation and Orchestration**
+     - 04/10
+   * - Week 5
+     - **Virtual Clusters I (First Appearance of Hadoop)**
+     - 04/17
+   * - Week 6
+     - **Virtual Clusters II (Composite Cluster with Sub-Clusters)**
+     - 04/24
+   * - Week 7
+     - **Other Technologies**
+     - 05/01
+   * - Week 8
+     - **Future**
+     - N/A
+
+
 week 1
 -------------------------------------------------------------------------------
 
@@ -217,4 +254,249 @@ Length of the lessons in Week 2
 * Total of video lessons: 1 hour and 30 minutes
 * Total of study materials: 3 hours and 15 minutes
 * Total of lab sessions: 1 hours 40 minutes
+
+
+Week 3
+-------------------------------------------------------------------------------
+
+
+Cloudmesh - Cloud Management Software (under preparation)
+*******************************************************************************
+
+.. Cloudmesh is a cloud resource management software written in Python. It
+        automates launching multiple VM instances across different cloud platforms
+        including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
+        Eucalyptus.  The web interface of Cloudmesh help users and administrators
+        manage entire cloud resources. Most cutting-edge technologies such as Apache
+        LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
+        applied to enhance Web Service, Command Line Tools and Rest APIs.
+
+.. list-table:: Basics of Cloudmesh
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **Introduction and Overview**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Cloudmesh for Beginners**
+        - Installation
+        - Command Line Tools (CLI)
+        - Web Interface (GUI)
+        - REST APIs
+     - Not yet available
+     - Not yet available
+     - 
+   * - **IPython on Cloudmesh**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Using OpenStack on Cloudmesh**
+     - Not yet available
+     - Not yet available
+     - 
+
+.. list-table:: Advanced Cloudmesh
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **Introduction and Overview**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **VM Management**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Virtual Clusters with Cloudmesh**
+        - SSH Connections between nodes
+        - Host Configuration
+     - Not yet available
+     - Not yet available
+     - 
+
+Week 4
+-------------------------------------------------------------------------------
+
+
+IT Operations - Automation and Orchestration (under preparation)
+*******************************************************************************
+
+.. list-table:: IT Operations - Automation and Orchestration
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **DevOps**
+        - Ansible
+        - SaltStack
+        - Puppet
+        - Chef
+        - OpenStack Heat
+        - Ubuntu Juju
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Discussion**
+        - Orchestration vs Collective DevOps
+        - PaaS
+        - Cloudmesh
+     - Not yet available
+     - Not yet available
+     - 
+
+
+
+Week 5 
+-------------------------------------------------------------------------------
+
+
+Virtual Clusters I (under preparation)
+*******************************************************************************
+
+**First Appearance of Hadoop in This Week**
+
+.. list-table:: Virtual Clusters I
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **Introduction and Overview**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Hadoop Virtual Cluster**
+        - Cloudmesh
+        - Discussion
+        - Advanced Topics with Hadoop
+             - Zookeeper and HBase
+             - Yarn
+             - OpenStack Havana
+     - Not yet available
+     - Not yet available
+     - 
+
+Week 6
+-------------------------------------------------------------------------------
+
+
+Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
+*******************************************************************************
+
+.. list-table:: Virtual Cluster II
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **Composite Cluster with Sub-Clusters**
+        - Introduction and Overview
+        - Creating a Cross Resource Virtual Cluster
+     - Not yet available
+     - Not yet available
+     - 
+   * - **OpenMPI Virtual Cluster**
+        - Introduction and Overview
+        - HPC Stack - MPI
+        - Cloudmesh HPC
+     - Not yet available
+     - Not yet available
+     - 
+   * - **MongoDB Virtual Cluster**
+        - Introduction and Overview
+        - Sharded MongoDB
+     - Not yet available
+     - Not yet available
+     - 
+
+Week 7
+-------------------------------------------------------------------------------
+
+
+Other Technologies (under preparation)
+*******************************************************************************
+
+.. list-table:: Other Technologies
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **Virtualization Technologies**
+         - Introduction and Overview
+         - Hypervisors
+             - KVM
+             - Containers (LXC)
+             - Docker
+     - Not yet available
+     - Not yet available
+     - 
+   * - **VM Software**
+         - Vagrant
+         - Oracle VirtualBox
+         - VMWare
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Apache Big Data Stack (ABDS)**
+         - Apache Zookeeper
+         - Apache Storm
+         - Apache Mesos
+         - Apache HBase
+         - Apache Spark
+         - Apache Pig
+         - Apache Hive
+     - Not yet available
+     - Not yet available
+     - 
+   * - **Glossary**
+     - Not yet available
+     - Not yet available
+     - 
+
+Week 8
+-------------------------------------------------------------------------------
+
+
+Future (under preparation)
+*******************************************************************************
+
+.. list-table:: Future
+   :widths: 15 10 30 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+   * - **What will the Future Bring**
+     - Not yet available
+     - Not yet available
+     - 
+   * - **GE Industrial Internet of Things (IIoT)**
+     - Not yet available
+     - Not yet available
+     - 
 
