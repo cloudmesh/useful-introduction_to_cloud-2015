@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
   
 
   
@@ -44,9 +46,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +61,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -156,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +193,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="openstack-web-dashboard-horizon">
 <h1>OpenStack Web Dashboard (Horizon)<a class="headerlink" href="#openstack-web-dashboard-horizon" title="Permalink to this headline">¶</a></h1>
@@ -207,8 +214,8 @@ Font-Awesome, Jasmine, Qunit, Rickshaw, etc.</p>
 </div>
 <div class="section" id="horizon-on-futuresystems">
 <h2>Horizon on FutureSystems<a class="headerlink" href="#horizon-on-futuresystems" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<caption>Horizon endpoints</caption>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Horizon endpoints</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -239,15 +246,15 @@ Font-Awesome, Jasmine, Qunit, Rickshaw, etc.</p>
 <ul class="simple">
 <li>Open the following URL:
 <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon">India_OpenStack_Juno</a></li>
-<li>Use <tt class="docutils literal"><span class="pre">OS_USERNAME</span></tt> and <tt class="docutils literal"><span class="pre">OS_PASSWORD</span></tt> as a User Name and Password on Horizon.
-You can find your <tt class="docutils literal"><span class="pre">OS_USERNAME</span></tt> and <tt class="docutils literal"><span class="pre">OS_PASSWORD</span></tt> in the
-<tt class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></tt></li>
+<li>Use <code class="docutils literal"><span class="pre">OS_USERNAME</span></code> and <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> as a User Name and Password on Horizon.
+You can find your <code class="docutils literal"><span class="pre">OS_USERNAME</span></code> and <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> in the
+<code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you are using other versions of OpenStack on different cloud hosts,
 try to find your identity file with the following pattern of the path.
-<tt class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/[cloud</span> <span class="pre">host]/[openstack</span> <span class="pre">version]/[openrc.sh</span> <span class="pre">or</span> <span class="pre">novarc.sh]</span></tt></p>
+<code class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/[cloud</span> <span class="pre">host]/[openstack</span> <span class="pre">version]/[openrc.sh</span> <span class="pre">or</span> <span class="pre">novarc.sh]</span></code></p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>$ cat ~/.cloudmesh/clouds/india/juno/openrc.sh
 export OS_USERNAME=albert
@@ -306,7 +313,8 @@ accessible.</li>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -331,7 +339,7 @@ accessible.</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
