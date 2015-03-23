@@ -277,7 +277,7 @@ Cloudmesh IPython Learning Server
      - Description of the Lessons
    * - |video-cm-ipython-learning|
      - 15:30 min
-     - The Cloudmesh IPython Lerning Server
+     - The Cloudmesh IPython Learning Server
      - A lesson on how to IPython for directly executing the notebooks
        contained on on the Cloudmesh learning Web pages.
 
