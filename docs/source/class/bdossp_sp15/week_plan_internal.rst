@@ -36,82 +36,27 @@ Weekly Plan (Internal Use Only for Sharing Schedule)
      - **Future**
      - 05/01
 
-* Week 1 Live on 03/13
+Schedule Week 1 
+-------------------------------------------------------------------------------
+
+* Live on 03/13
 
 .. include:: week1.rst
 
 
-* Week 2 live on 03/20
+Schedule Week 2 
+-------------------------------------------------------------------------------
+
+* live on 03/20
 
 .. include:: week2.rst
 
-Week 3
+Schedule Week 3
 -------------------------------------------------------------------------------
 
 * Scheduled: 03/27
 
-Cloudmesh - Cloud Management Software (under preparation)
-*******************************************************************************
-
-.. Cloudmesh is a cloud resource management software written in Python. It
-        automates launching multiple VM instances across different cloud platforms
-        including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
-        Eucalyptus.  The web interface of Cloudmesh help users and administrators
-        manage entire cloud resources. Most cutting-edge technologies such as Apache
-        LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
-        applied to enhance Web Service, Command Line Tools and Rest APIs.
-
-.. list-table:: Basics of Cloudmesh
-   :widths: 15 10 30 10
-   :header-rows: 1
-
-   * - Topic
-     - Video
-     - Text
-     - Lab sessions
-   * - **Introduction and Overview**
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
-   * - **Cloudmesh for Beginners**
-        - Installation
-        - Command Line Tools (CLI)
-        - Web Interface (GUI)
-        - REST APIs
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
-   * - **IPython on Cloudmesh**
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
-   * - **Using OpenStack on Cloudmesh**
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
-
-.. list-table:: Advanced Cloudmesh
-   :widths: 15 10 30 10
-   :header-rows: 1
-
-   * - Topic
-     - Video
-     - Text
-     - Lab sessions
-   * - **Introduction and Overview**
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
-   * - **VM Management**
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
-   * - **Virtual Clusters with Cloudmesh**
-        - SSH Connections between nodes
-        - Host Configuration
-     - `00 mins <>`_
-     - `00 mins <>`_
-     - 
+.. include:: week3.rst
 
 Week 4
 -------------------------------------------------------------------------------
