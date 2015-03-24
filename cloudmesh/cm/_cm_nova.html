@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>nova command in Cloudmesh &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#independent-study-at-iu">Independent Study at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#student-employment-at-iu">Student Employment at IU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contact.html#support">Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#fabric">Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parallel.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hpc/hpc.html">HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware/indiana.html">Hardware at Indiana University</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/history.html">Historical and Functionality Perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/makefile.html">Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/shell.html">Shell Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/configure.html">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sections">Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#listtable">Listtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#exceltable">Exceltable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#boxes">Boxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#sidebar-directive">Sidebar directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#autorun">Autorun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#hyperlinks">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst.html#todo">Todo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../management/create_image.html">How to setup a Cloudmesh Image</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li><tt class="docutils literal"><span class="pre">nova</span></tt> command in Cloudmesh</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/cm/_cm_nova.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="nova-command-in-cloudmesh">
+<h1><tt class="docutils literal"><span class="pre">nova</span></tt> command in Cloudmesh<a class="headerlink" href="#nova-command-in-cloudmesh" title="Permalink to this headline">¶</a></h1>
+<p>Cloudmesh provides a wrapper command for nova client tool with a
+switchable novarc command. You can run <tt class="docutils literal"><span class="pre">nova</span></tt> command to select the
+cloud that you want to use.</p>
+<div class="section" id="set-cloud">
+<h2>Set cloud<a class="headerlink" href="#set-cloud" title="Permalink to this headline">¶</a></h2>
+<p>You choose the cloud to run <tt class="docutils literal"><span class="pre">nova</span></tt> command e.g. india or icehouse on
+futuresystems.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>!cm nova set india
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">india</span> <span class="ow">is</span> <span class="nb">set</span>
+</pre></div>
+</div>
+<p>Now you are loaded <strong>novarc</strong> for India OpenStack.</p>
+</div>
+<div class="section" id="novarc-contents">
+<h2>Novarc Contents<a class="headerlink" href="#novarc-contents" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">info</span></tt> command displays the OpenStack environment variables for the
+selected novarc.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>!cm nova info
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>!cm &quot;nova help&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>usage: nova [--version] [--debug] [--os-cache] [--timings] [--timeout &lt;seconds&gt;] [--os-auth-token OS_AUTH_TOKEN] [--os-username &lt;auth-user-name&gt;]
+            [--os-user-id &lt;auth-user-id&gt;] [--os-password &lt;auth-password&gt;] [--os-tenant-name &lt;auth-tenant-name&gt;] [--os-tenant-id &lt;auth-tenant-id&gt;] [--os-auth-url &lt;auth-url&gt;]
+            [--os-region-name &lt;region-name&gt;] [--os-auth-system &lt;auth-system&gt;] [--service-type &lt;service-type&gt;] [--service-name &lt;service-name&gt;]
+            [--volume-service-name &lt;volume-service-name&gt;] [--endpoint-type &lt;endpoint-type&gt;] [--os-compute-api-version &lt;compute-api-ver&gt;] [--os-cacert &lt;ca-certificate&gt;]
+            [--insecure] [--bypass-url &lt;bypass-url&gt;]
+            &lt;subcommand&gt; ...
+
+Command-line interface to the OpenStack Nova API.
+
+Positional arguments:
+  &lt;subcommand&gt;
+    absolute-limits             Print a list of absolute limits for a user
+    add-fixed-ip                Add new IP address on a network to server.
+    add-floating-ip             DEPRECATED, use floating-ip-associate instead.
+    add-secgroup                Add a Security Group to a server.
+    agent-create                Create new agent build.
+    agent-delete                Delete existing agent build.
+    agent-list                  List all builds.
+    agent-modify                Modify existing agent build.
+    aggregate-add-host          Add the host to the specified aggregate.
+    aggregate-create            Create a new aggregate with the specified details.
+    aggregate-delete            Delete the aggregate.
+    aggregate-details           Show details of the specified aggregate.
+    aggregate-list              Print a list of all aggregates.
+    aggregate-remove-host       Remove the specified host from the specified aggregate.
+    aggregate-set-metadata      Update the metadata associated with the aggregate.
+    aggregate-update            Update the aggregate&#39;s name and optionally availability zone.
+    availability-zone-list      List all the availability zones.
+    backup                      Backup a server by creating a &#39;backup&#39; type snapshot.
+    boot                        Boot a new server.
+    clear-password              Clear password for a server.
+    cloudpipe-configure         Update the VPN IP/port of a cloudpipe instance.
+    cloudpipe-create            Create a cloudpipe instance for the given project.
+    cloudpipe-list              Print a list of all cloudpipe instances.
+    console-log                 Get console log output of a server.
+    credentials                 Show user credentials returned from auth.
+    delete                      Immediately shut down and delete specified server(s).
+    diagnostics                 Retrieve server diagnostics.
+    dns-create                  Create a DNS entry for domain, name and ip.
+    dns-create-private-domain   Create the specified DNS domain.
+    dns-create-public-domain    Create the specified DNS domain.
+    dns-delete                  Delete the specified DNS entry.
+    dns-delete-domain           Delete the specified DNS domain.
+    dns-domains                 Print a list of available dns domains.
+    dns-list                    List current DNS entries for domain and ip or domain and name.
+    endpoints                   Discover endpoints that get returned from the authenticate services.
+    evacuate                    Evacuate server from failed host.
+    fixed-ip-get                Retrieve info on a fixed ip.
+    fixed-ip-reserve            Reserve a fixed IP.
+    fixed-ip-unreserve          Unreserve a fixed IP.
+    flavor-access-add           Add flavor access for the given tenant.
+    flavor-access-list          Print access information about the given flavor.
+    flavor-access-remove        Remove flavor access for the given tenant.
+    flavor-create               Create a new flavor
+    flavor-delete               Delete a specific flavor
+    flavor-key                  Set or unset extra_spec for a flavor.
+    flavor-list                 Print a list of available &#39;flavors&#39; (sizes of servers).
+    flavor-show                 Show details about the given flavor.
+    floating-ip-associate       Associate a floating IP address to a server.
+    floating-ip-bulk-create     Bulk create floating ips by range.
+    floating-ip-bulk-delete     Bulk delete floating ips by range.
+    floating-ip-bulk-list       List all floating ips.
+    floating-ip-create          Allocate a floating IP for the current tenant.
+    floating-ip-delete          De-allocate a floating IP.
+    floating-ip-disassociate    Disassociate a floating IP address from a server.
+    floating-ip-list            List floating ips.
+    floating-ip-pool-list       List all floating ip pools.
+    get-password                Get password for a server.
+    get-rdp-console             Get a rdp console to a server.
+    get-serial-console          Get a serial console to a server.
+    get-spice-console           Get a spice console to a server.
+    get-vnc-console             Get a vnc console to a server.
+    host-action                 Perform a power action on a host.
+    host-describe               Describe a specific host.
+    host-list                   List all hosts by service.
+    host-update                 Update host settings.
+    hypervisor-list             List hypervisors.
+    hypervisor-servers          List servers belonging to specific hypervisors.
+    hypervisor-show             Display the details of the specified hypervisor.
+    hypervisor-stats            Get hypervisor statistics over all compute nodes.
+    hypervisor-uptime           Display the uptime of the specified hypervisor.
+    image-create                Create a new image by taking a snapshot of a running server.
+    image-delete                Delete specified image(s).
+    image-list                  Print a list of available images to boot from.
+    image-meta                  Set or Delete metadata on an image.
+    image-show                  Show details about the given image.
+    interface-attach            Attach a network interface to a server.
+    interface-detach            Detach a network interface from a server.
+    interface-list              List interfaces attached to a server.
+    keypair-add                 Create a new key pair for use with servers.
+    keypair-delete              Delete keypair given by its name.
+    keypair-list                Print a list of keypairs for a user
+    keypair-show                Show details about the given keypair.
+    list                        List active servers.
+    list-secgroup               List Security Group(s) of a server.
+    live-migration              Migrate running server to a new machine.
+    lock                        Lock a server.
+    meta                        Set or Delete metadata on a server.
+    migrate                     Migrate a server. The new host will be selected by the scheduler.
+    network-associate-host      Associate host with network.
+    network-associate-project   Associate project with network.
+    network-create              Create a network.
+    network-delete              Delete network by label or id.
+    network-disassociate        Disassociate host and/or project from the given network.
+    network-list                Print a list of available networks.
+    network-show                Show details about the given network.
+    pause                       Pause a server.
+    quota-class-show            List the quotas for a quota class.
+    quota-class-update          Update the quotas for a quota class.
+    quota-defaults              List the default quotas for a tenant.
+    quota-delete                Delete quota for a tenant/user so their quota will Revert back to default.
+    quota-show                  List the quotas for a tenant/user.
+    quota-update                Update the quotas for a tenant/user.
+    rate-limits                 Print a list of rate limits for a user
+    reboot                      Reboot a server.
+    rebuild                     Shutdown, re-image, and re-boot a server.
+    refresh-network             Refresh server network information.
+    remove-fixed-ip             Remove an IP address from a server.
+    remove-floating-ip          DEPRECATED, use floating-ip-disassociate instead.
+    remove-secgroup             Remove a Security Group from a server.
+    rename                      Rename a server.
+    rescue                      Reboots a server into rescue mode, which starts the machine from the initial image, attaching the current boot disk as secondary.
+    reset-network               Reset network of a server.
+    reset-state                 Reset the state of a server.
+    resize                      Resize a server.
+    resize-confirm              Confirm a previous resize.
+    resize-revert               Revert a previous resize (and return to the previous VM).
+    resume                      Resume a server.
+    root-password               Change the root password for a server.
+    scrub                       Delete data associated with the project.
+    secgroup-add-default-rule   Add a rule to the default security group.
+    secgroup-add-group-rule     Add a source group rule to a security group.
+    secgroup-add-rule           Add a rule to a security group.
+    secgroup-create             Create a security group.
+    secgroup-delete             Delete a security group.
+    secgroup-delete-default-rule
+                                Delete a rule from the default security group.
+    secgroup-delete-group-rule  Delete a source group rule from a security group.
+    secgroup-delete-rule        Delete a rule from a security group.
+    secgroup-list               List security groups for the current tenant.
+    secgroup-list-default-rules
+                                List rules for the default security group.
+    secgroup-list-rules         List rules for a security group.
+    secgroup-update             Update a security group.
+    server-group-create         Create a new server group with the specified details.
+    server-group-delete         Delete specific server group(s).
+    server-group-get            Get a specific server group.
+    server-group-list           Print a list of all server groups.
+    service-delete              Delete the service.
+    service-disable             Disable the service.
+    service-enable              Enable the service.
+    service-list                Show a list of all running services. Filter by host &amp; binary.
+    shelve                      Shelve a server.
+    shelve-offload              Remove a shelved server from the compute node.
+    show                        Show details about the given server.
+    ssh                         SSH into a server.
+    start                       Start a server.
+    stop                        Stop a server.
+    suspend                     Suspend a server.
+    unlock                      Unlock a server.
+    unpause                     Unpause a server.
+    unrescue                    Restart the server from normal boot disk again.
+    unshelve                    Unshelve a server.
+    usage                       Show usage data for a single tenant.
+    usage-list                  List usage data for all tenants.
+    version-list                List all API versions.
+    volume-attach               Attach a volume to a server.
+    volume-create               Add a new volume.
+    volume-delete               Remove volume(s).
+    volume-detach               Detach a volume from a server.
+    volume-list                 List all the volumes.
+    volume-show                 Show details about a volume.
+    volume-snapshot-create      Add a new snapshot.
+    volume-snapshot-delete      Remove a snapshot.
+    volume-snapshot-list        List all the snapshots.
+    volume-snapshot-show        Show details about a snapshot.
+    volume-type-create          Create a new volume type.
+    volume-type-delete          Delete a specific volume type.
+    volume-type-list            Print a list of available &#39;volume types&#39;.
+    volume-update               Update volume attachment.
+    x509-create-cert            Create x509 cert for a user in tenant.
+    x509-get-root-cert          Fetch the x509 root cert.
+    bash-completion             Prints all of the commands and options to stdout so that the nova.bash_completion script doesn&#39;t have to hard code them.
+    help                        Display help about this program or one of its subcommands.
+    instance-action             Show an action.
+    instance-action-list        List actions on a server.
+    host-meta                   Set or Delete metadata on all instances of a host.
+    host-evacuate               Evacuate all instances from failed host.
+    baremetal-interface-add     Add a network interface to a baremetal node.
+    baremetal-interface-list    List network interfaces associated with a baremetal node.
+    baremetal-interface-remove  Remove a network interface from a baremetal node.
+    baremetal-node-create       Create a baremetal node.
+    baremetal-node-delete       Remove a baremetal node and any associated interfaces.
+    baremetal-node-list         Print list of available baremetal nodes.
+    baremetal-node-show         Show information about a baremetal node.
+    host-servers-migrate        Migrate all instances of the specified host to other available hosts.
+    list-extensions             List all the os-api extensions that are available.
+    net                         Show a network
+    net-create                  Create a network
+    net-delete                  Delete a network
+    net-list                    List networks
+    cell-capacities             Get cell capacities for all cells or a given cell.
+    cell-show                   Show details of a given cell.
+    migration-list              Print a list of migrations.
+    force-delete                Force delete a server.
+    restore                     Restore a soft-deleted server.
+
+Optional arguments:
+  --version                     show program&#39;s version number and exit
+  --debug                       Print debugging output
+  --os-cache                    Use the auth token cache. Defaults to False if env[OS_CACHE] is not set.
+  --timings                     Print call timing info
+  --timeout &lt;seconds&gt;           Set HTTP call timeout (in seconds)
+  --os-auth-token OS_AUTH_TOKEN
+                                Defaults to env[OS_AUTH_TOKEN]
+  --os-username &lt;auth-user-name&gt;
+                                Defaults to env[OS_USERNAME].
+  --os-user-id &lt;auth-user-id&gt;   Defaults to env[OS_USER_ID].
+  --os-password &lt;auth-password&gt;
+                                Defaults to env[OS_PASSWORD].
+  --os-tenant-name &lt;auth-tenant-name&gt;
+                                Defaults to env[OS_TENANT_NAME].
+  --os-tenant-id &lt;auth-tenant-id&gt;
+                                Defaults to env[OS_TENANT_ID].
+  --os-auth-url &lt;auth-url&gt;      Defaults to env[OS_AUTH_URL].
+  --os-region-name &lt;region-name&gt;
+                                Defaults to env[OS_REGION_NAME].
+  --os-auth-system &lt;auth-system&gt;
+                                Defaults to env[OS_AUTH_SYSTEM].
+  --service-type &lt;service-type&gt;
+                                Defaults to compute for most actions
+  --service-name &lt;service-name&gt;
+                                Defaults to env[NOVA_SERVICE_NAME]
+  --volume-service-name &lt;volume-service-name&gt;
+                                Defaults to env[NOVA_VOLUME_SERVICE_NAME]
+  --endpoint-type &lt;endpoint-type&gt;
+                                Defaults to env[NOVA_ENDPOINT_TYPE] or publicURL.
+  --os-compute-api-version &lt;compute-api-ver&gt;
+                                Accepts 1.1 or 3, defaults to env[OS_COMPUTE_API_VERSION].
+  --os-cacert &lt;ca-certificate&gt;  Specify a CA bundle file to use in verifying a TLS (https) server certificate. Defaults to env[OS_CACERT]
+  --insecure                    Explicitly allow novaclient to perform &quot;insecure&quot; SSL (https) requests. The server&#39;s certificate will not be verified against any
+                                certificate authorities. This option should be used with caution.
+  --bypass-url &lt;bypass-url&gt;     Use this API endpoint instead of the Service Catalog. Defaults to env[NOVACLIENT_BYPASS_URL]
+
+See &quot;nova help COMMAND&quot; for help on a specific command.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

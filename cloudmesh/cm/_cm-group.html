@@ -7,14 +7,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lab Sessions &mdash; my Cloudmesh Learning documentation</title>
+  <title>Managing multiple VMs with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
   
 
   
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -28,16 +28,14 @@
   
 
   
-    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  
-
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
-        <link rel="up" title="Lessons" href="../lessons.html"/>
-        <link rel="next" title="Local PBS Queing System" href="lpbs.html"/>
-        <link rel="prev" title="Deploying IPython Notebook Cluster with Cloudmesh launcher" href="ipynb.html"/> 
+        <link rel="up" title="Cloudmesh cm" href="index.html"/>
+        <link rel="next" title="Managing Volumes with Cloudmesh cm" href="_cm-volume.html"/>
+        <link rel="prev" title="Deploying Virtual Cluster with Cloudmesh cm" href="_cm-cluster.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -51,12 +49,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -66,9 +61,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -86,12 +80,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a><ul>
@@ -99,14 +93,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/overview.html">Cloudmesh Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/setup/index.html">Cloudmesh Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/cm/index.html">Cloudmesh cm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/api/index.html">Cloudmesh API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/shell/index.html">Cloudmesh Shell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/gui/index.html">Cloudmesh GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cloudmesh/faq.html">Cloudmesh FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a><ul>
@@ -141,7 +135,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
@@ -166,7 +161,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -188,34 +182,102 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../index.html">Cloudmesh in Classes</a> &raquo;</li>
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
       
-          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
+          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
       
-    <li>Lab Sessions</li>
+    <li>Managing multiple VMs with Cloudmesh cm</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/class/lesson/labs.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/cloudmesh/cm/_cm-group.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
-  <div class="section" id="lab-sessions">
-<h1>Lab Sessions<a class="headerlink" href="#lab-sessions" title="Permalink to this headline">¶</a></h1>
-<p>The following are a set of lab sessions to ensure you progress through
-the course materials.
-Please submit homework on Canvas.  To do so, copy the ASCII text from
-the terminal and enter it into the homework submission system.</p>
-<ul class="simple">
-<li><a class="reference internal" href="system/futuresystemsuse.html#lab-futuresystems-access"><span>Account Application</span></a></li>
-<li><a class="reference internal" href="linux/shell.html#lab-shell"><span>Shell Usage</span></a></li>
-<li><a class="reference internal" href="linux/python.html#lab-python-1"><span>Python - FizzBuzz</span></a></li>
-<li><a class="reference internal" href="linux/python.html#lab-python-2"><span>Python - Setup for FutureSystems</span></a></li>
-<li><a class="reference internal" href="iaas/openstack.html#lab-openstack-1"><span>OpenStack - Launch an Instance</span></a></li>
-</ul>
+  <div class="section" id="managing-multiple-vms-with-cloudmesh-cm">
+<h1>Managing multiple VMs with Cloudmesh cm<a class="headerlink" href="#managing-multiple-vms-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>When you start a cluster of VMs in Cloudmesh CLI, it is required to
+specify a group name for the cluster, so that we can manage the cluster
+according to the cluster name. In Cloudmesh CLI, you may use group
+command to manage groups.</p>
+<p>IPython Alias</p>
+<p>With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters are between &#8220;&#8221; so that they are properly set. Just execute
+the following lines.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+</pre></div>
+</div>
+<p>We are using now one of the methods to call the cm commands in the
+following sections.</p>
+<div class="section" id="group-command">
+<h2><tt class="docutils literal"><span class="pre">group</span></tt> command<a class="headerlink" href="#group-command" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">group</span></tt> allows us to perform simple grouping of VMs but also
+images and flavors. A group is essentially a tuple in which you can add
+to a named group a type of an object and its unique name. The group
+command allows you to create a group, add items to groups, and list
+groups. For more information, one can refer to the manual page.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group -h&quot;
+</pre></div>
+</div>
+<p>To create a group with the name sample-group you can use the command:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group create sample-group&quot;
+</pre></div>
+</div>
+<p>Then you can list the groups with:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group list&quot;
+</pre></div>
+</div>
+<p>To add a VM named sample-vm to the group (make sure the VM exists before
+add it), you can use:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group add item sample-group vm sample-vm&quot;
+</pre></div>
+</div>
+<p>To list the elements in a group you can use:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group show sample-group&quot;
+</pre></div>
+</div>
+<p>To delete a VM from a group you can use:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove item sample-group vm sample-vm&quot;
+</pre></div>
+</div>
+<p>To delete a group:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove sample-group&quot;
+</pre></div>
+</div>
+<p>Please note that deletion of a group does not delete the accociated
+objects in that group. It only removes the object that stores the types
+and objects for that group.</p>
+</div>
+<div class="section" id="working-with-group">
+<h2>Working with group<a class="headerlink" href="#working-with-group" title="Permalink to this headline">¶</a></h2>
+<p>Groups are conveniently integrated into the cloudmesh shell. You may
+include a VM into a group while you create it, delete VMs by groups and
+when you create a cluster, a group name has to be provided.</p>
+<p>To start a VM and add it to group, you can use the group parameter. If
+the group doesn&#8217;t exist, one will be created:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --group=sample&quot;
+</pre></div>
+</div>
+<p>To delete the virtual machines specified in a group you can use the
+command:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete --group=sample&quot;
+</pre></div>
+</div>
+<p>To create multiple vms that are part of a vitual cluster, you need to
+provide a group name. If the group doesn&#8217;t exist, one will be created.
+If the group exist and it has VMs in it already, the newly created
+virtual machines will be included into the cluster. The following
+example will create two virtual machines while assuming the default
+cloud, flavor, and image. Make sure you set them before if they have not
+been set.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=2 --group=sample&quot;
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -224,10 +286,10 @@ the terminal and enter it into the homework submission system.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="lpbs.html" class="btn btn-neutral float-right" title="Local PBS Queing System">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-volume.html" class="btn btn-neutral float-right" title="Managing Volumes with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ipynb.html" class="btn btn-neutral" title="Deploying IPython Notebook Cluster with Cloudmesh launcher"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_cm-cluster.html" class="btn btn-neutral" title="Deploying Virtual Cluster with Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -240,8 +302,7 @@ the terminal and enter it into the homework submission system.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -266,7 +327,7 @@ the terminal and enter it into the homework submission system.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

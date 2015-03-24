@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,8 +29,6 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
-  
-
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -51,12 +49,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -66,9 +61,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -89,7 +83,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -141,7 +135,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ipython/_ipython.html">IPython</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a><ul>
@@ -166,7 +161,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -196,7 +190,7 @@
       
           <li><a href="mongodb_cluster.html">MongoDB Sharded Cluster</a> &raquo;</li>
       
-          <li><a href="virtual_cluster.html">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a> &raquo;</li>
+          <li><a href="virtual_cluster.html">Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a> &raquo;</li>
       
     <li>Deploying Hadoop Cluster</li>
       <li class="wy-breadcrumbs-aside">
@@ -207,7 +201,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="deploying-hadoop-cluster">
 <h1>Deploying Hadoop Cluster<a class="headerlink" href="#deploying-hadoop-cluster" title="Permalink to this headline">¶</a></h1>
@@ -234,16 +228,16 @@ virtual instances so that large amounts of distributed processing data can be
 analyzed with better speed. Deploying Hadoop Cluster on OpenStack FutureSystems
 is offered by a manual and an automated instruction.</p>
 <p>With Cloudmesh, Cloud Management Software, Hadoop Cluster can be deployed with
-a simple command execution. <code class="docutils literal"><span class="pre">launcher</span></code> command in Cloudmesh helps you deploy
+a simple command execution. <tt class="docutils literal"><span class="pre">launcher</span></tt> command in Cloudmesh helps you deploy
 Hadoop Cluster with default settings automatically.  You can deploy Hadoop
-Cluster with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code> by following this page: <a class="reference external" href="hadoop_cluster_cm.html">Deploying Hadoop Cluster
+Cluster with <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></tt> by following this page: <a class="reference external" href="hadoop_cluster_cm.html">Deploying Hadoop Cluster
 with cm launcher</a>.  This tutorial taks 15-20 minutes.
-For more information of <code class="docutils literal"><span class="pre">launcher</span></code>, see <a class="reference external" href="cm_launcher.html">here</a></p>
+For more information of <tt class="docutils literal"><span class="pre">launcher</span></tt>, see <a class="reference external" href="cm_launcher.html">here</a></p>
 <p>If you are willing to configure Hadoop Cluster manually, please follow the
 page: <a class="reference external" href="hadoop_cluster_manual.html">Deploying Hadoop Cluster on India OpenStack</a>. This tutorial takes 30-45 minutes.</p>
 </div>
 <div class="section" id="hadoop-cluster-installation-with-cm-launcher">
-<h2>Hadoop Cluster Installation with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code><a class="headerlink" href="#hadoop-cluster-installation-with-cm-launcher" title="Permalink to this headline">¶</a></h2>
+<h2>Hadoop Cluster Installation with <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></tt><a class="headerlink" href="#hadoop-cluster-installation-with-cm-launcher" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul class="simple">
 </ul>
@@ -269,7 +263,7 @@ page: <a class="reference external" href="hadoop_cluster_manual.html">Deploying 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="additional_examples.html" class="btn btn-neutral float-right" title="Examples on FutureSystems">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="additional_examples.html" class="btn btn-neutral float-right" title="Examples on FutureSystems"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="virtual_cluster.html" class="btn btn-neutral" title="Deploying Virtual Cluster with Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -285,8 +279,7 @@ page: <a class="reference external" href="hadoop_cluster_manual.html">Deploying 
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -311,7 +304,7 @@ page: <a class="reference external" href="hadoop_cluster_manual.html">Deploying 
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
