@@ -268,10 +268,10 @@ on cloud india.</p>
 <p>Each cloud must have a default image and a default flavor to launch vm
 instances in a simple step. The <tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></tt> command provides a way to
 set default values for an image or a flavor.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --flavor=m1.small&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --name=m1.small&quot;
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --image=futuregrid/ubuntu-14.04&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --name=futuregrid/ubuntu-14.04&quot;
 </pre></div>
 </div>
 </div>
@@ -341,7 +341,7 @@ selected or default cloud will be used</li>
 cloud or select a cloud to work with so that you don&#8217;t have to type in a
 cloud everytime you need to specify a cloud, to set india as default
 cloud</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set default india&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default cloud india&quot;
 </pre></div>
 </div>
 <p>to select a cloud</p>
@@ -414,10 +414,10 @@ vmname=_vmname[0]
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india&quot;
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm ip {vmname} --cloud=india&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm ip assign {vmname} --cloud=india&quot;
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">ip</span> <span class="pre">test_1</span> <span class="pre">--cloud=india&quot;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">ip</span> <span class="pre">assign</span> <span class="pre">test_1</span> <span class="pre">--cloud=india&quot;</span></tt></p>
 <p>Then you can login to this VM by(note here you need to provide the login
 name for your VM, it varys depend on the image you use while you start
 the VM, e.g. for ubuntu, you may type &#8211;ln=ubuntu):</p>
