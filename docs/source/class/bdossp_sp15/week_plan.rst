@@ -150,21 +150,21 @@ utilities with various exercises.
    * - **Shell Scripting**                                                         
      - `15 mins <https://www.youtube.com/watch?v=TBOG3wmU8ZA&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=2>`_
      - `30 mins <../lesson/linux/shell.html>`_
-     - - `5 mins <../lesson/linux/shell.html#exercises>`_, `5 mins
-       <../lesson/linux/shell.html#id7>`_, `10 mins
-       <../lesson/linux/shell.html#id11>`_, `10 mins <../lesson/linux/shell.html#id14>`_
+     - `5 mins <../lesson/linux/shell.html#exercises>`_,
+       `5 mins <../lesson/linux/shell.html#id7>`_,
+       `10 mins <../lesson/linux/shell.html#id11>`_,
+       `10 mins <../lesson/linux/shell.html#id14>`_
      - 03/20
-     - 03/27 Labs (1), (2), (3), (4)
+     - 03/27 all 4 Labs 
    * - **Editors**                            
         - Emacs, vi, and nano                                           
      - `5 mins <https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3>`_
      - `30 mins <../lesson/linux/editors.html>`_
-     -
+     - see (b) below
      - 03/20
-     - 03/27
+     - 03/27 see (b) below
    * - **Python**                             
-        - virtualenv                                                                                  
-        - Pypi                                                         
+        - virtualenv, Pypi                                                                                
      - `27 mins <https://www.youtube.com/watch?v=e_RuGr1dL0c&index=7&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
      - `1 hour <../lesson/linux/python.html>`_
      - `30 mins <../lesson/linux/python.html#exercises>`_
@@ -174,24 +174,37 @@ utilities with various exercises.
         - yum, apt-get, and brew                                                      
      - `3 mins <https://www.youtube.com/watch?v=Onn9SKdUDUc&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=4>`_
      - `10 mins <../lesson/linux/packagemanagement.html>`_
-     -
+     - see (c) below
      - 03/20
-     - 03/27
+     - 03/27 see (c) below
    * - **Advanced SSH**
-        - SSH Config
-        - SSH Tunnel
+        - SSH Config and Tunnel
      - `3 mins <https://www.youtube.com/watch?v=eYanElmtqMo&index=6&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
      - `20 mins <../lesson/linux/advancedssh.html>`_
-     - - `5 mins <../lesson/linux/advancedssh.html#exercise-i>`_
-       - `5 mins <../lesson/linux/advancedssh.html#exercise-ii>`_
+     - `5 mins <../lesson/linux/advancedssh.html#exercise-i>`_, 
+       `5 mins <../lesson/linux/advancedssh.html#exercise-ii>`_
      - 03/20
-     - 03/27
+     - 03/27 both Labs
    * - **Modules**
      - `3 mins <https://www.youtube.com/watch?v=0mBERd57pZ8&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=6>`_
      - `10 mins <../ lesson/linux/modules.html>`_
      - `5 mins <../lesson/linux/modules.html#exercises>`_
      - 03/20
      - 03/27
+
+
+* (b) Find an editor that you will be useing to do your programming
+  with. For advanced Python programming we recommend PyCharm. However
+  you can probably only use this on your local computer. The way you
+  could use it is to edit python locally, check the code into github
+  and check it out into your vm or your login on
+  india.futuresystems.org. This is how many of us work.
+* (c) locate a package that you install on your VM that you started
+  with Openstack. Provide a verification that the package was
+  installed (log). Do not forget to delete the VM after you are
+  done. Which package manager is used on ubuntu?
+
+
 
 Length of the lessons in Week 1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -230,13 +243,13 @@ Microsoft Azure.
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
      - 
      - 03/27
-     - 04/03
+     - 
    * - **OpenStack for Beginners**
      - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
      -
      -
      - 03/27
-     - 04/03
+     - 
    * - **Compute Engine (Nova)**
      -
      - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
@@ -254,19 +267,19 @@ Microsoft Azure.
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#swift-storage>`_
      -
      - 03/27
-     - 04/03
+     - 
    * - **Network (Neutron)**
      - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#neutron-network>`_
      -
      - 03/27
-     - 04/03
+     - 
    * - **Introduction to OpenStack Juno Release**
      - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
      - 03/27
-     - 04/03
+     - 
 
 .. list-table:: Other IaaS Platforms - Public Commercial Clouds
    :widths: 15 10 30 10 10 10
