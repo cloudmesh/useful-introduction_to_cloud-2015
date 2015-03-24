@@ -245,6 +245,18 @@ html_logo = "images/cm-logo-24.png"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+
+#def setup(app):
+#   #app.add_javascript("custom.js")
+#   app.add_stylesheet("my_theme.css")
+
+#html_style = 'css/my_theme.css' 
+html_context = {
+    'css_files': [
+        '_static/css/my_theme.css',  # overrides for wide tables in RTD theme
+        ],
+    }
+
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 #html_last_updated_fmt = '%b %d, %Y'
