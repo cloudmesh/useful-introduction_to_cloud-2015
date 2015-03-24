@@ -250,13 +250,13 @@ Microsoft Azure.
      -
      - 03/30
      - 
-   * - -- **Compute Engine (Nova)**
+   * - -- Compute Engine (Nova)
      -
      - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
      - 03/30
      - 04/03
-   * - -- **Web Dashboard (Horizon)**
+   * - -- Web Dashboard (Horizon)
      - 
      - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
      - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
