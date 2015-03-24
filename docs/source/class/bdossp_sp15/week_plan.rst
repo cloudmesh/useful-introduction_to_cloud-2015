@@ -66,26 +66,26 @@ utilities with various exercises.
      - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_
      - `10 mins <../lesson/collaboration/overview.html>`_
      - 
-     - 03/20
+     - 03/23
      - 
    * - **Google**
         - Google+, Hangout, Remote Desktop
      - `4 mins  <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_
      - `15 mins  <../lesson/google.html>`_
      -
-     - 03/20
+     - 03/23
      - 
    * - **Shell Access**                  
      - `3 mins <https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx>`_
      - `10 mins <../lesson/shell-access.html>`_
      - `5 mins <../lesson/shell-access.html#exercise>`_
-     - 03/20
+     - 03/23
      - 03/27 
    * - **GitHub**
      - `18 mins <https://www.youtube.com/watch?v=KrAjal1a30w&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=4>`_
      - `30 mins <../lesson/git.html>`_
      - `10 mins <../lesson/git.html#exercise>`_
-     - 03/20
+     - 03/23
      - 03/27 
 
 
@@ -104,25 +104,25 @@ utilities with various exercises.
      - `4 mins <https://www.youtube.com/watch?v=pQb2VV1zNIc&feature=em-upload_owner>`_
      - `10 mins <../../accounts/ssh.html#s-using-ssh>`_
      - see (a) below
-     - 03/20
+     - 03/23
      - 03/27 see (a) below
    * - **Account Creation**
      - `12 mins <https://www.youtube.com/watch?v=X6zeVEALzTk>`_
      - `10 mins <../../accounts/accounts.html>`_
      - see (a) below
-     - 03/20
+     - 03/23
      - 03/27 see (a) below
    * - **Remote Login**                                                                             
      - `6 mins <https://mix.office.com/watch/eddgjmovoty0>`_ 
      - `10 mins <../lesson/system/futuresystemsuse.html#remote-login>`_
      - see (a) below
-     - 03/20
+     - 03/23
      - 03/27 see (a) below
    * - **Putty for Windows**
      - `11 mins <https://mix.office.com/watch/9z30n7rs67x0>`_
      - `10 mins <../lesson/system/futuresystemsuse.html#putty-under-preparation>`_
      - see (a) below
-     - 03/20
+     - 03/23
      - 03/27 see (a) below
 
 * (a) Create an account on the FutureSystems Portal, upload your ssh
@@ -145,7 +145,7 @@ utilities with various exercises.
      - `4 mins <https://www.youtube.com/watch?v=2uVZrGPCNcY&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=1>`_
      - `5 mins <../lesson/linux/overview.html>`_
      - 
-     - 03/20
+     - 03/23
      - 
    * - **Shell Scripting**                                                         
      - `15 mins <https://www.youtube.com/watch?v=TBOG3wmU8ZA&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=2>`_
@@ -154,28 +154,28 @@ utilities with various exercises.
        `5 mins <../lesson/linux/shell.html#id7>`_,
        `10 mins <../lesson/linux/shell.html#id11>`_,
        `10 mins <../lesson/linux/shell.html#id14>`_
-     - 03/20
+     - 03/23
      - 03/27 all 4 Labs 
    * - **Editors**                            
         - Emacs, vi, and nano                                           
      - `5 mins <https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3>`_
      - `30 mins <../lesson/linux/editors.html>`_
      - see (b) below
-     - 03/20
+     - 03/23
      - 03/27 see (b) below
    * - **Python**                             
         - virtualenv, Pypi                                                                                
      - `27 mins <https://www.youtube.com/watch?v=e_RuGr1dL0c&index=7&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
      - `1 hour <../lesson/linux/python.html>`_
      - `30 mins <../lesson/linux/python.html#exercises>`_
-     - 03/20
+     - 03/23
      - 03/27
    * - **Package Managers**                   
         - yum, apt-get, and brew                                                      
      - `3 mins <https://www.youtube.com/watch?v=Onn9SKdUDUc&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=4>`_
      - `10 mins <../lesson/linux/packagemanagement.html>`_
      - see (c) below
-     - 03/20
+     - 03/23
      - 03/27 see (c) below
    * - **Advanced SSH**
         - SSH Config and Tunnel
@@ -183,13 +183,13 @@ utilities with various exercises.
      - `20 mins <../lesson/linux/advancedssh.html>`_
      - `5 mins <../lesson/linux/advancedssh.html#exercise-i>`_, 
        `5 mins <../lesson/linux/advancedssh.html#exercise-ii>`_
-     - 03/20
+     - 03/23
      - 03/27 both Labs
    * - **Modules**
      - `3 mins <https://www.youtube.com/watch?v=0mBERd57pZ8&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=6>`_
      - `10 mins <../ lesson/linux/modules.html>`_
      - `5 mins <../lesson/linux/modules.html#exercises>`_
-     - 03/20
+     - 03/23
      - 03/27
 
 
@@ -242,43 +242,43 @@ Microsoft Azure.
      - `12 mins <https://mix.office.com/watch/u7uovy9i06jo>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
      - 
-     - 03/27
+     - 03/30
      - 
    * - **OpenStack for Beginners**
      - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
      -
      -
-     - 03/27
+     - 03/30
      - 
-   * - **Compute Engine (Nova)**
+   * - -- Compute Engine (Nova)
      -
      - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
-     - 03/27
+     - 03/30
      - 04/03
-   * - **Web Dashboard (Horizon)**
+   * - -- Web Dashboard (Horizon)
      - 
      - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
      - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
-     - 03/27
+     - 03/30
      - 04/03
    * - **Storage (Swift)**
      - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#swift-storage>`_
      -
-     - 03/27
+     - 03/30
      - 
    * - **Network (Neutron)**
      - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#neutron-network>`_
      -
-     - 03/27
+     - 03/30
      - 
    * - **Introduction to OpenStack Juno Release**
      - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
      - 
-     - 03/27
+     - 03/30
      - 
 
 .. list-table:: Other IaaS Platforms - Public Commercial Clouds
@@ -295,13 +295,13 @@ Microsoft Azure.
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
      - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
      - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
-     - 03/27
+     - 03/30
      - 04/03
    * - **Microsoft Azure**
      - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
      - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
      - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise1>`_
-     - 03/27
+     - 03/30
      - 04/03
 
 .. list-table:: Additional (optional) Further Study Materials
@@ -367,7 +367,7 @@ Cloudmesh - Cloud Management Software (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
    * - **Cloudmesh for Beginners**
         - Installation
@@ -377,19 +377,19 @@ Cloudmesh - Cloud Management Software (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
    * - **IPython on Cloudmesh**
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
    * - **Using OpenStack on Cloudmesh**
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
 
 .. list-table:: Advanced Cloudmesh
@@ -406,13 +406,13 @@ Cloudmesh - Cloud Management Software (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
    * - **VM Management**
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
    * - **Virtual Clusters with Cloudmesh**
         - SSH Connections between nodes
@@ -420,7 +420,7 @@ Cloudmesh - Cloud Management Software (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/03
+     - 04/06
      - 04/10
 
 Week 4
@@ -450,7 +450,7 @@ IT Operations - Automation and Orchestration (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/10
+     - 04/13
      - 04/17
    * - **Discussion**
         - Orchestration vs Collective DevOps
@@ -459,7 +459,7 @@ IT Operations - Automation and Orchestration (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/10
+     - 04/13
      - 04/17
 
 
@@ -487,13 +487,13 @@ Virtual Clusters I (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/17
+     - 04/20
      - 04/24
    * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
      - Not yet available
      - Not yet available
      - 
-     - 04/17
+     - 04/20
      - 04/24
    * - **Hadoop Virtual Cluster**
         - Cloudmesh
@@ -505,7 +505,7 @@ Virtual Clusters I (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/17
+     - 04/20
      - 04/24
 
 Week 6
@@ -531,7 +531,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/24
+     - 04/27
      - 05/01
    * - **OpenMPI Virtual Cluster**
         - Introduction and Overview
@@ -540,7 +540,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/24
+     - 04/27
      - 05/01
    * - **MongoDB Virtual Cluster**
         - Introduction and Overview
@@ -548,7 +548,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/24
+     - 04/27
      - 05/01
 
 Week 7
@@ -577,7 +577,7 @@ Other Technologies (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 05/01
+     - 05/04
      - 05/06
    * - **VM Software**
          - Vagrant
@@ -586,7 +586,7 @@ Other Technologies (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 05/01
+     - 05/04
      - 05/06
    * - **Apache Big Data Stack (ABDS)**
          - Apache Zookeeper
@@ -599,13 +599,13 @@ Other Technologies (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 05/01
+     - 05/04
      - 05/06
    * - **Glossary**
      - Not yet available
      - Not yet available
      - 
-     - 05/01
+     - 05/04
      - 05/06
 
 Week 8
