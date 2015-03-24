@@ -8,5 +8,5 @@
 
 
 - Tuesdays 9-10 am
-- Wednesday 4-5 pm
+- Wednesday 7-8 pm
 - Thursday 9-10 am
