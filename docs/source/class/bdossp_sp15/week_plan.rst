@@ -64,31 +64,31 @@ utilities with various exercises.
      - Lab Session Homework
    * - **Overview and Introduction**
      - `2 mins <https://www.youtube.com/watch?v=ZWzYGwnbZK4&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=1>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/collaboration/overview.html>`_
+     - `10 mins <../lesson/collaboration/overview.html>`_
      - 
      - 03/20
-     - 03/27
+     - 
    * - **Google**
-        - Google+
-        - Google Hangout
-        - Remote Desktop
+        - Google+, Hangout, Remote Desktop
      - `4 mins  <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_
-     - `15 mins  <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/google.html>`_
+     - `15 mins  <../lesson/google.html>`_
      -
      - 03/20
-     - 03/27
+     - 
    * - **Shell Access**                  
      - `3 mins <https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/shell-access.html>`_
-     - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/shell-access.html#exercise>`_
+     - `10 mins <../lesson/shell-access.html>`_
+     - `5 mins <../lesson/shell-access.html#exercise>`_
      - 03/20
-     - 03/27
+     - 03/27 
    * - **GitHub**
      - `18 mins <https://www.youtube.com/watch?v=KrAjal1a30w&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=4>`_
-     - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/git.html>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/git.html#exercise>`_
+     - `30 mins <../lesson/git.html>`_
+     - `10 mins <../lesson/git.html#exercise>`_
      - 03/20
-     - 03/27
+     - 03/27 
+
+
 
 .. list-table:: System Access to FutureSystems                                                                              
    :widths: 15 10 30 10 10 10
@@ -102,29 +102,35 @@ utilities with various exercises.
      - Lab Session Homework
    * - **ssh-keygen**
      - `4 mins <https://www.youtube.com/watch?v=pQb2VV1zNIc&feature=em-upload_owner>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh>`_
-     -
+     - `10 mins <../../accounts/ssh.html#s-using-ssh>`_
+     - see (a) below
      - 03/20
-     - 03/27
+     - 03/27 see (a) below
    * - **Account Creation**
      - `12 mins <https://www.youtube.com/watch?v=X6zeVEALzTk>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/accounts.html>`_
-     -
+     - `10 mins <../../accounts/accounts.html>`_
+     - see (a) below
      - 03/20
-     - 03/27
+     - 03/27 see (a) below
    * - **Remote Login**                                                                             
      - `6 mins <https://mix.office.com/watch/eddgjmovoty0>`_ 
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/system/futuresystemsuse.html#remote-login>`_
-     -
+     - `10 mins <../lesson/system/futuresystemsuse.html#remote-login>`_
+     - see (a) below
      - 03/20
-     - 03/27
+     - 03/27 see (a) below
    * - **Putty for Windows**
      - `11 mins <https://mix.office.com/watch/9z30n7rs67x0>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/system/futuresystemsuse.html#putty-under-preparation>`_
-     -
+     - `10 mins <../lesson/system/futuresystemsuse.html#putty-under-preparation>`_
+     - see (a) below
      - 03/20
-     - 03/27
+     - 03/27 see (a) below
 
+* (a) Create an account on the FutureSystems Portal, upload your ssh
+  key and log into india. Dependent on your OS you may or may not need
+  to use putty. Please identify a location from where you can login
+  via ssh. Maybe such a location exists outside of your office.
+
+       
 .. list-table:: Linux Basics
    :widths: 15 10 30 10 10 10
    :header-rows: 1
@@ -137,23 +143,22 @@ utilities with various exercises.
      - Lab Session Homework
    * - **Overview and Introduction** 
      - `4 mins <https://www.youtube.com/watch?v=2uVZrGPCNcY&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=1>`_
-     - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/overview.html>`_
+     - `5 mins <../lesson/linux/overview.html>`_
      - 
      - 03/20
-     - 03/27
+     - 
    * - **Shell Scripting**                                                         
      - `15 mins <https://www.youtube.com/watch?v=TBOG3wmU8ZA&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=2>`_
-     - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html>`_
-     - - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#exercises>`_
-       - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id7>`_
-       - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id11>`_
-       - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/shell.html#id14>`_
+     - `30 mins <../lesson/linux/shell.html>`_
+     - - `5 mins <../lesson/linux/shell.html#exercises>`_, `5 mins
+       <../lesson/linux/shell.html#id7>`_, `10 mins
+       <../lesson/linux/shell.html#id11>`_, `10 mins <../lesson/linux/shell.html#id14>`_
      - 03/20
-     - 03/27
+     - 03/27 Labs (1), (2), (3), (4)
    * - **Editors**                            
         - Emacs, vi, and nano                                           
      - `5 mins <https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3>`_
-     - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/editors.html>`_
+     - `30 mins <../lesson/linux/editors.html>`_
      -
      - 03/20
      - 03/27
@@ -161,14 +166,14 @@ utilities with various exercises.
         - virtualenv                                                                                  
         - Pypi                                                         
      - `27 mins <https://www.youtube.com/watch?v=e_RuGr1dL0c&index=7&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
-     - `1 hour <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/python.html>`_
-     - `30 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/python.html#exercises>`_
+     - `1 hour <../lesson/linux/python.html>`_
+     - `30 mins <../lesson/linux/python.html#exercises>`_
      - 03/20
      - 03/27
    * - **Package Managers**                   
         - yum, apt-get, and brew                                                      
      - `3 mins <https://www.youtube.com/watch?v=Onn9SKdUDUc&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=4>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/packagemanagement.html>`_
+     - `10 mins <../lesson/linux/packagemanagement.html>`_
      -
      - 03/20
      - 03/27
@@ -176,15 +181,15 @@ utilities with various exercises.
         - SSH Config
         - SSH Tunnel
      - `3 mins <https://www.youtube.com/watch?v=eYanElmtqMo&index=6&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
-     - `20 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/advancedssh.html>`_
-     - - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/advancedssh.html#exercise-i>`_
-       - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/advancedssh.html#exercise-ii>`_
+     - `20 mins <../lesson/linux/advancedssh.html>`_
+     - - `5 mins <../lesson/linux/advancedssh.html#exercise-i>`_
+       - `5 mins <../lesson/linux/advancedssh.html#exercise-ii>`_
      - 03/20
      - 03/27
    * - **Modules**
      - `3 mins <https://www.youtube.com/watch?v=0mBERd57pZ8&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=6>`_
-     - `10 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/modules.html>`_
-     - `5 mins <http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/linux/modules.html#exercises>`_
+     - `10 mins <../ lesson/linux/modules.html>`_
+     - `5 mins <../lesson/linux/modules.html#exercises>`_
      - 03/20
      - 03/27
 
