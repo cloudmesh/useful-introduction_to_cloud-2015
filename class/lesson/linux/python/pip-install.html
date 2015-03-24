@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,10 @@
   
   
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/my_theme.css" type="text/css" />
   
 
   
@@ -44,9 +48,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+        
+          <a href="../../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,8 +63,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul>
+          
+          
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -78,7 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../lessons.html">Lessons</a></li>
 </ul>
@@ -130,8 +138,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../devops/rpm.html">Package Managers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../ipython/_ipython.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a><ul>
@@ -156,6 +163,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +194,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <p>Often you may need functionality that is not present in Python&#8217;s standard library.
 In this case you have two option:</p>
@@ -199,28 +207,28 @@ Since this is a common situation, there is a service supporting it:
 the <a class="reference external" href="https://pypi.python.org/pypi">Python Package Index</a> (or PyPi for short).</p>
 <p>Our task here is to install the <a href="#id1"><span class="problematic" id="id2">`autopep8`_</span></a> tool from PyPi.
 This will allow us to illustrate the use if virtual environments using
-the <tt class="docutils literal"><span class="pre">virtualenv</span></tt> command, and installing and uninstalling PyPi
-packages using <tt class="docutils literal"><span class="pre">pip</span></tt>.</p>
+the <code class="docutils literal"><span class="pre">virtualenv</span></code> command, and installing and uninstalling PyPi
+packages using <code class="docutils literal"><span class="pre">pip</span></code>.</p>
 <div class="section" id="virtual-environments">
 <h1>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h1>
 <p>Often when you use shared computing resources, such as
-<tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> you will not have permission to install
+<code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> you will not have permission to install
 applications in the default global location.</p>
-<p>Let&#8217;s see where <tt class="docutils literal"><span class="pre">grep</span></tt> is located:</p>
+<p>Let&#8217;s see where <code class="docutils literal"><span class="pre">grep</span></code> is located:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ which grep
 /bin/grep
 </pre></div>
 </div>
-<p>It seems that there are many programs installed in <tt class="docutils literal"><span class="pre">/bin</span></tt> such as
-<tt class="docutils literal"><span class="pre">mkdir</span></tt> and <tt class="docutils literal"><span class="pre">pwd</span></tt>:</p>
+<p>It seems that there are many programs installed in <code class="docutils literal"><span class="pre">/bin</span></code> such as
+<code class="docutils literal"><span class="pre">mkdir</span></code> and <code class="docutils literal"><span class="pre">pwd</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls /bin
 alsacard    dbus-cleanup-sockets  env             hostname         mailx          pwd
 alsaunmute  dbus-daemon           ex              igawk            mkdir          raw
 ...
 </pre></div>
 </div>
-<p>If we wished to add a new program it seems like putting it in <tt class="docutils literal"><span class="pre">/bin</span></tt> is the place to start.
-Let&#8217;s create an empty file <tt class="docutils literal"><span class="pre">/bin/hello-$PORTALNAME</span></tt>:</p>
+<p>If we wished to add a new program it seems like putting it in <code class="docutils literal"><span class="pre">/bin</span></code> is the place to start.
+Let&#8217;s create an empty file <code class="docutils literal"><span class="pre">/bin/hello-$PORTALNAME</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ touch /bin/hello-$(whoami)
 touch: cannot touch `/bin/hello-albert&#39;: Permission denied
 </pre></div>
@@ -228,9 +236,9 @@ touch: cannot touch `/bin/hello-albert&#39;: Permission denied
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">Recall that $PORTALNAME is your username on FutureSystems, which can
-also be obtained using the <tt class="docutils literal"><span class="pre">whoami</span></tt> shell command.</p>
+also be obtained using the <code class="docutils literal"><span class="pre">whoami</span></code> shell command.</p>
 </div>
-<p>It seems that this is not possible.  Since <tt class="docutils literal"><span class="pre">india</span></tt> is a shared
+<p>It seems that this is not possible.  Since <code class="docutils literal"><span class="pre">india</span></code> is a shared
 resources not all users should be allowed to make changes that could
 affect everyone else.  Only a small number of users, the
 administrators, have the ability to globally modify the system.</p>
@@ -245,7 +253,7 @@ instability and bizarre errors.</p>
 <p>A virtual environment is a way of encapsulating and automating the
 creation and use of a computing environment that is consistent and
 self-contained.</p>
-<p>The tool we use with Python to accomplish this is called <tt class="docutils literal"><span class="pre">virtualenv</span></tt>.</p>
+<p>The tool we use with Python to accomplish this is called <code class="docutils literal"><span class="pre">virtualenv</span></code>.</p>
 <p>Let&#8217;s try it out. Start by cleaning up our test earlier and going
 into the home directory:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ rm ~/hello-$(whoami)
@@ -260,8 +268,8 @@ Installing setuptools............done.
 Installing pip...............done.
 </pre></div>
 </div>
-<p>When using <tt class="docutils literal"><span class="pre">virtualenv</span></tt> you pass the directory where you which to
-create the virtual environment, in this case <tt class="docutils literal"><span class="pre">ENV</span></tt> in the current
+<p>When using <code class="docutils literal"><span class="pre">virtualenv</span></code> you pass the directory where you which to
+create the virtual environment, in this case <code class="docutils literal"><span class="pre">ENV</span></code> in the current
 (home) directory.  We are then told that we must activate the virtual
 environment before using it and that the python program, setuptools,
 and pip are installed.</p>
@@ -272,7 +280,7 @@ easy_install-2.7  pip  pip-2.7  python  python2  python2.7
 </pre></div>
 </div>
 <p>It seems that there are several programs installed.  Let&#8217;s see where
-our current <tt class="docutils literal"><span class="pre">python</span></tt> is and what happens after activating this
+our current <code class="docutils literal"><span class="pre">python</span></code> is and what happens after activating this
 environment:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ which python
 /N/soft/python/2.7/bin/python
@@ -315,8 +323,8 @@ this is a common problem so there exist a couple packages to help in
 this situation.</p>
 </div>
 <div class="section" id="using-pip-to-install-packages">
-<h1>Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages<a class="headerlink" href="#using-pip-to-install-packages" title="Permalink to this headline">¶</a></h1>
-<p>In order to install package from PyPI, use the <tt class="docutils literal"><span class="pre">pip</span></tt> command.
+<h1>Using <code class="docutils literal"><span class="pre">pip</span></code> to install packages<a class="headerlink" href="#using-pip-to-install-packages" title="Permalink to this headline">¶</a></h1>
+<p>In order to install package from PyPI, use the <code class="docutils literal"><span class="pre">pip</span></code> command.
 We can search for PyPI for packages:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pip search autopep8 pylint
 </pre></div>
@@ -325,12 +333,12 @@ We can search for PyPI for packages:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ pip install autopep8 pylint
 </pre></div>
 </div>
-<p>This will cause <tt class="docutils literal"><span class="pre">pip</span></tt> to download the packages from PyPI, extract
+<p>This will cause <code class="docutils literal"><span class="pre">pip</span></code> to download the packages from PyPI, extract
 them, check their dependencies and install those as needed, then
 install the requested packages.</p>
 </div>
 <div class="section" id="using-autopep8">
-<h1>Using <tt class="docutils literal"><span class="pre">autopep8</span></tt><a class="headerlink" href="#using-autopep8" title="Permalink to this headline">¶</a></h1>
+<h1>Using <code class="docutils literal"><span class="pre">autopep8</span></code><a class="headerlink" href="#using-autopep8" title="Permalink to this headline">¶</a></h1>
 <p>We can now run the bad code through autopep8 to fix formatting
 problems:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ autopep8 bad_code_example.py &gt;code_example_autopep8.py
@@ -339,9 +347,9 @@ problems:</p>
 <p>Let&#8217;s look at the result.
 This is considerably better than before.
 It is easy to tell what the example1 and example2 functions are doing.</p>
-<p>It is a good idea to develop a habit of using <tt class="docutils literal"><span class="pre">autopep8</span></tt> in your
-python-development workflow.  For instance: use <tt class="docutils literal"><span class="pre">autopep8</span></tt> to check
-a file, and if it passes, make any changes in place using the <tt class="docutils literal"><span class="pre">-i</span></tt>
+<p>It is a good idea to develop a habit of using <code class="docutils literal"><span class="pre">autopep8</span></code> in your
+python-development workflow.  For instance: use <code class="docutils literal"><span class="pre">autopep8</span></code> to check
+a file, and if it passes, make any changes in place using the <code class="docutils literal"><span class="pre">-i</span></code>
 flag:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ autopep8 file.py    # check output to see of passes
 $ autopep8 -i file.py # update in place
@@ -362,7 +370,8 @@ $ autopep8 -i file.py # update in place
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -387,7 +396,7 @@ $ autopep8 -i file.py # update in place
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
