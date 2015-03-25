@@ -226,10 +226,10 @@ set a number of defaults. This includes:</p>
 <p>After this you may start the cluster with command:</p>
 <p>cm cluster create</p>
 <p>while specifying a number of parameters:</p>
+<p>name</p>
+<p>the unique name for this cluster</p>
 <p>&#8211;count number</p>
 <p>the numebr of VMs in the cluster</p>
-<p>&#8211;group name</p>
-<p>the unique name of a group for this cluster</p>
 <p>&#8211;ln name</p>
 <p>the login name, for example &#8216;ubuntu&#8217;</p>
 <p>Note: &#8211;ln may be changed to &#8211;login</p>
@@ -238,14 +238,14 @@ set a number of defaults. This includes:</p>
 </pre></div>
 </div>
 <p>To create a cluster you can use the command</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cluster create --count=3 --group=test --ln=ubuntu&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cluster create cm_cluster1 --count=3 --ln=ubuntu&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You may also provide cloud name, flavor or image in the command if you
 don&#8217;t want to pre-set them. For example:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cluster create &quot;</span>
+                      <span class="s">&quot;cm_cluster1 &quot;</span>
                       <span class="s">&quot;--count=3 &quot;</span>
-                      <span class="s">&quot;--group=test0 &quot;</span>
                       <span class="s">&quot;--ln=ubuntu &quot;</span>
                       <span class="s">&quot;--cloud=india &quot;</span>
                       <span class="s">&quot;--flavor=m1.small &quot;</span>

@@ -9,4 +9,4 @@
 
 - Tuesdays 9-10 am
 - Wednesday 7-8 pm
-- Thursday 9-10 am
+- Thursday 10-11 am
