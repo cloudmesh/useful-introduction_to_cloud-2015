@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,6 +29,8 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -49,9 +51,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -61,8 +66,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -83,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -161,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -195,7 +202,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="cloudmesh-api-for-vm-management">
 <h1>Cloudmesh API for VM Management<a class="headerlink" href="#cloudmesh-api-for-vm-management" title="Permalink to this headline">¶</a></h1>
@@ -504,14 +511,14 @@ such as a flavor, an image, or a key associated with the instance.
 <em>start()</em> function accepts keyword parameters as a user input of these
 options. To see a brief description of the function, try <em>mesh.start?</em>
 in the IPython Notebook cell.</p>
-<p>Available options are: with * <tt class="docutils literal"><span class="pre">cloud</span></tt>: cloud id e.g. india *
-<tt class="docutils literal"><span class="pre">cm_user_id</span></tt>: portal user id * <tt class="docutils literal"><span class="pre">prefix</span></tt>: The VM instance name
-starts * <tt class="docutils literal"><span class="pre">index</span></tt>: The number of vm instances (auto increment), if you
+<p>Available options are: with * <code class="docutils literal"><span class="pre">cloud</span></code>: cloud id e.g. india *
+<code class="docutils literal"><span class="pre">cm_user_id</span></code>: portal user id * <code class="docutils literal"><span class="pre">prefix</span></code>: The VM instance name
+starts * <code class="docutils literal"><span class="pre">index</span></code>: The number of vm instances (auto increment), if you
 set this make sure it is higher than the last index, as it will aslo set
-the default index * <tt class="docutils literal"><span class="pre">flavor</span></tt>: flavor name e.g. m1.small * <tt class="docutils literal"><span class="pre">image</span></tt>:
-image name e.g. futuregrid/ubuntu-14.04 * <tt class="docutils literal"><span class="pre">key</span></tt>: key name to use *
-<tt class="docutils literal"><span class="pre">meta</span></tt>: data in python dict e.g. {&#8220;cm_user_id&#8221;: username}</p>
-<p><tt class="docutils literal"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">mesh.start(&quot;india&quot;,</span> <span class="pre">username,</span> <span class="pre">prefix=username)</span></tt></p>
+the default index * <code class="docutils literal"><span class="pre">flavor</span></code>: flavor name e.g. m1.small * <code class="docutils literal"><span class="pre">image</span></code>:
+image name e.g. futuregrid/ubuntu-14.04 * <code class="docutils literal"><span class="pre">key</span></code>: key name to use *
+<code class="docutils literal"><span class="pre">meta</span></code>: data in python dict e.g. {&#8220;cm_user_id&#8221;: username}</p>
+<p><code class="docutils literal"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">mesh.start(&quot;india&quot;,</span> <span class="pre">username,</span> <span class="pre">prefix=username)</span></code></p>
 </div>
 <div class="section" id="vitual-machine-name">
 <h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
@@ -524,18 +531,18 @@ you to manage or modify the VM name as you wish.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">u&#39;gvonlasz_43&#39;</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">vmname()</span></tt> without parameters returns the current VM name that you can
+<p><code class="docutils literal"><span class="pre">vmname()</span></code> without parameters returns the current VM name that you can
 use.</p>
 <p>If you want to use a different name, you can specify prefix=&#8217;&#8217; and
 idx=&#8217;&#8217; as parameters. However be aware that using this will also reset
 the default values. Thus if you specify a number that is smaller than
 the current number in the vms, you may overwrite in time the previos
 name and end up with duplicated names.</p>
-<p><tt class="docutils literal"><span class="pre">mesh.vmname(username,</span> <span class="pre">10)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">mesh.vmname(username,</span> <span class="pre">10)</span></code></p>
 <p>vmname_next() returns a VM name with an increased index number.</p>
-<p><tt class="docutils literal"><span class="pre">mesh.vmname_next()</span></tt></p>
+<p><code class="docutils literal"><span class="pre">mesh.vmname_next()</span></code></p>
 <p>There are some tricks to update the index number in <em>vmname()</em> function.</p>
-<p><tt class="docutils literal"><span class="pre">mesh.vmname(username,</span> <span class="pre">&quot;+5&quot;)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">mesh.vmname(username,</span> <span class="pre">&quot;+5&quot;)</span></code></p>
 </div>
 <div class="section" id="assign-a-public-ip-address-to-the-vm">
 <h2>Assign a public IP address to the VM<a class="headerlink" href="#assign-a-public-ip-address-to-the-vm" title="Permalink to this headline">¶</a></h2>
@@ -588,7 +595,7 @@ remove it first from the ~/.ssh/known_hosts file.</p>
 </div>
 <div class="section" id="refreshing-vm-status">
 <h2>Refreshing VM status<a class="headerlink" href="#refreshing-vm-status" title="Permalink to this headline">¶</a></h2>
-<p>The information of VM instances can be displayed with <tt class="docutils literal"><span class="pre">servers()</span></tt>
+<p>The information of VM instances can be displayed with <code class="docutils literal"><span class="pre">servers()</span></code>
 function.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;india&quot;</span><span class="p">],</span><span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;servers&quot;</span><span class="p">])</span>
 </pre></div>
@@ -621,7 +628,7 @@ Store time: 0.00319504737854
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_mesh.html" class="btn btn-neutral float-right" title="Cloudmesh Mesh"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_mesh.html" class="btn btn-neutral float-right" title="Cloudmesh Mesh">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_pbs.html" class="btn btn-neutral" title="Batch Queues"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -637,7 +644,8 @@ Store time: 0.00319504737854
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -662,7 +670,7 @@ Store time: 0.00319504737854
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
