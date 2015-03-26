@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,6 +29,8 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -49,9 +51,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -61,8 +66,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -83,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -161,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -195,7 +202,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="setup-cloudmesh-in-an-virtualbox-vm-with-vagrant-for-testing">
 <h1>Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing<a class="headerlink" href="#setup-cloudmesh-in-an-virtualbox-vm-with-vagrant-for-testing" title="Permalink to this headline">¶</a></h1>
@@ -261,7 +268,7 @@ Please choose an option:
 
 Ubuntu Server 14.04 xxbit selected
 Bringing machine <span class="s1">&#39;default&#39;</span> up with <span class="s1">&#39;virtualbox&#39;</span> provider...
-<span class="o">==</span>&gt; default: Checking <span class="k">if </span>box <span class="s1">&#39;ubuntu/trustyxx&#39;</span> is up to date...
+<span class="o">==</span>&gt; default: Checking <span class="k">if</span> box <span class="s1">&#39;ubuntu/trustyxx&#39;</span> is up to date...
 </pre></div>
 </div>
 <p>Vagrant will be loaded.</p>
@@ -278,7 +285,7 @@ root once you ssh to the VM.</p>
 </div>
 <div class="section" id="virtualenv-and-cm">
 <h2>Virtualenv and cm<a class="headerlink" href="#virtualenv-and-cm" title="Permalink to this headline">¶</a></h2>
-<p>Cloudmesh installed on Virtualenv. You need to enable the environment. <tt class="docutils literal"><span class="pre">cm</span></tt>
+<p>Cloudmesh installed on Virtualenv. You need to enable the environment. <code class="docutils literal"><span class="pre">cm</span></code>
 Cloudmesh interactive shell is ready to use.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
 <span class="nv">$ </span><span class="nb">cd </span>cloudmesh
@@ -294,7 +301,7 @@ Cloudmesh interactive shell is ready to use.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="yaml.html" class="btn btn-neutral float-right" title="Creating the yaml file"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="yaml.html" class="btn btn-neutral float-right" title="Creating the yaml file">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="setup_openstack.html" class="btn btn-neutral" title="Quickstart for an Openstack VM"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -310,7 +317,8 @@ Cloudmesh interactive shell is ready to use.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -335,7 +343,7 @@ Cloudmesh interactive shell is ready to use.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

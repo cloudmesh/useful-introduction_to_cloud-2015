@@ -67,20 +67,20 @@ utilities with various exercises.
      - `10 mins <../lesson/collaboration/overview.html>`_
      - 
      - 03/23
-     - 
+     - N/A
    * - **Google**
         - Google+, Hangout, Remote Desktop
      - `4 mins  <https://www.youtube.com/watch?v=kOrWm830vxQ&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=2>`_
      - `15 mins  <../lesson/google.html>`_
      -
      - 03/23
-     - 
+     - N/A
    * - **Shell Access**                  
      - `3 mins <https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx>`_
      - `10 mins <../lesson/shell-access.html>`_
      - `5 mins <../lesson/shell-access.html#exercise>`_
      - 03/23
-     - 03/27 
+     - N/A
    * - **GitHub**
      - `18 mins <https://www.youtube.com/watch?v=KrAjal1a30w&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx&index=4>`_
      - `30 mins <../lesson/git.html>`_

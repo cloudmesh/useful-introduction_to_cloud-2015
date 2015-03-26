@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,6 +29,8 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -49,9 +51,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -61,8 +66,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -83,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -161,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -195,7 +202,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="cloudmesh-shell-for-vm-management">
 <h1>Cloudmesh Shell for VM Management<a class="headerlink" href="#cloudmesh-shell-for-vm-management" title="Permalink to this headline">¶</a></h1>
@@ -379,7 +386,7 @@ Store time: 0.133810043335
 </div>
 <p>refresh option updates the data from the IaaS cloud. The cached data in
 the mongo database will be updated.</p>
-<p>The <tt class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></tt> command provides an available vm images on a selected
+<p>The <code class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></code> command provides an available vm images on a selected
 cloud.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;list image india --refresh&quot;</span><span class="p">)</span>
 </pre></div>
@@ -392,7 +399,7 @@ a new VM with a few options.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">vmname</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;label --raw&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We use <tt class="docutils literal"><span class="pre">vmname</span></tt> to delete the vm instance later in this tutorial.</p>
+<p>We use <code class="docutils literal"><span class="pre">vmname</span></code> to delete the vm instance later in this tutorial.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm start --cloud=india --name={0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vmname</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -401,7 +408,7 @@ a new VM with a few options.</p>
 <h2>Delete a VM<a class="headerlink" href="#delete-a-vm" title="Permalink to this headline">¶</a></h2>
 <p>If you know the id or name of the virtual machine that you want to
 destroy, <em>delete</em> command in cloudmesh simply terminate the instance.</p>
-<p><tt class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">{0}</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;.format(vmname))</span></tt></p>
+<p><code class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">{0}</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;.format(vmname))</span></code></p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Do not execute the delete command as it deletes all vms of</p>
@@ -412,9 +419,9 @@ destroy, <em>delete</em> command in cloudmesh simply terminate the instance.</p>
 <h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>
 <p>When you create a new VM instance, you can also choose multiple options
 such as a flavor, an image associated with the instance. The
-<tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command accepts optional parameters as a user input of
+<code class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></code> command accepts optional parameters as a user input of
 these options. To see a brief description of the command, try
-<tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></tt> in the IPython Notebook cell.</p>
+<code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></code> in the IPython Notebook cell.</p>
 <p>Available options are:</p>
 <ul class="simple">
 <li>&#8211;cloud= give a cloud to work on, if not given, selected or default
@@ -482,24 +489,24 @@ to find the VMs and delete them, you may think there are two phases of
 VM deletion, searching and deleting. Here are some examples:</p>
 <p>Let&#8217;s start with deleting the VMs that we started in the previous
 example. We can delete them with the group name that we used.
-<tt class="docutils literal"><span class="pre">temp_group_name</span></tt></p>
+<code class="docutils literal"><span class="pre">temp_group_name</span></code></p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm delete --group={0} --cloud=india --force&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp_group_name</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>to delete all VMs of cloud india</p>
-<p><tt class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;)</span></code></p>
 <p>Note here we use the option &#8220;&#8211;force&#8221;, without it the shell will give
 you a list of VMs to delete and ask for your confirmation.</p>
 <p>to delete a VM by giving its name (you may always provide a cloud unless
 you have specified a default cloud or have selected a cloud)</p>
-<p><tt class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">sample_vm</span> <span class="pre">--force&quot;)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">sample_vm</span> <span class="pre">--force&quot;)</span></code></p>
 <p>to delete a VM by group</p>
-<p><tt class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--group=testgroup</span> <span class="pre">--force&quot;)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--group=testgroup</span> <span class="pre">--force&quot;)</span></code></p>
 <p>We can also narrow the search result by giving more search conditions.
 For example, to delete VMs of cloud india that they are also in the
 group &#8216;testgroup&#8217; and they have the prefix name &#8216;abc&#8217; and their indices&#8217;
 range is no greater than 100</p>
-<p><tt class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--group=testgroup</span> <span class="pre">--prefix=abc</span> <span class="pre">--range=,100</span> <span class="pre">--force&quot;)</span></tt></p>
+<p><code class="docutils literal"><span class="pre">cloudmesh.shell(&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--group=testgroup</span> <span class="pre">--prefix=abc</span> <span class="pre">--range=,100</span> <span class="pre">--force&quot;)</span></code></p>
 </div>
 <div class="section" id="login-to-a-vm">
 <h2>Login to a VM<a class="headerlink" href="#login-to-a-vm" title="Permalink to this headline">¶</a></h2>
@@ -535,7 +542,7 @@ may add the commands at the end following &#8216;&#8211;&#8217;(e.g. ls -a)</p>
 <div class="section" id="vitual-machine-name">
 <h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
 <p>In Cloudmesh, the default name of VM consists of your username and a
-number, for example, alex_1. <tt class="docutils literal"><span class="pre">label</span></tt> command allows you to manage or
+number, for example, alex_1. <code class="docutils literal"><span class="pre">label</span></code> command allows you to manage or
 modify the VM name as you wish.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;label&quot;</span><span class="p">)</span>
 </pre></div>
@@ -559,7 +566,7 @@ waiting to be used for next VM. To check your current prefix and index</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_list.html" class="btn btn-neutral float-right" title="Cloudmesh Shell - list command"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_list.html" class="btn btn-neutral float-right" title="Cloudmesh Shell - list command">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Cloudmesh Shell"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -575,7 +582,8 @@ waiting to be used for next VM. To check your current prefix and index</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -600,7 +608,7 @@ waiting to be used for next VM. To check your current prefix and index</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
