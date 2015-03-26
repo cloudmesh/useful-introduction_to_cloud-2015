@@ -42,13 +42,13 @@ cm cluster create
 
 while specifying a number of parameters:
 
+name
+
+the unique name for this cluster
+
 --count number
 
 the numebr of VMs in the cluster
-
---group name
-
-the unique name of a group for this cluster
 
 --ln name
 
@@ -65,15 +65,15 @@ To create a cluster you can use the command
 
 .. code:: python
 
-    print cloudmesh.shell("cluster create --count=3 --group=test --ln=ubuntu")
+    print cloudmesh.shell("cluster create cm_cluster1 --count=3 --ln=ubuntu")
 You may also provide cloud name, flavor or image in the command if you
 don't want to pre-set them. For example:
 
 .. code:: python
 
     print cloudmesh.shell("cluster create "
+                          "cm_cluster1 "
                           "--count=3 "
-                          "--group=test0 "
                           "--ln=ubuntu "
                           "--cloud=india "
                           "--flavor=m1.small "

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Managing multiple VMs with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
+  <title>Deploying Virtual Cluster with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -34,8 +34,8 @@
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Cloudmesh cm" href="index.html"/>
-        <link rel="next" title="Managing Volumes with Cloudmesh cm" href="_cm-volume.html"/>
-        <link rel="prev" title="Deploying Virtual Cluster with Cloudmesh cm" href="_cm-cluster.html"/> 
+        <link rel="next" title="Managing multiple VMs with Cloudmesh cm" href="_cm-group.html"/>
+        <link rel="prev" title="Metric Commands in Cloudmesh cm" href="_cm-limits.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -186,10 +186,10 @@
       
           <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
       
-    <li>Managing multiple VMs with Cloudmesh cm</li>
+    <li>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/cloudmesh/cm/_cm-group.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/cloudmesh/cm/_cm-cluster.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -197,85 +197,144 @@
 </div>
           <div role="main">
             
-  <div class="section" id="managing-multiple-vms-with-cloudmesh-cm">
-<h1>Managing multiple VMs with Cloudmesh cm<a class="headerlink" href="#managing-multiple-vms-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
-<p>When you start a cluster of VMs in Cloudmesh CLI, it is required to
-specify a group name for the cluster, so that we can manage the cluster
-according to the cluster name. In Cloudmesh CLI, you may use group
-command to manage groups.</p>
-<p>IPython Alias</p>
-<p>With the alias command we simply define a new command with the name cm
-that we can call directly from IPython. Here we make sure that the
-parameters are between &#8220;&#8221; so that they are properly set. Just execute
-the following lines.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+  <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
+<h1>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>To support the creation of a virtual compute cluster (e.g. Hadoop or
+Slurm) on Cloudmesh, <tt class="docutils literal"><span class="pre">cluster</span></tt> command is available to start,
+configure, manage or update a number of virtual machines.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">cluster</span></tt> command is available in the cloudmesh shell. There are
+certain steps to make sure you are all set to deploy a new cluster. You
+can SKIP these steps if you have configured Cloudmesh previously.</p>
+<div class="section" id="cloud-activation">
+<h3>Cloud Activation<a class="headerlink" href="#cloud-activation" title="Permalink to this headline">¶</a></h3>
+<p>Before starting a cluster, please make sure you activate a cloud:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud on india&quot;
 </pre></div>
 </div>
-<p>We are using now one of the methods to call the cm commands in the
-following sections.</p>
-<div class="section" id="group-command">
-<h2><tt class="docutils literal"><span class="pre">group</span></tt> command<a class="headerlink" href="#group-command" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">group</span></tt> allows us to perform simple grouping of VMs but also
-images and flavors. A group is essentially a tuple in which you can add
-to a named group a type of an object and its unique name. The group
-command allows you to create a group, add items to groups, and list
-groups. For more information, one can refer to the manual page.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group -h&quot;
+<p>Activation however does not select the cloud as the default cloud to
+start virtual machines. This can be achieved by the select command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud select india&quot;
 </pre></div>
 </div>
-<p>To create a group with the name sample-group you can use the command:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group create sample-group&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default cloud india&quot;
 </pre></div>
 </div>
-<p>Then you can list the groups with:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group list&quot;
+</div>
+<div class="section" id="default-key-pair">
+<h3>Default Key Pair<a class="headerlink" href="#default-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>To gain access to a virtual cluster, you need a key registered on
+OpenStack. If you don’t have a default keypair, you need to set or need
+to specify which keypair you are going to use for the virtual cluster.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;key default [username]-india-key&quot;
 </pre></div>
 </div>
-<p>To add a VM named sample-vm to the group (make sure the VM exists before
-add it), you can use:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group add item sample-group vm sample-vm&quot;
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>REPLACE [username] with your portal id, e.g. albert</strong></p>
+</div>
+</div>
+<div class="section" id="default-vm-image">
+<h3>Default VM Image<a class="headerlink" href="#default-vm-image" title="Permalink to this headline">¶</a></h3>
+<p>You need that a default VM image is configured. We use ubuntu-14.04
+image as a default in this tutorial.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default image --name=futuresystems/ubuntu-14.04&quot;
 </pre></div>
 </div>
-<p>To list the elements in a group you can use:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group show sample-group&quot;
+</div>
+<div class="section" id="default-flavor">
+<h3>Default Flavor<a class="headerlink" href="#default-flavor" title="Permalink to this headline">¶</a></h3>
+<p>You need that a default flavor is configured. Make sure that the flavor
+works with the default image. Some images require a larger size of a
+flavor rather than a smaller one e.g. m1.small or m1.tiny.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default flavor --name=m1.small&quot;
 </pre></div>
 </div>
-<p>To delete a VM from a group you can use:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove item sample-group vm sample-vm&quot;
+</div>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-virtual-cluster-with-cluster-command">
+<h3>Create a Virtual Cluster with <tt class="docutils literal"><span class="pre">cluster</span></tt> command<a class="headerlink" href="#create-a-virtual-cluster-with-cluster-command" title="Permalink to this headline">¶</a></h3>
+<p>Run ‘cluster create’ with the following parameters:</p>
+<p>name cluster name &#8211;count specify amount of VMs in the cluster &#8211;ln
+login name for VMs, e.g. ubuntu</p>
+</div>
+<div class="section" id="create-a-virtual-cluster-with-3-virtual-machines">
+<h3>Create a Virtual Cluster with 3 virtual machines<a class="headerlink" href="#create-a-virtual-cluster-with-3-virtual-machines" title="Permalink to this headline">¶</a></h3>
+<p>Let us create a cluster with the group name cluster_tutorial that
+contains 3 virtual machines.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create cluster_tutorial1 --count=3 --ln=ubuntu&quot;
 </pre></div>
 </div>
-<p>To delete a group:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove sample-group&quot;
+<p>You may also provide a flavor or a VM image in the command. For example,
+creating a virtual cluster on Ubuntu 14.04 image with a small flavor:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create cluster_tutorial2 --count=3 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuresystems/ubuntu-14.04&quot;
 </pre></div>
 </div>
-<p>Please note that deletion of a group does not delete the accociated
-objects in that group. It only removes the object that stores the types
-and objects for that group.</p>
 </div>
-<div class="section" id="working-with-group">
-<h2>Working with group<a class="headerlink" href="#working-with-group" title="Permalink to this headline">¶</a></h2>
-<p>Groups are conveniently integrated into the cloudmesh shell. You may
-include a VM into a group while you create it, delete VMs by groups and
-when you create a cluster, a group name has to be provided.</p>
-<p>To start a VM and add it to group, you can use the group parameter. If
-the group doesn&#8217;t exist, one will be created:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --group=sample&quot;
+<div class="section" id="check-status-of-a-virtual-cluster">
+<h3>Check Status of a Virtual Cluster<a class="headerlink" href="#check-status-of-a-virtual-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Use <tt class="docutils literal"><span class="pre">vm`</span> <span class="pre">command</span> <span class="pre">with</span></tt>&#8211;group`` parameter to check the status.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=cluster_tutorial1&quot;
 </pre></div>
 </div>
-<p>To delete the virtual machines specified in a group you can use the
-command:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete --group=sample&quot;
+</div>
+<div class="section" id="terminate-a-virtual-cluster">
+<h3>Terminate a Virtual Cluster<a class="headerlink" href="#terminate-a-virtual-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Delete a virtual cluster with the name.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster remove cluster_tutorial1&quot;
 </pre></div>
 </div>
-<p>To create multiple vms that are part of a vitual cluster, you need to
-provide a group name. If the group doesn&#8217;t exist, one will be created.
-If the group exist and it has VMs in it already, the newly created
-virtual machines will be included into the cluster. The following
-example will create two virtual machines while assuming the default
-cloud, flavor, and image. Make sure you set them before if they have not
-been set.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=2 --group=sample&quot;
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster remove cluster_tutorial2&quot;
 </pre></div>
+</div>
+</div>
+<div class="section" id="cluster-help-message">
+<h3>Cluster Help Message<a class="headerlink" href="#cluster-help-message" title="Permalink to this headline">¶</a></h3>
+<p>Usage: cluster list [&#8211;format=FORMAT] cluster create [&#8211;count=][&#8211;ln=]
+[&#8211;cloud=][&#8211;image=|&#8211;imageid=] [&#8211;flavor=|&#8211;flavorid=][&#8211;force]
+cluster show [&#8211;format=FORMAT] [&#8211;column=COLUMN] [&#8211;detail] cluster
+remove [&#8211;grouponly]</p>
+<p>Description: Cluster Management</p>
+<div class="highlight-python"><div class="highlight"><pre>cluster list
+    list the clusters
+
+cluster create &lt;name&gt; --count=&lt;count&gt; --ln=&lt;LoginName&gt; [options...]
+    Start a cluster of VMs, and each of them can log into all others.
+    CAUTION: you sould do some default setting before using this command:
+    1. select cloud to work on, e.g. cloud select india
+    2. activate the cloud, e.g. cloud on india
+    3. set the default key to start VMs, e.g. key default [NAME]
+    4. set the start name of VMs, which is prefix and index, e.g. label --prefix=test --id=1
+    5. set image of VMs, e.g. default image
+    6. set flavor of VMs, e.g. default flavor
+    Also, it is better to choose a unused group name
+
+cluster show &lt;name&gt;
+    show the detailed information about the cluster VMs
+
+cluster remove &lt;name&gt; [--grouponly]
+    remove the cluster and its VMs, if you want to remove the cluster(group name)
+    without removing the VMs, use --grouponly flag
+</pre></div>
+</div>
+<p>Arguments: cluster name or group name</p>
+<p>Options: &#8211;count= give the number of VMs to add into the cluster &#8211;ln=
+give a login name for the VMs, e.g. ubuntu &#8211;cloud= give a cloud to work
+on &#8211;flavor= give the name of the flavor &#8211;flavorid= give the id of the
+flavor &#8211;image= give the name of the image &#8211;imageid= give the id of the
+image &#8211;force if a group exists and there are VMs in it, the program
+will ask user to proceed or not, use this flag to respond yes as
+default(if there are VMs in the group before creating this cluster, the
+program will include the exist VMs into the cluster) &#8211;grouponly remove
+the group only without removing the VMs, otherwise cluster remove
+command will remove all the VMs of this cluster FORMAT output format:
+table, json, csv COLUMN customize what information to display, for
+example: &#8211;column=status,addresses prints the columns status and
+addresses &#8211;detail for table print format, a brief version is used as
+default, use this flag to print detailed table</p>
 </div>
 </div>
 </div>
@@ -286,10 +345,10 @@ been set.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_cm-volume.html" class="btn btn-neutral float-right" title="Managing Volumes with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="_cm-cluster.html" class="btn btn-neutral" title="Deploying Virtual Cluster with Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_cm-limits.html" class="btn btn-neutral" title="Metric Commands in Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

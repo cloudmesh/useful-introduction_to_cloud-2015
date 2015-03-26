@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,8 +29,6 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
-  
-
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -48,12 +46,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -63,9 +58,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul>
+        
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -86,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -164,7 +158,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -195,7 +188,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="create-a-virtual-cluster">
 <h1>Create a Virtual Cluster<a class="headerlink" href="#create-a-virtual-cluster" title="Permalink to this headline">¶</a></h1>
@@ -233,10 +226,10 @@ set a number of defaults. This includes:</p>
 <p>After this you may start the cluster with command:</p>
 <p>cm cluster create</p>
 <p>while specifying a number of parameters:</p>
+<p>name</p>
+<p>the unique name for this cluster</p>
 <p>&#8211;count number</p>
 <p>the numebr of VMs in the cluster</p>
-<p>&#8211;group name</p>
-<p>the unique name of a group for this cluster</p>
 <p>&#8211;ln name</p>
 <p>the login name, for example &#8216;ubuntu&#8217;</p>
 <p>Note: &#8211;ln may be changed to &#8211;login</p>
@@ -245,14 +238,14 @@ set a number of defaults. This includes:</p>
 </pre></div>
 </div>
 <p>To create a cluster you can use the command</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cluster create --count=3 --group=test --ln=ubuntu&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cluster create cm_cluster1 --count=3 --ln=ubuntu&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You may also provide cloud name, flavor or image in the command if you
 don&#8217;t want to pre-set them. For example:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cluster create &quot;</span>
+                      <span class="s">&quot;cm_cluster1 &quot;</span>
                       <span class="s">&quot;--count=3 &quot;</span>
-                      <span class="s">&quot;--group=test0 &quot;</span>
                       <span class="s">&quot;--ln=ubuntu &quot;</span>
                       <span class="s">&quot;--cloud=india &quot;</span>
                       <span class="s">&quot;--flavor=m1.small &quot;</span>
@@ -274,8 +267,7 @@ don&#8217;t want to pre-set them. For example:</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -300,7 +292,7 @@ don&#8217;t want to pre-set them. For example:</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
