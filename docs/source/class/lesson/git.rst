@@ -110,6 +110,26 @@ for details on how to do so.
 
 .. _documentation: http://cloudmesh.github.io/introduction_to_cloud_computing/accounts/ssh.html#s-using-ssh
 
+Using git on india.futuresystems.org
+----------------------------------------------------------------------
+
+To use git on india.futuresystems.org, Try::
+
+        module load git
+
+A sample output looks like::
+
+        [albert@i136 ~]$ module load git
+        git version 2.2.1 loaded
+
+        [albert@i136 ~]$ git
+        usage: git [--version] [--help] [-C <path>] [-c name=value]
+                   [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+                   [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+                   [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+                   <command> [<args>]
+        ...
+
 
 Upload your SSH key to GitHub
 ----------------------------------------------------------------------
