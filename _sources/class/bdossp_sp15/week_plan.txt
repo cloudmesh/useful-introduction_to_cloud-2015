@@ -449,7 +449,7 @@ applied to enhance Web Service, Command Line Tools and Rest APIs.
         - SSH Connections between nodes
         - Host Configuration
      - Not yet available
-     - Not yet available
+     - `20 mins </introduction_to_cloud_computing/cloudmesh/cm/_cm-cluster.html>`_
      - 
      - 04/06
      - 04/10
