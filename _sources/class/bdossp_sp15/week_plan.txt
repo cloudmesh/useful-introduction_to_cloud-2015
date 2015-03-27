@@ -448,7 +448,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Virtual Clusters with Cloudmesh**
         - SSH Connections between nodes
         - Host Configuration
-     - Not yet available
+     - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
      - `20 mins </introduction_to_cloud_computing/cloudmesh/cm/_cm-cluster.html>`_
      - 
      - 04/06
