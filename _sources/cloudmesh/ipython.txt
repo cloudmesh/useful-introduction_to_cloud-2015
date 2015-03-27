@@ -129,9 +129,10 @@ On a IPython console::
 
 Reference
 ----------------------------------------------------------------------
-IPython: http://ipython.org/
-bpython: http://www.bpython-interpreter.org/
-DreamPie: http://www.dreampie.org/
-SciPy: http://www.scipy.org/
-NumPy: http://www.numpy.org/
-matplotlib: http://matplotlib.org/
+
+* IPython: http://ipython.org/
+* bpython: http://www.bpython-interpreter.org/
+* DreamPie: http://www.dreampie.org/
+* SciPy: http://www.scipy.org/
+* NumPy: http://www.numpy.org/
+* matplotlib: http://matplotlib.org/
