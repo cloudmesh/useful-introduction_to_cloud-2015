@@ -37,7 +37,7 @@ on the cloudmesh web page:
 In this document we like to focus on the actual implementation of
 cloudmesh and how the various components are structured. For this
 purpose we have redrawn the Figure we pointed out earlier while
-focussing on a number of subcomponents that we will be looking more
+focusing on a number of subcomponents that we will be looking more
 closely into.
 
 
@@ -272,7 +272,7 @@ Development and Transition to FutureSystems
 * Due to the transition of FutureGrid to FutureSystems, we have
   limited our tutorial activities in regards to baremetal provisioning
 
-* We are focussing our current efforts on the development of our PaaS
+* We are focusing our current efforts on the development of our PaaS
   launcher that interfaces with chef and ssh to deploy platforms on
   other resources. 
 
