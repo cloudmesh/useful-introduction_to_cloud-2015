@@ -312,7 +312,7 @@ india</p>
 <h2>Start a VM<a class="headerlink" href="#start-a-vm" title="Permalink to this headline">¶</a></h2>
 <p>Now let us see how to start VMs on a cloud, here is how to start a VM on
 cloud india</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm start --cloud=india --image=futuresystems/ubuntu-14.04 --flavor=m1.small&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>* india
@@ -328,7 +328,7 @@ Refresh time: 0.592792987823
 Store time: 0.0661771297455
 
 # ######################################################################
-# Starting vm-&gt;gvonlasz_14 on cloud-&gt;india using image-&gt;futuregrid/ubuntu-14.04, flavor-&gt;m1.small, key-&gt;gvonlasz_flat-key
+# Starting vm-&gt;gvonlasz_14 on cloud-&gt;india using image-&gt;futuresystems/ubuntu-14.04, flavor-&gt;m1.small, key-&gt;gvonlasz_flat-key
 # ######################################################################
 job status: PENDING
 </pre></div>
@@ -355,7 +355,7 @@ Store time: 0.00973987579346
 [32m&#39;m1.small&#39; is selected[0m
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud set image india --image=futuregrid/ubuntu-14.04&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud set image india --image=futuresystems/ubuntu-14.04&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>* india
@@ -366,7 +366,7 @@ Store time: 0.0185420513153
 Refreshing gvonlasz images india -&gt;
 Refresh time: 0.689934015274
 Store time: 0.133810043335
-[32m&#39;futuregrid/ubuntu-14.04&#39; is selected[0m
+[32m&#39;futuresystems/ubuntu-14.04&#39; is selected[0m
 </pre></div>
 </div>
 </div>
@@ -426,7 +426,7 @@ cloud will be used</li>
 <li>&#8211;image= give the name of the image</li>
 <li>&#8211;imageid= give the id of the image</li>
 </ul>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm start --cloud=india --flavor=m1.medium --image=futuresystems/ubuntu-12.04&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="set-a-default-cloud">

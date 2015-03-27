@@ -18,12 +18,12 @@ result of the call is available as a dict and you can print it to
 inspect it closer.
 
 In addition cloudmesh has a customization that alloes resources in
-FUturegrid to be seperated by machine. This is necessary as the login
+FutureSystems to be seperated by machine. This is necessary as the login
 node on india is also in control of the queues on a number of machines
 instead of just one.
 
-The username for FutureGrid is loaded from the configuration yaml file
-in the example
+The username for FutureSystems is loaded from the configuration yaml
+file in the example
 
 .. code:: python
 
@@ -33,7 +33,7 @@ in the example
     username = cloudmesh.load().username()
 .. code:: python
 
-    india = cloudmesh.PBS(username, "india.futuregrid.org")
+    india = cloudmesh.PBS(username, "india.futuresystems.org")
 QStat
 ~~~~~
 
@@ -59,7 +59,7 @@ QStat
         289 
 
 
-    RuntimeError: can not execute pbs qstat on host india.futuregrid.org
+    RuntimeError: can not execute pbs qstat on host india.futuresystems.org
 
 
 Next, let us list the nuber of clusters managed with the india PBS
@@ -70,11 +70,11 @@ deployment
     qstat.keys()
 .. code:: python
 
-    qstat["india.futuregrid.org"].keys()
+    qstat["india.futuresystems.org"].keys()
 .. code:: python
 
-    for jobname in qstat["india.futuregrid.org"]:
-        job = qstat["india.futuregrid.org"][jobname]
+    for jobname in qstat["india.futuresystems.org"]:
+        job = qstat["india.futuresystems.org"][jobname]
         print jobname, job["job_state"]
 QInfo
 ~~~~~
@@ -86,5 +86,5 @@ To list the queue names, simply print the keys.
 
 .. code:: python
 
-    print qinfo["india.futuregrid.org"].keys()
+    print qinfo["india.futuresystems.org"].keys()
 More information is available when you inspect the dict.

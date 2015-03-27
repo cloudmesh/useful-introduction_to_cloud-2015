@@ -133,7 +133,7 @@ To create a name for a virtual machine we often recommend to use a
 prefix with a number for an identifier of the virtual machine. This will
 come in handy when we need to start multile virtual machines and
 distinguish them with a different name. Cloudmesh uses internally by
-using your username from the FutureGrid portal as defined in the
+using your username from the FutureSystems portal as defined in the
 cloudmesh.yaml file.
 
 .. code:: python
