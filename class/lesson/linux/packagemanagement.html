@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,8 +29,6 @@
 
   
     <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
-  
-
   
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
@@ -51,12 +49,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -66,9 +61,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -89,7 +83,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -167,7 +161,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -202,7 +195,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="package-management">
 <h1>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h1>
@@ -219,7 +212,7 @@
 <p>In order to conduct this lesson you should have knowledge of</p>
 <ul class="simple">
 <li>Using the linux shell (see <a class="reference internal" href="shell.html"><em>Shell</em></a>)</li>
-<li>Package installation using <code class="docutils literal"><span class="pre">pip</span></code> (see <a class="reference internal" href="python.html"><em>Python Programming</em></a>)</li>
+<li>Package installation using <tt class="docutils literal"><span class="pre">pip</span></tt> (see <a class="reference internal" href="python.html"><em>Python Programming</em></a>)</li>
 </ul>
 </div>
 <div class="section" id="description">
@@ -232,14 +225,14 @@ software, and everything it needs to run, installed on a computer.</p>
 solve this problem.</p>
 <p>If you want to install something on Windows or OS X, you typically go
 to the producer&#8217;s website, find a download link, and run the result.</p>
-<p>For example, I want to install Python. How would I accomplish this using <code class="docutils literal"><span class="pre">brew</span></code>?</p>
+<p>For example, I want to install Python. How would I accomplish this using <tt class="docutils literal"><span class="pre">brew</span></tt>?</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ brew search python
 boost-python    python          python3         wxpython        zpython
 ...
 $ brew install python
 </pre></div>
 </div>
-<p>Here I did not need to go to the Python webpage. I asked <code class="docutils literal"><span class="pre">brew</span></code> to
+<p>Here I did not need to go to the Python webpage. I asked <tt class="docutils literal"><span class="pre">brew</span></tt> to
 search for python for me. It provided me with a list of options, and I
 then selected one to install.</p>
 <p>A package manager like yum, apt-get, and brew contains a <strong>database</strong>
@@ -248,8 +241,8 @@ version installed, version available, name, description.
 When you want to install a particular package, you need to know the name and then you can issue the appropriate install directive.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">In the case of <code class="docutils literal"><span class="pre">yum</span></code>, <code class="docutils literal"><span class="pre">apt-get</span></code>, and <code class="docutils literal"><span class="pre">brew</span></code>, the install
-directirve is the same: <code class="docutils literal"><span class="pre">install</span></code>.</p>
+<p class="last">In the case of <tt class="docutils literal"><span class="pre">yum</span></tt>, <tt class="docutils literal"><span class="pre">apt-get</span></tt>, and <tt class="docutils literal"><span class="pre">brew</span></tt>, the install
+directirve is the same: <tt class="docutils literal"><span class="pre">install</span></tt>.</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -268,7 +261,7 @@ installing each by hand.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="advancedssh.html" class="btn btn-neutral float-right" title="Advanced SSH">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="advancedssh.html" class="btn btn-neutral float-right" title="Advanced SSH"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ipython.html" class="btn btn-neutral" title="IPython"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -284,8 +277,7 @@ installing each by hand.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -310,7 +302,7 @@ installing each by hand.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
