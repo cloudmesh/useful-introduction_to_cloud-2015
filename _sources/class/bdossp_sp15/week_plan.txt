@@ -348,10 +348,10 @@ Cloudmesh - Cloud Management Software (under preparation)
 Cloudmesh is a cloud resource management software written in Python. It
 automates launching multiple VM instances across different cloud platforms
 including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
-Eucalyptus.  The web interface of Cloudmesh help users and administrators
-manage entire cloud resources. Most cutting-edge technologies such as Apache
-LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
-applied to enhance Web Service, Command Line Tools and Rest APIs.
+Eucalyptus. The web interface of Cloudmesh helps users and administrators
+manage entire cloud resources with the most cutting-edge technologies such as
+Apache LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and
+Sphinx. Command Line Tools and Rest APIs are also supported.
 
 .. list-table:: Basics of Cloudmesh
    :widths: 15 10 30 10 10 10
