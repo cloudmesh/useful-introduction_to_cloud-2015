@@ -293,48 +293,72 @@ creating a virtual cluster on Ubuntu 14.04 image with a small flavor:</p>
 </div>
 <div class="section" id="cluster-help-message">
 <h3>Cluster Help Message<a class="headerlink" href="#cluster-help-message" title="Permalink to this headline">¶</a></h3>
-<p>Usage: cluster list [&#8211;format=FORMAT] cluster create [&#8211;count=][&#8211;ln=]
-[&#8211;cloud=][&#8211;image=|&#8211;imageid=] [&#8211;flavor=|&#8211;flavorid=][&#8211;force]
-cluster show [&#8211;format=FORMAT] [&#8211;column=COLUMN] [&#8211;detail] cluster
-remove [&#8211;grouponly]</p>
-<p>Description: Cluster Management</p>
-<div class="highlight-python"><div class="highlight"><pre>cluster list
-    list the clusters
+<div class="highlight-python"><div class="highlight"><pre>Usage:
+   cluster list [--format=FORMAT]
+   cluster create &lt;name&gt;
+                  [--count=&lt;count&gt;]
+                  [--ln=&lt;LoginName&gt;]
+                  [--cloud=&lt;CloudName&gt;]
+                  [--image=&lt;imgName&gt;|--imageid=&lt;imgId&gt;]
+                  [--flavor=&lt;flavorName&gt;|--flavorid=&lt;flavorId&gt;]
+                  [--force]
+   cluster show &lt;name&gt;
+                [--format=FORMAT]
+                [--column=COLUMN]
+                [--detail]
+   cluster remove &lt;name&gt;
+                  [--grouponly]
 
-cluster create &lt;name&gt; --count=&lt;count&gt; --ln=&lt;LoginName&gt; [options...]
-    Start a cluster of VMs, and each of them can log into all others.
-    CAUTION: you sould do some default setting before using this command:
-    1. select cloud to work on, e.g. cloud select india
-    2. activate the cloud, e.g. cloud on india
-    3. set the default key to start VMs, e.g. key default [NAME]
-    4. set the start name of VMs, which is prefix and index, e.g. label --prefix=test --id=1
-    5. set image of VMs, e.g. default image
-    6. set flavor of VMs, e.g. default flavor
-    Also, it is better to choose a unused group name
+Description:
+  Cluster Management
 
-cluster show &lt;name&gt;
-    show the detailed information about the cluster VMs
+  cluster list
+      list the clusters
 
-cluster remove &lt;name&gt; [--grouponly]
-    remove the cluster and its VMs, if you want to remove the cluster(group name)
-    without removing the VMs, use --grouponly flag
+  cluster create &lt;name&gt; --count=&lt;count&gt; --ln=&lt;LoginName&gt; [options...]
+      Start a cluster of VMs, and each of them can log into all others.
+      CAUTION: you sould do some default setting before using this command:
+      1. select cloud to work on, e.g. cloud select india
+      2. activate the cloud, e.g. cloud on india
+      3. set the default key to start VMs, e.g. key default [NAME]
+      4. set the start name of VMs, which is prefix and index, e.g. label --prefix=test --id=1
+      5. set image of VMs, e.g. default image
+      6. set flavor of VMs, e.g. default flavor
+      Also, it is better to choose a unused group name
+
+  cluster show &lt;name&gt;
+      show the detailed information about the cluster VMs
+
+  cluster remove &lt;name&gt; [--grouponly]
+      remove the cluster and its VMs, if you want to remove the cluster(group name)
+      without removing the VMs, use --grouponly flag
+
+Arguments:
+  &lt;name&gt;        cluster name or group name
+
+Options:
+  --count=&lt;count&gt;            give the number of VMs to add into the cluster
+  --ln=&lt;LoginName&gt;           give a login name for the VMs, e.g. ubuntu
+  --cloud=&lt;CloudName&gt;        give a cloud to work on
+  --flavor=&lt;flavorName&gt;      give the name of the flavor
+  --flavorid=&lt;flavorId&gt;      give the id of the flavor
+  --image=&lt;imgName&gt;          give the name of the image
+  --imageid=&lt;imgId&gt;          give the id of the image
+  --force                    if a group exists and there are VMs in it, the program will
+                             ask user to proceed or not, use this flag to respond yes as
+                             default(if there are VMs in the group before creating this
+                             cluster, the program will include the exist VMs into the cluster)
+  --grouponly                remove the group only without removing the VMs, otherwise
+                             cluster remove command will remove all the VMs of this cluster
+  FORMAT                     output format: table, json, csv
+  COLUMN                     customize what information to display, for example:
+                             --column=status,addresses prints the columns status
+                             and addresses
+  --detail                   for table print format, a brief version
+                             is used as default, use this flag to print
+                             detailed table
 </pre></div>
 </div>
-<p>Arguments: cluster name or group name</p>
-<p>Options: &#8211;count= give the number of VMs to add into the cluster &#8211;ln=
-give a login name for the VMs, e.g. ubuntu &#8211;cloud= give a cloud to work
-on &#8211;flavor= give the name of the flavor &#8211;flavorid= give the id of the
-flavor &#8211;image= give the name of the image &#8211;imageid= give the id of the
-image &#8211;force if a group exists and there are VMs in it, the program
-will ask user to proceed or not, use this flag to respond yes as
-default(if there are VMs in the group before creating this cluster, the
-program will include the exist VMs into the cluster) &#8211;grouponly remove
-the group only without removing the VMs, otherwise cluster remove
-command will remove all the VMs of this cluster FORMAT output format:
-table, json, csv COLUMN customize what information to display, for
-example: &#8211;column=status,addresses prints the columns status and
-addresses &#8211;detail for table print format, a brief version is used as
-default, use this flag to print detailed table</p>
 </div>
 </div>
 </div>

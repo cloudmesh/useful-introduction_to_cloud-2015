@@ -111,14 +111,24 @@ Cluster Help Message
 
 ::
 
-Usage: cluster list [--format=FORMAT] cluster create [--count=][--ln=]
-[--cloud=][--image=\|--imageid=] [--flavor=\|--flavorid=][--force]
-cluster show [--format=FORMAT] [--column=COLUMN] [--detail] cluster
-remove [--grouponly]
+    Usage:
+       cluster list [--format=FORMAT]
+       cluster create <name>
+                      [--count=<count>]
+                      [--ln=<LoginName>]
+                      [--cloud=<CloudName>]
+                      [--image=<imgName>|--imageid=<imgId>]
+                      [--flavor=<flavorName>|--flavorid=<flavorId>]
+                      [--force]
+       cluster show <name> 
+                    [--format=FORMAT] 
+                    [--column=COLUMN]
+                    [--detail]
+       cluster remove <name> 
+                      [--grouponly]
 
-Description: Cluster Management
-
-::
+    Description:
+      Cluster Management
 
       cluster list
           list the clusters
@@ -141,19 +151,27 @@ Description: Cluster Management
           remove the cluster and its VMs, if you want to remove the cluster(group name)
           without removing the VMs, use --grouponly flag
 
-Arguments: cluster name or group name
+    Arguments:
+      <name>        cluster name or group name
 
-Options: --count= give the number of VMs to add into the cluster --ln=
-give a login name for the VMs, e.g. ubuntu --cloud= give a cloud to work
-on --flavor= give the name of the flavor --flavorid= give the id of the
-flavor --image= give the name of the image --imageid= give the id of the
-image --force if a group exists and there are VMs in it, the program
-will ask user to proceed or not, use this flag to respond yes as
-default(if there are VMs in the group before creating this cluster, the
-program will include the exist VMs into the cluster) --grouponly remove
-the group only without removing the VMs, otherwise cluster remove
-command will remove all the VMs of this cluster FORMAT output format:
-table, json, csv COLUMN customize what information to display, for
-example: --column=status,addresses prints the columns status and
-addresses --detail for table print format, a brief version is used as
-default, use this flag to print detailed table
+    Options:
+      --count=<count>            give the number of VMs to add into the cluster
+      --ln=<LoginName>           give a login name for the VMs, e.g. ubuntu
+      --cloud=<CloudName>        give a cloud to work on
+      --flavor=<flavorName>      give the name of the flavor
+      --flavorid=<flavorId>      give the id of the flavor
+      --image=<imgName>          give the name of the image
+      --imageid=<imgId>          give the id of the image
+      --force                    if a group exists and there are VMs in it, the program will
+                                 ask user to proceed or not, use this flag to respond yes as 
+                                 default(if there are VMs in the group before creating this 
+                                 cluster, the program will include the exist VMs into the cluster)
+      --grouponly                remove the group only without removing the VMs, otherwise 
+                                 cluster remove command will remove all the VMs of this cluster
+      FORMAT                     output format: table, json, csv
+      COLUMN                     customize what information to display, for example:
+                                 --column=status,addresses prints the columns status
+                                 and addresses
+      --detail                   for table print format, a brief version 
+                                 is used as default, use this flag to print
+                                 detailed table
