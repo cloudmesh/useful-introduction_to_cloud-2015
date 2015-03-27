@@ -386,7 +386,7 @@ applied to enhance Web Service, Command Line Tools and Rest APIs.
      -
      - 04/06
      - 04/10
-   * - **Installation on a virtual machine**
+   * - **Installation on a virtual machine OpenStack**
      - `33 mins <http://www.youtube.com/watch?v=rcecpgm-47g>`_
      - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/setup_openstack.html>`_
      - 
