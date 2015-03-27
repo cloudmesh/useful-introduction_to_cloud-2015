@@ -345,13 +345,13 @@ Week 3
 Cloudmesh - Cloud Management Software (under preparation)
 *******************************************************************************
 
-.. Cloudmesh is a cloud resource management software written in Python. It
-        automates launching multiple VM instances across different cloud platforms
-        including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
-        Eucalyptus.  The web interface of Cloudmesh help users and administrators
-        manage entire cloud resources. Most cutting-edge technologies such as Apache
-        LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
-        applied to enhance Web Service, Command Line Tools and Rest APIs.
+Cloudmesh is a cloud resource management software written in Python. It
+automates launching multiple VM instances across different cloud platforms
+including Amazon EC2, Microsoft Azure Virtual Machine, HP Cloud, OpenStack, and
+Eucalyptus.  The web interface of Cloudmesh help users and administrators
+manage entire cloud resources. Most cutting-edge technologies such as Apache
+LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and Sphinx are
+applied to enhance Web Service, Command Line Tools and Rest APIs.
 
 .. list-table:: Basics of Cloudmesh
    :widths: 15 10 30 10 10 10
@@ -364,25 +364,56 @@ Cloudmesh - Cloud Management Software (under preparation)
      - Study Material By
      - Lab Session Homework
    * - **Introduction and Overview**
-     - Not yet available
-     - Not yet available
+     - `29 mins <http://www.youtube.com/watch?v=njHHjRMb7V8>`_
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/overview.html>`_
      - 
      - 04/06
      - 04/10
-   * - **Cloudmesh for Beginners**
-        - Installation
-        - Command Line Tools (CLI)
-        - Web Interface (GUI)
-        - REST APIs
-     - Not yet available
-     - Not yet available
+
+.. list-table:: Cloudmesh for Beginners
+   :widths: 15 10 30 10 10 10
+   :header-rows: 1
+
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+     - Study Material By
+     - Lab Session Homework
+   * - **Installation on a local machine**
+     - `18 mins <http://www.youtube.com/watch?v=lGiJifD0VgU>`_
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/quickstart.html>`_
+     -
+     - 04/06
+     - 04/10
+   * - **Installation on a virtual machine**
+     - `33 mins <http://www.youtube.com/watch?v=rcecpgm-47g>`_
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/setup_openstack.html>`_
      - 
+     - 04/06
+     - 04/10
+   * - **Command Line Tools (CLI)**
+     - `12 mins <http://www.youtube.com/watch?v=hdq-t-ggkXA>`_
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/shell/index.html>`_
+     -
+     - 04/06
+     - 04/10
+   * - **Web Interface (GUI)**
+     - `16 mins <http://www.youtube.com/watch?v=l_P4G85rysA>`_
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/gui/index.html>`_
+     -
+     - 04/06
+     - 04/10
+   * - **Python APIs**
+     - `15 mins <http://www.youtube.com/watch?v=xOL_-Sfh9MA>`_ 
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/api/index.html>`_
+     -
      - 04/06
      - 04/10
    * - **IPython on Cloudmesh**
-     - Not yet available
-     - Not yet available
-     - 
+     - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
+     - `20 mins </introduction_to_cloud_computing/cloudmesh/ipython.html>`_
+     -
      - 04/06
      - 04/10
    * - **Using OpenStack on Cloudmesh**
