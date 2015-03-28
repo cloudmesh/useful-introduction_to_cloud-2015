@@ -342,7 +342,7 @@ Week 3
 -------------------------------------------------------------------------------
 
 
-Cloudmesh - Cloud Management Software (under preparation)
+Cloudmesh - Cloud Management Software
 *******************************************************************************
 
 Cloudmesh is a cloud resource management software written in Python. It
