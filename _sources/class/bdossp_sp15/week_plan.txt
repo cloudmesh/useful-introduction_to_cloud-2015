@@ -342,7 +342,7 @@ Week 3
 -------------------------------------------------------------------------------
 
 
-Cloudmesh - Cloud Management Software (under preparation)
+Cloudmesh - Cloud Management Software
 *******************************************************************************
 
 Cloudmesh is a cloud resource management software written in Python. It
@@ -416,8 +416,8 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      -
      - 04/06
      - 04/10
-   * - **Using OpenStack on Cloudmesh**
-     - Not yet available
+   * - **Using India OpenStack on Cloudmesh**
+     - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
      - Not yet available
      - 
      - 04/06

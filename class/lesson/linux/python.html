@@ -828,16 +828,21 @@ this situation.</p>
 <h3><a class="toc-backref" href="#id21">Using <tt class="docutils literal"><span class="pre">pip</span></tt> to install packages</a><a class="headerlink" href="#using-pip-to-install-packages" title="Permalink to this headline">¶</a></h3>
 <p>In order to install package from PyPI, use the <tt class="docutils literal"><span class="pre">pip</span></tt> command.
 We can search for PyPI for packages:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip search autopep8 pylint
+<div class="highlight-python"><div class="highlight"><pre>$ pip search --trusted-host pypi.python.org autopep8 pylint
 </pre></div>
 </div>
 <p>It appears that the top two results are what we want so install them:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ pip install autopep8 pylint
+<div class="highlight-python"><div class="highlight"><pre>$ pip install --trusted-host pypi.python.org autopep8 pylint
 </pre></div>
 </div>
 <p>This will cause <tt class="docutils literal"><span class="pre">pip</span></tt> to download the packages from PyPI, extract
 them, check their dependencies and install those as needed, then
 install the requested packages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can skip &#8216;&#8211;trusted-host pypi.python.org&#8217; option if you have a
+patch on urllib3 on Python 2.7.9.</p>
+</div>
 </div>
 <div class="section" id="using-autopep8">
 <h3><a class="toc-backref" href="#id22">Using <tt class="docutils literal"><span class="pre">autopep8</span></tt></a><a class="headerlink" href="#using-autopep8" title="Permalink to this headline">¶</a></h3>
