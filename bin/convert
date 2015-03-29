@@ -7,7 +7,7 @@ from sh import mv
 import sys
 import os
 from pprint import pprint
-from cloudmesh import banner
+from cloudmesh_base.util import banner
 from concurrent import futures
 
 def _execute(command, filename):
