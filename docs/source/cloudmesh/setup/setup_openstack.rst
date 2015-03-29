@@ -43,9 +43,9 @@ First, you have to start a VM on the cloud and assign it a public IP.
 
 This can be done in multiple ways, using the command line, vagrant, or
 the horizon GUI. Let us assume you have set it up via the horizon GUI
-or the novaclient command line. 
+or the nova command line. 
 
-To set up a mchine you could use the either of the folloing methods:
+To set up a machine you could use the either of the following methods:
 
 * **Horizon**: see `our manual page
   <../../iaas/openstack.html#horizon-gui.html>`_.
@@ -59,7 +59,7 @@ To set up a mchine you could use the either of the folloing methods:
 .. note:: FutureSystems Portalname and Project ID
           For this example we assume you have set the shell variable
 	  PORTALNAME to your FutureSystems portal username. This can
-	  be done as follwows. Let us assume your portal name is
+	  be done as follows. Let us assume your portal name is
 	  `albert`. Than you can set it with::
 
               export PORTALNAME=albert
@@ -85,8 +85,8 @@ your machine to the FutureSystems portal so you can log into india.
 We summarize the following steps::
 
   $ ssh $PORTALNAME@india.futuresystems.org
-  india$ module load novaclient
-  india$ source ~/.futuregrid/openstack_havana/novarc
+  india$ module load openstack
+  india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
   india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 This assumes such a key exists in the location::
@@ -110,48 +110,49 @@ Next step is to open the necessary ports of the VM to be started::
   india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
   india$ nova secgroup-list-rules default
 
-Now you cab boot a VM and set public ip for external access::
+Now you can boot a VM and set public ip for external access::
 
-  india$ nova boot --flavor m1.small --image "futuregrid/ubuntu-14.04" --key_name $USER-india-key $USER-001
+  india$ nova boot --flavor m1.small --image "futuresystems/ubuntu-14.04" --key_name $USER-india-key $USER-001
 
-  india$ nova floating-ip-create
+  india$ nova floating-ip-create ext-net
 
-  india$ export MYIP=`nova floating-ip-list | fgrep "None" | cut -d '|' -f2 | head -1`
+  india$ export MYIP=`nova floating-ip-list | grep "| -" | cut -d '|' -f3 | head -1`
   india$ nova add-floating-ip $USER-001 $MYIP
   india$ nova show $USER-001
 
-You should see a table similare like this::
+You should see a table similar to this::
 
-  +--------------------------------------+----------------------------------------------------------------+
-  | Property                             | Value                                                          |
-  +--------------------------------------+----------------------------------------------------------------+
-  | status                               | ACTIVE                                                         |
-  | updated                              | 2014-09-12T19:27:30Z                                           |
-  | OS-EXT-STS:task_state                | None                                                           |
-  | private network                      | 168.39.1.34, 192.165.159.40                                    |
-  | key_name                             | USER-key                                                       |
-  | image                                | futuregrid/ubuntu-14.04 (02cf1545-dd83-493a-986e-583d53ee3728) |
-  | hostId                               | hsakjfhsdlkjfhsdlkjhflskjdhflkjsdhflkjshfpoeuiyrewuohfkljsdkjk |
-  | OS-EXT-STS:vm_state                  | active                                                         |
-  | OS-SRV-USG:launched_at               | 2014-09-12T19:27:30.000000                                     |
-  | flavor                               | m1.small (2)                                                   |
-  | id                                   | 7e458cbd-d37d-443a-aa76-adc7fcad52ea                           |
-  | security_groups                      | [{u'name': u'default'}]                                        |
-  | OS-SRV-USG:terminated_at             | None                                                           |
-  | user_id                              | sjhkjsahflkjashfkljshfkdjsahfkjh                               |
-  | name                                 | USER-001                                                       |
-  | created                              | 2014-09-12T19:27:23Z                                           |
-  | tenant_id                            | abcd01234hfslkjhfdskjfhkjdshfkjs                               |
-  | OS-DCF:diskConfig                    | MANUAL                                                         |
-  | metadata                             | {}                                                             |
-  | os-extended-volumes:volumes_attached | []                                                             |
-  | accessIPv4                           |                                                                |
-  | accessIPv6                           |                                                                |
-  | progress                             | 0                                                              |
-  | OS-EXT-STS:power_state               | 1                                                              |
-  | OS-EXT-AZ:availability_zone          | nova                                                           |
-  | config_drive                         |                                                                |
-  +--------------------------------------+----------------------------------------------------------------+
+    +--------------------------------------+-------------------------------------------------------------------+
+    | Property                             | Value                                                             |
+    +--------------------------------------+-------------------------------------------------------------------+
+    | OS-DCF:diskConfig                    | MANUAL                                                            |
+    | OS-EXT-AZ:availability_zone          | nova                                                              |
+    | OS-EXT-STS:power_state               | 1                                                                 |
+    | OS-EXT-STS:task_state                | -                                                                 |
+    | OS-EXT-STS:vm_state                  | active                                                            |
+    | OS-SRV-USG:launched_at               | 2015-03-26T18:17:45.000000                                        |
+    | OS-SRV-USG:terminated_at             | -                                                                 |
+    | accessIPv4                           |                                                                   |
+    | accessIPv6                           |                                                                   |
+    | config_drive                         |                                                                   |
+    | created                              | 2015-03-26T18:17:39Z                                              |
+    | flavor                               | m1.small (2)                                                      |
+    | hostId                               | 1094ef059b959406822d0a0517873b8cb03363d700019913ebd9f636          |
+    | id                                   | ad81e08f-9827-4a37-b029-xxxxxxxx                                  |
+    | image                                | futuresystems/ubuntu-14.04 (6a6a3474-8194-44ac-9f56-70cb93207f21) |
+    | int-net network                      | 10.23.1.xxx, 149.165.xxx.xxx                                      |
+    | key_name                             | xxx-india-key                                                     |
+    | metadata                             | {}                                                                |
+    | name                                 | xxx-001                                                           |
+    | os-extended-volumes:volumes_attached | []                                                                |
+    | progress                             | 0                                                                 |
+    | security_groups                      | default                                                           |
+    | status                               | ACTIVE                                                            |
+    | tenant_id                            | c7e8f17828fb48309e38axxxxxxxxxxxx                                 |
+    | updated                              | 2015-03-26T18:17:45Z                                              |
+    | user_id                              | 433181ac60be4115a51axxxxxxxxxxxx                                  |
+    +--------------------------------------+-------------------------------------------------------------------+
+
 
 Looking at the status you will see if the VM is in ACTIVE
 state. Repeat the command::
@@ -167,71 +168,49 @@ if necessary. Once this is the case you can login to it with::
 Preparation of the VM
 ----------------------------------------------------------------------
 
-Next you have to update the operating system while logging into
+Next you have to update the operating system while logging into 
 the VM::
 
   $ sudo apt-get update
-  $ sudo apt-get install git
+  $ sudo apt-get upgrade
+  $ sudo apt-get install git python-virtualenv
 
-To obtain cloudmesh you need to clone it from git hub and change to
-the cloudmesh directory::
+To obtain cloudmesh you need to clone it from github::
 
-  $ cd ~
   $ git clone https://github.com/cloudmesh/cloudmesh.git
-  $ cd cloudmesh
 
-The first thing you have to do is to fix some ip addresses on india
-with the command::
 
-  $ ./bin/fix-india-routing.sh 
-
-Installation
+Cloudmesh Setup
 ----------------------------------------------------------------------
 
-To start the installation of cloudmesh we first need to install a
-number of packages with::
-
-  $ ./install system
-
-We also recommend that you run virtualenv in python which you can
+We recommend that you run virtualenv in python which you can 
 enable with::
 
-  $ cd ~
   $ virtualenv  --no-site-packages ~/ENV
   $ source ~/ENV/bin/activate
+  $ pip install --upgrade pip
+
+The last command will ensure the pip version is latest in this virtual env.
+  
+To start the installation of cloudmesh we first need to install a 
+number of system packages with::
+
+  $ cd cloudmesh
+  $ ./install system
 
 Now let us install cloudmesh into this virtualenv::
 
-  $ cd cloudmesh
-  $ ./install requirements
-  $ ./install new
+  $ pip install cloudmesh
+  $ ./install new --force
 
-The last command will create a number of yaml files in the folder::
+The second command will create a number of template yaml files in the folder::
 
   $ ~/.cloudmesh
-    
-Next, install the cloudmesh server anad API with:: 
 
-  $ ./install cloudmesh
-
-Now we need to populate the cloudmesh.yaml file with your actual
-information. You can edit the file ``~/.cloudmesh/cloudmesh.yaml` 
-either with emacs or vi::
-
-  $ emacs ~/.cloudmesh/cloudmesh.yaml
-
-or::
-
-  $ vi ~/.cloudmesh/cloudmesh.yaml
-
-In this file, update your user profile, name, project
-data. Alternatively, if you already have yaml files on for example
-india.FutureSystems.org you can copy your local working yaml files from
-that machine to the virtual machine.
-
-Yet another alternative is to use the functionality provided by
-cloudmesh. Before we can use it we have to however create a key that
-we upload to the FutureSystems portal::
+Now we need to populate the cloudmesh.yaml file with your actual cloud credentials. 
+Cloudmesh provides tools for you to retrieve your futuresystems cloud credential 
+and configure the cloudmesh.yaml file properly. Before we can use it however we 
+have to create a key that we upload to the FutureSystems portal::
 
  $ export PORTALNAME=<put your portal name here>
  $ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
@@ -241,35 +220,50 @@ Than lets add the key to the ssh agent::
   $ eval `ssh-agent -s`
   $ ssh-add
   
-You will also need to add the key to your FutureSystems portal
-account. Please visit the portal and past the content of the public
-key in the appropriate field. YOu can do this by ::
+Then you need to add the key to your FutureSystems portal account. 
+Please visit the portal and paste the content of the public
+key in the appropriate field. You can get the content of the key by ::
 
-  $ cat ~/.ssh/id_rsa.pub 
+  $ cat ~/.ssh/id_rsa.pub
 
-Next you can fetch the information you need to acces openstack form india::
+At this point you should be able to connect to india from this VM which is 
+required by the following commands.
+
+Now you can fetch the information you need to acces openstack form india::
 
   $ cm-iu user fetch
   $ cm-iu user create
+  
+It's also recommended you manually edit the file `~/.cloudmesh/cloudmesh.yaml` 
+either with emacs or vi::
 
-This will fetch your cloud credentials from FutureSystems and populate
-them into the yaml config file. We als need to undertake some changes
-for the india OpenStack cloud configuration with ::
+  $ emacs ~/.cloudmesh/cloudmesh.yaml
+
+or::
+
+  $ vi ~/.cloudmesh/cloudmesh.yaml
+
+In this file, update your user profile, name, project data, etc.
+
+
+In order to start the cloudmesh web server that is accessible to outside,
+we also need to undertake some changes for the india OpenStack cloud 
+configuration with ::
   
   $ fab india.configure
     
-To run cloudmesh you will need to start a number of services you will
-need to create the cloudmesh database. Here we will use the command::
+To run cloudmesh you will need to start a number of services. The first
+is to create and initialize the cloudmesh database. Here we will use the command::
 
   $ fab mongo.reset
 
 Please note that this command will erase the previous database and you
-should be carefuly considering its use. When you initialize the
+should be carefully considering its use. When you initialize the
 cloudmesh server first this is the best method.  
 
 .. note:: Also note that this command will take a long time on
 	  machines that do not have SSD's due to the way mongo sets up
-	  the database. Be patient and do not interrup the program
+	  the database. Be patient and do not interrupt the program
 	  although it may run multiple minutes.
 
 
@@ -300,10 +294,6 @@ NOTE:
    favorite password when you are asked to set a password for portal login.
 
 #. This method is only intended for development and testing, and not
-   recommended for real production use.
-
-More information about more sophisticated install instructions are
-provided at 
-
-* http://cloudmesh.futuregrid.org/cloudmesh/developer.html#install-the-requirements
-
+   recommended for real production use. If you have that intention,
+   you can configure the system to use nginx+uwsgi to put cloudmesh
+   user secure SSL channel.
