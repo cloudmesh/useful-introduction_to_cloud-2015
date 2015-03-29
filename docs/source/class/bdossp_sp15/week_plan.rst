@@ -416,7 +416,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      -
      - 04/06
      - 04/10
-   * - **Using OpenStack on Cloudmesh**
+   * - **Using India OpenStack on Cloudmesh**
      - Not yet available
      - Not yet available
      - 
