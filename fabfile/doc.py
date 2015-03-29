@@ -73,7 +73,7 @@ def html(theme_name='readthedocs'):
     # api()
     # man()
     """build the doc locally and view"""
-    clean()
+    #clean()
     convert()
     local("cd docs; make html")
     local("fab security.check")
