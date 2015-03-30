@@ -521,6 +521,12 @@ You will sudo for many of them, thus india is not sufficient for the
 more advanced PaaS. These are supposed to be done on a virtual cluster
 while leveraging the `cm cluster` command.
 
+Length of the lessons in Week 3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Total of video lessons: 2 hours and 33 minutes
+* Total of study materials: 4 hours and 15 minutes
+* Total of lab sessions: 1 hour and 30 minutes
           
 Week 4
 -------------------------------------------------------------------------------
