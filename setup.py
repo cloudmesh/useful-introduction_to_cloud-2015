@@ -4,10 +4,13 @@ version = "2.2.3"
 
 requirements =     [
     'cloudmesh_base',
+    'cmd3',
+    'cloudmesh',
+    'concurrent',
+    'futures',
     'pyaml',
     'simplejson',
     'nose',
-    'cmd3',
     'docopt',
     'sphinx',
     'sphinx-autobuild',

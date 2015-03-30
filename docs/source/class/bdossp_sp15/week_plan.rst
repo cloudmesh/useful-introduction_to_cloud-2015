@@ -1,7 +1,12 @@
 ===============================================================================
 Weekly Plan
 ===============================================================================
-   
+
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
+	 
 Overview of the schedule
 
 * Release Date: Every Friday 5pm

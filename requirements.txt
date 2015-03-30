@@ -1,8 +1,9 @@
 cloudmesh_base
+cmd3
+concurrent
 pyaml
 simplejson
 nose
-cmd3
 docopt
 sphinx
 sphinx-autobuild
