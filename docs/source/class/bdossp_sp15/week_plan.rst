@@ -9,8 +9,6 @@ Weekly Plan
 	 
 Overview of the schedule
 
-* Release Date: Every Friday 5pm
-
 .. list-table:: Schedule Section 2 (HPC-ABDS Technologies)
    :widths: 10 30 10 
    :header-rows: 1
