@@ -252,6 +252,7 @@ For ubuntu use
   # The command requires input
   #
   $ fab server.start
+  $ cm project default $PROJECTID  
   $ cm cloud list
   $ cm cloud on india
   $ cm flavor india --refresh
@@ -283,6 +284,7 @@ For OSX use
   # The command requires input
   #
   $ fab server.start
+  $ cm project default $PROJECTID
   $ cm cloud list
   $ cm cloud on india
   $ cm flavor india --refresh
@@ -296,7 +298,7 @@ One line install with curl
 This script can also be executed while getting it from our convenient
 instalation script repository. For ubuntu you can use::
 
-  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=$PORTALNAME sh
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ |  username=$PORTALNAME projectid=$PROJECTID sh 
 
 It will install cloudmesh in the directory where you started it from
 and place it in the directory::
