@@ -421,7 +421,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - 04/10
    * - **Using India OpenStack on Cloudmesh**
      - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/cloudmesh_yaml.html>`_
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/cloudmesh_yaml.html>`_
      - 
      - 04/06
      - 04/10
