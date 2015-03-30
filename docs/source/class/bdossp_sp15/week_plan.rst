@@ -410,7 +410,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Python APIs**
      - `15 mins <http://www.youtube.com/watch?v=xOL_-Sfh9MA>`_ 
      - `30 mins </introduction_to_cloud_computing/cloudmesh/api/index.html>`_
-     -
+     - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-1>`_
      - 04/06
      - 04/10
    * - **IPython on Cloudmesh** (optional)
@@ -422,7 +422,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Using India OpenStack on Cloudmesh**
      - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
      - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/cloudmesh_yaml.html>`_
-     - 
+     - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-2>`_
      - 04/06
      - 04/10
 
