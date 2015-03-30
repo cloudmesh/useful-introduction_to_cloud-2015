@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,8 +29,6 @@
 
   
     <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
-  
-
   
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
@@ -51,12 +49,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        
-          <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <a href="../../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -66,9 +61,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-          
-          
-              <ul class="current">
+        
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -89,7 +83,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -167,7 +161,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
-          
         
       </div>
       &nbsp;
@@ -202,7 +195,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main">
             
   <div class="section" id="software-modules">
 <h1>Software Modules<a class="headerlink" href="#software-modules" title="Permalink to this headline">¶</a></h1>
@@ -228,7 +221,7 @@ example <a class="reference internal" href="packagemanagement.html"><em>Package 
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>If a software application is not present in a package manager like
-<code class="docutils literal"><span class="pre">yum</span></code>, <code class="docutils literal"><span class="pre">apt-get</span></code>, or <code class="docutils literal"><span class="pre">brew</span></code>, it may be installed manually.  In
+<tt class="docutils literal"><span class="pre">yum</span></tt>, <tt class="docutils literal"><span class="pre">apt-get</span></tt>, or <tt class="docutils literal"><span class="pre">brew</span></tt>, it may be installed manually.  In
 this case, the system administrators may install the application so
 that it is globally accessible (similar to the behavior of a package
 manager).</p>
@@ -240,9 +233,9 @@ a software should have that knowlege.</p>
 application called Modules. This allows a new software to be installed
 such that it is accessible only if needed.</p>
 <p>Let&#8217;s explore this on FutureSystems: start by logging into
-<code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>. You will be at the shell prompt.</p>
+<tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt>. You will be at the shell prompt.</p>
 <p>Now, lets run the Ruby interactive interpreter. The command to do so
-is just <code class="docutils literal"><span class="pre">irb</span></code>:</p>
+is just <tt class="docutils literal"><span class="pre">irb</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ irb
 </pre></div>
 </div>
@@ -255,15 +248,15 @@ is just <code class="docutils literal"><span class="pre">irb</span></code>:</p>
 </pre></div>
 </div>
 <p>This means that Ruby is currently not available.
-To see if it is available to us we can use the <code class="docutils literal"><span class="pre">module</span></code> command:</p>
+To see if it is available to us we can use the <tt class="docutils literal"><span class="pre">module</span></tt> command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ module avail ruby
 ---------- /opt/Modules/3.2.8/modulefiles/applications -----------
 ruby/1.9.3
 </pre></div>
 </div>
 <p>Now we know that Ruby is installed, but not currently available.  To
-load the appropriate environment to use Ruby we use the <code class="docutils literal"><span class="pre">module</span>
-<span class="pre">load</span></code> command:</p>
+load the appropriate environment to use Ruby we use the <tt class="docutils literal"><span class="pre">module</span>
+<span class="pre">load</span></tt> command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ module load ruby/1.9.3
 ruby version 1.9.3 loaded
 $ irb
@@ -276,7 +269,7 @@ Let enter a quick check to see Ruby in action:</p>
 =&gt; 42
 </pre></div>
 </div>
-<p>Since everything looks good so exit the interpreter using <code class="docutils literal"><span class="pre">exit</span></code>:</p>
+<p>Since everything looks good so exit the interpreter using <tt class="docutils literal"><span class="pre">exit</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>irb(main):001:0&gt; exit
 $
 </pre></div>
@@ -285,16 +278,16 @@ $
 <p class="first admonition-title">Tip</p>
 <p>Some usefull Module commands are:</p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></code> with no paramaters lists everything available</li>
-<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></code> with one or more space-separated names (as shown
-my <code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></code>) will load those modules</li>
-<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">list</span></code> will list the currently loaded modules</li>
-<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">unload</span></code> with one ore more names will unload any modules
-loaded by <code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">whatis</span></code> followed by zero or more names will give some
+<li><tt class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></tt> with no paramaters lists everything available</li>
+<li><tt class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></tt> with one or more space-separated names (as shown
+my <tt class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></tt>) will load those modules</li>
+<li><tt class="docutils literal"><span class="pre">module</span> <span class="pre">list</span></tt> will list the currently loaded modules</li>
+<li><tt class="docutils literal"><span class="pre">module</span> <span class="pre">unload</span></tt> with one ore more names will unload any modules
+loaded by <tt class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">module</span> <span class="pre">whatis</span></tt> followed by zero or more names will give some
 information about the individual modules.</li>
-<li><code class="docutils literal"><span class="pre">module</span> <span class="pre">switch</span> <span class="pre">old</span> <span class="pre">new</span></code> will replace the module named <code class="docutils literal"><span class="pre">old</span></code>
-with the one named <code class="docutils literal"><span class="pre">new</span></code>.</li>
+<li><tt class="docutils literal"><span class="pre">module</span> <span class="pre">switch</span> <span class="pre">old</span> <span class="pre">new</span></tt> will replace the module named <tt class="docutils literal"><span class="pre">old</span></tt>
+with the one named <tt class="docutils literal"><span class="pre">new</span></tt>.</li>
 </ul>
 </div>
 </div>
@@ -306,7 +299,7 @@ with the one named <code class="docutils literal"><span class="pre">new</span></
 <div class="highlight-python"><div class="highlight"><pre>$ module avail python
 </pre></div>
 </div>
-<p>Load the default one and get the version and where the command is located (using <code class="docutils literal"><span class="pre">which</span></code>):</p>
+<p>Load the default one and get the version and where the command is located (using <tt class="docutils literal"><span class="pre">which</span></tt>):</p>
 <div class="highlight-python"><div class="highlight"><pre>$ module load python
 $ python -V
 Python 2.7
@@ -314,15 +307,15 @@ $ which python
 /N/soft/python/2.7/bin/python
 </pre></div>
 </div>
-<p>Now, for each of the python modules you saw in the output of <code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span> <span class="pre">python</span></code> above, do the following:</p>
+<p>Now, for each of the python modules you saw in the output of <tt class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span> <span class="pre">python</span></tt> above, do the following:</p>
 <ol class="arabic simple">
 <li>unload the current python module</li>
 <li>load the new one</li>
-<li>print the version using <code class="docutils literal"><span class="pre">python</span> <span class="pre">-V</span></code></li>
-<li>get the location using <code class="docutils literal"><span class="pre">which</span> <span class="pre">python</span></code></li>
+<li>print the version using <tt class="docutils literal"><span class="pre">python</span> <span class="pre">-V</span></tt></li>
+<li>get the location using <tt class="docutils literal"><span class="pre">which</span> <span class="pre">python</span></tt></li>
 </ol>
 <p>You will be running something like the following, except replace
-<code class="docutils literal"><span class="pre">[redacted]</span></code> with the appropriate commands:</p>
+<tt class="docutils literal"><span class="pre">[redacted]</span></tt> with the appropriate commands:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ [redacted]
 $ [redacted]
 $ python -V
@@ -345,7 +338,7 @@ $ python -V
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../iaas/overview_openstack.html" class="btn btn-neutral float-right" title="Overview and Introduction to OpenStack">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../iaas/overview_openstack.html" class="btn btn-neutral float-right" title="Overview and Introduction to OpenStack"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="advancedssh.html" class="btn btn-neutral" title="Advanced SSH"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -361,8 +354,7 @@ $ python -V
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -387,7 +379,7 @@ $ python -V
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

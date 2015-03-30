@@ -9,8 +9,6 @@ Weekly Plan
 	 
 Overview of the schedule
 
-* Release Date: Every Friday 5pm
-
 .. list-table:: Schedule Section 2 (HPC-ABDS Technologies)
    :widths: 10 30 10 
    :header-rows: 1
@@ -423,7 +421,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - 04/10
    * - **Using India OpenStack on Cloudmesh**
      - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
-     - Not yet available
+     - `30 mins </introduction_to_cloud_computing/cloudmesh/cloudmesh_yaml.html>`_
      - 
      - 04/06
      - 04/10
@@ -438,18 +436,6 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - Lab sessions
      - Study Material By
      - Lab Session Homework
-   * - **Introduction and Overview**
-     - Not yet available
-     - Not yet available
-     - 
-     - 04/06
-     - 04/10
-   * - **VM Management**
-     - Not yet available
-     - Not yet available
-     - 
-     - 04/06
-     - 04/10
    * - **Adding new Commands via a Python Package**
      - `5 mins <https://www.youtube.com/watch?v=UFLyCVpDhgI&feature=em-upload_owner>`_
      - `5 mins <http://cloudmesh.github.io/cmd3/manual.html#generating-independent-packages>`_
@@ -461,6 +447,19 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
         - Host Configuration
      - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
      - `20 mins </introduction_to_cloud_computing/cloudmesh/cm/_cm-cluster.html>`_
+     - 
+     - 04/06
+     - 04/10
+
+..   * - **Introduction and Overview**
+     - Not yet available
+     - Not yet available
+     - 
+     - 04/06
+     - 04/10
+   * - **VM Management**
+     - Not yet available
+     - Not yet available
      - 
      - 04/06
      - 04/10

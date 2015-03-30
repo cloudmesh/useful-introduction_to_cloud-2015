@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Managing multiple VMs with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
+  <title>Account Information of Cloudmesh &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -32,10 +32,7 @@
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
-    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
-        <link rel="up" title="Cloudmesh cm" href="index.html"/>
-        <link rel="next" title="Managing Volumes with Cloudmesh cm" href="_cm-volume.html"/>
-        <link rel="prev" title="Deploying Virtual Cluster with Cloudmesh cm" href="_cm-cluster.html"/> 
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -62,7 +59,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul class="current">
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -93,10 +90,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../accounts/details.html">Account and Project Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Cloudmesh</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cm/index.html">Cloudmesh cm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
@@ -182,14 +179,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
-      
-          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
-      
-    <li>Managing multiple VMs with Cloudmesh cm</li>
+    <li>Account Information of Cloudmesh</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/cloudmesh/cm/_cm-group.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/cloudmesh/setup/cloudmesh_yaml.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -197,84 +190,233 @@
 </div>
           <div role="main">
             
-  <div class="section" id="managing-multiple-vms-with-cloudmesh-cm">
-<h1>Managing multiple VMs with Cloudmesh cm<a class="headerlink" href="#managing-multiple-vms-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
-<p>When you start a cluster of VMs in Cloudmesh CLI, it is required to
-specify a group name for the cluster, so that we can manage the cluster
-according to the cluster name. In Cloudmesh CLI, you may use group
-command to manage groups.</p>
-<p>IPython Alias</p>
-<p>With the alias command we simply define a new command with the name cm
-that we can call directly from IPython. Here we make sure that the
-parameters are between &#8220;&#8221; so that they are properly set. Just execute
-the following lines.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+  <div class="section" id="account-information-of-cloudmesh">
+<h1>Account Information of Cloudmesh<a class="headerlink" href="#account-information-of-cloudmesh" title="Permalink to this headline">¶</a></h1>
+<p>Cloudmesh manages account information which is stored in a file named
+<tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>. In OpenStack, for example, access information such as
+OS_USERNAME, OS_PASSWORD, OS_TENANT_NAME, OS_AUTH_URL, and OS_CACERT is
+required to interact with a OpenStack service. Cloudmesh stores the access
+information in the <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file under a user home directory and
+MongoDB open-source document database. If you&#8217;d like to add more cloud
+platforms, you may need to update this YAML data file. Windows Azure, Amazon
+EC2, HP Cloud, Eucalyptus, and other OpenStack clouds are supported.</p>
+<div class="section" id="this-page-covers">
+<h2>This page covers:<a class="headerlink" href="#this-page-covers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Basic structure of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt></li>
+<li>Basic use of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt></li>
+<li>An example of adding a new cloud account</li>
+</ul>
+</div>
+<div class="section" id="basic-structure-of-cloudmesh-yaml">
+<h2>Basic structure of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt><a class="headerlink" href="#basic-structure-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> configuration file mainly contains the following
+information:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>profile (user profile data)</dt>
+<dd><ul class="first last simple">
+<li>address</li>
+<li>email</li>
+<li>firstname</li>
+<li>gid</li>
+<li>uid</li>
+<li>lastname</li>
+<li>phone</li>
+<li>username</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>active (cloud activation)</dt>
+<dd><ul class="first last simple">
+<li>[cloud name]</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>clouds (cloud access information)</dt>
+<dd><ul class="first last simple">
+<li>[cloud name]</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>projects (project information)</dt>
+<dd><ul class="first last simple">
+<li>active</li>
+<li>completed</li>
+<li>default</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">security (security group information)</p>
+</li>
+<li><p class="first">keys (key pairs)</p>
+</li>
+</ul>
+<div class="section" id="cloud-access-information">
+<h3>Cloud Access Information<a class="headerlink" href="#cloud-access-information" title="Permalink to this headline">¶</a></h3>
+<p>Each cloud has common key=value:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm_heading: [Description]
+cm_host: [Host address e.g. india.futuregrid.org]
+cm_label: [Unique label]
+cm_service_url_type: publicURL (OpenStack Onl)
+cm_type: [aws|openstack|ec2|eucalyptus|azure]
+cm_type_version: [Version e.g. juno or havana]
+default:
+  flavor: [Instance type e.g. m1.small]
+  image: [Virtual image name]
+  location: [Region]
 </pre></div>
 </div>
-<p>We are using now one of the methods to call the cm commands in the
-following sections.</p>
-<div class="section" id="group-command">
-<h2><tt class="docutils literal"><span class="pre">group</span></tt> command<a class="headerlink" href="#group-command" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">group</span></tt> allows us to perform simple grouping of VMs but also
-images and flavors. A group is essentially a tuple in which you can add
-to a named group a type of an object and its unique name. The group
-command allows you to create a group, add items to groups, and list
-groups. For more information, one can refer to the manual page.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group -h&quot;
+<p>The following sections are credentials for clouds:</p>
+<ul class="simple">
+<li>OpenStack has:</li>
+</ul>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first last docutils">
+<dt>credentials:</dt>
+<dd>OS_AUTH_URL: [Address of OpenStack Authentication]
+OS_CACERT: [File path of CA Cert]
+OS_PASSWORD: [Password]
+OS_TENANT_NAME: [Project Name]
+OS_USERNAME: [User ID]
+OS_VERSION: juno</dd>
+</dl>
+</dd>
+</dl>
+<p>These credentials are adopted from OpenStack Credential variables. For more
+details, see here: <a class="reference external" href="http://docs.openstack.org/developer/devstack/openrc.html">http://docs.openstack.org/developer/devstack/openrc.html</a></p>
+<ul class="simple">
+<li>Amazon Cloud (AWS) has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  EC2_ACCESS_KEY: [ACCESS KEY string]
+  EC2_SECRET_KEY: [SECRET KEY string]
+  keyname: [SSH Key Pair name]
+  userid: [AWS ID]
+  EC2_PRIVATE_KEY: [File path of a private key]
 </pre></div>
 </div>
-<p>To create a group with the name sample-group you can use the command:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group create sample-group&quot;
+<ul class="simple">
+<li>Microsoft Azure has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  subscriptionid: [Subscription ID]
+  managementcertfile: [File path of a management certificate e.g. *.pem]
+  thumbprint: [File path of a fingerprint]
+  servicecertfile: [File path of service certificate e.g. *.pfx]
 </pre></div>
 </div>
-<p>Then you can list the groups with:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group list&quot;
+<ul class="simple">
+<li>Eucalyptus has:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>credentials:
+  EUCALYPTUS_CERT: [File path of a server certificate]
+  EC2_CERT: [File path of a certificate]
+  EC2_URL: [Address of Eucalyptus Authentication]
+  EC2_ACCESS_KEY: [ACCESS KEY string]
+  EC2_SECRET_KEY: [SECRET KEY string]
+  EC2_PRIVATE_KEY: [File path of a private key]
 </pre></div>
 </div>
-<p>To add a VM named sample-vm to the group (make sure the VM exists before
-add it), you can use:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group add item sample-group vm sample-vm&quot;
+</div>
+<div class="section" id="file-location">
+<h3>File Location<a class="headerlink" href="#file-location" title="Permalink to this headline">¶</a></h3>
+<p>Once you&#8217;ve installed Cloudmesh, you can find the configuration
+<tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file in the following location:</p>
+<ul class="simple">
+<li>$HOME/.cloudmesh/cloudmesh.yaml</li>
+</ul>
+</div>
+<div class="section" id="basic-template">
+<h3>Basic Template<a class="headerlink" href="#basic-template" title="Permalink to this headline">¶</a></h3>
+<p>We maintain a default template under:
+<a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh.yaml">https://github.com/cloudmesh/cloudmesh/blob/master/etc/cloudmesh.yaml</a></p>
+</div>
+</div>
+<div class="section" id="india-openstack-on-futuresystems">
+<h2>India OpenStack on FutureSystems<a class="headerlink" href="#india-openstack-on-futuresystems" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;ve successfully installed Cloudmesh, you expect to have India OpenStack configured with your account.</p>
+<p>An example of India account information in <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>clouds:
+  india:
+    cm_heading: India OpenStack, Juno
+    cm_host: india.futuregrid.org
+    cm_label: india_juno
+    cm_service_url_type: publicURL
+    cm_type: openstack
+    cm_type_version: juno
+    credentials:
+      OS_AUTH_URL: https://i5r.idp.iu.futuregrid.org:5000/v2.0
+      OS_CACERT: /home/albert/.cloudmesh/india-juno-cacert.pem
+      OS_PASSWORD: 1234567890123
+      OS_TENANT_NAME: fg999
+      OS_USERNAME: albert
+      OS_VERSION: juno
+    default:
+      flavor: m1.small
+      image: futuresystems/ubuntu-14.04
 </pre></div>
 </div>
-<p>To list the elements in a group you can use:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group show sample-group&quot;
+<p>You may find an identical information about credentials on india login node.
+Try to compare with <tt class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/india/juno/openrc.sh</span></tt> on india.</p>
+</div>
+<div class="section" id="aws-example-of-cloudmesh-yaml">
+<h2>AWS example of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt><a class="headerlink" href="#aws-example-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>to use Amazon cloud, you may have AWS access information in <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre>clouds:
+  aws:
+    cm_host: aws.amazon.com
+    cm_label: aws
+    cm_type: aws
+    credentials:
+      EC2_ACCESS_KEY: 2UWLRAD5QABCDEFBC
+      EC2_SECRET_KEY: jaHdMoasdv+Xk+k1dV8KI2/o/untirwqEzi/Fnl2
+      EC2_PRIVATE_KEY: /home/albert/.cloudmesh/aws-pk.pem
+    keyname: cloudmesh-aws
+    userid: albert
+    default:
+      flavor: m1.small
+      image: ami-fbb2fc92
+      location: us-east-1
 </pre></div>
 </div>
-<p>To delete a VM from a group you can use:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove item sample-group vm sample-vm&quot;
+</div>
+<div class="section" id="cloud-activation-on-cloudmesh">
+<h2>Cloud Activation on Cloudmesh<a class="headerlink" href="#cloud-activation-on-cloudmesh" title="Permalink to this headline">¶</a></h2>
+<p>If you added a new cloud access information in your <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>, you
+need to activate your cloud on <tt class="docutils literal"><span class="pre">cm</span></tt> interactive shell or a web interface.</p>
+<p>In <tt class="docutils literal"><span class="pre">cm</span></tt> shell, try to add it first. Example command looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud add /home/albert/.cloudmesh/cloudmesh.yaml
 </pre></div>
 </div>
-<p>To delete a group:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove sample-group&quot;
+<p>And activate your new cloud:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud on [cloud name]
 </pre></div>
 </div>
-<p>Please note that deletion of a group does not delete the accociated
-objects in that group. It only removes the object that stores the types
-and objects for that group.</p>
-</div>
-<div class="section" id="working-with-group">
-<h2>Working with group<a class="headerlink" href="#working-with-group" title="Permalink to this headline">¶</a></h2>
-<p>Groups are conveniently integrated into the cloudmesh shell. You may
-include a VM into a group while you create it, delete VMs by groups and
-when you create a cluster, a group name has to be provided.</p>
-<p>To start a VM and add it to group, you can use the group parameter. If
-the group doesn&#8217;t exist, one will be created:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --group=sample&quot;
+<p>If you added AWS, try like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud on aws
 </pre></div>
 </div>
-<p>To delete the virtual machines specified in a group you can use the
-command:</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete --group=sample&quot;
-</pre></div>
+<p>You may have different name (label) for your cloud. Use your name, if it has a
+different name.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Find <tt class="docutils literal"><span class="pre">Profile</span></tt> page on the Cloudmesh web GUI. It supports cloud
+activation on the web.</p>
 </div>
-<p>To create multiple vms that are part of a vitual cluster, you need to
-provide a group name. If the group doesn&#8217;t exist, one will be created.
-If the group exist and it has VMs in it already, the newly created
-virtual machines will be included into the cluster. The following
-example will create two virtual machines while assuming the default
-cloud, flavor, and image. Make sure you set them before if they have not
-been set.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=2 --group=sample&quot;
+</div>
+<div class="section" id="additional-information">
+<h2>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
+<p>For more information of using a <tt class="docutils literal"><span class="pre">yaml</span></tt> file in Cloudmesh, please see here:</p>
+<div class="highlight-python"><div class="highlight"><pre>`YAML &lt;yaml.html&gt;`_
 </pre></div>
 </div>
 </div>
@@ -283,15 +425,6 @@ been set.</p>
 
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="_cm-volume.html" class="btn btn-neutral float-right" title="Managing Volumes with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="_cm-cluster.html" class="btn btn-neutral" title="Deploying Virtual Cluster with Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
