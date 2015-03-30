@@ -413,7 +413,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      -
      - 04/06
      - 04/10
-   * - **IPython on Cloudmesh**
+   * - **IPython on Cloudmesh** (optional)
      - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
      - `20 mins </introduction_to_cloud_computing/cloudmesh/ipython.html>`_
      -
@@ -464,7 +464,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - 04/06
      - 04/10
 
-Homework cm.1
+Lab session cm.1
 ^^^^^^^^^^^^^^^^^^^^^^
 
 (cm.1) This assignment will teach you how to add new commands to
