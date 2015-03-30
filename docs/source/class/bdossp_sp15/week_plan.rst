@@ -243,7 +243,7 @@ Microsoft Azure.
      - Lab Session Homework
    * - **Introduction and Overview**
      - `12 mins <https://mix.office.com/watch/u7uovy9i06jo>`_
-     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/overview_openstack.html>`_
+     - `10 mins <../lesson/iaas/overview_openstack.html>`_
      - 
      - 03/30
      - 
@@ -255,31 +255,31 @@ Microsoft Azure.
      - 
    * - -- Compute Engine (Nova)
      -
-     - `1 hour </introduction_to_cloud_computing/class/lesson/iaas/openstack.html>`_
-     - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#exercises>`_
+     - `1 hour <../lesson/iaas/openstack.html>`_
+     - `30 mins <../lesson/iaas/openstack.html#exercises>`_
      - 03/30
      - 04/03
    * - -- Web Dashboard (Horizon)
      - 
-     - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html>`_
-     - `15 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_horizon.html#exercises>`_
+     - `15 mins <../lesson/iaas/openstack_horizon.html>`_
+     - `15 mins <../lesson/iaas/openstack_horizon.html#exercises>`_
      - 03/30
      - 04/03
    * - **Storage (Swift)**
      - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
-     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#swift-storage>`_
+     - `10 mins <../lesson/iaas/openstack.html#swift-storage>`_
      -
      - 03/30
      - 
    * - **Network (Neutron)**
      - `3 mins <https://mix.office.com/watch/1dt5hp0e2grov>`_
-     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack.html#neutron-network>`_
+     - `10 mins <../lesson/iaas/openstack.html#neutron-network>`_
      -
      - 03/30
      - 
    * - **Introduction to OpenStack Juno Release**
      - `2 mins <https://mix.office.com/watch/cz6xehrs9xor>`_
-     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/openstack_juno.html>`_
+     - `10 mins <../lesson/iaas/openstack_juno.html>`_
      - 
      - 03/30
      - 
@@ -296,14 +296,14 @@ Microsoft Azure.
      - Lab Session Homework
    * - **Amazon Web Services (AWS)**
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
-     - `30 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html>`_
-     - `45 mins </introduction_to_cloud_computing/class/lesson/iaas/aws_tutorial.html#exercises>`_
+     - `30 mins <../lesson/iaas/aws_tutorial.html>`_
+     - `45 mins <../lesson/iaas/aws_tutorial.html#exercises>`_
      - 03/30
      - 04/03
    * - **Microsoft Azure**
      - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
-     - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html>`_
-     - `10 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise1>`_
+     - `50 mins <../lesson/iaas/azure_tutorial.html>`_
+     - `10 mins <../lesson/iaas/azure_tutorial.html#exercise1>`_
      - 03/30
      - 04/03
 
@@ -320,8 +320,8 @@ Microsoft Azure.
    * - **OpenStack for Beginners**
          - Compute Engine (Nova)
      -
-     - `2 hours </introduction_to_cloud_computing/iaas/index.html>`_
-     - `50 mins </introduction_to_cloud_computing/iaas/openstack.html#exercises>`_
+     - `2 hours <../../iaas/index.html>`_
+     - `50 mins <../../iaas/openstack.html#exercises>`_
      - Not due
      - Not due
    * - **Other IaaS Platforms**
@@ -329,7 +329,7 @@ Microsoft Azure.
              - Microsoft Azure
      -
      -
-     - `50 mins </introduction_to_cloud_computing/class/lesson/iaas/azure_tutorial.html#exercise2>`_
+     - `50 mins <../lesson/iaas/azure_tutorial.html#exercise2>`_
      - Not due
      - Not due
 
@@ -368,7 +368,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - Lab Session Homework
    * - **Introduction and Overview**
      - `29 mins <http://www.youtube.com/watch?v=njHHjRMb7V8>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/overview.html>`_
+     - `30 mins <../../cloudmesh/overview.html>`_
      - 
      - 04/06
      - Not due
@@ -385,43 +385,43 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - Lab Session Homework
    * - **Installation on a local machine**
      - `18 mins <http://www.youtube.com/watch?v=lGiJifD0VgU>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/quickstart.html>`_
+     - `30 mins <../../cloudmesh/setup/quickstart.html>`_
      -
      - 04/06
      - 04/10
    * - **Installation on a virtual machine OpenStack**
      - `33 mins <http://www.youtube.com/watch?v=rcecpgm-47g>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/setup_openstack.html>`_
+     - `30 mins <../../cloudmesh/setup/setup_openstack.html>`_
      - 
      - 04/06
      - 04/10
    * - **Command Line Tools (CLI)**
      - `12 mins <http://www.youtube.com/watch?v=hdq-t-ggkXA>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/shell/index.html>`_
+     - `30 mins <../../cloudmesh/shell/index.html>`_
      -
      - 04/06
      - 04/10
    * - **Web Interface (GUI)**
      - `16 mins <http://www.youtube.com/watch?v=l_P4G85rysA>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/gui/index.html>`_
+     - `30 mins <../../cloudmesh/gui/index.html>`_
      -
      - 04/06
      - 04/10
    * - **Python APIs**
      - `15 mins <http://www.youtube.com/watch?v=xOL_-Sfh9MA>`_ 
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/api/index.html>`_
+     - `30 mins <../../cloudmesh/api/index.html>`_
      -
      - 04/06
      - 04/10
    * - **IPython on Cloudmesh**
      - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
-     - `20 mins </introduction_to_cloud_computing/cloudmesh/ipython.html>`_
+     - `20 mins <../../cloudmesh/ipython.html>`_
      -
      - 04/06
      - 04/10
    * - **Using India OpenStack on Cloudmesh**
      - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/cloudmesh_yaml.html>`_
+     - `30 mins <../../cloudmesh/setup/cloudmesh_yaml.html>`_
      - 
      - 04/06
      - 04/10
@@ -446,7 +446,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
         - SSH Connections between nodes
         - Host Configuration
      - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
-     - `20 mins </introduction_to_cloud_computing/cloudmesh/cm/_cm-cluster.html>`_
+     - `20 mins <../../cloudmesh/cm/_cm-cluster.html>`_
      - 
      - 04/06
      - 04/10
