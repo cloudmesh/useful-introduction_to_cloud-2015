@@ -20,7 +20,7 @@ A video bout the quickstart instalation is available on |video-cm-install|
 .. note:: FutureSystems Portalname and Project ID
           For this example we assume you have set the shell variable
 	  PORTALNAME to your FutureSystems portal username. This can
-	  be done as follwows. Let us assume your portal name is
+	  be done as follows. Let us assume your portal name is
 	  `albert`. Than you can set it with::
 
               export PORTALNAME=albert
@@ -45,10 +45,10 @@ for cloudmesh. We assume you create one called ENV and activate it::
 
   pip install cloudmesh
 
-  (This is not yet fully supported, so you do need the source code instalation)
+  (This is not yet fully supported, so you do need the source code installation)
   
-If you like to extend cloudmesh we recommand that you
-download the following reppository into your local copy of github
+If you like to extend cloudmesh we recommend that you
+download the following repository into your local copy of github
 source code directories. We assume you have git installed::
 
   $ mkdir github
@@ -114,7 +114,7 @@ the cloudmesh.yaml file. Choose your favorite editor::
 
   $ emacs ~/.cloudmesh/cloudmesh.yaml
 
-Change the values makred with TBD that you find here with values that describe
+Change the values marked with TBD that you find here with values that describe
 you. 
 
 .. .. todo:: Hyungro: cm "default username=username $PORTALNAME"
@@ -147,9 +147,10 @@ done so::
    
      $ cm project default $PROJECTID
      
-where :pink:`PROJECTID` is your default project id from FutureSystems e.g. fg455 as an example.
+where :pink:`PROJECTID` is your default project id from FutureSystems
+e.g. fg456 as an example.
    
-To start Cloudmesh use::
+To start cloudmesh use::
 
   $ fab server.start
 
@@ -296,7 +297,7 @@ One line install with curl
 .. warning:: This method is experimental, please give us feedback. 
  
 This script can also be executed while getting it from our convenient
-instalation script repository. For ubuntu you can use::
+installation script repository. For ubuntu you can use::
 
   $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ |  username=$PORTALNAME projectid=$PROJECTID sh 
 
