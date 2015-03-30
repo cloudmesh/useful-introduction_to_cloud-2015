@@ -205,6 +205,6 @@ different name.
 Additional Information
 -------------------------------------------------------------------------------
 
-For more information of using a ``yaml`` file in Cloudmesh, please see here::
+For more information of using a ``yaml`` file in Cloudmesh, please see here:
 
 `YAML <yaml.html>`_
