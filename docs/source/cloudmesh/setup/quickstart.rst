@@ -20,7 +20,7 @@ A video bout the quickstart instalation is available on |video-cm-install|
 .. note:: FutureSystems Portalname and Project ID
           For this example we assume you have set the shell variable
 	  PORTALNAME to your FutureSystems portal username. This can
-	  be done as follwows. Let us assume your portal name is
+	  be done as follows. Let us assume your portal name is
 	  `albert`. Than you can set it with::
 
               export PORTALNAME=albert
@@ -39,11 +39,30 @@ for cloudmesh. We assume you create one called ENV and activate it::
   $ virtualenv ~/ENV
   $ source ~/ENV/bin/activate
 
-First you need to download the code from github. We assume you have
-git installed::
-   
-  git clone https://github.com/cloudmesh/cloudmesh.git
+ .. comment::
+ 
+  The easiset way for users is install cloudmesh from pip with::
 
+  pip install cloudmesh
+
+  (This is not yet fully supported, so you do need the source code installation)
+  
+If you like to extend cloudmesh we recommend that you
+download the following repository into your local copy of github
+source code directories. We assume you have git installed::
+
+  $ mkdir github
+  $ cd github
+
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+
+In some cases you may also want to download some other repositories
+that are either used by cloudmesh, or are extensions to
+cloudmesh. This includes::
+
+  $ git clone https://github.com/cloudmesh/cloudmesh_base.git
+  $ git clone https://github.com/cloudmesh/cloudmesh_pbs.git  
+  
 Next, you need to install a number of required packages with the
 following commands::
 
@@ -95,7 +114,7 @@ the cloudmesh.yaml file. Choose your favorite editor::
 
   $ emacs ~/.cloudmesh/cloudmesh.yaml
 
-Change the values TBD that you find here with values that describe
+Change the values marked with TBD that you find here with values that describe
 you. 
 
 .. .. todo:: Hyungro: cm "default username=username $PORTALNAME"
@@ -119,7 +138,7 @@ The next steps will deploy the cloudmesh database::
 
 We add the key to the database with::
 
-   $ cm "key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub"
+   $ cm key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub
 
 where :pink:`PORTALNAME` is your name for the FutuerSystems portal.
 
@@ -128,9 +147,10 @@ done so::
    
      $ cm project default $PROJECTID
      
-where :pink:`PROJECTID` is your default project id from FutureSystems e.g. fg455 as an example.
+where :pink:`PROJECTID` is your default project id from FutureSystems
+e.g. fg456 as an example.
    
-To start Cloudmesh use::
+To start cloudmesh use::
 
   $ fab server.start
 
@@ -233,6 +253,7 @@ For ubuntu use
   # The command requires input
   #
   $ fab server.start
+  $ cm project default $PROJECTID  
   $ cm cloud list
   $ cm cloud on india
   $ cm flavor india --refresh
@@ -264,6 +285,7 @@ For OSX use
   # The command requires input
   #
   $ fab server.start
+  $ cm project default $PROJECTID
   $ cm cloud list
   $ cm cloud on india
   $ cm flavor india --refresh
@@ -275,9 +297,9 @@ One line install with curl
 .. warning:: This method is experimental, please give us feedback. 
  
 This script can also be executed while getting it from our convenient
-instalation script repository. For ubuntu you can use::
+installation script repository. For ubuntu you can use::
 
-  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ | username=$PORTALNAME sh
+  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ |  username=$PORTALNAME projectid=$PROJECTID sh 
 
 It will install cloudmesh in the directory where you started it from
 and place it in the directory::

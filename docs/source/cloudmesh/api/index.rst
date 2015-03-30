@@ -12,3 +12,4 @@ Cloudmesh API
    _pbs
    _vm_api
    _mesh
+   exercises
