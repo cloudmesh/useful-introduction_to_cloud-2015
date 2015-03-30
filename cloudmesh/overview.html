@@ -14,7 +14,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -40,7 +39,7 @@
         <link rel="prev" title="Cloudmesh" href="index.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -52,16 +51,26 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="../index.html" class="fa fa-home"> my Cloudmesh</a>
+
         
+          <a href="../index.html" class="icon icon-home"> my Cloudmesh
         
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+
+        
+          
+          <img src="../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -69,38 +78,29 @@
           
           
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../preface.html#conventions">Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../preface.html#using-the-notebooks">Using the Notebooks</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about.html#independent-study-at-iu">Independent Study at IU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about.html#student-employment-at-iu">Student Employment at IU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about.html#contributing-to-the-manual">Contributing to the Manual</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contact.html#contributors">Contributors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contact.html#support">Support</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../class/lessons.html">Lessons</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../accounts/accounts.html">Creating FutureSystems Accounts and Projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../accounts/details.html">Account and Project Management</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Cloudmesh</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Cloudmesh Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cloudmesh Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-main-components">Cloudmesh Main Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-install-management">Cloudmesh Install Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-service-management">Cloudmesh Service Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-use-mode">Cloudmesh Use Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-baremetal">Cloudmesh Baremetal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-hpc">Cloudmesh HPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-iaas">Cloudmesh IaaS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-web">Cloudmesh Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-shell">Cloudmesh Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-api">Cloudmesh API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudmesh-state">Cloudmesh State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-and-transition-to-futuresystems">Development and Transition to FutureSystems</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="setup/index.html">Cloudmesh Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cm/index.html">Cloudmesh cm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/index.html">Cloudmesh API</a></li>
@@ -109,61 +109,16 @@
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Cloudmesh FAQ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../parallel.html#parallel-distributed-shell-pdsh">Parallel Distributed Shell (pdsh)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../parallel.html#fabric">Fabric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../parallel.html#cloudmesh-parallel-api">Cloudmesh Parallel API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../parallel.html#exercises">Exercises</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../iaas/index.html#openstack-clouds">OpenStack Clouds</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../paas/hadoop.html">Using Hadoop in FutureSystems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../paas/hadoop-setup.html">Deploying a Hadoop Cluster on India OpenStack</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../hpc/hpc.html">HPC</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../hardware/indiana.html">Hardware at Indiana University</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../devops/history.html">Historical and Functionality Perspective</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../devops/makefile.html">Makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../devops/shell.html">Shell Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../devops/configure.html">Configure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../devops/rpm.html">Package Managers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ipython/_ipython.html">IPython</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#sections">Sections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#listtable">Listtable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#exceltable">Exceltable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#boxes">Boxes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#sidebar-directive">Sidebar directive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#autorun">Autorun</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#hyperlinks">Hyperlinks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rst.html#todo">Todo</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../management/create_image.html">How to setup a Cloudmesh Image</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contribute/python-programming-style.html">How to write good Python codes for Cloudmesh</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
 </ul>
 
@@ -214,9 +169,9 @@ federates a number of resources from academia and industry. This
 includes existing FutureSystems, Amazon Web Services, Azure, HP Cloud,
 Karlsruhe using various technologies.</p>
 <p>An high level architectural image is provided at</p>
-<div class="figure" id="id1">
+<div class="figure">
 <a class="reference internal image-reference" href="../_images/cloudmesh-arch-2013.png"><img alt="../_images/cloudmesh-arch-2013.png" src="../_images/cloudmesh-arch-2013.png" style="width: 360.5px; height: 370.0px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></span></p>
+<p class="caption"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></p>
 </div>
 <p>The three layers of the Cloudmesh architecture include a Cloudmesh
 Management Framework for monitoring and operations, user and project
@@ -237,9 +192,9 @@ cloudmesh and how the various components are structured. For this
 purpose we have redrawn the Figure we pointed out earlier while
 focusing on a number of subcomponents that we will be looking more
 closely into.</p>
-<div class="figure" id="id2">
+<div class="figure">
 <a class="reference internal image-reference" href="../_images/cm-arch-layers.pdf"><img alt="../_images/cm-arch-layers.pdf" src="../_images/cm-arch-layers.pdf" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></span></p>
+<p class="caption"><strong>Figure:</strong> <em>High level architecture of Cloudmesh</em></p>
 </div>
 <p>Typo: there are two baremetal boxes in cloudmesh cor. one should be HPC</p>
 <p>This diagram highlights some important information which we describe next</p>
@@ -355,9 +310,9 @@ information. This allows developers to interact and inspect information
 on a different level than just being able to start and stop virtual
 machines. Interfaces to HPC queues are also available. The Web
 services interfaces with the Task and Database Services.</p>
-<div class="figure" id="id3">
+<div class="figure">
 <a class="reference internal image-reference" href="../_images/cm-splash.png"><img alt="../_images/cm-splash.png" src="../_images/cm-splash.png" style="width: 472.0px; height: 412.0px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure:</strong> <em>The Cloudmesh Web Interface</em></span></p>
+<p class="caption"><strong>Figure:</strong> <em>The Cloudmesh Web Interface</em></p>
 </div>
 </div>
 <div class="section" id="cloudmesh-shell">
@@ -462,7 +417,7 @@ other resources.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup/index.html" class="btn btn-neutral float-right" title="Cloudmesh Setup">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup/index.html" class="btn btn-neutral float-right" title="Cloudmesh Setup"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Cloudmesh"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -478,8 +433,7 @@ other resources.</li>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -504,7 +458,7 @@ other resources.</li>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
