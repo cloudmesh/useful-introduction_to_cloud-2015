@@ -10,8 +10,6 @@ A video about the contents of this page is available on |video-cm-openstack-setu
 .. |video-cm-openstack-setup| replace:: |video-image| :youtube:`rcecpgm-47g`
 
 
-|video-fs-account|
-
 .. highlight:: bash
 
 .. role:: pink

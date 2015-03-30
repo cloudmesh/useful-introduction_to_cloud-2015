@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -173,6 +174,23 @@ of Vagrant.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="install-vagrant-on-osx">
+<h2>Install Vagrant on OSX<a class="headerlink" href="#install-vagrant-on-osx" title="Permalink to this headline">¶</a></h2>
+<p>Download and install vagrant from <a class="reference external" href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></p>
+<div class="highlight-bash"><div class="highlight"><pre>curl -L https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2.dmg &gt; vagrant_1.7.2.dmg
+open vagrant_1.7.2.dmg
+</pre></div>
+</div>
+<p>Click on the vagrant.pkg and follow the install instructions</p>
+<p>Verify that vagrant is installed with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>vagrant -h
+</pre></div>
+</div>
+<p>which should give you the vagrant help message</p>
+<p>Install virtualbox from</p>
+<p><a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>once downloaded and you clock on the dmg, follow the instalation instructions.</p>
+</div>
 <div class="section" id="install-veewee-optional">
 <h2>Install Veewee (Optional)<a class="headerlink" href="#install-veewee-optional" title="Permalink to this headline">¶</a></h2>
 <p>There are <a class="reference external" href="veewee-requirement.html">requirements</a> prior installing Veewee.</p>
@@ -180,8 +198,8 @@ of Vagrant.</p>
 </pre></div>
 </div>
 <ul>
-<li><p class="first">On OS X Mavericks:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ ARCHFLAGS</span><span class="o">=</span>-Wno-error<span class="o">=</span>unused-command-line-argument-hard-error-in-future gem install veewee
+<li><p class="first">On OS X Yosemite:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo <span class="nv">ARCHFLAGS</span><span class="o">=</span>-Wno-error<span class="o">=</span>unused-command-line-argument-hard-error-in-future gem install veewee
 </pre></div>
 </div>
 </li>
@@ -215,7 +233,7 @@ Please choose an option:
 
 Ubuntu Server 14.04 xxbit selected
 Bringing machine <span class="s1">&#39;default&#39;</span> up with <span class="s1">&#39;virtualbox&#39;</span> provider...
-<span class="o">==</span>&gt; default: Checking <span class="k">if </span>box <span class="s1">&#39;ubuntu/trustyxx&#39;</span> is up to date...
+<span class="o">==</span>&gt; default: Checking <span class="k">if</span> box <span class="s1">&#39;ubuntu/trustyxx&#39;</span> is up to date...
 </pre></div>
 </div>
 <p>Vagrant will be loaded.</p>
@@ -232,7 +250,7 @@ root once you ssh to the VM.</p>
 </div>
 <div class="section" id="virtualenv-and-cm">
 <h2>Virtualenv and cm<a class="headerlink" href="#virtualenv-and-cm" title="Permalink to this headline">¶</a></h2>
-<p>Cloudmesh installed on Virtualenv. You need to enable the environment. <tt class="docutils literal"><span class="pre">cm</span></tt>
+<p>Cloudmesh installed on Virtualenv. You need to enable the environment. <code class="docutils literal"><span class="pre">cm</span></code>
 Cloudmesh interactive shell is ready to use.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
 <span class="nv">$ </span><span class="nb">cd </span>cloudmesh
@@ -248,7 +266,7 @@ Cloudmesh interactive shell is ready to use.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="yaml.html" class="btn btn-neutral float-right" title="Creating the yaml file"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="yaml.html" class="btn btn-neutral float-right" title="Creating the yaml file">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="setup_openstack.html" class="btn btn-neutral" title="Quickstart for an Openstack VM"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -264,7 +282,8 @@ Cloudmesh interactive shell is ready to use.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -289,7 +308,7 @@ Cloudmesh interactive shell is ready to use.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
