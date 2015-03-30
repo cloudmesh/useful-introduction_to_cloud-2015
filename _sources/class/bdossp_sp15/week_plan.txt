@@ -371,7 +371,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - `30 mins </introduction_to_cloud_computing/cloudmesh/overview.html>`_
      - 
      - 04/06
-     - 04/10
+     - Not due
 
 .. list-table:: Cloudmesh for Beginners
    :widths: 15 10 30 10 10 10
@@ -404,16 +404,16 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Web Interface (GUI)**
      - `16 mins <http://www.youtube.com/watch?v=l_P4G85rysA>`_
      - `30 mins </introduction_to_cloud_computing/cloudmesh/gui/index.html>`_
-     -
+     - `20 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-4>`_ (optional)
      - 04/06
      - 04/10
    * - **Python APIs**
      - `15 mins <http://www.youtube.com/watch?v=xOL_-Sfh9MA>`_ 
      - `30 mins </introduction_to_cloud_computing/cloudmesh/api/index.html>`_
-     -
+     - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-1>`_
      - 04/06
      - 04/10
-   * - **IPython on Cloudmesh**
+   * - **IPython on Cloudmesh** (optional)
      - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
      - `20 mins </introduction_to_cloud_computing/cloudmesh/ipython.html>`_
      -
@@ -422,7 +422,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Using India OpenStack on Cloudmesh**
      - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
      - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/cloudmesh_yaml.html>`_
-     - 
+     - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-2>`_
      - 04/06
      - 04/10
 
@@ -464,7 +464,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - 04/06
      - 04/10
 
-Homework cm.1
+Lab session cm.1
 ^^^^^^^^^^^^^^^^^^^^^^
 
 (cm.1) This assignment will teach you how to add new commands to

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cloudmesh API Initialization &mdash; my Cloudmesh Learning documentation</title>
+  <title>Exercises &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -35,8 +35,8 @@
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Cloudmesh API" href="index.html"/>
-        <link rel="next" title="Defining Names" href="_uuid.html"/>
-        <link rel="prev" title="Cloudmesh API" href="index.html"/> 
+        <link rel="next" title="Cloudmesh Shell" href="../shell/index.html"/>
+        <link rel="prev" title="Cloudmesh Mesh" href="_mesh.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -89,13 +89,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm/index.html">Cloudmesh cm</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh API</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Cloudmesh API Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_hello.html">Cloudmesh API Initialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_uuid.html">Defining Names</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_load.html">Load Command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_pbs.html">Batch Queues</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_vm_api.html">Cloudmesh API for VM Management</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_mesh.html">Cloudmesh Mesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
@@ -142,10 +142,10 @@
       
           <li><a href="index.html">Cloudmesh API</a> &raquo;</li>
       
-    <li>Cloudmesh API Initialization</li>
+    <li>Exercises</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/cloudmesh/api/_hello.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/cloudmesh/api/exercises.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -153,24 +153,52 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cloudmesh-api-initialization">
-<h1>Cloudmesh API Initialization<a class="headerlink" href="#cloudmesh-api-initialization" title="Permalink to this headline">¶</a></h1>
-<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/api/_hello.ipynb">Notebook</a></p>
-</button><p>To access the many useful functions available in cloudmesh, we need to
-import the cloudmesh module.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
-</pre></div>
+  <div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Print out your Cloudmesh version on a Python shell, and make sure you have
+2.2.8+
+- Save your code in $userid_cloudmesh_ex1.py</li>
+</ul>
 </div>
-<div class="section" id="version">
-<h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
-<p>Cloudmesh has a version number that can be retrived with the version
-function</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
-</pre></div>
+<div class="section" id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You may have at least one cloud platform registered on your Cloudmesh. Print
+out registered cloud platforms on your Cloudmesh account using Python
+functions and make sure you have &#8216;india&#8217; cloud platform.
+- Save your code in $userid_cloudmesh_ex2.py</li>
+</ul>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="mf">1.0</span>
-</pre></div>
+<div class="section" id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Start a VM instance using Cloudmesh Python function and record the output
+(return value) of your function. Don&#8217;t forget to delete your VM instance
+after your successfull VM start.
+- Save your code of starting and terminating VM instance in</p>
+<blockquote>
+<div><p>$userid_cloudmesh_ex3.py</p>
+</div></blockquote>
+<ul class="simple">
+<li>Save your recorded output in $userid_cloudmesh_ex3.txt</li>
+</ul>
+</li>
+</ul>
 </div>
+<div class="section" id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h2>
+<p><em>This is an additional (optional) task</em></p>
+<ul class="simple">
+<li>Refresh Images and Flavors on Cloudmesh Web Interface. Select a default
+flavor and a image, and start a VM instance.
+- Save screenshots of listing flavors, images and VM instances.
+- $userid_cloudmesh_ex4_1.png
+- $userid_cloudmesh_ex4_2.png
+- $userid_cloudmesh_ex4_3.png</li>
+</ul>
 </div>
 </div>
 
@@ -180,10 +208,10 @@ function</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_uuid.html" class="btn btn-neutral float-right" title="Defining Names"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../shell/index.html" class="btn btn-neutral float-right" title="Cloudmesh Shell"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Cloudmesh API"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="_mesh.html" class="btn btn-neutral" title="Cloudmesh Mesh"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
