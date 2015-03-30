@@ -39,11 +39,30 @@ for cloudmesh. We assume you create one called ENV and activate it::
   $ virtualenv ~/ENV
   $ source ~/ENV/bin/activate
 
-First you need to download the code from github. We assume you have
-git installed::
-   
-  git clone https://github.com/cloudmesh/cloudmesh.git
+ .. comment::
+ 
+  The easiset way for users is install cloudmesh from pip with::
 
+  pip install cloudmesh
+
+  (This is not yet fully supported, so you do need the source code instalation)
+  
+If you like to extend cloudmesh we recommand that you
+download the following reppository into your local copy of github
+source code directories. We assume you have git installed::
+
+  $ mkdir github
+  $ cd github
+
+  $ git clone https://github.com/cloudmesh/cloudmesh.git
+
+In some cases you may also want to download some other repositories
+that are either used by cloudmesh, or are extensions to
+cloudmesh. This includes::
+
+  $ git clone https://github.com/cloudmesh/cloudmesh_base.git
+  $ git clone https://github.com/cloudmesh/cloudmesh_pbs.git  
+  
 Next, you need to install a number of required packages with the
 following commands::
 
@@ -95,7 +114,7 @@ the cloudmesh.yaml file. Choose your favorite editor::
 
   $ emacs ~/.cloudmesh/cloudmesh.yaml
 
-Change the values TBD that you find here with values that describe
+Change the values makred with TBD that you find here with values that describe
 you. 
 
 .. .. todo:: Hyungro: cm "default username=username $PORTALNAME"
@@ -119,7 +138,7 @@ The next steps will deploy the cloudmesh database::
 
 We add the key to the database with::
 
-   $ cm "key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub"
+   $ cm key add --keyname=$PORTALNAME-key ~/.ssh/id_rsa.pub
 
 where :pink:`PORTALNAME` is your name for the FutuerSystems portal.
 
