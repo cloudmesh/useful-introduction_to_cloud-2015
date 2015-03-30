@@ -66,6 +66,7 @@ The following sections are credentials for clouds:
 * OpenStack has:
 
 ::
+
   credentials:
     OS_AUTH_URL: [Address of OpenStack Authentication]
     OS_CACERT: [File path of CA Cert]
