@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,6 +29,8 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -49,9 +51,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -61,8 +66,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -83,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../class/bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../class/i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../class/lessons.html">Lessons</a></li>
 </ul>
@@ -161,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -186,7 +193,7 @@
       
           <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
       
-    <li>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+    <li>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/cm/_cm-cluster.txt" rel="nofollow"> View page source</a>
@@ -195,16 +202,16 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
-<h1>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<h1>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <p>To support the creation of a virtual compute cluster (e.g. Hadoop or
-Slurm) on Cloudmesh, <tt class="docutils literal"><span class="pre">cluster</span></tt> command is available to start,
+Slurm) on Cloudmesh, <code class="docutils literal"><span class="pre">cluster</span></code> command is available to start,
 configure, manage or update a number of virtual machines.</p>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">cluster</span></tt> command is available in the cloudmesh shell. There are
+<p><code class="docutils literal"><span class="pre">cluster</span></code> command is available in the cloudmesh shell. There are
 certain steps to make sure you are all set to deploy a new cluster. You
 can SKIP these steps if you have configured Cloudmesh previously.</p>
 <div class="section" id="cloud-activation">
@@ -256,7 +263,7 @@ flavor rather than a smaller one e.g. m1.small or m1.tiny.</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="create-a-virtual-cluster-with-cluster-command">
-<h3>Create a Virtual Cluster with <tt class="docutils literal"><span class="pre">cluster</span></tt> command<a class="headerlink" href="#create-a-virtual-cluster-with-cluster-command" title="Permalink to this headline">¶</a></h3>
+<h3>Create a Virtual Cluster with <code class="docutils literal"><span class="pre">cluster</span></code> command<a class="headerlink" href="#create-a-virtual-cluster-with-cluster-command" title="Permalink to this headline">¶</a></h3>
 <p>Run ‘cluster create’ with the following parameters:</p>
 <p>name cluster name &#8211;count specify amount of VMs in the cluster &#8211;ln
 login name for VMs, e.g. ubuntu</p>
@@ -276,7 +283,7 @@ creating a virtual cluster on Ubuntu 14.04 image with a small flavor:</p>
 </div>
 <div class="section" id="check-status-of-a-virtual-cluster">
 <h3>Check Status of a Virtual Cluster<a class="headerlink" href="#check-status-of-a-virtual-cluster" title="Permalink to this headline">¶</a></h3>
-<p>Use <tt class="docutils literal"><span class="pre">vm`</span> <span class="pre">command</span> <span class="pre">with</span></tt>&#8211;group`` parameter to check the status.</p>
+<p>Use <code class="docutils literal"><span class="pre">vm`</span> <span class="pre">command</span> <span class="pre">with</span></code>&#8211;group`` parameter to check the status.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=cluster_tutorial1&quot;
 </pre></div>
 </div>
@@ -369,7 +376,7 @@ Options:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_cm-limits.html" class="btn btn-neutral" title="Metric Commands in Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -385,7 +392,8 @@ Options:
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -410,7 +418,7 @@ Options:
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

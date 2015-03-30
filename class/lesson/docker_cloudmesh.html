@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -29,6 +29,8 @@
 
   
     <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
@@ -49,9 +51,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+          <a href="../../index.html" class="fa fa-home"> my Cloudmesh</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -61,8 +66,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#conventions">Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../preface.html#using-the-notebooks">Using the Notebooks</a></li>
@@ -83,7 +89,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 </ul>
@@ -161,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -195,7 +202,7 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="deploying-cloudmesh-using-docker-on-futuresystems">
 <h1>Deploying Cloudmesh using Docker on FutureSystems<a class="headerlink" href="#deploying-cloudmesh-using-docker-on-futuresystems" title="Permalink to this headline">¶</a></h1>
@@ -203,9 +210,9 @@
 level virtualization.  Docker host runs software containers which deploy
 applications with its environments. You can easily share your application using
 Docker container across different platforms or operating systems.  This
-section, we introduce basic commands of <tt class="docutils literal"><span class="pre">docker</span></tt> to introduce Docker software
+section, we introduce basic commands of <code class="docutils literal"><span class="pre">docker</span></code> to introduce Docker software
 on FutureSystems.  In the next section, we will explore advanced use of
-<tt class="docutils literal"><span class="pre">docker</span></tt> on FutureSystems.</p>
+<code class="docutils literal"><span class="pre">docker</span></code> on FutureSystems.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Need a basic tutorial for Docker? <a class="reference external" href="docker.html">Tutorial: Docker Basic commands</a></p>
@@ -217,7 +224,7 @@ on FutureSystems.  In the next section, we will explore advanced use of
 <p class="last">approximate time 10 minutes</p>
 </div>
 <p>In this tutorial, we are going to deploy Cloudmesh using Docker software.
-Keep in mind that <tt class="docutils literal"><span class="pre">docker</span></tt> is a main program and <tt class="docutils literal"><span class="pre">container</span></tt> is an image
+Keep in mind that <code class="docutils literal"><span class="pre">docker</span></code> is a main program and <code class="docutils literal"><span class="pre">container</span></code> is an image
 that you would like to use. We use Cloudmesh container to deploy.</p>
 <div class="section" id="run-cloudmesh">
 <h3>Run Cloudmesh<a class="headerlink" href="#run-cloudmesh" title="Permalink to this headline">¶</a></h3>
@@ -227,21 +234,21 @@ command: (sudo is suppressed)</p>
 </pre></div>
 </div>
 <p>It downloads Cloudmesh image from Docker Hub and connects 80 port to 8888 port.
-So, if you open a web browser <tt class="docutils literal"><span class="pre">http://localhost</span></tt> or <tt class="docutils literal"><span class="pre">http://ip</span> <span class="pre">address</span> <span class="pre">of</span>
-<span class="pre">host</span></tt> your connection forwards to the container 8888 port. <tt class="docutils literal"><span class="pre">-d</span></tt> option
+So, if you open a web browser <code class="docutils literal"><span class="pre">http://localhost</span></code> or <code class="docutils literal"><span class="pre">http://ip</span> <span class="pre">address</span> <span class="pre">of</span>
+<span class="pre">host</span></code> your connection forwards to the container 8888 port. <code class="docutils literal"><span class="pre">-d</span></code> option
 daemonizes the container.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Did you see <tt class="docutils literal"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">image</span> <span class="pre">'cloudmesh'</span> <span class="pre">locally</span></tt>?
-Your Docker will find <tt class="docutils literal"><span class="pre">cloudmesh</span></tt> from Docker Hub and download it to
+<p class="last">Did you see <code class="docutils literal"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">image</span> <span class="pre">'cloudmesh'</span> <span class="pre">locally</span></code>?
+Your Docker will find <code class="docutils literal"><span class="pre">cloudmesh</span></code> from Docker Hub and download it to
 your local.</p>
 </div>
 </div>
 <div class="section" id="stop-and-delete-container">
 <h3>Stop and Delete Container<a class="headerlink" href="#stop-and-delete-container" title="Permalink to this headline">¶</a></h3>
 <p>Like stopping and terminating a virtual instance, docker stops and deletes its
-container with two commands: <tt class="docutils literal"><span class="pre">stop</span></tt> and <tt class="docutils literal"><span class="pre">rm</span></tt> We use <tt class="docutils literal"><span class="pre">NAMES</span></tt> from <tt class="docutils literal"><span class="pre">docker</span>
-<span class="pre">ps</span></tt> command. This example we use <tt class="docutils literal"><span class="pre">adoring_lalande</span></tt> for your tomcat:8.0
+container with two commands: <code class="docutils literal"><span class="pre">stop</span></code> and <code class="docutils literal"><span class="pre">rm</span></code> We use <code class="docutils literal"><span class="pre">NAMES</span></code> from <code class="docutils literal"><span class="pre">docker</span>
+<span class="pre">ps</span></code> command. This example we use <code class="docutils literal"><span class="pre">adoring_lalande</span></code> for your tomcat:8.0
 container.</p>
 <div class="highlight-python"><div class="highlight"><pre>docker stop adoring_lalande
 </pre></div>
@@ -264,7 +271,7 @@ container.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="git.html" class="btn btn-neutral float-right" title="Using Git and GitHub for collaboration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git.html" class="btn btn-neutral float-right" title="Using Git and GitHub for collaboration">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="docker.html" class="btn btn-neutral" title="Try Docker Basic on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -280,7 +287,8 @@ container.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -305,7 +313,7 @@ container.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
