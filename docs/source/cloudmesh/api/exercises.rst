@@ -26,3 +26,14 @@ Exercise 3
     $userid_cloudmesh_ex3.py
   - Save your recorded output in $userid_cloudmesh_ex3.txt
 
+Exercise 4
+-------------------------------------------------------------------------------
+
+*This is an additional (optional) task*
+
+* Refresh Images and Flavors on Cloudmesh Web Interface. Select a default
+  flavor and a image, and start a VM instance.
+  - Save screenshots of listing flavors, images and VM instances.
+  - $userid_cloudmesh_ex4_1.png
+  - $userid_cloudmesh_ex4_2.png
+  - $userid_cloudmesh_ex4_3.png

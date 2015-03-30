@@ -404,7 +404,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Web Interface (GUI)**
      - `16 mins <http://www.youtube.com/watch?v=l_P4G85rysA>`_
      - `30 mins </introduction_to_cloud_computing/cloudmesh/gui/index.html>`_
-     -
+     - `20 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-4>`_ (optional)
      - 04/06
      - 04/10
    * - **Python APIs**
