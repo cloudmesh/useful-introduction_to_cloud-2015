@@ -201,3 +201,9 @@ different name.
 .. note:: Find ``Profile`` page on the Cloudmesh web GUI. It supports cloud
           activation on the web.
 
+Additional Information
+-------------------------------------------------------------------------------
+
+For more information of using a ``yaml`` file in Cloudmesh, please see here::
+
+`YAML <yaml.html>`_
