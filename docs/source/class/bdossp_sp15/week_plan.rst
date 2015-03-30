@@ -371,7 +371,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - `30 mins </introduction_to_cloud_computing/cloudmesh/overview.html>`_
      - 
      - 04/06
-     - 04/10
+     - Not due
 
 .. list-table:: Cloudmesh for Beginners
    :widths: 15 10 30 10 10 10
