@@ -390,45 +390,43 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - `30 mins <../../cloudmesh/setup/quickstart.html>`_
      - (not required, only read the text and watch the video)
      - 04/06
-     - 
+     - N/A
    * - **Installation on a virtual machine OpenStack**
      - `33 mins <http://www.youtube.com/watch?v=rcecpgm-47g>`_
      - `30 mins <../../cloudmesh/setup/setup_openstack.html>`_
-     - 
+     - follow the text and video
      - 04/06
-     - 
+     - 04/10
    * - **Command Line Tools (CLI)**
      - `12 mins <http://www.youtube.com/watch?v=hdq-t-ggkXA>`_
      - `30 mins <../../cloudmesh/shell/index.html>`_
-     -
+     - use the previously created VM and follow text and video
+       use `cm help` and review man pages
      - 04/06
-     - 
+     - 04/10
    * - **Web Interface (GUI)**
      - `16 mins <http://www.youtube.com/watch?v=l_P4G85rysA>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/gui/index.html>`_
-     - `20 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-4>`_ (optional)
+     - `30 mins <../../cloudmesh/gui/index.html>`_
+     - `Excersise 4: 20 mins <../../cloudmesh/api/exercises.html#exercise-4>`_ (optional)
      - 04/06
      - 04/10
    * - **Python APIs**
      - `15 mins <http://www.youtube.com/watch?v=xOL_-Sfh9MA>`_ 
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/api/index.html>`_
-     - - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-1>`_
-       - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-2>`_
+     - `30 mins <../../cloudmesh/api/index.html>`_
+     - `Excersise 1 (10 mins) <../../cloudmesh/api/exercises.html#exercise-1>`_, `Excersise 2 (10 mins) <../../cloudmesh/api/exercises.html#exercise-2>`_
      - 04/06
      - 04/10
    * - **IPython on Cloudmesh** (optional)
      - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
      - `20 mins <../../cloudmesh/ipython.html>`_
-     -
+     -  (not required, only read text and watch video)
      - 04/06
-     - 
-   * - **Using India OpenStack on Cloudmesh**
-     - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
-     - `30 mins </introduction_to_cloud_computing/cloudmesh/setup/cloudmesh_yaml.html>`_
-     - `10 mins </introduction_to_cloud_computing/cloudmesh/api/exercises.html#exercise-3>`_
-     - 04/06
-     - 04/10
+     - N/A
 
+
+       
+
+       
 .. list-table:: Advanced Cloudmesh
    :widths: 30 10 10 10 10 10
    :header-rows: 1
@@ -442,17 +440,16 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Adding new Commands via a Python Package**
      - `5 mins <https://www.youtube.com/watch?v=UFLyCVpDhgI&feature=em-upload_owner>`_
      - `5 mins <http://cloudmesh.github.io/cmd3/manual.html#generating-independent-packages>`_
-     - `1 hour </introduction_to_cloud_computing/cloudmesh/cm/cmd3.html#exercise-1>`_
+     - `1 hour <../../cloudmesh/cm/cmd3.html#exercise-1>`_
      - 04/06 
      - 04/10
    * - **Virtual Clusters with Cloudmesh**
-        - SSH Connections between nodes
-        - Host Configuration
+        - SSH Connections between nodes, Host Configuration
      - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
      - `20 mins <../../cloudmesh/cm/_cm-cluster.html>`_
-     - 
+     - see text and video
      - 04/06
-     - 
+     - 04/10
 
 ..   * - **Introduction and Overview**
      - Not yet available
@@ -463,7 +460,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **VM Management**
      - Not yet available
      - Not yet available
-     - 
+     - see text and video
      - 04/06
      - 04/10
 
@@ -745,4 +742,16 @@ Future (under preparation)
      - 
      - Not due
      - Not due
+
+
+
+
+.. comment::
+   
+   * - **Using India OpenStack on Cloudmesh**
+     - `5 mins <https://mix.office.com/watch/irhlsfq220zh>`_
+     - `30 mins <../../cloudmesh/setup/cloudmesh_yaml.html>`_
+     - `10 mins <../../cloudmesh/api/exercises.html#exercise-3>`_
+     - 04/06
+     - 04/10
 
