@@ -18,12 +18,15 @@ Contact
 
 .. include:: ../contact.rst
 
+Weekly Plan
+======================================================================
+
 Besides this table of contents, we also have prepared a weekly plan to
 which we will add more content throughout the semester:
 
 .. toctree::
    :maxdepth: 1
-   
+	      
    week_plan
 	     
 Support

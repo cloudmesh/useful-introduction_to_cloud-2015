@@ -1,4 +1,4 @@
-.. _s-openstack:
+.. _s-openstack-havana:
 
 OpenStack on FutureSystems
 ======================================================================

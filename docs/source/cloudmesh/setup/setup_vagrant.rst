@@ -27,6 +27,32 @@ This instructions are tested on Ubuntu 14.04.
   $ sudo apt-get update
   $ sudo apt-get install virtualbox
 
+
+Install Vagrant on OSX
+-------------------
+
+Download and install vagrant from https://www.vagrantup.com/downloads.html
+
+::
+   
+  curl -L https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2.dmg > vagrant_1.7.2.dmg
+  open vagrant_1.7.2.dmg
+
+Click on the vagrant.pkg and follow the install instructions
+
+Verify that vagrant is installed with::
+
+  vagrant -h
+
+
+which should give you the vagrant help message
+
+Install virtualbox from
+
+https://www.virtualbox.org/wiki/Downloads
+
+once downloaded and you clock on the dmg, follow the instalation instructions.
+  
 Install Veewee (Optional)
 -------------------------
 
@@ -36,9 +62,10 @@ There are `requirements <veewee-requirement.html>`_ prior installing Veewee.
   
    $ gem install veewee
 
-* On OS X Mavericks::
+* On OS X Yosemite::
 
-   $ ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install veewee
+   
+   $ sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install veewee
 
 
 Vagrant up

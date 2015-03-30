@@ -56,7 +56,7 @@ materials on this page. It also covers Unix shell scripting, SSH and other
 utilities with various exercises.
 
 .. list-table:: Collaboration Tools
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -94,7 +94,7 @@ utilities with various exercises.
 
 
 .. list-table:: System Access to FutureSystems                                                                              
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -135,7 +135,7 @@ utilities with various exercises.
 
        
 .. list-table:: Linux Basics
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -232,7 +232,7 @@ cloud platforms. There are tutorial lessons to explore OpenStack web dashboard
 Microsoft Azure.
 
 .. list-table:: Basics of OpenStack
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -285,7 +285,7 @@ Microsoft Azure.
      - 
 
 .. list-table:: Other IaaS Platforms - Public Commercial Clouds
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -298,17 +298,19 @@ Microsoft Azure.
      - `16 mins <https://mix.office.com/watch/1351hz8j187i7>`_
      - `30 mins <../lesson/iaas/aws_tutorial.html>`_
      - `45 mins <../lesson/iaas/aws_tutorial.html#exercises>`_
+       (optional, not required)
      - 03/30
-     - 04/03
+     - 
    * - **Microsoft Azure**
      - `29 mins <https://mix.office.com/watch/kzh0nwvdw6tm>`_
      - `50 mins <../lesson/iaas/azure_tutorial.html>`_
      - `10 mins <../lesson/iaas/azure_tutorial.html#exercise1>`_
+       (optional, not required)
      - 03/30
-     - 04/03
+     - 
 
 .. list-table:: Additional (optional) Further Study Materials
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -357,7 +359,7 @@ Apache LibCloud, Celery, IPython, Flask, Fabric, Docopt, YAML, MongoDB, and
 Sphinx. Command Line Tools and Rest APIs are also supported.
 
 .. list-table:: Basics of Cloudmesh
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -374,7 +376,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - Not due
 
 .. list-table:: Cloudmesh for Beginners
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -386,7 +388,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
    * - **Installation on a local machine**
      - `18 mins <http://www.youtube.com/watch?v=lGiJifD0VgU>`_
      - `30 mins <../../cloudmesh/setup/quickstart.html>`_
-     -
+     - (not required, only read the text and watch the video)
      - 04/06
      - 
    * - **Installation on a virtual machine OpenStack**
@@ -428,7 +430,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - 04/10
 
 .. list-table:: Advanced Cloudmesh
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -537,7 +539,7 @@ IT Operations - Automation and Orchestration (under preparation)
 *******************************************************************************
 
 .. list-table:: IT Operations - Automation and Orchestration
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -580,7 +582,7 @@ Virtual Clusters I (under preparation)
 **First Appearance of Hadoop in This Week**
 
 .. list-table:: Virtual Clusters I
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -622,7 +624,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
 *******************************************************************************
 
 .. list-table:: Virtual Cluster II
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -665,7 +667,7 @@ Other Technologies (under preparation)
 *******************************************************************************
 
 .. list-table:: Other Technologies
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
@@ -722,7 +724,7 @@ Future (under preparation)
 *******************************************************************************
 
 .. list-table:: Future
-   :widths: 15 10 30 10 10 10
+   :widths: 30 10 10 10 10 10
    :header-rows: 1
 
    * - Topic
