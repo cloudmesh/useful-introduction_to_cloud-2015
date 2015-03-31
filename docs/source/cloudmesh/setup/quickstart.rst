@@ -323,7 +323,7 @@ following to do the initial configuration.
 
 ::
    
-   $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/configure.sh | portalname=badi projectid=fg465 bash
+   $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/configure.sh | portalname=albert projectid=fg101 bash
 
 This will:
 
