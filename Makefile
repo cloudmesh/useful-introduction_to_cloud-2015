@@ -88,6 +88,7 @@ clean:
 	rm -rf build dist *.egg-info *~ #*
 	rm -rf *.egg-info
 	rm -rf *.log *.pid
+	rm -rf docs/build
 
 uninstall:
 	yes | pip uninstall cloudmesh

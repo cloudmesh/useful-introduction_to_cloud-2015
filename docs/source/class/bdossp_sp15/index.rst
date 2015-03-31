@@ -58,16 +58,24 @@ meeting, please see the following for guidance.
 .. include:: ../adobe-connect-tips.rst
 
 Office Hours
-----------------------------------------------------------------------
+==========
 
-Office hours will begin the week of March 23, 2015.
+**Support Office Hours**
 
-.. include:: ../office-hours.rst
 
-General Discussion
-----------------------------------------------------------------------
+Office hours are conducted on appointment onle during the times given
+bellow. Please send mail to coursehelp@futuresystems.org.
 
-.. include:: ../discussion-hours.rst
+- Tuesdays 9-10 am
+- Wednesday 7-8 pm
+- Thursday 10-11 am
+
+
+**General Discussions**
+
+- Wednesday 8 pm
+- Thursday 9 am
+
 
 
 Collaboration Tools
