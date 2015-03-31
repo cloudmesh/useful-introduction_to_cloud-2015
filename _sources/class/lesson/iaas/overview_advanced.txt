@@ -1,40 +1,44 @@
-Advanced Cloudmesh (under preparation)
+Advanced Cloudmesh
 ======================================================================
 
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to ...
+Cloudmesh contains a number of advanced commands in its command
+shell. Please explore cm help and identify a number of useful
+commands. Also take a look at CMD3 and explore some functionality
+exposed to you. Understand the server management utilizing mongodb and
+cellery.
+
+If you like to extend cloudmesh, please contact us
+
 
 .. tip:: Duration: 1 hour
 
 Prerequisite
 ----------------------------------------------------------------------
 
-In order to conduct this lesson you should have knowledge of
-
-* How to .... . Described in lesson
-* Lesson ....
-
-Description
-----------------------------------------------------------------------
-
-put the detailed dscription here
-
+* installed version cloudmesh
+* source code of cloudmesh_base, cloudmesh_pbs, cloudmesh, cmd3
+  
   
 Exercises
 ----------------------------------------------------------------------
 
-Exercise I
-^^^^^^^^^^^^^^^^^^
+Exercise CM.ADVANCED.1
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Exercise II
-^^^^^^^^^^^^^^^^^^
+Develop your own function with cm-generate-command that is included in
+cmd3.
 
-Next Step
------------
+Exercise CM.ADVANCED.2
+^^^^^^^^^^^^^^^^^^^^^^^
 
-In the next page, ...
+Use the API to develop a new functionality for cloudmesh commandline
+tools
 
-`Link here <link>`_
+Exercise CM.ADVANCED.3
+^^^^^^^^^^^^^^^^^^^^^^^
 
+Develop a new Web component that displays information form the
+database.
