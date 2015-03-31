@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cloudmesh for Beginners (Under Preparation) &mdash; my Cloudmesh Learning documentation</title>
+  <title>Cloudmesh for Beginners &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -149,7 +149,7 @@
       
           <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
       
-    <li>Cloudmesh for Beginners (Under Preparation)</li>
+    <li>Cloudmesh for Beginners</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../../_sources/class/lesson/iaas/cloudmesh.txt" rel="nofollow"> View page source</a>
@@ -160,11 +160,24 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cloudmesh-for-beginners-under-preparation">
-<h1>Cloudmesh for Beginners (Under Preparation)<a class="headerlink" href="#cloudmesh-for-beginners-under-preparation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cloudmesh-for-beginners">
+<h1>Cloudmesh for Beginners<a class="headerlink" href="#cloudmesh-for-beginners" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This lesson will introduce you to a very important topic to ...</p>
+<p>Cloudmesh is an important component to deliver a software-defined
+system – encompassing virtualized and bare-metal infrastructure,
+networks, application, systems and platform software – with a unifying
+goal of providing Cloud Testbeds as a Service (CTaaS). Cloudmesh
+federates a number of resources from academia and industry. This
+includes existing FutureSystems, Amazon Web Services, Azure, HP Cloud,
+Karlsruhe using various technologies.</p>
+<p>You will be learning through a number of cloudmesh related lessons:</p>
+<ul class="simple">
+<li>What is cloudmesh?</li>
+<li>How do you install cloudmesh?</li>
+<li>How do you use cloudmesh?</li>
+<li>How do you extend cloudmesh?</li>
+</ul>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">Duration: 1 hour</p>
@@ -172,29 +185,79 @@
 </div>
 <div class="section" id="prerequisite">
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
-<p>In order to conduct this lesson you should have knowledge of</p>
 <ul class="simple">
-<li>How to .... . Described in lesson</li>
-<li>Lesson ....</li>
+<li>You need a computer outside of firewalls that can connect to india.futuresystems.org.</li>
+<li>You need to have an account and be in a valid project</li>
 </ul>
+<p>However, you can also use cloudmesh without these prerequisites as
+cloudmesh can interface in general with any cloud. You just need to
+configure it once you have installed it while modifying the
+cloudmesh.yaml file.</p>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>put the detailed dscription here</p>
+<p>Cloudmesh is extensively documented within this  <a class="reference external" href="../../../cloudmesh/overview.html">Web Site</a>. You can
+are expected to read the various chapters especially those lited in
+the Weekly Plan. A good start will be to read the section
+<a class="reference internal" href="../../../cloudmesh/overview.html#cloudmesh-overview-ref"><span>Cloudmesh Overview</span></a> and continue form there.</p>
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-i">
-<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-cm-1">
+<h3>Exercise CM.1<a class="headerlink" href="#exercise-cm-1" title="Permalink to this headline">¶</a></h3>
+<p>(cm.1) This assignment will teach you how to add new commands to
+cloudmesh while using the <cite>cm-generate-command</cite>. First read the
+documentation and watch the video for an example to add a simple
+command. After you successfully installed it, find a python package
+that you like and can be installed with pip. Develop a new command
+that has the following options (additional parameters may be used if
+necessary). We use here the name your_command as a placeholder find a
+better name for it:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm your_command deploy ...
+
+    deploys the python package
+
+cm your_command start ...
+
+    if the package has some services start them now
+
+ cm your_command stop ...
+
+     if the package has some services stop them
+
+ cm your_command run ...
+
+     runs some useful command against the services
+</pre></div>
 </div>
-<div class="section" id="exercise-ii">
-<h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively, if you can not locate a good package, you can use
+shelve, while implementing the commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm shelve deploy
+cm shelve start --file=FILENAME     # filename of the shelve file
+cm shelve clear                                # removes the shelve file
+cm shelve set index data       # adds the data to the given index
+cm shelve delete index          # removes the data at the index
+cm shelve list                        # list the contents
+</pre></div>
 </div>
+<p>Provide an extensive documentation while using docopts.</p>
+<p>In a future task we will use what you have learned here to provide a
+cm command that deploys and manages an advanced PaaS onto a virtual
+cluster. For now we just do a simple version so you get familiar with
+the concepts. Examples for such a bigger deployments are:</p>
+<ul class="simple">
+<li>pig</li>
+<li>zookeeper</li>
+<li>hadoop (already provided by cm)</li>
+<li>harp</li>
+<li>apache</li>
+<li>drupal</li>
+<li>others</li>
+</ul>
+<p>You will sudo for many of them, thus india is not sufficient for the
+more advanced PaaS. These are supposed to be done on a virtual cluster
+while leveraging the <cite>cm cluster</cite> command.</p>
 </div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>In the next page, ...</p>
-<p><a class="reference external" href="link">Link here</a></p>
 </div>
 </div>
 
