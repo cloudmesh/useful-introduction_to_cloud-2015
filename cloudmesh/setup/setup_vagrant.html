@@ -207,54 +207,51 @@ open vagrant_1.7.2.dmg
 </div>
 <div class="section" id="vagrant-up">
 <h2>Vagrant up<a class="headerlink" href="#vagrant-up" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/cloudmesh/vagrant/example1
-<span class="nv">$ </span>./run.sh
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>In order to configure a virtual machine to use cloudmesh on you will
+need to specify some environmental variables:</p>
+<ul class="simple">
+<li>PORTALNAME</li>
+<li>PROJECTID</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>albert
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PROJECTID</span><span class="o">=</span>fg101
 </pre></div>
 </div>
-<div class="section" id="futuregrid-portal-id">
-<h3>FutureGrid Portal ID<a class="headerlink" href="#futuregrid-portal-id" title="Permalink to this headline">¶</a></h3>
-<p>Provide your portal ID:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="o">==================================</span>
-Futuregrid portal id? <span class="o">(</span>def: <span class="o">)</span>
-
-<span class="o">==================================</span>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>In order for the virtual machine to access the resources on <code class="docutils literal"><span class="pre">india</span></code> using your credentials, you will need to have <code class="docutils literal"><span class="pre">ssh-agent</span></code> running with your ssh key added. For instance:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
+<span class="nv">$ </span>ssh-add ~/.ssh/id_rsa
 </pre></div>
 </div>
 </div>
-<div class="section" id="base-image">
-<h3>Base Image<a class="headerlink" href="#base-image" title="Permalink to this headline">¶</a></h3>
-<p>Select one of the base images:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="o">==================================</span>
-Select base image to <span class="nv">launch</span>
-<span class="o">==================================</span>
-1<span class="o">)</span> Ubuntu Server 14.04 64bit
-2<span class="o">)</span> Ubuntu Server 14.04 32bit
-Please choose an option:
-
-Ubuntu Server 14.04 xxbit selected
-Bringing machine <span class="s1">&#39;default&#39;</span> up with <span class="s1">&#39;virtualbox&#39;</span> provider...
-<span class="o">==</span>&gt; default: Checking <span class="k">if</span> box <span class="s1">&#39;ubuntu/trustyxx&#39;</span> is up to date...
+<p>You can now start a virtual machine with cloudmesh installed, configured, and running:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/cloudmesh/vagrant
+<span class="nv">$ </span>vagrant up
 </pre></div>
 </div>
-<p>Vagrant will be loaded.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have trouble with the above instructions and <a class="reference external" href="https://github.com/cloudmesh/cloudmesh/blob/dev2.0/vagrant/Vagrantfile">this
+Vagrantfile</a>
+does not work, please contact us.</p>
 </div>
 </div>
 <div class="section" id="vagrant-ssh">
 <h2>Vagrant ssh<a class="headerlink" href="#vagrant-ssh" title="Permalink to this headline">¶</a></h2>
-<p>Cloudmesh installed on a root account. You need to switch user account to a
-root once you ssh to the VM.</p>
+<p>At this point the virtual machine is up and running with cloudmesh
+installed, configured, and running. To use it, just log in:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant ssh
-<span class="nv">$ </span>sudo su -
 </pre></div>
 </div>
 </div>
-<div class="section" id="virtualenv-and-cm">
-<h2>Virtualenv and cm<a class="headerlink" href="#virtualenv-and-cm" title="Permalink to this headline">¶</a></h2>
-<p>Cloudmesh installed on Virtualenv. You need to enable the environment. <code class="docutils literal"><span class="pre">cm</span></code>
-Cloudmesh interactive shell is ready to use.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
-<span class="nv">$ </span><span class="nb">cd </span>cloudmesh
-<span class="nv">$ </span>cm
+<div class="section" id="use-cloudmesh">
+<h2>Use cloudmesh<a class="headerlink" href="#use-cloudmesh" title="Permalink to this headline">¶</a></h2>
+<p>The virtualenv will be loaded by default, allowing you to use cloudmesh immediately</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm
 </pre></div>
 </div>
 </div>

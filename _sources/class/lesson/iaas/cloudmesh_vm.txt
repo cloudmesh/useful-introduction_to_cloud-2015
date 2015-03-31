@@ -1,43 +1,40 @@
-Cloudmesch Virtual Machine Management
+Cloudmesch Virtual Machine Management (under preparation)
 ======================================================================
 
 Overview
 ----------------------------------------------------------------------
 
-Cloudmesh contains the vm command that can be used to manage virtual
-machines. Locate the documentation in cloudmesh and explore how to
-start, stop and delete virtual machines.
-
-Do this for the commandline, GUI and API.
-
+This lesson will introduce you to a very important topic to ...
 
 .. tip:: Duration: 1 hour
 
 Prerequisite
 ----------------------------------------------------------------------
 
-* You must have cloudmesh installed.
-* You must have access to a cloud that is configured within cloudmesh
+In order to conduct this lesson you should have knowledge of
+
+* How to .... . Described in lesson
+* Lesson ....
+
+Description
+----------------------------------------------------------------------
+
+put the detailed dscription here
 
   
 Exercises
 ----------------------------------------------------------------------
 
-Exercise CM.VM.1
+Exercise I
 ^^^^^^^^^^^^^^^^^^
 
-* Start a VM with the API.
-* Start a VM with the GUI
-* Start a VM with the command shell
-
-Exercise CM.VM.2
+Exercise II
 ^^^^^^^^^^^^^^^^^^
 
-* Delete a VM with the API.
-* Delete a VM with the GUI
-* Delete a VM with the command shell
+Next Step
+-----------
 
-Exercise CM.VM.3
-^^^^^^^^^^^^^^^^^^
+In the next page, ...
 
-Explore image and flavor features of cloudmesh
+`Link here <link>`_
+

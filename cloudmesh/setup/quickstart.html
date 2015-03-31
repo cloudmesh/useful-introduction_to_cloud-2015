@@ -431,26 +431,53 @@ be uploaded to the FutureSystems portal.</p>
 </div>
 <p>This script can also be executed while getting it from our convenient
 installation script repository. For ubuntu you can use:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sSL https://cloudmesh.github.io/get/ubuntu/ <span class="p">|</span>  <span class="nv">username</span><span class="o">=</span><span class="nv">$PORTALNAME</span> <span class="nv">projectid</span><span class="o">=</span><span class="nv">$PROJECTID</span> sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh <span class="p">|</span> bash
 </pre></div>
 </div>
-<p>It will install cloudmesh in the directory where you started it from
-and place it in the directory:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cloudmesh
+<p>This will do the following:</p>
+<ul class="simple">
+<li>update package listing</li>
+<li>install <a class="reference external" href="https://github.com/cloudmesh/get/blob/master/cloudmesh/system-dependencies.csv">systems dependencies</a></li>
+<li>create a virtual env in <code class="docutils literal"><span class="pre">$HOME/ENV</span></code> (specify <code class="docutils literal"><span class="pre">venv</span></code> to override
+default)</li>
+<li>installs cloudmesh and python dependencies via <code class="docutils literal"><span class="pre">pip</span></code></li>
+<li>clones the cloudmesh repository into a <code class="docutils literal"><span class="pre">./cloudmesh</span></code> directory
+(specify <code class="docutils literal"><span class="pre">cloudmeshdir</span></code> to override)</li>
+<li>populates <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code></li>
+</ul>
+</div>
+<div class="section" id="one-line-configure-with-curl">
+<h2>One line configure with curl<a class="headerlink" href="#one-line-configure-with-curl" title="Permalink to this headline">¶</a></h2>
+<p>After cloudmesh and dependencies have been installed, use the
+following to do the initial configuration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This only needs to be run once on each system</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/configure.sh <span class="p">|</span> <span class="nv">portalname</span><span class="o">=</span>badi <span class="nv">projectid</span><span class="o">=</span>fg465 bash
 </pre></div>
 </div>
-<p>It creates also a directory called <cite>./github/cloudmesh</cite> and then cds
-into this directory to conduct the installation from
-there. Furthermore, as you can see this script also creates a virtual
-env under the name ~/ENV</p>
-<p>If you do not like these names or have a conflict with the names,
-please download the script and modify accordingly.</p>
-<p>After you have installed cloudmesh it is important to set a different
-password for the local cloudmesh user. This is done with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>cloudmesh
-<span class="nv">$ </span>fab user.mongo
+<p>This will:</p>
+<ul class="simple">
+<li>call <code class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">fetch</span></code></li>
+<li>call <code class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">create</span></code></li>
+<li>generate the database (<code class="docutils literal"><span class="pre">fab</span> <span class="pre">{mongo.boot,user.mongo,mongo.simple}</span></code>)</li>
+<li>set the default project id to <code class="docutils literal"><span class="pre">$projectid</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="one-line-start-with-curl">
+<h2>One line start with curl<a class="headerlink" href="#one-line-start-with-curl" title="Permalink to this headline">¶</a></h2>
+<p>At this point you will want to start the cloudmesh services:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl https://raw.githubusercontent.com/cloudmesh/get/dev/cloudmesh/start.sh <span class="p">|</span> bash
 </pre></div>
 </div>
+<p>This:</p>
+<ul class="simple">
+<li>assumes that cloudmesh repo is located in <code class="docutils literal"><span class="pre">./cloudmesh</span></code> (specify
+<code class="docutils literal"><span class="pre">cloudmeshdir=path/to/local/repo</span></code> to override)</li>
+<li>starts the cloudmesh server (<code class="docutils literal"><span class="pre">fab</span> <span class="pre">server.start</span></code>)</li>
+<li>updates the clouds from <code class="docutils literal"><span class="pre">india</span></code> (<code class="docutils literal"><span class="pre">cm</span> <span class="pre">{cloud,flavor}</span></code>)</li>
+</ul>
 </div>
 <div class="section" id="tips">
 <h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>

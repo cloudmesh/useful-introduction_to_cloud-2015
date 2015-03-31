@@ -299,26 +299,54 @@ One line install with curl
 This script can also be executed while getting it from our convenient
 installation script repository. For ubuntu you can use::
 
-  $ curl -sSL https://cloudmesh.github.io/get/ubuntu/ |  username=$PORTALNAME projectid=$PROJECTID sh 
+  $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | bash 
 
-It will install cloudmesh in the directory where you started it from
-and place it in the directory::
+This will do the following:
 
-  $ cloudmesh
+- update package listing
+- install `systems dependencies <https://github.com/cloudmesh/get/blob/master/cloudmesh/system-dependencies.csv>`_
+- create a virtual env in ``$HOME/ENV`` (specify ``venv`` to override
+  default)
+- installs cloudmesh and python dependencies via ``pip``
+- clones the cloudmesh repository into a ``./cloudmesh`` directory
+  (specify ``cloudmeshdir`` to override)
+- populates ``~/.cloudmesh``
 
-It creates also a directory called `./github/cloudmesh` and then cds
-into this directory to conduct the installation from
-there. Furthermore, as you can see this script also creates a virtual
-env under the name ~/ENV
 
-If you do not like these names or have a conflict with the names,
-please download the script and modify accordingly.
+One line configure with curl
+----------------------------------------------------------------------
 
-After you have installed cloudmesh it is important to set a different
-password for the local cloudmesh user. This is done with::
+After cloudmesh and dependencies have been installed, use the
+following to do the initial configuration.
 
-   $ cd cloudmesh
-   $ fab user.mongo
+.. note:: This only needs to be run once on each system
+
+::
+   
+   $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/configure.sh | portalname=badi projectid=fg465 bash
+
+This will:
+
+- call ``cm-iu user fetch``
+- call ``cm-iu user create``
+- generate the database (``fab {mongo.boot,user.mongo,mongo.simple}``)
+- set the default project id to ``$projectid``.
+
+
+One line start with curl
+----------------------------------------------------------------------
+
+At this point you will want to start the cloudmesh services::
+
+  $ curl https://raw.githubusercontent.com/cloudmesh/get/dev/cloudmesh/start.sh | bash
+
+This:
+
+- assumes that cloudmesh repo is located in ``./cloudmesh`` (specify
+  ``cloudmeshdir=path/to/local/repo`` to override)
+- starts the cloudmesh server (``fab server.start``)
+- updates the clouds from ``india`` (``cm {cloud,flavor}``)
+
 
 
 Tips
