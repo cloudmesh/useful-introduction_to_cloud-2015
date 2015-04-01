@@ -1,6 +1,5 @@
-.. Writing Ansible Playbook for Cloudmesh on FutureSystems
-Writing Ansible Playbooks on FutureSystems
-===============================================================
+Ansible Playbooks
+----------------------------------------------------------------------
 
 Ansible Playbooks are automated scripts written in YAML data format.  Instead
 of using manual commands to setup multiple remote machines, you can utilize
@@ -16,16 +15,14 @@ tutorial, you will understand how it works and how to write your own Playbooks.
  patches and updates with different roles and groups. 
 
 Tutorial: Writing Ansible Playbook 
---------------------------------------------------------------------
-
-.. tip:: approximate time 45 minutes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this tutorial, we are going to write a basic playbook of Ansible software.
 Keep in mind that ``Ansible`` is a main program and ``playbook`` is a template
 that you would like to use. You may have several playbooks in your Ansible.
 
 First playbook for MongoDB Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As a first example, we are going to write a playbook which installs MongoDB
 server.  It includes the following tasks:
@@ -120,7 +117,7 @@ module which is one of the packaging modules to install software. You can find
 an entire list of modules here:
 http://docs.ansible.com/list_of_all_modules.html
 
-Step 1: Import the public key used by the package management system
+Module ``apt_key``: add repository keys
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We need to import the MongoDB public GPG Key. This is going to be a first task
@@ -133,7 +130,7 @@ in our playbook.
       apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
 
 
-Step 2: Create a list file for MongoDB
+Module ``apt_repository``: add repositories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Next add the MongoDB repository to apt:
@@ -144,7 +141,7 @@ Next add the MongoDB repository to apt:
      apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
 
 
-Step 3: Install the MongoDB packages
+Module ``apt``: install packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``apt`` module to install ``mongodb-org`` package.
@@ -157,7 +154,7 @@ Use the ``update_cache=yes`` option to reload the local package database.
     notify:
     - start mongodb
 
-Step 4: Start MongoDB
+Module ``service``: manage services
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``handlers`` here to start or restart services. It is similar to ``tasks`` but will run only once.
@@ -168,8 +165,8 @@ We use ``handlers`` here to start or restart services. It is similar to ``tasks`
      - name: start mongodb
        service: name=mongod state=started
 
-A playbook for Mongodb
-~~~~~~~~~~~~~~~~~~~~~~~~~
+The Full Playbook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Our first playbook looks like this::
 
@@ -189,8 +186,8 @@ Our first playbook looks like this::
       - name: start mongodb
         service: name=mongod state=started
 
-Run Playbook
-~~~~~~~~~~~~~~~~~
+Running a Playbook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``ansible-playbook`` command to run our playbook::
 
@@ -251,8 +248,8 @@ We use ``ansible-playbook`` command to run our playbook::
      10.23.2.104                : ok=4    changed=0    unreachable=0    failed=0   
      10.23.2.105                : ok=4    changed=0    unreachable=0    failed=0
 
-Test Mongodb
-~~~~~~~~~~~~
+Sanity Check: Test MongoDB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's try to run 'mongo' to enter mongodb shell.
 
@@ -287,9 +284,3 @@ The main tutorial from Ansible is here: http://docs.ansible.com/playbooks_intro.
 
 You can also find an index of the ansible modules here: http://docs.ansible.com/modules_by_category.html
 
-Next Step
----------
-
-In the next page, we learn Basic Docker on FutureSystems.
-
-`Basic Docker On FutureSystems <docker.html>`_
