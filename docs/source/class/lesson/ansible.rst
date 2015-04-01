@@ -19,6 +19,27 @@ In this tutorial, we are going to learn basic commands of Ansible software.
 Keep in mind that ``ansible`` is a main program and ``playbook`` is a template
 that you would like to use. You may have several playbooks in your Ansible.
 
+Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to continue, ensure you have loaded the appropriate modules
+and registered a key with openstack.
+The modules needed are:
+
+- python
+- openstack
+
+Additionally, you can manage virtual machines using the `openstack web portal`_.
+The login credentials are:
+
+- username: your FutureSystems portal id
+- password: the value of ``OS_PASSWORD`` in ``~/.cloudmesh/clouds/india/juno/openrc.sh``
+
+.. _openstack web portal: https://openstack-j.india.futuresystems.org/horizon/project/
+
 Install Ansible 
 ~~~~~~~~~~~~~~~~
 
@@ -27,103 +48,124 @@ Typically, a single control machine executes tasks over the one or more nodes.
 
 Control machine
 ^^^^^^^^^^^^^^^^
-Let's install Ansible from Git.
+We will use ``india`` as our control machine.
+Let's install Ansible from via PyPI.
 
-::
+I will create a seperate virtualenv for this::
 
-  sudo apt-get update
-  sudo apt-get install git
-  git clone git://github.com/ansible/ansible.git --recursive
-  cd ./ansible
-  source ./hacking/env-setup
+  $ mkdir -p ~/venv/ansible
+  $ virtualenv ~/venv/ansible
+  $ source ~/venv/ansible/bin/activate
 
-.. tip:: You can also install ansible using apt-get:
-        sudo apt-get install software-properties-common
-        sudo apt-add-repository ppa:ansible/ansible
-        sudo apt-get update
-        sudo apt-get install ansible
+Now install Ansible::
 
-Python PyPI
-^^^^^^^^^^^^
+  $ pip install --trusted-host pypi.python.org ansible
 
-You need to install python-pip:
+Managed machines
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
- 
-  sudo apt-get install python-pip python-dev
+We need to launch some virtual machines.  Go to the `openstack web
+portal`_. Make sure that the correct projectid is selected in the top
+left (just to the right of the "openstack" logo"). For example,
+``fg101`` or ``fg465``.  Go to ``Compute ---> Instances ---> Launch
+Instance`` to start the procedure for launching an instance. Make sure
+to provide an instance name and specify a keypair.
 
-Python Packages
-^^^^^^^^^^^^^^^^
+Launch several instances, say three.  Once they launch, note down the
+IP addresses. We will need these later.
 
-Four python packages are required:
 
-* paramiko 
-* PyYAML 
-* Jinja2 
-* httplib2
+.. tip::
 
-Install these packages::
+   As a sanity check, make sure you can ssh into these nodes from ``india``::
 
-  sudo pip install paramiko PyYAML Jinja2 httplib2
+     $ ssh ubuntu@$IP
 
-SSH Configuration
-~~~~~~~~~~~~~~~~~
+   where ``$IP`` is the IP address of the instance you noted down.
 
-Since Ansible works with SSH, you need to make sure your node(s) are accessible by your control machine.
 
-Key Pair Creation
-^^^^^^^^^^^^^^^^^^^
+Explanation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With ``ssh-keygen`` command, we create a default key without a password.
-:: 
+Ansible works by executing **modules** on an **inventory** of
+machines.  Since many machines can be managed, this inventory is
+written to a file.  Within the inventory file, groups of machines can
+be named arbitrarily.  These names should have some meaning however:
+for example "production", "development", and "testing" may be
+appropriate names.
 
-  ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
+The modules executed update the state of the machine. For instance,
+the ``apt`` module allows software to be installed. While the
+``shell`` module exists and is a convenient way to execute shell
+commands on the managed nodes it is run every time. Other modules,
+like ``apt``, allow ansible to be intelligent about changing state:
+only necessary modifications are done. For instance, of an application
+is already installed, there is not reason to reinstall.
 
-authorized_keys
-^^^^^^^^^^^^^^^^^^^
+Since ansible requires ssh access from controller to managed nodes, it
+can be run as an unpriviledged user, rather than requiring
+administrative access on the controller.
 
-Register the public key to ``authorized_keys``.
+The ``ansible.cfg`` file can be used to override certain ansible
+configuration settings.
 
-::
+Please see the `ansible documentation
+<http://docs.ansible.com/index.html>`_ for further details.
 
-  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
-This public key will be registered on each node for your Ansible.
+Using Ansible
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Node registration
-^^^^^^^^^^^^^^^^^^
+Now that we have some nodes we wish to manage, let us use ansible to
+control them.
 
-How many nodes do you have? In this section, we define hosts for Ansible.
-The default location is in ``/etc/ansible/hosts``.
+Inventory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+First, we need our inventory of managed machines.
+Create an ``inventory.txt`` file with contents similar to the following::
 
-  sudo mkdir /etc/ansible
-
-Now, register your hosts in the ``/etc/ansible/hosts`` default file. Your hosts
-file looks like this:
-
-::
-
-  cat /etc/ansible/hosts
-
-  [local]
+  [ansible-test]
   10.39.1.1
-  10.39.1.2
+  10.38.1.2
 
-.. note:: You need to make sure you can ssh to each of these nodes (i.e.
-          10.39.1.1, 10.39.1.2)
+.. important::
 
-We added two hosts (10.39.1.1, 10.39.1.2) in the ``local`` group.
+   Do not copy-and-paste this. Use the IP addresses of the machines
+   you started earlier.
 
-Test Ansible
-~~~~~~~~~~~~
+
+Ansible SSH Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We need to override some of ansible default ssh settings.
+Create a ``ansible.cfg`` file with the following contents::
+
+  [ssh_connection]
+  ssh_args = -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+
+These options modify the behavior of ssh when connecting to the
+managed nodes. Disabling the ``StrictHostKeyChecking`` option prevents
+ssh from requiring that the node be present in you
+``~/.ssh/known_hosts`` file. SSH will still update the file and so we
+override ``UserKnownHostsFile``.
+
+Shell module: Hello World
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's try to run 'echo Hello World' over the nodes.
 
 ::
 
-  ansible all -a "echo Hello World"
+  ansible all -i inventory.txt -u ubuntu -c ssh -a "echo Hello World"
+
+An explanation of the flags:
+
+- ``-i`` specifies the inventory file
+- ``-u`` specifies the user on the managed machines
+- ``-c`` use ssh rather than paramiko so that our overrides in
+  ``ansible.cfg`` take effect.
+- ``-a`` specifies the module arguments to run.
 
 You expect to see::
 
@@ -133,11 +175,14 @@ You expect to see::
         10.39.1.2 | success | rc=0 >>
         Hello World
 
+Ping module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Run a simple command "ping".
 
 ::
 
-  ansible all -m ping
+  ansible all -i inventory.txt -u ubuntu -c ssh -m ping
 
 You expect to see::
 
@@ -152,14 +197,6 @@ You expect to see::
         }
 
 
-Terms
-~~~~~
-
-* Inventory: The hosts registered in the ``/etc/ansible/hosts`` file. Multiple
-  inventories can be used.
-* Group: A representation of a list of hosts. ``[group name]`` used in the
-  inventory.  
-* Playbook: a list of tasks for Ansible nodes. YAML format used.
 
 More examples
 ~~~~~~~~~~~~~~
