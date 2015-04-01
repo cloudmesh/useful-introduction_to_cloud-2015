@@ -4,7 +4,7 @@ OpenStack Heat
 Overview
 ----------------------------------------------------------------------
 
-This lesson will introduce you to a very important topic to OpenStack Heat, a
+This lesson will introduce you to a very important topic of OpenStack Heat, a
 software provisioning tool on the cloud.
 
 .. tip:: Duration: 40 minutes
@@ -74,16 +74,23 @@ https://github.com/openstack/heat-templates/blob/master/hot/
 Exercises
 ----------------------------------------------------------------------
 
-Exercise I
-^^^^^^^^^^^^^^^^^^
 
-Exercise II
-^^^^^^^^^^^^^^^^^^
+Exercise I
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Try to create a two VM instances with the following conditions:
+
+  - futuresystems/ubuntu14.04
+  - m1.small
+  - Port 22, 80, and 443 opened
+
+  - Save your OpenStack Heat template in ``$USERNAME_heat_ex1.yaml``
+
 
 Next Step
------------
+-------------------------------------------------------------------------------
 
-In the next page, ...
+In the next page, Ubuntu Juju will be discussed.
 
-`Link here <link>`_
+`Ubuntu Juju <juju.html>`_
 
