@@ -86,7 +86,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
@@ -160,37 +162,528 @@
             
   <div class="section" id="ansible-under-preparation">
 <h1>Ansible (under preparation)<a class="headerlink" href="#ansible-under-preparation" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id2">Overview</a></li>
+<li><a class="reference internal" href="#prerequisite" id="id3">Prerequisite</a></li>
+<li><a class="reference internal" href="#ansible" id="id4">Ansible</a></li>
+<li><a class="reference internal" href="#tutorial-ansible-basic-commands" id="id5">Tutorial: Ansible Basic commands</a><ul>
+<li><a class="reference internal" href="#setup" id="id6">Setup</a><ul>
+<li><a class="reference internal" href="#requirements" id="id7">Requirements</a></li>
+<li><a class="reference internal" href="#control-machine" id="id8">Control machine</a></li>
+<li><a class="reference internal" href="#managed-machines" id="id9">Managed machines</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#explanation" id="id10">Explanation</a></li>
+<li><a class="reference internal" href="#using-ansible" id="id11">Using Ansible</a><ul>
+<li><a class="reference internal" href="#inventory" id="id12">Inventory</a></li>
+<li><a class="reference internal" href="#ansible-ssh-configuration" id="id13">Ansible SSH Configuration</a></li>
+<li><a class="reference internal" href="#shell-module-hello-world" id="id14">Shell module: Hello World</a></li>
+<li><a class="reference internal" href="#ping-module" id="id15">Ping module</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-examples" id="id16">More examples</a></li>
+<li><a class="reference internal" href="#reference" id="id17">Reference</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ansible-playbooks" id="id18">Ansible Playbooks</a><ul>
+<li><a class="reference internal" href="#tutorial-writing-ansible-playbook" id="id19">Tutorial: Writing Ansible Playbook</a><ul>
+<li><a class="reference internal" href="#first-playbook-for-mongodb-installation" id="id20">First playbook for MongoDB Installation</a></li>
+<li><a class="reference internal" href="#enabling-root-ssh-access" id="id21">Enabling Root SSH Access</a></li>
+<li><a class="reference internal" href="#hosts-and-users" id="id22">Hosts and Users</a></li>
+<li><a class="reference internal" href="#tasks" id="id23">Tasks</a></li>
+<li><a class="reference internal" href="#module-apt-key-add-repository-keys" id="id24">Module <code class="docutils literal"><span class="pre">apt_key</span></code>: add repository keys</a></li>
+<li><a class="reference internal" href="#module-apt-repository-add-repositories" id="id25">Module <code class="docutils literal"><span class="pre">apt_repository</span></code>: add repositories</a></li>
+<li><a class="reference internal" href="#module-apt-install-packages" id="id26">Module <code class="docutils literal"><span class="pre">apt</span></code>: install packages</a></li>
+<li><a class="reference internal" href="#module-service-manage-services" id="id27">Module <code class="docutils literal"><span class="pre">service</span></code>: manage services</a></li>
+<li><a class="reference internal" href="#the-full-playbook" id="id28">The Full Playbook</a></li>
+<li><a class="reference internal" href="#running-a-playbook" id="id29">Running a Playbook</a></li>
+<li><a class="reference internal" href="#sanity-check-test-mongodb" id="id30">Sanity Check: Test MongoDB</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#terms" id="id31">Terms</a></li>
+<li><a class="reference internal" href="#id1" id="id32">Reference</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercises" id="id33">Exercises</a></li>
+<li><a class="reference internal" href="#next-step" id="id34">Next Step</a></li>
+</ul>
+</div>
+</div>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This lesson will introduce you to a very important topic to ...</p>
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This lesson will introduce you to using the Ansible</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Duration: 1 hour</p>
+<p class="last">Duration: 1 hour 30  minutes</p>
 </div>
 </div>
 <div class="section" id="prerequisite">
-<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Prerequisite</a><a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct this lesson you should have knowledge of</p>
 <ul class="simple">
-<li>How to .... . Described in lesson</li>
-<li>Lesson ....</li>
+<li>Using the shell</li>
+<li>Editing files</li>
+<li>Accessing FutureSystems</li>
 </ul>
 </div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>put the detailed dscription here</p>
+<div class="section" id="ansible">
+<h2><a class="toc-backref" href="#id4">Ansible</a><a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h2>
+<p>Ansible is an IT automation tool which deploys software and configures systems
+on multiple servers using SSH protocol. Python based Ansible stores information
+about deployment and configuration in a yaml format file, named Ansible
+Playbook. Tasks defined in the playbook allows you to have identical
+configurations and software across multiple machines in your infrastructure.
+This section, we introduce basic commands of <code class="docutils literal"><span class="pre">ansible</span></code> to introduce Ansible
+software on FutureSystems.  In the next section, we will explore advanced use
+of <code class="docutils literal"><span class="pre">ansible</span></code> on FutureSystems.</p>
+</div>
+<div class="section" id="tutorial-ansible-basic-commands">
+<h2><a class="toc-backref" href="#id5">Tutorial: Ansible Basic commands</a><a class="headerlink" href="#tutorial-ansible-basic-commands" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">approximate time 45 minutes</p>
+</div>
+<p>In this tutorial, we are going to learn basic commands of Ansible software.
+Keep in mind that <code class="docutils literal"><span class="pre">ansible</span></code> is a main program and <code class="docutils literal"><span class="pre">playbook</span></code> is a template
+that you would like to use. You may have several playbooks in your Ansible.</p>
+<div class="section" id="setup">
+<h3><a class="toc-backref" href="#id6">Setup</a><a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="requirements">
+<h4><a class="toc-backref" href="#id7">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h4>
+<p>In order to continue, ensure you have loaded the appropriate modules
+and registered a key with openstack.
+The modules needed are:</p>
+<ul class="simple">
+<li>python</li>
+<li>openstack</li>
+</ul>
+<p>Additionally, you can manage virtual machines using the <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon/project/">openstack web portal</a>.
+The login credentials are:</p>
+<ul class="simple">
+<li>username: your FutureSystems portal id</li>
+<li>password: the value of <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> in <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></li>
+</ul>
+<p>Ansible has two types of servers: a control machine and a managed node.
+Typically, a single control machine executes tasks over the one or more nodes.</p>
+</div>
+<div class="section" id="control-machine">
+<h4><a class="toc-backref" href="#id8">Control machine</a><a class="headerlink" href="#control-machine" title="Permalink to this headline">¶</a></h4>
+<p>We will use <code class="docutils literal"><span class="pre">india</span></code> as our control machine.
+Let&#8217;s install Ansible from via PyPI.</p>
+<p>I will create a seperate virtualenv for this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir -p ~/venv/ansible
+$ virtualenv ~/venv/ansible
+$ source ~/venv/ansible/bin/activate
+</pre></div>
+</div>
+<p>Now install Ansible:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ pip install --trusted-host pypi.python.org ansible
+</pre></div>
+</div>
+</div>
+<div class="section" id="managed-machines">
+<h4><a class="toc-backref" href="#id9">Managed machines</a><a class="headerlink" href="#managed-machines" title="Permalink to this headline">¶</a></h4>
+<p>We need to launch some virtual machines.  Go to the <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon/project/">openstack web
+portal</a>. Make sure that the correct projectid is selected in the top
+left (just to the right of the &#8220;openstack&#8221; logo&#8221;). For example,
+<code class="docutils literal"><span class="pre">fg101</span></code> or <code class="docutils literal"><span class="pre">fg465</span></code>.  Go to <code class="docutils literal"><span class="pre">Compute</span> <span class="pre">---&gt;</span> <span class="pre">Instances</span> <span class="pre">---&gt;</span> <span class="pre">Launch</span>
+<span class="pre">Instance</span></code> to start the procedure for launching an instance. Make sure
+to provide an instance name and specify a keypair.</p>
+<p>Launch several instances, say three.  Once they launch, note down the
+IP addresses. We will need these later.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>As a sanity check, make sure you can ssh into these nodes from <code class="docutils literal"><span class="pre">india</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh ubuntu@$IP
+</pre></div>
+</div>
+<p class="last">where <code class="docutils literal"><span class="pre">$IP</span></code> is the IP address of the instance you noted down.</p>
+</div>
+</div>
+</div>
+<div class="section" id="explanation">
+<h3><a class="toc-backref" href="#id10">Explanation</a><a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h3>
+<p>Ansible works by executing <strong>modules</strong> on an <strong>inventory</strong> of
+machines.  Since many machines can be managed, this inventory is
+written to a file.  Within the inventory file, groups of machines can
+be named arbitrarily.  These names should have some meaning however:
+for example &#8220;production&#8221;, &#8220;development&#8221;, and &#8220;testing&#8221; may be
+appropriate names.</p>
+<p>The modules executed update the state of the machine. For instance,
+the <code class="docutils literal"><span class="pre">apt</span></code> module allows software to be installed. While the
+<code class="docutils literal"><span class="pre">shell</span></code> module exists and is a convenient way to execute shell
+commands on the managed nodes it is run every time. Other modules,
+like <code class="docutils literal"><span class="pre">apt</span></code>, allow ansible to be intelligent about changing state:
+only necessary modifications are done. For instance, of an application
+is already installed, there is not reason to reinstall.</p>
+<p>Since ansible requires ssh access from controller to managed nodes, it
+can be run as an unpriviledged user, rather than requiring
+administrative access on the controller.</p>
+<p>The <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file can be used to override certain ansible
+configuration settings.</p>
+<p>Please see the <a class="reference external" href="http://docs.ansible.com/index.html">ansible documentation</a> for further details.</p>
+</div>
+<div class="section" id="using-ansible">
+<h3><a class="toc-backref" href="#id11">Using Ansible</a><a class="headerlink" href="#using-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have some nodes we wish to manage, let us use ansible to
+control them.</p>
+<div class="section" id="inventory">
+<h4><a class="toc-backref" href="#id12">Inventory</a><a class="headerlink" href="#inventory" title="Permalink to this headline">¶</a></h4>
+<p>First, we need our inventory of managed machines.
+Create an <code class="docutils literal"><span class="pre">inventory.txt</span></code> file with contents similar to the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>[ansible-test]
+10.39.1.1
+10.38.1.2
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not copy-and-paste this. Use the IP addresses of the machines
+you started earlier.</p>
+</div>
+</div>
+<div class="section" id="ansible-ssh-configuration">
+<h4><a class="toc-backref" href="#id13">Ansible SSH Configuration</a><a class="headerlink" href="#ansible-ssh-configuration" title="Permalink to this headline">¶</a></h4>
+<p>We need to override some of ansible default ssh settings.
+Create a <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file with the following contents:</p>
+<div class="highlight-python"><div class="highlight"><pre>[ssh_connection]
+ssh_args = -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
+</pre></div>
+</div>
+<p>These options modify the behavior of ssh when connecting to the
+managed nodes. Disabling the <code class="docutils literal"><span class="pre">StrictHostKeyChecking</span></code> option prevents
+ssh from requiring that the node be present in you
+<code class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></code> file. SSH will still update the file and so we
+override <code class="docutils literal"><span class="pre">UserKnownHostsFile</span></code>.</p>
+</div>
+<div class="section" id="shell-module-hello-world">
+<h4><a class="toc-backref" href="#id14">Shell module: Hello World</a><a class="headerlink" href="#shell-module-hello-world" title="Permalink to this headline">¶</a></h4>
+<p>Let&#8217;s try to run &#8216;echo Hello World&#8217; over the nodes.</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible all -i inventory.txt -u ubuntu -c ssh -a &quot;echo Hello World&quot;
+</pre></div>
+</div>
+<p>An explanation of the flags:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">-i</span></code> specifies the inventory file</li>
+<li><code class="docutils literal"><span class="pre">-u</span></code> specifies the user on the managed machines</li>
+<li><code class="docutils literal"><span class="pre">-c</span></code> use ssh rather than paramiko so that our overrides in
+<code class="docutils literal"><span class="pre">ansible.cfg</span></code> take effect.</li>
+<li><code class="docutils literal"><span class="pre">-a</span></code> specifies the module arguments to run.</li>
+</ul>
+<p>You expect to see:</p>
+<div class="highlight-python"><div class="highlight"><pre>10.39.1.1 | success | rc=0 &gt;&gt;
+Hello World
+
+10.39.1.2 | success | rc=0 &gt;&gt;
+Hello World
+</pre></div>
+</div>
+</div>
+<div class="section" id="ping-module">
+<h4><a class="toc-backref" href="#id15">Ping module</a><a class="headerlink" href="#ping-module" title="Permalink to this headline">¶</a></h4>
+<p>Run a simple command &#8220;ping&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible all -i inventory.txt -u ubuntu -c ssh -m ping
+</pre></div>
+</div>
+<p>You expect to see:</p>
+<div class="highlight-python"><div class="highlight"><pre>10.39.1.1 | success &gt;&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+
+10.39.1.2 | success &gt;&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="more-examples">
+<h3><a class="toc-backref" href="#id16">More examples</a><a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h3>
+<p>You can find more examples from here: <a class="reference external" href="https://github.com/ansible/ansible-examples">https://github.com/ansible/ansible-examples</a></p>
+</div>
+<div class="section" id="reference">
+<h3><a class="toc-backref" href="#id17">Reference</a><a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<p>The main tutorial from Ansible is here: <a class="reference external" href="https://docs.ansible.com/installation/ubuntulinux/">https://docs.ansible.com/installation/ubuntulinux/</a></p>
+</div>
+</div>
+<div class="section" id="ansible-playbooks">
+<h2><a class="toc-backref" href="#id18">Ansible Playbooks</a><a class="headerlink" href="#ansible-playbooks" title="Permalink to this headline">¶</a></h2>
+<p>Ansible Playbooks are automated scripts written in YAML data format.  Instead
+of using manual commands to setup multiple remote machines, you can utilize
+Ansible Playbooks to configure your entire systems. YAML syntax is easy to read
+and express the data structure of certain Ansible functions. You simply write
+some tasks, for example, installing software, configuring default settings, and
+starting the software, in a Ansible Playbook.  With a few examples in this
+tutorial, you will understand how it works and how to write your own Playbooks.</p>
+<blockquote>
+<div>There are also several examples of using Ansible <a class="reference external" href="http://docs.ansible.com/playbooks.html">Playbooks</a> from the official site. It covers
+from basic usage of Ansible Playbooks to advanced usage such as applying
+patches and updates with different roles and groups.</div></blockquote>
+<div class="section" id="tutorial-writing-ansible-playbook">
+<h3><a class="toc-backref" href="#id19">Tutorial: Writing Ansible Playbook</a><a class="headerlink" href="#tutorial-writing-ansible-playbook" title="Permalink to this headline">¶</a></h3>
+<p>In this tutorial, we are going to write a basic playbook of Ansible software.
+Keep in mind that <code class="docutils literal"><span class="pre">Ansible</span></code> is a main program and <code class="docutils literal"><span class="pre">playbook</span></code> is a template
+that you would like to use. You may have several playbooks in your Ansible.</p>
+<div class="section" id="first-playbook-for-mongodb-installation">
+<h4><a class="toc-backref" href="#id20">First playbook for MongoDB Installation</a><a class="headerlink" href="#first-playbook-for-mongodb-installation" title="Permalink to this headline">¶</a></h4>
+<p>As a first example, we are going to write a playbook which installs MongoDB
+server.  It includes the following tasks:</p>
+<ul class="simple">
+<li>Import the public key used by the package management system</li>
+<li>Create a list file for MongoDB</li>
+<li>Reload local package database</li>
+<li>Install the MongoDB packages</li>
+<li>Start MongoDB</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This tutorial is based on the manual installation of MongoDB from
+the official site:
+<a class="reference external" href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*</a></p>
+<p class="last">We also assume that we install MongoDB on Ubuntu 14.04.</p>
+</div>
+</div>
+<div class="section" id="enabling-root-ssh-access">
+<h4><a class="toc-backref" href="#id21">Enabling Root SSH Access</a><a class="headerlink" href="#enabling-root-ssh-access" title="Permalink to this headline">¶</a></h4>
+<p>Some setups of managed nodes may not allow you to log in as root.  As
+this may be problematic later, let us create a playbook to resolve
+this. Create a <code class="docutils literal"><span class="pre">enable-root-access.yaml</span></code> file with the following contents:</p>
+<div class="highlight-python"><div class="highlight"><pre>---
+- hosts: ansible-test
+  remote_user: ubuntu
+  tasks:
+    - name: Enable root login
+      shell: sudo cp ~/.ssh/authorized_keys /root/.ssh/
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">hosts</span></code> specifies the name of a group of machines in the inventory</li>
+<li><code class="docutils literal"><span class="pre">remote_user</span></code> specifies the username on the managed nodes to log in as</li>
+<li><code class="docutils literal"><span class="pre">tasks</span></code> is a list of tasks to accomplish having a <code class="docutils literal"><span class="pre">name</span></code> (a
+description) and modules to execute. In this case we use the
+<code class="docutils literal"><span class="pre">shell</span></code> module.</li>
+</ul>
+<p>We can run this playbook like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ansible-playbook -i inventory.txt -c ssh enable-root-access.yaml
+
+PLAY [ansible-test] ***********************************************************
+
+GATHERING FACTS ***************************************************************
+ok: [10.23.2.105]
+ok: [10.23.2.104]
+
+TASK: [Enable root login] *****************************************************
+changed: [10.23.2.104]
+changed: [10.23.2.105]
+
+PLAY RECAP ********************************************************************
+10.23.2.104                : ok=2    changed=1    unreachable=0    failed=0
+10.23.2.105                : ok=2    changed=1    unreachable=0    failed=0
+</pre></div>
+</div>
+</div>
+<div class="section" id="hosts-and-users">
+<h4><a class="toc-backref" href="#id22">Hosts and Users</a><a class="headerlink" href="#hosts-and-users" title="Permalink to this headline">¶</a></h4>
+<p>First step is choosing hosts to install MongoDB and a user account to run
+commands (tasks).  We start with the following lines in the example filename of
+<code class="docutils literal"><span class="pre">mongodb.yaml</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre>---
+- hosts: ansible-test
+  remote_user: root
+</pre></div>
+</div>
+<p>In a previous tutorial, we setup two machines with <code class="docutils literal"><span class="pre">ansible-test</span></code> group name. This
+tutorial uses that two machines for MongoDB installation.  Also, we use
+<code class="docutils literal"><span class="pre">root</span></code> account to complete Ansible tasks.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Indentation is important in YAML format. Do not ignore spaces start
+with in each line.</p>
+</div>
+</div>
+<div class="section" id="tasks">
+<h4><a class="toc-backref" href="#id23">Tasks</a><a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h4>
+<p>A list of tasks contains commands or configurations to be executed on remote
+machines in a sequential order.  Each task comes with a <code class="docutils literal"><span class="pre">name</span></code> and a
+<code class="docutils literal"><span class="pre">module</span></code> to run your command or configuration.  You provide a description of
+your task in <code class="docutils literal"><span class="pre">name</span></code> section and choose a <code class="docutils literal"><span class="pre">module</span></code> for your task.  There are
+several modules that you can use, for example, <code class="docutils literal"><span class="pre">shell</span></code> module simply executes
+a command without considering a return value.  You may use <code class="docutils literal"><span class="pre">apt</span></code> or <code class="docutils literal"><span class="pre">yum</span></code>
+module which is one of the packaging modules to install software. You can find
+an entire list of modules here:
+<a class="reference external" href="http://docs.ansible.com/list_of_all_modules.html">http://docs.ansible.com/list_of_all_modules.html</a></p>
+</div>
+<div class="section" id="module-apt-key-add-repository-keys">
+<h4><a class="toc-backref" href="#id24">Module <code class="docutils literal"><span class="pre">apt_key</span></code>: add repository keys</a><a class="headerlink" href="#module-apt-key-add-repository-keys" title="Permalink to this headline">¶</a></h4>
+<p>We need to import the MongoDB public GPG Key. This is going to be a first task
+in our playbook.</p>
+<div class="highlight-python"><div class="highlight"><pre>tasks:
+  - name: Import the public key used by the package management system
+    apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-apt-repository-add-repositories">
+<h4><a class="toc-backref" href="#id25">Module <code class="docutils literal"><span class="pre">apt_repository</span></code>: add repositories</a><a class="headerlink" href="#module-apt-repository-add-repositories" title="Permalink to this headline">¶</a></h4>
+<p>Next add the MongoDB repository to apt:</p>
+<div class="highlight-python"><div class="highlight"><pre>- name: Add MongoDB repository
+  apt_repository: repo=&#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; state=present
+</pre></div>
+</div>
+</div>
+<div class="section" id="module-apt-install-packages">
+<h4><a class="toc-backref" href="#id26">Module <code class="docutils literal"><span class="pre">apt</span></code>: install packages</a><a class="headerlink" href="#module-apt-install-packages" title="Permalink to this headline">¶</a></h4>
+<p>We use <code class="docutils literal"><span class="pre">apt</span></code> module to install <code class="docutils literal"><span class="pre">mongodb-org</span></code> package.
+<code class="docutils literal"><span class="pre">notify</span></code> action is added to start <code class="docutils literal"><span class="pre">mongod</span></code> after the completion of this task.
+Use the <code class="docutils literal"><span class="pre">update_cache=yes</span></code> option to reload the local package database.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><ul class="first last simple">
+<li>name: install mongodb
+apt: pkg=mongodb-org state=latest update_cache=yes
+notify:
+- start mongodb</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="module-service-manage-services">
+<h4><a class="toc-backref" href="#id27">Module <code class="docutils literal"><span class="pre">service</span></code>: manage services</a><a class="headerlink" href="#module-service-manage-services" title="Permalink to this headline">¶</a></h4>
+<p>We use <code class="docutils literal"><span class="pre">handlers</span></code> here to start or restart services. It is similar to <code class="docutils literal"><span class="pre">tasks</span></code> but will run only once.</p>
+<div class="highlight-python"><div class="highlight"><pre>handlers:
+  - name: start mongodb
+    service: name=mongod state=started
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-full-playbook">
+<h4><a class="toc-backref" href="#id28">The Full Playbook</a><a class="headerlink" href="#the-full-playbook" title="Permalink to this headline">¶</a></h4>
+<p>Our first playbook looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>---
+- hosts: ansible-test
+  remote_user: root
+  tasks:
+  - name: Import the public key used by the package management system
+    apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
+  - name: Add MongoDB repository
+    apt_repository: repo=&#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; state=present
+  - name: install mongodb
+    apt: pkg=mongodb-org state=latest update_cache=yes
+    notify:
+    - start mongodb
+  handlers:
+    - name: start mongodb
+      service: name=mongod state=started
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-a-playbook">
+<h4><a class="toc-backref" href="#id29">Running a Playbook</a><a class="headerlink" href="#running-a-playbook" title="Permalink to this headline">¶</a></h4>
+<p>We use <code class="docutils literal"><span class="pre">ansible-playbook</span></code> command to run our playbook:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ansible-playbook -i inventory.txt -c ssh mongodb.yaml
+
+PLAY [ansible-test] ***********************************************************
+
+GATHERING FACTS ***************************************************************
+ok: [10.23.2.104]
+ok: [10.23.2.105]
+
+TASK: [Import the public key used by the package management system] ***********
+changed: [10.23.2.104]
+changed: [10.23.2.105]
+
+TASK: [Add MongoDB repository] ************************************************
+changed: [10.23.2.104]
+changed: [10.23.2.105]
+
+TASK: [install mongodb] *******************************************************
+changed: [10.23.2.104]
+changed: [10.23.2.105]
+
+NOTIFIED: [start mongodb] *****************************************************
+ok: [10.23.2.105]
+ok: [10.23.2.104]
+
+PLAY RECAP ********************************************************************
+10.23.2.104                : ok=5    changed=3    unreachable=0    failed=0
+10.23.2.105                : ok=5    changed=3    unreachable=0    failed=0
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you rerun the playbook, you should see that nothing changed:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ ansible-playbook -i inventory.txt -c ssh mongodb.yaml
+
+PLAY [ansible-test] ***********************************************************
+
+GATHERING FACTS ***************************************************************
+ok: [10.23.2.105]
+ok: [10.23.2.104]
+
+TASK: [Import the public key used by the package management system] ***********
+ok: [10.23.2.104]
+ok: [10.23.2.105]
+
+TASK: [Add MongoDB repository] ************************************************
+ok: [10.23.2.104]
+ok: [10.23.2.105]
+
+TASK: [install mongodb] *******************************************************
+ok: [10.23.2.105]
+ok: [10.23.2.104]
+
+PLAY RECAP ********************************************************************
+10.23.2.104                : ok=4    changed=0    unreachable=0    failed=0
+10.23.2.105                : ok=4    changed=0    unreachable=0    failed=0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sanity-check-test-mongodb">
+<h4><a class="toc-backref" href="#id30">Sanity Check: Test MongoDB</a><a class="headerlink" href="#sanity-check-test-mongodb" title="Permalink to this headline">¶</a></h4>
+<p>Let&#8217;s try to run &#8216;mongo&#8217; to enter mongodb shell.</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ssh ubuntu@$IP
+$ mongo
+MongoDB shell version: 2.6.9
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type &quot;help&quot;.
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="terms">
+<h3><a class="toc-backref" href="#id31">Terms</a><a class="headerlink" href="#terms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Module: Ansible library to run or manage services, packages, files or commands.</li>
+<li>Handler: A task for notifier.</li>
+<li>Task: Ansible job to run a command, check files, or update configurations.</li>
+<li>Playbook: a list of tasks for Ansible nodes. YAML format used.</li>
+<li>YAML: Human readable generic data serialization.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id32">Reference</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The main tutorial from Ansible is here: <a class="reference external" href="http://docs.ansible.com/playbooks_intro.html">http://docs.ansible.com/playbooks_intro.html</a></p>
+<p>You can also find an index of the ansible modules here: <a class="reference external" href="http://docs.ansible.com/modules_by_category.html">http://docs.ansible.com/modules_by_category.html</a></p>
+</div>
 </div>
 <div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-i">
-<h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="exercise-ii">
-<h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
-</div>
+<h2><a class="toc-backref" href="#id33">Exercises</a><a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id34">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
 <p>In the next page, ...</p>
 <p><a class="reference external" href="link">Link here</a></p>
 </div>

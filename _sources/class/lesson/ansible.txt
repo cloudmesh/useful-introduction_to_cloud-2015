@@ -1,5 +1,5 @@
-Try Ansible Basic on FutureSystems
-===============================================================
+Ansible
+----------------------------------------------------------------------
 
 Ansible is an IT automation tool which deploys software and configures systems
 on multiple servers using SSH protocol. Python based Ansible stores information
@@ -40,8 +40,6 @@ The login credentials are:
 
 .. _openstack web portal: https://openstack-j.india.futuresystems.org/horizon/project/
 
-Install Ansible 
-~~~~~~~~~~~~~~~~
 
 Ansible has two types of servers: a control machine and a managed node.
 Typically, a single control machine executes tasks over the one or more nodes.
@@ -208,10 +206,4 @@ Reference
 
 The main tutorial from Ansible is here: https://docs.ansible.com/installation/ubuntulinux/
 
-Next Step
----------
-
-In the next page, we learn Ansible Playbook on FutureSystems.
-
-`Writing Ansible Playbook for Cloudmesh <ansible_cloudmesh.html>`_
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Try Ansible Basic on FutureSystems &mdash; my Cloudmesh Learning documentation</title>
+  <title>Ansible &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -35,7 +35,7 @@
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Lessons" href="../lessons.html"/>
-        <link rel="next" title="Writing Ansible Playbooks on FutureSystems" href="ansible_cloudmesh.html"/>
+        <link rel="next" title="Ansible Playbooks" href="ansible_playbook.html"/>
         <link rel="prev" title="Lessons" href="../lessons.html"/> 
 
   
@@ -89,8 +89,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Try Ansible Basic on FutureSystems</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ansible_cloudmesh.html">Writing Ansible Playbooks on FutureSystems</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Ansible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docker.html">Try Docker Basic on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
@@ -153,7 +154,7 @@
       
           <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       
-    <li>Try Ansible Basic on FutureSystems</li>
+    <li>Ansible</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/class/lesson/ansible.txt" rel="nofollow"> View page source</a>
@@ -164,8 +165,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="try-ansible-basic-on-futuresystems">
-<h1>Try Ansible Basic on FutureSystems<a class="headerlink" href="#try-ansible-basic-on-futuresystems" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ansible">
+<h1>Ansible<a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h1>
 <p>Ansible is an IT automation tool which deploys software and configures systems
 on multiple servers using SSH protocol. Python based Ansible stores information
 about deployment and configuration in a yaml format file, named Ansible
@@ -174,8 +175,9 @@ configurations and software across multiple machines in your infrastructure.
 This section, we introduce basic commands of <code class="docutils literal"><span class="pre">ansible</span></code> to introduce Ansible
 software on FutureSystems.  In the next section, we will explore advanced use
 of <code class="docutils literal"><span class="pre">ansible</span></code> on FutureSystems.</p>
+</div>
 <div class="section" id="tutorial-ansible-basic-commands">
-<h2>Tutorial: Ansible Basic commands<a class="headerlink" href="#tutorial-ansible-basic-commands" title="Permalink to this headline">¶</a></h2>
+<h1>Tutorial: Ansible Basic commands<a class="headerlink" href="#tutorial-ansible-basic-commands" title="Permalink to this headline">¶</a></h1>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">approximate time 45 minutes</p>
@@ -184,9 +186,9 @@ of <code class="docutils literal"><span class="pre">ansible</span></code> on Fut
 Keep in mind that <code class="docutils literal"><span class="pre">ansible</span></code> is a main program and <code class="docutils literal"><span class="pre">playbook</span></code> is a template
 that you would like to use. You may have several playbooks in your Ansible.</p>
 <div class="section" id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="requirements">
-<h4>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h4>
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <p>In order to continue, ensure you have loaded the appropriate modules
 and registered a key with openstack.
 The modules needed are:</p>
@@ -200,14 +202,11 @@ The login credentials are:</p>
 <li>username: your FutureSystems portal id</li>
 <li>password: the value of <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> in <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></li>
 </ul>
-</div>
-</div>
-<div class="section" id="install-ansible">
-<h3>Install Ansible<a class="headerlink" href="#install-ansible" title="Permalink to this headline">¶</a></h3>
 <p>Ansible has two types of servers: a control machine and a managed node.
 Typically, a single control machine executes tasks over the one or more nodes.</p>
+</div>
 <div class="section" id="control-machine">
-<h4>Control machine<a class="headerlink" href="#control-machine" title="Permalink to this headline">¶</a></h4>
+<h3>Control machine<a class="headerlink" href="#control-machine" title="Permalink to this headline">¶</a></h3>
 <p>We will use <code class="docutils literal"><span class="pre">india</span></code> as our control machine.
 Let&#8217;s install Ansible from via PyPI.</p>
 <p>I will create a seperate virtualenv for this:</p>
@@ -222,7 +221,7 @@ $ source ~/venv/ansible/bin/activate
 </div>
 </div>
 <div class="section" id="managed-machines">
-<h4>Managed machines<a class="headerlink" href="#managed-machines" title="Permalink to this headline">¶</a></h4>
+<h3>Managed machines<a class="headerlink" href="#managed-machines" title="Permalink to this headline">¶</a></h3>
 <p>We need to launch some virtual machines.  Go to the <a class="reference external" href="https://openstack-j.india.futuresystems.org/horizon/project/">openstack web
 portal</a>. Make sure that the correct projectid is selected in the top
 left (just to the right of the &#8220;openstack&#8221; logo&#8221;). For example,
@@ -242,7 +241,7 @@ IP addresses. We will need these later.</p>
 </div>
 </div>
 <div class="section" id="explanation">
-<h3>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h3>
+<h2>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h2>
 <p>Ansible works by executing <strong>modules</strong> on an <strong>inventory</strong> of
 machines.  Since many machines can be managed, this inventory is
 written to a file.  Within the inventory file, groups of machines can
@@ -264,11 +263,11 @@ configuration settings.</p>
 <p>Please see the <a class="reference external" href="http://docs.ansible.com/index.html">ansible documentation</a> for further details.</p>
 </div>
 <div class="section" id="using-ansible">
-<h3>Using Ansible<a class="headerlink" href="#using-ansible" title="Permalink to this headline">¶</a></h3>
+<h2>Using Ansible<a class="headerlink" href="#using-ansible" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have some nodes we wish to manage, let us use ansible to
 control them.</p>
 <div class="section" id="inventory">
-<h4>Inventory<a class="headerlink" href="#inventory" title="Permalink to this headline">¶</a></h4>
+<h3>Inventory<a class="headerlink" href="#inventory" title="Permalink to this headline">¶</a></h3>
 <p>First, we need our inventory of managed machines.
 Create an <code class="docutils literal"><span class="pre">inventory.txt</span></code> file with contents similar to the following:</p>
 <div class="highlight-python"><div class="highlight"><pre>[ansible-test]
@@ -283,7 +282,7 @@ you started earlier.</p>
 </div>
 </div>
 <div class="section" id="ansible-ssh-configuration">
-<h4>Ansible SSH Configuration<a class="headerlink" href="#ansible-ssh-configuration" title="Permalink to this headline">¶</a></h4>
+<h3>Ansible SSH Configuration<a class="headerlink" href="#ansible-ssh-configuration" title="Permalink to this headline">¶</a></h3>
 <p>We need to override some of ansible default ssh settings.
 Create a <code class="docutils literal"><span class="pre">ansible.cfg</span></code> file with the following contents:</p>
 <div class="highlight-python"><div class="highlight"><pre>[ssh_connection]
@@ -297,7 +296,7 @@ ssh from requiring that the node be present in you
 override <code class="docutils literal"><span class="pre">UserKnownHostsFile</span></code>.</p>
 </div>
 <div class="section" id="shell-module-hello-world">
-<h4>Shell module: Hello World<a class="headerlink" href="#shell-module-hello-world" title="Permalink to this headline">¶</a></h4>
+<h3>Shell module: Hello World<a class="headerlink" href="#shell-module-hello-world" title="Permalink to this headline">¶</a></h3>
 <p>Let&#8217;s try to run &#8216;echo Hello World&#8217; over the nodes.</p>
 <div class="highlight-python"><div class="highlight"><pre>ansible all -i inventory.txt -u ubuntu -c ssh -a &quot;echo Hello World&quot;
 </pre></div>
@@ -320,7 +319,7 @@ Hello World
 </div>
 </div>
 <div class="section" id="ping-module">
-<h4>Ping module<a class="headerlink" href="#ping-module" title="Permalink to this headline">¶</a></h4>
+<h3>Ping module<a class="headerlink" href="#ping-module" title="Permalink to this headline">¶</a></h3>
 <p>Run a simple command &#8220;ping&#8221;.</p>
 <div class="highlight-python"><div class="highlight"><pre>ansible all -i inventory.txt -u ubuntu -c ssh -m ping
 </pre></div>
@@ -340,18 +339,12 @@ Hello World
 </div>
 </div>
 <div class="section" id="more-examples">
-<h3>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h3>
+<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h2>
 <p>You can find more examples from here: <a class="reference external" href="https://github.com/ansible/ansible-examples">https://github.com/ansible/ansible-examples</a></p>
 </div>
 <div class="section" id="reference">
-<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <p>The main tutorial from Ansible is here: <a class="reference external" href="https://docs.ansible.com/installation/ubuntulinux/">https://docs.ansible.com/installation/ubuntulinux/</a></p>
-</div>
-</div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>In the next page, we learn Ansible Playbook on FutureSystems.</p>
-<p><a class="reference external" href="ansible_cloudmesh.html">Writing Ansible Playbook for Cloudmesh</a></p>
 </div>
 </div>
 
@@ -361,7 +354,7 @@ Hello World
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ansible_cloudmesh.html" class="btn btn-neutral float-right" title="Writing Ansible Playbooks on FutureSystems">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ansible_playbook.html" class="btn btn-neutral float-right" title="Ansible Playbooks">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../lessons.html" class="btn btn-neutral" title="Lessons"><span class="fa fa-arrow-circle-left"></span> Previous</a>

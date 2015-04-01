@@ -216,6 +216,6 @@ To be Organized into the above
    ../lesson/openmpi
    ../lesson/ipynb
    ../lesson/ansible
-   ../lesson/ansible_cloudmesh
+   ../lesson/ansible_playbook
    ../lesson/docker
    ../lesson/docker_cloudmesh
