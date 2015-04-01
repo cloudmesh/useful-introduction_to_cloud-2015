@@ -36,10 +36,56 @@ server.  It includes the following tasks:
 * Install the MongoDB packages
 * Start MongoDB
 
-*This tutorial is based on the manual installation of MongoDB from the official
-site: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*
+.. note::
 
-*We also assume that we install MongoDB on Ubuntu OS.*
+   This tutorial is based on the manual installation of MongoDB from
+   the official site:
+   http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*
+
+   We also assume that we install MongoDB on Ubuntu 14.04.
+
+Enabling Root SSH Access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some setups of managed nodes may not allow you to log in as root.  As
+this may be problematic later, let us create a playbook to resolve
+this. Create a ``enable-root-access.yaml`` file with the following contents::
+
+  ---
+  - hosts: ansible-test
+    remote_user: ubuntu
+    tasks:
+      - name: Enable root login
+        shell: sudo cp ~/.ssh/authorized_keys /root/.ssh/
+
+
+Explanation:
+
+- ``hosts`` specifies the name of a group of machines in the inventory
+- ``remote_user`` specifies the username on the managed nodes to log in as
+- ``tasks`` is a list of tasks to accomplish having a ``name`` (a
+  description) and modules to execute. In this case we use the
+  ``shell`` module.
+
+We can run this playbook like so::
+
+  $ ansible-playbook -i inventory.txt -c ssh enable-root-access.yaml
+  
+  PLAY [ansible-test] *********************************************************** 
+  
+  GATHERING FACTS *************************************************************** 
+  ok: [10.23.2.105]
+  ok: [10.23.2.104]
+  
+  TASK: [Enable root login] ***************************************************** 
+  changed: [10.23.2.104]
+  changed: [10.23.2.105]
+  
+  PLAY RECAP ******************************************************************** 
+  10.23.2.104                : ok=2    changed=1    unreachable=0    failed=0   
+  10.23.2.105                : ok=2    changed=1    unreachable=0    failed=0
+
+
 
 Hosts and Users
 ^^^^^^^^^^^^^^^^
@@ -51,14 +97,14 @@ commands (tasks).  We start with the following lines in the example filename of
 ::
 
   ---
-  - hosts: local 
+  - hosts: ansible-test
     remote_user: root
 
-In a previous tutorial, we setup two machines with ``local`` group name. This
+In a previous tutorial, we setup two machines with ``ansible-test`` group name. This
 tutorial uses that two machines for MongoDB installation.  Also, we use
 ``root`` account to complete Ansible tasks.
 
-.. note:: Indentation is important in YAML format. Do not ignore spaces start
+.. important:: Indentation is important in YAML format. Do not ignore spaces start
           with in each line.
 
 Tasks
@@ -84,40 +130,34 @@ in our playbook.
 
   tasks:
     - name: Import the public key used by the package management system
-      shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+      apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
 
 
 Step 2: Create a list file for MongoDB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add a list of MongoDB URL with the following task:
+Next add the MongoDB repository to apt:
 
 ::
 
-   - name: Create a list file for MongoDB
-     shell: echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list
+   - name: Add MongoDB repository
+     apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
 
-Step 3: Reload local package database
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
-
-  - name: Reload local package database
-    shell: apt-get update
-
-Step 4: Install the MongoDB packages
+Step 3: Install the MongoDB packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``apt`` module to install ``mongodb-org`` package.
 ``notify`` action is added to start ``mongod`` after the completion of this task.
+Use the ``update_cache=yes`` option to reload the local package database.
 
 ::
   - name: install mongodb
-    apt: pkg=mongodb-org state=latest
+    apt: pkg=mongodb-org state=latest update_cache=yes
     notify:
     - start mongodb
 
-Step 5: Start MongoDB
+Step 4: Start MongoDB
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``handlers`` here to start or restart services. It is similar to ``tasks`` but will run only once.
@@ -131,39 +171,85 @@ We use ``handlers`` here to start or restart services. It is similar to ``tasks`
 A playbook for Mongodb
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our first playbook looks like this:
+Our first playbook looks like this::
 
-:: 
-
-   cat mongodb.yaml
-
-   ---
-   - hosts: local
-     remote_user: root
-     tasks:
-     - name: Import the public key used by the package management system
-       shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-     - name: Create a list file for MongoDB
-       shell: echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list
-     - name: Reload local package database
-       shell: apt-get update
-     - name: install mongodb
-       apt: pkg=mongodb-org state=latest
-       notify:
-       - start mongodb
-     handlers:
-       - name: start mongodb
-         service: name=mongod state=started
+  ---
+  - hosts: ansible-test
+    remote_user: root
+    tasks:
+    - name: Import the public key used by the package management system
+      apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
+    - name: Add MongoDB repository
+      apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
+    - name: install mongodb
+      apt: pkg=mongodb-org state=latest update_cache=yes
+      notify:
+      - start mongodb
+    handlers:
+      - name: start mongodb
+        service: name=mongod state=started
 
 Run Playbook
 ~~~~~~~~~~~~~~~~~
 
-We use ``ansible-playbook`` command to run our playbook.
+We use ``ansible-playbook`` command to run our playbook::
 
-::
+  $ ansible-playbook -i inventory.txt -c ssh mongodb.yaml
+  
+  PLAY [ansible-test] *********************************************************** 
+  
+  GATHERING FACTS *************************************************************** 
+  ok: [10.23.2.104]
+  ok: [10.23.2.105]
+  
+  TASK: [Import the public key used by the package management system] *********** 
+  changed: [10.23.2.104]
+  changed: [10.23.2.105]
+  
+  TASK: [Add MongoDB repository] ************************************************ 
+  changed: [10.23.2.104]
+  changed: [10.23.2.105]
+  
+  TASK: [install mongodb] ******************************************************* 
+  changed: [10.23.2.104]
+  changed: [10.23.2.105]
+  
+  NOTIFIED: [start mongodb] ***************************************************** 
+  ok: [10.23.2.105]
+  ok: [10.23.2.104]
+  
+  PLAY RECAP ******************************************************************** 
+  10.23.2.104                : ok=5    changed=3    unreachable=0    failed=0   
+  10.23.2.105                : ok=5    changed=3    unreachable=0    failed=0
 
-  ansible-playbook mongodb.yaml
 
+.. note::
+
+   If you rerun the playbook, you should see that nothing changed::
+
+     $ ansible-playbook -i inventory.txt -c ssh mongodb.yaml 
+     
+     PLAY [ansible-test] *********************************************************** 
+     
+     GATHERING FACTS *************************************************************** 
+     ok: [10.23.2.105]
+     ok: [10.23.2.104]
+     
+     TASK: [Import the public key used by the package management system] *********** 
+     ok: [10.23.2.104]
+     ok: [10.23.2.105]
+     
+     TASK: [Add MongoDB repository] ************************************************ 
+     ok: [10.23.2.104]
+     ok: [10.23.2.105]
+     
+     TASK: [install mongodb] ******************************************************* 
+     ok: [10.23.2.105]
+     ok: [10.23.2.104]
+     
+     PLAY RECAP ******************************************************************** 
+     10.23.2.104                : ok=4    changed=0    unreachable=0    failed=0   
+     10.23.2.105                : ok=4    changed=0    unreachable=0    failed=0
 
 Test Mongodb
 ~~~~~~~~~~~~
@@ -172,10 +258,18 @@ Let's try to run 'mongo' to enter mongodb shell.
 
 ::
 
-  $ mongo
-  MongoDB shell version: 2.6.7
-  connecting to: test
-  >
+   $ ssh ubuntu@$IP
+   $ mongo
+   MongoDB shell version: 2.6.9
+   connecting to: test
+   Welcome to the MongoDB shell.
+   For interactive help, type "help".
+   For more comprehensive documentation, see
+           http://docs.mongodb.org/
+   Questions? Try the support group
+           http://groups.google.com/group/mongodb-user
+   > 
+
 
 Terms
 ~~~~~
@@ -190,6 +284,8 @@ Reference
 ~~~~~~~~~~
 
 The main tutorial from Ansible is here: http://docs.ansible.com/playbooks_intro.html
+
+You can also find an index of the ansible modules here: http://docs.ansible.com/modules_by_category.html
 
 Next Step
 ---------
