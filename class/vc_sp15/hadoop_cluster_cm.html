@@ -59,9 +59,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -118,7 +117,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Deploying Hadoop Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></li>
+    <li>Deploying Hadoop Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/class/vc_sp15/hadoop_cluster_cm.txt" rel="nofollow"> View page source</a>
@@ -130,10 +129,10 @@
           <div role="main" class="document">
             
   <div class="section" id="deploying-hadoop-cluster-with-cloudmesh-launcher">
-<h1>Deploying Hadoop Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code><a class="headerlink" href="#deploying-hadoop-cluster-with-cloudmesh-launcher" title="Permalink to this headline">¶</a></h1>
+<h1>Deploying Hadoop Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt><a class="headerlink" href="#deploying-hadoop-cluster-with-cloudmesh-launcher" title="Permalink to this headline">¶</a></h1>
 <p>To support a compute cluster (e.g. Hadoop or Slurm) with applications,
-Cloudmesh provides a new command <code class="docutils literal"><span class="pre">launcher</span></code> to start, configure, manage or
-update compute nodes (VMs) with selected applications. <code class="docutils literal"><span class="pre">launcher</span></code> command
+Cloudmesh provides a new command <tt class="docutils literal"><span class="pre">launcher</span></tt> to start, configure, manage or
+update compute nodes (VMs) with selected applications. <tt class="docutils literal"><span class="pre">launcher</span></tt> command
 applies default settings to configure clusters with applications so users can
 avoid hassles of building clusters.</p>
 <p>Table of Contents</p>
@@ -145,16 +144,16 @@ avoid hassles of building clusters.</p>
 </ul>
 <p><a class="reference external" href="mongodb_cluster.html">Next Tutorial&gt;&gt; Deploying MongoDB Shard Cluster</a></p>
 <div class="section" id="tutorial-deploying-hadoop-cluster-with-cm-launcher">
-<h2>Tutorial: Deploying Hadoop Cluster with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></code><a class="headerlink" href="#tutorial-deploying-hadoop-cluster-with-cm-launcher" title="Permalink to this headline">¶</a></h2>
+<h2>Tutorial: Deploying Hadoop Cluster with <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span></tt><a class="headerlink" href="#tutorial-deploying-hadoop-cluster-with-cm-launcher" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">approximate time 10-15 minutes</p>
 </div>
 <p>In this tutorial, we are going to deploy a Hadoop cluster using Cloudmesh
-<code class="docutils literal"><span class="pre">launcher</span></code> command.</p>
+<tt class="docutils literal"><span class="pre">launcher</span></tt> command.</p>
 <div class="section" id="start-cluster">
 <h3>Start Cluster<a class="headerlink" href="#start-cluster" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span></code> command deploys a cluster with a selected application.</p>
+<p><tt class="docutils literal"><span class="pre">launcher</span> <span class="pre">start</span></tt> command deploys a cluster with a selected application.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm launcher start hadoop
 </pre></div>
 </div>
@@ -183,8 +182,8 @@ cluster is in progress.</li>
 </div>
 <div class="section" id="id1">
 <h3>Login to Cluster<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>We use <code class="docutils literal"><span class="pre">cm</span> <span class="pre">vm</span> <span class="pre">login</span></code> command to ssh to one of the nodes in the
-cluster.  Issue <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code> first to see the list of virtual
+<p>We use <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">vm</span> <span class="pre">login</span></tt> command to ssh to one of the nodes in the
+cluster.  Issue <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></tt> first to see the list of virtual
 instances.</p>
 <ul class="simple">
 <li>Checking a node name to login</li>
@@ -217,7 +216,7 @@ instances.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm vm login [node name]
 </pre></div>
 </div>
-<p>In this example, we try to ssh to <code class="docutils literal"><span class="pre">hadoop1</span></code> with <code class="docutils literal"><span class="pre">ec2-user</span></code> user name.</p>
+<p>In this example, we try to ssh to <tt class="docutils literal"><span class="pre">hadoop1</span></tt> with <tt class="docutils literal"><span class="pre">ec2-user</span></tt> user name.</p>
 <div class="highlight-python"><div class="highlight"><pre>cm vm login hadoop1 --ln=ec2-user
 </pre></div>
 </div>
@@ -244,7 +243,7 @@ $
 </pre></div>
 </div>
 <ul>
-<li><p class="first">Switch to <code class="docutils literal"><span class="pre">root</span></code> user</p>
+<li><p class="first">Switch to <tt class="docutils literal"><span class="pre">root</span></tt> user</p>
 <p>You are expected to run hadoop commands as a root superuser.</p>
 </li>
 </ul>
@@ -255,7 +254,7 @@ $
 <div class="section" id="id2">
 <h3>Terminate Cluster<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Once you completed your task on the cluster, you can terminate the cluster with
-<code class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span> <span class="pre">stop</span> <span class="pre">[name]</span></code> command.</p>
+<tt class="docutils literal"><span class="pre">cm</span> <span class="pre">launcher</span> <span class="pre">stop</span> <span class="pre">[name]</span></tt> command.</p>
 <ul class="simple">
 <li>Check a cluster name to stop</li>
 </ul>
@@ -276,7 +275,7 @@ $
 <div class="highlight-python"><div class="highlight"><pre>cm launcher stop [name]
 </pre></div>
 </div>
-<p>In this tutorial, we terminate <code class="docutils literal"><span class="pre">launcher-albert-hadoop-DB8JDK</span></code> like this:</p>
+<p>In this tutorial, we terminate <tt class="docutils literal"><span class="pre">launcher-albert-hadoop-DB8JDK</span></tt> like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>cm launcher stop launcher-albert-hadoop-DB8JDK
 </pre></div>
 </div>
@@ -306,8 +305,7 @@ $
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -332,7 +330,7 @@ $
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
