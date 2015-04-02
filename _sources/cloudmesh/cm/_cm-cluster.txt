@@ -1,0 +1,177 @@
+
+Deploying Virtual Cluster with Cloudmesh ``cm``
+===============================================
+
+To support the creation of a virtual compute cluster (e.g. Hadoop or
+Slurm) on Cloudmesh, ``cluster`` command is available to start,
+configure, manage or update a number of virtual machines.
+
+Preparation
+-----------
+
+``cluster`` command is available in the cloudmesh shell. There are
+certain steps to make sure you are all set to deploy a new cluster. You
+can SKIP these steps if you have configured Cloudmesh previously.
+
+Cloud Activation
+~~~~~~~~~~~~~~~~
+
+Before starting a cluster, please make sure you activate a cloud:
+
+.. code:: python
+
+    cm "cloud on india"
+Activation however does not select the cloud as the default cloud to
+start virtual machines. This can be achieved by the select command.
+
+.. code:: python
+
+    cm "cloud select india"
+.. code:: python
+
+    cm "default cloud india"
+Default Key Pair
+~~~~~~~~~~~~~~~~
+
+To gain access to a virtual cluster, you need a key registered on
+OpenStack. If you don’t have a default keypair, you need to set or need
+to specify which keypair you are going to use for the virtual cluster.
+
+.. code:: python
+
+    cm "key default [username]-india-key"
+.. warning:: **REPLACE [username] with your portal id, e.g. albert**
+
+Default VM Image
+~~~~~~~~~~~~~~~~
+
+You need that a default VM image is configured. We use ubuntu-14.04
+image as a default in this tutorial.
+
+.. code:: python
+
+    cm "default image --name=futuresystems/ubuntu-14.04"
+Default Flavor
+~~~~~~~~~~~~~~
+
+You need that a default flavor is configured. Make sure that the flavor
+works with the default image. Some images require a larger size of a
+flavor rather than a smaller one e.g. m1.small or m1.tiny.
+
+.. code:: python
+
+    cm "default flavor --name=m1.small"
+Getting Started
+---------------
+
+Create a Virtual Cluster with ``cluster`` command
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run ‘cluster create’ with the following parameters:
+
+name cluster name --count specify amount of VMs in the cluster --ln
+login name for VMs, e.g. ubuntu
+
+Create a Virtual Cluster with 3 virtual machines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let us create a cluster with the group name cluster\_tutorial that
+contains 3 virtual machines.
+
+.. code:: python
+
+    cm "cluster create cluster_tutorial1 --count=3 --ln=ubuntu"
+You may also provide a flavor or a VM image in the command. For example,
+creating a virtual cluster on Ubuntu 14.04 image with a small flavor:
+
+.. code:: python
+
+    cm "cluster create cluster_tutorial2 --count=3 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuresystems/ubuntu-14.04"
+Check Status of a Virtual Cluster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use ``vm` command with``--group\`\` parameter to check the status.
+
+.. code:: python
+
+    cm "vm list --refresh --group=cluster_tutorial1"
+Terminate a Virtual Cluster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Delete a virtual cluster with the name.
+
+.. code:: python
+
+    cm "cluster remove cluster_tutorial1"
+.. code:: python
+
+    cm "cluster remove cluster_tutorial2"
+Cluster Help Message
+~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    Usage:
+       cluster list [--format=FORMAT]
+       cluster create <name>
+                      [--count=<count>]
+                      [--ln=<LoginName>]
+                      [--cloud=<CloudName>]
+                      [--image=<imgName>|--imageid=<imgId>]
+                      [--flavor=<flavorName>|--flavorid=<flavorId>]
+                      [--force]
+       cluster show <name> 
+                    [--format=FORMAT] 
+                    [--column=COLUMN]
+                    [--detail]
+       cluster remove <name> 
+                      [--grouponly]
+
+    Description:
+      Cluster Management
+
+      cluster list
+          list the clusters
+
+      cluster create <name> --count=<count> --ln=<LoginName> [options...]
+          Start a cluster of VMs, and each of them can log into all others.
+          CAUTION: you sould do some default setting before using this command:
+          1. select cloud to work on, e.g. cloud select india
+          2. activate the cloud, e.g. cloud on india
+          3. set the default key to start VMs, e.g. key default [NAME]
+          4. set the start name of VMs, which is prefix and index, e.g. label --prefix=test --id=1
+          5. set image of VMs, e.g. default image
+          6. set flavor of VMs, e.g. default flavor
+          Also, it is better to choose a unused group name
+
+      cluster show <name>
+          show the detailed information about the cluster VMs
+
+      cluster remove <name> [--grouponly]
+          remove the cluster and its VMs, if you want to remove the cluster(group name)
+          without removing the VMs, use --grouponly flag
+
+    Arguments:
+      <name>        cluster name or group name
+
+    Options:
+      --count=<count>            give the number of VMs to add into the cluster
+      --ln=<LoginName>           give a login name for the VMs, e.g. ubuntu
+      --cloud=<CloudName>        give a cloud to work on
+      --flavor=<flavorName>      give the name of the flavor
+      --flavorid=<flavorId>      give the id of the flavor
+      --image=<imgName>          give the name of the image
+      --imageid=<imgId>          give the id of the image
+      --force                    if a group exists and there are VMs in it, the program will
+                                 ask user to proceed or not, use this flag to respond yes as 
+                                 default(if there are VMs in the group before creating this 
+                                 cluster, the program will include the exist VMs into the cluster)
+      --grouponly                remove the group only without removing the VMs, otherwise 
+                                 cluster remove command will remove all the VMs of this cluster
+      FORMAT                     output format: table, json, csv
+      COLUMN                     customize what information to display, for example:
+                                 --column=status,addresses prints the columns status
+                                 and addresses
+      --detail                   for table print format, a brief version 
+                                 is used as default, use this flag to print
+                                 detailed table

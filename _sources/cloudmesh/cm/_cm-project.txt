@@ -1,0 +1,238 @@
+
+``project`` Command in Cloudmesh ``cm``
+=======================================
+
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
+The ``project`` command provides a list of default, active, or completed
+project for a given user. You can update the project information with
+this command.
+
+.. note:: that all your ``project`` command executions update your yaml
+file (cloudmesh.yaml) and mongo db (user, defaults) both.
+
+IPython Alias
+~~~~~~~~~~~~~
+
+With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters ar between "" so that they are properly set. Just execute the
+following lines.
+
+.. code:: python
+
+    alias cm cm %s
+We are using now one of the methods to call the cm commands in the
+following sections.
+
+``project info`` Command
+------------------------
+
+The ``project`` command has a number of options that are useful to
+manage a list of projects. The ``info`` option provides a current
+information on your account.
+
+.. code:: python
+
+    cm project info
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg2
+      projects: fg2, fg82, fg415
+     completed: fg1003
+    
+
+
+Set a default project
+---------------------
+
+``project default [project name]`` allows you to update a default
+project to your account.
+
+.. code:: python
+
+    cm project default fg2
+
+.. parsed-literal::
+
+    fg2 project is a default project now
+
+
+.. code:: python
+
+    cm project
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg2
+      projects: fg2, fg82, fg415
+     completed: fg1003
+    
+
+
+You can see your default project has been changed from fg20 to fg82.
+Note that ``cm project`` is same command with ``cm project info``.
+``info`` option can be suppressed.
+
+Set an active project
+---------------------
+
+You can add a project to your account as one of the active projects. You
+can have multiple projects in your active project list.
+
+.. code:: python
+
+    cm project active fg415
+
+.. parsed-literal::
+
+    fg415 project is an active project(s) now
+
+
+.. code:: python
+
+    cm project info
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg2
+      projects: fg2, fg82, fg415
+     completed: fg1003
+    
+
+
+You can see the new project ``fg415`` added to the active projects.
+
+Change the status of project to ``completed``
+---------------------------------------------
+
+If your project is completed and no longer needed, you may want to
+change the status from active to completed. ``completed`` option allows
+to change the status of the selected project.
+
+.. code:: python
+
+    cm project completed fg415
+
+.. parsed-literal::
+
+    fg415 project is in a completed project(s)
+
+
+.. code:: python
+
+    cm project 
+
+.. parsed-literal::
+
+    
+    Project Information
+    -------------------
+    
+       default: fg2
+      projects: fg2, fg82
+     completed: fg1003, fg415
+    
+
+
+Add a project
+-------------
+
+You can use three commands to add a project. ``cm project active``
+allows you to add a project to the active list. ``cm project default``
+sets a default project. ``cm project completed`` adds a project to the
+completed list. For example, you can add fg999 to the active like below.
+
+.. code:: python
+
+    cm project active fg999
+
+.. parsed-literal::
+
+    fg999 project is an active project(s) now
+
+
+Delete a project
+----------------
+
+``project delete`` command simply performs the deletion of the given
+project in the yaml file.
+
+.. code:: python
+
+    cm project delete fg999
+
+.. parsed-literal::
+
+    fg999 project is deleted
+
+
+Help message
+------------
+
+.. code:: python
+
+    cm "project -h"
+
+.. parsed-literal::
+
+    Usage:
+           project
+           project info [--json]
+           project default NAME
+           project active NAME
+           project delete NAME
+           project completed NAME
+    
+    Manages the project
+    
+    Arguments:
+    
+      NAME           The project id
+    
+    Options:
+    
+       -v       verbose mode
+    
+    Usage:
+           project
+           project info [--json]
+           project default NAME
+           project active NAME
+           project delete NAME
+           project completed NAME
+    
+    Manages the project
+    
+    Arguments:
+    
+      NAME           The project id
+    
+    Options:
+    
+       -v       verbose mode
+    
+    
+
+
