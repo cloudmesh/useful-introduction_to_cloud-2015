@@ -1,4 +1,6 @@
-Ansible (under preparation)
+.. _ref-class-lesson-devops-ansible:
+
+Ansible
 ======================================================================
 
 .. sidebar:: Page Contents
