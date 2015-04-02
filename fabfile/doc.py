@@ -12,7 +12,14 @@ except:
     os.system("pip install cloudmesh_base")
 
 from cloudmesh_base.util import banner
+from cloudmesh_base.Shell import Shell
 
+if Shell.which("cm") is None:
+    clone()
+    local("cd ../cloudmesh; git checkout dev2.0")    
+    local("cd ../cloudmesh; ./install system")
+    local("cd ../cloudmesh; ./install requirements")
+    local("cd ../cloudmesh; ./install cloudmesh")    
 
 
 browser = "firefox"
@@ -82,6 +89,7 @@ def html(theme_name='readthedocs'):
     os.environ['RSTPAGES'] = 'FALSE'
     theme(theme_name)
     clone()
+    compile()
     api()
     # man()
     """build the doc locally and view"""
@@ -120,6 +128,16 @@ cloudmesh_dirs = ['cloudmesh',
         
 @task
 def clone():
+    for package in cloudmesh_dirs:
+        banner("Installing and Building: " + package)
+        if not os.path.isdir("../{0}".format(package)):
+            local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
+        else:
+            local("cd ..; git pull")
+        local ("cd ../{0}; git checkout dev2.0". format("cloudmesh"))
+    
+@task
+def compile():
     for package in cloudmesh_dirs:
         banner("Installing and Building: " + package)
         if not os.path.isdir("../{0}".format(package)):
