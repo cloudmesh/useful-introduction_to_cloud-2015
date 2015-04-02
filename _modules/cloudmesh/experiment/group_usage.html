@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.experiment.group_usage &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.experiment.group_usage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.experiment.group_usage</h1><div class="highlight"><pre>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">supporting functions about database side group management</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.cm_mongo</span> <span class="kn">import</span> <span class="n">cm_mongo</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.experiment.group</span> <span class="kn">import</span> <span class="n">GroupManagement</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.cm_mongo</span> <span class="kn">import</span> <span class="n">cm_mongo</span>
+
+
+<div class="viewcode-block" id="add_vm_to_group_while_creating"><a class="viewcode-back" href="../../../modules/cloudmesh.experiment.html#cloudmesh.experiment.group_usage.add_vm_to_group_while_creating">[docs]</a><span class="k">def</span> <span class="nf">add_vm_to_group_while_creating</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">groupname</span><span class="p">,</span> <span class="n">vmname</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    add a vm to a group while the vm is being created, if the group doesn&#39;t exist, </span>
+<span class="sd">    this will create one</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">GroupManage</span> <span class="o">=</span> <span class="n">GroupManagement</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+    <span class="n">groups_list</span> <span class="o">=</span> <span class="n">GroupManage</span><span class="o">.</span><span class="n">get_groups_names_list</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">groupname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">groups_list</span><span class="p">:</span>
+        <span class="n">GroupManage</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">groupname</span><span class="p">)</span>
+    <span class="n">GroupManage</span><span class="o">.</span><span class="n">add_item_to_group</span><span class="p">(</span><span class="n">groupname</span><span class="p">,</span> <span class="s">&quot;VM&quot;</span><span class="p">,</span> <span class="n">vmname</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="remove_vm_from_group_while_deleting"><a class="viewcode-back" href="../../../modules/cloudmesh.experiment.html#cloudmesh.experiment.group_usage.remove_vm_from_group_while_deleting">[docs]</a><span class="k">def</span> <span class="nf">remove_vm_from_group_while_deleting</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">vmname</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    remove a vm from the group, assume there is no duplicate vm names, so</span>
+<span class="sd">    this function will simplt remove all vms with name vmname from group</span>
+<span class="sd">    database</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">GroupManage</span> <span class="o">=</span> <span class="n">GroupManagement</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">GroupManage</span><span class="o">.</span><span class="n">get_same_items_from_all_groups</span><span class="p">(</span><span class="s">&quot;VM&quot;</span><span class="p">,</span> <span class="n">vmname</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="get_group_names_list_by_vms_metadata"><a class="viewcode-back" href="../../../modules/cloudmesh.experiment.html#cloudmesh.experiment.group_usage.get_group_names_list_by_vms_metadata">[docs]</a><span class="k">def</span> <span class="nf">get_group_names_list_by_vms_metadata</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">cloudname</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    loops through all VMs of a cloud of a user, returns a list of all unique group </span>
+<span class="sd">    names accorrding to the metadata</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">mongo</span> <span class="o">=</span> <span class="n">cm_mongo</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">refresh</span><span class="p">:</span>
+        <span class="n">mongo</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">cloudname</span><span class="p">])</span>
+        <span class="n">mongo</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+                      <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">cloudname</span><span class="p">],</span>
+                      <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;servers&#39;</span><span class="p">])</span>
+    <span class="n">servers_dict</span> <span class="o">=</span> <span class="n">mongo</span><span class="o">.</span><span class="n">servers</span><span class="p">(</span>
+        <span class="n">clouds</span><span class="o">=</span><span class="p">[</span><span class="n">cloudname</span><span class="p">],</span>
+        <span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">)[</span><span class="n">cloudname</span><span class="p">]</span>
+                
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">servers_dict</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="k">if</span> <span class="s">&#39;cm_group&#39;</span> <span class="ow">in</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;metadata&#39;</span><span class="p">]:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">&#39;metadata&#39;</span><span class="p">][</span><span class="s">&#39;cm_group&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">temp</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">res</span>
+
+</div>
+<div class="viewcode-block" id="add_item_to_group"><a class="viewcode-back" href="../../../modules/cloudmesh.experiment.html#cloudmesh.experiment.group_usage.add_item_to_group">[docs]</a><span class="k">def</span> <span class="nf">add_item_to_group</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">groupname</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    this is a more spicific function to add items to groups, e.g. using command group add item</span>
+<span class="sd">    NAME VM VALUE, check whether vm exists before add it to group</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">GroupManage</span> <span class="o">=</span> <span class="n">GroupManagement</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+    <span class="c"># if type is VM, check whether the VM exists, in this case, value is the VM name</span>
+    <span class="k">if</span> <span class="n">_type</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;VM&quot;</span><span class="p">:</span>
+        <span class="n">mongo</span> <span class="o">=</span> <span class="n">cm_mongo</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">refresh</span><span class="p">:</span>
+            <span class="n">mongo</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+            <span class="n">mongo</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;servers&#39;</span><span class="p">])</span>
+        <span class="n">servers_dict</span> <span class="o">=</span> <span class="n">mongo</span><span class="o">.</span><span class="n">servers</span><span class="p">(</span><span class="n">cm_user_id</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+        <span class="n">_vm_exists</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">servers_dict</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">k0</span><span class="p">,</span> <span class="n">v0</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="k">if</span> <span class="s">&#39;name&#39;</span> <span class="ow">in</span> <span class="n">v0</span> <span class="ow">and</span> <span class="n">v0</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+                    <span class="n">_vm_exists</span> <span class="o">=</span> <span class="bp">True</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="n">_vm_exists</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">_vm_exists</span><span class="p">:</span>
+            <span class="n">GroupManage</span><span class="o">.</span><span class="n">add_item_to_group</span><span class="p">(</span><span class="n">groupname</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;VM &#39;{0}&#39; doesn&#39;t exist&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">GroupManage</span><span class="o">.</span><span class="n">add_item_to_group</span><span class="p">(</span><span class="n">groupname</span><span class="p">,</span> <span class="n">_type</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

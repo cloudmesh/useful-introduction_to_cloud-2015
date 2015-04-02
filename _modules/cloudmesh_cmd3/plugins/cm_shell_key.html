@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh_cmd3.plugins.cm_shell_key &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>cloudmesh_cmd3.plugins.cm_shell_key</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh_cmd3.plugins.cm_shell_key</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="c"># cm_config_server, get_mongo_db</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">cmd3.shell</span> <span class="kn">import</span> <span class="n">command</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_keys</span> <span class="kn">import</span> <span class="n">cm_keys_yaml</span><span class="p">,</span> <span class="n">cm_keys_mongo</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.cm_mongo</span> <span class="kn">import</span> <span class="n">cm_mongo</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_common.tables</span> <span class="kn">import</span> <span class="n">two_column_table</span>
+<span class="c"># from cloudmesh_base.util import yn_choice</span>
+<span class="c"># from cloudmesh.util.menu import menu_return_num</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">expanduser</span><span class="p">,</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">abspath</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">path_expand</span>
+<span class="c"># from cloudmesh.util.keys import read_key</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.keys.util</span> <span class="kn">import</span> <span class="n">get_fingerprint</span><span class="p">,</span> <span class="n">key_parse</span><span class="p">,</span> <span class="n">key_validate</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_keys</span> <span class="kn">import</span> <span class="n">keytype</span><span class="p">,</span> <span class="n">get_key_from_file</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="cm_shell_key"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_key.cm_shell_key">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_key</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;opt_example class.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="cm_shell_key.activate_shell_key"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_key.cm_shell_key.activate_shell_key">[docs]</a>    <span class="k">def</span> <span class="nf">activate_shell_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mongo_loaded</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys_loaded</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys_loaded_mongo</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_yaml</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_command_topic</span><span class="p">(</span><span class="s">&#39;cloud&#39;</span><span class="p">,</span> <span class="s">&#39;keys&#39;</span><span class="p">)</span>
+</div>
+    <span class="k">def</span> <span class="nf">_load_mongo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mongo_loaded</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mongoClass</span> <span class="o">=</span> <span class="n">cm_mongo</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mongo_loaded</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: could not access Mongodb. &quot;</span>
+                      <span class="s">&quot;Have you started the mongo server?&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_load_keys_from_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh.yaml&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">echo</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Reading keys information from -&gt; {0}&quot;</span>
+                         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="n">cm_keys_yaml</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">keys_loaded</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: could not find the keys in </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_load_keys_mongo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># try:</span>
+        <span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;cloudmesh.profile.username&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">echo</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Reading keys information from -&gt; mongo&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys_mongo</span> <span class="o">=</span> <span class="n">cm_keys_mongo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys_loaded_mongo</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="c"># except:</span>
+        <span class="c">#   print &quot;ERROR: could not find the keys in %s&quot; % filename</span>
+
+    <span class="nd">@command</span>
+    <span class="k">def</span> <span class="nf">do_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          Usage:</span>
+<span class="sd">                   key -h|--help</span>
+<span class="sd">                   key list [--source=SOURCE] [--dir=DIR] [--format=FORMAT]</span>
+<span class="sd">                   key add [--keyname=KEYNAME] FILENAME</span>
+<span class="sd">                   key default [KEYNAME]</span>
+<span class="sd">                   key delete KEYNAME</span>
+
+<span class="sd">            Manages the keys</span>
+
+<span class="sd">            Arguments:</span>
+
+<span class="sd">              SOURCE         mongo, yaml, ssh</span>
+<span class="sd">              KEYNAME        The name of a key</span>
+<span class="sd">              FORMAT         The format of the output (table, json, yaml)</span>
+<span class="sd">              FILENAME       The filename with full path in which the key</span>
+<span class="sd">                             is located</span>
+
+<span class="sd">            Options:</span>
+
+<span class="sd">               --dir=DIR            the directory with keys [default: ~/.ssh]</span>
+<span class="sd">               --format=FORMAT      the format of the output [default: table]</span>
+<span class="sd">               --source=SOURCE      the source for the keys [default: mongo]</span>
+<span class="sd">               --keyname=KEYNAME    the name of the keys</span>
+
+<span class="sd">            Description:</span>
+
+
+<span class="sd">            key list --source=ssh  [--dir=DIR] [--format=FORMAT]</span>
+
+<span class="sd">               lists all keys in the directory. If the directory is not</span>
+<span class="sd">               specified the default will be ~/.ssh</span>
+
+<span class="sd">            key list --source=yaml  [--dir=DIR] [--format=FORMAT]</span>
+
+<span class="sd">               lists all keys in cloudmesh.yaml file in the specified directory.</span>
+<span class="sd">                dir is by default ~/.cloudmesh</span>
+
+<span class="sd">            key list [--format=FORMAT]</span>
+
+<span class="sd">                list the keys in mongo</span>
+
+<span class="sd">            key add [--keyname=keyname] FILENAME</span>
+
+<span class="sd">                adds the key specifid by the filename to mongodb</span>
+
+
+<span class="sd">            key list</span>
+
+<span class="sd">                 Prints list of keys. NAME of the key can be specified</span>
+
+<span class="sd">            key default [NAME]</span>
+
+<span class="sd">                 Used to set a key from the key-list as the default key if NAME</span>
+<span class="sd">                 is given. Otherwise print the current default key</span>
+
+<span class="sd">            key delete NAME</span>
+
+<span class="sd">                 deletes a key. In yaml mode it can delete only key that</span>
+<span class="sd">                 are not saved in mongo</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># print arguments</span>
+
+        <span class="k">def</span> <span class="nf">_find_keys</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[</span><span class="nb">file</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="n">expanduser</span><span class="p">(</span><span class="n">directory</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="nb">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">&quot;.pub&quot;</span><span class="p">)]</span>
+
+        <span class="c">#</span>
+        <span class="c"># DIR (OK)</span>
+        <span class="c">#</span>
+
+        <span class="n">directory</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&quot;--dir&quot;</span><span class="p">])</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;--source&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">source</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;ssh&quot;</span><span class="p">,</span> <span class="s">&quot;yaml&quot;</span><span class="p">,</span> <span class="s">&quot;mongo&quot;</span><span class="p">]:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: source is not defined&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c">#</span>
+        <span class="c"># PRINT DICT (OK)</span>
+        <span class="c">#</span>
+
+        <span class="k">def</span> <span class="nf">_print_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+            <span class="n">print_format</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">print_format</span> <span class="o">==</span> <span class="s">&quot;json&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">print_format</span> <span class="o">==</span> <span class="s">&quot;yaml&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">two_column_table</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># PRINT SYSTEM (OK)</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">source</span> <span class="o">==</span> <span class="s">&quot;ssh&quot;</span><span class="p">:</span>
+
+            <span class="n">files</span> <span class="o">=</span> <span class="n">_find_keys</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+
+            <span class="n">keys</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">key</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">_print_dict</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Key&quot;</span><span class="p">,</span> <span class="s">&quot;Location&quot;</span><span class="p">]))</span>
+
+            <span class="k">return</span>
+
+        <span class="c">#</span>
+        <span class="c"># PRINT YAML (OK)</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">source</span> <span class="o">==</span> <span class="s">&quot;yaml&quot;</span><span class="p">:</span>
+
+            <span class="n">key_store</span> <span class="o">=</span> <span class="n">cm_keys_yaml</span><span class="p">()</span>
+            <span class="n">keynames</span> <span class="o">=</span> <span class="n">key_store</span><span class="o">.</span><span class="n">names</span><span class="p">()</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keynames</span><span class="p">:</span>
+                <span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_fingerprint</span><span class="p">(</span><span class="n">key_store</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="n">_print_dict</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Key&quot;</span><span class="p">,</span> <span class="s">&quot;Fingerprint&quot;</span><span class="p">]))</span>
+
+            <span class="k">return</span>
+
+        <span class="c">#</span>
+        <span class="c"># FROM HERE ON BROKEN</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">source</span> <span class="o">==</span> <span class="s">&quot;mongo&quot;</span><span class="p">:</span>
+
+            <span class="n">username</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+            <span class="n">key_store</span> <span class="o">=</span> <span class="n">cm_keys_mongo</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            <span class="n">keynames</span> <span class="o">=</span> <span class="n">key_store</span><span class="o">.</span><span class="n">names</span><span class="p">()</span>
+
+            <span class="n">keys</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keynames</span><span class="p">:</span>
+
+                <span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">key_store</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">keytype</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">==</span> <span class="s">&#39;string&#39;</span><span class="p">:</span>
+                    <span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_fingerprint</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="n">_print_dict</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Key&quot;</span><span class="p">,</span> <span class="s">&quot;Fingerprint&quot;</span><span class="p">]))</span>
+
+            <span class="k">return</span>
+
+        <span class="c"># self._load_keys_from_yaml()</span>
+        <span class="c"># self._load_mongo()</span>
+        <span class="c"># self._load_keys_mongo()</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;add&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;FILENAME&quot;</span><span class="p">]:</span>
+
+            <span class="n">username</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+            <span class="n">key_store</span> <span class="o">=</span> <span class="n">cm_keys_mongo</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;FILENAME&quot;</span><span class="p">]</span>
+
+            <span class="c"># print filename</span>
+            <span class="c"># file existence check moved to the util function</span>
+            <span class="c"># if file does not exist it will return None</span>
+            <span class="n">keystring</span> <span class="o">=</span> <span class="n">get_key_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">keystring</span><span class="p">:</span>
+                <span class="n">keystring</span> <span class="o">=</span> <span class="n">keystring</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">keysegments</span> <span class="o">=</span> <span class="n">key_parse</span><span class="p">(</span><span class="n">keystring</span><span class="p">)</span>
+                <span class="c"># key valid?</span>
+                <span class="k">if</span> <span class="n">key_validate</span><span class="p">(</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="n">keystring</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;--keyname&quot;</span><span class="p">]:</span>
+                        <span class="n">keyname</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;--keyname&quot;</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c"># get keyname from the comment field of key</span>
+                        <span class="n">keyname</span> <span class="o">=</span> <span class="n">keysegments</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                        <span class="c"># in case a comment field is really missing</span>
+                        <span class="c"># use a timestamp for uniqueness</span>
+                        <span class="k">if</span> <span class="n">keyname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                            <span class="n">tstamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y%m</span><span class="si">%d</span><span class="s">%H%M%S&quot;</span><span class="p">)</span>
+                            <span class="n">keyname</span> <span class="o">=</span> <span class="n">tstamp</span>
+                        <span class="c"># sanitize the key name for mongo use</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">keyname</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r&#39;@|-|\.&#39;</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="p">,</span> <span class="n">keysegments</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                    <span class="n">key_store</span><span class="p">[</span><span class="n">keyname</span><span class="p">]</span> <span class="o">=</span> <span class="n">keystring</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: INVALID key. Please verify!&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: INVALID filename provided!&quot;</span><span class="p">)</span>
+
+            <span class="k">return</span>
+
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            def func():</span>
+<span class="sd">                if arguments[&quot;KEY&quot;]:</span>
+<span class="sd">                    key_store.__setitem__(</span>
+<span class="sd">                        arguments[&quot;NAME&quot;], arguments[&quot;KEY&quot;])</span>
+<span class="sd">                else:</span>
+<span class="sd">                    files = _find_keys(directory)</span>
+
+<span class="sd">                    result = menu_return_num(</span>
+<span class="sd">                        title=&quot;Select a public key&quot;, menu_list=files, tries=3)</span>
+<span class="sd">                    if result == &#39;q&#39;:</span>
+<span class="sd">                        return</span>
+<span class="sd">                    else:</span>
+<span class="sd">                        key_store.__setitem__(arguments[&quot;NAME&quot;],</span>
+<span class="sd">                                                  &quot;{0}/{1}&quot;.format(directory,files[result]))</span>
+
+<span class="sd">            if arguments[&quot;NAME&quot;] in key_store.names():</span>
+<span class="sd">                if yn_choice(&quot;key {0} exists, update?&quot;</span>
+<span class="sd">                             .format(arguments[&quot;NAME&quot;]), default=&#39;n&#39;):</span>
+<span class="sd">                    print &quot;Updating key {0} ...&quot;.format(arguments[&quot;NAME&quot;])</span>
+<span class="sd">                    func()</span>
+<span class="sd">                else:</span>
+<span class="sd">                    return</span>
+<span class="sd">            else:</span>
+<span class="sd">                print &quot;adding key {0} ...&quot;.format(arguments[&quot;NAME&quot;])</span>
+<span class="sd">                func()</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;default&quot;</span><span class="p">]:</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+            <span class="n">key_store</span> <span class="o">=</span> <span class="n">cm_keys_mongo</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            <span class="c"># print key_store.names()</span>
+            <span class="c"># no name provided, will get current default key</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;KEYNAME&quot;</span><span class="p">]:</span>
+                <span class="n">defaultkey</span> <span class="o">=</span> <span class="n">key_store</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Current default key is: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">defaultkey</span><span class="p">))</span>
+            <span class="c"># name provided, check if it exists in the db</span>
+            <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;KEYNAME&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">key_store</span><span class="o">.</span><span class="n">names</span><span class="p">():</span>
+                <span class="n">key_store</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&quot;KEYNAME&quot;</span><span class="p">])</span>
+                <span class="c"># Update mongo db defaults with new default key</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&#39;The default key was successfully set to: &#39;</span><span class="p">,</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;KEYNAME&#39;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: Specified key is not registered.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;delete&quot;</span><span class="p">]:</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+            <span class="n">key_store</span> <span class="o">=</span> <span class="n">cm_keys_mongo</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Attempting to delete key: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&quot;KEYNAME&quot;</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_yaml</span><span class="p">:</span>
+
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;WARNING: This will only remove the keys that&quot;</span>
+                      <span class="s">&quot;have not been written to the databse already when &quot;</span>
+                      <span class="s">&quot;&#39;keys save&#39; is&quot;</span>
+                      <span class="s">&quot;called. If your key is already in the database, &quot;</span>
+                      <span class="s">&quot;you should use mongo mode</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+            <span class="n">key_store</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&quot;KEYNAME&quot;</span><span class="p">])</span>
+            <span class="k">return</span>
+
+        <span class="c"># deprecating...</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        if arguments[&quot;save&quot;]:</span>
+<span class="sd">            if not self.mongo_loaded:</span>
+<span class="sd">                self._load_mongo()</span>
+<span class="sd">            if not self.keys_loaded_mongo:</span>
+<span class="sd">                self._load_keys_mongo()</span>
+<span class="sd">            key_mongo = self.keys_mongo</span>
+<span class="sd">            key_yaml = self.keys</span>
+<span class="sd">            names = key_yaml.names()</span>
+<span class="sd">            for name in names:</span>
+<span class="sd">                key_mongo.__setitem__(</span>
+<span class="sd">                    name, key_yaml._getvalue(name), key_type=&quot;string&quot;)</span>
+<span class="sd">            key_mongo.setdefault(key_yaml.get_default_key())</span>
+<span class="sd">            return</span>
+
+<span class="sd">        if arguments[&quot;info&quot;] or arguments[&quot;list&quot;] or (args == &quot;&quot;):</span>
+<span class="sd">            if arguments[&quot;--json&quot;]:</span>
+<span class="sd">                if arguments[&quot;NAME&quot;] is None:</span>
+<span class="sd">                    name = &quot;keys&quot;</span>
+<span class="sd">                else:</span>
+<span class="sd">                    name = arguments[&quot;NAME&quot;]</span>
+<span class="sd">                try:</span>
+<span class="sd">                    print json.dumps(key_store[name], indent=4)</span>
+<span class="sd">                except:</span>
+<span class="sd">                    print(&quot;ERROR: Something went wrong in looking up keys. &quot;</span>
+<span class="sd">                          &quot;Did you give the correct key name?&quot;)</span>
+<span class="sd">                return</span>
+<span class="sd">            else:</span>
+<span class="sd">                mykeys = {}</span>
+<span class="sd">                # header = [&quot;Default&quot;, &quot;Fingerprint&quot;]</span>
+<span class="sd">                try:</span>
+<span class="sd">                    mykeys[&quot;default&quot;] = key_store.get_default_key()</span>
+<span class="sd">                except:</span>
+<span class="sd">                    mykeys[&quot;default&quot;] = &quot;default is not set, please set it&quot;</span>
+<span class="sd">                for name in key_store.names():</span>
+<span class="sd">                    mykeys[name] = get_fingerprint(key_store[name])</span>
+<span class="sd">                print two_column_table(mykeys)</span>
+<span class="sd">                return</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;MODENAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;yaml&quot;</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
