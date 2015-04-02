@@ -288,8 +288,11 @@ Exercise II
 * If you'd like to use Horizon web dashboard, you need to find "Orchestration >
   Stacks" menu.
 
-  - All steps are required to be screen captured.
-  - Submit your screen captures each step.
+  - Make a screenshot of the page at ``Stacks > Topology``
+  - Make a screenshot of the page at ``Stacks > Overview``
+  - Make a screenshot of the page at ``Stacks > Resources``
+  - Make a screenshot of the page at ``Stacks > Events``
+  - Submit your screen shots.
 
 Reference
 -------------------------------------------------------------------------------
