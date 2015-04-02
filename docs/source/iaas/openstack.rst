@@ -52,7 +52,7 @@ with ::
 
     $ module load openstack
 
-Creating the novarc file
+Creating the openrc.sh file
 ----------------------------------------------------------------------
 
 An initial openrc file is currently created for you automatically and
@@ -479,9 +479,9 @@ How to change your password
 
        $ keystone password-update
 
-Remember, you will also need to change it in your novarc. This can be
-achieved by either editing your novarc file directly, or by editing
-the file ~/.futuregrid/cloudmesh.yaml and recreating your novarc file.
+Remember, you will also need to change it in your openrc.sh. This can be
+achieved by either editing your openrc.sh file directly, or by editing
+the file ~/.futuregrid/cloudmesh.yaml and recreating your openrc.sh file.
 
 Things to do when you need Euca2ools or EC2 interfaces
 ------------------------------------------------------
