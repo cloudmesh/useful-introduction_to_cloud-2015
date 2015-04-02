@@ -5,7 +5,7 @@ Overview
 ----------------------------------------------------------------------
 
 This lesson will introduce you to a very important topic of OpenStack Heat, a
-software provisioning tool on the cloud.
+software provisioning tool on a OpenStack platform.
 
 .. tip:: Duration: 40 minutes
 
@@ -20,11 +20,17 @@ Description
 ----------------------------------------------------------------------
 
 OpenStack Heat is an open source software to deploy services within OpenStack
-clouds. Heat launches VM instances, installs cloud applications and manages
-required resources such as security groups or floating ip addresses. If you
-describe your cloud services in Heat Template, OpenStack Heat provision your
-service with your instruction. AWS CloudFormation template format is compatible
-with OpenStack Heat Orchestration Template (HOT).
+clouds. Heat launches VM instances, installs cloud software and manages
+required resources such as security groups or floating ip addresses within a
+resource group, a stack. You just need to describe your cloud services and
+resources in a Heat Template file, and OpenStack deploys your cloud services by
+provisioning cloud infrastructure and installing/configuring software. Through
+this lesson, you will learn how to write a Heat Template file and how to deploy
+your cloud applications with a command line tool or a web interface. OpenStack
+Heat Orchestration Template (HOT) is compatible with AWS CloudFormation
+template format, there are some extensions of Heat Templates though. If you
+have AWS templates, you can use them on OpenStack as well to start your cloud
+services.
 
 This lesson covers:
 
@@ -35,22 +41,44 @@ This lesson covers:
 Use of OpenStack Heat on FutureSystems
 -------------------------------------------------------------------------------
 
-OpenStack Heat is available on Futuresystems. To use Heat Client Tool (heat CLI),
-you simply run the following commands::
+This lesson is based on FutureSystems. We start learning OpenStack Heat on
+india.futuresystems.org. Heat is available on FutureSystems via a web interface
+Horizon or a command line tool (Heat CLI). Resource topology is visible if you
+use Horizon, and more command options and debugging messages are available on
+command line tools.
+
+
+Horizon on FutureSystems
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Horizon on FutureSystems is at:
+https://openstack-j.india.futuresystems.org/horizon/project/
+
+For more details of Horizon:
+`OpenStack Web Dashboard (Horizon) <../iaas/openstack_horizon.html>`_
+
+Heat Client Tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you'd like to use Heat Client Tool (heat CLI), you
+simply run the following commands on india.futuresystems.org::
 
   module load openstack
   source $HOME/.cloudmesh/clouds/india/juno/openrc.sh
 
-.. note:: If you run OpenStack Havana, try the following commands:
-   module load openstack-havana
-   module load heatclient
-   source $HOME/.cloudmesh/clouds/india/havana/novarc
+.. note:: If you run OpenStack Havana, try the following commands::
+  
+     module load openstack-havana;
+     module load heatclient;
+     source $HOME/.cloudmesh/clouds/india/havana/novarc;
 
-Try Heat Command Line Tool
+
+``module load openstack`` enables Heat CLI on your shell.
+
+Stack List
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you are able to use a heat client tool, you can see running stacks with the
-following command:
+You can see running stacks with the following command:
 
 ::
 
