@@ -197,68 +197,24 @@ server.  It includes the following tasks:</p>
 <li>Install the MongoDB packages</li>
 <li>Start MongoDB</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>This tutorial is based on the manual installation of MongoDB from
-the official site:
-<a class="reference external" href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/*</a></p>
-<p class="last">We also assume that we install MongoDB on Ubuntu 14.04.</p>
-</div>
-<div class="section" id="enabling-root-ssh-access">
-<h4>Enabling Root SSH Access<a class="headerlink" href="#enabling-root-ssh-access" title="Permalink to this headline">¶</a></h4>
-<p>Some setups of managed nodes may not allow you to log in as root.  As
-this may be problematic later, let us create a playbook to resolve
-this. Create a <code class="docutils literal"><span class="pre">enable-root-access.yaml</span></code> file with the following contents:</p>
-<div class="highlight-python"><div class="highlight"><pre>---
-- hosts: ansible-test
-  remote_user: ubuntu
-  tasks:
-    - name: Enable root login
-      shell: sudo cp ~/.ssh/authorized_keys /root/.ssh/
-</pre></div>
-</div>
-<p>Explanation:</p>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">hosts</span></code> specifies the name of a group of machines in the inventory</li>
-<li><code class="docutils literal"><span class="pre">remote_user</span></code> specifies the username on the managed nodes to log in as</li>
-<li><code class="docutils literal"><span class="pre">tasks</span></code> is a list of tasks to accomplish having a <code class="docutils literal"><span class="pre">name</span></code> (a
-description) and modules to execute. In this case we use the
-<code class="docutils literal"><span class="pre">shell</span></code> module.</li>
-</ul>
-<p>We can run this playbook like so:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ansible-playbook -i inventory.txt -c ssh enable-root-access.yaml
-
-PLAY [ansible-test] ***********************************************************
-
-GATHERING FACTS ***************************************************************
-ok: [10.23.2.105]
-ok: [10.23.2.104]
-
-TASK: [Enable root login] *****************************************************
-changed: [10.23.2.104]
-changed: [10.23.2.105]
-
-PLAY RECAP ********************************************************************
-10.23.2.104                : ok=2    changed=1    unreachable=0    failed=0
-10.23.2.105                : ok=2    changed=1    unreachable=0    failed=0
-</pre></div>
-</div>
-</div>
+<p><em>This tutorial is based on the manual installation of MongoDB from the official
+site: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</em></p>
+<p><em>We also assume that we install MongoDB on Ubuntu OS.</em></p>
 <div class="section" id="hosts-and-users">
 <h4>Hosts and Users<a class="headerlink" href="#hosts-and-users" title="Permalink to this headline">¶</a></h4>
 <p>First step is choosing hosts to install MongoDB and a user account to run
 commands (tasks).  We start with the following lines in the example filename of
 <code class="docutils literal"><span class="pre">mongodb.yaml</span></code></p>
 <div class="highlight-python"><div class="highlight"><pre>---
-- hosts: ansible-test
+- hosts: local
   remote_user: root
 </pre></div>
 </div>
-<p>In a previous tutorial, we setup two machines with <code class="docutils literal"><span class="pre">ansible-test</span></code> group name. This
+<p>In a previous tutorial, we setup two machines with <code class="docutils literal"><span class="pre">local</span></code> group name. This
 tutorial uses that two machines for MongoDB installation.  Also, we use
 <code class="docutils literal"><span class="pre">root</span></code> account to complete Ansible tasks.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p class="last">Indentation is important in YAML format. Do not ignore spaces start
 with in each line.</p>
 </div>
@@ -281,36 +237,42 @@ an entire list of modules here:
 in our playbook.</p>
 <div class="highlight-python"><div class="highlight"><pre>tasks:
   - name: Import the public key used by the package management system
-    apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
+    shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-2-create-a-list-file-for-mongodb">
 <h4>Step 2: Create a list file for MongoDB<a class="headerlink" href="#step-2-create-a-list-file-for-mongodb" title="Permalink to this headline">¶</a></h4>
-<p>Next add the MongoDB repository to apt:</p>
-<div class="highlight-python"><div class="highlight"><pre>- name: Add MongoDB repository
-  apt_repository: repo=&#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; state=present
+<p>Add a list of MongoDB URL with the following task:</p>
+<div class="highlight-python"><div class="highlight"><pre>- name: Create a list file for MongoDB
+  shell: echo &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; | tee /etc/apt/sources.list.d/mongodb.list
 </pre></div>
 </div>
 </div>
-<div class="section" id="step-3-install-the-mongodb-packages">
-<h4>Step 3: Install the MongoDB packages<a class="headerlink" href="#step-3-install-the-mongodb-packages" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="step-3-reload-local-package-database">
+<h4>Step 3: Reload local package database<a class="headerlink" href="#step-3-reload-local-package-database" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre>- name: Reload local package database
+  shell: apt-get update
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-install-the-mongodb-packages">
+<h4>Step 4: Install the MongoDB packages<a class="headerlink" href="#step-4-install-the-mongodb-packages" title="Permalink to this headline">¶</a></h4>
 <p>We use <code class="docutils literal"><span class="pre">apt</span></code> module to install <code class="docutils literal"><span class="pre">mongodb-org</span></code> package.
-<code class="docutils literal"><span class="pre">notify</span></code> action is added to start <code class="docutils literal"><span class="pre">mongod</span></code> after the completion of this task.
-Use the <code class="docutils literal"><span class="pre">update_cache=yes</span></code> option to reload the local package database.</p>
+<code class="docutils literal"><span class="pre">notify</span></code> action is added to start <code class="docutils literal"><span class="pre">mongod</span></code> after the completion of this task.</p>
 <dl class="docutils">
 <dt>::</dt>
 <dd><ul class="first last simple">
 <li>name: install mongodb
-apt: pkg=mongodb-org state=latest update_cache=yes
+apt: pkg=mongodb-org state=latest
 notify:
 - start mongodb</li>
 </ul>
 </dd>
 </dl>
 </div>
-<div class="section" id="step-4-start-mongodb">
-<h4>Step 4: Start MongoDB<a class="headerlink" href="#step-4-start-mongodb" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="step-5-start-mongodb">
+<h4>Step 5: Start MongoDB<a class="headerlink" href="#step-5-start-mongodb" title="Permalink to this headline">¶</a></h4>
 <p>We use <code class="docutils literal"><span class="pre">handlers</span></code> here to start or restart services. It is similar to <code class="docutils literal"><span class="pre">tasks</span></code> but will run only once.</p>
 <div class="highlight-python"><div class="highlight"><pre>handlers:
   - name: start mongodb
@@ -322,16 +284,20 @@ notify:
 <div class="section" id="a-playbook-for-mongodb">
 <h3>A playbook for Mongodb<a class="headerlink" href="#a-playbook-for-mongodb" title="Permalink to this headline">¶</a></h3>
 <p>Our first playbook looks like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>---
-- hosts: ansible-test
+<div class="highlight-python"><div class="highlight"><pre>cat mongodb.yaml
+
+---
+- hosts: local
   remote_user: root
   tasks:
   - name: Import the public key used by the package management system
-    apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=7F0CEB10 state=present
-  - name: Add MongoDB repository
-    apt_repository: repo=&#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; state=present
+    shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  - name: Create a list file for MongoDB
+    shell: echo &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; | tee /etc/apt/sources.list.d/mongodb.list
+  - name: Reload local package database
+    shell: apt-get update
   - name: install mongodb
-    apt: pkg=mongodb-org state=latest update_cache=yes
+    apt: pkg=mongodb-org state=latest
     notify:
     - start mongodb
   handlers:
@@ -342,79 +308,17 @@ notify:
 </div>
 <div class="section" id="run-playbook">
 <h3>Run Playbook<a class="headerlink" href="#run-playbook" title="Permalink to this headline">¶</a></h3>
-<p>We use <code class="docutils literal"><span class="pre">ansible-playbook</span></code> command to run our playbook:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ansible-playbook -i inventory.txt -c ssh mongodb.yaml
-
-PLAY [ansible-test] ***********************************************************
-
-GATHERING FACTS ***************************************************************
-ok: [10.23.2.104]
-ok: [10.23.2.105]
-
-TASK: [Import the public key used by the package management system] ***********
-changed: [10.23.2.104]
-changed: [10.23.2.105]
-
-TASK: [Add MongoDB repository] ************************************************
-changed: [10.23.2.104]
-changed: [10.23.2.105]
-
-TASK: [install mongodb] *******************************************************
-changed: [10.23.2.104]
-changed: [10.23.2.105]
-
-NOTIFIED: [start mongodb] *****************************************************
-ok: [10.23.2.105]
-ok: [10.23.2.104]
-
-PLAY RECAP ********************************************************************
-10.23.2.104                : ok=5    changed=3    unreachable=0    failed=0
-10.23.2.105                : ok=5    changed=3    unreachable=0    failed=0
+<p>We use <code class="docutils literal"><span class="pre">ansible-playbook</span></code> command to run our playbook.</p>
+<div class="highlight-python"><div class="highlight"><pre>ansible-playbook mongodb.yaml
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>If you rerun the playbook, you should see that nothing changed:</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ ansible-playbook -i inventory.txt -c ssh mongodb.yaml
-
-PLAY [ansible-test] ***********************************************************
-
-GATHERING FACTS ***************************************************************
-ok: [10.23.2.105]
-ok: [10.23.2.104]
-
-TASK: [Import the public key used by the package management system] ***********
-ok: [10.23.2.104]
-ok: [10.23.2.105]
-
-TASK: [Add MongoDB repository] ************************************************
-ok: [10.23.2.104]
-ok: [10.23.2.105]
-
-TASK: [install mongodb] *******************************************************
-ok: [10.23.2.105]
-ok: [10.23.2.104]
-
-PLAY RECAP ********************************************************************
-10.23.2.104                : ok=4    changed=0    unreachable=0    failed=0
-10.23.2.105                : ok=4    changed=0    unreachable=0    failed=0
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="test-mongodb">
 <h3>Test Mongodb<a class="headerlink" href="#test-mongodb" title="Permalink to this headline">¶</a></h3>
 <p>Let&#8217;s try to run &#8216;mongo&#8217; to enter mongodb shell.</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ssh ubuntu@$IP
-$ mongo
-MongoDB shell version: 2.6.9
+<div class="highlight-python"><div class="highlight"><pre>$ mongo
+MongoDB shell version: 2.6.7
 connecting to: test
-Welcome to the MongoDB shell.
-For interactive help, type &quot;help&quot;.
-For more comprehensive documentation, see
-        http://docs.mongodb.org/
-Questions? Try the support group
-        http://groups.google.com/group/mongodb-user
 &gt;
 </pre></div>
 </div>
@@ -432,7 +336,6 @@ Questions? Try the support group
 <div class="section" id="reference">
 <h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
 <p>The main tutorial from Ansible is here: <a class="reference external" href="http://docs.ansible.com/playbooks_intro.html">http://docs.ansible.com/playbooks_intro.html</a></p>
-<p>You can also find an index of the ansible modules here: <a class="reference external" href="http://docs.ansible.com/modules_by_category.html">http://docs.ansible.com/modules_by_category.html</a></p>
 </div>
 </div>
 <div class="section" id="next-step">

@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CM Console for VM Management &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh cm" href="index.html"/>
+        <link rel="next" title="Metric Commands in Cloudmesh cm" href="_cm-limits.html"/>
+        <link rel="prev" title="Command Shell Output Control" href="_cm-debug.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">CM Console for VM Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
+      
+    <li>CM Console for VM Management</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/cm/_vm-cm.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cm-console-for-vm-management">
+<h1>CM Console for VM Management<a class="headerlink" href="#cm-console-for-vm-management" title="Permalink to this headline">¶</a></h1>
+<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_vm-cm.ipynb">Notebook</a></p>
+</button><div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+</pre></div>
+</div>
+<div class="alert alert-info" role="alert"><p>The alias command is only needed when executing the commands in this in
+IPython.</p>
+</div><p>First let us set the error reporting to a minimal. If you like to see
+more output you can switch it on by setting different debug and
+loglevels.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<div class="code python highlight-python"><div class="highlight"><pre>cm debug off
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm loglevel error
+</pre></div>
+</div>
+<p>Lets get the username</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm user id
+</pre></div>
+</div>
+</div>
+<div class="section" id="help">
+<h2>Help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
+<p>Let us review the available commands</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm help
+</pre></div>
+</div>
+</div>
+<div class="section" id="activating-clouds">
+<h2>Activating Clouds<a class="headerlink" href="#activating-clouds" title="Permalink to this headline">¶</a></h2>
+<p>In order for cloudmesh to work with multiple clouds, we need to find out
+first which clouds are available. Users can add their own clouds later
+which we describe in the registration section.</p>
+<p>Let us inspect which clouds are available by invoking the list command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+<p>As you see we have a number of clouds, but none of them is already
+active. Thus we need to first activate a cloud. We assume that you have
+an account on FutureGrid. Let us activate the cloud india</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud on india
+</pre></div>
+</div>
+<p>We also have a conveniet interactive command to select a cloud to work
+with, that however does not work with ipython</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&quot;cloud select&quot;</span>
+</pre></div>
+</div>
+<p>or you may also input &#8220;cloud select india&#8221; to select a specific cloud
+india.</p>
+<p>To check if the cloud was activated, simply use the list command again.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud list
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-a-vm">
+<h2>Start a VM<a class="headerlink" href="#start-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>Now let us see how to start a VM on a cloud, here is how to start a VM
+on cloud india.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-a-default-flavor-or-image">
+<h2>Set a default flavor or image<a class="headerlink" href="#set-a-default-flavor-or-image" title="Permalink to this headline">¶</a></h2>
+<p>Each cloud must have a default image and a default flavor to launch vm
+instances in a simple step. The <code class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></code> command provides a way to
+set default values for an image or a flavor.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --name=m1.small&quot;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set image india --name=futuregrid/ubuntu-14.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-flavors-or-images">
+<h2>Get Flavors or Images<a class="headerlink" href="#get-flavors-or-images" title="Permalink to this headline">¶</a></h2>
+<p>Available flavors can be listed with the following command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list flavor india&quot;
+</pre></div>
+</div>
+<p>refresh option updates the data from the IaaS cloud. The cached data in
+the mongo database will be updated.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list flavor india --refresh&quot;
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></code> command provides an available vm images on a selected
+cloud.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list image india --column=name,updated&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="quick-start-a-vm">
+<h2>Quick Start a VM<a class="headerlink" href="#quick-start-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></code> command provides a quick launch of a vm instance in
+cloudmesh.</p>
+<p>We use <code class="docutils literal"><span class="pre">vmname</span></code> to delete the vm instance later in this tutorial.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>_vmname=!cm &quot;label --raw&quot;
+vmname=_vmname[0]
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --name={vmname} --cloud=india&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-a-vm">
+<h2>Delete a VM<a class="headerlink" href="#delete-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>If you know the id or name of the virtual machine that you want to
+destroy, <em>delete</em> command in cloudmesh simply terminate the instance.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete {vmname} --cloud=india --force&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-options-to-launch-a-vm-instance">
+<h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>
+<p>When you create a new VM instance, you can also choose multiple options
+such as a flavor, an image associated with the instance. The
+<code class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></code> command accepts optional parameters as a user input of
+these options. To see a brief description of the command, try
+<code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></code> in the IPython Notebook cell.</p>
+<p>Available options are:</p>
+<ul class="simple">
+<li>&#8211;<code class="docutils literal"><span class="pre">cloud=&lt;CloudName&gt;</span>&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give a cloud to work on, if not given,
+selected or default cloud will be used</li>
+<li>&#8211;<code class="docutils literal"><span class="pre">count=&lt;count&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the number of servers to start</li>
+<li>&#8211;<code class="docutils literal"><span class="pre">flavor=&lt;flavorName&gt;</span>&nbsp; <span class="pre">:</span></code> give the name of the flavor</li>
+<li>&#8211;<code class="docutils literal"><span class="pre">flavorid=&lt;flavorId&gt;</span>&nbsp; <span class="pre">:</span></code> give the id of the flavor</li>
+<li>&#8211;<code class="docutils literal"><span class="pre">group=&lt;group&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the group name of server</li>
+<li>&#8211;<code class="docutils literal"><span class="pre">image=&lt;imgName&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the name of the image</li>
+<li>&#8211;<code class="docutils literal"><span class="pre">imageid=&lt;imgId&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the id of the image</li>
+</ul>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-default-cloud">
+<h2>Set default cloud<a class="headerlink" href="#set-default-cloud" title="Permalink to this headline">¶</a></h2>
+<p>If you want to make things even more convenient, you can set a default
+cloud or select a cloud to work with so that you don&#8217;t have to type in a
+cloud everytime you need to specify a cloud, to set india as default
+cloud</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default cloud india&quot;
+</pre></div>
+</div>
+<p>to select a cloud</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud select india&quot;
+</pre></div>
+</div>
+<p>You can see a selected cloud as a temporarily default cloud to work
+with.</p>
+<p>For more details of using command cloud to set up a cloud</p>
+<p>cm &#8220;cloud -h&#8221;</p>
+</div>
+<div class="section" id="refreshing-vm-status">
+<h2>Refreshing VM status<a class="headerlink" href="#refreshing-vm-status" title="Permalink to this headline">¶</a></h2>
+<p>After you have started or deleted VMs, you may want to check clouds&#8217; VMs
+status. To refresh cloud india&#8217;s VMs information</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list vm india --refresh&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting-multiple-vms">
+<h2>Starting multiple VMs<a class="headerlink" href="#starting-multiple-vms" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we want to start more than one VM at the same time, we can
+choose the option &#8211;count=int where int is the number of VMs you want to
+start. For example, to start 3 VMs on india</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">uuid</span><span class="p">;</span>
+<span class="n">temp_group_name</span><span class="o">=</span><span class="s">&quot;ipython-tutorial-cm-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">get_hex</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>We use the temporary group name to delete the VMs later in this
+tutorial.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --count=3 --group={temp_group_name}&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-vms">
+<h2>Deleting VMs<a class="headerlink" href="#deleting-vms" title="Permalink to this headline">¶</a></h2>
+<p>To delete one VM is easy, what if we want to delete 1000 VMs, we need a
+more convenient way to do it. Cloudmesh shell provides several methods
+to find the VMs and delete them, you may think there are two phases of
+VM deletion, searching and deleting. Here are some examples:</p>
+<p>Let&#8217;s start with deleting the VMs that we started in the previous
+example. We can delete them with the group name that we used.
+<code class="docutils literal"><span class="pre">temp_group_name</span></code></p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete --cloud=india --group={temp_group_name} --force&quot;
+</pre></div>
+</div>
+<p>to delete all VMs of cloud india</p>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;</span></code></p>
+<p>Note here we use the option &#8220;&#8211;force&#8221;, without it the shell will give
+you a list of VMs to delete and ask for your confirmation.</p>
+<p>to delete a VM by giving its name (you may always provide a cloud unless
+you have specified a default cloud or have selected a cloud)</p>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">sample_vm</span> <span class="pre">--force&quot;</span></code></p>
+<p>to delete a VM by group</p>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--goup=testgroup</span> <span class="pre">--force&quot;</span></code></p>
+<p>We can also narrow the search result by giving more search conditions.
+For example, to delete VMs of cloud india that they are also in the
+group &#8216;testgroup&#8217; and they have the prefix name &#8216;abc&#8217; and their indices&#8217;
+range is no greater than 100</p>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--goup=testgroup</span> <span class="pre">--prefix=sample</span> <span class="pre">--range=,100</span> <span class="pre">--force&quot;</span></code></p>
+</div>
+<div class="section" id="login-to-a-vm">
+<h2>Login to a VM<a class="headerlink" href="#login-to-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>To login to a VM, you need to assign a public id to the VM you started,
+for example, assign a public ip to a VM named test_1 on cloud india:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>_vmname=!cm &quot;label --raw&quot;
+vmname=_vmname[0]
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india&quot;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm ip assign {vmname} --cloud=india&quot;
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">ip</span> <span class="pre">assign</span> <span class="pre">test_1</span> <span class="pre">--cloud=india&quot;</span></code></p>
+<p>Then you can login to this VM by(note here you need to provide the login
+name for your VM, it varys depend on the image you use while you start
+the VM, e.g. for ubuntu, you may type &#8211;ln=ubuntu):</p>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">login</span> <span class="pre">test_1</span> <span class="pre">--ln=ubuntu</span> <span class="pre">--cloud=india&quot;</span></code></p>
+<p>If you just want to run some commands and get the return on the VM, you
+may add the commands at the end following &#8216;&#8211;&#8217;(e.g. ls -a)</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm login {vmname} --ln=ubuntu --cloud=india -- ls -a&quot;
+</pre></div>
+</div>
+<p>For more details for command vm</p>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">-h&quot;</span></code></p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete {vmname} --cloud=india&quot;
+</pre></div>
+</div>
+<p>Stop the vm that we started for this tutorial.</p>
+</div>
+<div class="section" id="vitual-machine-name">
+<h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
+<p>In Cloudmesh, the default name of VM consists of your username and a
+number, for example, alex_1. <code class="docutils literal"><span class="pre">label</span></code> command allows you to manage or
+modify the VM name as you wish.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm label
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;label</span> <span class="pre">--prefix=gregor</span> <span class="pre">--id=40&quot;</span></code></p>
+<p>If the user doesn’t provide a name while starting VMs, cloudmesh will
+generate labels for them. The default form to name VMs is prefix_index,
+where prefix is a string and index is an non-negative integer. If a
+index is used, the index value will be automatically added by one
+waiting to be used for next VM. To check your current prefix and index</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="_cm-limits.html" class="btn btn-neutral float-right" title="Metric Commands in Cloudmesh cm">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_cm-debug.html" class="btn btn-neutral" title="Command Shell Output Control"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

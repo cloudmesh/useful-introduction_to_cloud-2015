@@ -1,3 +1,5 @@
+.. _cloudmesh-cm-cluster-ref:
+
 
 Deploying Virtual Cluster with Cloudmesh ``cm``
 ===============================================
@@ -15,7 +17,7 @@ can SKIP these steps if you have configured cloudmesh previously.
 
 .. code:: python
 
-    cm "cluster" 
+    cm cluster
 
 Before starting a cluster, please make sure you activate a cloud:
 

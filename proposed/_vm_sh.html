@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Provider &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Provider</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/proposed/_vm_sh.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="provider">
+<h1>Provider<a class="headerlink" href="#provider" title="Permalink to this headline">¶</a></h1>
+<button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/api/_vm_sh.ipynb">Notebook</a></p>
+</button><p><strong>IMPORTANT:</strong> THIS SECTION IS NOT YET COMPLETE. HELP US COMPLETING IT</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">get the cloud credentials form a yaml file</p>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">use the information to start a VM</p>
+</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">do this section later as we need flavors and images</p>
+</div>
+<p>Sometimes it may be useful to have access to the nova shell command from
+within python. However, at times you may not actually want to use it but
+rather print just jte arguments while simulating a call to the shell
+command. To support these two functions, we are offering a simple
+provider that returns either the real sh function, or a function that
+just prints its arguments.</p>
+<p>We start our program first with importing cloudmesh and the provider</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh.sh.openstack</span> <span class="kn">import</span> <span class="n">nova_provider</span>
+</pre></div>
+</div>
+<p>Next we decide to load one of the providors. The values are &#8220;sh&#8221; and
+&#8220;simulator&#8221;. We chose the simulator. we name the function to boot a vm
+nova_boot.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span> <span class="o">=</span> <span class="n">nova_provider</span><span class="p">(</span><span class="s">&quot;simulator&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can boot a vm with the command</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>(&#39;a&#39;, &#39;b&#39;) {&#39;h&#39;: &#39;k&#39;}
+</pre></div>
+</div>
+<p>To use a real submission we can switch the vm_boot function with the
+provider</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span> <span class="o">=</span> <span class="n">nova_provider</span><span class="p">(</span><span class="s">&quot;sh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">vm_boot</span><span class="p">(</span><span class="n">TODO</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

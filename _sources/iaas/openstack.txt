@@ -543,8 +543,25 @@ Horizon GUI
 Horizon is a graphical user interface/dashbooard for OpenStack. For
 starting up VMs and stoping them by hand horizon may be a good
 mechanism to manage your Virtual machines.  We have currently the
-following horizon deployments available. For more detail, see 
-`here /class/lesson/iaas/openstack_horizon.html`_.
+following horizon deployments available. For more detail, see Section
+:ref:`openstack_horizion_lesson`.
+
+The passphrase for horizion is on purpose not the same as the portal
+password to introduce an additional layer of security.
+
+You can locate the passphrase while looking at the openrc file for the
+appropriate machine on india. Thus first log into india, and than load
+the openstack module with::
+
+     $ module load openstack
+
+Look at 
+
+     $ cat ~/.cloudmesh/clouds/india/juno/openrc.sh
+
+and use the password included here. If you reset your password in Horizon you may
+have to update it in this file after you changed it.
+
 
 .. list-table:: Horizon endpoints
    :header-rows: 1

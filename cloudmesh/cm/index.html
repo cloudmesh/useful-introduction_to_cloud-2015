@@ -35,7 +35,7 @@
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Cloudmesh" href="../index.html"/>
-        <link rel="next" title="Install IPython Server" href="ipython.html"/>
+        <link rel="next" title="Cloudmesh cm Command" href="_cm.html"/>
         <link rel="prev" title="Nosetests" href="../setup/nosetests.html"/> 
 
   
@@ -89,6 +89,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Cloudmesh cm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_vm-cm.html">CM Console for VM Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -150,6 +158,96 @@
 <h1>Cloudmesh cm<a class="headerlink" href="#cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_cm.html#ipython-execution-of-shell-commands">iPython Execution of shell commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html#ipython-alias">IPython Alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html#python-rehashx">Python %rehashx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_cm.html#cm-command"><code class="docutils literal"><span class="pre">cm</span></code> Command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html#help">Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html#starting-the-web-browser">Starting the Web Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html#listing-clouds">Listing Clouds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_cm-project.html"><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_cm-project.html#ipython-alias">IPython Alias</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#project-info-command"><code class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></code> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#set-a-default-project">Set a default project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#set-an-active-project">Set an active project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#change-the-status-of-project-to-completed">Change the status of project to <code class="docutils literal"><span class="pre">completed</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#add-a-project">Add a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#delete-a-project">Delete a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html#help-message">Help message</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_cm-debug.html#ipython-alias">IPython Alias</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#debug-command-in-cloudmesh-cm"><code class="docutils literal"><span class="pre">debug</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#loglevel-command-in-cloudmesh-cm"><code class="docutils literal"><span class="pre">loglevel</span></code> Command in Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#yaml-command-in-cloudmesh-cm"><code class="docutils literal"><span class="pre">yaml</span></code> Command in Cloudmesh cm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-debug.html#update-a-value-in-a-yaml-file">Update a value in a yaml file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-debug.html#view-the-value-of-the-selected-key-in-the-server-yaml-file">View the value of the selected key in the server yaml file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-debug.html#change-the-value-of-the-selected-key">Change the value of the selected key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html#color-command-in-cloudmesh-cm"><code class="docutils literal"><span class="pre">color</span></code> Command in Cloudmesh cm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_vm-cm.html">CM Console for VM Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#help">Help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#activating-clouds">Activating Clouds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#start-a-vm">Start a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#set-a-default-flavor-or-image">Set a default flavor or image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#get-flavors-or-images">Get Flavors or Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#quick-start-a-vm">Quick Start a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#delete-a-vm">Delete a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#more-options-to-launch-a-vm-instance">More options to launch a VM instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#set-default-cloud">Set default cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#refreshing-vm-status">Refreshing VM status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#starting-multiple-vms">Starting multiple VMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#deleting-vms">Deleting VMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#login-to-a-vm">Login to a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_vm-cm.html#vitual-machine-name">Vitual Machine Name</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_cm-limits.html#limits-command"><code class="docutils literal"><span class="pre">limits</span></code> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-limits.html#usage-command"><code class="docutils literal"><span class="pre">usage</span></code> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-limits.html#quota-command"><code class="docutils literal"><span class="pre">quota</span></code> command</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_cm-cluster.html#preparation">Preparation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#cloud-activation">Cloud Activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#default-key-pair">Default Key Pair</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#default-vm-image">Default VM Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#default-flavor">Default Flavor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-cluster.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#create-a-virtual-cluster-with-cluster-command">Create a Virtual Cluster with <code class="docutils literal"><span class="pre">cluster</span></code> command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#create-a-virtual-cluster-with-3-virtual-machines">Create a Virtual Cluster with 3 virtual machines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#check-status-of-a-virtual-cluster">Check Status of a Virtual Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#terminate-a-virtual-cluster">Terminate a Virtual Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html#cluster-help-message">Cluster Help Message</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_cm-group.html#group-command"><code class="docutils literal"><span class="pre">group</span></code> command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_cm-group.html#working-with-group">Working with group</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
 </ul>
 </div>
@@ -161,7 +259,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ipython.html" class="btn btn-neutral float-right" title="Install IPython Server">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm.html" class="btn btn-neutral float-right" title="Cloudmesh cm Command">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../setup/nosetests.html" class="btn btn-neutral" title="Nosetests"><span class="fa fa-arrow-circle-left"></span> Previous</a>
