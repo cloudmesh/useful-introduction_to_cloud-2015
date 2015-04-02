@@ -3,6 +3,7 @@ import sys
 import os
 import time
 import subprocess
+from cloudmesh_base.util import banner
 
 browser = "firefox"
 
@@ -70,7 +71,7 @@ def html(theme_name='readthedocs'):
     # disable Flask RSTPAGES due to sphinx incompatibility
     os.environ['RSTPAGES'] = 'FALSE'
     theme(theme_name)
-    # api()
+    clone_and_build()
     # man()
     """build the doc locally and view"""
     #clean()
@@ -98,12 +99,30 @@ def slides():
     # disable Flask RSTPAGES due to sphins incompatibility
     os.environ['RSTPAGES'] = 'FALSE'
     local("cd docs; make slides")
+
+cloudmesh_dirs = ['cloudmesh',
+                  'base',
+                  'database',
+                  'pbs',
+                  'timestring',
+                  'cmd3']                                            
+        
+@task
+def clone_and_build():
+    for package in cloudmesh_dirs:
+        banner("Installing and Building: " + package)
+        if not os.path.isdir("../{0}".format(package)):
+            local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
+        local ("cd ../{0}; python setup.py install". format(package))
+    
     
 @task
 def fast(theme_name='readthedocs'):
     theme(theme_name)
     local("cd docs; make html")
 
+
+    
 @task
 def simple():
     local("cd docs; make html")
@@ -126,7 +145,7 @@ def man():
 
 @task
 def api():
-    for modulename in ["cloudmesh", "cloudmesh_common", "cloudmesh_install", "cmd3local", "cloudmesh_web"]:
+    for modulename in ["cloudmesh", "cmd3", "cloudmesh_base", "cloudmesh_install", "cmd3local", "cloudmesh_web"]:
         print 70 * "="
         print "Building API Doc:", modulename 
         print 70 * "="        
