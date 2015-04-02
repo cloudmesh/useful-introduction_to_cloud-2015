@@ -7,7 +7,7 @@ Overview
 This lesson will introduce you to a very important topic of OpenStack Heat, a
 software provisioning tool on a OpenStack platform.
 
-.. tip:: Duration: 40 minutes
+.. tip:: Duration: 1 hour
 
 Prerequisite
 ----------------------------------------------------------------------
@@ -34,19 +34,93 @@ services.
 
 This lesson covers:
 
-* Basic use of Heat Client Tool
+* Basics of OpenStack Heat
+* Use of Heat Client Tool
 * How to write Heat Template
 * Example of deploying Hadoop Cluster with Heat
- 
+
+Let's start with the basics of OpenStack Heat.
+
+Resource Types
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Heat creates a stack with a combination of resources. The following resource
+types are the most common items to start or connect each other, we may see
+often how they are deployed and interact.
+
+* Nova Server (VM instance)
+* Floating IP addresses
+* Volumes (Storage)
+* Security Groups
+* Key Pair
+
+There are 70 resource types in total. See more at:
+http://docs.openstack.org/hot-reference/content/openstack-resource-types.html
+
+These are OpenStack Heat Resource types which are identified with the ``OS::`` prefix.
+For example, if you'd like to start a VM instance, use the ``OS::Nova::Server`` resource type.
+
+There are also Amazon CloudFormation compatible resource types.
+
+Resource Types (Amazon compatible)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These resource types are exchangeable between Amazon (AWS) and OpenStack. Let's
+review a few types.
+
+* ``AWS::EC2::Instance``: EC2 Instance <-> Nova Server 
+* ``AWS::EC2::SecurityGroup``: EC2 Security Group <-> OpenStack Security Group
+* ``AWS::EC2::Volume``: AWS Elastic Block Store volume <->  OpenStack Cinder
+  Volume
+
+Currently, 25 resource types are compatible with AWS, AWS supports 88 resource
+types on Amazon Cloud though.
+
+For more information, 
+
+* find supported AWS resource types on OpenStack:
+  http://docs.openstack.org/hot-reference/content/cloudformation-compatible-resource-types.html
+
+* see a full list of  AWS resource types:
+  http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+
+Template in YAML
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OpenStack Heat templates are written in a YAML file format which is easy to
+read and write.  The following template is an example of a launching a VM
+server with Ubuntu 14.04 image and 1 vCPU and 2GB memories (m1.small flavor).
+
+::
+
+        heat_template_version: 2013-05-23
+
+        description: Simple template to deploy a single compute instance on FutureSystems
+
+        resources:
+          my_instance:
+            type: OS::Nova::Server
+            properties:
+              key_name: albert-india-key
+              image: futuresystems/ubuntu-14.04
+              flavor: m1.small
+
+Heat template starts with a ``heat_template_version`` key to indicate supported
+features and resource types. The following values are supported:
+
+* 2013-05-23: supports features until the Icehouse release.
+* 2014-10-16: supports features until the Juno release.
+* 2015-04-30: supports features until the Kilo release.
+
 Use of OpenStack Heat on FutureSystems
 -------------------------------------------------------------------------------
 
-This lesson is based on FutureSystems. We start learning OpenStack Heat on
-india.futuresystems.org. Heat is available on FutureSystems via a web interface
-Horizon or a command line tool (Heat CLI). Resource topology is visible if you
-use Horizon, and more command options and debugging messages are available on
-command line tools.
-
+We start learning OpenStack Heat on india.futuresystems.org. You can use Heat
+on FutureSystems via a web interface Horizon or a command line tool (Heat CLI).
+On a Horizon dashboard, graphical resource topology is displayed and relations
+of connected resources are also presented in a canvas. If you use command line
+tools, various command options (which might not be visible on a web) and
+debugging messages are available.
 
 Horizon on FutureSystems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,9 +162,90 @@ You can see running stacks with the following command:
    +----+------------+--------------+---------------+
    +----+------------+--------------+---------------+
 
-A stack is cloud resources that you use with your selected Heat Template. If
+A ``stack`` is cloud resources that you use with your selected Heat Template. If
 you deployed 5 VM instances with 2 floating IP addresses and 1 security group,
 all of these resources fall into a single stack on OpenStack.
+
+Stack Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You need a template first. Save a sample template above in a YAML file, e.g.
+``openstack_heat_ex1.yaml`` It will create a new VM instance with a ``Ubuntu
+14.04`` image, ``albert-india-key`` SSH keypair and a ``m1.small`` flavor.  You
+have to **REPLACE** ``albert-india-key`` with your registered keyname.
+
+If you are ready to create a new stack, run a following command:
+
+::
+
+  heat stack-create --template-file openstack_heat_ex1.yaml heat-tutorial-$OS_USERNAME
+
+* You started a stack with a parameter for a template file ``--template-file``.
+* ``heat-tutorial-$OS_USERNAME`` is a your stack name, you can use other names.
+
+.. note:: If you have a template file on the web, you can use a URL with
+          ``--template-url`` parameter.
+
+The sample output is::
+
+  +--------------------------------------+------------+--------------------+----------------------+
+  | id                                   | stack_name | stack_status       | creation_time        |
+  +--------------------------------------+------------+--------------------+----------------------+
+  | a6c98d15-f569-426b-a364-46bcca831049 | heat-tut...| CREATE_IN_PROGRESS | 2015-04-02T06:15:56Z |
+  +--------------------------------------+------------+--------------------+----------------------+
+
+As you can see your stack is being processed. You can see more details with the following command::
+
+  heat stack-show heat-tutorial-$OS_USERNAME
+  
+The output looks like::
+
+  +----------------------+----------------------------------------------------------------------------+
+  | Property             | Value                                                                      |
+  +----------------------+----------------------------------------------------------------------------+
+  | capabilities         | []                                                                         |
+  | creation_time        | 2015-04-02T06:15:56Z                                                       |
+  | description          | Simple template to deploy a single compute instance on FutureSystems       |
+  | disable_rollback     | True                                                                       |
+  | id                   | a6c98d15-f569-426b-a364-46bcca83104                                        |
+  | links                | http://xxx.futuregrid.org:xxx/v1/.../stacks/../.. (self)                   |
+  | notification_topics  | []                                                                         |
+  | parameters           | {                                                                          |
+  |                      |   "OS::stack_id": "a6c98d15-f569-426b-a364-46bcca83104",                   |
+  |                      |   "OS::stack_name": "heat-tutorial-albert",                                |
+  |                      |   "instance_type": "m1.small",                                             |
+  |                      |   "image_id": "futuresystems/ubuntu-14.04",                                |
+  |                      |   "key_name": "albert-india-key"                                           |
+  |                      | }                                                                          |
+  | parent               | None                                                                       |
+  | stack_name           | heat-tutorial-albert                                                       |
+  | stack_owner          | albert                                                                     |
+  | stack_status         | CREATE_COMPLETE                                                            |
+  | stack_status_reason  | Stack CREATE completed successfully                                        |
+  | template_description | Simple template to deploy a single compute instance on FutureSystems       |
+  | updated_time         | None                                                                       |
+  +----------------------+----------------------------------------------------------------------------+
+
+Stack List
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:: 
+
+  heat stack-list [STACK_NAME]
+
+If you have VM instances in your stack, you can see running instances.
+
+::
+
+  nova list
+
+
+Stack Deletion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+ 
+  heat stack-delete [STACK_NAME]
 
 Samples of Heat Templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,10 +265,60 @@ Exercise I
 
   - futuresystems/ubuntu14.04
   - m1.small
-  - Port 22, 80, and 443 opened
+  - Port 22, 80, and 443 are open
 
   - Save your OpenStack Heat template in ``$USERNAME_heat_ex1.yaml``
 
+Exercise II
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Start a WordPress web service using Heat template on the web. The required
+  conditions are:
+
+  - Run ``script heat_ex1_$OS_USERNAME.typescript`` on your SSH terminal.
+  - Use `Template for WordPress on Fedora21 <https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/fedora-21/wordpress.yaml>`_
+  - Once you successfully created a WordPress stack, checkout an index page.
+    ``curl http://[IP ADDRESS]/wordpress`` produces the index page in a text mode.
+  - If your web browser opens the page properly, your WordPress is created successfully.
+  - Stop running your typescript by ``exit``. (This is not necessary if you did
+    not run ``script`` command earlier.
+  - Submit ``**heat_ex1_$OS_USERNAME.typescript**`` file.
+
+
+* If you'd like to use Horizon web dashboard, you need to find "Orchestration >
+  Stacks" menu.
+
+  - All steps are required to be screen captured.
+  - Submit your screen captures each step.
+
+Reference
+-------------------------------------------------------------------------------
+
+If you'd like to learn more about OpenStack Heat? Please follow the links
+below:
+
+* Heat Documentation: http://docs.openstack.org/developer/heat/
+* Heat Template Guide:
+  http://docs.openstack.org/developer/heat/template_guide/index.html
+
+Glossary
+-------------------------------------------------------------------------------
+
+* Stack: A collection of instantiated resources that are defined in a single
+  template.
+
+* Template: An orchestration document that details everything needed to carry
+  out an orchestration.
+
+* Orchestration:
+  Arrange or direct the elements of a situation to produce a desired effect.
+
+* Resource:
+  An element of OpenStack infrastructure instantiated from a particular
+  resource provider.
+
+More glossary are:
+http://docs.openstack.org/developer/heat/glossary.html
 
 Next Step
 -------------------------------------------------------------------------------
