@@ -71,7 +71,8 @@ def html(theme_name='readthedocs'):
     # disable Flask RSTPAGES due to sphinx incompatibility
     os.environ['RSTPAGES'] = 'FALSE'
     theme(theme_name)
-    clone_and_build()
+    clone()
+    api()
     # man()
     """build the doc locally and view"""
     #clean()
@@ -108,12 +109,14 @@ cloudmesh_dirs = ['cloudmesh',
                   'cmd3']                                            
         
 @task
-def clone_and_build():
+def clone():
     for package in cloudmesh_dirs:
         banner("Installing and Building: " + package)
         if not os.path.isdir("../{0}".format(package)):
             local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
-        local ("cd ../{0}; python setup.py install". format(package))
+        else:
+            local("cd ..; git pull")
+        local ("cd ../{0}; git checkout dev2.0; python setup.py install". format(package))
     
     
 @task
@@ -145,11 +148,11 @@ def man():
 
 @task
 def api():
-    for modulename in ["cloudmesh", "cmd3", "cloudmesh_base", "cloudmesh_install", "cmd3local", "cloudmesh_web"]:
+    for modulename in ["cloudmesh", "cmd3", "base", "pbs", "timestring"]:
         print 70 * "="
         print "Building API Doc:", modulename 
         print 70 * "="        
-        local("sphinx-apidoc -f -o docs/source/api/{0} {0}".format(modulename))
+        local("sphinx-apidoc -f -o docs/source/modules/{0} ../{0}".format(modulename))
 
 
 

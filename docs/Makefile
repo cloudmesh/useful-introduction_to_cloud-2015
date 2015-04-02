@@ -183,6 +183,6 @@ pseudoxml:
 
 manpages:
 	cd ../../cloudmesh; python setup.py install
-	sphinx-apidoc -H "Modules and Classes" -o source/modules ../../cloudmesh ../../cloudmesh/cloudmesh ../../cloudmesh_web ../../cloudmesh_pbs
+	sphinx-apidoc -H "Modules and Classes" -o source/modules ../../cloudmesh ../../cloudmesh/cloudmesh ../../cloudmesh_web ../../cloudmesh_pbs/cloudmesh_pbs ../../cloudmesh_base/cloudmesh_base
 
 
