@@ -479,9 +479,25 @@ How to change your password
 
        $ keystone password-update
 
-Remember, you will also need to change it in your openrc.sh. This can be
-achieved by either editing your openrc.sh file directly, or by editing
-the file ~/.futuregrid/cloudmesh.yaml and recreating your openrc.sh file.
+Remember, you also have to **UPDATE** your new password in your openrc.sh file.
+This can be achieved by either editing your openrc.sh file directly
+(~/.cloudmesh/clouds/india/juno/openrc.sh), or recreating your openrc.sh file.
+
+
+Change of rc file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you want to make a change in your rc file (openrc.sh), follow the
+instructions below.
+
+* Open a ``~/.cloudmesh/clouds/india/juno/openrc.sh`` file
+* Replace your old password to a new password in a ``OS_PASSWORD`` key.
+* Load your rc file ``source ~/.cloudmesh/clouds/india/juno/openrc.sh``
+* Try nova command line e.g. ``nova list``
+* If you see a message like the below, your change is made incorrectly::
+
+  ERROR (Unauthorized): The request you have made requires authentication. (HTTP 401)
+ 
 
 Things to do when you need Euca2ools or EC2 interfaces
 ------------------------------------------------------

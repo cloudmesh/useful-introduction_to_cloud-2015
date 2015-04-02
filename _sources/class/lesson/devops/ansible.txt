@@ -31,13 +31,16 @@ In order to conduct this lesson you should have knowledge of
 .. include:: ../ansible_playbook.rst
 
   
-Lab Sessions
+.. _ref-class-lesson-devops-ansible-lab:
+
+Lab Session
 ----------------------------------------------------------------------
 
 Write an Ansible Playbook to start the Apache webserver on your
 instances.
 
 On each instance:
+
 - install the ``apache2`` package
 - start the apache
 

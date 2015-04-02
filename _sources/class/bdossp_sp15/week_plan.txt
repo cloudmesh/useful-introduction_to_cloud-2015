@@ -499,7 +499,8 @@ IT Operations - Automation and Orchestration (under preparation)
        - Ansible:`16:30 min <https://www.youtube.com/watch?v=JTv1QWjTWS8&index=1&list=PLLO4AVszo1SOkNPAv4E824AFScdduO9NF>`_
      -
        - Ansible: :ref:`1:30 hours <ref-class-lesson-devops-ansible>`
-     - 
+     -
+       - Ansible: :ref:`30 min <ref-class-lesson-devops-ansible-lab>`
      - 04/13
      - 04/17
    * - **Discussion**

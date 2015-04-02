@@ -613,9 +613,27 @@ your password with:</p>
 </div>
 </li>
 </ol>
-<p>Remember, you will also need to change it in your openrc.sh. This can be
-achieved by either editing your openrc.sh file directly, or by editing
-the file ~/.futuregrid/cloudmesh.yaml and recreating your openrc.sh file.</p>
+<p>Remember, you also have to <strong>UPDATE</strong> your new password in your openrc.sh file.
+This can be achieved by either editing your openrc.sh file directly
+(~/.cloudmesh/clouds/india/juno/openrc.sh), or recreating your openrc.sh file.</p>
+<div class="section" id="change-of-rc-file">
+<h3>Change of rc file<a class="headerlink" href="#change-of-rc-file" title="Permalink to this headline">¶</a></h3>
+<p>If you want to make a change in your rc file (openrc.sh), follow the
+instructions below.</p>
+<ul>
+<li><p class="first">Open a <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code> file</p>
+</li>
+<li><p class="first">Replace your old password to a new password in a <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> key.</p>
+</li>
+<li><p class="first">Load your rc file <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></p>
+</li>
+<li><p class="first">Try nova command line e.g. <code class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></code></p>
+</li>
+<li><p class="first">If you see a message like the below, your change is made incorrectly:</p>
+<p>ERROR (Unauthorized): The request you have made requires authentication. (HTTP 401)</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="things-to-do-when-you-need-euca2ools-or-ec2-interfaces">
 <h2>Things to do when you need Euca2ools or EC2 interfaces<a class="headerlink" href="#things-to-do-when-you-need-euca2ools-or-ec2-interfaces" title="Permalink to this headline">¶</a></h2>
