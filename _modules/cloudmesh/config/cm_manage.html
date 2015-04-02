@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.config.cm_manage &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.config.cm_manage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.config.cm_manage</h1><div class="highlight"><pre>
+<span class="c">#! /usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">stat</span>
+<span class="c"># from cloudmesh_user import cloudmesh_user</span>
+<span class="kn">from</span> <span class="nn">sh</span> <span class="kn">import</span> <span class="n">scp</span>
+<span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getpass</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">yn_choice</span><span class="p">,</span> <span class="n">path_expand</span><span class="p">,</span> <span class="n">banner</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.user.cm_user</span> <span class="kn">import</span> <span class="n">cm_user</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span><span class="p">,</span> <span class="n">config_file_prefix</span>
+
+<span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span>
+
+
+<div class="viewcode-block" id="DEBUG"><a class="viewcode-back" href="../../../modules/cloudmesh.config.html#cloudmesh.config.cm_manage.DEBUG">[docs]</a><span class="k">def</span> <span class="nf">DEBUG</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">var</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">70</span> <span class="o">*</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="cm_manage"><a class="viewcode-back" href="../../../modules/cloudmesh.config.html#cloudmesh.config.cm_manage.cm_manage">[docs]</a><span class="k">def</span> <span class="nf">cm_manage</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Usage:</span>
+<span class="sd">      cm-manage config projects list</span>
+<span class="sd">      cm-manage config projects</span>
+<span class="sd">      cm-manage config [-f FILE] [-o OUT] [-p PROJECT] cloud NAME [-]</span>
+<span class="sd">      cm-manage config dump [--format=(yaml|dict)]</span>
+<span class="sd">      cm-manage config init [-o OUT] [-u USER]</span>
+<span class="sd">      cm-manage config list</span>
+<span class="sd">      cm-manage config password NAME</span>
+<span class="sd">      cm-manage config show passwords</span>
+<span class="sd">      cm-manage config fetch [-u USER] [-r HOST]</span>
+<span class="sd">      cm-manage --version</span>
+<span class="sd">      cm-manage --help</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">      NAME                 name of the cloud</span>
+
+<span class="sd">    Options:</span>
+<span class="sd">      -h --help            show this help message and exit</span>
+
+<span class="sd">      -v --version         show version and exit</span>
+
+<span class="sd">      -f NAME --file=NAME  the Name of the cloud to be specified,</span>
+<span class="sd">                           if ? a selection is presented</span>
+
+<span class="sd">      -o OUT --out=OUT     writes the result in the specifide file</span>
+
+<span class="sd">      -p PROJECT --project=PROJECT   selects a project (e.g. for eucalyptus</span>
+<span class="sd">                                     which has project-specific environments)</span>
+
+<span class="sd">      -u USER --user=USER  the user (login) name</span>
+
+<span class="sd">      -r HOST --remote=HOST  the host machine on which the yaml file is</span>
+<span class="sd">                             located in the CONFIG directory</span>
+<span class="sd">                             [default: india.futuregrid.org]</span>
+
+<span class="sd">      -d  --debug          debug</span>
+
+<span class="sd">      -                    this option is a - at the end of the command.</span>
+<span class="sd">                           If data is written to a file it is also put out to stdout</span>
+
+<span class="sd">    Description:</span>
+
+<span class="sd">       Command to generate rc files from our cloudmesh configuration files.</span>
+
+<span class="sd">        This program generates form a YAML file containing the login</span>
+<span class="sd">        information for a cloud an rc file that can be used to later source</span>
+<span class="sd">        it.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        we assume the yaml file has an entry india-openstack::</span>
+
+<span class="sd">        cm-manage config -o novarc india-openstack</span>
+<span class="sd">        source novarc</span>
+
+<span class="sd">      This will create a novarc file and than you can source it::</span>
+
+<span class="sd">         cm-manage config ? -</span>
+
+<span class="sd">      Presents a selction of cloud choices and writes the choice into a</span>
+<span class="sd">      file called CONFIG/novarc</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">default_path</span> <span class="o">=</span> <span class="n">config_file_prefix</span> <span class="o">+</span> <span class="s">&#39;/novarc&#39;</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="n">docopt</span><span class="p">(</span><span class="n">cm_manage</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
+
+    <span class="n">DEBUG</span><span class="p">(</span><span class="s">&quot;arguments&quot;</span><span class="p">,</span> <span class="n">arguments</span><span class="p">)</span>
+
+    <span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;HOME&#39;</span><span class="p">]</span>
+
+    <span class="c"># DEBUG(&quot;home&quot;, home)</span>
+
+    <span class="c">#</span>
+    <span class="c"># This secion deals with handeling &quot;cm config&quot; related commands</span>
+
+    <span class="c">######################################################################</span>
+    <span class="n">is_config</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;config&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+
+    <span class="k">if</span> <span class="n">is_config</span><span class="p">:</span>
+
+        <span class="c"># DEBUG(&#39;Arguments&#39;, arguments)</span>
+
+        <span class="nb">file</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--file&#39;</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+            <span class="c"># DEBUG(&quot;config&quot;, config)</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;{0}: Configuration file &#39;{1}&#39; not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;CM ERROR&quot;</span><span class="p">,</span> <span class="nb">file</span><span class="p">))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">scanner</span><span class="o">.</span><span class="n">ScannerError</span><span class="p">,</span> <span class="n">yaml</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">ParserError</span><span class="p">)</span> <span class="k">as</span> <span class="n">yamlerror</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;{0}: YAML error: {1}, in configuration file &#39;{2}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;CM ERROR&quot;</span><span class="p">,</span> <span class="n">yamlerror</span><span class="p">,</span> <span class="nb">file</span><span class="p">))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Unexpected error:&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;NAME&#39;</span><span class="p">]</span>
+
+        <span class="c">#</span>
+        <span class="c"># NOT TESTED</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;fetch&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;fetch&#39;</span><span class="p">:</span>
+
+            <span class="n">DEBUG</span><span class="p">(</span><span class="s">&#39;Arguments&#39;</span><span class="p">,</span> <span class="n">arguments</span><span class="p">)</span>
+
+            <span class="c"># get user</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">var</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--user&#39;</span><span class="p">]</span>
+            <span class="n">var</span><span class="p">[</span><span class="s">&#39;host&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--remote&#39;</span><span class="p">]</span>
+            <span class="c">#</span>
+            <span class="c"># BUG should be</span>
+            <span class="c">#</span>
+            <span class="n">var</span><span class="p">[</span><span class="s">&#39;file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config_file_prefix</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;/cloudmesh.yaml&quot;</span>
+            <span class="k">if</span> <span class="n">var</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">var</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span>
+
+            <span class="n">from_location</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%(user)s</span><span class="s">@</span><span class="si">%(host)s</span><span class="s">:</span><span class="si">%(file)s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">var</span>
+            <span class="n">to_location</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/</span><span class="si">%(file)s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">var</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">to_location</span><span class="p">):</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;WARNING: The file </span><span class="si">%s</span><span class="s"> exists&quot;</span> <span class="o">%</span> <span class="n">to_location</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">yn_choice</span><span class="p">(</span><span class="s">&quot;Would you like to replace the file&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">):</span>
+                    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="n">from_location</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">to_location</span><span class="p">)</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Copy cloudmesh file from </span><span class="si">%s</span><span class="s"> to </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">from_location</span><span class="p">,</span> <span class="n">to_location</span><span class="p">))</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">scp</span><span class="p">(</span><span class="n">from_location</span><span class="p">,</span> <span class="n">to_location</span><span class="p">)</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># ok</span>
+        <span class="c">#</span>
+        <span class="c"># if (arguments[&#39;projects&#39;] and arguments[&#39;list&#39;]) :</span>
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;projects&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;list&#39;</span><span class="p">]:</span>
+
+            <span class="n">projects</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;cloudmesh.projects&#39;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">projects</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># OK, needs setting</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;projects&#39;</span><span class="p">]:</span>
+
+            <span class="n">projects</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">projects</span><span class="p">(</span><span class="s">&#39;active&#39;</span><span class="p">)</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Please select from the following:&quot;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;0 - Cancel&quot;</span><span class="p">)</span>
+            <span class="n">selected</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">selected</span><span class="p">:</span>
+                <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="s">&quot;-&quot;</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+                    <span class="n">choices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Please select:&quot;</span><span class="p">)</span>
+                <span class="nb">input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+                <span class="k">if</span> <span class="nb">input</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Selection terminated&quot;</span><span class="p">)</span>
+                    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">selected</span> <span class="o">=</span> <span class="p">(</span><span class="nb">input</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">input</span> <span class="o">&lt;</span> <span class="n">counter</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Selected: &quot;</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="nb">input</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: THIS JUST SELECTS A PROJECT ID BUT DOES NOT SET IT&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;init&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;init&#39;</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--out&#39;</span><span class="p">]</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--user&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">&#39;USER&#39;</span><span class="p">)</span>
+
+            <span class="n">location</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+            <span class="n">new_yaml_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="s">&#39;w+&#39;</span><span class="p">)</span>
+
+            <span class="n">user_yaml</span> <span class="o">=</span> <span class="n">cm_user</span><span class="p">()</span><span class="o">.</span><span class="n">generate_yaml</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="s">&#39;cloudmesh&#39;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span>
+                <span class="n">user_yaml</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span> <span class="nb">file</span><span class="o">=</span><span class="n">new_yaml_file</span><span class="p">)</span>
+            <span class="n">new_yaml_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Written new yaml file in &quot;</span> <span class="o">+</span> <span class="n">location</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># OK</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;list&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;list&#39;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">cloudnames</span><span class="p">():</span>
+                <span class="k">if</span> <span class="s">&#39;cm_type&#39;</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+                    <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;(</span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="n">config</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="s">&#39;cm_type&#39;</span><span class="p">])</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># NOT TESTED</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">]:</span>
+            <span class="n">oldpass</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s">&quot;Current password: &quot;</span><span class="p">)</span>
+            <span class="n">newpass1</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s">&quot;New password: &quot;</span><span class="p">)</span>
+            <span class="n">newpass2</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s">&quot;New password (again): &quot;</span><span class="p">)</span>
+
+            <span class="c"># TODO: some kind of password strength checking?</span>
+            <span class="k">if</span> <span class="n">newpass1</span> <span class="o">==</span> <span class="n">newpass2</span><span class="p">:</span>
+                <span class="n">config</span><span class="o">.</span><span class="n">change_own_password</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">oldpass</span><span class="p">,</span> <span class="n">newpass1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;New passwords did not match; password not changed.&quot;</span><span class="p">)</span>
+
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># OK, but does not display the username</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;show&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;show&#39;</span> <span class="ow">and</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;passwords&#39;</span><span class="p">]:</span>
+            <span class="n">warning</span> <span class="o">=</span> <span class="s">&quot;Your passwords will appear on the screen. Continue?&quot;</span>
+            <span class="k">if</span> <span class="n">yn_choice</span><span class="p">(</span><span class="n">warning</span><span class="p">,</span> <span class="s">&#39;n&#39;</span><span class="p">):</span>
+
+                <span class="n">me</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/me.yaml&quot;</span><span class="p">))</span>
+                <span class="n">banner</span><span class="p">(</span><span class="s">&quot;PASSWORDS&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">me</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">]:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;{0}: {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">me</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">][</span><span class="n">name</span><span class="p">]))</span>
+
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># OK</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;dump&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s">&#39;dump&#39;</span><span class="p">:</span>
+            <span class="n">format</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">format</span> <span class="o">==</span> <span class="s">&#39;yaml&#39;</span><span class="p">:</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="bp">False</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">format</span> <span class="o">==</span> <span class="s">&#39;dict&#39;</span> <span class="ow">or</span> <span class="n">format</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># NOT TESTED</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;?&#39;</span><span class="p">,</span> <span class="s">&#39;x&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">file</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">home</span><span class="p">,</span> <span class="n">default_path</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Please select from the following:&quot;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;0 - Cancel&quot;</span><span class="p">)</span>
+            <span class="n">selected</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">selected</span><span class="p">:</span>
+                <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">cloudnames</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="s">&#39;cm_type&#39;</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+                        <span class="k">print</span><span class="p">(</span><span class="s">&quot;{0} - {1:&lt;30} ({2})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">name</span><span class="p">)[</span><span class="s">&#39;cm_type&#39;</span><span class="p">]))</span>
+                        <span class="n">choices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Please select:&quot;</span><span class="p">)</span>
+                <span class="nb">input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+                <span class="k">if</span> <span class="nb">input</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Selection terminated&quot;</span><span class="p">)</span>
+                    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">selected</span> <span class="o">=</span> <span class="p">(</span><span class="nb">input</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">input</span> <span class="o">&lt;</span> <span class="n">counter</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Selected: &quot;</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="nb">input</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">output</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--out&#39;</span><span class="p">]</span>
+
+        <span class="c">#</span>
+        <span class="c"># OK</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">cloud</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">cloud</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">: The cloud &#39;</span><span class="si">%s</span><span class="s">&#39; is not defined.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;CM ERROR&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Try instead:&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">keyname</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">cloudnames</span><span class="p">():</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">&quot;    &quot;</span><span class="p">,</span> <span class="n">keyname</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">cloud</span><span class="p">[</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;eucalyptus&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--project&#39;</span><span class="p">]:</span>
+                    <span class="n">project</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--project&#39;</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">cloud</span><span class="p">:</span>
+                        <span class="k">print</span><span class="p">(</span><span class="s">&quot;No such project </span><span class="si">%s</span><span class="s"> defined in cloud </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+                        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">project</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">cloud_default</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s">&#39;project&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">config</span><span class="o">.</span><span class="n">projects</span><span class="p">(</span><span class="s">&#39;default&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">cloud</span><span class="p">:</span>
+                        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Default project </span><span class="si">%s</span><span class="s"> not defined in cloud </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+                        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">rc_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">rc_euca</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">project</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rc_func</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">rc</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">rc_func</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+            <span class="c">#</span>
+            <span class="c"># OK</span>
+            <span class="c">#</span>
+            <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;-&quot;</span><span class="p">]:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">home</span><span class="p">,</span> <span class="n">default_path</span><span class="p">)</span>
+                    <span class="n">output</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--out&#39;</span><span class="p">]</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">if</span> <span class="n">yn_choice</span><span class="p">(</span><span class="s">&quot;Would you like to review the information&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">):</span>
+                    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;WARNING: FIle will be written to &quot;</span> <span class="o">+</span> <span class="n">output</span><span class="p">)</span>
+                    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+                    <span class="k">print</span><span class="p">(</span><span class="n">banner</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="c"># First we try to open the file assuming it doesn&#39;t exist</span>
+                    <span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+                        <span class="n">output</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">O_CREAT</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">O_EXCL</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">O_WRONLY</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IRUSR</span> <span class="o">|</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IWUSR</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">oserr</span><span class="p">:</span>
+                    <span class="c"># If file exists, offer to replace it</span>
+                    <span class="k">if</span> <span class="n">oserr</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>
+                        <span class="n">delete</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span>
+                            <span class="s">&quot;&#39;</span><span class="si">%s</span><span class="s">&#39; exists; Overwrite it [N|y]? &quot;</span> <span class="o">%</span> <span class="n">output</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">delete</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;y&#39;</span><span class="p">:</span>
+                            <span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">O_TRUNC</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">O_WRONLY</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">out</span><span class="p">:</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+    <span class="c">#</span>
+    <span class="c"># END &quot;cm config&quot; related commands</span>
+    <span class="c">#</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cm_manage</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

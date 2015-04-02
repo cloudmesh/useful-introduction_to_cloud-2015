@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -117,7 +118,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+    <li>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/cm/cm-cluster.txt" rel="nofollow"> View page source</a>
@@ -129,13 +130,13 @@
           <div role="main" class="document">
             
   <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
-<span id="cloudmesh-cm-cluster-ref"></span><h1>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<span id="cloudmesh-cm-cluster-ref"></span><h1>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <p>To support the creation of a virtual compute cluster (e.g. Hadoop or
-Slurm) on cloudmesh, we are offering the command <tt class="docutils literal"><span class="pre">cluster</span></tt> to start,
+Slurm) on cloudmesh, we are offering the command <code class="docutils literal"><span class="pre">cluster</span></code> to start,
 configure, manage or update a number of virtual machines.</p>
 <div class="section" id="preparation-optional">
 <h2>Preparation (Optional)<a class="headerlink" href="#preparation-optional" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">cluster</span></tt> command is available in the cloudmesh shell. There are
+<p>The <code class="docutils literal"><span class="pre">cluster</span></code> command is available in the cloudmesh shell. There are
 certain steps to make sure you are all set to deploy a new cluster. You
 can SKIP these steps if you have configured cloudmesh previously.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm cluster
@@ -150,7 +151,7 @@ start virtual machines. This is achieved by the select command</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud select india&quot;
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">default</span> <span class="pre">india</span></tt></p>
+<p><code class="docutils literal"><span class="pre">cloud</span> <span class="pre">default</span> <span class="pre">india</span></code></p>
 <div class="section" id="default-keypair">
 <h3>Default keypair<a class="headerlink" href="#default-keypair" title="Permalink to this headline">¶</a></h3>
 <p>To gain access to the virtual machines, you need to have a key
@@ -163,7 +164,7 @@ to set or need to specify which keypair you are going use for the vm.</p>
 <div class="section" id="vm-name">
 <h3>VM Name<a class="headerlink" href="#vm-name" title="Permalink to this headline">¶</a></h3>
 <p>You can also define the name of VMs which contains a prefix and an index
-with the <tt class="docutils literal"><span class="pre">label</span></tt> command. However, the name of the vms must be unique.
+with the <code class="docutils literal"><span class="pre">label</span></code> command. However, the name of the vms must be unique.
 By default your username and a number will be used that will be
 automatically increased. Thus we recommend that you avoid using this
 command.</p>
@@ -194,19 +195,19 @@ flavor.</p>
 <p>Then you may start the cluster with command &#8216;cluster create&#8217; by
 providing the following values:</p>
 <div class="line-block">
-<div class="line"><tt class="docutils literal"><span class="pre">--count</span></tt></div>
+<div class="line"><code class="docutils literal"><span class="pre">--count</span></code></div>
 <div class="line-block">
 <div class="line">specify amount of VMs in the cluster</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><tt class="docutils literal"><span class="pre">--group</span></tt></div>
+<div class="line"><code class="docutils literal"><span class="pre">--group</span></code></div>
 <div class="line-block">
 <div class="line">specify a group name of the cluster, make sure it&#8217;s UNIQUE</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><tt class="docutils literal"><span class="pre">--ln</span></tt></div>
+<div class="line"><code class="docutils literal"><span class="pre">--ln</span></code></div>
 <div class="line-block">
 <div class="line">login name for VMs, e.g. ubuntu</div>
 </div>
@@ -225,7 +226,7 @@ the following do do so:</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04&quot;
 </pre></div>
 </div>
-<p>You can display the status of vms for the cluster with the <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></tt>
+<p>You can display the status of vms for the cluster with the <code class="docutils literal"><span class="pre">vm</span> <span class="pre">list</span></code>
 command:</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=test&quot;
 </pre></div>
@@ -247,7 +248,8 @@ command:</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -272,7 +274,7 @@ command:</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

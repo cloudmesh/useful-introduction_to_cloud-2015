@@ -1,0 +1,904 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.cm_mesh &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.cm_mesh</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.cm_mesh</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">HEADING</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+
+<span class="c"># ----------------------------------------------------------------------</span>
+<span class="c"># SETTING UP A LOGGER</span>
+<span class="c"># ----------------------------------------------------------------------</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<span class="c"># import shelve</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="c"># from openstack.cm_compute import openstack as os_client</span>
+
+<span class="c"># Error Cannot Import Openstack</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.iaas.openstack.cm_compute</span> <span class="kn">import</span> <span class="n">openstack</span>
+
+<span class="kn">from</span> <span class="nn">cloudmesh.iaas.eucalyptus.eucalyptus</span> <span class="kn">import</span> <span class="n">eucalyptus</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.iaas.ec2.cm_compute</span> <span class="kn">import</span> <span class="n">ec2</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.iaas.aws.cm_compute</span> <span class="kn">import</span> <span class="n">aws</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">cloudmesh.iaas.azure.cm_compute</span> <span class="kn">import</span> <span class="n">azure</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;AZURE NOT ENABLED&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="cm_mesh"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh">[docs]</a><span class="k">class</span> <span class="nc">cm_mesh</span><span class="p">:</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># global variables that define the information managed by this class</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+
+    <span class="c"># dict that holds vms, flavors, images for al iaas</span>
+    <span class="n">clouds</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c"># array with keys from the user</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">configuration</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># initialization methods</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="c"># Read Yaml File to find all the cloud configurations present</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">()</span>
+
+<div class="viewcode-block" id="cm_mesh.clear"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># the configuration method that must be called to get the cloud info</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.config"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.config">[docs]</a>    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        reads the cloudmesh yaml file that defines which clouds build</span>
+<span class="sd">        the cloudmesh</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># print &quot;CONFIG&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+
+        <span class="c"># pprint (configuration)</span>
+
+        <span class="n">active_clouds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">active</span><span class="p">()</span>
+        <span class="c"># print active_clouds</span>
+
+        <span class="k">for</span> <span class="n">cloud_name</span> <span class="ow">in</span> <span class="n">active_clouds</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">credential</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">credential</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+                <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)[</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">cloud_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;openstack&#39;</span><span class="p">,</span>
+                                  <span class="s">&#39;eucalyptus&#39;</span><span class="p">,</span>
+                                  <span class="s">&#39;azure&#39;</span><span class="p">,</span>
+                                  <span class="s">&#39;aws&#39;</span><span class="p">,</span>
+                                  <span class="s">&#39;ec2&#39;</span><span class="p">,</span>
+                                  <span class="s">&#39;docker&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="n">cloud_name</span><span class="p">,</span>
+                                               <span class="s">&#39;cm_type&#39;</span><span class="p">:</span> <span class="n">cloud_type</span><span class="p">,</span>
+                                               <span class="s">&#39;credential&#39;</span><span class="p">:</span> <span class="n">credential</span><span class="p">}</span>
+                <span class="c"># if cloud_type in [&#39;openstack&#39;]:</span>
+                <span class="c">#    self.clouds[cloud_name] = {&#39;states&#39;: &quot;HALLO&quot;}</span>
+
+            <span class="k">except</span><span class="p">:</span>  <span class="c"># ignore</span>
+                <span class="k">pass</span>
+                <span class="c"># print &quot;ERROR: could not initialize cloud %s&quot; % cloud_name</span>
+                <span class="c"># sys.exit(1)</span>
+
+        <span class="k">return</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># importnat get methods</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.get"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the dict that contains all the information&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.active"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.active">[docs]</a>    <span class="k">def</span> <span class="nf">active</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">active_clouds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">active</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">active_clouds</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.prefix"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.prefix">[docs]</a>    <span class="k">def</span> <span class="nf">prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">prefix</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.index"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.index">[docs]</a>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">index</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.profile"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.profile">[docs]</a>    <span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">profile</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.default"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.default">[docs]</a>    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloudname</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">cloudname</span><span class="p">)</span>
+</div>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    def states(self, cloudname):</span>
+<span class="sd">        cloud_type = self.clouds[cloudname][&#39;cm_type&#39;]</span>
+<span class="sd">        if cloud_type in [&#39;openstack&#39;]:</span>
+<span class="sd">            provider = self.cloud_provider(cloud_type)</span>
+<span class="sd">            cloud = provider(cloudname)</span>
+<span class="sd">            return cloud.states</span>
+
+<span class="sd">    def state_filter(self, cloudname, states):</span>
+<span class="sd">        cloud_type = self.clouds[cloudname][&#39;cm_type&#39;]</span>
+<span class="sd">        if cloud_type in [&#39;openstack&#39;]:</span>
+<span class="sd">            provider = self.cloud_provider(cloud_type)</span>
+<span class="sd">            cloud = provider(cloudname)</span>
+<span class="sd">            cloud.refresh()</span>
+<span class="sd">            cloud.display(states, None)</span>
+<span class="sd">            self.clouds[cloudname][&#39;servers&#39;] = cloud.servers</span>
+
+<span class="sd">    def all_filter(self):</span>
+<span class="sd">        for cloudname in self.active():</span>
+<span class="sd">            self.state_filter(cloudname, self.states(cloudname))</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># important print methods</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">)</span>
+
+<div class="viewcode-block" id="cm_mesh.dump"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.dump">[docs]</a>    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># find</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c">#</span>
+    <span class="c"># returns dicts of a particular type</span>
+    <span class="c">#</span>
+    <span class="c"># ----------------------------------------------------------------------</span></div>
+<div class="viewcode-block" id="cm_mesh.find"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;all&quot;</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;servers&quot;</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;all&quot;</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a dict with matching elements</span>
+
+<span class="sd">        cloud = specifies an array of cloud names that are defined in</span>
+<span class="sd">        our configuration and returns matching elements in a dict. The</span>
+<span class="sd">        first level in the dict is the cloud, the second level are the</span>
+<span class="sd">        elements. If all is specified we serach in all clouds</span>
+
+<span class="sd">        type = &quot;servers&quot;, &quot;images&quot;, &quot;flavors&quot;</span>
+
+<span class="sd">        The type specifies the kind of element that we look for</span>
+<span class="sd">        (we only look for the first character e.g. s, i, f)</span>
+
+<span class="sd">        project = an array of projects we search for. This only</span>
+<span class="sd">        applies for servers for now. Till we have introduced the</span>
+<span class="sd">        profile that restricts available images and flavors for a</span>
+<span class="sd">        project.</span>
+
+<span class="sd">        In all cases None can be used as an alternative to [&quot;all&quot;]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># the refresh method that gets upto date information for cloudmesh</span>
+    <span class="c"># If cloudname is provided only that cloud will be refreshed</span>
+    <span class="c"># else all the clouds will be refreshed</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.cloud_provider"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.cloud_provider">[docs]</a>    <span class="k">def</span> <span class="nf">cloud_provider</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="n">provider</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&#39;openstack&#39;</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">openstack</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&#39;eucalyptus&#39;</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">eucalyptus</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&#39;aws&#39;</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">aws</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&#39;azure&#39;</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">azure</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&#39;ec2&#39;</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="n">ec2</span>
+        <span class="k">return</span> <span class="n">provider</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.info"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">HEADING</span><span class="p">(</span><span class="s">&quot;CLOUD MESH INFO&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+                <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+                <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">HEADING</span><span class="p">(</span><span class="s">&quot;Info &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+                <span class="n">cloud</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">)</span>
+                <span class="n">cloud</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.refresh"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.refresh">[docs]</a>    <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;all&quot;</span><span class="p">],</span> <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;all&quot;</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method obtians information about servers, images, and</span>
+<span class="sd">        flavours that build the cloudmesh. The information is held</span>
+<span class="sd">        internally after a refresh. Than the find method can be used</span>
+<span class="sd">        to query form this information. To pull new information into</span>
+<span class="sd">        this data structure a new refresh needs to be called.</span>
+
+<span class="sd">        Usage is defined through arrays that are passed along.</span>
+
+<span class="sd">        type = &quot;servers&quot;, &quot;images&quot;, &quot;flavors&quot;</span>
+
+<span class="sd">        The type specifies the kind of element that we look for</span>
+<span class="sd">        (we only look for the first character e.g. s, i, f)</span>
+
+<span class="sd">        In all cases None can be used as an alternative to [&quot;all&quot;]</span>
+
+<span class="sd">        if cloud name  is None and type = none update everything</span>
+
+<span class="sd">        if cloud name !=None and type = none update everything in the</span>
+<span class="sd">        specified clouds</span>
+
+<span class="sd">        if cloud name is not None and type != none</span>
+<span class="sd">           refresh the given types for the given clouds</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">types</span> <span class="o">==</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">types</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">types</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;servers&#39;</span><span class="p">,</span> <span class="s">&#39;flavors&#39;</span><span class="p">,</span> <span class="s">&#39;images&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">names</span> <span class="o">==</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">names</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+        <span class="c"># at one point use a threadpool.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">cloud_display</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;cm_display&#39;</span><span class="p">]</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">cloud_display</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+                <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+                <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Refresh cloud {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+                <span class="k">for</span> <span class="nb">type</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;    Refresh {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">))</span>
+                    <span class="n">cloud</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">)</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">cloud</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="nb">type</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+                    <span class="c"># maye be need to use dict update ...</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#39;cm_type&#39;</span><span class="p">:</span> <span class="n">cloud_type</span><span class="p">,</span> <span class="s">&#39;cm_display&#39;</span><span class="p">:</span> <span class="n">cloud_display</span><span class="p">})</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.refresh_user_id"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.refresh_user_id">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_user_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;all&quot;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">names</span> <span class="o">==</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">names</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+                <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+                <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+                <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s">&#39;user_id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s">&#39;user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud</span><span class="o">.</span><span class="n">find_user_id</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.add"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Cloud {0} already exists&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+</div>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    def get_keys(self):</span>
+<span class="sd">        return self.keys</span>
+
+<span class="sd">    def refresh_keys(self):</span>
+<span class="sd">        self.keys = []</span>
+<span class="sd">        result = fgrep(tail(nova(&quot;keypair-list&quot;), &quot;-n&quot;, &quot;+4&quot;),&quot;-v&quot;,&quot;+&quot;)</span>
+<span class="sd">        for line in result:</span>
+<span class="sd">            (front, name, signature, back) = line.split(&quot;|&quot;)</span>
+<span class="sd">            self.keys.append(name.strip())</span>
+<span class="sd">        return self.keys</span>
+
+
+<span class="sd">    def refresh(self):</span>
+<span class="sd">        keys = self.refresh_keys()</span>
+<span class="sd">        for cloud in keys:</span>
+<span class="sd">            self.refresh(cloud)</span>
+
+<span class="sd">        # p = Pool(4)</span>
+<span class="sd">        # update = self.refresh</span>
+<span class="sd">        # output = p.map(update, keys)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># saves and reads the dict to and from a file</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="cm_mesh.save"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;save() not implemented&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.load"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;load() not implemented&quot;</span><span class="p">)</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># TODO: convenient +, += functions to add dicts with cm_type</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.delete"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">,</span> <span class="n">server_id</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+            <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+            <span class="n">cloud</span><span class="o">.</span><span class="n">vm_delete</span><span class="p">(</span><span class="n">server_id</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;could not delete {0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">,</span> <span class="n">server_id</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.add_key_pairs"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.add_key_pairs">[docs]</a>    <span class="k">def</span> <span class="nf">add_key_pairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud_names</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;not implemented&quot;</span><span class="p">)</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        activates a specific host by name. to be queried</span>
+
+<span class="sd">        :param names: the array with the names of the clouds in the</span>
+<span class="sd">                      yaml file to be activated.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">force_auth_verify</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">cloud_names</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="n">cloud_names</span>
+
+        <span class="k">for</span> <span class="n">cloud_name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Uploading keys to -&gt;&quot;</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">credential</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">cloud</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+                <span class="n">cm_type</span> <span class="o">=</span> <span class="n">credential</span><span class="p">[</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+                <span class="n">cm_type_version</span> <span class="o">=</span> <span class="n">credential</span><span class="p">[</span><span class="s">&#39;cm_type_version&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">cm_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;openstack&#39;</span><span class="p">,</span>
+                               <span class="s">&#39;eucalyptus&#39;</span><span class="p">,</span>
+                               <span class="s">&#39;azure&#39;</span><span class="p">,</span>
+                               <span class="s">&#39;aws&#39;</span><span class="p">,</span>
+                               <span class="s">&#39;ec2&#39;</span><span class="p">,</span>
+                               <span class="s">&#39;docker&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="n">cloud_name</span><span class="p">,</span>
+                        <span class="s">&#39;cm_type&#39;</span><span class="p">:</span> <span class="n">cm_type</span><span class="p">,</span>
+                        <span class="s">&#39;cm_type_version&#39;</span><span class="p">:</span> <span class="n">cm_type_version</span><span class="p">}</span>
+    <span class="c">#                   &#39;credential&#39;: credential}</span>
+                    <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cm_type</span><span class="p">)</span>
+                    <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+                    <span class="c"># try to see if the credential works if so, update</span>
+                    <span class="c"># the &#39;manager&#39; so the cloud is successfully</span>
+                    <span class="c"># activated otherwise log error message and skip</span>
+                    <span class="c"># this cloud</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">force_auth_verify</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;manager&#39;</span><span class="p">:</span> <span class="n">cloud</span><span class="p">})</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">tryauth</span> <span class="o">=</span> <span class="n">cloud</span><span class="o">.</span><span class="n">get_token</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="s">&#39;access&#39;</span> <span class="ow">in</span> <span class="n">tryauth</span><span class="p">:</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;manager&#39;</span><span class="p">:</span> <span class="n">cloud</span><span class="p">})</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Credential not working, &quot;</span>
+                                      <span class="s">&quot;cloud is not activated&quot;</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">cm_type</span> <span class="o">==</span> <span class="s">&#39;openstack&#39;</span><span class="p">:</span>
+                        <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">userkeys</span><span class="p">()[</span><span class="s">&#39;keylist&#39;</span><span class="p">]</span>
+                        <span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+                        <span class="k">for</span> <span class="n">keyname</span><span class="p">,</span> <span class="n">keycontent</span> <span class="ow">in</span> <span class="n">keys</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                            <span class="n">keynamenew</span> <span class="o">=</span> <span class="s">&quot;{0}_{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">,</span>
+                                                          <span class="n">keyname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;@&#39;</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="p">))</span>
+                            <span class="c"># print &quot;Transformed key name: %s&quot; % keynamenew</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Adding a key for user &lt;</span><span class="si">%s</span><span class="s">&gt; in cloud &lt;</span><span class="si">%s</span><span class="s">&gt;&quot;</span>
+                                     <span class="o">%</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">))</span>
+                            <span class="n">keypart</span> <span class="o">=</span> <span class="n">keycontent</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+                            <span class="n">keycontent</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">keypart</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">keypart</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                            <span class="n">cloud</span><span class="o">.</span><span class="n">keypair_add</span><span class="p">(</span><span class="n">keynamenew</span><span class="p">,</span> <span class="n">keycontent</span><span class="p">)</span>
+                        <span class="c"># pprint(keys)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: can not activate cloud&quot;</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="c"># print traceback.format_exc()</span>
+                <span class="c"># sys.exit()</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.del_key_pairs"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.del_key_pairs">[docs]</a>    <span class="k">def</span> <span class="nf">del_key_pairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud_names</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;not implemented&quot;</span><span class="p">)</span>
+</div>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    def add_key_pair(self, cloud_name, key, name):</span>
+<span class="sd">        try:</span>
+<span class="sd">            cloud_type = self.clouds[cloud_name][&#39;cm_type&#39;]</span>
+<span class="sd">            provider = self.cloud_provider(cloud_type)</span>
+<span class="sd">            cloud = provider(cloud_name)</span>
+<span class="sd">            return cloud.upload_key_pair(key, name)</span>
+<span class="sd">        except:</span>
+<span class="sd">            log.error(&quot;could not update keypair {0}&quot;.format(cloud_name))</span>
+
+<span class="sd">    def del_key_pair(self, cloud_name, name):</span>
+<span class="sd">        try:</span>
+<span class="sd">            cloud_type = self.clouds[cloud_name][&#39;cm_type&#39;]</span>
+<span class="sd">            provider = self.cloud_provider(cloud_type)</span>
+<span class="sd">            cloud = provider(cloud_name)</span>
+<span class="sd">            return cloud.delete_key(name)</span>
+<span class="sd">        except:</span>
+<span class="sd">            log.error(&quot;could not delete keypair {0}&quot;.format(cloud_name))</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="cm_mesh.assign_public_ip"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.assign_public_ip">[docs]</a>    <span class="k">def</span> <span class="nf">assign_public_ip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">,</span> <span class="n">vm_id</span><span class="p">):</span>
+        <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+        <span class="c"># for now its only for openstack</span>
+        <span class="k">if</span> <span class="n">cloud_type</span> <span class="ow">in</span> <span class="s">&quot;openstack&quot;</span><span class="p">:</span>
+            <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+            <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+            <span class="n">cloud</span><span class="o">.</span><span class="n">assign_public_ip</span><span class="p">(</span><span class="n">vm_id</span><span class="p">,</span> <span class="n">cloud</span><span class="o">.</span><span class="n">get_public_ip</span><span class="p">())</span>
+        <span class="c"># code review: GVL</span>
+        <span class="c"># else:</span>
+        <span class="c"># print &quot;BUG: assigning ip addresses from other clouds such as azure,</span>
+        <span class="c"># and eucalyptus not implemented yet.&quot;</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.vm_set_meta"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.vm_set_meta">[docs]</a>    <span class="k">def</span> <span class="nf">vm_set_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">,</span> <span class="n">serverid</span><span class="p">,</span> <span class="n">meta</span><span class="p">):</span>
+
+        <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+        <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+
+        <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+
+        <span class="n">cloud</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">serverid</span><span class="p">,</span> <span class="s">&#39;ACTIVE&#39;</span><span class="p">)</span>
+        <span class="n">cloud</span><span class="o">.</span><span class="n">set_meta</span><span class="p">(</span><span class="n">serverid</span><span class="p">,</span> <span class="n">meta</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.create"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloud_name</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span>
+               <span class="n">image_id</span><span class="p">,</span>
+               <span class="n">flavor_name</span><span class="p">,</span>
+               <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+               <span class="n">security_group</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+        <span class="c"># print &quot;&gt;&gt;&gt;&gt;&gt;&gt;&quot;,  cloud_name, prefix, index, image_id, flavor_name,</span>
+        <span class="c"># key</span>
+
+        <span class="n">security_groups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="n">cloud_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clouds</span><span class="p">[</span><span class="n">cloud_name</span><span class="p">][</span><span class="s">&#39;cm_type&#39;</span><span class="p">]</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+        <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_provider</span><span class="p">(</span><span class="n">cloud_type</span><span class="p">)</span>
+
+        <span class="n">cloud</span> <span class="o">=</span> <span class="n">provider</span><span class="p">(</span><span class="n">cloud_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">security_group</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">pass</span>
+            <span class="c"># Not implemented</span>
+            <span class="c"># security_group = cloud.checkSecurityGroups()</span>
+
+        <span class="c">#</span>
+        <span class="c"># TODO: else</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="n">security_group</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">security_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">security_group</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c">#</span>
+            <span class="c"># TODO: this can never be reached</span>
+            <span class="c">#</span>
+            <span class="n">security_groups</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="n">cloud</span><span class="o">.</span><span class="n">vm_create</span><span class="p">(</span><span class="n">name</span><span class="p">,</span>
+                               <span class="n">flavor_name</span><span class="p">,</span>
+                               <span class="n">image_id</span><span class="p">,</span>
+                               <span class="n">security_groups</span><span class="p">,</span>
+                               <span class="n">key</span><span class="p">)</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        keyname = &#39;&#39;</span>
+<span class="sd">        try:</span>
+<span class="sd">            cloud_type = self.clouds[cloud_name][&#39;cm_type&#39;]</span>
+
+<span class="sd">            if cloud_type in &quot;openstack&quot;:</span>
+<span class="sd">                config = cm_config()</span>
+<span class="sd">                yamlFile= config.get()</span>
+<span class="sd">                if yamlFile[cloud_name][&#39;cm_type&#39;] in &#39;openstack&#39;:</span>
+<span class="sd">                    if yamlFile[cloud_name].has_key(&#39;keypair&#39;) :</span>
+<span class="sd">                        keyname = yamlFile[cloud_name][&#39;keypair&#39;][&#39;keyname&#39;]</span>
+
+<span class="sd">            provider = self.cloud_provider(cloud_type)</span>
+<span class="sd">            cloud = provider(cloud_name)</span>
+<span class="sd">            if cloud_name == &quot;india-openstack&quot;:</span>
+<span class="sd">                flavor_name = &quot;m1.tiny&quot;</span>
+<span class="sd">                # this is a dummy and must be retrieved from flask</span>
+<span class="sd">                image_id = &quot;6d2bca76-8fff-4d57-9f29-50378539b4fa&quot;</span>
+<span class="sd">                name = prefix + &quot;-&quot; + index</span>
+<span class="sd">                if (len(keyname) &gt; 0) :</span>
+<span class="sd">                    cloud.vm_create(name, flavor_name, image_id,keyname )</span>
+<span class="sd">                else :</span>
+<span class="sd">                    cloud.vm_create(name, flavor_name, image_id)</span>
+<span class="sd">                # this is a dummy and must be retrieved from flask</span>
+<span class="sd">        except Exception , e:</span>
+<span class="sd">            log.error(&quot;could not create {0} {1} {2} {3} {4}&quot;.format(cloud_name,</span>
+<span class="sd">                       prefix, index, image_id, e}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+    <span class="c"># ----------------------------------------------------------------------</span>
+    <span class="c"># TODO: convenient +, += functions to add dicts with cm_type</span>
+    <span class="c"># ----------------------------------------------------------------------</span>
+</div>
+    <span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        type based add function c = cloudmesh(...); b = c + other</span>
+<span class="sd">        other can be a dict that contains information about the object</span>
+<span class="sd">        and it will be nicely inserted into the overall cloudmesh dict</span>
+<span class="sd">        the type will be identified via a cm_type attribute in the</span>
+<span class="sd">        dict Nn attribute cm_cloud identifies in which cloud the</span>
+<span class="sd">        element is stored.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;image&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;vm&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;flavor&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;cloudmesh&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;{0} type does not exist&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">cm_type</span><span class="p">))</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Error: Ignoring add&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        type based add function c = cloudmesh(...); c += other other</span>
+<span class="sd">        can be a dict that contains information about the object and</span>
+<span class="sd">        it will be nicely inserted into the overall cloudmesh dict the</span>
+<span class="sd">        type will be identified via a cm_type attribute in the dict.</span>
+<span class="sd">        Nn attribute cm_cloud identifies in which cloud the element is</span>
+<span class="sd">        stored.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;image&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;vm&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;flavor&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">==</span> <span class="s">&quot;cloudmesh&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented yet&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;{0} type does not exist&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">cm_type</span><span class="p">))</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Error: Ignoring add&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+<div class="viewcode-block" id="cm_mesh.address_string"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.address_string">[docs]</a>    <span class="k">def</span> <span class="nf">address_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;content is a dict of the form {u&#39;private&#39;: [{u&#39;version&#39;:</span>
+<span class="sd">        4,u&#39;addr&#39;: u&#39;10.35.23.30&#39;,u&#39;OS-EXT-IPS:type&#39;:u&#39;fixed&#39;},</span>
+<span class="sd">        {u&#39;version&#39;: 4, u&#39;addr&#39;: u&#39;198.202.120.194&#39;,</span>
+<span class="sd">        u&#39;OS-EXT-IPS:type&#39;: u&#39;floating&#39;}]}</span>
+
+<span class="sd">        it will return</span>
+
+<span class="sd">           &quot;fixed: 10.35.23.30, floating: 198.202.120.194&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">content</span><span class="p">[</span><span class="s">&#39;private&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">address</span><span class="p">[</span><span class="s">&#39;OS-EXT-IPS:type&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">address</span><span class="p">[</span><span class="s">&#39;addr&#39;</span><span class="p">]</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="c"># THIS SEEMS WRONG</span>
+            <span class="p">{</span><span class="s">u&#39;vlan102&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s">u&#39;version&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">u&#39;addr&#39;</span><span class="p">:</span> <span class="s">u&#39;10.1.2.104&#39;</span><span class="p">},</span> <span class="p">{</span>
+                <span class="s">u&#39;version&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">u&#39;addr&#39;</span><span class="p">:</span> <span class="s">u&#39;149.165.158.34&#39;</span><span class="p">}]}</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">content</span><span class="p">[</span><span class="s">&#39;vlan102&#39;</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="nb">type</span> <span class="o">=</span> <span class="s">&quot;fixed&quot;</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="nb">type</span> <span class="o">=</span> <span class="s">&quot;floating&quot;</span>
+                    <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+                        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="nb">type</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">address</span><span class="p">[</span><span class="s">&#39;addr&#39;</span><span class="p">]</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="n">position</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">content</span>
+        <span class="k">return</span> <span class="n">result</span>
+</div>
+<div class="viewcode-block" id="cm_mesh.status_color"><a class="viewcode-back" href="../../modules/cloudmesh.html#cloudmesh.cm_mesh.cm_mesh.status_color">[docs]</a>    <span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&#39;ACTIVE&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;green&quot;</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&#39;BUILDING&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;blue&quot;</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;ERROR&#39;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="s">&quot;red&quot;</span>
+        <span class="k">return</span> <span class="s">&quot;black&quot;</span>
+
+
+<span class="c"># ----------------------------------------------------------------------</span>
+<span class="c"># MAIN METHOD FOR TESTING</span>
+<span class="c"># ----------------------------------------------------------------------</span>
+</div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">cm_mesh</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">clouds</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    c.config()</span>
+
+<span class="sd">    c.dump()</span>
+
+
+<span class="sd">    c = cloud_mesh()</span>
+
+<span class="sd">    c.refresh()</span>
+<span class="sd">    c.add(&#39;india&#39;, &#39;openstack&#39;)</span>
+<span class="sd">    c.refresh_keys()</span>
+<span class="sd">    c.dump()</span>
+<span class="sd">    c.save()</span>
+<span class="sd">    print 70 * &quot;-&quot;</span>
+<span class="sd">    c.clear()</span>
+<span class="sd">    c.dump()</span>
+<span class="sd">    print 70 * &quot;-&quot;</span>
+<span class="sd">    c.load()</span>
+<span class="sd">    c.dump()</span>
+<span class="sd">    print 70 * &quot;-&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    india_os = {</span>
+<span class="sd">        &quot;OS_TENANT_NAME&quot; : &#39;&#39;,</span>
+<span class="sd">        &quot;OS_USERNAME&quot; : &#39;&#39;,</span>
+<span class="sd">        &quot;OS_PASSWORD&quot; : &#39;&#39;,</span>
+<span class="sd">        &quot;OS_AUTH_URL&quot; : &#39;&#39;,</span>
+<span class="sd">        }</span>
+
+
+<span class="sd">    (attribute, passwd) = fgrep(&quot;OS_PASSWORD&quot;,</span>
+<span class="sd">                                config_file(&quot;openstack/novarc&quot;))</span>
+<span class="sd">                                .replace(&quot;\n&quot;,&quot;&quot;).split(&quot;=&quot;)</span>
+
+<span class="sd">    india_os[&#39;OS_PASSWORD&#39;] = passwd</span>
+
+
+
+<span class="sd">    username = india_os[&#39;OS_USERNAME&#39;]</span>
+<span class="sd">    password = india_os[&#39;OS_PASSWORD&#39;]</span>
+<span class="sd">    authurl = india_os[&#39;OS_AUTH_URL&#39;]</span>
+<span class="sd">    tenant = india_os[&#39;OS_TENANT_NAME&#39;]</span>
+
+<span class="sd">    print password</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    username = os.environ[&#39;OS_USERNAME&#39;]</span>
+<span class="sd">    password = os.environ[&#39;OS_PASSWORD&#39;]</span>
+<span class="sd">    authurl = os.environ[&#39;OS_AUTH_URL&#39;]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+<span class="sd">    india = cloud_openstack(&quot;india&quot;, authurl, tenant, username, password)</span>
+
+<span class="sd">    india._vm_show(&quot;gvonlasz-001&quot;)</span>
+<span class="sd">    india.dump()</span>
+<span class="sd">    india._vm_show(&quot;gvonlasz-001&quot;)</span>
+<span class="sd">    india.dump()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        content = {u&#39;private&#39;: [</span>
+<span class="sd">        {u&#39;version&#39;: 4,</span>
+<span class="sd">         u&#39;addr&#39;: u&#39;10.35.23.30&#39;,</span>
+<span class="sd">         u&#39;OS-EXT-IPS:type&#39;:</span>
+<span class="sd">         u&#39;fixed&#39;},</span>
+<span class="sd">        {u&#39;version&#39;: 4,</span>
+<span class="sd">         u&#39;addr&#39;: u&#39;198.202.120.194&#39;,</span>
+<span class="sd">         u&#39;OS-EXT-IPS:type&#39;:</span>
+<span class="sd">         u&#39;floating&#39;}]}</span>
+
+<span class="sd">    print content</span>
+<span class="sd">    print address_string(content)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
