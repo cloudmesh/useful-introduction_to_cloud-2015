@@ -1,3 +1,5 @@
+.. _ref-class-lesson-devops-chef:
+
 Chef 
 ======================================================================
 
@@ -48,6 +50,8 @@ We assume you use a OpenStack instance on FutureSystems.
 .. note:: If don't know how to launch a new instance? `See here
     <../iaas/openstack.html#launching-a-new-instance>`_
 
+
+.. _ref-class-lesson-devops-chef-exercises:
 
 Exercises
 ----------------------------------------------------------------------

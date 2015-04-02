@@ -478,7 +478,7 @@ Week 4
 IT Operations - Automation and Orchestration (under preparation)
 *******************************************************************************
 
-.. list-table:: IT Operations - Automation and Orchestration
+.. list-table:: DevOps Tools
    :widths: 30 10 10 10 10 10
    :header-rows: 1
 
@@ -488,32 +488,71 @@ IT Operations - Automation and Orchestration (under preparation)
      - Lab sessions
      - Study Material By
      - Lab Session Homework
-   * - **DevOps**
-        - Ansible
-        - SaltStack
-        - Puppet
-        - Chef
-        - OpenStack Heat
-        - Ubuntu Juju
-     -
-       - Ansible:`16:30 min <https://www.youtube.com/watch?v=JTv1QWjTWS8&index=1&list=PLLO4AVszo1SOkNPAv4E824AFScdduO9NF>`_
-     -
-       - Ansible: :ref:`1:30 hours <ref-class-lesson-devops-ansible>`
-     -
-       - Ansible: :ref:`30 min <ref-class-lesson-devops-ansible-lab>`
+   * - Ansible
+     - `16:30 min <https://www.youtube.com/watch?v=JTv1QWjTWS8&index=1&list=PLLO4AVszo1SOkNPAv4E824AFScdduO9NF>`_
+     - :ref:`1:30 hours <ref-class-lesson-devops-ansible>`
+     - :ref:`30 mins <ref-class-lesson-devops-ansible-lab>`
      - 04/13
      - 04/17
-   * - **Discussion**
-        - Orchestration vs Collective DevOps
-        - PaaS
-        - Cloudmesh
-     - Not yet available
-     - Not yet available
+   * - SaltStack
+     -
+     -
+     -
+     -
+     -
+   * - Puppet
+     -
+     -
+     -
+     -
+     -
+   * - Chef
      - 
-     - 04/13
-     - 04/17
+     - :ref:`1 hour <ref-class-lesson-devops-chef>`
+     - :ref:`30 mins <ref-class-lesson-devops-chef-exercises>`
+     -
+     -
+   * - OpenStack Heat
+     -
+     - :ref:`1 hour <ref-class-lesson-devops-openstack-heat>`
+     - :ref:`30 mins <ref-class-lesson-devops-openstack-heat-exercises>`
+     -
+     -
+   * - Ubuntu Juju
+     -
+     - :ref:`1 hour <ref-class-lesson-devops-juju>`
+     - :ref:`30 mins <ref-class-lesson-devops-juju-exercises>`
+     -
+     -
+ 
+.. list-table:: Discussion
+   :widths: 30 10 10 10 10 10
+   :header-rows: 1
 
-
+   * - Topic
+     - Video
+     - Text
+     - Lab sessions
+     - Study Material By
+     - Lab Session Homework
+   * - Orchestration vs Collective DevOps
+     -
+     -
+     -
+     -
+     -
+   * - PaaS
+     -
+     -
+     -
+     -
+     -
+   * - Cloudmesh
+     -
+     -
+     -
+     -
+     -
 
 Week 5 
 -------------------------------------------------------------------------------

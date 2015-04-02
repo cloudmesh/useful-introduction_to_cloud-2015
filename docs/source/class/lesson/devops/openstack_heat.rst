@@ -1,3 +1,5 @@
+.. _ref-class-lesson-devops-openstack-heat:
+
 OpenStack Heat
 ======================================================================
 
@@ -254,9 +256,11 @@ You can find examples of the Heat templates.
 
 https://github.com/openstack/heat-templates/blob/master/hot/
 
+
+.. _ref-class-lesson-devops-openstack-heat-exercises:
+
 Exercises
 ----------------------------------------------------------------------
-
 
 Exercise I
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
