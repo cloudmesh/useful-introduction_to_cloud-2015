@@ -1,4 +1,6 @@
-Ansible (under preparation)
+.. _ref-class-lesson-devops-ansible:
+
+Ansible
 ======================================================================
 
 .. sidebar:: Page Contents
@@ -29,14 +31,37 @@ In order to conduct this lesson you should have knowledge of
 .. include:: ../ansible_playbook.rst
 
   
-Exercises
+Lab Sessions
 ----------------------------------------------------------------------
 
-Exercise I
-^^^^^^^^^^^^^^^^^^
+Write an Ansible Playbook to start the Apache webserver on your
+instances.
 
-Exercise II
-^^^^^^^^^^^^^^^^^^
+On each instance:
+- install the ``apache2`` package
+- start the apache
+
+.. important::
+
+   You can check that apache is listening on port 80 using the ``nc`` command.
+   For example::
+
+     $ nc -zv 10.23.2.101 80
+     Connection to 10.23.2.101 80 port [tcp/http] succeeded!
+
+   Additionaly, use ``curl`` to print the header::
+
+     $ curl --head 10.23.2.101
+     HTTP/1.1 200 OK
+     Date: Thu, 02 Apr 2015 19:01:47 GMT
+     Server: Apache/2.4.7 (Ubuntu)
+     Last-Modified: Thu, 02 Apr 2015 18:54:59 GMT
+     ETag: "2cf6-512c25e61433f"
+     Accept-Ranges: bytes
+     Content-Length: 11510
+     Vary: Accept-Encoding
+     Content-Type: text/html
+
 
 Next Step
 -----------

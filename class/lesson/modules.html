@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -85,21 +86,20 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ansible.html">Ansible</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible.html">Try Ansible Basic on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ansible_cloudmesh.html">Writing Ansible Playbooks on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docker.html">Try Docker Basic on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docker_cloudmesh.html">Deploying Cloudmesh using Docker on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="lpbs.html">Local PBS Queuing System</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Environment Modules (modules) on FutureSystems</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying OpenMPI Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">launcher</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying OpenMPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
@@ -166,12 +166,12 @@
             
   <div class="section" id="environment-modules-modules-on-futuresystems">
 <h1>Environment Modules (modules) on FutureSystems<a class="headerlink" href="#environment-modules-modules-on-futuresystems" title="Permalink to this headline">¶</a></h1>
-<p>If you need to use <tt class="docutils literal"><span class="pre">nova</span></tt> client tool on India FutureSystems?  Try <tt class="docutils literal"><span class="pre">module</span>
-<span class="pre">load</span> <span class="pre">openstack</span></tt>. It will automatically enable <tt class="docutils literal"><span class="pre">nova</span></tt> client tool on your
-terminal.  While you are using <tt class="docutils literal"><span class="pre">nova</span></tt> client tool, you may want to switch
-other versions of <tt class="docutils literal"><span class="pre">nova</span></tt>.  It is also possible with the environment modules.
-Try <tt class="docutils literal"><span class="pre">module</span> <span class="pre">unload</span> <span class="pre">openstack</span></tt> and <tt class="docutils literal"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">novaclient</span></tt>. It will enable
-old version of <tt class="docutils literal"><span class="pre">nova</span></tt> client on your terminal. Environment Modules is a tool
+<p>If you need to use <code class="docutils literal"><span class="pre">nova</span></code> client tool on India FutureSystems?  Try <code class="docutils literal"><span class="pre">module</span>
+<span class="pre">load</span> <span class="pre">openstack</span></code>. It will automatically enable <code class="docutils literal"><span class="pre">nova</span></code> client tool on your
+terminal.  While you are using <code class="docutils literal"><span class="pre">nova</span></code> client tool, you may want to switch
+other versions of <code class="docutils literal"><span class="pre">nova</span></code>.  It is also possible with the environment modules.
+Try <code class="docutils literal"><span class="pre">module</span> <span class="pre">unload</span> <span class="pre">openstack</span></code> and <code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">novaclient</span></code>. It will enable
+old version of <code class="docutils literal"><span class="pre">nova</span></code> client on your terminal. Environment Modules is a tool
 to set environment variables such as $PATH, $MANPATH or $LD_LIBRARY_LOAD on
 your terminal. With this changes, your can choose appropriate environments for
 your application. This is useful to use different versions of compilers or
@@ -182,17 +182,17 @@ programs e.g. Python, MPI, or gcc.</p>
 <h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="tutorial-i-list-modules">
 <h4>Tutorial I: list modules<a class="headerlink" href="#tutorial-i-list-modules" title="Permalink to this headline">¶</a></h4>
-<p><tt class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></tt></p>
+<p><code class="docutils literal"><span class="pre">module</span> <span class="pre">avail</span></code></p>
 </div>
 <div class="section" id="select-module">
 <h4>Select module<a class="headerlink" href="#select-module" title="Permalink to this headline">¶</a></h4>
-<p><tt class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></tt></p>
+<p><code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span></code></p>
 </div>
 </div>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Try to combine two modules. Load both <tt class="docutils literal"><span class="pre">nova</span></tt> client and <tt class="docutils literal"><span class="pre">heat</span></tt> client.</li>
+<li>Try to combine two modules. Load both <code class="docutils literal"><span class="pre">nova</span></code> client and <code class="docutils literal"><span class="pre">heat</span></code> client.</li>
 </ul>
 </div>
 <div class="section" id="reference">
@@ -213,7 +213,7 @@ programs e.g. Python, MPI, or gcc.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="openmpi.html" class="btn btn-neutral float-right" title="Deploying OpenMPI Cluster with Cloudmesh launcher"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="openmpi.html" class="btn btn-neutral float-right" title="Deploying OpenMPI Cluster with Cloudmesh launcher">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="lpbs.html" class="btn btn-neutral" title="Local PBS Queuing System"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -229,7 +229,8 @@ programs e.g. Python, MPI, or gcc.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -254,7 +255,7 @@ programs e.g. Python, MPI, or gcc.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
