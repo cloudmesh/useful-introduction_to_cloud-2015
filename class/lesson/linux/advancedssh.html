@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -103,7 +102,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -166,9 +165,9 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>This lesson will introduce you to advanced SSH configuration and
 tunneling. You can have a shortcut to your SSH connection with a
-<code class="docutils literal"><span class="pre">ssh</span></code> configuration file or you can create a secure connection
+<tt class="docutils literal"><span class="pre">ssh</span></tt> configuration file or you can create a secure connection
 between local and remote machines using SSH tunneling. You will find
-out as how to define ssh options in the <code class="docutils literal"><span class="pre">ssh</span></code> config and what
+out as how to define ssh options in the <tt class="docutils literal"><span class="pre">ssh</span></tt> config and what
 commands you need to establish SSH tunneling with a few examples.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
@@ -190,12 +189,12 @@ commands you need to establish SSH tunneling with a few examples.</p>
 <h2>SSH Configuration File<a class="headerlink" href="#ssh-configuration-file" title="Permalink to this headline">¶</a></h2>
 <p>If you frequently log into a large number of remote machines with different
 keys and user names, you probably want to avoid typing a path of your key, a
-user name and a server name all the time. Fortunately, <code class="docutils literal"><span class="pre">ssh</span></code> has a feature to
+user name and a server name all the time. Fortunately, <tt class="docutils literal"><span class="pre">ssh</span></tt> has a feature to
 pick up pre-defined configurations for ssh connection.</p>
-<p><code class="docutils literal"><span class="pre">~/.ssh/config</span></code> file is a configuration file for a user which contains
+<p><tt class="docutils literal"><span class="pre">~/.ssh/config</span></tt> file is a configuration file for a user which contains
 settings for the SSH connection per host. Account name, port number, identify
 file (private key), or port forwarding can be defined in the file. For
-instance, if you have a machine named <code class="docutils literal"><span class="pre">india</span></code> to log in, you can have a
+instance, if you have a machine named <tt class="docutils literal"><span class="pre">india</span></tt> to log in, you can have a
 configuration like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>Host india
 User albert
@@ -203,8 +202,8 @@ Hostname india.futuresystems.org
 IdentityFile ~/.ssh/id_rsa_india
 </pre></div>
 </div>
-<p>Once you have this configuration, you can simply run <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">india</span></code> to get
-access <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>.  Let&#8217;s see what these keywords are in the
+<p>Once you have this configuration, you can simply run <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">india</span></tt> to get
+access <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt>.  Let&#8217;s see what these keywords are in the
 configuration.</p>
 <ul class="simple">
 <li>Host: is a label for your host. SSH recognizes your settings with this label.</li>
@@ -216,10 +215,10 @@ specifies the path of your private key.</li>
 </ul>
 <p>If you have other hosts to configure, simply add a new block in the
 configuation file. If you would like know more about other keywords, please see
-<code class="docutils literal"><span class="pre">ssh_config</span></code> man page.</p>
+<tt class="docutils literal"><span class="pre">ssh_config</span></tt> man page.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you don&#8217;t have a file like <code class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></code> in your home
+<p class="last">If you don&#8217;t have a file like <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa</span></tt> in your home
 directory?  Please learn about creating a new ssh key
 <a class="reference external" href="../system/futuresystemsuse.html#ssh">here</a></p>
 </div>
@@ -229,9 +228,9 @@ directory?  Please learn about creating a new ssh key
 <p>If you need to ensure a secure and encrypted connection between a local machine
 and a remote machine, SSH tunneling rather than VPN is simple and useful to
 protect against sniffing and eavesdropping of network traffic.</p>
-<div class="figure" id="id2">
+<div class="figure">
 <img alt="../../../_images/lesson_ssh_tunnel.png" src="../../../_images/lesson_ssh_tunnel.png" />
-<p class="caption"><span class="caption-text">Figure 1. Example of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.</span></p>
+<p class="caption">Figure 1. Example of SSH tunneling - Local 10010 ports is mirrored to remote 80 ports.</p>
 </div>
 <p>You can transfer inbound traffic to outbound ports using SSH tunnel. SSH tunnel
 listens on a particular port and redirects incoming packets to the destination.
@@ -249,13 +248,13 @@ especially if you are behind a firewall or on a private network.</p>
 <div class="section" id="exercise-ii">
 <h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Assume that we have <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">10010:remote:80</span>
-<span class="pre">albert&#64;exercise.futuresystems.org</span></code>. Define your SSH configuration to simply
-use <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">tunnel_exercise</span></code> in the shell.</li>
+<li>Assume that we have <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">10010:remote:80</span>
+<span class="pre">albert&#64;exercise.futuresystems.org</span></tt>. Define your SSH configuration to simply
+use <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">tunnel_exercise</span></tt> in the shell.</li>
 </ul>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">See the man page of ssh_config for ssh tunneling. <code class="docutils literal"><span class="pre">LocalForward</span></code>
+<p class="last">See the man page of ssh_config for ssh tunneling. <tt class="docutils literal"><span class="pre">LocalForward</span></tt>
 keyword will be required.</p>
 </div>
 </div>
@@ -273,7 +272,7 @@ keyword will be required.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="modules.html" class="btn btn-neutral float-right" title="Software Modules">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="Software Modules"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="packagemanagement.html" class="btn btn-neutral" title="Package Management"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -289,8 +288,7 @@ keyword will be required.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -315,7 +313,7 @@ keyword will be required.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

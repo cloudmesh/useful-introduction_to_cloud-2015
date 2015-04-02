@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -153,7 +152,7 @@ installed. Access to them is provided via a Linux Login node for each
 of the clusters on which these services are installed.</p>
 <p>To access the login nodes you need a FG resource account and an SSH
 public key you have uploaded to FutureGrid (this process is described
-in the section about <a class="reference internal" href="../accounts/details.html#s-accounts"><span>Account and Project Management</span></a>. After you are part of a valid
+in the section about <a class="reference internal" href="../accounts/details.html#s-accounts"><em>Account and Project Management</em></a>. After you are part of a valid
 project and have a FutureGrid account, you can log into the FutureGrid
 resources with ssh. Multiple systems are accessed through the follong
 node:</p>
@@ -169,7 +168,7 @@ node:</p>
 login to sierra as follows:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh portalname@india.futuregrid.org
 Welcome to india.futuregrid.org
-Last login: Thu Aug <span class="m">12</span> 19:19:22 <span class="m">2010</span> from ....
+Last login: Thu Aug 12 19:19:22 2010 from ....
 </pre></div>
 </div>
 <div class="section" id="ssh-add">
@@ -231,8 +230,8 @@ Modules package you can consult the <a class="reference external" href="http://m
 </pre></div>
 </div>
 <p>The available command are listed in the next table:</p>
-<table border="1" class="docutils" id="id1">
-<caption><span class="caption-text">Module commands</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils">
+<caption>Module commands</caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -330,11 +329,11 @@ data. As a testbed, we do not guarantee data loss.</dd>
 <dt><em>Scratch</em> directories:</dt>
 <dd>Scratch directories are located at different locations on the
 systems. To find out more about the file layout, please see the
-section <a class="reference internal" href="storage.html#s-storage"><span>Storage Services</span></a></dd>
+section <a class="reference internal" href="storage.html#s-storage"><em>Storage Services</em></a></dd>
 <dt><em>System software</em> directories:</dt>
 <dd>System software directories are located at <em>/N/soft</em>. System and
 community software are typically installed here. Table
-<span class="xref std std-ref">t-storage-mountpoint</span> provides a summary of the various mount
+<em class="xref std std-ref">t-storage-mountpoint</em> provides a summary of the various mount
 points.</dd>
 </dl>
 </div>
@@ -359,8 +358,8 @@ using message passing. For more information about MPI, please visit:</p>
 <p>Several FutureGrid systems support MPI as part of their HPC services.
 An up to date status about it can be retrieved via our <a class="reference external" href="http://inca.futuregrid.org:8080/inca/jsp/status.jsp?suiteNames=HPC,HPC_Tests,Benchmarks&amp;resourceIds=FG_BATCH">Inca
 status pages</a>.</p>
-<table border="1" class="docutils" id="id2">
-<caption><span class="caption-text">MPI versions installed on FutureGrid HPC services</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils">
+<caption>MPI versions installed on FutureGrid HPC services</caption>
 <colgroup>
 <col width="17%" />
 <col width="17%" />
@@ -523,7 +522,7 @@ module load openmpi
 
 <span class="c"># launch the parallel application with the correct number of process</span>
 <span class="c"># Typical usage: mpirun -np &lt;number of processes&gt; &lt;executable&gt; &lt;arguments&gt;</span>
-mpirun -np <span class="m">32</span> ring -t 1000
+mpirun -np 32 ring -t 1000
 
 <span class="nb">echo</span> <span class="s2">&quot;Nodes allocated to this job: &quot;</span>
 cat <span class="nv">$PBS_NODEFILE</span>
@@ -615,7 +614,7 @@ programs choosing the best performing number of servers and cores may
 be dependent on factors such as memory needs, IO access and other
 resource bounded properties. You may have to experiment with the
 parameters. To identify the number of servers and cores available
-please see Tables <a class="reference internal" href="../hardware/indiana.html#t-clusters"><span>Table: Compute Resources</span></a> and <a class="reference internal" href="../hardware/indiana.html#t-clusters-details"><span>Table: Compute Resource Details</span></a>.
+please see Tables <a class="reference internal" href="../hardware/indiana.html#t-clusters"><em>Table: Compute Resources</em></a> and <a class="reference internal" href="../hardware/indiana.html#t-clusters-details"><em>Table: Compute Resource Details</em></a>.
 For example, India has 8 cores per node,
 thus 4 servers would provide you access to 32 processing units.</p>
 <p>Often you may just want to have the stdout and stderr in one file,
@@ -674,15 +673,15 @@ jobs,  eligible jobs, and blocked jobs:</p>
 active <span class="nb">jobs</span>
 ------------------------
 JOBID    USERNAME       STATE PROCS    REMAINING            STARTTIME
-<span class="m">20311</span>   yourusername       Running     <span class="m">16</span>        3:59:59 Tue Aug <span class="m">17</span> 09:02:40
-<span class="m">1</span> active job <span class="m">16</span> of <span class="m">264</span> processors in use by <span class="nb">local jobs</span> <span class="o">(</span>6.06%<span class="o">)</span>
-                  <span class="m">2</span> of <span class="m">33</span> nodes active <span class="o">(</span>6.06%<span class="o">)</span> eligible <span class="nb">jobs</span>
+20311   yourusername       Running     16        3:59:59 Tue Aug 17 09:02:40
+1 active job 16 of 264 processors in use by <span class="nb">local jobs</span> <span class="o">(</span>6.06%<span class="o">)</span>
+                  2 of 33 nodes active <span class="o">(</span>6.06%<span class="o">)</span> eligible <span class="nb">jobs</span>
 ----------------------
 JOBID    USERNAME       STATE PROCS    REMAINING            STARTTIME
-<span class="m">0</span> eligible <span class="nb">jobs </span>blocked <span class="nb">jobs</span>
+0 eligible <span class="nb">jobs </span>blocked <span class="nb">jobs</span>
 -----------------------
 JOBID    USERNAME       STATE PROCS    REMAINING            STARTTIME
-<span class="m">0</span> blocked <span class="nb">jobs</span>
+0 blocked <span class="nb">jobs</span>
 Total job: 1
 </pre></div>
 </div>
@@ -712,7 +711,7 @@ added via a status column called S:</p>
 Job id                             Name               User          Time Use S Queue
 ------------------------- --------------------- ------------------- -------- - -----
 1981.i136                       sub19327.sub      inca               00:00:00 C batch
-20311.i136                      testjob           yourusername              <span class="m">0</span> R batch
+20311.i136                      testjob           yourusername              0 R batch
 </pre></div>
 </div>
 <dl class="last docutils">
@@ -738,7 +737,7 @@ completed, and H for a job that is being held.</dd>
 </dd>
 </dl>
 <p>If you are interested in only your job use grep:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>qstat <span class="p">|</span> grep 20311
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>qstat | grep 20311
 </pre></div>
 </div>
 </div>
@@ -807,7 +806,7 @@ processors on 2 nodes:</p>
 <span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
 <span class="nb">export </span><span class="nv">MPICH_FAST_MEMCPY</span><span class="o">=</span>1
 <span class="nb">export </span><span class="nv">MPICH_PTL_MATCH_OFF</span><span class="o">=</span>1
-aprun -n <span class="m">16</span> -N <span class="m">8</span> -ss -cc cpu hpcc
+aprun -n 16 -N 8 -ss -cc cpu hpcc
 
 <span class="nv">$ </span>qsub job.pbs
 </pre></div>
@@ -832,14 +831,14 @@ scheduled to one node and have eight threads running, one on each core.</p>
 <p>You can run multiple, different binaries at the same time on the same
 node, but only from one submission. Submitting a script like this
 will not work:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">0</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">1</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">2</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">3</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">4</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">5</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">6</span> ./my-binary
-<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span> aprun -n <span class="m">1</span> -d <span class="m">1</span> -cc <span class="m">7</span> ./my-binary
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 0 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 1 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 2 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 3 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 4 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 5 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 6 ./my-binary
+<span class="nv">OMP_NUM_THREADS</span><span class="o">=</span>1 aprun -n 1 -d 1 -cc 7 ./my-binary
 </pre></div>
 </div>
 <p>This will run a job on each core, but not at the same time. To run all
@@ -854,7 +853,7 @@ one aprun command:</p>
 ./my-binary6
 ./my-binary7
 ./my-binary8
-<span class="nv">$ </span>aprun -n <span class="m">1</span> run.pbs
+<span class="nv">$ </span>aprun -n 1 run.pbs
 </pre></div>
 </div>
 <p>Alternatively, use the command aprun -n 1 -d 8 run.pbs. To run multiple
@@ -894,7 +893,7 @@ shoudl add.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../hardware/index.html" class="btn btn-neutral float-right" title="Hardware">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../hardware/index.html" class="btn btn-neutral float-right" title="Hardware"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="HPC"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -910,8 +909,7 @@ shoudl add.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -936,7 +934,7 @@ shoudl add.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

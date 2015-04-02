@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chef (under preparation) &mdash; my Cloudmesh Learning documentation</title>
+  <title>Chef &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -103,7 +102,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -149,7 +148,7 @@
       
           <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
       
-    <li>Chef (under preparation)</li>
+    <li>Chef</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../../_sources/class/lesson/devops/chef.txt" rel="nofollow"> View page source</a>
@@ -160,11 +159,12 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="chef-under-preparation">
-<h1>Chef (under preparation)<a class="headerlink" href="#chef-under-preparation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chef">
+<h1>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This lesson will introduce you to a very important topic to ...</p>
+<p>This lesson will introduce you to a very important topic to Chef, a
+configuration management tool written in Ruby and Erlang.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">Duration: 1 hour</p>
@@ -174,13 +174,38 @@
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct this lesson you should have knowledge of</p>
 <ul class="simple">
-<li>How to .... . Described in lesson</li>
-<li>Lesson ....</li>
+<li><a class="reference external" href="../iaas/openstack.html">OpenStack for Beginners</a></li>
 </ul>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>put the detailed dscription here</p>
+<p>Chef is an open source infrastructure automation software that manages
+installation and configuration of your software with its Ruby code <tt class="docutils literal"><span class="pre">Recipe</span></tt>
+and <tt class="docutils literal"><span class="pre">Cookbook</span></tt>. <tt class="docutils literal"><span class="pre">Recipe</span></tt> is a description of how your servers should be set
+up with your software and <tt class="docutils literal"><span class="pre">Cookbook</span></tt> is a set of recipes. If you install a
+Apache web server or a MySQL database using Chef, you may download and use
+existing recipes from the Chef server (SuperMarket). You can also write your
+own recipes with your preference about configuration and installation. In most
+cases, a single recipe is not enough to configure and install software.  Chef
+provides a collection of related recipes named <tt class="docutils literal"><span class="pre">Cookbook</span></tt>, and you use
+Cookbooks to install software with relevant tools.</p>
+<p>This lesson gives you an introduction of Chef including the following topics:</p>
+<ul class="simple">
+<li>Installation of Chef</li>
+<li>Example I: Apache2 Installation</li>
+<li>Write a first recipe</li>
+</ul>
+</div>
+<div class="section" id="installation-chef">
+<h2>Installation Chef<a class="headerlink" href="#installation-chef" title="Permalink to this headline">¶</a></h2>
+<p>This lesson is based on FutureSystems which means you create a VM instance on
+India OpenStack and installs Chef on top of it. If you prefer to use other
+virtual environments, we recommend to use Vagrant and VirtualBox.</p>
+<p>We assume you use a OpenStack instance on FutureSystems.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If don&#8217;t know how to launch a new instance? <a class="reference external" href="../iaas/openstack.html#launching-a-new-instance">See here</a></p>
+</div>
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
@@ -204,7 +229,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="other.html" class="btn btn-neutral float-right" title="Other (Under Preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="other.html" class="btn btn-neutral float-right" title="Other (Under Preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="puppet.html" class="btn btn-neutral" title="Puppet (under preparation)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -220,8 +245,7 @@
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -246,7 +270,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
