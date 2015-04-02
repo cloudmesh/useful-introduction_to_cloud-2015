@@ -135,6 +135,7 @@ Basics of OpenStack
    ../lesson/iaas/overview_openstack
    ../lesson/iaas/openstack
    ../lesson/iaas/openstack_juno
+   ../lesson/iaas/openstack_horizon   
    ../lesson/iaas/other_iaas
 
 Basics of Cloudmesh
