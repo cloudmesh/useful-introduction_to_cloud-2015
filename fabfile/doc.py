@@ -3,7 +3,17 @@ import sys
 import os
 import time
 import subprocess
+
+
+
+try:
+    from cloudmesh_base.util import banner
+except:
+    os.system("pip install cloudmesh_base")
+
 from cloudmesh_base.util import banner
+
+
 
 browser = "firefox"
 
