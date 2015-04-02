@@ -1,4 +1,6 @@
-OpenStack Web Dashboard (Horizon)
+.. _openstack_horizion_lesson:
+
+OpenStack Horizion Web Dashboard
 ===============================================================================
 
 On FutureSystems, we have a web interface for OpenStack cloud management,
@@ -47,7 +49,7 @@ Getting Started
   You can find your ``OS_USERNAME`` and ``OS_PASSWORD`` in the
   ``~/.cloudmesh/clouds/india/juno/openrc.sh``
 
-.. note:: If you are using other versions of OpenStack on different cloud hosts,
+.. note:: If you are using other versions of OpenStack on FutureSystems,
           try to find your identity file with the following pattern of the path.
           ``$HOME/.cloudmesh/clouds/[cloud host]/[openstack version]/[openrc.sh or novarc.sh]``
 

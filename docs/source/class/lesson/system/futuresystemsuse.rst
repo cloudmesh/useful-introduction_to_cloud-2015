@@ -162,8 +162,9 @@ connect using the passphrase specified in ``puttygen.exe``.
 .. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
+.. _openstack_manage_keys:
 
-Managing keys
+Managing keys for Openesatck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 This section describes how to generate secure keys for using
@@ -185,6 +186,9 @@ You may also find additional details in
      $ module load openstack
      $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 
+This `openrc.sh` file also contains the passphrase that you use for
+OpenStack horizon. 
+     
 Create a key pair
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
