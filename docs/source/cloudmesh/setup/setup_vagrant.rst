@@ -71,58 +71,55 @@ There are `requirements <veewee-requirement.html>`_ prior installing Veewee.
 Vagrant up
 ----------
 
+.. important:: 
+
+   In order to configure a virtual machine to use cloudmesh on you will
+   need to specify some environmental variables:
+
+   - PORTALNAME
+   - PROJECTID
+
+   ::
+
+      $ export PORTALNAME=albert
+      $ export PROJECTID=fg101
+
+
+.. important::
+
+   In order for the virtual machine to access the resources on ``india`` using your credentials, you will need to have ``ssh-agent`` running with your ssh key added. For instance::
+
+     $ eval `ssh-agent`
+     $ ssh-add ~/.ssh/id_rsa
+
+You can now start a virtual machine with cloudmesh installed, configured, and running:
+
 ::
 
-  $ cd ~/cloudmesh/vagrant/example1
-  $ ./run.sh
+  $ cd ~/cloudmesh/vagrant
+  $ vagrant up
 
-FutureGrid Portal ID
-^^^^^^^^^^^^^^^^^^^^^
 
-Provide your portal ID::
-
-  ==================================
-  Futuregrid portal id? (def: )
-
-  ==================================
-
-Base Image
-^^^^^^^^^^^
-
-Select one of the base images::
-
-  ==================================
-  Select base image to launch
-  ==================================
-  1) Ubuntu Server 14.04 64bit
-  2) Ubuntu Server 14.04 32bit
-  Please choose an option: 
-  
-  Ubuntu Server 14.04 xxbit selected
-  Bringing machine 'default' up with 'virtualbox' provider...
-  ==> default: Checking if box 'ubuntu/trustyxx' is up to date...
-
-Vagrant will be loaded.
+.. note:: If you have trouble with the above instructions and `this
+          Vagrantfile
+          <https://github.com/cloudmesh/cloudmesh/blob/dev2.0/vagrant/Vagrantfile>`_
+          does not work, please contact us.
 
 Vagrant ssh
 -----------
 
-Cloudmesh installed on a root account. You need to switch user account to a
-root once you ssh to the VM.
+At this point the virtual machine is up and running with cloudmesh
+installed, configured, and running. To use it, just log in:
 
 ::
  
    $ vagrant ssh
-   $ sudo su -
 
-Virtualenv and cm
+Use cloudmesh
 -----------------
 
-Cloudmesh installed on Virtualenv. You need to enable the environment. ``cm``
-Cloudmesh interactive shell is ready to use.
+The virtualenv will be loaded by default, allowing you to use cloudmesh immediately
 
 ::
 
-   $ source ~/ENV/bin/activate
-   $ cd cloudmesh
    $ cm
