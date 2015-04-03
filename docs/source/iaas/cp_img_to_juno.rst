@@ -4,7 +4,7 @@ How to copy your image from Havana to Juno
 Description
 -----------
 
-The steps to copy from Havan to Juno goes like this;
+The steps to copy your image from Havan to Juno goes like this;
 
 - **Step 1.** Setup OpenStack Havana environment
 - **Step 2.** Download image
