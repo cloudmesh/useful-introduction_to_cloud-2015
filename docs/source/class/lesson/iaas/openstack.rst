@@ -104,6 +104,7 @@ of the machine will be **small**.
    You can now see that your key is visible to OpenStack::
 
      $ nova keypair-list
+
      +---------------+-------------------------------------------------+
      | Name          | Fingerprint                                     |
      +---------------+-------------------------------------------------+
@@ -117,6 +118,7 @@ Boot the instance using the following command:
 ::
 
   $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key tutorial1
+
 
 Here are some explanations for the arguments.
 
