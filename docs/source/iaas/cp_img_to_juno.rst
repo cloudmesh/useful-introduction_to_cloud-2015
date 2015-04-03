@@ -56,7 +56,7 @@ Load ``openstack`` (Juno) module::
 
 Setup environment variables for OpenStack Juno::
 
-    $ source ~/.futuregrid/openstack_havana/novarc
+    $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 
 Step 4. Upload image
 --------------------
