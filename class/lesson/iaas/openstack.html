@@ -287,14 +287,15 @@ Create the directory if necessary:</p>
 </pre></div>
 </div>
 <p>You can now see that your key is visible to OpenStack:</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ nova keypair-list
+<div class="highlight-python"><div class="highlight"><pre>$ nova keypair-list
 +---------------+-------------------------------------------------+
 | Name          | Fingerprint                                     |
 +---------------+-------------------------------------------------+
-| openstack-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
+| $USER-key     | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
 +---------------+-------------------------------------------------+
 </pre></div>
 </div>
+<p class="last">Where $USER is the username on the machine you run your terminal on.</p>
 </div>
 <p>Boot the instance using the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key tutorial1
