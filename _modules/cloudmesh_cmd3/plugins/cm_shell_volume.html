@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh_cmd3.plugins.cm_shell_volume &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>cloudmesh_cmd3.plugins.cm_shell_volume</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh_cmd3.plugins.cm_shell_volume</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">cmd3.shell</span> <span class="kn">import</span> <span class="n">command</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_common.tables</span> <span class="kn">import</span> <span class="n">row_table</span>
+<span class="kn">from</span> <span class="nn">cmd3.console</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+<div class="viewcode-block" id="cm_shell_volume"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_volume.cm_shell_volume">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_volume</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;opt_example class&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="cm_shell_volume.activate_cm_shell_volume"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_volume.cm_shell_volume.activate_cm_shell_volume">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_command_topic</span><span class="p">(</span><span class="s">&#39;cloud&#39;</span><span class="p">,</span><span class="s">&#39;volume&#39;</span><span class="p">)</span>
+        <span class="k">pass</span>
+</div>
+    <span class="nd">@command</span>
+    <span class="k">def</span> <span class="nf">do_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          Usage:</span>
+<span class="sd">              volume list</span>
+<span class="sd">              volume create &lt;size&gt;</span>
+<span class="sd">                            [--snapshot-id=&lt;snapshot-id&gt;]</span>
+<span class="sd">                            [--image-id=&lt;image-id&gt;]</span>
+<span class="sd">                            [--display-name=&lt;display-name&gt;]</span>
+<span class="sd">                            [--display-description=&lt;display-description&gt;]</span>
+<span class="sd">                            [--volume-type=&lt;volume-type&gt;]</span>
+<span class="sd">                            [--availability-zone=&lt;availability-zone&gt;]</span>
+<span class="sd">              volume delete &lt;volume&gt;</span>
+<span class="sd">              volume attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</span>
+<span class="sd">              volume detach &lt;server&gt; &lt;volume&gt;</span>
+<span class="sd">              volume show &lt;volume&gt;</span>
+<span class="sd">              volume snapshot-list</span>
+<span class="sd">              volume snapshot-create &lt;volume-id&gt;</span>
+<span class="sd">                                     [--force]</span>
+<span class="sd">                                     [--display-name=&lt;display-name&gt;]</span>
+<span class="sd">                                     [--display-description=&lt;display-description&gt;]</span>
+<span class="sd">              volume snapshot-delete &lt;snapshot&gt;</span>
+<span class="sd">              volume snapshot-show &lt;snapshot&gt;</span>
+<span class="sd">              volume help</span>
+
+
+<span class="sd">          volume management</span>
+
+<span class="sd">          Arguments:</span>
+<span class="sd">              &lt;size&gt;            Size of volume in GB</span>
+<span class="sd">              &lt;volume&gt;          Name or ID of the volume to delete</span>
+<span class="sd">              &lt;volume-id&gt;       ID of the volume to snapshot</span>
+<span class="sd">              &lt;server&gt;          Name or ID of server(VM).</span>
+<span class="sd">              &lt;device&gt;          Name of the device e.g. /dev/vdb. Use &quot;auto&quot; for </span>
+<span class="sd">                                autoassign (if supported)</span>
+<span class="sd">              &lt;snapshot&gt;        Name or ID of the snapshot</span>
+
+<span class="sd">          Options:</span>
+<span class="sd">              --snapshot-id &lt;snapshot-id&gt;</span>
+<span class="sd">                                      Optional snapshot id to create the volume from.</span>
+<span class="sd">                                      (Default=None)</span>
+<span class="sd">              --image-id &lt;image-id&gt;</span>
+<span class="sd">                                      Optional image id to create the volume from.</span>
+<span class="sd">                                      (Default=None)</span>
+<span class="sd">              --display-name &lt;display-name&gt;</span>
+<span class="sd">                                      Optional volume name. (Default=None)</span>
+<span class="sd">              --display-description &lt;display-description&gt;</span>
+<span class="sd">                                      Optional volume description. (Default=None)</span>
+<span class="sd">              --volume-type &lt;volume-type&gt;</span>
+<span class="sd">                                      Optional volume type. (Default=None)</span>
+<span class="sd">              --availability-zone &lt;availability-zone&gt;</span>
+<span class="sd">                                      Optional Availability Zone for volume. (Default=None)</span>
+<span class="sd">              --force                 Optional flag to indicate whether to snapshot a volume</span>
+<span class="sd">                                      even if its attached to an instance. (Default=False)</span>
+
+<span class="sd">          Description:</span>
+<span class="sd">              volume list</span>
+<span class="sd">                  List all the volumes</span>
+<span class="sd">              volume create &lt;size&gt; [options...]</span>
+<span class="sd">                  Add a new volume</span>
+<span class="sd">              volume delete &lt;volume&gt;</span>
+<span class="sd">                  Remove a volume   </span>
+<span class="sd">              volume attach &lt;server&gt; &lt;volume&gt; &lt;device&gt;</span>
+<span class="sd">                  Attach a volume to a server    </span>
+<span class="sd">              volume-detach &lt;server&gt; &lt;volume&gt;</span>
+<span class="sd">                  Detach a volume from a server</span>
+<span class="sd">              volume show &lt;volume&gt;        </span>
+<span class="sd">                  Show details about a volume</span>
+<span class="sd">              volume snapshot-list</span>
+<span class="sd">                  List all the snapshots</span>
+<span class="sd">              volume snapshot-create &lt;volume-id&gt; [options...]</span>
+<span class="sd">                  Add a new snapshot</span>
+<span class="sd">              volume snapshot-delete &lt;snapshot&gt;</span>
+<span class="sd">                  Remove a snapshot</span>
+<span class="sd">              volume-snapshot-show &lt;snapshot&gt;</span>
+<span class="sd">                  Show details about a snapshot</span>
+<span class="sd">              volume help </span>
+<span class="sd">                  Prints the nova manual</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># log.info(arguments)</span>
+        
+        <span class="n">keys</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;OS_USERNAME&#39;</span><span class="p">,</span><span class="s">&#39;OS_PASSWORD&#39;</span><span class="p">,</span><span class="s">&#39;OS_TENANT_NAME&#39;</span><span class="p">,</span><span class="s">&#39;OS_AUTH_URL&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;Please first update the environment variables from the cloud by: &quot;</span>
+                                <span class="s">&quot;nova set [CLOUD]&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;help&quot;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova help&quot;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;list&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;nova volume-list&#39;</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;create&#39;</span><span class="p">]:</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;nova volume-create &quot;</span> <span class="o">+</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;size&gt;&#39;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;--snapshot-id&#39;</span><span class="p">,</span>
+                         <span class="s">&#39;--image-id&#39;</span><span class="p">,</span>
+                         <span class="s">&#39;--display-name&#39;</span><span class="p">,</span>
+                         <span class="s">&#39;--display-description&#39;</span><span class="p">,</span>
+                         <span class="s">&#39;--volume-type&#39;</span><span class="p">,</span>
+                         <span class="s">&#39;--availability-zone&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="n">item</span><span class="p">]:</span>
+                    <span class="n">command</span> <span class="o">=</span> <span class="n">command</span> <span class="o">+</span> <span class="s">&quot; {0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">arguments</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+               
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;delete&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova volume-delete {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;volume&gt;&#39;</span><span class="p">]))</span>
+            
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;attach&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova volume-attach {0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;server&gt;&#39;</span><span class="p">],</span>
+                                                              <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;volume&gt;&#39;</span><span class="p">],</span>
+                                                              <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;device&gt;&#39;</span><span class="p">]))</span>
+            
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;detach&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova volume-detach {0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;server&gt;&#39;</span><span class="p">],</span>
+                                                          <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;volume&gt;&#39;</span><span class="p">]))</span>
+        
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;show&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova volume-show {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;volume&gt;&#39;</span><span class="p">]))</span>
+            
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;snapshot-create&#39;</span><span class="p">]:</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;nova volume-snapshot-create &quot;</span> <span class="o">+</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;volume-id&gt;&#39;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;--display-name&#39;</span><span class="p">,</span>
+                         <span class="s">&#39;--display-description&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="n">item</span><span class="p">]:</span>
+                    <span class="n">command</span> <span class="o">=</span> <span class="n">command</span> <span class="o">+</span> <span class="s">&quot; {0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">arguments</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--force&#39;</span><span class="p">]:</span>
+                <span class="n">command</span> <span class="o">=</span> <span class="n">command</span> <span class="o">+</span> <span class="s">&quot; --force True&quot;</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;snapshot-delete&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova volume-snapshot-delete {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;snapshot&gt;&#39;</span><span class="p">]))</span>
+            
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;snapshot-list&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;nova volume-snapshot-list&#39;</span><span class="p">)</span>
+        
+        <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;snapshot-show&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;nova volume-snapshot-show {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;&lt;snapshot&gt;&#39;</span><span class="p">]))</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+            <span class="k">return</span>
+</pre></div></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
