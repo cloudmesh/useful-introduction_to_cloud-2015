@@ -95,27 +95,27 @@ of the machine will be **small**.
 
    Generate a key for OpenStack::
 
-     $ nova keypair-add openstack-key >~/.ssh/openstack-key
+     $ nova keypair-add $USER-india-key >~/.ssh/$USER-india-key
 
    Ensure the permissions are set correctly::
 
-     $ chmod 600 ~/.ssh/openstack-key
+     $ chmod 600 ~/.ssh/$USER-india-key
 
    You can now see that your key is visible to OpenStack::
 
      $ nova keypair-list
-     +---------------+-------------------------------------------------+
-     | Name          | Fingerprint                                     |
-     +---------------+-------------------------------------------------+
-     | openstack-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
-     +---------------+-------------------------------------------------+
+     +------------------+-------------------------------------------------+
+     | Name             | Fingerprint                                     |
+     +------------------+-------------------------------------------------+
+     | albert-india-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
+     +------------------+-------------------------------------------------+
 
 
 Boot the instance using the following command:
 
 ::
 
-  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name openstack-key tutorial1
+  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-india-key tutorial1
 
 Here are some explanations for the arguments.
 
