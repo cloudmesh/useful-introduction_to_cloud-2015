@@ -1,0 +1,690 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.shell.cm_list &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.shell.cm_list</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.shell.cm_list</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.cm_cloud</span> <span class="kn">import</span> <span class="n">CloudManage</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="kn">from</span> <span class="nn">cmd3.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.cm_cloud</span> <span class="kn">import</span> <span class="n">shell_command_cloud</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.shellutil</span> <span class="kn">import</span> <span class="n">shell_commands_dict_output</span><span class="p">,</span> <span class="n">get_command_list_refresh_default_setting</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="c"># list_command_table_format = &quot;simple&quot;</span>
+<span class="n">list_command_table_format</span> <span class="o">=</span> <span class="s">&quot;grid&quot;</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="shell_command_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_list.shell_command_list">[docs]</a><span class="k">def</span> <span class="nf">shell_command_list</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ::</span>
+
+<span class="sd">      List available flavors, images, vms, projects and clouds</span>
+
+<span class="sd">      Usage:</span>
+<span class="sd">          list flavor [CLOUD|--all] </span>
+<span class="sd">                      [--refresh] </span>
+<span class="sd">                      [--format=FORMAT]</span>
+<span class="sd">                      [--column=COLUMN]</span>
+<span class="sd">          list image [CLOUD|--all] </span>
+<span class="sd">                     [--refresh] </span>
+<span class="sd">                     [--format=FORMAT] </span>
+<span class="sd">                     [--column=COLUMN]</span>
+<span class="sd">          list vm [CLOUD|--all] </span>
+<span class="sd">                  [--group=&lt;group&gt;]</span>
+<span class="sd">                  [--refresh] </span>
+<span class="sd">                  [--format=FORMAT] </span>
+<span class="sd">                  [--column=COLUMN] </span>
+<span class="sd">                  [--detail]</span>
+<span class="sd">          list project</span>
+<span class="sd">          list cloud [--column=COLUMN]</span>
+
+<span class="sd">      Arguments:</span>
+
+<span class="sd">          CLOUD    the name of the cloud e.g. india</span>
+
+<span class="sd">      Options:</span>
+
+<span class="sd">          --all                  list information of all active clouds</span>
+<span class="sd">          --refresh              refresh data before list</span>
+<span class="sd">          --group=&lt;group&gt;        give the group name in list vm</span>
+<span class="sd">          --detail               for table print format, a brief version </span>
+<span class="sd">                                 is used as default, use this flag to print</span>
+<span class="sd">                                 detailed table</span>
+<span class="sd">          --column=COLUMN        specify what information to display in</span>
+<span class="sd">                                 the columns of the list command. For</span>
+<span class="sd">                                 example, --column=active,label prints</span>
+<span class="sd">                                 the columns active and label. Available</span>
+<span class="sd">                                 columns are active, label, host,</span>
+<span class="sd">                                 type/version, type, heading, user,</span>
+<span class="sd">                                 credentials, defaults (all to display</span>
+<span class="sd">                                 all, email to display all except</span>
+<span class="sd">                                 credentials and defaults)</span>
+<span class="sd">          --format=FORMAT        output format: table, json, csv</span>
+
+<span class="sd">      Description:</span>
+
+<span class="sd">          List clouds and projects information, if the CLOUD argument is not specified, the</span>
+<span class="sd">          selected default cloud will be used. You can interactively set the default cloud with the command</span>
+<span class="sd">          &#39;cloud select&#39;.</span>
+
+<span class="sd">          list flavor</span>
+<span class="sd">          : list the flavors</span>
+<span class="sd">          list image</span>
+<span class="sd">          : list the images</span>
+<span class="sd">          list vm</span>
+<span class="sd">          : list the vms</span>
+<span class="sd">          list project</span>
+<span class="sd">          : list the projects</span>
+<span class="sd">          list cloud</span>
+<span class="sd">          : same as cloud list</span>
+
+<span class="sd">      See Also:</span>
+
+<span class="sd">          man cloud</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">call</span> <span class="o">=</span> <span class="n">ListInfo</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="n">call</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="ListInfo"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_list.ListInfo">[docs]</a><span class="k">class</span> <span class="nc">ListInfo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span> <span class="o">=</span> <span class="n">CloudManage</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;There is a problem with the configuration yaml files&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;username&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="n">arguments</span>
+        
+        <span class="c"># pprint(self.arguments)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span> <span class="o">=</span> <span class="n">CloudManage</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;There is a problem with the configuration yaml files&quot;</span><span class="p">)</span>
+    
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;username&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh_default_setting</span> <span class="o">=</span> <span class="n">get_command_list_refresh_default_setting</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_list_flavor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">_connect_to_mongo</span><span class="p">()</span>
+        <span class="n">clouds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_working_cloud_name</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">clouds</span><span class="p">:</span>
+            <span class="n">itemkeys</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s">&#39;vcpus&#39;</span><span class="p">,</span> <span class="s">&#39;vcpus&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s">&#39;ram&#39;</span><span class="p">,</span> <span class="s">&#39;ram&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s">&#39;disk&#39;</span><span class="p">,</span> <span class="s">&#39;disk&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s">&#39;refresh time&#39;</span><span class="p">,</span> <span class="s">&#39;cm_refresh&#39;</span><span class="p">]</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_default_setting</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--refresh&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span>
+                    <span class="n">cm_user_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">clouds</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span>
+                    <span class="n">cm_user_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">clouds</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;flavors&#39;</span><span class="p">])</span>
+
+            <span class="c"># --format</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+
+            <span class="c"># --column</span>
+            <span class="c"># available columns are: id, name, vcpus, ram, disk, refresh time,</span>
+            <span class="c"># and all</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;all&quot;</span><span class="p">:</span>
+                    <span class="n">s_column</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)]</span>
+                    <span class="n">new_itemkeys</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">itemkeys</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">s_column</span><span class="p">:</span>
+                            <span class="n">new_itemkeys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                    <span class="n">itemkeys</span> <span class="o">=</span> <span class="n">new_itemkeys</span>
+
+            <span class="k">for</span> <span class="n">cloud</span> <span class="ow">in</span> <span class="n">clouds</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">print_cloud_flavors</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+                                                     <span class="n">cloudname</span><span class="o">=</span><span class="n">cloud</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                                                         <span class="s">&quot;ascii&quot;</span><span class="p">),</span>
+                                                     <span class="n">itemkeys</span><span class="o">=</span><span class="n">itemkeys</span><span class="p">,</span>
+                                                     <span class="n">refresh</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                                     <span class="n">output</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                                     <span class="n">print_format</span><span class="o">=</span><span class="n">p_format</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_list_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">_connect_to_mongo</span><span class="p">()</span>
+        <span class="n">clouds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_working_cloud_name</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">clouds</span><span class="p">:</span>
+            <span class="n">itemkeys</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;openstack&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="c"># [ &quot;Metadata&quot;, &quot;metadata&quot;],</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">,</span> <span class="s">&quot;status&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;type_id&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type_id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;iname&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type_name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;image_location&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;image_state&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;updated&quot;</span><span class="p">,</span> <span class="s">&quot;updated&quot;</span><span class="p">],</span>
+                            <span class="c"># [ &quot;minDisk&quot; , &quot;minDisk&quot;],</span>
+                            <span class="p">[</span><span class="s">&quot;memory_mb&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span>
+                                <span class="s">&#39;instance_type_memory_mb&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;fid&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type_flavorid&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;vcpus&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type_vcpus&quot;</span><span class="p">],</span>
+                            <span class="c"># [ &quot;user_id&quot; , &quot;metadata&quot;, &quot;user_id&quot;],</span>
+                            <span class="c"># [ &quot;owner_id&quot; , &quot;metadata&quot;, &quot;owner_id&quot;],</span>
+                            <span class="c"># [ &quot;gb&quot; , &quot;metadata&quot;, &quot;instance_type_root_gb&quot;],</span>
+                            <span class="c"># [ &quot;arch&quot;, &quot;&quot;]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;ec2&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="c"># [ &quot;Metadata&quot;, &quot;metadata&quot;],</span>
+                            <span class="p">[</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;state&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;public&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;is_public&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;ownerid&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;owner_id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;imagetype&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;image_type&quot;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;azure&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;label&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;category&quot;</span><span class="p">,</span> <span class="s">&quot;category&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;size&quot;</span><span class="p">,</span> <span class="s">&quot;logical_size_in_gb&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;os&quot;</span><span class="p">,</span> <span class="s">&quot;os&quot;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;aws&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&quot;state&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;state&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;public&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;ispublic&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;ownerid&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;ownerid&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;imagetype&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;imagetype&quot;</span><span class="p">]</span>
+                        <span class="p">]</span>
+                        <span class="p">}</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_default_setting</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--refresh&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span>
+                    <span class="n">cm_user_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">clouds</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span>
+                    <span class="n">cm_user_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">clouds</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;images&#39;</span><span class="p">])</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+
+            <span class="c"># --column</span>
+            <span class="c"># available columns are: id, name, vcpus, ram, disk, refresh time,</span>
+            <span class="c"># and all</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;all&quot;</span><span class="p">:</span>
+                    <span class="n">s_column</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)]</span>
+                    <span class="n">new_itemkeys</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">itemkeys</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+                    <span class="k">for</span> <span class="n">cloud</span><span class="p">,</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">itemkeys</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">s_column</span><span class="p">:</span>
+                                <span class="n">new_itemkeys</span><span class="p">[</span><span class="n">cloud</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                    <span class="n">itemkeys</span> <span class="o">=</span> <span class="n">new_itemkeys</span>
+
+            <span class="k">for</span> <span class="n">cloud</span> <span class="ow">in</span> <span class="n">clouds</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">print_cloud_images</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+                                                    <span class="n">cloudname</span><span class="o">=</span><span class="n">cloud</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                                                        <span class="s">&quot;ascii&quot;</span><span class="p">),</span>
+                                                    <span class="n">itemkeys</span><span class="o">=</span><span class="n">itemkeys</span><span class="p">,</span>
+                                                    <span class="n">refresh</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                                    <span class="n">print_format</span><span class="o">=</span><span class="n">p_format</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_list_server</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">_connect_to_mongo</span><span class="p">()</span>
+        <span class="n">clouds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_working_cloud_name</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">clouds</span><span class="p">:</span>
+            <span class="n">itemkeys</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;openstack&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;status&#39;</span><span class="p">,</span> <span class="s">&#39;status&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">,</span> <span class="s">&#39;addresses&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;cm_user_id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;metadata&#39;</span><span class="p">,</span> <span class="s">&#39;metadata&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;key_name&#39;</span><span class="p">,</span> <span class="s">&#39;key_name&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;created&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;cloud&#39;</span><span class="p">,</span> <span class="s">&#39;cm_cloud&#39;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;ec2&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;status&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;addresses&quot;</span><span class="p">,</span> <span class="s">&quot;public_ips&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;flavor&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;extra&#39;</span><span class="p">,</span> <span class="s">&#39;imageId&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;user_id&quot;</span><span class="p">,</span> <span class="s">&#39;user_id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;key_name&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;key_name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;created&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;launch_time&quot;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;aws&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;status&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;addresses&quot;</span><span class="p">,</span> <span class="s">&quot;public_ips&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;flavor&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;extra&#39;</span><span class="p">,</span> <span class="s">&#39;image_id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;user_id&quot;</span><span class="p">,</span> <span class="s">&quot;user_id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;metadata&quot;</span><span class="p">,</span> <span class="s">&quot;metadata&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;key_name&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;key_name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;created&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;launch_time&quot;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;azure&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;status&#39;</span><span class="p">,</span> <span class="s">&#39;status&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">,</span> <span class="s">&#39;vip&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;user_id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;metadata&#39;</span><span class="p">,</span> <span class="s">&#39;metadata&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;key_name&#39;</span><span class="p">,</span> <span class="s">&#39;key_name&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;created&#39;</span><span class="p">],</span>
+                        <span class="p">]</span>
+                        <span class="p">}</span>
+                        
+            <span class="n">itemkeys_short</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;openstack&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;status&#39;</span><span class="p">,</span> <span class="s">&#39;status&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">,</span> <span class="s">&#39;addresses&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;ec2&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;id&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;status&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;addresses&quot;</span><span class="p">,</span> <span class="s">&quot;public_ips&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;flavor&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;extra&#39;</span><span class="p">,</span> <span class="s">&#39;imageId&#39;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;aws&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;status&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;addresses&quot;</span><span class="p">,</span> <span class="s">&quot;public_ips&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&quot;flavor&quot;</span><span class="p">,</span> <span class="s">&quot;extra&quot;</span><span class="p">,</span> <span class="s">&quot;instance_type&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;extra&#39;</span><span class="p">,</span> <span class="s">&#39;image_id&#39;</span><span class="p">]</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;azure&quot;</span><span class="p">:</span>
+                        <span class="p">[</span>
+                            <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;status&#39;</span><span class="p">,</span> <span class="s">&#39;status&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">,</span> <span class="s">&#39;vip&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;flavor&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">]</span>
+                        <span class="p">]</span>
+                        <span class="p">}</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_default_setting</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--refresh&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span>
+                    <span class="n">cm_user_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">clouds</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span>
+                    <span class="n">cm_user_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">clouds</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;servers&#39;</span><span class="p">])</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+
+            <span class="c"># --column</span>
+            <span class="c"># available columns are: id, name, vcpus, ram, disk, refresh time,</span>
+            <span class="c"># and all</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;all&quot;</span><span class="p">:</span>
+                    <span class="n">s_column</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">)]</span>
+                    <span class="n">new_itemkeys</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">itemkeys</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+                    <span class="k">for</span> <span class="n">cloud</span><span class="p">,</span> <span class="n">items</span> <span class="ow">in</span> <span class="n">itemkeys</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">s_column</span><span class="p">:</span>
+                                <span class="n">new_itemkeys</span><span class="p">[</span><span class="n">cloud</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                    <span class="n">itemkeys</span> <span class="o">=</span> <span class="n">new_itemkeys</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--detail&#39;</span><span class="p">]:</span>
+                    <span class="n">itemkeys</span> <span class="o">=</span> <span class="n">itemkeys_short</span>
+
+            <span class="k">for</span> <span class="n">cloud</span> <span class="ow">in</span> <span class="n">clouds</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">print_cloud_servers</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+                                                     <span class="n">cloudname</span><span class="o">=</span><span class="n">cloud</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                                                         <span class="s">&quot;ascii&quot;</span><span class="p">),</span>
+                                                     <span class="n">itemkeys</span><span class="o">=</span><span class="n">itemkeys</span><span class="p">,</span>
+                                                     <span class="n">refresh</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                                     <span class="n">output</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                                                     <span class="n">print_format</span><span class="o">=</span><span class="n">p_format</span><span class="p">,</span>
+                                                     <span class="n">group</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--group&#39;</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_list_project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">_connect_to_mongo</span><span class="p">()</span>
+        <span class="n">selected_project</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">selected_project</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">db_defaults</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span>
+                <span class="p">{</span><span class="s">&#39;cm_user_id&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">+</span> <span class="s">&quot;OIO&quot;</span><span class="p">})[</span><span class="s">&#39;project&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">NoneType</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;could not find selected project in the database&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;could not connect to the database&quot;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="n">selected_project</span><span class="p">]],</span> <span class="p">[</span><span class="s">&quot;selected project&quot;</span><span class="p">],</span> <span class="n">tablefmt</span><span class="o">=</span><span class="n">list_command_table_format</span><span class="p">))</span>
+
+        <span class="c">#</span>
+        <span class="c"># active projects</span>
+        <span class="c">#</span>
+
+        <span class="n">projects</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;active&quot;</span><span class="p">,</span> <span class="s">&quot;completed&quot;</span><span class="p">]:</span>
+
+            <span class="n">projects</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">projects</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">db_user</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span>
+                    <span class="p">{</span><span class="s">&#39;cm_user_id&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">})[</span><span class="s">&#39;projects&#39;</span><span class="p">][</span><span class="n">state</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="s">&quot;could not find objects or connect to the database containing the projects&quot;</span><span class="p">)</span>
+
+            <span class="n">to_print</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="n">projects</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">to_print</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">None</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">to_print</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">[</span><span class="n">state</span><span class="p">]]</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">to_print</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;{0} projects&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">)],</span> <span class="n">tablefmt</span><span class="o">=</span><span class="n">list_command_table_format</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_list_cloud</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; same as the shell_command_cloud list&quot;&quot;&quot;</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
+        <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">shell_command_cloud</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        self.cloudmanage._connect_to_mongo()</span>
+<span class="sd">        active_clouds = []</span>
+<span class="sd">        other_clouds = []</span>
+<span class="sd">        activeclouds = self.cloudmanage.mongo.active_clouds(self.username)</span>
+<span class="sd">        clouds = self.cloudmanage.get_clouds(self.username)</span>
+<span class="sd">        clouds = clouds.sort([(&#39;cm_cloud&#39;, 1)])</span>
+<span class="sd">        for cloud in clouds:</span>
+<span class="sd">            name = cloud[&#39;cm_cloud&#39;]</span>
+<span class="sd">            if name in activeclouds:</span>
+<span class="sd">                active_clouds.append([str(name)])</span>
+<span class="sd">            else:</span>
+<span class="sd">                other_clouds.append([str(name)])</span>
+<span class="sd">        if active_clouds == []: active_clouds = [None]</span>
+<span class="sd">        if other_clouds == []: other_clouds = [None]</span>
+<span class="sd">        print tabulate(active_clouds, [&quot;active clouds&quot;], tablefmt=list_command_table_format)</span>
+<span class="sd">        print &quot;\n&quot;</span>
+<span class="sd">        print tabulate(other_clouds, [&quot;other clouds&quot;], tablefmt=list_command_table_format)</span>
+<span class="sd">        print &quot;\n&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+    <span class="c"># --------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="ListInfo.get_working_cloud_name"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_list.ListInfo.get_working_cloud_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_working_cloud_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        get the name of a cloud to be work on, if CLOUD not given, will pick the</span>
+<span class="sd">        slected cloud, is --all, will return a list of active clouds</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">_connect_to_mongo</span><span class="p">()</span>
+        <span class="n">activeclouds</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">activeclouds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">mongo</span><span class="o">.</span><span class="n">active_clouds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--all&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">activeclouds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;no active cloud, please activate a cloud by &#39;cloud on [CLOUD]&#39;&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="n">activeclouds</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;CLOUD&#39;</span><span class="p">]:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;CLOUD&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">get_selected_cloud</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloudmanage</span><span class="o">.</span><span class="n">get_clouds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">getone</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">cloudname</span><span class="o">=</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="s">&quot;no cloud information of &#39;{0}&#39; in database&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">activeclouds</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s">&quot;cloud &#39;{0}&#39; is not active, to activate a cloud: cloud on [CLOUD]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="ListInfo.execute"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_list.ListInfo.execute">[docs]</a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;vm&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_server</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;flavor&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_flavor</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;image&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_image</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;project&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_project</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;cloud&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_cloud</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_list.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="n">docopt</span><span class="p">(</span><span class="n">shell_command_list</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
+    <span class="n">shell_command_list</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
