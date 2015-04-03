@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -89,14 +88,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">CM Console for VM Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
 <li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -225,7 +224,7 @@ on cloud india.</p>
 <div class="section" id="set-a-default-flavor-or-image">
 <h2>Set a default flavor or image<a class="headerlink" href="#set-a-default-flavor-or-image" title="Permalink to this headline">¶</a></h2>
 <p>Each cloud must have a default image and a default flavor to launch vm
-instances in a simple step. The <code class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></code> command provides a way to
+instances in a simple step. The <tt class="docutils literal"><span class="pre">cloud</span> <span class="pre">set</span></tt> command provides a way to
 set default values for an image or a flavor.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cloud set flavor india --name=m1.small&quot;
 </pre></div>
@@ -245,7 +244,7 @@ the mongo database will be updated.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list flavor india --refresh&quot;
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></code> command provides an available vm images on a selected
+<p>The <tt class="docutils literal"><span class="pre">list</span> <span class="pre">image</span></tt> command provides an available vm images on a selected
 cloud.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;list image india --column=name,updated&quot;
 </pre></div>
@@ -253,9 +252,9 @@ cloud.</p>
 </div>
 <div class="section" id="quick-start-a-vm">
 <h2>Quick Start a VM<a class="headerlink" href="#quick-start-a-vm" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></code> command provides a quick launch of a vm instance in
+<p>The <tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command provides a quick launch of a vm instance in
 cloudmesh.</p>
-<p>We use <code class="docutils literal"><span class="pre">vmname</span></code> to delete the vm instance later in this tutorial.</p>
+<p>We use <tt class="docutils literal"><span class="pre">vmname</span></tt> to delete the vm instance later in this tutorial.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>_vmname=!cm &quot;label --raw&quot;
 vmname=_vmname[0]
 </pre></div>
@@ -276,19 +275,19 @@ destroy, <em>delete</em> command in cloudmesh simply terminate the instance.</p>
 <h2>More options to launch a VM instance<a class="headerlink" href="#more-options-to-launch-a-vm-instance" title="Permalink to this headline">¶</a></h2>
 <p>When you create a new VM instance, you can also choose multiple options
 such as a flavor, an image associated with the instance. The
-<code class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></code> command accepts optional parameters as a user input of
+<tt class="docutils literal"><span class="pre">vm</span> <span class="pre">start</span></tt> command accepts optional parameters as a user input of
 these options. To see a brief description of the command, try
-<code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></code> in the IPython Notebook cell.</p>
+<tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">--help&quot;</span></tt> in the IPython Notebook cell.</p>
 <p>Available options are:</p>
 <ul class="simple">
-<li>&#8211;<code class="docutils literal"><span class="pre">cloud=&lt;CloudName&gt;</span>&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give a cloud to work on, if not given,
+<li>&#8211;<tt class="docutils literal"><span class="pre">cloud=&lt;CloudName&gt;</span>&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give a cloud to work on, if not given,
 selected or default cloud will be used</li>
-<li>&#8211;<code class="docutils literal"><span class="pre">count=&lt;count&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the number of servers to start</li>
-<li>&#8211;<code class="docutils literal"><span class="pre">flavor=&lt;flavorName&gt;</span>&nbsp; <span class="pre">:</span></code> give the name of the flavor</li>
-<li>&#8211;<code class="docutils literal"><span class="pre">flavorid=&lt;flavorId&gt;</span>&nbsp; <span class="pre">:</span></code> give the id of the flavor</li>
-<li>&#8211;<code class="docutils literal"><span class="pre">group=&lt;group&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the group name of server</li>
-<li>&#8211;<code class="docutils literal"><span class="pre">image=&lt;imgName&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the name of the image</li>
-<li>&#8211;<code class="docutils literal"><span class="pre">imageid=&lt;imgId&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></code> give the id of the image</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">count=&lt;count&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the number of servers to start</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">flavor=&lt;flavorName&gt;</span>&nbsp; <span class="pre">:</span></tt> give the name of the flavor</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">flavorid=&lt;flavorId&gt;</span>&nbsp; <span class="pre">:</span></tt> give the id of the flavor</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">group=&lt;group&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the group name of server</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">image=&lt;imgName&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the name of the image</li>
+<li>&#8211;<tt class="docutils literal"><span class="pre">imageid=&lt;imgId&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">:</span></tt> give the id of the image</li>
 </ul>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04&quot;
 </pre></div>
@@ -343,24 +342,24 @@ to find the VMs and delete them, you may think there are two phases of
 VM deletion, searching and deleting. Here are some examples:</p>
 <p>Let&#8217;s start with deleting the VMs that we started in the previous
 example. We can delete them with the group name that we used.
-<code class="docutils literal"><span class="pre">temp_group_name</span></code></p>
+<tt class="docutils literal"><span class="pre">temp_group_name</span></tt></p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete --cloud=india --group={temp_group_name} --force&quot;
 </pre></div>
 </div>
 <p>to delete all VMs of cloud india</p>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--force&quot;</span></tt></p>
 <p>Note here we use the option &#8220;&#8211;force&#8221;, without it the shell will give
 you a list of VMs to delete and ask for your confirmation.</p>
 <p>to delete a VM by giving its name (you may always provide a cloud unless
 you have specified a default cloud or have selected a cloud)</p>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">sample_vm</span> <span class="pre">--force&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">sample_vm</span> <span class="pre">--force&quot;</span></tt></p>
 <p>to delete a VM by group</p>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--goup=testgroup</span> <span class="pre">--force&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--goup=testgroup</span> <span class="pre">--force&quot;</span></tt></p>
 <p>We can also narrow the search result by giving more search conditions.
 For example, to delete VMs of cloud india that they are also in the
 group &#8216;testgroup&#8217; and they have the prefix name &#8216;abc&#8217; and their indices&#8217;
 range is no greater than 100</p>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--goup=testgroup</span> <span class="pre">--prefix=sample</span> <span class="pre">--range=,100</span> <span class="pre">--force&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">delete</span> <span class="pre">--cloud=india</span> <span class="pre">--goup=testgroup</span> <span class="pre">--prefix=sample</span> <span class="pre">--range=,100</span> <span class="pre">--force&quot;</span></tt></p>
 </div>
 <div class="section" id="login-to-a-vm">
 <h2>Login to a VM<a class="headerlink" href="#login-to-a-vm" title="Permalink to this headline">¶</a></h2>
@@ -376,18 +375,18 @@ vmname=_vmname[0]
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm ip assign {vmname} --cloud=india&quot;
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">ip</span> <span class="pre">assign</span> <span class="pre">test_1</span> <span class="pre">--cloud=india&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">ip</span> <span class="pre">assign</span> <span class="pre">test_1</span> <span class="pre">--cloud=india&quot;</span></tt></p>
 <p>Then you can login to this VM by(note here you need to provide the login
 name for your VM, it varys depend on the image you use while you start
 the VM, e.g. for ubuntu, you may type &#8211;ln=ubuntu):</p>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">login</span> <span class="pre">test_1</span> <span class="pre">--ln=ubuntu</span> <span class="pre">--cloud=india&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">login</span> <span class="pre">test_1</span> <span class="pre">--ln=ubuntu</span> <span class="pre">--cloud=india&quot;</span></tt></p>
 <p>If you just want to run some commands and get the return on the VM, you
 may add the commands at the end following &#8216;&#8211;&#8217;(e.g. ls -a)</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm login {vmname} --ln=ubuntu --cloud=india -- ls -a&quot;
 </pre></div>
 </div>
 <p>For more details for command vm</p>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">-h&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;vm</span> <span class="pre">-h&quot;</span></tt></p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete {vmname} --cloud=india&quot;
 </pre></div>
 </div>
@@ -396,12 +395,12 @@ may add the commands at the end following &#8216;&#8211;&#8217;(e.g. ls -a)</p>
 <div class="section" id="vitual-machine-name">
 <h2>Vitual Machine Name<a class="headerlink" href="#vitual-machine-name" title="Permalink to this headline">¶</a></h2>
 <p>In Cloudmesh, the default name of VM consists of your username and a
-number, for example, alex_1. <code class="docutils literal"><span class="pre">label</span></code> command allows you to manage or
+number, for example, alex_1. <tt class="docutils literal"><span class="pre">label</span></tt> command allows you to manage or
 modify the VM name as you wish.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm label
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;label</span> <span class="pre">--prefix=gregor</span> <span class="pre">--id=40&quot;</span></code></p>
+<p><tt class="docutils literal"><span class="pre">cm</span> <span class="pre">&quot;label</span> <span class="pre">--prefix=gregor</span> <span class="pre">--id=40&quot;</span></tt></p>
 <p>If the user doesn’t provide a name while starting VMs, cloudmesh will
 generate labels for them. The default form to name VMs is prefix_index,
 where prefix is a string and index is an non-negative integer. If a
@@ -416,7 +415,7 @@ waiting to be used for next VM. To check your current prefix and index</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_cm-limits.html" class="btn btn-neutral float-right" title="Metric Commands in Cloudmesh cm">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-limits.html" class="btn btn-neutral float-right" title="Metric Commands in Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_cm-debug.html" class="btn btn-neutral" title="Command Shell Output Control"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -432,8 +431,7 @@ waiting to be used for next VM. To check your current prefix and index</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -458,7 +456,7 @@ waiting to be used for next VM. To check your current prefix and index</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

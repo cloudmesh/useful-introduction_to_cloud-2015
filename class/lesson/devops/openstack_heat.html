@@ -59,9 +59,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -183,8 +182,8 @@ often how they are deployed and interact.</p>
 </ul>
 <p>There are 70 resource types in total. See more at:
 <a class="reference external" href="http://docs.openstack.org/hot-reference/content/openstack-resource-types.html">http://docs.openstack.org/hot-reference/content/openstack-resource-types.html</a></p>
-<p>These are OpenStack Heat Resource types which are identified with the <code class="docutils literal"><span class="pre">OS::</span></code> prefix.
-For example, if you&#8217;d like to start a VM instance, use the <code class="docutils literal"><span class="pre">OS::Nova::Server</span></code> resource type.</p>
+<p>These are OpenStack Heat Resource types which are identified with the <tt class="docutils literal"><span class="pre">OS::</span></tt> prefix.
+For example, if you&#8217;d like to start a VM instance, use the <tt class="docutils literal"><span class="pre">OS::Nova::Server</span></tt> resource type.</p>
 <p>There are also Amazon CloudFormation compatible resource types.</p>
 </div>
 <div class="section" id="resource-types-amazon-compatible">
@@ -192,9 +191,9 @@ For example, if you&#8217;d like to start a VM instance, use the <code class="do
 <p>These resource types are exchangeable between Amazon (AWS) and OpenStack. Let&#8217;s
 review a few types.</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">AWS::EC2::Instance</span></code>: EC2 Instance &lt;-&gt; Nova Server</li>
-<li><code class="docutils literal"><span class="pre">AWS::EC2::SecurityGroup</span></code>: EC2 Security Group &lt;-&gt; OpenStack Security Group</li>
-<li><code class="docutils literal"><span class="pre">AWS::EC2::Volume</span></code>: AWS Elastic Block Store volume &lt;-&gt;  OpenStack Cinder
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::Instance</span></tt>: EC2 Instance &lt;-&gt; Nova Server</li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::SecurityGroup</span></tt>: EC2 Security Group &lt;-&gt; OpenStack Security Group</li>
+<li><tt class="docutils literal"><span class="pre">AWS::EC2::Volume</span></tt>: AWS Elastic Block Store volume &lt;-&gt;  OpenStack Cinder
 Volume</li>
 </ul>
 <p>Currently, 25 resource types are compatible with AWS, AWS supports 88 resource
@@ -225,7 +224,7 @@ resources:
       flavor: m1.small
 </pre></div>
 </div>
-<p>Heat template starts with a <code class="docutils literal"><span class="pre">heat_template_version</span></code> key to indicate supported
+<p>Heat template starts with a <tt class="docutils literal"><span class="pre">heat_template_version</span></tt> key to indicate supported
 features and resource types. The following values are supported:</p>
 <ul class="simple">
 <li>2013-05-23: supports features until the Icehouse release.</li>
@@ -264,7 +263,7 @@ source $HOME/.cloudmesh/clouds/india/juno/openrc.sh
 module load heatclient;
 source $HOME/.cloudmesh/clouds/india/havana/novarc;</p>
 </div>
-<p><code class="docutils literal"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">openstack</span></code> enables Heat CLI on your shell.</p>
+<p><tt class="docutils literal"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">openstack</span></tt> enables Heat CLI on your shell.</p>
 </div>
 <div class="section" id="stack-list">
 <h3>Stack List<a class="headerlink" href="#stack-list" title="Permalink to this headline">¶</a></h3>
@@ -276,28 +275,28 @@ source $HOME/.cloudmesh/clouds/india/havana/novarc;</p>
 +----+------------+--------------+---------------+
 </pre></div>
 </div>
-<p>A <code class="docutils literal"><span class="pre">stack</span></code> is cloud resources that you use with your selected Heat Template. If
+<p>A <tt class="docutils literal"><span class="pre">stack</span></tt> is cloud resources that you use with your selected Heat Template. If
 you deployed 5 VM instances with 2 floating IP addresses and 1 security group,
 all of these resources fall into a single stack on OpenStack.</p>
 </div>
 <div class="section" id="stack-creation">
 <h3>Stack Creation<a class="headerlink" href="#stack-creation" title="Permalink to this headline">¶</a></h3>
 <p>You need a template first. Save a sample template above in a YAML file, e.g.
-<code class="docutils literal"><span class="pre">openstack_heat_ex1.yaml</span></code> It will create a new VM instance with a <code class="docutils literal"><span class="pre">Ubuntu</span>
-<span class="pre">14.04</span></code> image, <code class="docutils literal"><span class="pre">albert-india-key</span></code> SSH keypair and a <code class="docutils literal"><span class="pre">m1.small</span></code> flavor.  You
-have to <strong>REPLACE</strong> <code class="docutils literal"><span class="pre">albert-india-key</span></code> with your registered keyname.</p>
+<tt class="docutils literal"><span class="pre">openstack_heat_ex1.yaml</span></tt> It will create a new VM instance with a <tt class="docutils literal"><span class="pre">Ubuntu</span>
+<span class="pre">14.04</span></tt> image, <tt class="docutils literal"><span class="pre">albert-india-key</span></tt> SSH keypair and a <tt class="docutils literal"><span class="pre">m1.small</span></tt> flavor.  You
+have to <strong>REPLACE</strong> <tt class="docutils literal"><span class="pre">albert-india-key</span></tt> with your registered keyname.</p>
 <p>If you are ready to create a new stack, run a following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>heat stack-create --template-file openstack_heat_ex1.yaml heat-tutorial-$OS_USERNAME
 </pre></div>
 </div>
 <ul class="simple">
-<li>You started a stack with a parameter for a template file <code class="docutils literal"><span class="pre">--template-file</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">heat-tutorial-$OS_USERNAME</span></code> is a your stack name, you can use other names.</li>
+<li>You started a stack with a parameter for a template file <tt class="docutils literal"><span class="pre">--template-file</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">heat-tutorial-$OS_USERNAME</span></tt> is a your stack name, you can use other names.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you have a template file on the web, you can use a URL with
-<code class="docutils literal"><span class="pre">--template-url</span></code> parameter.</p>
+<tt class="docutils literal"><span class="pre">--template-url</span></tt> parameter.</p>
 </div>
 <p>The sample output is:</p>
 <div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+------------+--------------------+----------------------+
@@ -371,7 +370,7 @@ have to <strong>REPLACE</strong> <code class="docutils literal"><span class="pre
 <li>futuresystems/ubuntu14.04</li>
 <li>m1.small</li>
 <li>Port 22, 80, and 443 are open</li>
-<li>Save your OpenStack Heat template in <code class="docutils literal"><span class="pre">$USERNAME_heat_ex1.yaml</span></code></li>
+<li>Save your OpenStack Heat template in <tt class="docutils literal"><span class="pre">$USERNAME_heat_ex1.yaml</span></tt></li>
 </ul>
 </li>
 </ul>
@@ -381,22 +380,22 @@ have to <strong>REPLACE</strong> <code class="docutils literal"><span class="pre
 <ul class="simple">
 <li>Start a WordPress web service using Heat template on the web. The required
 conditions are:<ul>
-<li>Run <code class="docutils literal"><span class="pre">script</span> <span class="pre">heat_ex1_$OS_USERNAME.typescript</span></code> on your SSH terminal.</li>
+<li>Run <tt class="docutils literal"><span class="pre">script</span> <span class="pre">heat_ex1_$OS_USERNAME.typescript</span></tt> on your SSH terminal.</li>
 <li>Use <a class="reference external" href="https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/fedora-21/wordpress.yaml">Template for WordPress on Fedora21</a></li>
 <li>Once you successfully created a WordPress stack, checkout an index page.
-<code class="docutils literal"><span class="pre">curl</span> <span class="pre">http://[IP</span> <span class="pre">ADDRESS]/wordpress</span></code> produces the index page in a text mode.</li>
+<tt class="docutils literal"><span class="pre">curl</span> <span class="pre">http://[IP</span> <span class="pre">ADDRESS]/wordpress</span></tt> produces the index page in a text mode.</li>
 <li>If your web browser opens the page properly, your WordPress is created successfully.</li>
-<li>Stop running your typescript by <code class="docutils literal"><span class="pre">exit</span></code>. (This is not necessary if you did
-not run <code class="docutils literal"><span class="pre">script</span></code> command earlier.</li>
-<li>Submit <code class="docutils literal"><span class="pre">**heat_ex1_$OS_USERNAME.typescript**</span></code> file.</li>
+<li>Stop running your typescript by <tt class="docutils literal"><span class="pre">exit</span></tt>. (This is not necessary if you did
+not run <tt class="docutils literal"><span class="pre">script</span></tt> command earlier.</li>
+<li>Submit <tt class="docutils literal"><span class="pre">**heat_ex1_$OS_USERNAME.typescript**</span></tt> file.</li>
 </ul>
 </li>
 <li>If you&#8217;d like to use Horizon web dashboard, you need to find &#8220;Orchestration &gt;
 Stacks&#8221; menu.<ul>
-<li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Topology</span></code></li>
-<li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Overview</span></code></li>
-<li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Resources</span></code></li>
-<li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Events</span></code></li>
+<li>Make a screenshot of the page at <tt class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Topology</span></tt></li>
+<li>Make a screenshot of the page at <tt class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Overview</span></tt></li>
+<li>Make a screenshot of the page at <tt class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Resources</span></tt></li>
+<li>Make a screenshot of the page at <tt class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Events</span></tt></li>
 <li>Submit your screen shots.</li>
 </ul>
 </li>
@@ -449,8 +448,7 @@ resource provider.</li>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -475,7 +473,7 @@ resource provider.</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
