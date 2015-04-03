@@ -44,7 +44,7 @@ download the image is like this::
 
 Make sure your image is downloaded successfully::
 
-    $ ls -lha custom-ubuntu-14.04.img
+    $ ls -lh custom-ubuntu-14.04.img
     -rw-r--r-- 1 nrockwell users 1.5G Apr  3 11:45 custom-ubuntu-14.04.img
 
 Step 3. Setup OpenStack Juno environment
