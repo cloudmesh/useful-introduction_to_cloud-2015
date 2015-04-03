@@ -95,11 +95,11 @@ of the machine will be **small**.
 
    Generate a key for OpenStack::
 
-     $ nova keypair-add openstack-key >~/.ssh/openstack-key
+     $ nova keypair-add $USER-key > ~/.ssh/$USER-key
 
    Ensure the permissions are set correctly::
 
-     $ chmod 600 ~/.ssh/openstack-key
+     $ chmod 600 ~/.ssh/$USER-key
 
    You can now see that your key is visible to OpenStack::
 
@@ -107,15 +107,16 @@ of the machine will be **small**.
      +---------------+-------------------------------------------------+
      | Name          | Fingerprint                                     |
      +---------------+-------------------------------------------------+
-     | openstack-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
+     | $USER-key     | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
      +---------------+-------------------------------------------------+
 
+   Where $USER is the username on the machine you run your terminal on.
 
 Boot the instance using the following command:
 
 ::
 
-  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name openstack-key tutorial1
+  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key tutorial1
 
 Here are some explanations for the arguments.
 
