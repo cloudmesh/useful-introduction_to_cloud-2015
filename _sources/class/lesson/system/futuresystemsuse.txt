@@ -60,8 +60,8 @@ In order to use FutureSystems you will need to get an account.
    the ``My FutureGrid HPC account status`` of your `portal account`_
    information will you have access to resources.
 
-.. tip::
-   Please see :doc:`../../../accounts/accounts` for additional details.
+.. tip:: Please see Section :ref:`s-screencast-accounts` for
+   additional details.
 
 .. _portal account: https://portal.futuresystems.org/my/fg-account
 
@@ -131,7 +131,7 @@ alternatively to the above command::
   $ ssh $PORTALNAME@india.futuresystems.org
 
 
-.. tip:: Please see Section :ref:`_s-using-ssh` for details on
+.. tip:: Please see Section :ref:`s-using-ssh` for details on
    configuring and using an SSH client.
 
 
@@ -320,8 +320,8 @@ on a remote computer.
 
 .. tip::
 
-   See :doc:`../linux/shell` for more details on what a shell is and
-   how to use it.
+   See Section :ref:`s-shell-lesson` for more details on what a shell
+   is and how to use it.
 
 This security is accomplished by encrypting the data that is sent
 between the two endpoints.  In order for this communication to be
@@ -344,7 +344,7 @@ The second file, ending in ``.pub``, is the public key and needs to be
 shared with the machines you wish to access.  In the case of
 FutureSystems, you add the public key to your `SSH Keys
 <https://portal.futuresystems.org/my/ssh-keys>`_.  In the case of
-GitHub (see :doc:`../git`) you add it to your account.
+GitHub (see Section :ref:`s-lesson-git`) you add it to your account.
 
 .. caution::
 
