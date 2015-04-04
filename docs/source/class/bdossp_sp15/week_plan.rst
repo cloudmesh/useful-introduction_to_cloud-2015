@@ -513,7 +513,7 @@ IT Operations - Automation and Orchestration (under preparation)
      -
      -
    * - OpenStack Heat
-     -
+     - `20 mins <https://mix.office.com/watch/1ry7jrkuvkfwh>`_
      - :ref:`1 hour <ref-class-lesson-devops-openstack-heat>`
      - :ref:`30 mins <ref-class-lesson-devops-openstack-heat-exercises>`
      -
@@ -525,11 +525,11 @@ IT Operations - Automation and Orchestration (under preparation)
      -
      -
  
-.. list-table:: Discussion
+.. .. list-table:: Discussion
    :widths: 30 10 10 10 10 10
    :header-rows: 1
 
-   * - Topic
+..   * - Topic
      - Video
      - Text
      - Lab sessions
@@ -553,6 +553,13 @@ IT Operations - Automation and Orchestration (under preparation)
      -
      -
      -
+
+Length of the lessons in Week 4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Total of video lessons:  hours and  minutes
+* Total of study materials:  hours and  minutes
+* Total of lab sessions:  hour and  minutes
 
 Week 5 
 -------------------------------------------------------------------------------
