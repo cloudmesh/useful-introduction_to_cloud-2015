@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -182,8 +183,8 @@ or the nova command line.</p>
 <p>To set up a machine you could use the either of the following methods:</p>
 <ul class="simple">
 <li><strong>Horizon</strong>: see <a class="reference external" href="../../iaas/openstack.html#horizon-gui.html">our manual page</a>.</li>
-<li><strong>nova</strong>: see the <a class="reference internal" href="../../iaas/openstack.html#s-openstack"><em>OpenStack on FutureSystems</em></a></li>
-<li><strong>cloudmsh</strong>: see <a class="reference internal" href="quickstart.html#s-cloudmesh-quickstart"><em>Quickstart on your desktop</em></a> and the cloudmesh
+<li><strong>nova</strong>: see the <a class="reference internal" href="../../iaas/openstack.html#s-openstack"><span>OpenStack on FutureSystems</span></a></li>
+<li><strong>cloudmsh</strong>: see <a class="reference internal" href="quickstart.html#s-cloudmesh-quickstart"><span>Quickstart on your desktop</span></a> and the cloudmesh
 shell found elsewhere.</li>
 </ul>
 <div class="admonition note">
@@ -241,9 +242,9 @@ strong passphrase.</p>
 </div>
 <p>Next step is to open the necessary ports of the VM to be started:</p>
 <div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
-india<span class="nv">$ </span>nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
-india<span class="nv">$ </span>nova secgroup-add-rule default tcp 8888 8888 0.0.0.0/0
-india<span class="nv">$ </span>nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp <span class="m">22</span> <span class="m">22</span> 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp <span class="m">8888</span> <span class="m">8888</span> 0.0.0.0/0
+india<span class="nv">$ </span>nova secgroup-add-rule default tcp <span class="m">5000</span> <span class="m">5000</span> 0.0.0.0/0
 india<span class="nv">$ </span>nova secgroup-list-rules default
 </pre></div>
 </div>
@@ -252,41 +253,41 @@ india<span class="nv">$ </span>nova secgroup-list-rules default
 
 india<span class="nv">$ </span>nova floating-ip-create ext-net
 
-india<span class="nv">$ </span><span class="nb">export </span><span class="nv">MYIP</span><span class="o">=</span><span class="sb">`</span>nova floating-ip-list | grep <span class="s2">&quot;| -&quot;</span> | cut -d <span class="s1">&#39;|&#39;</span> -f3 | head -1<span class="sb">`</span>
+india<span class="nv">$ </span><span class="nb">export </span><span class="nv">MYIP</span><span class="o">=</span><span class="sb">`</span>nova floating-ip-list <span class="p">|</span> grep <span class="s2">&quot;| -&quot;</span> <span class="p">|</span> cut -d <span class="s1">&#39;|&#39;</span> -f3 <span class="p">|</span> head -1<span class="sb">`</span>
 india<span class="nv">$ </span>nova add-floating-ip <span class="nv">$USER</span>-001 <span class="nv">$MYIP</span>
 india<span class="nv">$ </span>nova show <span class="nv">$USER</span>-001
 </pre></div>
 </div>
 <p>You should see a table similar to this:</p>
 <div class="highlight-bash"><div class="highlight"><pre>+--------------------------------------+-------------------------------------------------------------------+
-| Property                             | Value                                                             |
+<span class="p">|</span> Property                             <span class="p">|</span> Value                                                             <span class="p">|</span>
 +--------------------------------------+-------------------------------------------------------------------+
-| OS-DCF:diskConfig                    | MANUAL                                                            |
-| OS-EXT-AZ:availability_zone          | nova                                                              |
-| OS-EXT-STS:power_state               | 1                                                                 |
-| OS-EXT-STS:task_state                | -                                                                 |
-| OS-EXT-STS:vm_state                  | active                                                            |
-| OS-SRV-USG:launched_at               | 2015-03-26T18:17:45.000000                                        |
-| OS-SRV-USG:terminated_at             | -                                                                 |
-| accessIPv4                           |                                                                   |
-| accessIPv6                           |                                                                   |
-| config_drive                         |                                                                   |
-| created                              | 2015-03-26T18:17:39Z                                              |
-| flavor                               | m1.small <span class="o">(</span>2<span class="o">)</span>                                                      |
-| hostId                               | 1094ef059b959406822d0a0517873b8cb03363d700019913ebd9f636          |
-| id                                   | ad81e08f-9827-4a37-b029-xxxxxxxx                                  |
-| image                                | futuresystems/ubuntu-14.04 <span class="o">(</span>6a6a3474-8194-44ac-9f56-70cb93207f21<span class="o">)</span> |
-| int-net network                      | 10.23.1.xxx, 149.165.xxx.xxx                                      |
-| key_name                             | xxx-india-key                                                     |
-| metadata                             | <span class="o">{}</span>                                                                |
-| name                                 | xxx-001                                                           |
-| os-extended-volumes:volumes_attached | <span class="o">[]</span>                                                                |
-| progress                             | 0                                                                 |
-| security_groups                      | default                                                           |
-| status                               | ACTIVE                                                            |
-| tenant_id                            | c7e8f17828fb48309e38axxxxxxxxxxxx                                 |
-| updated                              | 2015-03-26T18:17:45Z                                              |
-| user_id                              | 433181ac60be4115a51axxxxxxxxxxxx                                  |
+<span class="p">|</span> OS-DCF:diskConfig                    <span class="p">|</span> MANUAL                                                            <span class="p">|</span>
+<span class="p">|</span> OS-EXT-AZ:availability_zone          <span class="p">|</span> nova                                                              <span class="p">|</span>
+<span class="p">|</span> OS-EXT-STS:power_state               <span class="p">|</span> <span class="m">1</span>                                                                 <span class="p">|</span>
+<span class="p">|</span> OS-EXT-STS:task_state                <span class="p">|</span> -                                                                 <span class="p">|</span>
+<span class="p">|</span> OS-EXT-STS:vm_state                  <span class="p">|</span> active                                                            <span class="p">|</span>
+<span class="p">|</span> OS-SRV-USG:launched_at               <span class="p">|</span> 2015-03-26T18:17:45.000000                                        <span class="p">|</span>
+<span class="p">|</span> OS-SRV-USG:terminated_at             <span class="p">|</span> -                                                                 <span class="p">|</span>
+<span class="p">|</span> accessIPv4                           <span class="p">|</span>                                                                   <span class="p">|</span>
+<span class="p">|</span> accessIPv6                           <span class="p">|</span>                                                                   <span class="p">|</span>
+<span class="p">|</span> config_drive                         <span class="p">|</span>                                                                   <span class="p">|</span>
+<span class="p">|</span> created                              <span class="p">|</span> 2015-03-26T18:17:39Z                                              <span class="p">|</span>
+<span class="p">|</span> flavor                               <span class="p">|</span> m1.small <span class="o">(</span>2<span class="o">)</span>                                                      <span class="p">|</span>
+<span class="p">|</span> hostId                               <span class="p">|</span> 1094ef059b959406822d0a0517873b8cb03363d700019913ebd9f636          <span class="p">|</span>
+<span class="p">|</span> id                                   <span class="p">|</span> ad81e08f-9827-4a37-b029-xxxxxxxx                                  <span class="p">|</span>
+<span class="p">|</span> image                                <span class="p">|</span> futuresystems/ubuntu-14.04 <span class="o">(</span>6a6a3474-8194-44ac-9f56-70cb93207f21<span class="o">)</span> <span class="p">|</span>
+<span class="p">|</span> int-net network                      <span class="p">|</span> 10.23.1.xxx, 149.165.xxx.xxx                                      <span class="p">|</span>
+<span class="p">|</span> key_name                             <span class="p">|</span> xxx-india-key                                                     <span class="p">|</span>
+<span class="p">|</span> metadata                             <span class="p">|</span> <span class="o">{}</span>                                                                <span class="p">|</span>
+<span class="p">|</span> name                                 <span class="p">|</span> xxx-001                                                           <span class="p">|</span>
+<span class="p">|</span> os-extended-volumes:volumes_attached <span class="p">|</span> <span class="o">[]</span>                                                                <span class="p">|</span>
+<span class="p">|</span> progress                             <span class="p">|</span> <span class="m">0</span>                                                                 <span class="p">|</span>
+<span class="p">|</span> security_groups                      <span class="p">|</span> default                                                           <span class="p">|</span>
+<span class="p">|</span> status                               <span class="p">|</span> ACTIVE                                                            <span class="p">|</span>
+<span class="p">|</span> tenant_id                            <span class="p">|</span> c7e8f17828fb48309e38axxxxxxxxxxxx                                 <span class="p">|</span>
+<span class="p">|</span> updated                              <span class="p">|</span> 2015-03-26T18:17:45Z                                              <span class="p">|</span>
+<span class="p">|</span> user_id                              <span class="p">|</span> 433181ac60be4115a51axxxxxxxxxxxx                                  <span class="p">|</span>
 +--------------------------------------+-------------------------------------------------------------------+
 </pre></div>
 </div>
@@ -433,7 +434,7 @@ user secure SSL channel.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup_vagrant.html" class="btn btn-neutral float-right" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup_vagrant.html" class="btn btn-neutral float-right" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="quickstart.html" class="btn btn-neutral" title="Quickstart on your desktop"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -449,7 +450,8 @@ user secure SSL channel.</li>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -474,7 +476,7 @@ user secure SSL channel.</li>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

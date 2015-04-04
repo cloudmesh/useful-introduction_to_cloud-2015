@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cmd3.plugins.shell_scope &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>cmd3.plugins.shell_scope</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cmd3.plugins.shell_scope</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">cmd3.shell</span> <span class="kn">import</span> <span class="n">command</span>
+
+
+<span class="c"># noinspection PyUnusedLocal</span>
+<div class="viewcode-block" id="shell_scope"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope">[docs]</a><span class="k">class</span> <span class="nc">shell_scope</span><span class="p">:</span>
+
+    <span class="n">echo</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">active_scope</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">scopes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c"># scopeless = [&#39;info&#39;, &#39;var&#39;, &#39;use&#39;, &#39;quit&#39;, &#39;q&#39;, &#39;EOF&#39;, &#39;eof&#39;, &#39;help&#39;]</span>
+    <span class="n">scopeless</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;info&#39;</span><span class="p">,</span> <span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;use&#39;</span><span class="p">,</span> <span class="s">&#39;quit&#39;</span><span class="p">,</span> <span class="s">&#39;q&#39;</span><span class="p">,</span> <span class="s">&#39;help&#39;</span><span class="p">]</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="s">&#39;cm&gt; &#39;</span>
+    <span class="n">variables</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c">#</span>
+    <span class="c"># init</span>
+    <span class="c">#</span>
+
+<div class="viewcode-block" id="shell_scope.info_shell_scope"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.info_shell_scope">[docs]</a>    <span class="k">def</span> <span class="nf">info_shell_scope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;prints some information about the shell scope&quot;&quot;&quot;</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;ECHO&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">echo</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;SCOPE&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;SCOPES&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;SCOPELESS&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopeless</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;prompt&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;scripts&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scripts</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> =&quot;</span> <span class="o">%</span> <span class="s">&quot;variables&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span>
+</div>
+<div class="viewcode-block" id="shell_scope.activate_shell_scope"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.activate_shell_scope">[docs]</a>    <span class="k">def</span> <span class="nf">activate_shell_scope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;activates the shell scope&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="s">&#39;cm&gt; &#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scopeless</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;load&#39;</span><span class="p">,</span> <span class="s">&#39;info&#39;</span><span class="p">,</span> <span class="s">&#39;var&#39;</span><span class="p">,</span> <span class="s">&#39;use&#39;</span><span class="p">,</span> <span class="s">&#39;quit&#39;</span><span class="p">,</span> <span class="s">&#39;q&#39;</span><span class="p">,</span> <span class="s">&#39;help&#39;</span><span class="p">]</span>
+        <span class="c"># self.scopeless = [&#39;use&#39;, &#39;quit&#39;, &#39;q&#39;, &#39;EOF&#39;, &#39;eof&#39;, &#39;help&#39;]</span>
+</div>
+<div class="viewcode-block" id="shell_scope.do_EOF"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.do_EOF">[docs]</a>    <span class="k">def</span> <span class="nf">do_EOF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;end of file&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="c">#</span>
+    <span class="c"># Scope and use commands</span>
+    <span class="c">#</span>
+</div>
+    <span class="k">def</span> <span class="nf">_add_scopeless</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scopeless</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_delete_scopeless</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scopeless</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_add_scope</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_delete_scope</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_list_scope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="mi">10</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span>
+        <span class="k">print</span> <span class="s">&#39;Scope&#39;</span>
+        <span class="k">print</span> <span class="mi">10</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">s</span>
+
+        <span class="k">print</span> <span class="mi">10</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span>
+        <span class="k">print</span> <span class="s">&#39;Scopeless&#39;</span>
+        <span class="k">print</span> <span class="mi">10</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopeless</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">s</span>
+
+<div class="viewcode-block" id="shell_scope.do_use"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.do_use">[docs]</a>    <span class="k">def</span> <span class="nf">do_use</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ::</span>
+<span class="sd">        </span>
+<span class="sd">            USAGE:</span>
+
+<span class="sd">                use list           lists the available scopes</span>
+
+<span class="sd">                use add SCOPE      adds a scope &lt;scope&gt;</span>
+
+<span class="sd">                use delete SCOPE   removes the &lt;scope&gt;</span>
+
+<span class="sd">                use                without parameters allows an</span>
+<span class="sd">                                   interactive selection</span>
+
+<span class="sd">            DESCRIPTION</span>
+<span class="sd">               Often we have to type in a command multiple times. To save</span>
+<span class="sd">               us typng the name of the command, we have defined a simple</span>
+<span class="sd">               scope that can be activated with the use command</span>
+
+<span class="sd">            ARGUMENTS:</span>
+<span class="sd">                list         list the available scopes</span>
+<span class="sd">                add          add a scope with a name</span>
+<span class="sd">                delete       delete a named scope</span>
+<span class="sd">                use          activate a scope</span>
+
+<span class="sd">            &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s">&#39;list&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_scope</span><span class="p">()</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">arg</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;add&#39;</span><span class="p">):</span>
+            <span class="n">new_scope</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_scope</span><span class="p">(</span><span class="n">new_scope</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">arg</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;delete&#39;</span><span class="p">):</span>
+            <span class="c"># delete does not work</span>
+            <span class="n">which_scope</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_delete_scope</span><span class="p">(</span><span class="n">which_scope</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">arg</span> <span class="o">==</span> <span class="s">&quot;cm&quot;</span> <span class="ow">or</span> <span class="n">arg</span> <span class="o">==</span> <span class="s">&quot;/&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="k">elif</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">=</span> <span class="n">arg</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+                <span class="p">[</span><span class="s">&quot;&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopes</span><span class="p">,</span> <span class="s">&#39;Which scope? &#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Switched scope to:&quot;</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">+</span> <span class="s">&#39;cm&gt; &#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Switched scope to:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">+</span> <span class="s">&#39;&gt; &#39;</span>
+
+    <span class="c">#</span>
+    <span class="c"># emptyline</span>
+    <span class="c">#</span></div>
+<div class="viewcode-block" id="shell_scope.emptyline"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.emptyline">[docs]</a>    <span class="k">def</span> <span class="nf">emptyline</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="c">#</span>
+    <span class="c"># replace vars</span>
+    <span class="c">#</span>
+</div>
+<div class="viewcode-block" id="shell_scope.update_time"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.update_time">[docs]</a>    <span class="k">def</span> <span class="nf">update_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+        <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date</span>
+
+    <span class="c">#</span>
+    <span class="c"># line handler</span>
+    <span class="c">#</span></div>
+    <span class="n">forblock</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">forstatement</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+<div class="viewcode-block" id="shell_scope.precmd"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.precmd">[docs]</a>    <span class="k">def</span> <span class="nf">precmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">line</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">line</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;#&quot;</span><span class="p">):</span>
+            <span class="k">print</span> <span class="n">line</span>
+            <span class="k">return</span> <span class="s">&quot;&quot;</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_vars</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+        <span class="c">#</span>
+        <span class="c"># handeling for loops</span>
+        <span class="c">#</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forblock</span> <span class="ow">is</span> <span class="bp">True</span> <span class="ow">and</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="c"># add line to block</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">forblock</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;&gt;&gt;&gt;&gt; EXECUTE LOOP&quot;</span>
+            <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">forstatement</span>
+            <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">forblock</span>
+            <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forblock</span> <span class="o">=</span> <span class="bp">False</span>
+
+            <span class="p">(</span><span class="n">loopvar</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forstatement</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;in&#39;</span><span class="p">)</span>
+            <span class="n">loopvar</span> <span class="o">=</span> <span class="n">loopvar</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;for&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;[&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;]&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="n">values</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">do_var</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">=</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">loopvar</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">:</span>
+                    <span class="n">l</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_vars</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">precmd</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">onecmd</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;for&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forblock</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forstatement</span> <span class="o">=</span> <span class="n">line</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">block</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c">#</span>
+        <span class="c"># history</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="s">&quot;hist&quot;</span> <span class="ow">and</span> <span class="n">line</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hist</span> <span class="o">+=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+
+        <span class="c">#</span>
+        <span class="c"># strip</span>
+        <span class="c">#</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">print</span>
+            <span class="k">return</span> <span class="n">line</span>
+
+        <span class="c">#</span>
+        <span class="c"># scopes</span>
+        <span class="c">#</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">rest</span><span class="p">)</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">line</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scopeless</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">):</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_scope</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">line</span>
+
+        <span class="c">#</span>
+        <span class="c"># echo</span>
+        <span class="c">#</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">echo</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">line</span>
+
+        <span class="k">return</span> <span class="n">line</span>
+
+    <span class="c">#</span>
+    <span class="c"># Echo</span>
+    <span class="c">#</span></div>
+<div class="viewcode-block" id="shell_scope.set_verbose"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.set_verbose">[docs]</a>    <span class="k">def</span> <span class="nf">set_verbose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">on</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">echo</span> <span class="o">=</span> <span class="n">on</span>
+</div>
+<div class="viewcode-block" id="shell_scope.set_banner"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.set_banner">[docs]</a>    <span class="k">def</span> <span class="nf">set_banner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">banner</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">banner</span> <span class="o">=</span> <span class="n">banner</span>
+</div>
+    <span class="nd">@command</span>
+    <span class="k">def</span> <span class="nf">do_verbose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            verbose (True | False)</span>
+<span class="sd">            verbose</span>
+
+<span class="sd">        If it sets to True, a command will be printed before execution.</span>
+<span class="sd">        In the interactive mode, you may want to set it to False.</span>
+<span class="sd">        When you use scripts, we recommend to set it to True.</span>
+
+<span class="sd">        The default is set to False</span>
+
+<span class="sd">        If verbose is specified without parameter the flag is</span>
+<span class="sd">        toggled.</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">args</span> <span class="o">==</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">echo</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">echo</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">echo</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;True&#39;</span><span class="p">]</span>
+
+    <span class="c">#</span>
+    <span class="c"># VAR</span>
+    <span class="c">#</span>
+<div class="viewcode-block" id="shell_scope.replace_vars"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_scope.shell_scope.replace_vars">[docs]</a>    <span class="k">def</span> <span class="nf">replace_vars</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_time</span><span class="p">()</span>
+
+        <span class="n">newline</span> <span class="o">=</span> <span class="n">line</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+            <span class="n">newline</span> <span class="o">=</span> <span class="n">newline</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;$&quot;</span> <span class="o">+</span> <span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+            <span class="n">newline</span> <span class="o">=</span> <span class="n">newline</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;$&quot;</span> <span class="o">+</span> <span class="n">v</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">newline</span>
+</div>
+    <span class="k">def</span> <span class="nf">_add_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="c"># self._list_variables()</span>
+
+    <span class="k">def</span> <span class="nf">_delete_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_list_variables</span><span class="p">()</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="c"># self._list_variables()</span>
+
+    <span class="k">def</span> <span class="nf">_list_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="mi">10</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span>
+        <span class="k">print</span> <span class="s">&#39;Variables&#39;</span>
+        <span class="k">print</span> <span class="mi">10</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">v</span><span class="p">,</span> <span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+
+    <span class="nd">@command</span>
+    <span class="k">def</span> <span class="nf">do_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            var list </span>
+<span class="sd">            var delete NAMES</span>
+<span class="sd">            var NAME=VALUE</span>
+<span class="sd">            var NAME</span>
+
+<span class="sd">        Arguments:</span>
+<span class="sd">            NAME    Name of the variable</span>
+<span class="sd">            NAMES   Names of the variable separated by spaces</span>
+<span class="sd">            VALUE   VALUE to be assigned</span>
+
+<span class="sd">        special vars date and time are defined</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s">&#39;list&#39;</span> <span class="ow">or</span> <span class="n">arg</span> <span class="o">==</span> <span class="s">&#39;&#39;</span> <span class="ow">or</span> <span class="n">arg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_list_variables</span><span class="p">()</span>
+            <span class="k">return</span>
+
+        <span class="k">elif</span> <span class="s">&#39;=&#39;</span> <span class="ow">in</span> <span class="n">arg</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;=&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&quot;time&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&quot;date&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_variable</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="s">&#39;=&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">arg</span> <span class="ow">and</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;NAME=VALUE&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;NAME=VALUE&#39;</span><span class="p">]</span>
+                <span class="k">print</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&#39;ERROR: variable&#39;</span><span class="p">,</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;NAME=VALUE&#39;</span><span class="p">],</span> <span class="s">&#39;not defined&#39;</span>
+            
+        <span class="k">elif</span> <span class="n">arg</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;delete&#39;</span><span class="p">):</span>
+            <span class="n">variable</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_delete_variable</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+            <span class="k">return</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

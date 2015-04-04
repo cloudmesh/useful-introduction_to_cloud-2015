@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fabfile.server &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>fabfile.server</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for fabfile.server</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">with_statement</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">banner</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_common.util</span> <span class="kn">import</span> <span class="n">PROGRESS</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config_server</span>
+
+<span class="kn">import</span> <span class="nn">fabric</span>
+<span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span><span class="p">,</span> <span class="n">local</span><span class="p">,</span> <span class="n">settings</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">queue</span>
+<span class="kn">import</span> <span class="nn">progress</span>
+<span class="kn">import</span> <span class="nn">mongo</span>
+<span class="kn">from</span> <span class="nn">build</span> <span class="kn">import</span> <span class="n">cursor_on</span>
+
+<span class="c"># ----------------------------------------------------------------------</span>
+<span class="c"># SETTING UP A LOGGER</span>
+<span class="c"># ----------------------------------------------------------------------</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<span class="c"># ----------------------------------------------------------------------</span>
+<span class="c"># TRY cloudmesh</span>
+<span class="c"># ----------------------------------------------------------------------</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">cloudmesh</span>
+    <span class="c"># print &quot;Version&quot;, cloudmesh.__version__</span>
+    <span class="c"># TODO: ful version does not work whne installed via setup.py install</span>
+    <span class="c"># thus we simply do not print for now.</span>
+    <span class="c"># print &quot;Full Version&quot;, cloudmesh.__full_version__</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;ERROR: could not find package</span><span class="se">\n\n</span><span class="s">   cloudmesh</span><span class="se">\n</span><span class="s">&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;please run first</span><span class="se">\n</span><span class="s">&quot;</span>
+    <span class="k">print</span>
+    <span class="k">print</span> <span class="s">&quot;     ./install cloudmesh</span><span class="se">\n</span><span class="s">&quot;</span>
+    <span class="k">print</span>
+    <span class="k">print</span> <span class="s">&quot;Exception&quot;</span>
+    <span class="k">print</span> <span class="n">e</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;start&#39;</span><span class="p">,</span> <span class="s">&#39;stop&#39;</span><span class="p">,</span> <span class="s">&#39;kill&#39;</span><span class="p">,</span> <span class="s">&#39;view&#39;</span><span class="p">,</span> <span class="s">&#39;clean&#39;</span><span class="p">,</span>
+           <span class="s">&#39;agent&#39;</span><span class="p">,</span> <span class="s">&#39;quick&#39;</span><span class="p">,</span> <span class="s">&#39;wsgi&#39;</span><span class="p">,</span> <span class="s">&#39;web&#39;</span><span class="p">]</span>
+
+<span class="c">#</span>
+<span class="c"># SETTING THE BROWSER BASED ON PLATFORM</span>
+<span class="c">#</span>
+<span class="n">web_browser</span> <span class="o">=</span> <span class="s">&quot;firefox&quot;</span>
+
+<span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">debug</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.debug&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+    <span class="n">progress</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">progress</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+
+<span class="n">PROGRESS</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;Cloudmesh Services&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&#39;darwin&#39;</span><span class="p">:</span>
+    <span class="n">web_browser</span> <span class="o">=</span> <span class="s">&quot;open&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">execute_command</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">debug</span><span class="p">):</span>
+    <span class="n">_capture</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">debug</span>
+    <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="n">banner</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">PROGRESS</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+    <span class="n">local</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">capture</span><span class="o">=</span><span class="n">_capture</span><span class="p">)</span>
+
+
+<span class="c">#</span>
+<span class="c"># VERSION MANAGEMENT</span>
+<span class="c">#</span>
+
+<span class="c">#</span>
+<span class="c"># we are no longer doing version management with the VERSION.txt file,</span>
+<span class="c"># but instead including it in setup.py we need to change the code</span>
+<span class="c"># here, so do not use the version increment</span>
+<span class="c">#</span>
+
+<span class="c"># filename = &quot;VERSION.txt&quot;</span>
+<span class="c"># version = open(filename).read()</span>
+
+<span class="nd">@task</span>
+<div class="viewcode-block" id="agent"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.agent">[docs]</a><span class="k">def</span> <span class="nf">agent</span><span class="p">():</span>
+    <span class="c"># with settings(warn_only=True):</span>
+    <span class="c"># local(&quot;killall ssh-agent&quot;)</span>
+    <span class="k">print</span> <span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;=&quot;</span>
+    <span class="k">print</span><span class="s">&quot; PLEASE COPY THE FOLLOWING COMMNADS AND EXECUTE IN YOUR SHELL&quot;</span>
+    <span class="k">print</span> <span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;=&quot;</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s">&quot;eval `ssh-agent -s`&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;ssh-add&quot;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;sma e as the kill command&quot;&quot;&quot;</span>
+    <span class="n">kill</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+    <span class="n">cursor_on</span><span class="p">()</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;kills all server processes &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">settings</span><span class="p">(</span><span class="n">warn_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="n">execute_command</span><span class="p">(</span><span class="s">&quot;STOP MONGO&quot;</span><span class="p">,</span> <span class="s">&quot;fab mongo.stop&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span>
+            <span class="s">&#39;ps -ax | fgrep &quot;python {0}.py&quot; | fgrep -v fgrep&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">),</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">pid</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">local</span><span class="p">(</span><span class="s">&quot;kill -9 {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span>
+                <span class="c"># local(&quot;fab queue.stop&quot;)</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="quick"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.quick">[docs]</a><span class="k">def</span> <span class="nf">quick</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; starts in dir webgui the program server.py and displays a browser on the given port and link&quot;&quot;&quot;</span>
+
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;INSTALL CLOUDMESH&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;python setup.py install&quot;</span><span class="p">)</span>
+
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;START WEB SERVER&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;cd cloudmesh_web; python {0}.py &amp;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">))</span>
+    <span class="c"># view(link)</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; starts in dir webgui the program server.py and displays a browser on the given port and link&quot;&quot;&quot;</span>
+
+    <span class="c"># pprint (fabric.state.output)</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &#39;aborts&#39;: True,</span>
+<span class="sd">        &#39;debug&#39;: False,</span>
+<span class="sd">        &#39;running&#39;: True,</span>
+<span class="sd">        &#39;status&#39;: True,</span>
+<span class="sd">        &#39;stderr&#39;: True,</span>
+<span class="sd">        &#39;stdout&#39;: True,</span>
+<span class="sd">        &#39;user&#39;: True,</span>
+<span class="sd">        &#39;warnings&#39;: True</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># banner(debug)</span>
+
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;KILL THE SERVER&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+    <span class="n">kill</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">debug</span><span class="p">:</span>
+        <span class="n">PROGRESS</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+
+    <span class="n">execute_command</span><span class="p">(</span><span class="s">&quot;INSTALL CLOUDMESH&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;python setup.py install&quot;</span><span class="p">,</span>
+                    <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+
+    <span class="n">mongo</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="c"># execute_command(&quot;START MONGO&quot;,</span>
+    <span class="c"># &quot;fab mongo.start&quot;,</span>
+    <span class="c">#            debug)</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="c"># execute_command(&quot;START RABITMQ&quot;,</span>
+    <span class="c">#        &quot;fab queue.start&quot;, debug)</span>
+
+    <span class="n">queue</span><span class="o">.</span><span class="n">flower_server</span><span class="p">()</span>
+    <span class="c"># execute_command(&quot;START FLOWER&quot;,</span>
+    <span class="c">#        &quot;fab queue.flower_server&quot;,</span>
+    <span class="c">#        debug)</span>
+    <span class="n">fabric</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">fabric</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">execute_command</span><span class="p">(</span><span class="s">&quot;START WEB SERVER&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;cd cloudmesh_web; python {0}.py &amp;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">),</span>
+                    <span class="bp">True</span><span class="p">)</span>
+    <span class="c"># view(link)</span>
+    <span class="n">PROGRESS</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+    <span class="c"># pprint (fabric.state.output)</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="web"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.web">[docs]</a><span class="k">def</span> <span class="nf">web</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">):</span>
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;START WEB SERVER&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;cd cloudmesh_web; python {0}.py &amp;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">))</span>
+    <span class="c"># view(link)</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="view"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.view">[docs]</a><span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;run the browser&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">cloudmesh_base.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
+
+    <span class="n">server_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_server.yaml&quot;</span><span class="p">))</span>
+
+    <span class="n">host</span> <span class="o">=</span> <span class="n">server_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.webui.host&quot;</span><span class="p">)</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="n">server_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.webui.port&quot;</span><span class="p">)</span>
+
+    <span class="n">url_link</span> <span class="o">=</span> <span class="s">&quot;http://{0}:{1}/{2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
+
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">web_browser</span><span class="p">,</span> <span class="n">url_link</span><span class="p">))</span>
+    <span class="c"># if browser == &#39;yes&#39;:</span>
+    <span class="c"># local(&quot;sleep 2; {0} http://127.0.0.1:{2}/{1}&quot;.format(web_browser, link, port))</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="clean"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.clean">[docs]</a><span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;clean the directory&quot;&quot;&quot;</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;find . -name </span><span class="se">\&quot;</span><span class="s">#*</span><span class="se">\&quot;</span><span class="s"> -exec rm {} </span><span class="se">\\</span><span class="s">;&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;find . -name </span><span class="se">\&quot;</span><span class="s">*~</span><span class="se">\&quot;</span><span class="s"> -exec rm {} </span><span class="se">\\</span><span class="s">;&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;find . -name </span><span class="se">\&quot;</span><span class="s">*.pyc</span><span class="se">\&quot;</span><span class="s"> -exec rm {} </span><span class="se">\\</span><span class="s">;&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;rm -rf build dist *.egg-info&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;rm -rf doc/build &quot;</span><span class="p">)</span>
+
+
+<span class="c"># For production server</span></div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="wsgi"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.wsgi">[docs]</a><span class="k">def</span> <span class="nf">wsgi</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">&quot;start&quot;</span><span class="p">):</span>
+    <span class="n">pidfile</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/uwsgi/cloudmesh_uwsgi.pid&quot;</span><span class="p">)</span>
+    <span class="n">logfile</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/uwsgi/cloudmesh_uwsgi.log&quot;</span><span class="p">)</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="n">user_pidfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">pidfile</span><span class="p">)</span>
+    <span class="n">user_logfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">logfile</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s">&quot;restart&quot;</span><span class="p">:</span>
+        <span class="n">wsgi</span><span class="p">(</span><span class="s">&quot;stop&quot;</span><span class="p">)</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="s">&quot;start&quot;</span>
+
+    <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s">&quot;start&quot;</span><span class="p">:</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;uwsgi -s /tmp/cloudmesh.sock -M -p 2 -t 10 </span><span class="se">\</span>
+<span class="s">      --daemonize={0} </span><span class="se">\</span>
+<span class="s">      --pidfile={1} </span><span class="se">\</span>
+<span class="s">      --chown-socket=cloudmesh:www-data </span><span class="se">\</span>
+<span class="s">      --chdir=cloudmesh_web </span><span class="se">\</span>
+<span class="s">      --module=server </span><span class="se">\</span>
+<span class="s">      --callable=app&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_logfile</span><span class="p">,</span> <span class="n">user_pidfile</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s">&quot;stop&quot;</span> <span class="ow">or</span> <span class="n">action</span> <span class="o">==</span> <span class="s">&quot;kill&quot;</span><span class="p">:</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;kill -INT `cat {0}`&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_pidfile</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s">&quot;reload&quot;</span><span class="p">:</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;kill -HUP `cat {0}`&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_pidfile</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">command</span><span class="p">:</span>
+        <span class="n">local</span><span class="p">(</span><span class="n">command</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

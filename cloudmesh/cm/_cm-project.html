@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -88,14 +89,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_vm-cm.html">CM Console for VM Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -144,7 +145,7 @@
       
           <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
       
-    <li><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+    <li><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/cm/_cm-project.txt" rel="nofollow"> View page source</a>
@@ -156,14 +157,14 @@
           <div role="main" class="document">
             
   <div class="section" id="project-command-in-cloudmesh-cm">
-<h1><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#project-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<h1><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#project-command-in-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <button type="button" class="btn btn-default navbar-btn"><p><a class="reference external" href="http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_cm-project.ipynb">Notebook</a></p>
-</button><p>The <tt class="docutils literal"><span class="pre">project</span></tt> command provides a list of default, active, or completed
+</button><p>The <code class="docutils literal"><span class="pre">project</span></code> command provides a list of default, active, or completed
 project for a given user. You can update the project information with
 this command.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">that all your <tt class="docutils literal"><span class="pre">project</span></tt> command executions update your yaml</p>
+<p class="last">that all your <code class="docutils literal"><span class="pre">project</span></code> command executions update your yaml</p>
 </div>
 <p>file (cloudmesh.yaml) and mongo db (user, defaults) both.</p>
 <div class="section" id="ipython-alias">
@@ -178,9 +179,9 @@ following lines.</p>
 <p>We are using now one of the methods to call the cm commands in the
 following sections.</p>
 <div class="section" id="project-info-command">
-<h3><tt class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></tt> Command<a class="headerlink" href="#project-info-command" title="Permalink to this headline">¶</a></h3>
-<p>The <tt class="docutils literal"><span class="pre">project</span></tt> command has a number of options that are useful to
-manage a list of projects. The <tt class="docutils literal"><span class="pre">info</span></tt> option provides a current
+<h3><code class="docutils literal"><span class="pre">project</span> <span class="pre">info</span></code> Command<a class="headerlink" href="#project-info-command" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">project</span></code> command has a number of options that are useful to
+manage a list of projects. The <code class="docutils literal"><span class="pre">info</span></code> option provides a current
 information on your account.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project info
 </pre></div>
@@ -196,7 +197,7 @@ information on your account.</p>
 </div>
 <div class="section" id="set-a-default-project">
 <h3>Set a default project<a class="headerlink" href="#set-a-default-project" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">project</span> <span class="pre">default</span> <span class="pre">[project</span> <span class="pre">name]</span></tt> allows you to update a default
+<p><code class="docutils literal"><span class="pre">project</span> <span class="pre">default</span> <span class="pre">[project</span> <span class="pre">name]</span></code> allows you to update a default
 project to your account.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project default fg2
 </pre></div>
@@ -216,8 +217,8 @@ project to your account.</p>
 </pre></div>
 </div>
 <p>You can see your default project has been changed from fg20 to fg82.
-Note that <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span></tt> is same command with <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">info</span></tt>.
-<tt class="docutils literal"><span class="pre">info</span></tt> option can be suppressed.</p>
+Note that <code class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span></code> is same command with <code class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">info</span></code>.
+<code class="docutils literal"><span class="pre">info</span></code> option can be suppressed.</p>
 </div>
 <div class="section" id="set-an-active-project">
 <h3>Set an active project<a class="headerlink" href="#set-an-active-project" title="Permalink to this headline">¶</a></h3>
@@ -240,12 +241,12 @@ can have multiple projects in your active project list.</p>
  completed: fg1003
 </pre></div>
 </div>
-<p>You can see the new project <tt class="docutils literal"><span class="pre">fg415</span></tt> added to the active projects.</p>
+<p>You can see the new project <code class="docutils literal"><span class="pre">fg415</span></code> added to the active projects.</p>
 </div>
 <div class="section" id="change-the-status-of-project-to-completed">
-<h3>Change the status of project to <tt class="docutils literal"><span class="pre">completed</span></tt><a class="headerlink" href="#change-the-status-of-project-to-completed" title="Permalink to this headline">¶</a></h3>
+<h3>Change the status of project to <code class="docutils literal"><span class="pre">completed</span></code><a class="headerlink" href="#change-the-status-of-project-to-completed" title="Permalink to this headline">¶</a></h3>
 <p>If your project is completed and no longer needed, you may want to
-change the status from active to completed. <tt class="docutils literal"><span class="pre">completed</span></tt> option allows
+change the status from active to completed. <code class="docutils literal"><span class="pre">completed</span></code> option allows
 to change the status of the selected project.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project completed fg415
 </pre></div>
@@ -267,9 +268,9 @@ to change the status of the selected project.</p>
 </div>
 <div class="section" id="add-a-project">
 <h3>Add a project<a class="headerlink" href="#add-a-project" title="Permalink to this headline">¶</a></h3>
-<p>You can use three commands to add a project. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">active</span></tt>
-allows you to add a project to the active list. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">default</span></tt>
-sets a default project. <tt class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">completed</span></tt> adds a project to the
+<p>You can use three commands to add a project. <code class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">active</span></code>
+allows you to add a project to the active list. <code class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">default</span></code>
+sets a default project. <code class="docutils literal"><span class="pre">cm</span> <span class="pre">project</span> <span class="pre">completed</span></code> adds a project to the
 completed list. For example, you can add fg999 to the active like below.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project active fg999
 </pre></div>
@@ -280,7 +281,7 @@ completed list. For example, you can add fg999 to the active like below.</p>
 </div>
 <div class="section" id="delete-a-project">
 <h3>Delete a project<a class="headerlink" href="#delete-a-project" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">project</span> <span class="pre">delete</span></tt> command simply performs the deletion of the given
+<p><code class="docutils literal"><span class="pre">project</span> <span class="pre">delete</span></code> command simply performs the deletion of the given
 project in the yaml file.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm project delete fg999
 </pre></div>
@@ -341,7 +342,7 @@ Options:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_cm-debug.html" class="btn btn-neutral float-right" title="Command Shell Output Control"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-debug.html" class="btn btn-neutral float-right" title="Command Shell Output Control">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_cm.html" class="btn btn-neutral" title="Cloudmesh cm Command"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -357,7 +358,8 @@ Options:
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -382,7 +384,7 @@ Options:
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.rain.cobbler.cobbler_rest_api &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.rain.cobbler.cobbler_rest_api</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.rain.cobbler.cobbler_rest_api</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">cloudmesh.util.config</span> <span class="kn">import</span> <span class="n">read_yaml_config</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config_server</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.provisioner.baremetal_status</span> <span class="kn">import</span> <span class="n">BaremetalStatus</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="c">#</span>
+<span class="c"># SETTING UP A LOGGER</span>
+<span class="c">#</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="CobblerRestAPI"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI">[docs]</a><span class="k">class</span> <span class="nc">CobblerRestAPI</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;Cobbler REST Service API</span>
+<span class="sd">    This class provide the access to cobbler provision API via REST service.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_server_url</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span> <span class="o">=</span> <span class="n">BaremetalStatus</span><span class="p">()</span>
+
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_distro_list"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_distro_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_distro_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler distro list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_list</span><span class="p">(</span><span class="s">&quot;distro&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_profile_list"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_profile_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_profile_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler profile list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_list</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_system_list"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_system_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_system_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler system list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_list</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_kickstart_list"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_kickstart_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_kickstart_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler kickstart list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_list</span><span class="p">(</span><span class="s">&quot;kickstart&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_iso_list"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_iso_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_iso_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler iso file list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_list</span><span class="p">(</span><span class="s">&quot;iso&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_object_list"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_object_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_object_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cobbler_object</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list the cobbler objects.</span>
+<span class="sd">        :param string cobbler_object: one of the cobbler objects, currently support four objects, &#39;distro&#39;, &#39;profile&#39;, &#39;system&#39;, &#39;kickstart&#39;</span>
+<span class="sd">        :return: a list with the formation [&#39;name1&#39;, &#39;name2&#39;, ] of corresponding objects if cobbler_object is a valid object, otherwise None</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_object</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_distro_children"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_distro_children">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_distro_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler children of distro *name*</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_children</span><span class="p">(</span><span class="s">&quot;distro&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_profile_children"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_profile_children">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_profile_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler children of profile *name*</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_children</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_object_children"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_object_children">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_object_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cobbler_object</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list the children of cobbler objects.</span>
+<span class="sd">        :param string cobbler_object: one of the cobbler objects, currently support four objects, &#39;distro&#39;, &#39;profile&#39;,</span>
+<span class="sd">        :return: a list with the formation [&#39;name1&#39;, &#39;name2&#39;, ] of corresponding objects if cobbler_object is a valid object, otherwise None</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">cobbler_object</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;distro&quot;</span><span class="p">,</span> <span class="s">&quot;profile&quot;</span><span class="p">]:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}/child&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_object</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_profile_based_kickstart"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_profile_based_kickstart">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_profile_based_kickstart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ks_filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        get cobbler profile defined with the kickstart filename *ks_filename*</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/kickstarts/{0}/profile&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ks_filename</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_distro_report"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_distro_report">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_distro_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler distro report</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_report</span><span class="p">(</span><span class="s">&quot;distro&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_profile_report"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_profile_report">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_profile_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler profile report</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_report</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_system_report"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_system_report">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_system_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler system report</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_report</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_kickstart_report"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_kickstart_report">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_kickstart_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;shortcut for get cobbler kickstart report</span>
+<span class="sd">        :param string name: the filename of kickstart file, it supports UNIX wildcard</span>
+<span class="sd">        :return: a list of the format [{&quot;name&quot;: &quot;full name&quot;, &quot;contents&quot;: [lines...]}, {}]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cobbler_object_report</span><span class="p">(</span><span class="s">&quot;kickstart&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_cobbler_object_report"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_cobbler_object_report">[docs]</a>    <span class="k">def</span> <span class="nf">get_cobbler_object_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cobbler_object</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get the detail report of cobbler object</span>
+<span class="sd">        :param string cobbler_object: one of the cobbler objects, currently support four objects, &#39;distro&#39;, &#39;profile&#39;, &#39;system&#39;, &#39;kickstart&#39;</span>
+<span class="sd">        :param string name: the name of the cobbler object. It supports UNIX wildcards</span>
+<span class="sd">        :return: a list of corresponding object with full name if cobbler_object is a valid object and named object exists, otherwise None</span>
+<span class="sd">        The formation of result is: [{&quot;name&quot;: &quot;full_name&quot;, &quot;field1&quot;: &quot;value1&quot;,}, {}]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_object</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]]</span> <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.add_cobbler_distro"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.add_cobbler_distro">[docs]</a>    <span class="k">def</span> <span class="nf">add_cobbler_distro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a distribution to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your distro name&quot;, &quot;url&quot;: &quot;full url of iso&quot;}</span>
+<span class="sd">        :return: a dict {&quot;distro&quot;: &quot;name&quot;, &quot;profile&quot;: &quot;name&quot;} means add distro operation success, otherwise None means failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_cobbler_object</span><span class="p">(</span><span class="s">&quot;distro&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">flag_return_data</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.add_cobbler_profile"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.add_cobbler_profile">[docs]</a>    <span class="k">def</span> <span class="nf">add_cobbler_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a profile to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your profile name&quot;, &quot;distro&quot;: &quot;distro&quot;, &quot;kickstart&quot;: &quot;kickstart.file&quot;,}</span>
+<span class="sd">        :return: True means add profile operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_cobbler_object</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.add_cobbler_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.add_cobbler_system">[docs]</a>    <span class="k">def</span> <span class="nf">add_cobbler_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a system to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your system name&quot;, &quot;profile&quot;: &quot;profile&quot;, &quot;power&quot;: {}, &quot;interfaces&quot;: [{}, {},]}</span>
+<span class="sd">        :return: True means add system operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_cobbler_object</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.add_cobbler_kickstart"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.add_cobbler_kickstart">[docs]</a>    <span class="k">def</span> <span class="nf">add_cobbler_kickstart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a kickstart to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your kickstart filename&quot;, &quot;contents&quot;: [line, line,...]}</span>
+<span class="sd">        :return: True means add kickstart operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_cobbler_object</span><span class="p">(</span><span class="s">&quot;kickstart&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.add_cobbler_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.add_cobbler_object">[docs]</a>    <span class="k">def</span> <span class="nf">add_cobbler_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cobbler_object</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">flag_return_data</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a specific object to cobbler.</span>
+<span class="sd">        :param string cobbler_object: one of the cobbler objects, currently support four objects, &#39;distro&#39;, &#39;profile&#39;, &#39;system&#39;, &#39;kickstart&#39;</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your object name&quot;, ...}</span>
+<span class="sd">        :return: True means add an object operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_object</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">])</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;post&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">flag_return_data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.update_cobbler_distro"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.update_cobbler_distro">[docs]</a>    <span class="k">def</span> <span class="nf">update_cobbler_distro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update a distro to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your distro name&quot;, &quot;comment&quot;: &quot;your comment&quot;, &quot;owners&quot;: &quot;specified owners&quot;,}</span>
+<span class="sd">        :return: True means update distro operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_cobbler_object</span><span class="p">(</span><span class="s">&quot;distro&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.update_cobbler_profile"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.update_cobbler_profile">[docs]</a>    <span class="k">def</span> <span class="nf">update_cobbler_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update a profile to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your profile name&quot;, &quot;distro&quot;: &quot;distro&quot;, &quot;kickstart&quot;: &quot;kickstart.file&quot;, &quot;comment&quot;: &quot;your comment&quot;, &quot;owners&quot;: &quot;specified owners&quot;,}</span>
+<span class="sd">        :return: True means update profile operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_cobbler_object</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.update_cobbler_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.update_cobbler_system">[docs]</a>    <span class="k">def</span> <span class="nf">update_cobbler_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update a system to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your system name&quot;, &quot;profile&quot;: &quot;profile&quot;, &quot;comment&quot;: &quot;your comment&quot;, &quot;owners&quot;: &quot;specified owners&quot;, &quot;power&quot;: {}, &quot;interfaces&quot;: [{}, {},]}</span>
+<span class="sd">        :return: True means update system operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_cobbler_object</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.update_cobbler_kickstart"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.update_cobbler_kickstart">[docs]</a>    <span class="k">def</span> <span class="nf">update_cobbler_kickstart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update a kickstart to cobbler.</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your kickstart filename&quot;, &quot;contents&quot;: [line, line,...]}</span>
+<span class="sd">        :return: True means update kickstart operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_cobbler_object</span><span class="p">(</span><span class="s">&quot;kickstart&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.update_cobbler_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.update_cobbler_object">[docs]</a>    <span class="k">def</span> <span class="nf">update_cobbler_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cobbler_object</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update a specific object to cobbler.</span>
+<span class="sd">        :param string cobbler_object: one of the cobbler objects, currently support THREE objects, &#39;profile&#39;, &#39;system&#39;, &#39;kickstart&#39;</span>
+<span class="sd">        :param dict data: a json data structure. The formation is {&quot;name&quot;: &quot;your object name&quot;, ...}</span>
+<span class="sd">        :return: True means update an object operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_object</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">])</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;put&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.remove_cobbler_distro"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.remove_cobbler_distro">[docs]</a>    <span class="k">def</span> <span class="nf">remove_cobbler_distro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for remove cobbler distro item `name`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_cobbler_object</span><span class="p">(</span><span class="s">&quot;distro&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.remove_cobbler_profile"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.remove_cobbler_profile">[docs]</a>    <span class="k">def</span> <span class="nf">remove_cobbler_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for remove cobbler profile  item `name`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_cobbler_object</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.remove_cobbler_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.remove_cobbler_system">[docs]</a>    <span class="k">def</span> <span class="nf">remove_cobbler_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler system  item `name`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_cobbler_object</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.remove_cobbler_kickstart"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.remove_cobbler_kickstart">[docs]</a>    <span class="k">def</span> <span class="nf">remove_cobbler_kickstart</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        shortcut for get cobbler kickstart  item `name`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_cobbler_object</span><span class="p">(</span><span class="s">&quot;kickstart&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.remove_cobbler_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.remove_cobbler_object">[docs]</a>    <span class="k">def</span> <span class="nf">remove_cobbler_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cobbler_object</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;remove a specific object to cobbler.</span>
+<span class="sd">        :param string cobbler_object: one of the cobbler objects, currently support FOUR objects, &#39;distro&#39;, &#39;profile&#39;, &#39;system&#39;, &#39;kickstart&#39;</span>
+<span class="sd">        :param string name: the name of the cobbler object.</span>
+<span class="sd">        :return: True means remove an object operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_object</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;delete&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.remove_cobbler_system_interface"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.remove_cobbler_system_interface">[docs]</a>    <span class="k">def</span> <span class="nf">remove_cobbler_system_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;remove a specific interface *if_name* from the cobbler system *system_name*.</span>
+<span class="sd">        :param string system_name: the name of a cobbler system</span>
+<span class="sd">        :param string if_name: the name of an interface on the cobbler system.</span>
+<span class="sd">        :return: True means remove an interface operation success, otherwise Failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/systems/{0}/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;delete&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.monitor_cobbler_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.monitor_cobbler_system">[docs]</a>    <span class="k">def</span> <span class="nf">monitor_cobbler_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;monitor the status of baremetal system *name* via ping service.</span>
+<span class="sd">        :param string name: the name of a cobbler system or host</span>
+<span class="sd">        :return: True means system is ON, otherwise OFF.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/baremetal/{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.deploy_cobbler_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.deploy_cobbler_system">[docs]</a>    <span class="k">def</span> <span class="nf">deploy_cobbler_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;deploy baremetal system *name*.</span>
+<span class="sd">        The cycle of deply system status is False(OFF) --&gt; True(ON) --&gt; False(OFF).</span>
+<span class="sd">        :param string name: the name of a cobbler system or host</span>
+<span class="sd">        :return: Always return True, which ONLY means has sent deploy command through IPMI. You MUST call `monitor_cobbler_system` to get the status of the system `name`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># init deploy status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">init_deploy_status</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="c"># call deploy REST</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/baremetal/{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;post&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="c"># save deploy command result to mongodb</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">update_deploy_command_result</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="c"># monitor status</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">monitor_deploy_power_status</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;deploy&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.power_cobbler_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.power_cobbler_system">[docs]</a>    <span class="k">def</span> <span class="nf">power_cobbler_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">flag_on</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;power ON/OFF baremetal system *name*.</span>
+<span class="sd">        The system is ON/OFF must be call **monitor_cobbler_system** and its result is True(ON)/False(OFF)</span>
+<span class="sd">        :param string name: the name of a cobbler system or host</span>
+<span class="sd">        :param boolean flag_on: a boolean value. True means to power on the system, False means power off.</span>
+<span class="sd">        :return: Always return True, which ONLY means has sent deploy command through IPMI. You MUST call `monitor_cobbler_system` to get the status of the system `name`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c"># init power status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">init_power_status</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flag_on</span><span class="p">)</span>
+        <span class="c"># call power REST</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/baremetal/{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;power_on&quot;</span><span class="p">:</span> <span class="n">flag_on</span><span class="p">,</span> <span class="p">}</span>
+        <span class="n">rest_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;put&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="c"># monitor status</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">monitor_deploy_power_status</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;power&quot;</span><span class="p">,</span> <span class="n">flag_on</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rest_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.monitor_deploy_power_status"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.monitor_deploy_power_status">[docs]</a>    <span class="k">def</span> <span class="nf">monitor_deploy_power_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">flag_on</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;monitor the deploy/power ON/OFF status of host name.</span>
+<span class="sd">        :param string name: the unique ID of host</span>
+<span class="sd">        :param string action: action of &quot;deploy&quot; or &quot;power&quot;</span>
+<span class="sd">        :param boolean flag_on: ONLY valid when action is power, True means power ON, False means OFF</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cm_id&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                <span class="s">&quot;action&quot;</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span>
+                <span class="s">&quot;flag_on&quot;</span><span class="p">:</span> <span class="n">flag_on</span><span class="p">,</span>
+                <span class="s">&quot;time&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c"># 10 seconds</span>
+                <span class="p">}</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">monitor_status_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">data</span><span class="p">])</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.monitor_status_thread"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.monitor_status_thread">[docs]</a>    <span class="k">def</span> <span class="nf">monitor_status_thread</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;cm_id&quot;</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="s">&quot;ON&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">monitor_cobbler_system</span><span class="p">(</span><span class="n">host</span><span class="p">)</span> <span class="k">else</span> <span class="s">&quot;OFF&quot;</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;action&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;deploy&quot;</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">update_deploy_status</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="n">progress</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">get_deploy_progress</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;action&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;power&quot;</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">update_power_status</span><span class="p">(</span>
+                    <span class="n">host</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;flag_on&quot;</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="n">progress</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bm_status</span><span class="o">.</span><span class="n">get_power_progress</span><span class="p">(</span>
+                        <span class="n">host</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;flag_on&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">progress</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="n">progress</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c"># error</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Error when getting the progress of host {0} on {1}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">host</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;action&quot;</span><span class="p">]))</span>
+                <span class="k">break</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;time&quot;</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.get_server_url"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.get_server_url">[docs]</a>    <span class="k">def</span> <span class="nf">get_server_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        get the BASE URL of the cobbler service</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">server_config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span>
+        <span class="n">cobbler_config</span> <span class="o">=</span> <span class="n">server_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.cobbler&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">&quot;{0}://{1}:{2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cobbler_config</span><span class="p">[</span><span class="s">&quot;prot&quot;</span><span class="p">],</span> <span class="n">cobbler_config</span><span class="p">[</span><span class="s">&quot;host&quot;</span><span class="p">],</span> <span class="n">cobbler_config</span><span class="p">[</span><span class="s">&quot;port&quot;</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="CobblerRestAPI.request_rest_api"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_rest_api.CobblerRestAPI.request_rest_api">[docs]</a>    <span class="k">def</span> <span class="nf">request_rest_api</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Request a REST service through requests library.</span>
+<span class="sd">        :param string method: the operation in REST service, valid value in [get, post, put, delete]</span>
+<span class="sd">        :return: a dict with the formation {&quot;result&quot;:True|False, &quot;data&quot;: data}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;content-type&quot;</span><span class="p">:</span> <span class="s">&quot;application/json&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;accept&quot;</span><span class="p">:</span> <span class="s">&quot;application/json&quot;</span><span class="p">,</span> <span class="p">}</span>
+        <span class="n">req_api</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">requests</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="n">req_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">server_url</span> <span class="o">+</span> <span class="n">url</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s">&quot;get&quot;</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">req_api</span><span class="p">(</span><span class="n">req_url</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="s">&quot;user_token&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;user_token&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">}</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">req_api</span><span class="p">(</span><span class="n">req_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s">&quot;cmrest&quot;</span><span class="p">][</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span> <span class="k">else</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">bmc</span> <span class="o">=</span> <span class="n">CobblerRestAPI</span><span class="p">()</span>
+    <span class="c">#&quot;&quot;&quot;</span>
+    <span class="c"># get distros list</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">bmc</span><span class="o">.</span><span class="n">get_cobbler_iso_list</span><span class="p">()</span>
+    <span class="c">#&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # get cobbler report</span>
+<span class="sd">    result = bmc.get_cobbler_object_report(&quot;kickstart&quot;, &quot;*&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # add a distro, CentOS-6.5-x86_64-bin-DVD1.iso</span>
+<span class="sd">    data = {&quot;name&quot;: &quot;test_centos_1405023&quot;, &quot;url&quot;: &quot;http://mirrors.usc.edu/pub/linux/distributions/centos/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1.iso&quot;}</span>
+<span class="sd">    result = bmc.add_cobbler_distro(data)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # add a profile,</span>
+<span class="sd">    data = {&quot;name&quot;: &quot;test_profile_1405023&quot;, &quot;distro&quot;: &quot;test_centos_1405023-x86_64&quot;, &quot;kickstart&quot;:&quot;sample.ks&quot;,}</span>
+<span class="sd">    result = bmc.add_cobbler_profile(data)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # add a system</span>
+<span class="sd">    data = {&quot;name&quot;: &quot;test_system_1405023&quot;, &quot;profile&quot;: &quot;test_profile_1405023&quot;,</span>
+<span class="sd">            &quot;power&quot;: {&quot;power-address&quot;: &quot;1.2.3.4&quot;,</span>
+<span class="sd">                      &quot;power-user&quot;: &quot;onlytest&quot;,</span>
+<span class="sd">                      &quot;power-pass&quot;: &quot;onlytest&quot;,</span>
+<span class="sd">                      &quot;power-type&quot;: &quot;ipmilan&quot;,</span>
+<span class="sd">                      &quot;power-id&quot;: 1,</span>
+<span class="sd">                      },</span>
+<span class="sd">            &quot;interfaces&quot;: [</span>
+<span class="sd">                 {</span>
+<span class="sd">                   &quot;name&quot;: &quot;ee1&quot;,</span>
+<span class="sd">                   &quot;ip-address&quot;: &quot;192.168.11.23&quot;,</span>
+<span class="sd">                   &quot;mac-address&quot;: &quot;aa:11:cc:dd:ee:ff&quot;,</span>
+<span class="sd">                   &quot;static&quot;: True,</span>
+<span class="sd">                   &quot;netmask&quot;: &quot;255.255.255.0&quot;</span>
+<span class="sd">                 },</span>
+<span class="sd">                {</span>
+<span class="sd">                   &quot;name&quot;: &quot;ee2&quot;,</span>
+<span class="sd">                   &quot;ip-address&quot;: &quot;192.168.11.123&quot;,</span>
+<span class="sd">                   &quot;mac-address&quot;: &quot;aa:11:cc:dd:ff:ff&quot;,</span>
+<span class="sd">                   &quot;static&quot;: True,</span>
+<span class="sd">                   &quot;netmask&quot;: &quot;255.255.255.0&quot;</span>
+<span class="sd">                 },</span>
+<span class="sd">                ]</span>
+<span class="sd">            }</span>
+<span class="sd">    result = bmc.add_cobbler_system(data)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # update a profile</span>
+<span class="sd">    data = {&quot;name&quot;: &quot;test_profile_1405023&quot;, &quot;kickstart&quot;: &quot;default.ks&quot;,}</span>
+<span class="sd">    result = bmc.update_cobbler_profile(data)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # update a system</span>
+<span class="sd">    data = {&quot;name&quot;: &quot;test_system_1405023&quot;, &quot;power&quot;: {&quot;power-user&quot;: &quot;hellouser&quot;}}</span>
+<span class="sd">    result = bmc.update_cobbler_system(data)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # remove a interface of system</span>
+<span class="sd">    system_name=&quot;test_system_1405023&quot;</span>
+<span class="sd">    if_name = &quot;ee2&quot;</span>
+<span class="sd">    result = bmc.remove_cobbler_system_interface(system_name, if_name)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # remove system</span>
+<span class="sd">    system_name=&quot;test_system_1405023&quot;</span>
+<span class="sd">    result = bmc.remove_cobbler_system(system_name)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # remove a profile</span>
+<span class="sd">    profile_name=&quot;test_profile_1405023&quot;</span>
+<span class="sd">    result = bmc.remove_cobbler_profile(profile_name)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    # remove a distro</span>
+<span class="sd">    distro_name=&quot;test_centos_1405023-x86_64&quot;</span>
+<span class="sd">    # MUST delete the default profile firstly</span>
+<span class="sd">    result = bmc.remove_cobbler_profile(distro_name)</span>
+<span class="sd">    result = bmc.remove_cobbler_distro(distro_name)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">bmc</span><span class="o">.</span><span class="n">get_cobbler_profile_based_kickstart</span><span class="p">(</span><span class="s">&quot;a.seed&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;result is: &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

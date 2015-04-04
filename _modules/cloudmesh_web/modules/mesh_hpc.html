@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh_web.modules.mesh_hpc &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>cloudmesh_web.modules.mesh_hpc</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh_web.modules.mesh_hpc</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">cloudmesh.cm_mongo</span> <span class="kn">import</span> <span class="n">cm_mongo</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.pbs</span> <span class="kn">import</span> <span class="n">tasks</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.pbs.pbs_mongo</span> <span class="kn">import</span> <span class="n">pbs_mongo</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_common.util</span> <span class="kn">import</span> <span class="n">address_string</span><span class="p">,</span> <span class="n">cond_decorator</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">flash</span>
+<span class="kn">from</span> <span class="nn">flask.ext.login</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">cloudmesh</span>
+<span class="kn">from</span> <span class="nn">flask.ext.principal</span> <span class="kn">import</span> <span class="n">Permission</span><span class="p">,</span> <span class="n">RoleNeed</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+<span class="n">admin_permission</span> <span class="o">=</span> <span class="n">Permission</span><span class="p">(</span><span class="n">RoleNeed</span><span class="p">(</span><span class="s">&#39;admin&#39;</span><span class="p">))</span>
+
+<span class="n">mesh_hpc_module</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s">&#39;mesh_hpc_module&#39;</span><span class="p">,</span> <span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="c"># ============================================================</span>
+<span class="c"># ROUTE: /mesh/qstat</span>
+<span class="c"># ============================================================</span>
+
+<span class="n">error</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/hpc/login&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="hpc_login"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh_hpc.hpc_login">[docs]</a><span class="k">def</span> <span class="nf">hpc_login</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;/mesh/hpc/login.html&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/refresh/qstat&#39;</span><span class="p">)</span>
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/refresh/qstat/&lt;host&gt;&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="display_mongo_qstat_refresh"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh_hpc.display_mongo_qstat_refresh">[docs]</a><span class="k">def</span> <span class="nf">display_mongo_qstat_refresh</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">celery_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_celery.yaml&quot;</span><span class="p">))</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;qstat refresh request {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">))</span>
+
+    <span class="c"># timeout = 15;</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s">&quot;hpc&quot;</span><span class="p">][</span><span class="s">&quot;username&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">host</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">host</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;bravo.futuregrid.org&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;echo.futuregrid.org&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;delta.futuregrid.org&#39;</span><span class="p">]:</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;india.futuregrid.org&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="n">host</span><span class="p">]</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pbs</span> <span class="o">=</span> <span class="n">pbs_mongo</span><span class="p">()</span>
+
+        <span class="c"># queue = celery_config = celery_config.get(&quot;cloudmesh.workers.qstat.queue&quot;)</span>
+        <span class="c"># res = tasks.refresh_qstat.apply_async(queue=queue, priority=0, args=[hosts])</span>
+        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+
+            <span class="n">pbs</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;refresh qstat: {0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">user</span><span class="p">))</span>
+            <span class="n">pbs</span><span class="o">.</span><span class="n">refresh_qstat</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+
+    <span class="c">#    error = res.get(timeout=timeout)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+
+        <span class="k">print</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+        <span class="n">category</span> <span class="o">=</span> <span class="s">&quot;qstat-{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="n">flash</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">category</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">&#39;mesh/qstat&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/qstat/&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="display_mongo_qstat_new"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh_hpc.display_mongo_qstat_new">[docs]</a><span class="k">def</span> <span class="nf">display_mongo_qstat_new</span><span class="p">():</span>
+    <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="n">address_string</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s">&quot;hpc&quot;</span><span class="p">][</span><span class="s">&quot;username&quot;</span><span class="p">]</span>
+
+    <span class="n">pbs</span> <span class="o">=</span> <span class="n">pbs_mongo</span><span class="p">()</span>
+    <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">,</span>
+             <span class="s">&quot;echo.futuregrid.org&quot;</span><span class="p">,</span>
+             <span class="s">&quot;delta.futuregrid.org&quot;</span><span class="p">,</span>
+             <span class="s">&quot;bravo.futuregrid.org&quot;</span><span class="p">]</span>
+
+    <span class="c">#    for host in hosts:</span>
+    <span class="c">#        pbs.activate(host,user)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">jobcount</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+        <span class="n">timer</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">pbs</span><span class="o">.</span><span class="n">get_qstat</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;get_qstat {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">))</span>
+            <span class="n">error</span> <span class="o">+=</span> <span class="s">&quot;get_qstat({0})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">jobcount</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">host</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">error</span> <span class="o">+=</span> <span class="s">&quot;jobcount {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;jobcount {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">jobcount</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">timer</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">host</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">&quot;cm_refresh&quot;</span><span class="p">]</span>
+            <span class="c"># pprint(data[host][0])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">timer</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;pbs&quot;</span><span class="p">:</span>
+                  <span class="p">[</span>
+                      <span class="p">[</span><span class="s">&quot;Queue&quot;</span><span class="p">,</span> <span class="s">&quot;queue&quot;</span><span class="p">],</span>
+                      <span class="c"># [ &quot;Server&quot; , &quot;server&quot;],</span>
+                      <span class="p">[</span><span class="s">&quot;State&quot;</span><span class="p">,</span> <span class="s">&quot;job_state&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;Job_Name&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Owner&quot;</span><span class="p">,</span> <span class="s">&quot;Job_Owner&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;NCpus&quot;</span><span class="p">,</span> <span class="s">&quot;Resource_List&quot;</span><span class="p">,</span> <span class="s">&quot;ncpus&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Walltime&quot;</span><span class="p">,</span> <span class="s">&quot;Resource_List&quot;</span><span class="p">,</span> <span class="s">&quot;walltime&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Nodes&quot;</span><span class="p">,</span> <span class="s">&quot;Resource_List&quot;</span><span class="p">,</span> <span class="s">&quot;nodes&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Nodect&quot;</span><span class="p">,</span> <span class="s">&quot;Resource_List&quot;</span><span class="p">,</span> <span class="s">&quot;nodect&quot;</span><span class="p">],</span>
+                      <span class="c"># [ &quot;ctime&quot;, &quot;ctime&quot;],</span>
+                      <span class="p">[</span><span class="s">&quot;mtime&quot;</span><span class="p">,</span> <span class="s">&quot;mtime&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;qtime&quot;</span><span class="p">,</span> <span class="s">&quot;qtime&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Used Cpu Time&quot;</span><span class="p">,</span> <span class="s">&quot;resources_used&quot;</span><span class="p">,</span> <span class="s">&#39;cput&#39;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Used Mem &quot;</span><span class="p">,</span> <span class="s">&quot;resources_used&quot;</span><span class="p">,</span> <span class="s">&#39;mem&#39;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Used VMem &quot;</span><span class="p">,</span> <span class="s">&quot;resources_used&quot;</span><span class="p">,</span> <span class="s">&#39;vmem&#39;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Used Cpu Walltime&quot;</span><span class="p">,</span> <span class="s">&quot;resources_used&quot;</span><span class="p">,</span> <span class="s">&#39;walltime&#39;</span><span class="p">]</span>
+                  <span class="p">],</span>
+                  <span class="p">}</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    for host in hosts:</span>
+<span class="sd">        pprint (host)</span>
+<span class="sd">        for server in data[host]:</span>
+<span class="sd">            print &quot;S&quot;, server</span>
+<span class="sd">            for attribute in server:</span>
+<span class="sd">                print attribute, server[attribute]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;mesh/hpc/mesh_qstat.html&#39;</span><span class="p">,</span>
+                           <span class="n">hosts</span><span class="o">=</span><span class="n">hosts</span><span class="p">,</span>
+                           <span class="n">jobcount</span><span class="o">=</span><span class="n">jobcount</span><span class="p">,</span>
+                           <span class="n">timer</span><span class="o">=</span><span class="n">timer</span><span class="p">,</span>
+                           <span class="n">address_string</span><span class="o">=</span><span class="n">address_string</span><span class="p">,</span>
+                           <span class="n">attributes</span><span class="o">=</span><span class="n">attributes</span><span class="p">,</span>
+                           <span class="n">updated</span><span class="o">=</span><span class="n">time_now</span><span class="p">,</span>
+                           <span class="n">qstat</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                           <span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">,</span>
+                           <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+</div>
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/refresh/qinfo&#39;</span><span class="p">)</span>
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/refresh/qinfo/&lt;host&gt;&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="display_mongo_qinfo_refresh"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh_hpc.display_mongo_qinfo_refresh">[docs]</a><span class="k">def</span> <span class="nf">display_mongo_qinfo_refresh</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;qinfo refresh request {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">))</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s">&quot;hpc&quot;</span><span class="p">][</span><span class="s">&quot;username&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">host</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">host</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;bravo.futuregrid.org&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;echo.futuregrid.org&#39;</span><span class="p">,</span>
+                  <span class="s">&#39;delta.futuregrid.org&#39;</span><span class="p">]:</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;india.futuregrid.org&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="n">host</span><span class="p">]</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pbs</span> <span class="o">=</span> <span class="n">pbs_mongo</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+            <span class="n">pbs</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">pbs</span><span class="o">.</span><span class="n">refresh_qinfo</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+
+        <span class="k">print</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+        <span class="n">category</span> <span class="o">=</span> <span class="s">&quot;qinfo-{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="n">flash</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">category</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">&#39;mesh/qinfo&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@mesh_hpc_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/qinfo/&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="display_mongo_qinfo"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh_hpc.display_mongo_qinfo">[docs]</a><span class="k">def</span> <span class="nf">display_mongo_qinfo</span><span class="p">():</span>
+    <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="n">address_string</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s">&quot;hpc&quot;</span><span class="p">][</span><span class="s">&quot;username&quot;</span><span class="p">]</span>
+
+    <span class="n">pbs</span> <span class="o">=</span> <span class="n">pbs_mongo</span><span class="p">()</span>
+    <span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;india.futuregrid.org&quot;</span><span class="p">,</span>
+             <span class="s">&quot;echo.futuregrid.org&quot;</span><span class="p">,</span>
+             <span class="s">&quot;delta.futuregrid.org&quot;</span><span class="p">,</span>
+             <span class="s">&quot;bravo.futuregrid.org&quot;</span><span class="p">]</span>
+<span class="c">#    for host in hosts:</span>
+<span class="c">#        pbs.activate(host,user)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">jobcount</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+        <span class="n">timer</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">pbs</span><span class="o">.</span><span class="n">get_qinfo</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;get_qinfo {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">))</span>
+            <span class="n">error</span> <span class="o">+=</span> <span class="s">&quot;get_qinfo({0})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">jobcount</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">host</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">jobcount</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">timer</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">host</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">&quot;cm_refresh&quot;</span><span class="p">]</span>
+                <span class="c"># pprint(data[host][0])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">timer</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">error</span> <span class="o">+=</span> <span class="s">&quot;jobcount {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+
+    <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;pbs&quot;</span><span class="p">:</span>
+                  <span class="p">[</span>
+                      <span class="p">[</span><span class="s">&quot;Queue&quot;</span><span class="p">,</span> <span class="s">&quot;queue&quot;</span><span class="p">],</span>
+                      <span class="c"># [ &quot;Server&quot; , &quot;server&quot;],</span>
+                      <span class="p">[</span><span class="s">&quot;State&quot;</span><span class="p">,</span> <span class="s">&quot;started&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Type&quot;</span><span class="p">,</span> <span class="s">&quot;queue_type&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Walltime&quot;</span><span class="p">,</span> <span class="s">&quot;resources_default_walltime&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Total&quot;</span><span class="p">,</span> <span class="s">&quot;total_jobs&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Exiting&quot;</span><span class="p">,</span> <span class="s">&quot;state_count&quot;</span><span class="p">,</span> <span class="s">&quot;Exiting&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Held&quot;</span><span class="p">,</span> <span class="s">&quot;state_count&quot;</span><span class="p">,</span> <span class="s">&quot;Held&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Queued&quot;</span><span class="p">,</span> <span class="s">&quot;state_count&quot;</span><span class="p">,</span> <span class="s">&quot;Queued&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Running&quot;</span><span class="p">,</span> <span class="s">&quot;state_count&quot;</span><span class="p">,</span> <span class="s">&quot;Running&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Transit&quot;</span><span class="p">,</span> <span class="s">&quot;state_count&quot;</span><span class="p">,</span> <span class="s">&quot;Transit&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s">&quot;Waiting&quot;</span><span class="p">,</span> <span class="s">&quot;state_count&quot;</span><span class="p">,</span> <span class="s">&quot;Waiting&quot;</span><span class="p">],</span>
+                  <span class="p">],</span>
+                  <span class="p">}</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    for host in hosts:</span>
+<span class="sd">        pprint (host)</span>
+<span class="sd">        for server in data[host]:</span>
+<span class="sd">            print &quot;S&quot;, server</span>
+<span class="sd">            for attribute in server:</span>
+<span class="sd">                print attribute, server[attribute]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;mesh/hpc/mesh_qinfo.html&#39;</span><span class="p">,</span>
+                           <span class="n">hosts</span><span class="o">=</span><span class="n">hosts</span><span class="p">,</span>
+                           <span class="n">jobcount</span><span class="o">=</span><span class="n">jobcount</span><span class="p">,</span>
+                           <span class="n">timer</span><span class="o">=</span><span class="n">timer</span><span class="p">,</span>
+                           <span class="n">address_string</span><span class="o">=</span><span class="n">address_string</span><span class="p">,</span>
+                           <span class="n">attributes</span><span class="o">=</span><span class="n">attributes</span><span class="p">,</span>
+                           <span class="n">updated</span><span class="o">=</span><span class="n">time_now</span><span class="p">,</span>
+                           <span class="n">qinfo</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                           <span class="n">error</span><span class="o">=</span><span class="n">error</span><span class="p">,</span>
+                           <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

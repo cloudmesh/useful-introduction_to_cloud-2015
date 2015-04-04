@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.management.comittee &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.management.comittee</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.management.comittee</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">mongoengine</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">project</span> <span class="kn">import</span> <span class="n">Project</span><span class="p">,</span> <span class="n">Projects</span>
+<span class="kn">from</span> <span class="nn">user</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Users</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">get_mongo_db</span><span class="p">,</span> <span class="n">get_mongo_dbname_from_collection</span><span class="p">,</span> <span class="n">DBConnFactory</span>
+
+<span class="n">port</span> <span class="o">=</span> <span class="mi">27777</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s">&#39;project&#39;</span>
+
+<span class="n">users</span> <span class="o">=</span> <span class="n">Users</span><span class="p">()</span>
+<span class="n">projects</span> <span class="o">=</span> <span class="n">Projects</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="IMPLEMENT"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.IMPLEMENT">[docs]</a><span class="k">def</span> <span class="nf">IMPLEMENT</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&quot;IMPLEMENT ME&quot;</span>
+</div>
+<span class="n">DEFAULT_REVIEWERS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;gregvon&#39;</span><span class="p">,</span> <span class="s">&#39;gregvon1&#39;</span><span class="p">)</span>
+
+<span class="n">STATUS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;pending&#39;</span><span class="p">,</span> <span class="s">&#39;approved&#39;</span><span class="p">,</span> <span class="s">&#39;disapproved&#39;</span><span class="p">)</span>
+
+<span class="n">CHOICES</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Yes&#39;</span><span class="p">,</span> <span class="s">&#39;No&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Committee"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee">[docs]</a><span class="k">class</span> <span class="nc">Committee</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">STATUS</span><span class="p">)</span>
+    <span class="n">projects</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">StringField</span><span class="p">())</span>
+    <span class="n">reviewers</span> <span class="o">=</span> <span class="n">ListField</span><span class="p">(</span><span class="n">ReferenceField</span><span class="p">(</span><span class="n">User</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="p">[])</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+    <span class="c"># --------------------------------------------------------------------</span>
+    <span class="c"># Default value showing if this is the first time the project is being applied for or not</span>
+    <span class="c"># --------------------------------------------------------------------</span>
+    <span class="n">default</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">CHOICES</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;Yes&#39;</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+
+    <span class="n">dbname</span> <span class="o">=</span> <span class="n">get_mongo_dbname_from_collection</span><span class="p">(</span><span class="s">&quot;manage&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dbname</span><span class="p">:</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;db_alias&#39;</span><span class="p">:</span> <span class="n">dbname</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;{0} {1} {2} {3}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reviewers</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Committee.set_committee"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.set_committee">[docs]</a>    <span class="k">def</span> <span class="nf">set_committee</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="Committee.get_project"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.get_project">[docs]</a>    <span class="k">def</span> <span class="nf">get_project</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This function wold be deleted later after we have been able</span>
+<span class="sd">        call this class from the project class, hence this is a sample&quot;&quot;&quot;</span>
+        <span class="n">_project</span> <span class="o">=</span> <span class="n">projects</span><span class="o">.</span><span class="n">find_by_title</span><span class="p">(</span><span class="s">&quot;Django&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.get_reviewer"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.get_reviewer">[docs]</a>    <span class="k">def</span> <span class="nf">get_reviewer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This function adds reviewers to the project committee. It first</span>
+<span class="sd">        checks if the default attribute is &#39;Yes&#39; or &#39;No&#39;, if &#39;Yes&#39; it adds</span>
+<span class="sd">        the default reviewers and if &#39;No&#39; it does otherwise&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">==</span> <span class="s">&#39;Yes&#39;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_username</span> <span class="ow">in</span> <span class="n">DEFAULT_REVIEWERS</span><span class="p">:</span>
+                <span class="n">default_reviewer</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">find_user</span><span class="p">(</span><span class="n">_username</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_reviewers</span><span class="p">(</span><span class="n">default_reviewer</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">==</span> <span class="s">&#39;No&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">==</span> <span class="s">&#39;No&#39;</span><span class="p">:</span>
+            <span class="n">_reviewer</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">find_user</span><span class="p">(</span><span class="n">user_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_reviewers</span><span class="p">(</span><span class="n">_reviewer</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.add_reviewers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.add_reviewers">[docs]</a>    <span class="k">def</span> <span class="nf">add_reviewers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This function adds users to the reviewers list&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reviewers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.set_review"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.set_review">[docs]</a>    <span class="k">def</span> <span class="nf">set_review</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;by set_review, do you mean to state whether</span>
+<span class="sd">        approved or not and what type of message am I meant to</span>
+<span class="sd">        pass into this function&quot;&quot;&quot;</span>
+
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.delete_reviewer"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.delete_reviewer">[docs]</a>    <span class="k">def</span> <span class="nf">delete_reviewer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This function accepts a user and removes the user</span>
+<span class="sd">        from the committee list&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reviewers</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.notify_project_management"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.notify_project_management">[docs]</a>    <span class="k">def</span> <span class="nf">notify_project_management</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.notify_project_members"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.notify_project_members">[docs]</a>    <span class="k">def</span> <span class="nf">notify_project_members</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.notify_project_alumni"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.notify_project_alumni">[docs]</a>    <span class="k">def</span> <span class="nf">notify_project_alumni</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.notify_reviewers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.notify_reviewers">[docs]</a>    <span class="k">def</span> <span class="nf">notify_reviewers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.notify_all_reviewers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.notify_all_reviewers">[docs]</a>    <span class="k">def</span> <span class="nf">notify_all_reviewers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.enable"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.enable">[docs]</a>    <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;enables or disables reviews, useful for maintenance&quot;&quot;&quot;</span>
+        <span class="n">IMPLEMENT</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="Committee.pending_projects"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.pending_projects">[docs]</a>    <span class="k">def</span> <span class="nf">pending_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_by_status</span><span class="p">(</span><span class="s">&quot;pending&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.approved_projects"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.approved_projects">[docs]</a>    <span class="k">def</span> <span class="nf">approved_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_by_status</span><span class="p">(</span><span class="s">&quot;approved&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.disproved_projects"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.disproved_projects">[docs]</a>    <span class="k">def</span> <span class="nf">disproved_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_by_status</span><span class="p">(</span><span class="s">&quot;disproved&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.completed_projects"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.completed_projects">[docs]</a>    <span class="k">def</span> <span class="nf">completed_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_by_status</span><span class="p">(</span><span class="s">&quot;completed&quot;</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Committee.get_by_status"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.Committee.get_by_status">[docs]</a>    <span class="k">def</span> <span class="nf">get_by_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">STATUS</span><span class="p">:</span>
+            <span class="n">IMPLEMENT</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR: wrong status&quot;</span><span class="p">,</span> <span class="n">status</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
+</div></div>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.comittee.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">comittee</span> <span class="o">=</span> <span class="n">Committee</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">comittee</span><span class="o">.</span><span class="n">default</span>
+    <span class="n">comittee</span><span class="o">.</span><span class="n">get_reviewer</span><span class="p">(</span><span class="s">&quot;fugang&quot;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">comittee</span><span class="o">.</span><span class="n">reviewers</span>
+
+    <span class="n">projects</span> <span class="o">=</span> <span class="n">Projects</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="p">():</span>
+        <span class="k">print</span> <span class="n">project</span>
+
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
