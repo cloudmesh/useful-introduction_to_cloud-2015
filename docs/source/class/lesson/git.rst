@@ -1,3 +1,5 @@
+.. _s-lesson-git:
+
 Using Git and GitHub for collaboration
 ======================================================================
 

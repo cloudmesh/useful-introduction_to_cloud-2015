@@ -60,8 +60,8 @@ In order to use FutureSystems you will need to get an account.
    the ``My FutureGrid HPC account status`` of your `portal account`_
    information will you have access to resources.
 
-.. tip::
-   Please see :doc:`../../../accounts/accounts` for additional details.
+.. tip:: Please see Section :ref:`s-screencast-accounts` for
+   additional details.
 
 .. _portal account: https://portal.futuresystems.org/my/fg-account
 
@@ -102,17 +102,16 @@ Linux and OSX
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 We assume that Linux users are familiar on how to start a terminal. On
-Mac OS X open a terminal via `Applications --> Utilities -->
-Terminal`. Alternatively you can search for the term "terminal" in the
+Mac OS X open a terminal via `Applications --> Utilities --> Terminal`. Alternatively you can search for the term "terminal" in the
 spotlight search and locate the terminal application and click on it.
 
 To proceed you will need to know your FutureSystems Portalname and
 Project ID.
 
-For this example we assume you have set the shell variable
-PORTALNAME to your FutureSystems portal username. This can
-be done as follwows. Let us assume your portal name is
-`albert`. Than you can set it with::
+For this example we assume you have set the shell variable PORTALNAME
+to your FutureSystems portal username. This can be done as
+follwows. Let us assume your portal name is `albert`. Than you can set
+it with::
 
             export PORTALNAME=albert
 
@@ -129,10 +128,10 @@ Naturally, you could also directly place your portal name into the
 command. Thus if your portalname would be albert, you could do
 alternatively to the above command::
 
-  $ ssh albert@india.futuresystems.org
+  $ ssh $PORTALNAME@india.futuresystems.org
 
 
-.. tip:: Please see :doc:`../../../accounts/ssh` for details on
+.. tip:: Please see Section :ref:`s-using-ssh` for details on
    configuring and using an SSH client.
 
 
@@ -168,10 +167,8 @@ Managing keys for Openesatck
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 This section describes how to generate secure keys for using
-OpenStack.
-You will need to log into ``india`` to follow.
-You may also find additional details in
-:doc:`../../../iaas/openstack`.
+OpenStack.  You will need to log into ``india`` to follow.  You may
+also find additional details in Section :ref:`s-openstack:`.
 
 .. sidebar:: Page Contents
 
@@ -195,26 +192,24 @@ Create a key pair
 In order to use OpenStack on ``india`` you will need an SSH key.
 First, check that ``~/.ssh/$PORTALNAME-key`` does not exist::
 
-  $ file ~/.ssh/albert-key
+  $ file ~/.ssh/$PRORTALNAME-key
 
 If you get an error message like::
 
-  $ file ~/.ssh/albert-key
-  ~/albert-key: cannot open `~/.ssh/albert-key' (No such file or directory)
+  $ file ~/.ssh/$PORTALNAME-key
+  ~/$PORTALNAME-key: cannot open `~/.ssh/$PORTALNAME-key' (No such file or directory)
 
-then the file does not exist and you will need to create it (see below).
-If the file does exist you will see something like::
+then the file does not exist and you will need to create it (see
+below).  If the file does exist you will see something like::
 
-  $ file ~/.ssh/albert-key
-  ~/.ssh/albert-key: ASCII text
+  $ file ~/.ssh/$PORTALNAME-key
+  ~/.ssh/$PORTALNAME-key: ASCII text
 
 In order to create a key for OpenStack use the ``nova keypair-add``
 command and set the appropriate permissions::
 
   $ nova keypair-add $PORTALNAME-key >~/.ssh/$PORTALNAME-key
   $ chmod 600 ~/.ssh/$PORTALNAME-key
-
-.. tip:: Replace ``albert`` with whatever your ``$PORTALNAME`` is.
 
 .. caution::
    This ``nova keypair-add`` command will overwrite any preexisting
@@ -278,17 +273,17 @@ Show fingerprint
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The fingerprint of a key can be used to authenticate the validity of
-the key.
-For example, if Ada were to share his public key with Albert Einstein,
-she would transmit the key.
-Albert could then compute the fingerprint and ensure that it matches.
-To do so, Albert would save the key to ``~/.ssh/ada.pub`` and execute::
+the key.  For example, if Ada were to share his public key with Albert
+Einstein, she would transmit the key.  Albert could then compute the
+fingerprint and ensure that it matches.  To do so, Albert would save
+the key to ``~/.ssh/$PORTALNAME-key`` and execute::
 
-  $ ssh-keygen -l -f ~/.ssh/ada.pub
+  $ ssh-keygen -l -f ~/.ssh/$PORTALNAME-key.pub
   2048 6c:52:54:20:b9:85:04:d4:30:46:48:c7:c4:bc:fe:c7  lovelace@gmail.com (RSA)
 
-FutureSystems, for instance, uses fingerprints to identify keys once they have been uploaded.
-You may see this fingerprint on the `FutureSystems portal
+FutureSystems, for instance, uses fingerprints to identify keys once
+they have been uploaded.  You may see this fingerprint on the
+`FutureSystems portal
 <https://portal.futuresystems.org/my/ssh-keys>`_.
 
 
@@ -325,8 +320,8 @@ on a remote computer.
 
 .. tip::
 
-   See :doc:`../linux/shell` for more details on what a shell is and
-   how to use it.
+   See Section :ref:`s-shell-lesson` for more details on what a shell
+   is and how to use it.
 
 This security is accomplished by encrypting the data that is sent
 between the two endpoints.  In order for this communication to be
@@ -349,7 +344,7 @@ The second file, ending in ``.pub``, is the public key and needs to be
 shared with the machines you wish to access.  In the case of
 FutureSystems, you add the public key to your `SSH Keys
 <https://portal.futuresystems.org/my/ssh-keys>`_.  In the case of
-GitHub (see :doc:`../git`) you add it to your account.
+GitHub (see Section :ref:`s-lesson-git`) you add it to your account.
 
 .. caution::
 
