@@ -158,7 +158,7 @@ subcommand::
 
 We then create an ip for our instance::
 
-  $ nova float-ip-create ext-net
+  $ nova floating-ip-create ext-net
   +-----------------+-----------+----------+---------+
   | Ip              | Server Id | Fixed Ip | Pool    |
   +-----------------+-----------+----------+---------+
