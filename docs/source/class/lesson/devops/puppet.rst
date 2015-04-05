@@ -1,3 +1,6 @@
+
+.. _ref-class-lesson-devops-puppet:
+
 Puppet
 ======================================================================
 
@@ -32,7 +35,7 @@ write the scripts. Chef calls the script as a ``Recipe``, and Puppet calls it
 as a ``manifest``.
 
 Open Source Puppet
--------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Puppet Labs supports Puppet software in two different versions. This lesson
 uses an open source Puppet instead of Puppet Enterprise which is a commercial
@@ -118,8 +121,26 @@ If you see ``root`` label, you are in ``root`` account on your machine::
 
   root@puppet:~#
 
-A Puppet Template - manifest
+
+Update Hostname
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you see ``sudo: unable to resolve host``, try to add hostname with the
+following command::
+
+  echo -e "\n127.0.1.1 $HOSTNAME" >> /etc/hosts
+
+
+A Puppet Template - manifest (.pp)
 -------------------------------------------------------------------------------
+
+You define system resources that you use in a puppet template, a manifest. It
+uses Puppet Domain Specific Language (DSL) which is a combination of JSON and
+Ruby. you describes resources such as file, package, or service to apply your
+instructions to target systems (nodes).
+
+Puppet Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You Puppet is ready to use on you VM instance. Let's create a Puppet
 configuration file.  The installation process have created a Puppet directory
@@ -137,20 +158,177 @@ We're going to use ``manifests`` directory to create a Puppet configuration file
 
 .. note:: If you don't have one, run: ``mkdir /etc/puppet/manifests``
 
+Warning: Setting templatedir is deprecated.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you encounter this warning message, you need to update your Puppet
+configuration file. Please update the following file using your editor, vi or
+nano:
+
+::
+
+  /etc/puppet/puppet.conf
+
+The file contains::
+
+  [main]
+  logdir=/var/log/puppet
+  vardir=/var/lib/puppet
+  ssldir=/var/lib/puppet/ssl
+  rundir=/var/run/puppet
+  factpath=$vardir/lib/facter
+  templatedir=$confdir/templates
+
+  ..
+
+You need to **REMOVE** the ``templatedir=`` line, then you won't see the
+warning message again.
+
+References of this issue are here:
+https://tickets.puppetlabs.com/browse/PUP-2566,
+https://docs.puppetlabs.com/puppet/3.7/reference/deprecated_settings.html#templatedir
+
+First ``manifest`` - "Creating a file"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We are going to write a first Puppet manifest to create a single text file.
+
+Move to ``manifests`` directory. We will create a new file in the directory.
+
+:: 
+
+  cd /etc/puppet/manifests/
+
+Open a new file ``first-manifest.pp`` with your editori, vi or nano.
+
+::
+
+  file { "HelloWorld":
+      path => "/tmp/HelloWorld.txt",
+      ensure => "file",
+      owner  => "root",
+      group  => "root",
+      mode   => "700",
+      content => "Hello World!
+      The new file has been created by Puppet!",}
+
+
+Check you have created the first Puppet ``manifest`` file.
+
+::
+
+   cat /etc/puppet/manifests/first-manifest.pp
+
+If you see same contents that you wrote, you are ready to apply your code to
+Puppet. We provided an instruction to create a particular file named
+"/tmp/HelloWorld.txt". ``ensure => "file"`` means that Puppet need to confirm
+that there is a file with the path, owner, group and mode.
+
+This Puppet manifest does not only create a file but also check the options
+that we specified.  If there is changes in the file, Puppet inspects and get it
+right. For example, if the file name is changed, Puppet rename it to the
+original one ``HelloWorld.txt``. If it does not exist, Puppet will create the
+file.  Puppet will correct the changes based on the instructions in the manifest
+file. You can run Puppet again and again to ensure that your instructions in the
+manifest file is valid.  Puppet will check and compare the state.
+
+``puppet apply`` Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This command simply executes your instructions in a ``manifest (.pp)`` file.
+
+::
+
+  puppet apply /etc/puppet/manifests/first-manifest.pp
+
+You may see:
+
+::
+
+  Notice: Compiled catalog for puppet.openstacklocal in environment production in 0.06 seconds
+  Notice: /Stage[main]/Main/File[first-manifest]/ensure: defined content as '{md5}1a81759353d36dbd31059fc261af0aa2'
+  Notice: Finished catalog run in 0.06 seconds
+
+It's quite simple, isn't it? Let's check out whether the file is created.
+
+::
+
+  ls -al /tmp/HelloWorld.txt
+
+You see similar like so::
+
+  -rwx------ 1 root root 16 Apr  5 04:19 /tmp/HelloWorld.txt
+
+``-rwx------`` satisfies ``mode => "700"`` and ``root root`` is identical with
+``owner => "root"`` and ``group => "root"``.
+
+Let's check the content::
+
+  cat /tmp/HelloWorld.txt
+
+You see::
+
+  Hello World!
+  The new file has been created by Puppet!
+
+Congraturations! 
+You have installed and tested Puppet with your first
+``manifest`` to create and manage a file.  In this tutorial, we used ``file``
+Puppet type, there are many types are available including ``package`` and
+``service`` Please find more information here:
+https://docs.puppetlabs.com/references/latest/type.html
+
+.. _ref-class-lesson-devops-puppet-exercises:
 
 Exercises
 ----------------------------------------------------------------------
 
 Exercise I
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Start to record outputs in your shell by ``script <USER>-puppet-ex1.txt``
+  command.  Replace ``<USER>`` with your real username e.g. ``albert``.
+
+* Run the following commands::
+  cat /etc/puppet/manifests/first-manifest.pp
+  puppet apply /etc/puppet/manifests/first-manifest.pp
+  ls -al /tmp/HelloWorld.txt
+  cat /tmp/HelloWorld.txt
+
+* Exit the recording with ``exit`` command or ``^D``.
+  (^D is Control-D)
+
+* Submit your ``<USER>-puppet-ex1.txt`` file.
 
 Exercise II
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Briefly explain the following contents::
+
+  package { 'apache':
+    ensure => present,
+    name   => $::operatingsystem ? {
+      /(?i:Ubuntu|Debian|Mint)/ => 'apache2',
+      default                   => 'httpd',
+    }
+  }
+  service { 'apache2':
+    ensure => running,
+    enable => true,
+  }
+
+* Q1. If we run this on Ubuntu 14.04, we will see ``apache2`` process. If you
+  run this on CentOS, what name of the process do you expect?
+
+* Q2. There are two Puppet types used in this manifest. Describe what
+  ``package`` and ``service`` do.
+
+* Submit your answer with ``<USER>-puppet-ex2.txt`` file.
 
 Next Step
 -----------
 
-In the next page, ...
+In the next page, Chef will be introduced.
 
-`Link here <link>`_
+:ref:`Chef <_ref-class-lesson-devops-chef>`
 
