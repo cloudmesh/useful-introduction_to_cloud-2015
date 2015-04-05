@@ -178,11 +178,3 @@ Basic instructions and lessons in this page are adapted from the `Juju website
 <https://jujucharms.com/docs/1.20/getting-started>`_
 
 * Juju Charm Store: https://jujucharms.com/solutions
-
-Next Step
-----------------------------------------------------------------------
-
-In the next page, ...
-
-`Link here <link>`_
-
