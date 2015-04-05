@@ -42,7 +42,7 @@ Installation Chef
 -------------------------------------------------------------------------------
 
 This lesson is based on FutureSystems which means you create a VM instance on
-India OpenStack and installs Chef on top of it. If you prefer to use other
+India OpenStack and install Chef on top of it. If you prefer to use other
 virtual environments, we recommend to use Vagrant and VirtualBox.
 
 We assume you use a OpenStack instance on FutureSystems.
