@@ -502,10 +502,10 @@ IT Operations - Automation and Orchestration (under preparation)
      -
    * - Puppet
      -
-     -
-     -
-     -
-     -
+     - :ref:`1 hour <ref-class-lesson-devops-puppet>`
+     - :ref:`20 mins <ref-class-lesson-devops-puppet-exercises>`
+     - 04/13
+     - 04/17
    * - Chef
      - `35 mins <https://mix.office.com/watch/1g90jbv8llv0j>`_
      - :ref:`1 hour <ref-class-lesson-devops-chef>`
