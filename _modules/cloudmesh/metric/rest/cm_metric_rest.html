@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.metric.rest.cm_metric_rest &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.metric.rest.cm_metric_rest</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.metric.rest.cm_metric_rest</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">bson</span> <span class="kn">import</span> <span class="n">json_util</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="c"># from fgmetric.shell.CMMetricAPI import CMMetricAPI</span>
+
+
+<div class="viewcode-block" id="CMMetricREST"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.metric.rest.html#cloudmesh.metric.rest.cm_metric_rest.CMMetricREST">[docs]</a><span class="k">class</span> <span class="nc">CMMetricREST</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    CMMetricREST</span>
+<span class="sd">    ============</span>
+
+<span class="sd">    Command Line Interface for fg-metric.</span>
+
+<span class="sd">    Usage: fg-metric-cli</span>
+
+<span class="sd">    Description</span>
+<span class="sd">    ------------</span>
+
+<span class="sd">    As a cli version of fg-metric, this module provides usage data with search options.</span>
+
+<span class="sd">    - Excutable name is fg-metric-cli (defined by setup.py).</span>
+<span class="sd">    - CM Cloud Mesh would be one of the examples using fg-metric-cli.</span>
+
+<span class="sd">    Basic data structure</span>
+<span class="sd">    ---------------------</span>
+
+<span class="sd">    {</span>
+<span class="sd">        &quot;start_date&quot;    :   start date of search    (datetime),</span>
+<span class="sd">        &quot;end_date&quot;      :   end date of search      (datetime),</span>
+<span class="sd">        &quot;ownerid&quot;       :   portal user id          (str),</span>
+<span class="sd">        &quot;metric&quot;        :   selected metric name    (str),</span>
+<span class="sd">        &quot;period&quot;        :   monthly, weekly, daily  (str),</span>
+<span class="sd">        &quot;clouds&quot;        :   set of clouds           (list)</span>
+<span class="sd">                            [</span>
+<span class="sd">                                { &quot;service&quot;     :   cloud service name  (str),</span>
+<span class="sd">                                 &quot;hostname&quot;     :   hostname (str),</span>
+<span class="sd">                                 &quot;stats&quot;        :   value (int) }</span>
+<span class="sd">                                 ...</span>
+<span class="sd">                                 ]</span>
+<span class="sd">    }</span>
+
+<span class="sd">    Example 1. Get user statistics</span>
+
+<span class="sd">    $ fg-metric-cli -u hrlee</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># https://pypi.python.org/pypi?%3Aaction=list_classifiers</span>
+    <span class="n">development_status</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&quot;Pre-alpha&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_search_days</span> <span class="o">=</span> <span class="mi">180</span>  <span class="c"># Search usage data for this number</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_search_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span>
+        <span class="p">)</span>  <span class="c"># Search starts from this date back to days within default_search_days</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="o">=</span> <span class="n">CMMetricAPI</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_default_options</span><span class="p">()</span>
+
+<div class="viewcode-block" id="CMMetricREST.set_default_options"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.metric.rest.html#cloudmesh.metric.rest.cm_metric_rest.CMMetricREST.set_default_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_default_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_search_end</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">default_search_days</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metric</span> <span class="o">=</span> <span class="s">&#39;count runtime cores mem disks&#39;</span>
+</div>
+<div class="viewcode-block" id="CMMetricREST.set_argparse"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.metric.rest.html#cloudmesh.metric.rest.cm_metric_rest.CMMetricREST.set_argparse">[docs]</a>    <span class="k">def</span> <span class="nf">set_argparse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+            <span class="n">description</span><span class="o">=</span><span class="s">&#39;Specify search options for usage statistics&#39;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-s&#39;</span><span class="p">,</span> <span class="s">&#39;--s_date&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;start date of search&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-e&#39;</span><span class="p">,</span> <span class="s">&#39;--e_date&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;end date of search&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-m&#39;</span><span class="p">,</span> <span class="s">&#39;--metric&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;metric name to search&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">metric</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-lm&#39;</span><span class="p">,</span> <span class="s">&#39;--listmetrics&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&quot;list of metric possible to search&quot;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-u&#39;</span><span class="p">,</span> <span class="s">&#39;--user&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;owerid (i.e. fg portal id) to search&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-c&#39;</span><span class="p">,</span> <span class="s">&#39;--cloud&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;cloud name to search&#39;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-lc&#39;</span><span class="p">,</span> <span class="s">&#39;--listclouds&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;list of cloud services possible to search&#39;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-H&#39;</span><span class="p">,</span> <span class="s">&#39;--host&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;host name to search&#39;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-lh&#39;</span><span class="p">,</span> <span class="s">&#39;--listhost&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;list of hostnames possible to search&#39;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-p&#39;</span><span class="p">,</span> <span class="s">&#39;--period&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;search period&#39;</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s">&#39;-lp&#39;</span><span class="p">,</span> <span class="s">&#39;--listperiod&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;list of search period&#39;</span><span class="p">)</span>
+
+        <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_vars</span><span class="p">()</span>
+</div>
+    <span class="k">def</span> <span class="nf">_set_vars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_api_vars</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_dict_vars</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_set_api_vars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">set_date</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">s_date</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">e_date</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">set_metric</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">metric</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">set_user</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">set_cloud</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">cloud</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">set_hostname</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">host</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">set_period</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">period</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_dict_vars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;start_date&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span>
+            <span class="s">&quot;end_date&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="p">,</span>
+            <span class="s">&quot;ownerid&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+            <span class="s">&quot;metric&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span>
+            <span class="s">&quot;period&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">period</span> <span class="ow">or</span> <span class="s">&quot;All&quot;</span><span class="p">,</span>
+            <span class="s">&quot;clouds&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">cloud</span> <span class="ow">or</span> <span class="s">&quot;All&quot;</span><span class="p">,</span>
+            <span class="s">&quot;hostname&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">host</span> <span class="ow">or</span> <span class="s">&quot;All&quot;</span>
+        <span class="p">}</span>
+
+<div class="viewcode-block" id="CMMetricREST.get_stats"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.metric.rest.html#cloudmesh.metric.rest.cm_metric_rest.CMMetricREST.get_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_stats</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="CMMetricREST.return_dict"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.metric.rest.html#cloudmesh.metric.rest.cm_metric_rest.CMMetricREST.return_dict">[docs]</a>    <span class="k">def</span> <span class="nf">return_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;stats&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">json_util</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
+
+</div></div>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.metric.rest.html#cloudmesh.metric.rest.cm_metric_rest.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">cli</span> <span class="o">=</span> <span class="n">CMMetricREST</span><span class="p">()</span>
+    <span class="n">cli</span><span class="o">.</span><span class="n">set_argparse</span><span class="p">()</span>
+    <span class="n">cli</span><span class="o">.</span><span class="n">get_stats</span><span class="p">()</span>
+    <span class="n">dic</span> <span class="o">=</span> <span class="n">cli</span><span class="o">.</span><span class="n">return_dict</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">dic</span>
+    <span class="c"># deserialization</span>
+    <span class="c"># print json.loads(dic, object_hook=json_util.object_hook)</span>
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

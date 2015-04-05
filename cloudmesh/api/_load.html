@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -113,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
@@ -162,16 +164,16 @@ cloudmesh in standalone mode. Hence, they are important when cloudmesh
 starts up or is run in user more. In server mode the information is
 typically retrieved from the cloudmesh database.</p>
 <p>We focus here on some of the most important configuration files. After
-deployment they can be found in the <tt class="docutils literal"><span class="pre">~/.cloudmesh</span></tt> directory</p>
+deployment they can be found in the <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code> directory</p>
 <div class="section" id="api-for-cloudmesh-yaml">
 <h2>API for cloudmesh.yaml<a class="headerlink" href="#api-for-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
 <p>Information about the user and which clouds he has access to are stored
-in the <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file.</p>
+in the <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
 </pre></div>
 </div>
 <p>You can load this file with the load command, while either specifying no
-parameters or using the <tt class="docutils literal"><span class="pre">&quot;user&quot;</span></tt> string as parameter.</p>
+parameters or using the <code class="docutils literal"><span class="pre">&quot;user&quot;</span></code> string as parameter.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">user</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -204,8 +206,8 @@ in the yaml file.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">If you see here TBD you need to edit the</p>
 </div>
-<p><tt class="docutils literal"><span class="pre">~/.cloudmesh/cloudmesh.yaml</span></tt> file to add first and lastname.</p>
-<p>To obtain the futuresystems username use the command <tt class="docutils literal"><span class="pre">user.username()</span></tt></p>
+<p><code class="docutils literal"><span class="pre">~/.cloudmesh/cloudmesh.yaml</span></code> file to add first and lastname.</p>
+<p>To obtain the futuresystems username use the command <code class="docutils literal"><span class="pre">user.username()</span></code></p>
 </div>
 <div class="section" id="api-for-cloudmesh-server-yaml">
 <h2>API for cloudmesh_server.yaml<a class="headerlink" href="#api-for-cloudmesh-server-yaml" title="Permalink to this headline">¶</a></h2>
@@ -245,7 +247,7 @@ function can get sub dictionaries.</p>
 <p>We are currently working on integrating PaaS launchers into cloudmesh
 that easily deploy software based on configuration parameters specified
 in the launchers. The specification of the launchers are stored under
-<tt class="docutils literal"><span class="pre">cloudmesh.launcher.recipies</span></tt>. We provide the information for such a
+<code class="docutils literal"><span class="pre">cloudmesh.launcher.recipies</span></code>. We provide the information for such a
 launcher as an example.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -294,7 +296,7 @@ OrderedDict([('name', 'Mooc'), ('description', 'Deploys a Slurm cluster. One of 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_pbs.html" class="btn btn-neutral float-right" title="Batch Queues"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_pbs.html" class="btn btn-neutral float-right" title="Batch Queues">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_uuid.html" class="btn btn-neutral" title="Defining Names"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -310,7 +312,8 @@ OrderedDict([('name', 'Mooc'), ('description', 'Deploys a Slurm cluster. One of 
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -335,7 +338,7 @@ OrderedDict([('name', 'Mooc'), ('description', 'Deploys a Slurm cluster. One of 
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

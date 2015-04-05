@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -102,7 +103,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -119,6 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
@@ -180,14 +182,14 @@ configuration management tool written in Ruby and Erlang.</p>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Chef is an open source infrastructure automation software that manages
-installation and configuration of your software with its Ruby code <tt class="docutils literal"><span class="pre">Recipe</span></tt>
-and <tt class="docutils literal"><span class="pre">Cookbook</span></tt>. <tt class="docutils literal"><span class="pre">Recipe</span></tt> is a description of how your servers should be set
-up with your software and <tt class="docutils literal"><span class="pre">Cookbook</span></tt> is a set of recipes. If you install a
+installation and configuration of your software with its Ruby code <code class="docutils literal"><span class="pre">Recipe</span></code>
+and <code class="docutils literal"><span class="pre">Cookbook</span></code>. <code class="docutils literal"><span class="pre">Recipe</span></code> is a description of how your servers should be set
+up with your software and <code class="docutils literal"><span class="pre">Cookbook</span></code> is a set of recipes. If you install a
 Apache web server or a MySQL database using Chef, you may download and use
 existing recipes from the Chef server (SuperMarket). You can also write your
 own recipes with your preference about configuration and installation. In most
 cases, a single recipe is not enough to configure and install software.  Chef
-provides a collection of related recipes named <tt class="docutils literal"><span class="pre">Cookbook</span></tt>, and you use
+provides a collection of related recipes named <code class="docutils literal"><span class="pre">Cookbook</span></code>, and you use
 Cookbooks to install software with relevant tools.</p>
 <p>This lesson gives you an introduction of Chef including the following topics:</p>
 <ul class="simple">
@@ -207,19 +209,19 @@ virtual environments, we recommend to use Vagrant and VirtualBox.</p>
 <p class="last">If don&#8217;t know how to launch a new instance? <a class="reference external" href="../iaas/openstack.html#launching-a-new-instance">See here</a></p>
 </div>
 <div class="section" id="root-access">
-<h3><tt class="docutils literal"><span class="pre">root</span></tt> Access<a class="headerlink" href="#root-access" title="Permalink to this headline">¶</a></h3>
-<p>We will install Chef and other software using <tt class="docutils literal"><span class="pre">root</span></tt> account. Using <tt class="docutils literal"><span class="pre">root</span></tt>
+<h3><code class="docutils literal"><span class="pre">root</span></code> Access<a class="headerlink" href="#root-access" title="Permalink to this headline">¶</a></h3>
+<p>We will install Chef and other software using <code class="docutils literal"><span class="pre">root</span></code> account. Using <code class="docutils literal"><span class="pre">root</span></code>
 account means that you have a permission to use entire system resources without
 any restriction. Since this lesson includes a couple of examples using Chef, we
 strongly recommend to use OpenStack VM instance on FutureSystems. DON&#8217;T try to
-install Chef on your local machine or on the <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> host.
+install Chef on your local machine or on the <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> host.
 Use a benefit of VM instance which you can easily delete and re-create a new
 one.</p>
 <p>On a VM instance, simply run a switch user command:</p>
 <div class="highlight-python"><div class="highlight"><pre>ubuntu@chef:~$ sudo su -
 </pre></div>
 </div>
-<p>If you see <tt class="docutils literal"><span class="pre">root</span></tt> label, you are in <tt class="docutils literal"><span class="pre">root</span></tt> account on your machine:</p>
+<p>If you see <code class="docutils literal"><span class="pre">root</span></code> label, you are in <code class="docutils literal"><span class="pre">root</span></code> account on your machine:</p>
 <div class="highlight-python"><div class="highlight"><pre>root@chef:~#
 </pre></div>
 </div>
@@ -234,20 +236,20 @@ downloading and setting Chef.</p>
 </div>
 <div class="section" id="version-check">
 <h3>Version Check<a class="headerlink" href="#version-check" title="Permalink to this headline">¶</a></h3>
-<p>Now we expect to use <tt class="docutils literal"><span class="pre">chef-client</span></tt> command.</p>
+<p>Now we expect to use <code class="docutils literal"><span class="pre">chef-client</span></code> command.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">chef</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">v</span>
 </pre></div>
 </div>
 <p>The tested version of Chef is 12.0.3.</p>
-<p>You may have higher version of Chef. We use <tt class="docutils literal"><span class="pre">chef-client</span> <span class="pre">--local-mode</span></tt> or <tt class="docutils literal"><span class="pre">chef-solo</span></tt> which is a light version of a
-<tt class="docutils literal"><span class="pre">chef-client</span></tt> command that uses Cookbooks without communicating with Chef
-server. Chef has a few main components including <tt class="docutils literal"><span class="pre">chef-client</span></tt> and
-<tt class="docutils literal"><span class="pre">chef-server</span></tt>.  For more detail, see here: <a class="reference external" href="http://docs.chef.io/client/chef_overview.html#chef-components">Chef Components</a></p>
+<p>You may have higher version of Chef. We use <code class="docutils literal"><span class="pre">chef-client</span> <span class="pre">--local-mode</span></code> or <code class="docutils literal"><span class="pre">chef-solo</span></code> which is a light version of a
+<code class="docutils literal"><span class="pre">chef-client</span></code> command that uses Cookbooks without communicating with Chef
+server. Chef has a few main components including <code class="docutils literal"><span class="pre">chef-client</span></code> and
+<code class="docutils literal"><span class="pre">chef-server</span></code>.  For more detail, see here: <a class="reference external" href="http://docs.chef.io/client/chef_overview.html#chef-components">Chef Components</a></p>
 </div>
 <div class="section" id="chef-development-kit-chefdk">
 <h3>Chef Development Kit (ChefDK)<a class="headerlink" href="#chef-development-kit-chefdk" title="Permalink to this headline">¶</a></h3>
 <p>To write a Cookbook and use other tools, we need Chef Development Kit.
-On Ubuntu 14.04 with <tt class="docutils literal"><span class="pre">root</span></tt> account, run:</p>
+On Ubuntu 14.04 with <code class="docutils literal"><span class="pre">root</span></code> account, run:</p>
 <div class="highlight-python"><div class="highlight"><pre>wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.4.0-1_amd64.deb
 dpkg -i chef*.deb
 </pre></div>
@@ -265,7 +267,7 @@ Thank you for installing Chef Development Kit!
 </div>
 </div>
 <div class="section" id="default-chef-repo-repository">
-<h3>Default <tt class="docutils literal"><span class="pre">chef-repo</span></tt> Repository<a class="headerlink" href="#default-chef-repo-repository" title="Permalink to this headline">¶</a></h3>
+<h3>Default <code class="docutils literal"><span class="pre">chef-repo</span></code> Repository<a class="headerlink" href="#default-chef-repo-repository" title="Permalink to this headline">¶</a></h3>
 <p>You start with a Chef Repository to manage cookbooks, roles, config files and other artifacts.
 We create a base Chef repository with the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>chef generate repo ~/chef-repo
@@ -289,13 +291,13 @@ key files and the knife.rb file.</p>
 echo &quot;cookbook_path [ &#39;$HOME/chef-repo/cookbooks&#39; ]&quot; &gt; ~/chef-repo/.chef/knife.rb
 </pre></div>
 </div>
-<p>Now, your cookbook directory is at <tt class="docutils literal"><span class="pre">$HOME/chef-repo/cookbooks</span></tt>. The default
-directory was <tt class="docutils literal"><span class="pre">/var/chef/cookbooks/</span></tt>.</p>
+<p>Now, your cookbook directory is at <code class="docutils literal"><span class="pre">$HOME/chef-repo/cookbooks</span></code>. The default
+directory was <code class="docutils literal"><span class="pre">/var/chef/cookbooks/</span></code>.</p>
 </div>
 <div class="section" id="first-cookbook">
 <h3>First Cookbook<a class="headerlink" href="#first-cookbook" title="Permalink to this headline">¶</a></h3>
 <p>If you create a new cookbook, you need following instructions. We will start a
-Apache web server with a new cookbook named <tt class="docutils literal"><span class="pre">first-cookbook</span></tt>:</p>
+Apache web server with a new cookbook named <code class="docutils literal"><span class="pre">first-cookbook</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>knife cookbook create first-cookbook
 </pre></div>
 </div>
@@ -310,13 +312,13 @@ Apache web server with a new cookbook named <tt class="docutils literal"><span c
 </div>
 <div class="section" id="installation-of-apache-web-server">
 <h2>Installation of Apache Web Server<a class="headerlink" href="#installation-of-apache-web-server" title="Permalink to this headline">¶</a></h2>
-<p>We configure our <tt class="docutils literal"><span class="pre">first-cookbook</span></tt> with a Apache web server in this lesson. It
+<p>We configure our <code class="docutils literal"><span class="pre">first-cookbook</span></code> with a Apache web server in this lesson. It
 includes:</p>
 <ul class="simple">
 <li>Download Apache2 Cookbook</li>
 <li>Update metadata.rb</li>
 <li>Update default.rb</li>
-<li>Use client.rb for <tt class="docutils literal"><span class="pre">chef-client</span> <span class="pre">--local-mode</span></tt></li>
+<li>Use client.rb for <code class="docutils literal"><span class="pre">chef-client</span> <span class="pre">--local-mode</span></code></li>
 <li>Use web.json for <em>run_list</em></li>
 </ul>
 <div class="section" id="download-apache-cookbook">
@@ -340,21 +342,21 @@ tar xvzf apt-2.7.0.tar.gz -C ~/chef-repo/cookbooks
 filename, if you have different one</em></p>
 </div>
 <div class="section" id="update-metadata-rb">
-<h3>Update <tt class="docutils literal"><span class="pre">metadata.rb</span></tt><a class="headerlink" href="#update-metadata-rb" title="Permalink to this headline">¶</a></h3>
-<p>The <tt class="docutils literal"><span class="pre">metadata.rb</span></tt> file contains information about cookbooks, we update this
-file to tell Chef about required items. We use a <tt class="docutils literal"><span class="pre">depends</span></tt> setting to tell
+<h3>Update <code class="docutils literal"><span class="pre">metadata.rb</span></code><a class="headerlink" href="#update-metadata-rb" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">metadata.rb</span></code> file contains information about cookbooks, we update this
+file to tell Chef about required items. We use a <code class="docutils literal"><span class="pre">depends</span></code> setting to tell
 required items in the cookbook.</p>
 <div class="highlight-python"><div class="highlight"><pre>echo  &#39;depends &quot;apache2&quot;&#39; &gt;&gt; ~/chef-repo/cookbooks/first-cookbook/metadata.rb
 </pre></div>
 </div>
-<p>For more information about <tt class="docutils literal"><span class="pre">metadata.rb</span></tt>:
+<p>For more information about <code class="docutils literal"><span class="pre">metadata.rb</span></code>:
 <a class="reference external" href="https://docs.chef.io/cookbook_repo.html#metadata-rb">https://docs.chef.io/cookbook_repo.html#metadata-rb</a></p>
 </div>
 <div class="section" id="update-default-rb">
-<h3>Update <tt class="docutils literal"><span class="pre">default.rb</span></tt><a class="headerlink" href="#update-default-rb" title="Permalink to this headline">¶</a></h3>
+<h3>Update <code class="docutils literal"><span class="pre">default.rb</span></code><a class="headerlink" href="#update-default-rb" title="Permalink to this headline">¶</a></h3>
 <p>We include apache2 as a default recipe.</p>
 <ul>
-<li><p class="first">Open a <tt class="docutils literal"><span class="pre">~/chef-repo/cookbooks/first-cookbook/recipes/default.rb</span></tt> via nano or vi</p>
+<li><p class="first">Open a <code class="docutils literal"><span class="pre">~/chef-repo/cookbooks/first-cookbook/recipes/default.rb</span></code> via nano or vi</p>
 <p>Add the following lines:</p>
 </li>
 </ul>
@@ -367,28 +369,28 @@ end
 </div>
 </div>
 <div class="section" id="use-of-client-rb">
-<h3>Use of <tt class="docutils literal"><span class="pre">client.rb</span></tt><a class="headerlink" href="#use-of-client-rb" title="Permalink to this headline">¶</a></h3>
-<p>A client.rb file is used to specify the configuration details for <tt class="docutils literal"><span class="pre">chef-client</span></tt>.
-Let&#8217;s create a new <tt class="docutils literal"><span class="pre">client.rb</span></tt> file.</p>
+<h3>Use of <code class="docutils literal"><span class="pre">client.rb</span></code><a class="headerlink" href="#use-of-client-rb" title="Permalink to this headline">¶</a></h3>
+<p>A client.rb file is used to specify the configuration details for <code class="docutils literal"><span class="pre">chef-client</span></code>.
+Let&#8217;s create a new <code class="docutils literal"><span class="pre">client.rb</span></code> file.</p>
 <div class="highlight-python"><div class="highlight"><pre>echo -e &quot;file_cache_path \&quot;$HOME/chef-client\&quot;\ncookbook_path \&quot;$HOME/chef-repo/cookbooks\&quot;&quot; &gt; client.rb
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">client.rb</span></tt> must look like this:</p>
+<p>The <code class="docutils literal"><span class="pre">client.rb</span></code> must look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>file_cache_path &quot;/root/chef-client&quot;
 cookbook_path &quot;/root/chef-repo/cookbooks&quot;
 </pre></div>
 </div>
-<p>For more information about <tt class="docutils literal"><span class="pre">client.rb</span></tt>, see here:
+<p>For more information about <code class="docutils literal"><span class="pre">client.rb</span></code>, see here:
 <a class="reference external" href="https://docs.chef.io/config_rb_client.html">https://docs.chef.io/config_rb_client.html</a></p>
 </div>
 <div class="section" id="use-of-web-json">
-<h3>Use of <tt class="docutils literal"><span class="pre">web.json</span></tt><a class="headerlink" href="#use-of-web-json" title="Permalink to this headline">¶</a></h3>
-<p>The <tt class="docutils literal"><span class="pre">web.json</span></tt> will be used to load attributes from a JSON file.  We will use
-<tt class="docutils literal"><span class="pre">-j</span></tt> option in <tt class="docutils literal"><span class="pre">chef-client</span></tt> command to load this file.</p>
+<h3>Use of <code class="docutils literal"><span class="pre">web.json</span></code><a class="headerlink" href="#use-of-web-json" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">web.json</span></code> will be used to load attributes from a JSON file.  We will use
+<code class="docutils literal"><span class="pre">-j</span></code> option in <code class="docutils literal"><span class="pre">chef-client</span></code> command to load this file.</p>
 <div class="highlight-python"><div class="highlight"><pre>echo -e &#39;{\n   &quot;run_list&quot;: [ &quot;recipe[apt]&quot;, &quot;recipe[phpapp]&quot; ]\n}&#39; &gt; web.json
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">web.json</span></tt> must look like this:</p>
+<p>The <code class="docutils literal"><span class="pre">web.json</span></code> must look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
   <span class="s">&quot;run_list&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s">&quot;recipe[apt]&quot;</span><span class="p">,</span> <span class="s">&quot;recipe[phpapp]&quot;</span> <span class="p">]</span>
 <span class="p">}</span>
@@ -397,9 +399,9 @@ cookbook_path &quot;/root/chef-repo/cookbooks&quot;
 </div>
 </div>
 <div class="section" id="start-chef-client">
-<h2>Start <tt class="docutils literal"><span class="pre">chef-client</span></tt><a class="headerlink" href="#start-chef-client" title="Permalink to this headline">¶</a></h2>
+<h2>Start <code class="docutils literal"><span class="pre">chef-client</span></code><a class="headerlink" href="#start-chef-client" title="Permalink to this headline">¶</a></h2>
 <p>Let&#8217;s start a Chef client in a local mode. We will use configurations that
-we&#8217;ve made in <tt class="docutils literal"><span class="pre">client.rb</span></tt> and <tt class="docutils literal"><span class="pre">web.json</span></tt>.</p>
+we&#8217;ve made in <code class="docutils literal"><span class="pre">client.rb</span></code> and <code class="docutils literal"><span class="pre">web.json</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre>chef-client --local-mode -c client.rb -j web.json
 </pre></div>
 </div>
@@ -407,7 +409,7 @@ we&#8217;ve made in <tt class="docutils literal"><span class="pre">client.rb</sp
 <div class="section" id="update-on-security-group">
 <h2>Update on Security Group<a class="headerlink" href="#update-on-security-group" title="Permalink to this headline">¶</a></h2>
 <p>If you are running on a VM instance, you need to have your HTTP port (80) open.
-Go back to <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt>. You can&#8217;t update your security group of
+Go back to <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code>. You can&#8217;t update your security group of
 your VM instance on the VM instance.</p>
 <ul>
 <li><p class="first">Be on india.futuresystems.org:</p>
@@ -441,11 +443,11 @@ your VM instance on the VM instance.</p>
 </div>
 </div></blockquote>
 <ul>
-<li><p class="first">Apply a <tt class="docutils literal"><span class="pre">web</span></tt> group to your VM</p>
+<li><p class="first">Apply a <code class="docutils literal"><span class="pre">web</span></code> group to your VM</p>
 <div class="highlight-python"><div class="highlight"><pre>nova add-secgroup [VM NAME] web
 </pre></div>
 </div>
-<p>I have <tt class="docutils literal"><span class="pre">chef-albert</span></tt> VM instance, so I ran</p>
+<p>I have <code class="docutils literal"><span class="pre">chef-albert</span></code> VM instance, so I ran</p>
 <div class="highlight-python"><div class="highlight"><pre>nova add-secgroup chef-albert web
 </pre></div>
 </div>
@@ -455,7 +457,7 @@ your VM instance on the VM instance.</p>
 <div class="section" id="floating-ip-address-allocation">
 <h2>Floating IP Address Allocation<a class="headerlink" href="#floating-ip-address-allocation" title="Permalink to this headline">¶</a></h2>
 <p>Since your VM may not have a public IP address, we assign one. This is also be
-done on <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt></p>
+done on <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code></p>
 <ul>
 <li><p class="first">Be on India.futuresystems.org:</p>
 <div class="highlight-python"><div class="highlight"><pre>[albert@i136 ~]$
@@ -477,7 +479,7 @@ done on <tt class="docutils literal"><span class="pre">india.futuresystems.org</
 <div class="highlight-python"><div class="highlight"><pre>nova add-floating-ip [VM NAME] [IP ADDRESS]
 </pre></div>
 </div>
-<p>I have <tt class="docutils literal"><span class="pre">chef-albert</span></tt> VM instance, so I assign the IP:</p>
+<p>I have <code class="docutils literal"><span class="pre">chef-albert</span></code> VM instance, so I assign the IP:</p>
 <div class="highlight-python"><div class="highlight"><pre>nova add-floating-ip chef-albert 149.333.222.111
 </pre></div>
 </div>
@@ -511,7 +513,7 @@ done on <tt class="docutils literal"><span class="pre">india.futuresystems.org</
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="other.html" class="btn btn-neutral float-right" title="Other (Under Preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="other.html" class="btn btn-neutral float-right" title="Other (Under Preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="puppet.html" class="btn btn-neutral" title="Puppet"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -527,7 +529,8 @@ done on <tt class="docutils literal"><span class="pre">india.futuresystems.org</
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -552,7 +555,7 @@ done on <tt class="docutils literal"><span class="pre">india.futuresystems.org</
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

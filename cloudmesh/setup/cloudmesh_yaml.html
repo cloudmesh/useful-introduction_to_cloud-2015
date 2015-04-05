@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -92,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
 </ul>
 
@@ -131,24 +133,24 @@
   <div class="section" id="account-information-of-cloudmesh">
 <h1>Account Information of Cloudmesh<a class="headerlink" href="#account-information-of-cloudmesh" title="Permalink to this headline">¶</a></h1>
 <p>Cloudmesh manages account information which is stored in a file named
-<tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>. In OpenStack, for example, access information such as
+<code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code>. In OpenStack, for example, access information such as
 OS_USERNAME, OS_PASSWORD, OS_TENANT_NAME, OS_AUTH_URL, and OS_CACERT is
 required to interact with a OpenStack service. Cloudmesh stores the access
-information in the <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file under a user home directory and
+information in the <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file under a user home directory and
 MongoDB open-source document database. If you&#8217;d like to add more cloud
 platforms, you may need to update this YAML data file. Windows Azure, Amazon
 EC2, HP Cloud, Eucalyptus, and other OpenStack clouds are supported.</p>
 <div class="section" id="this-page-covers">
 <h2>This page covers:<a class="headerlink" href="#this-page-covers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Basic structure of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt></li>
-<li>Basic use of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt></li>
+<li>Basic structure of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></li>
+<li>Basic use of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></li>
 <li>An example of adding a new cloud account</li>
 </ul>
 </div>
 <div class="section" id="basic-structure-of-cloudmesh-yaml">
-<h2>Basic structure of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt><a class="headerlink" href="#basic-structure-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> configuration file mainly contains the following
+<h2>Basic structure of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#basic-structure-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> configuration file mainly contains the following
 information:</p>
 <ul>
 <li><dl class="first docutils">
@@ -264,7 +266,7 @@ details, see here: <a class="reference external" href="http://docs.openstack.org
 <div class="section" id="file-location">
 <h3>File Location<a class="headerlink" href="#file-location" title="Permalink to this headline">¶</a></h3>
 <p>Once you&#8217;ve installed Cloudmesh, you can find the configuration
-<tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file in the following location:</p>
+<code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file in the following location:</p>
 <ul class="simple">
 <li>$HOME/.cloudmesh/cloudmesh.yaml</li>
 </ul>
@@ -278,7 +280,7 @@ details, see here: <a class="reference external" href="http://docs.openstack.org
 <div class="section" id="india-openstack-on-futuresystems">
 <h2>India OpenStack on FutureSystems<a class="headerlink" href="#india-openstack-on-futuresystems" title="Permalink to this headline">¶</a></h2>
 <p>If you&#8217;ve successfully installed Cloudmesh, you expect to have India OpenStack configured with your account.</p>
-<p>An example of India account information in <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> looks like this:</p>
+<p>An example of India account information in <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> looks like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>clouds:
   india:
     cm_heading: India OpenStack, Juno
@@ -300,11 +302,11 @@ details, see here: <a class="reference external" href="http://docs.openstack.org
 </pre></div>
 </div>
 <p>You may find an identical information about credentials on india login node.
-Try to compare with <tt class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/india/juno/openrc.sh</span></tt> on india.</p>
+Try to compare with <code class="docutils literal"><span class="pre">$HOME/.cloudmesh/clouds/india/juno/openrc.sh</span></code> on india.</p>
 </div>
 <div class="section" id="aws-example-of-cloudmesh-yaml">
-<h2>AWS example of <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt><a class="headerlink" href="#aws-example-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
-<p>to use Amazon cloud, you may have AWS access information in <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>.</p>
+<h2>AWS example of <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#aws-example-of-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<p>to use Amazon cloud, you may have AWS access information in <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre>clouds:
   aws:
     cm_host: aws.amazon.com
@@ -325,9 +327,9 @@ Try to compare with <tt class="docutils literal"><span class="pre">$HOME/.cloudm
 </div>
 <div class="section" id="cloud-activation-on-cloudmesh">
 <h2>Cloud Activation on Cloudmesh<a class="headerlink" href="#cloud-activation-on-cloudmesh" title="Permalink to this headline">¶</a></h2>
-<p>If you added a new cloud access information in your <tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt>, you
-need to activate your cloud on <tt class="docutils literal"><span class="pre">cm</span></tt> interactive shell or a web interface.</p>
-<p>In <tt class="docutils literal"><span class="pre">cm</span></tt> shell, try to add it first. Example command looks like:</p>
+<p>If you added a new cloud access information in your <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code>, you
+need to activate your cloud on <code class="docutils literal"><span class="pre">cm</span></code> interactive shell or a web interface.</p>
+<p>In <code class="docutils literal"><span class="pre">cm</span></code> shell, try to add it first. Example command looks like:</p>
 <div class="highlight-python"><div class="highlight"><pre>cm&gt; cloud add /home/albert/.cloudmesh/cloudmesh.yaml
 </pre></div>
 </div>
@@ -343,13 +345,13 @@ need to activate your cloud on <tt class="docutils literal"><span class="pre">cm
 different name.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Find <tt class="docutils literal"><span class="pre">Profile</span></tt> page on the Cloudmesh web GUI. It supports cloud
+<p class="last">Find <code class="docutils literal"><span class="pre">Profile</span></code> page on the Cloudmesh web GUI. It supports cloud
 activation on the web.</p>
 </div>
 </div>
 <div class="section" id="additional-information">
 <h2>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
-<p>For more information of using a <tt class="docutils literal"><span class="pre">yaml</span></tt> file in Cloudmesh, please see here:</p>
+<p>For more information of using a <code class="docutils literal"><span class="pre">yaml</span></code> file in Cloudmesh, please see here:</p>
 <p><a class="reference external" href="yaml.html">YAML</a></p>
 </div>
 </div>
@@ -367,7 +369,8 @@ activation on the web.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -392,7 +395,7 @@ activation on the web.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

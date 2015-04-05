@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -92,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
 </ul>
 
@@ -226,7 +228,7 @@ services on Juju.</p>
 <div class="section" id="ip-tables-configuration">
 <h3>IP tables Configuration<a class="headerlink" href="#ip-tables-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Since Juju GUI is running with a virtual network in your VM instance, you need
-to configure <tt class="docutils literal"><span class="pre">iptables</span></tt>. Your Juju GUI will be served on your floating IP
+to configure <code class="docutils literal"><span class="pre">iptables</span></code>. Your Juju GUI will be served on your floating IP
 address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo iptables -t nat -A PREROUTING -p tcp -d 0.0.0.0 --dport 443 -j DNAT --to-destination [IP ADDRESS of Juju GUI]:443
 </pre></div>
@@ -235,7 +237,7 @@ address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>juju status
 </pre></div>
 </div>
-<p>You may find <tt class="docutils literal"><span class="pre">public-address</span></tt> under <tt class="docutils literal"><span class="pre">juju-gui</span></tt> section:</p>
+<p>You may find <code class="docutils literal"><span class="pre">public-address</span></code> under <code class="docutils literal"><span class="pre">juju-gui</span></code> section:</p>
 <div class="highlight-python"><div class="highlight"><pre>...
 services:
   juju-gui:
@@ -258,7 +260,7 @@ services:
 <div class="section" id="admin-password">
 <h3>Admin Password<a class="headerlink" href="#admin-password" title="Permalink to this headline">¶</a></h3>
 <p>To login Juju GUI, you need a username and a password.
-When you start a service with <tt class="docutils literal"><span class="pre">juju-quickstart</span></tt>, the username and the
+When you start a service with <code class="docutils literal"><span class="pre">juju-quickstart</span></code>, the username and the
 password will be printed out on your screen. Use them to login.</p>
 <p>An example of output:</p>
 <div class="highlight-python"><div class="highlight"><pre>...
@@ -293,11 +295,6 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
 <li>Juju Charm Store: <a class="reference external" href="https://jujucharms.com/solutions">https://jujucharms.com/solutions</a></li>
 </ul>
 </div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>In the next page, ...</p>
-<p><a class="reference external" href="link">Link here</a></p>
-</div>
 </div>
 
 
@@ -313,7 +310,8 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -338,7 +336,7 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

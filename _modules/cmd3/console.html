@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cmd3.console &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>cmd3.console</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cmd3.console</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">textwrap</span>
+
+
+<div class="viewcode-block" id="Console"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console">[docs]</a><span class="k">class</span> <span class="nc">Console</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">color</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">theme</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">&#39;HEADER&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[95m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;BLACK&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[30m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;PURPLE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[35m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;CYAN&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[36m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;WHITE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[37m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;OKBLUE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[34m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;OKGREEN&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[32m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;FAIL&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[31m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;WARNING&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[31m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;RED&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[31m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;ENDC&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[0m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;BOLD&#39;</span><span class="p">:</span> <span class="s">&quot;</span><span class="se">\033</span><span class="s">[1m&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.get"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">Console</span><span class="o">.</span><span class="n">theme</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">theme</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">theme</span><span class="p">[</span><span class="s">&#39;BLACK&#39;</span><span class="p">]</span>
+</div>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_msg</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.msg"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.msg">[docs]</a>    <span class="k">def</span> <span class="nf">msg</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.error"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.error">[docs]</a>    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Console</span><span class="o">.</span><span class="n">color</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="s">&#39;FAIL&#39;</span><span class="p">,</span> <span class="s">&quot;ERROR: &quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">Console</span><span class="o">.</span><span class="n">_msg</span><span class="p">(</span><span class="s">&quot;ERROR: &quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.info"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Console</span><span class="o">.</span><span class="n">color</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="s">&#39;OKBLUE&#39;</span><span class="p">,</span> <span class="s">&quot;INFO: &quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">Console</span><span class="o">.</span><span class="n">_msg</span><span class="p">(</span><span class="s">&quot;INFO: &quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.warning"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.warning">[docs]</a>    <span class="k">def</span> <span class="nf">warning</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Console</span><span class="o">.</span><span class="n">color</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="s">&#39;WARNING&#39;</span><span class="p">,</span> <span class="s">&quot;WARNING: &quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">Console</span><span class="o">.</span><span class="n">_msg</span><span class="p">(</span><span class="s">&quot;WARNING: &quot;</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.ok"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.ok">[docs]</a>    <span class="k">def</span> <span class="nf">ok</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Console</span><span class="o">.</span><span class="n">color</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="s">&#39;OKGREEN&#39;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">Console</span><span class="o">.</span><span class="n">_msg</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_print</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">Console</span><span class="o">.</span><span class="n">theme</span><span class="p">[</span><span class="n">color</span><span class="p">]</span> <span class="o">+</span>
+               <span class="n">prefix</span> <span class="o">+</span>
+               <span class="n">Console</span><span class="o">.</span><span class="n">_msg</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">+</span>
+               <span class="n">Console</span><span class="o">.</span><span class="n">theme</span><span class="p">[</span><span class="s">&#39;ENDC&#39;</span><span class="p">])</span>
+
+<span class="c">#</span>
+<span class="c"># Example</span>
+<span class="c">#</span>
+</div>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">from cmd3.console import Console</span>
+
+
+<span class="sd">print Console.color</span>
+
+<span class="sd">print Console.theme</span>
+
+<span class="sd">Console.warning(&quot;Warning&quot;)</span>
+<span class="sd">Console.error(&quot;Error&quot;)</span>
+<span class="sd">Console.info(&quot;Info&quot;)</span>
+<span class="sd">Console.msg(&quot;msg&quot;)</span>
+<span class="sd">Console.ok(&quot;Success&quot;)</span>
+
+<span class="sd">print Console.color = False</span>
+<span class="sd">Console.error(&quot;Error&quot;)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

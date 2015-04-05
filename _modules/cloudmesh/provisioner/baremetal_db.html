@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.provisioner.baremetal_db &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.provisioner.baremetal_db</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.provisioner.baremetal_db</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">get_mongo_db</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="c">#</span>
+<span class="c"># SETTING UP A LOGGER</span>
+<span class="c">#</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaremetalDB"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB">[docs]</a><span class="k">class</span> <span class="nc">BaremetalDB</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Manage the baremetal data in database.</span>
+<span class="sd">      The data structure of top control document in Mongodb is:</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;cm_kind&quot; : &quot;baremetal&quot;,</span>
+<span class="sd">            &quot;cm_type&quot; : &quot;bm_inventory&quot;,</span>
+<span class="sd">            &quot;bm_type&quot; : &quot;inventory_summary&quot;,</span>
+<span class="sd">            &quot;data&quot; : {</span>
+<span class="sd">                &quot;gravel&quot; : {</span>
+<span class="sd">                    &quot;idle_list&quot; : [</span>
+<span class="sd">                        &quot;gravel02&quot;, &quot;gravel03&quot;</span>
+<span class="sd">                    ]</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;india&quot; : {</span>
+<span class="sd">                    &quot;idle_list&quot; : [</span>
+<span class="sd">                        &quot;i080&quot;,</span>
+<span class="sd">                        &quot;i079&quot;</span>
+<span class="sd">                    ],</span>
+<span class="sd">                    &quot;used_list&quot; : [</span>
+<span class="sd">                        &quot;i072&quot;,</span>
+<span class="sd">                        &quot;i073&quot;,</span>
+<span class="sd">                        &quot;i074&quot;,</span>
+<span class="sd">                        &quot;i078&quot;</span>
+<span class="sd">                    ]</span>
+<span class="sd">                }</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">        The data structure of used client document in Mongodb is:</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;cm_kind&quot; : &quot;baremetal&quot;,</span>
+<span class="sd">            &quot;cm_type&quot; : &quot;bm_inventory&quot;,</span>
+<span class="sd">            &quot;bm_type&quot; : &quot;inventory_clients&quot;,</span>
+<span class="sd">            &quot;bm_style&quot; : &quot;cobbler&quot;,</span>
+<span class="sd">            &quot;client_id&quot;: &quot;i078&quot;,</span>
+<span class="sd">            &quot;user_id&quot;: &quot;your_id&quot;,</span>
+<span class="sd">            &quot;client_status&quot; : {</span>
+<span class="sd">                &quot;status&quot; : &quot;unknown&quot;,     # &quot;unknown&quot;, &quot;deploy&quot;, &quot;poweron&quot;, &quot;poweroff&quot;</span>
+<span class="sd">                &quot;deploy&quot; : {</span>
+<span class="sd">                    &quot;result&quot; : &quot;unknown&quot;,   # &quot;unknown&quot;, &quot;success&quot;, &quot;failure&quot;</span>
+<span class="sd">                    &quot;date&quot; : &quot;&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;poweron&quot; : {</span>
+<span class="sd">                    &quot;result&quot; : &quot;unknown&quot;,</span>
+<span class="sd">                    &quot;date&quot; : &quot;&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                &quot;poweroff&quot; : {</span>
+<span class="sd">                    &quot;result&quot; : &quot;unknown&quot;,</span>
+<span class="sd">                    &quot;date&quot; : &quot;&quot;</span>
+<span class="sd">                }</span>
+<span class="sd">            },</span>
+<span class="sd">        }</span>
+<span class="sd">        The data structure of user request baremetal document in Mongodb is:</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;cm_kind&quot; : &quot;baremetal&quot;,</span>
+<span class="sd">            &quot;cm_type&quot; : &quot;bm_inventory&quot;,</span>
+<span class="sd">            &quot;bm_type&quot; : &quot;user_request&quot;,</span>
+<span class="sd">            &quot;request_date&quot;: &quot;YYYYMMDD&quot;,</span>
+<span class="sd">            &quot;request_sn&quot;: &quot;nnn&quot;,</span>
+<span class="sd">            &quot;user_id&quot;: &quot;your_id&quot;,</span>
+<span class="sd">            &quot;status&quot; : &quot;unknown&quot;,      # &quot;unknown&quot;, &quot;pending&quot;, &quot;refused&quot;, &quot;approved&quot;, &quot;part-approved&quot;</span>
+<span class="sd">            &quot;request_content&quot; : {</span>
+<span class="sd">                &quot;number&quot;: number,</span>
+<span class="sd">                &quot;date&quot;: {&quot;from&quot;: &quot;YYYYMMDD&quot;,</span>
+<span class="sd">                         &quot;to&quot;: &quot;YYYYMMDD&quot;,</span>
+<span class="sd">                        }</span>
+<span class="sd">            },</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coll_name</span> <span class="o">=</span> <span class="s">&quot;inventory&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cm_kind</span> <span class="o">=</span> <span class="s">&quot;baremetal&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cm_type</span> <span class="o">=</span> <span class="s">&quot;bm_{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coll_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bm_type</span> <span class="o">=</span> <span class="s">&quot;inventory_summary&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_db</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coll_name</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaremetalDB.connect_db"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.connect_db">[docs]</a>    <span class="k">def</span> <span class="nf">connect_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coll_name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">get_mongo_db</span><span class="p">(</span><span class="n">coll_name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.init_base_document_structure"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.init_base_document_structure">[docs]</a>    <span class="k">def</span> <span class="nf">init_base_document_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">elem</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cm_kind&quot;</span><span class="p">:</span> <span class="s">&quot;baremetal&quot;</span><span class="p">,</span>
+                <span class="s">&quot;cm_type&quot;</span><span class="p">:</span> <span class="s">&quot;bm_inventory&quot;</span><span class="p">,</span>
+                <span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="s">&quot;inventory_summary&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+        <span class="n">flag_insert</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_find</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">flag_insert</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">flag_insert</span><span class="p">:</span>
+            <span class="n">elem</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_insert</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_default_query"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_default_query">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_query</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;cm_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cm_type</span><span class="p">,</span>
+                <span class="s">&quot;cm_kind&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cm_kind</span><span class="p">,</span>
+                <span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bm_type</span>
+                <span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_full_query"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_full_query">[docs]</a>    <span class="k">def</span> <span class="nf">get_full_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="p">):</span>
+        <span class="n">elem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_default_query</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">query_elem</span><span class="p">:</span>
+            <span class="n">elem</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">elem</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.do_find"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.do_find">[docs]</a>    <span class="k">def</span> <span class="nf">do_find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Thin Wrap of the mongo find command.</span>
+<span class="sd">          return: {&quot;result&quot;: True|False, &quot;data&quot;: []}</span>
+<span class="sd">           result is False if error occured,</span>
+<span class="sd">           result is True means query success. the &quot;data&quot; contains the query result.</span>
+<span class="sd">          empty &quot;data&quot; array means no document match the query</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result_cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">(</span><span class="n">query_elem</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">result_cursor</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result_cursor</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.do_find_one"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.do_find_one">[docs]</a>    <span class="k">def</span> <span class="nf">do_find_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">(</span><span class="n">query_elem</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.do_insert"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.do_insert">[docs]</a>    <span class="k">def</span> <span class="nf">do_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.do_update"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.do_update">[docs]</a>    <span class="k">def</span> <span class="nf">do_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="p">,</span> <span class="n">update_elem</span><span class="p">,</span> <span class="n">flag_upsert</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">flag_multi</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">(</span><span class="n">query_elem</span><span class="p">),</span> <span class="n">update_elem</span><span class="p">,</span>
+                                         <span class="n">upsert</span><span class="o">=</span><span class="n">flag_upsert</span><span class="p">,</span> <span class="n">multi</span><span class="o">=</span><span class="n">flag_multi</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.do_remove"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.do_remove">[docs]</a>    <span class="k">def</span> <span class="nf">do_remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="p">,</span> <span class="n">flag_multi</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">(</span><span class="n">query_elem</span><span class="p">),</span>
+                                         <span class="n">multi</span><span class="o">=</span><span class="n">flag_multi</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.do_atom_update"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.do_atom_update">[docs]</a>    <span class="k">def</span> <span class="nf">do_atom_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="p">,</span> <span class="n">update_elem</span><span class="p">,</span> <span class="n">flag_upsert</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">flag_new</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">find_and_modify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">(</span><span class="n">query_elem</span><span class="p">),</span>
+                                                  <span class="n">update</span><span class="o">=</span><span class="n">update_elem</span><span class="p">,</span> <span class="n">upsert</span><span class="o">=</span><span class="n">flag_upsert</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">flag_new</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+</div>
+    <span class="k">def</span> <span class="nf">get_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">find_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_find_one</span><span class="p">({})</span>
+        <span class="k">if</span> <span class="n">find_result</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">find_result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">cluster</span><span class="p">:</span>  <span class="c"># a specific cluster</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="p">{</span><span class="n">cluster</span><span class="p">:</span> <span class="p">{}})</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<div class="viewcode-block" id="BaremetalDB.append_baremetal_computers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.append_baremetal_computers">[docs]</a>    <span class="k">def</span> <span class="nf">append_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_computer</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_remove_baremetal_computers</span><span class="p">(</span><span class="n">dict_computer</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.remove_baremetal_computers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.remove_baremetal_computers">[docs]</a>    <span class="k">def</span> <span class="nf">remove_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_computer</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_remove_baremetal_computers</span><span class="p">(</span><span class="n">dict_computer</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.add_remove_baremetal_computers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.add_remove_baremetal_computers">[docs]</a>    <span class="k">def</span> <span class="nf">add_remove_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_computer</span><span class="p">,</span> <span class="n">flag_add</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          param dict_computer: {&quot;gravel&quot;: [&quot;01&quot;, &quot;02&quot;],</span>
+<span class="sd">                                &quot;india&quot;: [&quot;&quot;, &quot;&quot;],</span>
+<span class="sd">                               }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">update_elem</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">array_operator</span> <span class="o">=</span> <span class="s">&quot;${0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;each&quot;</span> <span class="k">if</span> <span class="n">flag_add</span> <span class="k">else</span> <span class="s">&quot;in&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">dict_computer</span><span class="p">:</span>
+            <span class="n">update_elem</span><span class="p">[</span><span class="s">&quot;data.{0}.idle_list&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cluster</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">array_operator</span><span class="p">:</span> <span class="n">dict_computer</span><span class="p">[</span><span class="n">cluster</span><span class="p">]}</span>
+        <span class="n">update_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_atom_update</span><span class="p">(</span>
+            <span class="p">{},</span> <span class="p">{</span><span class="s">&quot;${0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;addToSet&quot;</span> <span class="k">if</span> <span class="n">flag_add</span> <span class="k">else</span> <span class="s">&quot;pull&quot;</span><span class="p">):</span> <span class="n">update_elem</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">update_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.update_baremetal_computers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.update_baremetal_computers">[docs]</a>    <span class="k">def</span> <span class="nf">update_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_computer</span><span class="p">,</span> <span class="n">flag_to_used</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          param flag_to_used: True means change bm computer status from `idle` to `used`,</span>
+<span class="sd">                              False means change from `used` to `idle`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pull_elem</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">push_elem</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">pull_list_name</span> <span class="o">=</span> <span class="s">&quot;{0}_list&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;idle&quot;</span> <span class="k">if</span> <span class="n">flag_to_used</span> <span class="k">else</span> <span class="s">&quot;used&quot;</span><span class="p">)</span>
+        <span class="n">push_list_name</span> <span class="o">=</span> <span class="s">&quot;{0}_list&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;used&quot;</span> <span class="k">if</span> <span class="n">flag_to_used</span> <span class="k">else</span> <span class="s">&quot;idle&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">dict_computer</span><span class="p">:</span>
+            <span class="n">pull_elem</span><span class="p">[</span><span class="s">&quot;data.{0}.{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">pull_list_name</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&quot;$in&quot;</span><span class="p">:</span> <span class="n">dict_computer</span><span class="p">[</span><span class="n">cluster</span><span class="p">]}</span>
+            <span class="n">push_elem</span><span class="p">[</span><span class="s">&quot;data.{0}.{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">push_list_name</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&quot;$each&quot;</span><span class="p">:</span> <span class="n">dict_computer</span><span class="p">[</span><span class="n">cluster</span><span class="p">]}</span>
+        <span class="n">update_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_atom_update</span><span class="p">(</span>
+            <span class="p">{},</span> <span class="p">{</span><span class="s">&quot;$pull&quot;</span><span class="p">:</span> <span class="n">pull_elem</span><span class="p">,</span> <span class="s">&quot;$addToSet&quot;</span><span class="p">:</span> <span class="n">push_elem</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">update_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.assign_baremetal_to_user"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.assign_baremetal_to_user">[docs]</a>    <span class="k">def</span> <span class="nf">assign_baremetal_to_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_computer</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+        <span class="n">query_elem</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="s">&quot;inventory_clients&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">update_elem</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;bm_style&quot;</span><span class="p">:</span> <span class="s">&quot;unknown&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span>
+                        <span class="s">&quot;client_status&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;unknown&quot;</span><span class="p">,</span>
+                            <span class="s">&quot;deploy&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="s">&quot;unknown&quot;</span><span class="p">,</span>
+                                <span class="s">&quot;date&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+                            <span class="p">},</span>
+                            <span class="s">&quot;poweron&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="s">&quot;unknown&quot;</span><span class="p">,</span>
+                                <span class="s">&quot;date&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+                            <span class="p">},</span>
+                            <span class="s">&quot;poweroff&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="s">&quot;unknown&quot;</span><span class="p">,</span>
+                                <span class="s">&quot;date&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">dict_computer</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">client_id</span> <span class="ow">in</span> <span class="n">dict_computer</span><span class="p">[</span><span class="n">cluster</span><span class="p">]:</span>
+                <span class="n">query_elem</span><span class="p">[</span><span class="s">&quot;client_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">client_id</span>
+                <span class="n">update_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_atom_update</span><span class="p">(</span>
+                    <span class="n">query_elem</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;$set&quot;</span><span class="p">:</span> <span class="n">update_elem</span><span class="p">})</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">update_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_baremetal_computers</span><span class="p">(</span><span class="n">dict_computer</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.withdraw_baremetal_from_user"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.withdraw_baremetal_from_user">[docs]</a>    <span class="k">def</span> <span class="nf">withdraw_baremetal_from_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict_computer</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">query_elem</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="s">&quot;inventory_clients&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">user_id</span><span class="p">:</span>
+            <span class="n">query_elem</span><span class="p">[</span><span class="s">&quot;user_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user_id</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">dict_computer</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">client_id</span> <span class="ow">in</span> <span class="n">dict_computer</span><span class="p">[</span><span class="n">cluster</span><span class="p">]:</span>
+                <span class="n">query_elem</span><span class="p">[</span><span class="s">&quot;client_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">client_id</span>
+                <span class="n">remove_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_remove</span><span class="p">(</span><span class="n">query_elem</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">remove_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_baremetal_computers</span><span class="p">(</span><span class="n">dict_computer</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_user_baremetal_computers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_user_baremetal_computers">[docs]</a>    <span class="k">def</span> <span class="nf">get_user_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+        <span class="n">query_elem</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="s">&quot;inventory_clients&quot;</span><span class="p">,</span>
+            <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">find_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_find</span><span class="p">(</span><span class="n">query_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_baremetal_computer_status"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_baremetal_computer_status">[docs]</a>    <span class="k">def</span> <span class="nf">get_baremetal_computer_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">computer_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">           return a value in three status: &quot;unknown&quot;, &quot;idle&quot;, &quot;used&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_baremetal_computers</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">status</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">computer_id</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">status</span><span class="p">][</span><span class="n">cluster</span><span class="p">]:</span>
+                        <span class="n">result</span> <span class="o">=</span> <span class="n">status</span>
+                        <span class="k">break</span>
+                <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="n">status</span><span class="p">:</span>  <span class="c"># find</span>
+                    <span class="k">break</span>
+        <span class="k">return</span> <span class="n">result</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_baremetal_computer_detail"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_baremetal_computer_detail">[docs]</a>    <span class="k">def</span> <span class="nf">get_baremetal_computer_detail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">computer_id</span><span class="p">):</span>
+        <span class="n">query_elem</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="s">&quot;inventory_clients&quot;</span><span class="p">,</span>
+            <span class="s">&quot;client_id&quot;</span><span class="p">:</span> <span class="n">computer_id</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">find_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_find_one</span><span class="p">(</span><span class="n">query_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_baremetal_computers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_baremetal_computers">[docs]</a>    <span class="k">def</span> <span class="nf">get_baremetal_computers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">find_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_find_one</span><span class="p">({})</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;idle&quot;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&quot;used&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+        <span class="n">query_result</span> <span class="o">=</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="n">query_result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]:</span>
+            <span class="n">idle_list</span> <span class="o">=</span> <span class="n">query_result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="n">cluster</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;idle_list&quot;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idle_list</span><span class="p">):</span>
+                <span class="n">result</span><span class="p">[</span><span class="s">&quot;idle&quot;</span><span class="p">][</span><span class="n">cluster</span><span class="p">]</span> <span class="o">=</span> <span class="n">idle_list</span>
+            <span class="n">used_list</span> <span class="o">=</span> <span class="n">query_result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="n">cluster</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;used_list&quot;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">used_list</span><span class="p">):</span>
+                <span class="n">result</span><span class="p">[</span><span class="s">&quot;used&quot;</span><span class="p">][</span><span class="n">cluster</span><span class="p">]</span> <span class="o">=</span> <span class="n">used_list</span>
+        <span class="k">return</span> <span class="n">result</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_user_request_types"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_user_request_types">[docs]</a>    <span class="k">def</span> <span class="nf">get_user_request_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s">&quot;pending&quot;</span><span class="p">,</span> <span class="s">&quot;refused&quot;</span><span class="p">,</span> <span class="s">&quot;approved&quot;</span><span class="p">,</span> <span class="s">&quot;part-approved&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.get_user_requests"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.get_user_requests">[docs]</a>    <span class="k">def</span> <span class="nf">get_user_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">query_elem</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;bm_type&quot;</span><span class="p">:</span> <span class="s">&quot;user_request&quot;</span><span class="p">,</span> <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span> <span class="p">}</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">and</span> <span class="n">status</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_user_request_types</span><span class="p">():</span>
+            <span class="n">query_elem</span><span class="p">[</span><span class="s">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="n">find_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_find</span><span class="p">(</span><span class="n">query_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">find_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.insert_user_request"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.insert_user_request">[docs]</a>    <span class="k">def</span> <span class="nf">insert_user_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+        <span class="n">insert_elem</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;unknown&quot;</span><span class="p">,</span> <span class="s">&quot;request_content&quot;</span><span class="p">:</span> <span class="n">content</span><span class="p">}</span>
+        <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">request_date</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+</div>
+<div class="viewcode-block" id="BaremetalDB.update_user_request"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_db.BaremetalDB.update_user_request">[docs]</a>    <span class="k">def</span> <span class="nf">update_user_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">request_date</span><span class="p">,</span> <span class="n">request_sn</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_user_request_types</span><span class="p">():</span>
+            <span class="n">query_elem</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span> <span class="s">&quot;request_date&quot;</span><span class="p">:</span> <span class="n">request_date</span><span class="p">,</span> <span class="s">&quot;request_sn&quot;</span><span class="p">:</span> <span class="n">request_sn</span><span class="p">}</span>
+            <span class="n">update_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_atom_update</span><span class="p">(</span>
+                <span class="n">query_elem</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;$set&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="n">status</span><span class="p">}},</span> <span class="bp">False</span><span class="p">,</span> <span class="n">flag_new</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">update_data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">result</span>
+<span class="c"># test</span></div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">bmdb</span> <span class="o">=</span> <span class="n">BaremetalDB</span><span class="p">()</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    dict_computers = {&quot;gravel&quot;: [&quot;g03&quot;, ],</span>
+<span class="sd">                      &quot;india&quot;: [&quot;i02&quot;, ]</span>
+<span class="sd">                      }</span>
+<span class="sd">    result = bmdb.update_baremetal_computers(dict_computers, False)</span>
+<span class="sd">    print &quot;append bm result is: &quot;, result</span>
+<span class="sd">    result = bmdb.get_baremetal_computers()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    unexist_elem = {&quot;chen&quot;: &quot;chen&quot;}</span>
+<span class="sd">    result = bmdb.do_find_one(unexist_elem)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">bmdb</span><span class="o">.</span><span class="n">init_base_document_structure</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="c"># result = bmdb.assign_baremetal_to_user(dict_computers, &quot;testXXX&quot;)</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

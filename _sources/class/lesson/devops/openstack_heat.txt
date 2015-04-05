@@ -332,5 +332,4 @@ Next Step
 
 In the next page, Ubuntu Juju will be discussed.
 
-`Ubuntu Juju <juju.html>`_
-
+:ref:`Ubuntu Juju <ref-class-lesson-devops-juju>`

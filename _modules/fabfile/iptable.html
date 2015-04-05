@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fabfile.iptable &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>fabfile.iptable</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for fabfile.iptable</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span><span class="p">,</span> <span class="n">local</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">These tasks are for managing iptables rules for cloudmesh.  Currently</span>
+<span class="sd">we assume there exist two custom rule chains, named:</span>
+
+<span class="sd">  cm_production</span>
+<span class="sd">  cm_ports</span>
+
+<span class="sd">By managing rules in these chains we don&#39;t interfere with any other</span>
+<span class="sd">administrative iptables rules on the server.  The initial creation of</span>
+<span class="sd">these chains is done like this:</span>
+
+<span class="sd">  iptables -N cm_production</span>
+<span class="sd">  iptables -N cm_ports</span>
+
+<span class="sd">These then need to be added to the default INPUT chain, after any</span>
+<span class="sd">other rules that should take precidence, like this:</span>
+
+<span class="sd">  iptables -I n INPUT -j cm_ports</span>
+<span class="sd">  iptables -I n INPUT -j cm_production</span>
+
+<span class="sd">Where &#39;n&#39; is the rule number appropriate for the INPUT chain.</span>
+
+<span class="sd">Currently ports defined in the cm_port chain, using the port task,</span>
+<span class="sd">will take precidence over rules in the cm_production chain.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">PRODUCTION_CHAIN</span> <span class="o">=</span> <span class="s">&quot;cm_production&quot;</span>
+<span class="n">PORTS_CHAIN</span> <span class="o">=</span> <span class="s">&quot;cm_ports&quot;</span>
+<span class="n">PORT_RULE</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s"> -p tcp -m state --state NEW -m tcp --dport </span><span class="si">%s</span><span class="s"> -j ACCEPT&quot;</span>
+
+
+<span class="nd">@task</span>
+<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.iptable.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    provides some info about the iptable rules set on this machine</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">results1</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables --line-numbers -L </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span>
+                     <span class="n">PORTS_CHAIN</span><span class="p">,</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">results2</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables --line-numbers -L </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span>
+                     <span class="n">PRODUCTION_CHAIN</span><span class="p">,</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="se">\n\n</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">results1</span><span class="p">,</span> <span class="n">results2</span><span class="p">)</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="production"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.iptable.production">[docs]</a><span class="k">def</span> <span class="nf">production</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s">&quot;on&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    sets the ip table rules for production&quot; vlues are &#39;on&#39;, &#39;off&#39;. This defines</span>
+<span class="sd">    most likely just a small number of ports</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">usage</span> <span class="o">=</span> <span class="s">&quot;Usage: production:[on|off]&quot;</span>
+    <span class="n">production_ports</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;on&quot;</span><span class="p">:</span>
+        <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables -F </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">PRODUCTION_CHAIN</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">production_ports</span><span class="p">:</span>
+            <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables -A &quot;</span> <span class="o">+</span> <span class="n">PORT_RULE</span> <span class="o">%</span> <span class="p">(</span><span class="n">PRODUCTION_CHAIN</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;off&quot;</span><span class="p">:</span>
+        <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables -F </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">PRODUCTION_CHAIN</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">usage</span>
+
+</div>
+<span class="nd">@task</span>
+<div class="viewcode-block" id="port"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.iptable.port">[docs]</a><span class="k">def</span> <span class="nf">port</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="s">&quot;on&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    sets the ip table rule for a particular port. accepted values are &#39;on&#39; and &#39;off&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">usage</span> <span class="o">=</span> <span class="s">&quot;Usage: port:number,[on|off]&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">number</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">number</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">print</span> <span class="n">usage</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;on&quot;</span><span class="p">:</span>
+        <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables -A &quot;</span> <span class="o">+</span> <span class="n">PORT_RULE</span> <span class="o">%</span> <span class="p">(</span><span class="n">PORTS_CHAIN</span><span class="p">,</span> <span class="n">number</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;off&quot;</span><span class="p">:</span>
+        <span class="n">local</span><span class="p">(</span><span class="s">&quot;sudo iptables -D &quot;</span> <span class="o">+</span> <span class="n">PORT_RULE</span> <span class="o">%</span> <span class="p">(</span><span class="n">PORTS_CHAIN</span><span class="p">,</span> <span class="n">number</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">usage</span></div>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
