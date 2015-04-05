@@ -330,5 +330,5 @@ Next Step
 
 In the next page, Chef will be introduced.
 
-:ref:`Chef <_ref-class-lesson-devops-chef>`
+:ref:`Chef <ref-class-lesson-devops-chef>`
 
