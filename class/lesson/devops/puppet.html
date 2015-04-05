@@ -423,25 +423,20 @@ cat /tmp/HelloWorld.txt</li>
 <div class="section" id="exercise-ii">
 <h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">Briefly explain the following contents:</p>
-<dl class="docutils">
-<dt>package { &#8216;apache&#8217;:</dt>
-<dd><p class="first">ensure =&gt; present,
-name   =&gt; $::operatingsystem ? {</p>
-<blockquote>
-<div><p>/(?i:Ubuntu|Debian|Mint)/ =&gt; &#8216;apache2&#8217;,
-default                   =&gt; &#8216;httpd&#8217;,</p>
-</div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}
-service { &#8216;apache2&#8217;:</p>
-<blockquote>
-<div><p>ensure =&gt; running,
-enable =&gt; true,</p>
-</div></blockquote>
-<p>}</p>
+<li><p class="first">Explain the following manifest:</p>
+<div class="highlight-python"><div class="highlight"><pre>package { &#39;apache&#39;:
+  ensure =&gt; present,
+  name   =&gt; $::operatingsystem ? {
+    /(?i:Ubuntu|Debian|Mint)/ =&gt; &#39;apache2&#39;,
+    default                   =&gt; &#39;httpd&#39;,
+  }
+}
+service { &#39;apache2&#39;:
+  ensure =&gt; running,
+  enable =&gt; true,
+}
+</pre></div>
+</div>
 </li>
 <li><p class="first">Q1. If we run this on Ubuntu 14.04, we will see <tt class="docutils literal"><span class="pre">apache2</span></tt> process. If you
 run this on CentOS, what name of the process do you expect?</p>
@@ -457,7 +452,7 @@ run this on CentOS, what name of the process do you expect?</p>
 <div class="section" id="next-step">
 <h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
 <p>In the next page, Chef will be introduced.</p>
-<p><em class="xref std std-ref">Chef</em></p>
+<p><a class="reference internal" href="chef.html#ref-class-lesson-devops-chef"><em>Chef</em></a></p>
 </div>
 </div>
 

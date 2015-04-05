@@ -303,19 +303,19 @@ Exercise I
 Exercise II
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Briefly explain the following contents::
+* Explain the following manifest:: 
 
-  package { 'apache':
-    ensure => present,
-    name   => $::operatingsystem ? {
-      /(?i:Ubuntu|Debian|Mint)/ => 'apache2',
-      default                   => 'httpd',
-    }
-  }
-  service { 'apache2':
-    ensure => running,
-    enable => true,
-  }
+          package { 'apache':
+            ensure => present,
+            name   => $::operatingsystem ? {
+              /(?i:Ubuntu|Debian|Mint)/ => 'apache2',
+              default                   => 'httpd',
+            }
+          }
+          service { 'apache2':
+            ensure => running,
+            enable => true,
+          }
 
 * Q1. If we run this on Ubuntu 14.04, we will see ``apache2`` process. If you
   run this on CentOS, what name of the process do you expect?
@@ -330,5 +330,5 @@ Next Step
 
 In the next page, Chef will be introduced.
 
-:ref:`Chef <_ref-class-lesson-devops-chef>`
+:ref:`Chef <ref-class-lesson-devops-chef>`
 
