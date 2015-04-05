@@ -44,6 +44,8 @@ is available at |video-cm-intro|.
    management/index
    contribute/index
 
+   archived
+   
    todo
 
 .. comment::

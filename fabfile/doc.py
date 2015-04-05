@@ -11,6 +11,8 @@ try:
 except:
     os.system("pip install cloudmesh_base")
 
+banner("import")
+    
 from cloudmesh_base.util import banner
 from cloudmesh_base.Shell import Shell
 
@@ -21,6 +23,7 @@ if Shell.which("cm") is None:
     local("cd ../cloudmesh; ./install requirements")
     local("cd ../cloudmesh; ./install cloudmesh")    
 
+banner("compile doc")
 
 browser = "firefox"
 
