@@ -147,6 +147,7 @@ configuration file.  The installation process have created a Puppet directory
 under ``/etc/``. (If it hasn't, create it with ``mkdir /etc/puppet``).
 
 ::
+
   cd /etc/puppet/;
   ls
 
