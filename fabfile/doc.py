@@ -136,7 +136,8 @@ def clone():
         if not os.path.isdir("../{0}".format(package)):
             local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
         else:
-            local("cd ..; git pull")
+            #local("cd ..; git pull")
+            local("cd ../{0}; git pull".format(package))
         local ("cd ../{0}; git checkout dev2.0". format("cloudmesh"))
     
 @task
@@ -146,7 +147,8 @@ def compile():
         if not os.path.isdir("../{0}".format(package)):
             local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
         else:
-            local("cd ..; git pull")
+            #local("cd ..; git pull")
+            local("cd ../{0}; git pull".format(package))
         local ("cd ../{0}; git checkout dev2.0; python setup.py install". format(package))
     
     
