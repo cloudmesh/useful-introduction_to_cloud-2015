@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing multiple VMs with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh cm" href="index.html"/>
+        <link rel="next" title="Managing Volumes with Cloudmesh cm" href="_cm-volume.html"/>
+        <link rel="prev" title="Deploying Virtual Cluster with Cloudmesh cm" href="_cm-cluster.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_vm-cm.html">CM Console for VM Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-cluster.html">Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Managing multiple VMs with Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
+      
+    <li>Managing multiple VMs with Cloudmesh cm</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/cm/_cm-group.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="managing-multiple-vms-with-cloudmesh-cm">
+<h1>Managing multiple VMs with Cloudmesh cm<a class="headerlink" href="#managing-multiple-vms-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>When you start a cluster of VMs in Cloudmesh CLI, it is required to
+specify a group name for the cluster, so that we can manage the cluster
+according to the cluster name. In Cloudmesh CLI, you may use group
+command to manage groups.</p>
+<p>IPython Alias</p>
+<p>With the alias command we simply define a new command with the name cm
+that we can call directly from IPython. Here we make sure that the
+parameters are between &#8220;&#8221; so that they are properly set. Just execute
+the following lines.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>alias cm cm %s
+</pre></div>
+</div>
+<p>We are using now one of the methods to call the cm commands in the
+following sections.</p>
+<div class="section" id="group-command">
+<h2><tt class="docutils literal"><span class="pre">group</span></tt> command<a class="headerlink" href="#group-command" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">group</span></tt> allows us to perform simple grouping of VMs but also
+images and flavors. A group is essentially a tuple in which you can add
+to a named group a type of an object and its unique name. The group
+command allows you to create a group, add items to groups, and list
+groups. For more information, one can refer to the manual page.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group -h&quot;
+</pre></div>
+</div>
+<p>To create a group with the name sample-group you can use the command:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group create sample-group&quot;
+</pre></div>
+</div>
+<p>Then you can list the groups with:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group list&quot;
+</pre></div>
+</div>
+<p>To add a VM named sample-vm to the group (make sure the VM exists before
+add it), you can use:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group add item sample-group vm sample-vm&quot;
+</pre></div>
+</div>
+<p>To list the elements in a group you can use:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group show sample-group&quot;
+</pre></div>
+</div>
+<p>To delete a VM from a group you can use:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove item sample-group vm sample-vm&quot;
+</pre></div>
+</div>
+<p>To delete a group:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;group remove sample-group&quot;
+</pre></div>
+</div>
+<p>Please note that deletion of a group does not delete the accociated
+objects in that group. It only removes the object that stores the types
+and objects for that group.</p>
+</div>
+<div class="section" id="working-with-group">
+<h2>Working with group<a class="headerlink" href="#working-with-group" title="Permalink to this headline">¶</a></h2>
+<p>Groups are conveniently integrated into the cloudmesh shell. You may
+include a VM into a group while you create it, delete VMs by groups and
+when you create a cluster, a group name has to be provided.</p>
+<p>To start a VM and add it to group, you can use the group parameter. If
+the group doesn&#8217;t exist, one will be created:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm start --group=sample&quot;
+</pre></div>
+</div>
+<p>To delete the virtual machines specified in a group you can use the
+command:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm delete --group=sample&quot;
+</pre></div>
+</div>
+<p>To create multiple vms that are part of a vitual cluster, you need to
+provide a group name. If the group doesn&#8217;t exist, one will be created.
+If the group exist and it has VMs in it already, the newly created
+virtual machines will be included into the cluster. The following
+example will create two virtual machines while assuming the default
+cloud, flavor, and image. Make sure you set them before if they have not
+been set.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create --count=2 --group=sample&quot;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="_cm-volume.html" class="btn btn-neutral float-right" title="Managing Volumes with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_cm-cluster.html" class="btn btn-neutral" title="Deploying Virtual Cluster with Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

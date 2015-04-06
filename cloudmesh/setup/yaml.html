@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating the yaml file &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh Setup" href="index.html"/>
+        <link rel="next" title="Nosetests" href="nosetests.html"/>
+        <link rel="prev" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing" href="setup_vagrant.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh Setup</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Creating the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cm/index.html">Cloudmesh cm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh Setup</a> &raquo;</li>
+      
+    <li>Creating the yaml file</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/cloudmesh/setup/yaml.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="creating-the-yaml-file">
+<h1>Creating the yaml file<a class="headerlink" href="#creating-the-yaml-file" title="Permalink to this headline">¶</a></h1>
+<p>You must have installed cloudmesh as discussed in ??? and run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install/new
+</pre></div>
+</div>
+<p>This will create a <cite>~/.cloudmesh</cite> directory with some basic yaml files
+that you will need to modify.</p>
+<div class="section" id="adding-futuresystems-openstack-clouds-on-sierra-and-india-to-the-yaml-file">
+<h2>Adding FutureSystems Openstack clouds on sierra and india to the yaml file<a class="headerlink" href="#adding-futuresystems-openstack-clouds-on-sierra-and-india-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>For FutureSystems we have additionally provided a script that
+automatically creates some yaml files from the installation. In future
+FutureSystems will provide directly a yaml for cloudmesh so that this
+step is unnecessary. Before you can execute this command you maust
+make sure that you can log into india and sierra via ssh. Once you
+have verified this for example with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuregrid.org hostname
+<span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@sierra.futuregrid.org hostname
+</pre></div>
+</div>
+<p>Now create the yaml file while fetching some information from the
+remote machines:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install rc fetch
+</pre></div>
+</div>
+<p>First it will ask you which username you have on FutureSystems. The name
+may be different from your current local machine name. Please enter
+your name when you see:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Please enter your portal user id <span class="o">[</span>default: albert<span class="o">]</span>:
+</pre></div>
+</div>
+<p>After this you can update the yaml files with the data fetched from
+the india and sierra with the command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install rc fill
+</pre></div>
+</div>
+<p>The reason why we have separated the commands and not just created one
+command is to provide you with the ability to double check overwriting
+possibly an existing rc file.</p>
+</div>
+<div class="section" id="adding-futuresystems-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">
+<h2>Adding FutureSystems OpenStack Clouds on alamo and hotel to the yaml file<a class="headerlink" href="#adding-futuresystems-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>We do not recommend adding these machines as they use the FG portal
+and password. However if you do so, we have placeholders in the yaml
+file for these clouds. In case you can not find them, simply copy the
+one from india and make appropriate corrections.</p>
+</div>
+<div class="section" id="adding-hp-cloud-to-the-yaml-file">
+<h2>Adding HP cloud to the yaml file<a class="headerlink" href="#adding-hp-cloud-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>The cloud offered from HP is an Openstack cloud and contains the
+ability to conduct project and user based billing. As this cloud is
+Openstack it behaves much the same as the once defined on India and
+Sierra. There may be differences based on the version.</p>
+<p>HP provides an interface to their cloud through horizon. The
+documentation for it can be found at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.hpcloud.com/hpcloudconsole">http://docs.hpcloud.com/hpcloudconsole</a></li>
+</ul>
+<p>To use the cloud you have to first create an account with HP, which
+will charge you real money for using their cloud. Make sure you
+understand what costs will be charged before you request thousands of
+virtual machines. Naturally this is valid for any other commercial
+cloud also. The console for the HP cloud is available at:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.hpcloud.com/console">http://www.hpcloud.com/console</a></li>
+</ul>
+<p>Which will bring you to their horizon interface:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://horizon.hpcloud.com">https://horizon.hpcloud.com</a></li>
+</ul>
+<p>You can add your username and password into the cloudmesh.yaml in the
+.cloudmesh directory. It is that simple. However, presently the data
+is stored in cleartext which we will change in future. Thus if your
+would like to run cloudmesh we currently recommend running it on your
+own local machine. Make sure that the access to the yaml file is
+properly secured.</p>
+</div>
+<div class="section" id="adding-aws-to-the-yaml-file">
+<h2>Adding AWS to the yaml file<a class="headerlink" href="#adding-aws-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
+To configure Amazon EC2 on Cloudmesh, you need to provide the Secret Access
+Keys of your account. Amazon allows only to download the credentials via their
+web page, you need to go to the <a class="reference external" href="http://console.aws.amazon.com/iam/home?#security_credential">Security Credentials</a> page to get the
+credentials. You may use your existing AWS account or create a new AWS account.
+The Access Key is a pair of Access Key ID and Secret Access Key and these
+values should be replaced with <em>EC2_ACCESS_KEY</em> and <em>EC2_SECRET_KEY</em> fields in
+the yaml file. Cloudmesh identifies <em>cm_type: aws</em> as Amazon Web Services in
+the yaml file, you update the <em>aws</em> section with your security credentials.
+Note that Amazon offers commercial services, the access key identification and
+the secret key should be kept in a safe place to avoid any unexpected usage
+from someone who you didn&#8217;t authorize.</p>
+</div>
+<div class="section" id="adding-azure-to-the-yaml-file">
+<h2>Adding Azure to the yaml file<a class="headerlink" href="#adding-azure-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>Microsoft Windows Azure offers security credentials per a valid
+subscription on a user account. Based on the subscription id,
+chargeable usage is going to be applied to your bill. To authenticate
+requests to Azure, you need to configure your credentials for
+Cloudmesh. The following step-by-step tutorial explains the
+configuration of Azure credentials on Cloudmesh.</p>
+<p>To connect Azure Virtual Machines to Cloudmesh, you need to provide
+Azure credentials to authenticate requrests in the yaml file. You can
+find the credentials in the</p>
+<ul class="simple">
+<li><a class="reference external" href="https://manage.windowsazure.com">Azure Management Portal</a></li>
+</ul>
+<p>which is a web interface to manage your account and Azure Virtual
+Machines.  Also, you can find credentials by downloading the
+subscription file (.publishsettings) here:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=254432">http://go.microsoft.com/fwlink/?LinkId=254432</a>.</li>
+</ul>
+<p>Once you download the file, you may need to import your subscription
+Id and valid X.509 certificate from the file with the help of the  Azure cross-platform
+command line interface. More information about the Azure CLI can be
+found in the Manual/article about the</p>
+<ul class="simple">
+<li><a class="reference external" href="http://azure.microsoft.com/en-us/documentation/articles/xplat-cli">Azure Cross-Platform Command-Line Interface</a>.</li>
+</ul>
+<p>The Azure credentials require that the X.509 certificate is placed in
+the <cite>.cloudmesh</cite> directory. The <em>subscriptionid</em> field should be filled
+with your Azure subscription id. The valid X.509 certificate file
+(.pem) must also be stored in the <cite>.cloudmesh</cite> directory. We store it
+under the name:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$HOME</span>/.cloudmesh/azure_managementCertificate.pem
+</pre></div>
+</div>
+<p>Cloudmesh yaml file has an example invalid entry that you can change
+with your settings. It can be easily identified while looking for the
+keyword azure in the <cite>cloudmesh.yaml</cite> file.
+As Azure is a commercial service it is important that you properly
+secure the .cloudmesh directory and its yaml files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Recommended files and directory permissions for Secured Cloudmesh
+To protect the yaml files against any access from other users, we recommend
+to use <cite>chmod</cite> command. Try <cite>chmod -R o+rwx,go-rwx ~/.cloudmesh</cite> to make
+any file in the <em>.cloudmesh</em> directory a private file to your user account.
+This way allows you have a full access to the files and the directory but
+not others.</p>
+</div>
+<div class="section" id="azure-quickstart">
+<h3>Azure Quickstart<a class="headerlink" href="#azure-quickstart" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="azure-account">
+<h4>Azure account<a class="headerlink" href="#azure-account" title="Permalink to this headline">¶</a></h4>
+<p>If you do not have an Azure account you can obtain one from Microsoft.
+Microsoft provides a free-trial for new account applicants. The
+Windows Azure site is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://manage.windowsazure.com">https://manage.windowsazure.com</a></li>
+</ul>
+</div>
+<div class="section" id="download-credentials">
+<h4>Download credentials<a class="headerlink" href="#download-credentials" title="Permalink to this headline">¶</a></h4>
+<p>Form ther you can download the:</p>
+<div class="highlight-bash"><div class="highlight"><pre>.publishsettings
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-azure-cli">
+<h4>Install Azure CLI<a class="headerlink" href="#install-azure-cli" title="Permalink to this headline">¶</a></h4>
+<p>Next you will need to install the Azure CLI. This is documented at</p>
+<ul class="simple">
+<li><a class="reference external" href="http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/">http://azure.microsoft.com/en-us/documentation/articles/xplat-cli/</a></li>
+</ul>
+<p>Here you find install instructions fror Linux but also a link to an
+OSX installer.</p>
+<p>Once the client is installed you can download the credentials</p>
+</div>
+<div class="section" id="import-credentials-via-azure-cli">
+<h4>Import Credentials via Azure CLI<a class="headerlink" href="#import-credentials-via-azure-cli" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>azure account download
+<span class="nv">$ </span>azure account import &lt;.publishsettings file path&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-subscription-file-publishsettings">
+<h4>Download Subscription File (.publishsettings)<a class="headerlink" href="#download-subscription-file-publishsettings" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://go.microsoft.com/fwlink/?LinkId=254432">http://go.microsoft.com/fwlink/?LinkId=254432</a></li>
+</ul>
+</div>
+<div class="section" id="place-x-509-certificate-on-cloudmesh">
+<h4>Place X.509 certificate on Cloudmesh<a class="headerlink" href="#place-x-509-certificate-on-cloudmesh" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre> <span class="nv">$ </span>cp -p ~/.azure/managementCertificate.pem ~/.cloudmesh/azure_managementCertificate.pem
+
+Only the owner with <span class="nb">read </span>and write permission e.g. -rw-------
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Recommended files and directory permissions for Secured Cloudmesh
+To protect the yaml files against any access from other users, we recommend
+to use <cite>chmod</cite> command. Try
+<cite>chmod o+rwx,go-rwx ~/azure_managementCertificate.pem</cite> to make the file a
+private file to your user account. This way allows you have a full access to
+the file but not others.</p>
+</div>
+</div>
+<div class="section" id="replace-subscription-id">
+<h4>Replace Subscription ID<a class="headerlink" href="#replace-subscription-id" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>azure service cert list
+</pre></div>
+</div>
+<p>provides your subscription id that just imported from the .publishsettings file.</p>
+<p>Now, you are ready to use Azure Virtual Machines on Cloudmesh.</p>
+</div>
+<div class="section" id="test-azure-virtual-machine">
+<h4>Test Azure Virtual Machine<a class="headerlink" href="#test-azure-virtual-machine" title="Permalink to this headline">¶</a></h4>
+<p>TBD</p>
+</div>
+</div>
+</div>
+<div class="section" id="adding-devstack-to-the-yaml-file-tbd">
+<h2>Adding devstack to the yaml file (TBD)<a class="headerlink" href="#adding-devstack-to-the-yaml-file-tbd" title="Permalink to this headline">¶</a></h2>
+<p>DevStack offers an easy method to try out Openstack on your machine or
+in a virtual machine (VM). <a class="reference external" href="http://devstack.org">DevStack</a> provides
+a setup guide and configuration here: <a class="reference external" href="http://devstack.org/configuration.html">Configuration</a>.</p>
+</div>
+<div class="section" id="adding-dreamhost-to-the-yaml-file">
+<h2>Adding dreamhost to the yaml file<a class="headerlink" href="#adding-dreamhost-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>Dreamhost provides an Openstack cloud that can be accessed through the
+dreamhost panel at:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://panel.dreamhost.com/index.cgi">https://panel.dreamhost.com/index.cgi</a></li>
+</ul>
+<p>The Horizon interface is located at</p>
+<ul class="simple">
+<li><a class="reference external" href="https://dashboard.dreamcompute.com">https://dashboard.dreamcompute.com</a></li>
+</ul>
+<p>If you are a customer of dreamhost, use your username and password
+that was send to you.</p>
+<p>To use cloudmesh, please add this username and password in the
+placeholder for dreamhost.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nosetests.html" class="btn btn-neutral float-right" title="Nosetests"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup_vagrant.html" class="btn btn-neutral" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
