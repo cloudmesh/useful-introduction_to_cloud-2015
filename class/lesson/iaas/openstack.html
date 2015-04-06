@@ -370,7 +370,7 @@ $ nova floating-ip-associate $USER-tutorial1 149.165.158.107
 +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
 | ID                                   | Name                  | Status | Task State | Power State | Networks                             |
 +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
-| 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $USER-tutorial1       | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.1   |
+| 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $USER-tutorial1       | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.107 |
 ...
 </pre></div>
 </div>
@@ -410,6 +410,30 @@ ubuntu@$USER-tutorial1:~$
 </pre></div>
 </div>
 <p>Now you are on the VM instance.</p>
+</div>
+<div class="section" id="deleting-vm-instance">
+<h3>Deleting VM Instance<a class="headerlink" href="#deleting-vm-instance" title="Permalink to this headline">¶</a></h3>
+<p>You can delete your instance with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova delete $USER-tutorial1
+</pre></div>
+</div>
+</div>
+<div class="section" id="returning-floating-ip-address">
+<h3>Returning Floating IP Address<a class="headerlink" href="#returning-floating-ip-address" title="Permalink to this headline">¶</a></h3>
+<p>If your instance is deleted, your floating ip address will become available,
+and nova floating-ip-list should show the output like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova floating-ip-list
++-----------------+-----------+----------+---------+
+| Ip              | Server Id | Fixed Ip | Pool    |
++-----------------+-----------+----------+---------+
+| 149.165.158.107 | -         | -        | ext-net |
++-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+<p>To de-allocate the floating IP address:</p>
+<div class="highlight-python"><div class="highlight"><pre>$  nova floating-ip-delete 149.165.158.107
+</pre></div>
+</div>
 <div class="section" id="lab-openstack-launch-an-instance">
 <span id="lab-openstack-1"></span><h4>Lab - OpenStack - Launch an Instance<a class="headerlink" href="#lab-openstack-launch-an-instance" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
