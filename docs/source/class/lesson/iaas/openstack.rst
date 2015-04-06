@@ -189,7 +189,7 @@ Access to VM Instance
           +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
           | ID                                   | Name                  | Status | Task State | Power State | Networks                             |
           +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
-          | 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $USER-tutorial1       | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.1   |
+          | 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $USER-tutorial1       | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.107 |
           ...
 
 * Use the internal IP address followed by ``int-net=`` in your VM instance. In
@@ -229,6 +229,32 @@ You expect to see welcome message of your Ubuntu 14.04 VM instance.
   ubuntu@$USER-tutorial1:~$ 
 
 Now you are on the VM instance.
+
+Deleting VM Instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can delete your instance with:
+
+::
+
+  $ nova delete $USER-tutorial1
+
+Returning Floating IP Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If your instance is deleted, your floating ip address will become available,
+and nova floating-ip-list should show the output like this::
+
+        $ nova floating-ip-list
+        +-----------------+-----------+----------+---------+
+        | Ip              | Server Id | Fixed Ip | Pool    |
+        +-----------------+-----------+----------+---------+
+        | 149.165.158.107 | -         | -        | ext-net |
+        +-----------------+-----------+----------+---------+
+
+To de-allocate the floating IP address::
+
+   $  nova floating-ip-delete 149.165.158.107
 
 .. _lab-openstack-1:
 
