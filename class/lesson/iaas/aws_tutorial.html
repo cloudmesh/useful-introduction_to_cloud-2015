@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -284,11 +285,11 @@ or hostname in the Instances page.</li>
 <p>Use your ssh client tool to login to the virtual server.</p>
 <ul>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">ubuntu</span></tt> as a user name</dt>
+<dt><code class="docutils literal"><span class="pre">ubuntu</span></code> as a user name</dt>
 <dd><ul class="first last simple">
-<li>We used Ubuntu 14.04 VM image which has a default username <tt class="docutils literal"><span class="pre">ubuntu</span></tt>.
+<li>We used Ubuntu 14.04 VM image which has a default username <code class="docutils literal"><span class="pre">ubuntu</span></code>.
 Once we logged into the VM instance, we can switch to other users e.g.
-<tt class="docutils literal"><span class="pre">root</span></tt> or create a new user.</li>
+<code class="docutils literal"><span class="pre">root</span></code> or create a new user.</li>
 </ul>
 </dd>
 </dl>
@@ -311,7 +312,7 @@ We will use the following commands 1) sudo, 2) su, 3) apt-get, and 4) service,
 to install and run Apache HTTP server.</p>
 <ul>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></tt></dt>
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></dt>
 <dd><ul class="first last simple">
 <li>This command updates a list of Linux package repositories.</li>
 </ul>
@@ -319,15 +320,15 @@ to install and run Apache HTTP server.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span></tt></dt>
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apache2</span></code></dt>
 <dd><ul class="first last simple">
-<li>We install Apache HTTP version 2 using package manager <tt class="docutils literal"><span class="pre">apt-get</span></tt>.</li>
+<li>We install Apache HTTP version 2 using package manager <code class="docutils literal"><span class="pre">apt-get</span></code>.</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">restart</span></tt> (optional)</dt>
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">restart</span></code> (optional)</dt>
 <dd><ul class="first last simple">
 <li>If you made a change on HTTP server, you may need to restart.</li>
 </ul>
@@ -335,10 +336,10 @@ to install and run Apache HTTP server.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></tt> (optional)</dt>
+<dt><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">su</span> <span class="pre">-</span></code> (optional)</dt>
 <dd><ul class="first last simple">
-<li>If you switch a user to <tt class="docutils literal"><span class="pre">root</span></tt> with this command, you won&#8217;t need to issue
-<tt class="docutils literal"><span class="pre">sudo</span></tt> command every time when you need admin privileges.</li>
+<li>If you switch a user to <code class="docutils literal"><span class="pre">root</span></code> with this command, you won&#8217;t need to issue
+<code class="docutils literal"><span class="pre">sudo</span></code> command every time when you need admin privileges.</li>
 </ul>
 </dd>
 </dl>
@@ -346,12 +347,12 @@ to install and run Apache HTTP server.</p>
 </ul>
 </div>
 <div class="section" id="check-it-works-page-on-the-web">
-<h3>Check <tt class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></tt> Page on the Web<a class="headerlink" href="#check-it-works-page-on-the-web" title="Permalink to this headline">¶</a></h3>
+<h3>Check <code class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></code> Page on the Web<a class="headerlink" href="#check-it-works-page-on-the-web" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Open a web browser and type the IP address or hostname of your VM instance.</dt>
 <dd><ul class="first last simple">
-<li>If you see <tt class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></tt> page, you have now working Apache Web Server on
+<li>If you see <code class="docutils literal"><span class="pre">It</span> <span class="pre">Works!</span></code> page, you have now working Apache Web Server on
 Amazon EC2.</li>
 </ul>
 </dd>
@@ -362,7 +363,7 @@ Amazon EC2.</li>
 <div class="section" id="terminate-your-instance-important">
 <h3>Terminate your Instance <em>IMPORTANT</em><a class="headerlink" href="#terminate-your-instance-important" title="Permalink to this headline">¶</a></h3>
 <p>If you completed your jobs on Amazon cloud, you need to shutdown your instances
-and return the lease.  There is <tt class="docutils literal"><span class="pre">terminate</span> <span class="pre">instance</span></tt> command or menu. Amazon
+and return the lease.  There is <code class="docutils literal"><span class="pre">terminate</span> <span class="pre">instance</span></code> command or menu. Amazon
 has hour-basis charging system, if you do not terminate your system, you will
 receive a charge of using cloud services e.g. EC2, S3, or CloudWatch.</p>
 </div>
@@ -410,7 +411,8 @@ addressed.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -435,7 +437,7 @@ addressed.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

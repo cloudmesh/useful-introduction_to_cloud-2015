@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.rain.cobbler.cobbler_client &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.rain.cobbler.cobbler_client</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.rain.cobbler.cobbler_client</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+
+<span class="sd">&quot;&quot;&quot;Example of program with many options using docopt.</span>
+<span class="sd">::</span>
+
+<span class="sd">  Usage:</span>
+<span class="sd">    cobbler_client.py list --object=OBJECT_TYPE [--format=FORMAT]</span>
+<span class="sd">    cobbler_client.py list --object=OBJECT_TYPE</span>
+<span class="sd">    cobbler_client.py get --object=OBJECT_TYPE --name=ITEM_NAME</span>
+<span class="sd">    cobbler_client.py add --object=OBJECT_TYPE --data=DATA_FILE</span>
+<span class="sd">    cobbler_client.py child --object=OBJECT_TYPE --name=ITEM_NAME</span>
+<span class="sd">    cobbler_client.py profile --ks=ITEM_NAME</span>
+<span class="sd">    cobbler_client.py update --object=OBJECT_TYPE --data=DATA_FILE</span>
+<span class="sd">    cobbler_client.py remove --object=OBJECT_TYPE --name=ITEM_NAME</span>
+<span class="sd">    cobbler_client.py remove interface --system=SYSTEM_NAME --name=ITEM_NAME</span>
+<span class="sd">    cobbler_client.py deploy --name=SYSTEM_NAME [options]</span>
+<span class="sd">    cobbler_client.py power --name=SYSTEM_NAME [options]</span>
+<span class="sd">    cobbler_client.py test [options]</span>
+
+<span class="sd">  Arguments:</span>
+<span class="sd">    PATH  destination path</span>
+
+<span class="sd">  Options:</span>
+<span class="sd">    -h --help            show this help message and exit</span>
+<span class="sd">    --version            show version and exit</span>
+<span class="sd">    -v --verbose         print status messages</span>
+<span class="sd">    -q --quiet           report only file names</span>
+<span class="sd">    -f --force           force remove the object and its sub-objects</span>
+<span class="sd">    -o --off             power off the system</span>
+<span class="sd">    --object=OBJECT_TYPE    specifies the object type: distro, profile, system, kickstart</span>
+<span class="sd">    --name=ITEM_NAME        specifies the item&#39;s name</span>
+<span class="sd">    --data=DATA_FILE      specifies the filename containing the data</span>
+<span class="sd">    --system=SYSTEM_NAME   specifies the name of system from which some interfaces will be deleted</span>
+<span class="sd">    --onoff=ONOFF    specifies the power status, on or off</span>
+<span class="sd">    --format=FORMAT   the format of the table is either json, html, list,</span>
+<span class="sd">                      or ascii [default: ascii]</span>
+<span class="sd">  Description:</span>
+
+<span class="sd">    describe here what the commands do</span>
+
+<span class="sd">    cobbler_client.py list object_type</span>
+
+<span class="sd">      list names in object type ...</span>
+
+<span class="sd">    cobbler_client.py get object_type item_name</span>
+
+<span class="sd">      get the detail report of item_name in object_type</span>
+
+<span class="sd">    cobbler_client.py add object_type data_file</span>
+<span class="sd">    cobbler_client.py update object_type data_file</span>
+
+<span class="sd">      add the data object in data_file belongs to object_type to cobbler.</span>
+<span class="sd">        examples:</span>
+<span class="sd">          profile: data_file</span>
+<span class="sd">          { &quot;name&quot;: &quot;test-profile-140318&quot;,</span>
+<span class="sd">            &quot;distro&quot;: &quot;test-x86_64&quot;,</span>
+<span class="sd">            &quot;kickstart&quot;: &quot;ktanaka.ks&quot;</span>
+<span class="sd">          }</span>
+
+<span class="sd">          system: data_file</span>
+<span class="sd">          { &quot;name&quot;: &quot;test-sys-140318&quot;,</span>
+<span class="sd">            &quot;profile&quot;: &quot;test-profile-140318&quot;,</span>
+<span class="sd">            &quot;power&quot;: {</span>
+<span class="sd">                       &quot;power-address&quot;: &quot;1.2.3.4&quot;,</span>
+<span class="sd">                       &quot;power-user&quot;: &quot;test&quot;,</span>
+<span class="sd">                       &quot;power-pass&quot;: &quot;nopassword&quot;,</span>
+<span class="sd">                       &quot;power-type&quot;: &quot;ipmilan&quot;,</span>
+<span class="sd">                       &quot;power-id&quot;: 1</span>
+<span class="sd">                      },</span>
+<span class="sd">            &quot;interfaces&quot;: [</span>
+<span class="sd">                            {</span>
+<span class="sd">                              &quot;name&quot;: &quot;ee1&quot;,</span>
+<span class="sd">                              &quot;ip-address&quot;: &quot;192.168.1.23&quot;,</span>
+<span class="sd">                              &quot;mac-address&quot;: &quot;aa:bb:cc:dd:ee:ff&quot;,</span>
+<span class="sd">                              &quot;static&quot;: true,</span>
+<span class="sd">                              &quot;management&quot;: true,</span>
+<span class="sd">                              &quot;netmask&quot;: &quot;255.255.255.0&quot;</span>
+<span class="sd">                             },</span>
+<span class="sd">                             {</span>
+<span class="sd">                               &quot;name&quot;: &quot;ee2&quot;,</span>
+<span class="sd">                               &quot;ip-address&quot;: &quot;192.168.1.123&quot;,</span>
+<span class="sd">                               &quot;mac-address&quot;: &quot;aa:bb:cc:ee:dd:ff&quot;,</span>
+<span class="sd">                               &quot;static&quot;: true,</span>
+<span class="sd">                               &quot;management&quot;: false,</span>
+<span class="sd">                               &quot;netmask&quot;: &quot;255.255.255.0&quot;</span>
+<span class="sd">                              }</span>
+<span class="sd">                            ]</span>
+<span class="sd">             }</span>
+<span class="sd">    cobbler_client.py remove object_type item_name</span>
+
+<span class="sd">        remove an item_name in object_type</span>
+
+<span class="sd">    cobbler_client.py remove interface system_name item_name</span>
+
+<span class="sd">        remove the interface item_name form system system_name</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">prettytable</span> <span class="kn">import</span> <span class="n">PrettyTable</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_common.tables</span> <span class="kn">import</span> <span class="n">table_printer</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
+<span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="kn">import</span> <span class="n">ThreadPool</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<div class="viewcode-block" id="CobblerClient"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient">[docs]</a><span class="k">class</span> <span class="nc">CobblerClient</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">argdict</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server_url</span> <span class="o">=</span> <span class="s">&quot;http://{0}:5000&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span> <span class="o">=</span> <span class="n">argdict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CobblerClient.run"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">list_object</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--object&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;get&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--object&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--name&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;add&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--object&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--data&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;child&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_child</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--object&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--name&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;profile&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_ks_profile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--ks&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;update&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_object</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--object&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--data&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;remove&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;interface&quot;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">remove_object</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--object&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--name&quot;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">remove_interface</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--system&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--name&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;deploy&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">deploy_system</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--name&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--verbose&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;power&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">power_system</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--name&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--off&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--verbose&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">]:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;test is: {0}, force is: {1}, verbose is: {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--force&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--verbose&quot;</span><span class="p">]))</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.render_result"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.render_result">[docs]</a>    <span class="k">def</span> <span class="nf">render_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slabel</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--format&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;json&quot;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--format&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--format&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;html&quot;</span><span class="p">]:</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">table_printer</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]))</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">arg_dict</span><span class="p">[</span><span class="s">&quot;--format&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;ascii&quot;</span><span class="p">]:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">()</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">slabel</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">])</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">align</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            datas = data[&quot;data&quot;]</span>
+<span class="sd">            print &quot;[Succeed] {0}{1}.&quot;.format(slabel, &quot;, description is: {0}&quot;.format(data[&quot;description&quot;]) if data[&quot;description&quot;] else &quot;&quot;)</span>
+<span class="sd">            print &quot;    There is {0} records satisfy query, data is: &quot;.format(len(datas) if datas else 0)</span>
+<span class="sd">            if datas:</span>
+<span class="sd">                count = 0</span>
+<span class="sd">                data_type = type(datas[0])</span>
+<span class="sd">                for single_data in datas:</span>
+<span class="sd">                    count += 1</span>
+<span class="sd">                    print &quot;-&quot; * 40</span>
+<span class="sd">                    if data_type is unicode or data_type is str:</span>
+<span class="sd">                        print &quot;  Record [{0}]: {1}&quot;.format(count, single_data)</span>
+<span class="sd">                    elif data_type is dict:</span>
+<span class="sd">                        print &quot;  Record [{0}]: name is {1}&quot;.format(count, single_data[&quot;name&quot;])</span>
+<span class="sd">                        self.pp.pprint(single_data)</span>
+<span class="sd">                    else:</span>
+<span class="sd">                        self.pp.pprint(single_data)</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;[Failed] {0}, description is: {1}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">slabel</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;description&quot;</span><span class="p">]))</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.read_dict"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.read_dict">[docs]</a>    <span class="k">def</span> <span class="nf">read_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">sline</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">sline</span><span class="p">:</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">sline</span> <span class="o">+</span> <span class="s">&quot; &quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="n">data</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.read_kickstart_data"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.read_kickstart_data">[docs]</a>    <span class="k">def</span> <span class="nf">read_kickstart_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">5</span><span class="p">:],</span>
+            <span class="s">&quot;contents&quot;</span><span class="p">:</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+        <span class="p">}</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.list_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.list_object">[docs]</a>    <span class="k">def</span> <span class="nf">list_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_type</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">object_type</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span><span class="s">&quot;{0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;list&quot;</span><span class="p">,</span> <span class="n">object_type</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.get_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.get_object">[docs]</a>    <span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span>
+            <span class="s">&quot;{0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.add_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.add_object">[docs]</a>    <span class="k">def</span> <span class="nf">add_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">data_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_dict</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">object_type</span> <span class="o">!=</span> <span class="s">&quot;kickstart&quot;</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_kickstart_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_dict</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Error. File {0} is NOT a valid json formation data file.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">data_dict</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">]</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;post&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span><span class="s">&quot;{0} {1} {2} with data file {3}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="s">&quot;add&quot;</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.get_child"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.get_child">[docs]</a>    <span class="k">def</span> <span class="nf">get_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}/child&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span>
+            <span class="s">&quot;{0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;child&quot;</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.get_ks_profile"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.get_ks_profile">[docs]</a>    <span class="k">def</span> <span class="nf">get_ks_profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/kickstarts/{0}/profile&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span><span class="s">&quot;{0} {1} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.update_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.update_object">[docs]</a>    <span class="k">def</span> <span class="nf">update_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">data_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_dict</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">object_type</span> <span class="o">!=</span> <span class="s">&quot;kickstart&quot;</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_kickstart_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data_dict</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Error. File {0} is NOT a valid json formation data file.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">data_dict</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">]</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;put&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">,</span> <span class="n">data_dict</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span><span class="s">&quot;{0} {1} {2} with data file {3}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="s">&quot;update&quot;</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.remove_object"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.remove_object">[docs]</a>    <span class="k">def</span> <span class="nf">remove_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/{0}s/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;delete&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span>
+            <span class="s">&quot;{0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;remove&quot;</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.remove_interface"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.remove_interface">[docs]</a>    <span class="k">def</span> <span class="nf">remove_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/systems/{0}/{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">system_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;delete&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span>
+            <span class="s">&quot;{0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;remove interface&quot;</span><span class="p">,</span> <span class="n">system_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.deploy_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.deploy_system">[docs]</a>    <span class="k">def</span> <span class="nf">deploy_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">flag_monitor</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;  Send command [deploy] to {0}, please wait ...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/baremetal/{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;post&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span><span class="s">&quot;{0} {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;deploy&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">flag_monitor</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">monitor_deploy</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.power_system"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.power_system">[docs]</a>    <span class="k">def</span> <span class="nf">power_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">flag_off</span><span class="p">,</span> <span class="n">flag_monitor</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;  Send command [power {1}] to {0}, please wait ...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;off&quot;</span> <span class="k">if</span> <span class="n">flag_off</span> <span class="k">else</span> <span class="s">&quot;on&quot;</span><span class="p">))</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/baremetal/{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;power_on&quot;</span><span class="p">:</span> <span class="ow">not</span> <span class="n">flag_off</span><span class="p">}</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;put&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_result</span><span class="p">(</span>
+            <span class="s">&quot;{0} {1} {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;power&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;off&quot;</span> <span class="k">if</span> <span class="n">flag_off</span> <span class="k">else</span> <span class="s">&quot;on&quot;</span><span class="p">),</span> <span class="n">result_dict</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">flag_monitor</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">monitor_power</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="ow">not</span> <span class="n">flag_off</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.get_server_status"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.get_server_status">[docs]</a>    <span class="k">def</span> <span class="nf">get_server_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">surl</span> <span class="o">=</span> <span class="s">&quot;/cm/v1/cobbler/baremetal/{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">surl</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result_dict</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.set_server_status"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.set_server_status">[docs]</a>    <span class="k">def</span> <span class="nf">set_server_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server_status</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server_status_ok</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.print_symbol"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.print_symbol">[docs]</a>    <span class="k">def</span> <span class="nf">print_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="n">sym</span> <span class="o">=</span> <span class="s">&quot;+&quot;</span> <span class="k">if</span> <span class="n">status</span> <span class="k">else</span> <span class="s">&quot;.&quot;</span>
+        <span class="n">str_sym</span> <span class="o">=</span> <span class="n">sym</span> <span class="o">+</span> <span class="s">&quot; &quot;</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">str_sym</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str_sym</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.async_get_server_status"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.async_get_server_status">[docs]</a>    <span class="k">def</span> <span class="nf">async_get_server_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dest_status</span><span class="p">,</span> <span class="n">total_count</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">pool</span> <span class="o">=</span> <span class="n">ThreadPool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">total_count</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">server_status_ok</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="c"># tuple of args for get_server_status</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get_server_status</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">set_server_status</span><span class="p">)</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">server_status_ok</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">print_symbol</span><span class="p">(</span><span class="ow">not</span> <span class="n">dest_status</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">server_status</span> <span class="o">==</span> <span class="n">dest_status</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">count</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.sync_get_server_status"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.sync_get_server_status">[docs]</a>    <span class="k">def</span> <span class="nf">sync_get_server_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dest_status</span><span class="p">,</span> <span class="n">total_count</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">flag_sleep_first</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">total_count</span>
+        <span class="n">min_interval</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="n">min_interval</span> <span class="k">if</span> <span class="n">interval</span> <span class="o">&lt;</span> <span class="n">min_interval</span> <span class="k">else</span> <span class="n">interval</span>
+        <span class="c"># usually, it is enabled between the status switch phase</span>
+        <span class="k">if</span> <span class="n">flag_sleep_first</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_server_status</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="c"># print &quot;start time is: {0}, result is: {1}&quot;.format(start_time,</span>
+            <span class="c"># result)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">print_symbol</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="n">dest_status</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">diff_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+            <span class="n">once_sleep</span> <span class="o">=</span> <span class="n">interval</span> <span class="o">-</span> <span class="n">diff_time</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+            <span class="n">curr_delay</span> <span class="o">=</span> <span class="n">min_interval</span> <span class="k">if</span> <span class="n">min_interval</span> <span class="o">&gt;</span> <span class="n">once_sleep</span> <span class="k">else</span> <span class="n">once_sleep</span>
+            <span class="c"># print &quot;current delay is: &quot;, curr_delay</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">curr_delay</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">count</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.waiting_server"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.waiting_server">[docs]</a>    <span class="k">def</span> <span class="nf">waiting_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">arr_status</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">arr_status</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sync_get_server_status</span><span class="p">(</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="bp">True</span> <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="bp">False</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.monitor_deploy"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.monitor_deploy">[docs]</a>    <span class="k">def</span> <span class="nf">monitor_deploy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">server_status_pattern</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">waiting_server</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">server_status_pattern</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Server {0} deployed successfully.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.monitor_power"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.monitor_power">[docs]</a>    <span class="k">def</span> <span class="nf">monitor_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">flag_on</span><span class="p">):</span>
+        <span class="n">server_status_pattern</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span> <span class="k">if</span> <span class="n">flag_on</span> <span class="k">else</span> <span class="bp">False</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">waiting_server</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">server_status_pattern</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Server {0} power {1} successfully.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;on&quot;</span> <span class="k">if</span> <span class="n">flag_on</span> <span class="k">else</span> <span class="s">&quot;off&quot;</span><span class="p">))</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.get_data"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.get_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req_json</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">req_json</span><span class="p">[</span><span class="s">&quot;cmrest&quot;</span><span class="p">][</span><span class="s">&quot;data&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="CobblerClient.request_rest_api"><a class="viewcode-back" href="../../../../modules/cloudmesh/cloudmesh.rain.cobbler.html#cloudmesh.rain.cobbler.cobbler_client.CobblerClient.request_rest_api">[docs]</a>    <span class="k">def</span> <span class="nf">request_rest_api</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          method = [get, post, put, delete]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;content-type&quot;</span><span class="p">:</span> <span class="s">&quot;application/json&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;accept&quot;</span><span class="p">:</span> <span class="s">&quot;application/json&quot;</span><span class="p">,</span> <span class="p">}</span>
+        <span class="n">req_api</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">requests</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="n">req_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">server_url</span> <span class="o">+</span> <span class="n">url</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s">&quot;get&quot;</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">req_api</span><span class="p">(</span><span class="n">req_url</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="s">&quot;user_token&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;user_token&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">}</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">req_api</span><span class="p">(</span><span class="n">req_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span> <span class="k">else</span> <span class="n">req_api</span><span class="p">(</span><span class="n">req_url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+</div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="n">docopt</span><span class="p">(</span><span class="n">__doc__</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">&#39;1.0&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;server.cfg&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()):</span>
+                <span class="n">server</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">break</span>
+    <span class="n">cclient</span> <span class="o">=</span> <span class="n">CobblerClient</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">arguments</span><span class="p">)</span>
+    <span class="n">cclient</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

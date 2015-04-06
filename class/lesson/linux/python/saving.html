@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -132,7 +133,7 @@
   <p>You can save your programs to files which the interpreter can then
 execute.
 This has the benefit of allowing you to track changes made to your programs and sharing them with other people.</p>
-<p>Start by opening a new file <tt class="docutils literal"><span class="pre">hello.py</span></tt>:</p>
+<p>Start by opening a new file <code class="docutils literal"><span class="pre">hello.py</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nano hello.py
 </pre></div>
 </div>
@@ -145,7 +146,7 @@ This has the benefit of allowing you to track changes made to your programs and 
 print &quot;Hello world!&quot;
 </pre></div>
 </div>
-<p>To execute your program pass the file as a parameter to the <tt class="docutils literal"><span class="pre">python</span></tt>
+<p>To execute your program pass the file as a parameter to the <code class="docutils literal"><span class="pre">python</span></code>
 command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ python hello.py
 Hello world!
@@ -197,22 +198,22 @@ The first part:</p>
 </div>
 <p>can be translated to say:</p>
 <blockquote>
-<div>The Python interpreter <tt class="docutils literal"><span class="pre">python</span></tt> should run the <tt class="docutils literal"><span class="pre">print_fibs.py</span></tt>
-program and pass it the parameter <tt class="docutils literal"><span class="pre">5</span></tt>.</div></blockquote>
-<p>The interpreter then looks at the <tt class="docutils literal"><span class="pre">print_fibs.py</span></tt> file and begins to
+<div>The Python interpreter <code class="docutils literal"><span class="pre">python</span></code> should run the <code class="docutils literal"><span class="pre">print_fibs.py</span></code>
+program and pass it the parameter <code class="docutils literal"><span class="pre">5</span></code>.</div></blockquote>
+<p>The interpreter then looks at the <code class="docutils literal"><span class="pre">print_fibs.py</span></code> file and begins to
 execute it.
 The first line it encounters is:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
 </pre></div>
 </div>
-<p>This line consists of the <tt class="docutils literal"><span class="pre">import</span></tt> keyword.
-Here <tt class="docutils literal"><span class="pre">import</span></tt> attempts to load the <tt class="docutils literal"><span class="pre">sys</span></tt> module, which has several useful items.</p>
-<p>Next the interpreter sees the <tt class="docutils literal"><span class="pre">def</span></tt> keyword.  The begins the
-definition of a function, called <tt class="docutils literal"><span class="pre">fib</span></tt> here.  Our <tt class="docutils literal"><span class="pre">fib</span></tt> function
-takes a single argument, named <tt class="docutils literal"><span class="pre">n</span></tt> within the function definition.</p>
+<p>This line consists of the <code class="docutils literal"><span class="pre">import</span></code> keyword.
+Here <code class="docutils literal"><span class="pre">import</span></code> attempts to load the <code class="docutils literal"><span class="pre">sys</span></code> module, which has several useful items.</p>
+<p>Next the interpreter sees the <code class="docutils literal"><span class="pre">def</span></code> keyword.  The begins the
+definition of a function, called <code class="docutils literal"><span class="pre">fib</span></code> here.  Our <code class="docutils literal"><span class="pre">fib</span></code> function
+takes a single argument, named <code class="docutils literal"><span class="pre">n</span></code> within the function definition.</p>
 <p>Next we begin a multi-line string between the triple double-quotes.
 Python can take this string and create documentation from it.</p>
-<p>The <tt class="docutils literal"><span class="pre">fib</span></tt> function returns the <em>n</em>-th number in the <a class="reference external" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci sequence</a>.
+<p>The <code class="docutils literal"><span class="pre">fib</span></code> function returns the <em>n</em>-th number in the <a class="reference external" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci sequence</a>.
 This sequence is mathematically defined as (where <em>n</em> is subscripted):</p>
 <div class="math">
 \[\begin{split}F_0 &amp;= 0 \\
@@ -231,11 +232,11 @@ F_n &amp;= F_{n-1} + F_{n-2}\end{split}\]</div>
 <div class="code python highlight-python"><div class="highlight"><pre>if __name__ == &#39;__main__&#39;:
 </pre></div>
 </div>
-<p>If the interpreter is running this module then there will be a variable <tt class="docutils literal"><span class="pre">__name__</span></tt> whose value is <tt class="docutils literal"><span class="pre">__main__</span></tt>.
+<p>If the interpreter is running this module then there will be a variable <code class="docutils literal"><span class="pre">__name__</span></code> whose value is <code class="docutils literal"><span class="pre">__main__</span></code>.
 This <strong>if statement</strong> checks for this condition and executes this block if the check passed.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>Try removing the <tt class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></tt> block and run the
+<p>Try removing the <code class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> block and run the
 program.
 How does it behave differently?
 What about if you replace with something like:</p>
@@ -249,7 +250,7 @@ What about if you replace with something like:</p>
 </pre></div>
 </div>
 <p>does three different things.
-First it gets the value in the <tt class="docutils literal"><span class="pre">sys.argv</span></tt> array at index 1.
+First it gets the value in the <code class="docutils literal"><span class="pre">sys.argv</span></code> array at index 1.
 This was the parameter <cite>5</cite> we originally passed to our program:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ python print_fibs.py 5
 </pre></div>
@@ -258,15 +259,15 @@ This was the parameter <cite>5</cite> we originally passed to our program:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s">&quot;5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We see that the <tt class="docutils literal"><span class="pre">5</span></tt> is represented as a string.
-However, we need to use integers for the <tt class="docutils literal"><span class="pre">fib</span></tt> function.
-We can use <tt class="docutils literal"><span class="pre">int</span></tt> to convert <tt class="docutils literal"><span class="pre">&quot;5&quot;</span></tt> to <tt class="docutils literal"><span class="pre">5</span></tt></p>
+<p>We see that the <code class="docutils literal"><span class="pre">5</span></code> is represented as a string.
+However, we need to use integers for the <code class="docutils literal"><span class="pre">fib</span></code> function.
+We can use <code class="docutils literal"><span class="pre">int</span></code> to convert <code class="docutils literal"><span class="pre">&quot;5&quot;</span></code> to <code class="docutils literal"><span class="pre">5</span></code></p>
 <p>We now have:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
-<p>which assigns the value <tt class="docutils literal"><span class="pre">5</span></tt> to the variable <tt class="docutils literal"><span class="pre">n</span></tt>.
-We can now call <tt class="docutils literal"><span class="pre">fib(n)</span></tt> and <tt class="docutils literal"><span class="pre">print</span></tt> the result.</p>
+<p>which assigns the value <code class="docutils literal"><span class="pre">5</span></code> to the variable <code class="docutils literal"><span class="pre">n</span></code>.
+We can now call <code class="docutils literal"><span class="pre">fib(n)</span></code> and <code class="docutils literal"><span class="pre">print</span></code> the result.</p>
 
 
           </div>
@@ -281,7 +282,8 @@ We can now call <tt class="docutils literal"><span class="pre">fib(n)</span></tt
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -306,7 +308,7 @@ We can now call <tt class="docutils literal"><span class="pre">fib(n)</span></tt
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

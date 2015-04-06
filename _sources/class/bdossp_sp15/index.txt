@@ -176,7 +176,8 @@ IT Operations - Automation and Orchestration
    ../lesson/devops/saltstack
    ../lesson/devops/puppet
    ../lesson/devops/chef
-   ../lesson/devops/other
+   ../lesson/devops/openstack_heat
+   ../lesson/devops/juju
 
 
 Virtual Clusters

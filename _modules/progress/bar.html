@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>progress.bar &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>progress.bar</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for progress.bar</h1><div class="highlight"><pre>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="c"># Copyright (c) 2012 Giorgos Verigakis &lt;verigak@gmail.com&gt;</span>
+<span class="c">#</span>
+<span class="c"># Permission to use, copy, modify, and distribute this software for any</span>
+<span class="c"># purpose with or without fee is hereby granted, provided that the above</span>
+<span class="c"># copyright notice and this permission notice appear in all copies.</span>
+<span class="c">#</span>
+<span class="c"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND THE AUTHOR DISCLAIMS ALL WARRANTIES</span>
+<span class="c"># WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF</span>
+<span class="c"># MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR</span>
+<span class="c"># ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES</span>
+<span class="c"># WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN</span>
+<span class="c"># ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF</span>
+<span class="c"># OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Progress</span>
+<span class="kn">from</span> <span class="nn">.helpers</span> <span class="kn">import</span> <span class="n">WritelnMixin</span>
+
+
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">WritelnMixin</span><span class="p">,</span> <span class="n">Progress</span><span class="p">):</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">32</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%(index)d</span><span class="s">/</span><span class="si">%(max)d</span><span class="s">&#39;</span>
+    <span class="n">bar_prefix</span> <span class="o">=</span> <span class="s">&#39; |&#39;</span>
+    <span class="n">bar_suffix</span> <span class="o">=</span> <span class="s">&#39;| &#39;</span>
+    <span class="n">empty_fill</span> <span class="o">=</span> <span class="s">&#39; &#39;</span>
+    <span class="n">fill</span> <span class="o">=</span> <span class="s">&#39;#&#39;</span>
+    <span class="n">hide_cursor</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">filled_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">)</span>
+        <span class="n">empty_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">filled_length</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">%</span> <span class="bp">self</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill</span> <span class="o">*</span> <span class="n">filled_length</span>
+        <span class="n">empty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty_fill</span> <span class="o">*</span> <span class="n">empty_length</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span> <span class="o">%</span> <span class="bp">self</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">message</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bar_prefix</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">empty</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bar_suffix</span><span class="p">,</span>
+                        <span class="n">suffix</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">writeln</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ChargingBar</span><span class="p">(</span><span class="n">Bar</span><span class="p">):</span>
+    <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%(percent)d%%</span><span class="s">&#39;</span>
+    <span class="n">bar_prefix</span> <span class="o">=</span> <span class="s">&#39; &#39;</span>
+    <span class="n">bar_suffix</span> <span class="o">=</span> <span class="s">&#39; &#39;</span>
+    <span class="n">empty_fill</span> <span class="o">=</span> <span class="s">u&#39;∙&#39;</span>
+    <span class="n">fill</span> <span class="o">=</span> <span class="s">u&#39;█&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">FillingSquaresBar</span><span class="p">(</span><span class="n">ChargingBar</span><span class="p">):</span>
+    <span class="n">empty_fill</span> <span class="o">=</span> <span class="s">u&#39;▢&#39;</span>
+    <span class="n">fill</span> <span class="o">=</span> <span class="s">u&#39;▣&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">FillingCirclesBar</span><span class="p">(</span><span class="n">ChargingBar</span><span class="p">):</span>
+    <span class="n">empty_fill</span> <span class="o">=</span> <span class="s">u&#39;◯&#39;</span>
+    <span class="n">fill</span> <span class="o">=</span> <span class="s">u&#39;◉&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">IncrementalBar</span><span class="p">(</span><span class="n">Bar</span><span class="p">):</span>
+    <span class="n">phases</span> <span class="o">=</span> <span class="p">(</span><span class="s">u&#39; &#39;</span><span class="p">,</span> <span class="s">u&#39;▏&#39;</span><span class="p">,</span> <span class="s">u&#39;▎&#39;</span><span class="p">,</span> <span class="s">u&#39;▍&#39;</span><span class="p">,</span> <span class="s">u&#39;▌&#39;</span><span class="p">,</span> <span class="s">u&#39;▋&#39;</span><span class="p">,</span> <span class="s">u&#39;▊&#39;</span><span class="p">,</span> <span class="s">u&#39;▉&#39;</span><span class="p">,</span> <span class="s">u&#39;█&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">nphases</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phases</span><span class="p">)</span>
+        <span class="n">expanded_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nphases</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">)</span>
+        <span class="n">filled_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">)</span>
+        <span class="n">empty_length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">filled_length</span>
+        <span class="n">phase</span> <span class="o">=</span> <span class="n">expanded_length</span> <span class="o">-</span> <span class="p">(</span><span class="n">filled_length</span> <span class="o">*</span> <span class="n">nphases</span><span class="p">)</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">%</span> <span class="bp">self</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phases</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">filled_length</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phases</span><span class="p">[</span><span class="n">phase</span><span class="p">]</span> <span class="k">if</span> <span class="n">phase</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s">&#39;&#39;</span>
+        <span class="n">empty</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty_fill</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">empty_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span> <span class="o">%</span> <span class="bp">self</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">message</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bar_prefix</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">empty</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">bar_suffix</span><span class="p">,</span> <span class="n">suffix</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">writeln</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ShadyBar</span><span class="p">(</span><span class="n">IncrementalBar</span><span class="p">):</span>
+    <span class="n">phases</span> <span class="o">=</span> <span class="p">(</span><span class="s">u&#39; &#39;</span><span class="p">,</span> <span class="s">u&#39;░&#39;</span><span class="p">,</span> <span class="s">u&#39;▒&#39;</span><span class="p">,</span> <span class="s">u&#39;▓&#39;</span><span class="p">,</span> <span class="s">u&#39;█&#39;</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

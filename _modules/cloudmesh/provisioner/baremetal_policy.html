@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.provisioner.baremetal_policy &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.provisioner.baremetal_policy</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.provisioner.baremetal_policy</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">dbhelper</span> <span class="kn">import</span> <span class="n">DBHelper</span>
+<span class="kn">from</span> <span class="nn">hostlist</span> <span class="kn">import</span> <span class="n">expand_hostlist</span><span class="p">,</span> <span class="n">collect_hostlist</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="c">#</span>
+<span class="c"># SETTING UP A LOGGER</span>
+<span class="c">#</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaremetalPolicy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy">[docs]</a><span class="k">class</span> <span class="nc">BaremetalPolicy</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;Baremetal Policy. Get/Add/Delete user/group policy</span>
+<span class="sd">    FIXME/TODO: It will add **permission access** that only admin can operate on poilicy later</span>
+<span class="sd">    the formation of policy is</span>
+<span class="sd">    {&quot;_id&quot; : &quot;53727f1c93f9d73e90520090&quot;,</span>
+<span class="sd">    &quot;name&quot; : &quot;user1,user2,user3&quot;,</span>
+<span class="sd">    &quot;policy_type&quot; : &quot;user&quot;, # or &quot;group&quot;</span>
+<span class="sd">    &quot;policy&quot; : &quot;i[101-103]&quot;,</span>
+<span class="sd">    &quot;cm_kind&quot; : &quot;baremetal&quot;,</span>
+<span class="sd">    &quot;cm_type&quot; : &quot;policy_inventory&quot;</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construction fucntion</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span> <span class="o">=</span> <span class="n">DBHelper</span><span class="p">()</span>
+
+<div class="viewcode-block" id="BaremetalPolicy.add_user_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.add_user_policy">[docs]</a>    <span class="k">def</span> <span class="nf">add_user_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">policy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a policy for an user.</span>
+<span class="sd">        :param string user: a username</span>
+<span class="sd">        :param string policy: one piece of policy, means user can access which baremetal servers, e.g. &quot;i[001-004]&quot;</span>
+<span class="sd">        :return: UUID means add policy success, otherwise None for failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_ug_policy</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.add_group_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.add_group_policy">[docs]</a>    <span class="k">def</span> <span class="nf">add_group_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">policy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a policy for a group.</span>
+<span class="sd">        :param string group: a group/project name</span>
+<span class="sd">        :param string policy: one piece of policy, means this group/project can access which baremetal servers, e.g. &quot;i[001-004]&quot;</span>
+<span class="sd">        :return: UUID means add policy success, otherwise None for failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_ug_policy</span><span class="p">(</span><span class="s">&quot;group&quot;</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">policy</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.add_ug_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.add_ug_policy">[docs]</a>    <span class="k">def</span> <span class="nf">add_ug_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">policy</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a policy for a specify *type*</span>
+<span class="sd">        :param string type: the type of policy, currently supports **user** and **group**</span>
+<span class="sd">        :param string name: the name in each type</span>
+<span class="sd">        :param string policy: one piece of policy</span>
+<span class="sd">        :return: UUID means add policy success, otherwise None for failed</span>
+<span class="sd">        :rtype: string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">add_elem</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;policy_type&quot;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;policy&quot;</span><span class="p">:</span> <span class="n">policy</span><span class="p">,</span> <span class="p">}</span>
+        <span class="n">full_elem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">(</span><span class="n">add_elem</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">full_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">convert_objectid_to_str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.remove_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.remove_policy">[docs]</a>    <span class="k">def</span> <span class="nf">remove_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;remove a policy based on uuid.</span>
+<span class="sd">        :param string uuid: an uuid of the removed policy</span>
+<span class="sd">        :return: True means remove policy success, otherwise False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">object_uuid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">convert_str_to_objectid</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="n">elem</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;_id&quot;</span><span class="p">:</span> <span class="n">object_uuid</span><span class="p">,</span> <span class="p">}</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_policy_based_user_or_its_projects"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_policy_based_user_or_its_projects">[docs]</a>    <span class="k">def</span> <span class="nf">get_policy_based_user_or_its_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">projects</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get the merged policy based on the username and his/her related projects</span>
+<span class="sd">        :param string user: only one valid username</span>
+<span class="sd">        :param list projects: a list of project</span>
+<span class="sd">        :return: a policy with hostlist string, or None if non-exist policy for user and its projects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">user_policy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_policy_based_user</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+        <span class="n">group_policy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_policy_based_group</span><span class="p">(</span><span class="n">collect_hostlist</span><span class="p">(</span><span class="n">projects</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">user_policy</span> <span class="ow">or</span> <span class="n">group_policy</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user_policy</span><span class="p">:</span>
+                <span class="n">valid_policy</span> <span class="o">=</span> <span class="n">user_policy</span>
+                <span class="k">if</span> <span class="n">group_policy</span><span class="p">:</span>
+                    <span class="n">valid_policy</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">group_policy</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">valid_policy</span> <span class="o">=</span> <span class="n">group_policy</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">all_policys</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">valid_policy</span><span class="p">:</span>
+            <span class="n">all_policys</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">expand_hostlist</span><span class="p">(</span><span class="n">valid_policy</span><span class="p">[</span><span class="n">name</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">collect_hostlist</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">all_policys</span><span class="p">)))</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_policy_based_user"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_policy_based_user">[docs]</a>    <span class="k">def</span> <span class="nf">get_policy_based_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get all the policies for a user</span>
+<span class="sd">        :param string user: a username with hostlist formation</span>
+<span class="sd">        :return: a dict of user and policy with the formation {&quot;name1&quot;: &quot;hostlist&quot;, &quot;name2&quot;: &quot;hostlist2&quot;}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">policys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_user_policy</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_policy_based_ug</span><span class="p">(</span><span class="n">policys</span><span class="p">)</span> <span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="s">&quot;all&quot;</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_policy_based_ug</span><span class="p">(</span><span class="n">policys</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_policy_based_group"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_policy_based_group">[docs]</a>    <span class="k">def</span> <span class="nf">get_policy_based_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get all the policies for a group/project</span>
+<span class="sd">        :param string group: a group/project with hostlist formation</span>
+<span class="sd">        :return: a dict of group and policy with the formation {&quot;name1&quot;: &quot;hostlist&quot;, &quot;name2&quot;: &quot;hostlist2&quot;}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">policys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_group_policy</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_policy_based_ug</span><span class="p">(</span><span class="n">policys</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="k">if</span> <span class="n">group</span> <span class="o">==</span> <span class="s">&quot;all&quot;</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_policy_based_ug</span><span class="p">(</span><span class="n">policys</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.merge_policy_based_ug"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.merge_policy_based_ug">[docs]</a>    <span class="k">def</span> <span class="nf">merge_policy_based_ug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">policys</span><span class="p">,</span> <span class="n">flag_user</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;merge policy based the name of user/group</span>
+<span class="sd">        :param dict policys: all the possible policys for users/groups</span>
+<span class="sd">        :param boolean flag_user: True means user, False means group</span>
+<span class="sd">        :param string name: the name of one or more user/group, None means all user/groups</span>
+<span class="sd">        :return: a dict of user/group and policy with the formation {&quot;name1&quot;: &quot;hostlist&quot;, &quot;name2&quot;: &quot;hostlist2&quot;}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">policys</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="n">expand_hostlist</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">name</span> <span class="k">else</span> <span class="bp">None</span>
+            <span class="k">for</span> <span class="n">puser</span> <span class="ow">in</span> <span class="n">policys</span><span class="p">:</span>
+                <span class="n">users</span> <span class="o">=</span> <span class="n">expand_hostlist</span><span class="p">(</span><span class="n">puser</span><span class="p">)</span>
+                <span class="n">common_users</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">u</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">users</span> <span class="k">if</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span> <span class="k">if</span> <span class="n">names</span> <span class="k">else</span> <span class="n">users</span>
+                <span class="n">hosts</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">policy</span> <span class="ow">in</span> <span class="n">policys</span><span class="p">[</span><span class="n">puser</span><span class="p">]:</span>
+                    <span class="n">hosts</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">expand_hostlist</span><span class="p">(</span><span class="n">policy</span><span class="p">[</span><span class="s">&quot;policy&quot;</span><span class="p">]))</span>
+                <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">common_users</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">]</span> <span class="o">=</span> <span class="n">collect_hostlist</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">])</span>
+            <span class="c"># flip data, combine duplicate values</span>
+            <span class="n">flipped_data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">]</span> <span class="ow">in</span> <span class="n">flipped_data</span><span class="p">:</span>
+                    <span class="n">flipped_data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">flipped_data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">user</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="p">]</span>
+            <span class="c"># try to merge user with same hosts</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">flipped_data</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">collect_hostlist</span><span class="p">(</span><span class="n">flipped_data</span><span class="p">[</span><span class="n">value</span><span class="p">])]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">return</span> <span class="n">data</span> <span class="k">if</span> <span class="n">data</span> <span class="k">else</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_all_user_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_all_user_policy">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_user_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag_merge</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get all the policies for all user</span>
+<span class="sd">        :param boolean flag_merge: True meanse merge all possible user and policy into string</span>
+<span class="sd">        :return: flag_merge is False, result is a dict of user and policy with the formation {&quot;user1&quot;:[&#39;policy1&#39;, &#39;policy2&#39;], &quot;user2&quot;: [],}</span>
+<span class="sd">        flag_merge is True, result is a dict of user/group and policy with the formation {&quot;name1&quot;: &quot;hostlist&quot;, &quot;name2&quot;: &quot;hostlist2&quot;}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_policys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_policy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">all_policys</span><span class="p">:</span>
+            <span class="n">policys</span> <span class="o">=</span> <span class="n">all_policys</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;users&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">policys</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">flag_merge</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_policy_based_ug</span><span class="p">(</span><span class="n">policys</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_all_group_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_all_group_policy">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_group_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flag_merge</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get all the policies for all group/project</span>
+<span class="sd">        :param boolean flag_merge: True meanse merge all possible user and policy into string</span>
+<span class="sd">        :return: flag_merge is False, result is a dict of group/project and policy with the formation {&quot;group1&quot;:[&#39;policy1&#39;, &#39;policy2&#39;], &quot;group2&quot;: [],}</span>
+<span class="sd">        flag_merge is True, result is a dict of user/group and policy with the formation {&quot;name1&quot;: &quot;hostlist&quot;, &quot;name2&quot;: &quot;hostlist2&quot;}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_policys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_policy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">all_policys</span><span class="p">:</span>
+            <span class="n">policys</span> <span class="o">=</span> <span class="n">all_policys</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;groups&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">policys</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">flag_merge</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_policy_based_ug</span><span class="p">(</span><span class="n">policys</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_all_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_all_policy">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get all the policies for all users and group/project</span>
+<span class="sd">        :return: a dict of group/project and policy with the formation {&quot;users&quot;: {&quot;user1&quot;: [], &quot;user2&quot;: []}, &quot;groups&quot;:{&quot;group1&quot;:[&#39;policy1&#39;, &#39;policy2&#39;], &quot;group2&quot;: [],}}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">policys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_policy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">policys</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;users&quot;</span><span class="p">:</span> <span class="p">{},</span> <span class="s">&quot;groups&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+        <span class="k">for</span> <span class="n">policy</span> <span class="ow">in</span> <span class="n">policys</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">policy</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">]</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">policy</span><span class="p">[</span><span class="s">&quot;policy_type&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&quot;user&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;users&quot;</span><span class="p">]:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="s">&quot;users&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="s">&quot;users&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">policy</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s">&quot;group&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;groups&quot;</span><span class="p">]:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="s">&quot;groups&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="s">&quot;groups&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">policy</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">data</span>
+</div>
+    <span class="k">def</span> <span class="nf">_get_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get all the records of policy</span>
+<span class="sd">        :return: an ordered list of policy or None if failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_full_query</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;result&quot;</span><span class="p">]:</span>
+            <span class="n">records</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+                <span class="n">record</span><span class="p">[</span><span class="s">&quot;_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_client</span><span class="o">.</span><span class="n">convert_objectid_to_str</span><span class="p">(</span>
+                    <span class="n">record</span><span class="p">[</span><span class="s">&quot;_id&quot;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">&quot;_id&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+<div class="viewcode-block" id="BaremetalPolicy.get_default_query"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_default_query">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_query</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;cm_kind&quot;</span><span class="p">:</span> <span class="s">&quot;baremetal&quot;</span><span class="p">,</span> <span class="s">&quot;cm_type&quot;</span><span class="p">:</span> <span class="s">&quot;policy_inventory&quot;</span><span class="p">,</span> <span class="p">}</span>
+</div>
+<div class="viewcode-block" id="BaremetalPolicy.get_full_query"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.provisioner.html#cloudmesh.provisioner.baremetal_policy.BaremetalPolicy.get_full_query">[docs]</a>    <span class="k">def</span> <span class="nf">get_full_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_elem</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">elem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_default_query</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">query_elem</span><span class="p">:</span>
+            <span class="n">elem</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">query_elem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">elem</span>
+
+</div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">bmp</span> <span class="o">=</span> <span class="n">BaremetalPolicy</span><span class="p">()</span>
+    <span class="c"># result = bmp.add_user_policy(&quot;chen,heng&quot;, &quot;i[001-003]&quot;)</span>
+    <span class="c"># result = bmp.add_user_policy(&quot;chen,fugang,heng&quot;, &quot;i[101-103]&quot;)</span>
+    <span class="c"># result = bmp.get_all_policy()</span>
+    <span class="c"># result = bmp.get_policy_based_user(&quot;fugang&quot;)</span>
+    <span class="c"># result = bmp.get_policy_based_user(&quot;gregor&quot;)</span>
+    <span class="c"># result = bmp.add_group_policy(&quot;fg[1-3]&quot;, &quot;i[111-113]&quot;)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">bmp</span><span class="o">.</span><span class="n">get_all_group_policy</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;result is: &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

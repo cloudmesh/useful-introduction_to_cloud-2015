@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.management.generate_classes &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.management.generate_classes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.management.generate_classes</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate the classes for Users and Projects depending on the</span>
+<span class="sd">    contents of the users and projects YAML file</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span>
+
+<span class="n">DB_CLASS_FIELDS</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">DB_CLASS_DICT</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">UI_CLASS_FIELDS</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">KEYS</span> <span class="o">=</span> <span class="s">&quot;keys = [&quot;</span>
+
+
+<div class="viewcode-block" id="build_db_field"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.build_db_field">[docs]</a><span class="k">def</span> <span class="nf">build_db_field</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function is used to build the description of mongoengine</span>
+<span class="sd">    fields depending on the type in the YAML file description.</span>
+<span class="sd">    An example of item is given below:</span>
+<span class="sd">    {&#39;title&#39;: {&#39;required&#39;: True, &#39;type&#39;: &#39;text&#39;, &#39;label&#39;: &#39;Title&#39;}}</span>
+
+<span class="sd">    :param item:</span>
+<span class="sd">    :return: string in the following format:</span>
+<span class="sd">                title = StringField(required=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">entry_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">field_entry</span> <span class="o">=</span> <span class="n">keys</span>
+        <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="n">default_value</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;required&#39;</span><span class="p">,</span> <span class="s">&#39;type&#39;</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;required&#39;</span><span class="p">:</span>
+                        <span class="n">required</span> <span class="o">=</span> <span class="n">key</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;type&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">,</span> <span class="s">&#39;textarea&#39;</span><span class="p">,</span> <span class="s">&#39;dropdown&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">]:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;StringField&quot;</span>
+                        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&#39;checkbox&#39;</span><span class="p">:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;StringField&quot;</span>
+                            <span class="n">default_value</span> <span class="o">=</span> <span class="s">&quot;no&quot;</span>
+                        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&#39;email&#39;</span><span class="p">:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;EmailField&quot;</span>
+        <span class="k">if</span> <span class="n">default_value</span> <span class="ow">and</span> <span class="n">required</span><span class="p">:</span>
+            <span class="n">field_entry</span> <span class="o">=</span> <span class="s">&#39;{0} = {1}({2}, default={3})&#39;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_entry</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">required</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">default_value</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">required</span><span class="p">:</span>
+            <span class="n">field_entry</span> <span class="o">=</span> <span class="s">&#39;{0} = {1}(default={2})&#39;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_entry</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">field_entry</span> <span class="o">=</span> <span class="s">&#39;{0} = {1}({2})&#39;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_entry</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">required</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_entry</span>
+
+</div>
+<div class="viewcode-block" id="traverse_db_data"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.traverse_db_data">[docs]</a><span class="k">def</span> <span class="nf">traverse_db_data</span><span class="p">(</span><span class="n">datum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function is used to parse the YAML dict and look for</span>
+<span class="sd">    fields and then call build_db_field to get a string representation</span>
+<span class="sd">    of the field as per mongoengine class requirement</span>
+
+<span class="sd">    :param datum:</span>
+<span class="sd">    :return: Description of mongoengine class fields in string format</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">DB_CLASS_FIELDS</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">datum</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">traverse_db_data</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;fields&#39;</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                    <span class="n">entry</span> <span class="o">=</span> <span class="n">build_db_field</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                    <span class="n">DB_CLASS_FIELDS</span> <span class="o">=</span> <span class="s">&quot;{0}{1}{2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">DB_CLASS_FIELDS</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n\t</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">DB_CLASS_FIELDS</span>
+
+</div>
+<div class="viewcode-block" id="build_ui_field"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.build_ui_field">[docs]</a><span class="k">def</span> <span class="nf">build_ui_field</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function is used to build the description of mongoengine</span>
+<span class="sd">    fields depending on the type in the YAML file description.</span>
+<span class="sd">    An example of item is given below:</span>
+<span class="sd">    {&#39;title&#39;: {&#39;required&#39;: True, &#39;type&#39;: &#39;text&#39;, &#39;label&#39;: &#39;Title&#39;}}</span>
+
+<span class="sd">    :param item:</span>
+<span class="sd">    :return: string in the following format:</span>
+<span class="sd">                title = StringField(required=True)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">field_entry</span> <span class="o">=</span> <span class="n">keys</span>
+        <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="n">required</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="n">default_value</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;required&#39;</span><span class="p">,</span> <span class="s">&#39;type&#39;</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;required&#39;</span><span class="p">:</span>
+                        <span class="n">required</span> <span class="o">=</span> <span class="n">key</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;type&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">,</span> <span class="s">&#39;textarea&#39;</span><span class="p">,</span> <span class="s">&#39;dropdown&#39;</span><span class="p">]:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;StringField&quot;</span>
+                        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&#39;textarea&#39;</span><span class="p">:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;TextAreaField&quot;</span>
+                        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&#39;dropdown&#39;</span><span class="p">:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;SelectField&quot;</span>
+                        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&#39;checkbox&#39;</span><span class="p">:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;StringField&quot;</span>
+                            <span class="n">default_value</span> <span class="o">=</span> <span class="s">&quot;no&quot;</span>
+                        <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s">&#39;email&#39;</span><span class="p">:</span>
+                            <span class="n">field_type</span> <span class="o">=</span> <span class="s">&quot;EmailField&quot;</span>
+        <span class="k">if</span> <span class="n">default_value</span> <span class="ow">and</span> <span class="n">required</span><span class="p">:</span>
+            <span class="n">field_entry</span> <span class="o">=</span> <span class="s">&#39;{0} = {1}({2}, default={3})&#39;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_entry</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">required</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">default_value</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">required</span><span class="p">:</span>
+            <span class="n">field_entry</span> <span class="o">=</span> <span class="s">&#39;{0} = {1}(default={2})&#39;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_entry</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">field_entry</span> <span class="o">=</span> <span class="s">&#39;{0} = {1}({2})&#39;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">field_entry</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">required</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_entry</span><span class="p">,</span> <span class="n">keys</span>
+
+</div>
+<div class="viewcode-block" id="traverse_ui_data"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.traverse_ui_data">[docs]</a><span class="k">def</span> <span class="nf">traverse_ui_data</span><span class="p">(</span><span class="n">datum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function is used to parse the YAML dict and look for</span>
+<span class="sd">    fields and then call build_ui_field to get a string representation</span>
+<span class="sd">    of the field for the flask GUI Page</span>
+
+<span class="sd">    :param datum:</span>
+<span class="sd">    :return: Description of flask GUI fields in string format</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">UI_CLASS_FIELDS</span>
+    <span class="k">global</span> <span class="n">KEYS</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">datum</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">traverse_ui_data</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="c"># if key not in (&#39;cloudmesh&#39;,&#39;user&#39;, &#39;meta&#39;):</span>
+            <span class="c"># KEYS = KEYS + &quot;\&quot;&quot; + key + &quot;\&quot;&quot; + &quot;,&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;fields&#39;</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                    <span class="n">entry</span><span class="p">,</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">build_ui_field</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                    <span class="n">UI_CLASS_FIELDS</span> <span class="o">=</span> <span class="s">&quot;{0}{1}{2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">UI_CLASS_FIELDS</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n\t</span><span class="s">&quot;</span><span class="p">)</span>
+                    <span class="n">KEYS</span> <span class="o">=</span> <span class="n">KEYS</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">keys</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span>
+    <span class="k">return</span> <span class="n">UI_CLASS_FIELDS</span><span class="p">,</span> <span class="n">KEYS</span>
+
+</div>
+<div class="viewcode-block" id="user_fields"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.user_fields">[docs]</a><span class="k">def</span> <span class="nf">user_fields</span><span class="p">():</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_user_intf.yaml&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="n">traverse_db_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">fields</span>
+    <span class="k">return</span> <span class="n">fields</span>
+
+</div>
+<div class="viewcode-block" id="country_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.country_list">[docs]</a><span class="k">def</span> <span class="nf">country_list</span><span class="p">():</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_country.yaml&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+    <span class="n">countries</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">item</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s">&#39;UTF-8&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">&#39;strict&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+        <span class="n">countries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;United States(US)&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">countries</span>
+    <span class="k">pass</span>
+
+</div>
+<div class="viewcode-block" id="states_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.states_list">[docs]</a><span class="k">def</span> <span class="nf">states_list</span><span class="p">():</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_states.yaml&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">item</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+        <span class="n">states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">states</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">states</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;Other(OTH)&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">states</span>
+    <span class="k">pass</span>
+
+</div>
+<div class="viewcode-block" id="disciplines_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.disciplines_list">[docs]</a><span class="k">def</span> <span class="nf">disciplines_list</span><span class="p">():</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_disciplines.yaml&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+    <span class="n">disciplines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">item</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+        <span class="n">disciplines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">disciplines</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">disciplines</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;Other(OTH)&#39;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">disciplines</span>
+    <span class="k">pass</span>
+
+</div>
+<div class="viewcode-block" id="project_fields"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.management.html#cloudmesh.management.generate_classes.project_fields">[docs]</a><span class="k">def</span> <span class="nf">project_fields</span><span class="p">():</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_project_intf.yaml&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="n">traverse_db_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">fields</span>
+    <span class="k">return</span> <span class="n">fields</span>
+
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c"># country_list()</span>
+    <span class="c"># user_fields()</span>
+    <span class="c"># states_list()</span>
+    <span class="n">disciplines_list</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -598,7 +598,7 @@ Virtual Clusters I (under preparation)
         - Advanced Topics with Hadoop
              - Zookeeper and HBase
              - Yarn
-             - OpenStack Havana
+             - OpenStack Sahara
      - Not yet available
      - Not yet available
      - 

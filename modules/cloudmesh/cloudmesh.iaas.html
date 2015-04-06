@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.iaas package &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>cloudmesh.iaas package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/modules/cloudmesh/cloudmesh.iaas.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cloudmesh-iaas-package">
+<h1>cloudmesh.iaas package<a class="headerlink" href="#cloudmesh-iaas-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.aws.html">cloudmesh.iaas.aws package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.aws.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.aws.queue.html">cloudmesh.iaas.aws.queue package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.aws.queue.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.aws.queue.html#module-cloudmesh.iaas.aws.queue.celery">cloudmesh.iaas.aws.queue.celery module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.aws.queue.html#module-cloudmesh.iaas.aws.queue.tasks">cloudmesh.iaas.aws.queue.tasks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.aws.queue.html#module-cloudmesh.iaas.aws.queue">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.aws.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.aws.html#module-cloudmesh.iaas.aws.cm_compute">cloudmesh.iaas.aws.cm_compute module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.aws.html#cloudmesh-iaas-aws-cm-compute">cloudmesh.iaas.aws.cm_compute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.aws.html#module-cloudmesh.iaas.aws">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.azure.html">cloudmesh.iaas.azure package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.azure.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.azure.queue.html">cloudmesh.iaas.azure.queue package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.azure.queue.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.azure.queue.html#module-cloudmesh.iaas.azure.queue.celery">cloudmesh.iaas.azure.queue.celery module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.azure.queue.html#module-cloudmesh.iaas.azure.queue.tasks">cloudmesh.iaas.azure.queue.tasks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.azure.queue.html#module-cloudmesh.iaas.azure.queue">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.azure.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.azure.html#module-cloudmesh.iaas.azure.cm_compute">cloudmesh.iaas.azure.cm_compute module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.azure.html#cloudmesh-iaas-azure-cm-compute">cloudmesh.iaas.azure.cm_compute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.azure.html#module-cloudmesh.iaas.azure">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.docker.html">cloudmesh.iaas.docker package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.docker.html#subpackages">Subpackages</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.docker.html#module-cloudmesh.iaas.docker">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.ec2.html">cloudmesh.iaas.ec2 package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.ec2.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.ec2.queue.html">cloudmesh.iaas.ec2.queue package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.ec2.queue.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.ec2.queue.html#module-cloudmesh.iaas.ec2.queue.celery">cloudmesh.iaas.ec2.queue.celery module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.ec2.queue.html#module-cloudmesh.iaas.ec2.queue.tasks">cloudmesh.iaas.ec2.queue.tasks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.ec2.queue.html#module-cloudmesh.iaas.ec2.queue">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.ec2.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.ec2.html#module-cloudmesh.iaas.ec2.cm_compute">cloudmesh.iaas.ec2.cm_compute module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.ec2.html#cloudmesh-iaas-ec2-cm-compute">cloudmesh.iaas.ec2.cm_compute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.ec2.html#module-cloudmesh.iaas.ec2">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.eucalyptus.html">cloudmesh.iaas.eucalyptus package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.eucalyptus.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.eucalyptus.html#module-cloudmesh.iaas.eucalyptus.eucalyptus">cloudmesh.iaas.eucalyptus.eucalyptus module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.eucalyptus.html#module-cloudmesh.iaas.eucalyptus">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.opencirrus.html">cloudmesh.iaas.opencirrus package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.opencirrus.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.opencirrus.html#module-cloudmesh.iaas.opencirrus.opencirrus">cloudmesh.iaas.opencirrus.opencirrus module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.opencirrus.html#module-cloudmesh.iaas.opencirrus">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.openstack.html">cloudmesh.iaas.openstack package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.openstack.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cloudmesh.iaas.openstack.queue.html">cloudmesh.iaas.openstack.queue package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.openstack.queue.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.openstack.queue.html#module-cloudmesh.iaas.openstack.queue.celery">cloudmesh.iaas.openstack.queue.celery module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.openstack.queue.html#module-cloudmesh.iaas.openstack.queue.tasks">cloudmesh.iaas.openstack.queue.tasks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cloudmesh.iaas.openstack.queue.html#module-cloudmesh.iaas.openstack.queue">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.openstack.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.openstack.html#module-cloudmesh.iaas.openstack.cm_compute">cloudmesh.iaas.openstack.cm_compute module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.openstack.html#module-cloudmesh.iaas.openstack.cm_idm">cloudmesh.iaas.openstack.cm_idm module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.openstack.html#module-cloudmesh.iaas.openstack">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloudmesh.iaas.vagrant.html">cloudmesh.iaas.vagrant package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.vagrant.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.vagrant.html#module-cloudmesh.iaas.vagrant.cm_vagrant">cloudmesh.iaas.vagrant.cm_vagrant module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloudmesh.iaas.vagrant.html#module-cloudmesh.iaas.vagrant">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloudmesh.iaas.ComputeBaseType">
+<span id="cloudmesh-iaas-computebasetype-module"></span><h2>cloudmesh.iaas.ComputeBaseType module<a class="headerlink" href="#module-cloudmesh.iaas.ComputeBaseType" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType">
+<em class="property">class </em><code class="descclassname">cloudmesh.iaas.ComputeBaseType.</code><code class="descname">ComputeBaseType</code><span class="sig-paren">(</span><em>label</em>, <em>cred=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.config">
+<code class="descname">config</code><span class="sig-paren">(</span><em>dict</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>uses the dict to conduct some configuration with the parameters passed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>connect to the cloud</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.credential">
+<code class="descname">credential</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.credential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><em>type='server'</em>, <em>with_manager=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.dump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a string that contains information about the cloud. One can ste the type to &#8216;images&#8217;,&#8217;flavors&#8217;,&#8217;servers&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.find_user_id">
+<code class="descname">find_user_id</code><span class="sig-paren">(</span><em>force=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.find_user_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.find_user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>finds the user id of a user and caches it. If a chaced
+value is ther it will use that. If you specify force, it will
+regenerate it</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.flavors">
+<code class="descname">flavors</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.flavors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>type='server'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns information in a dict for &#8216;servers&#8217;,&#8217;flavours&#8217;,&#8217;images&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_absolute_limits">
+<code class="descname">get_absolute_limits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.get_absolute_limits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_absolute_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a dict of absolute limits with current usage information</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_limits">
+<code class="descname">get_limits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.get_limits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a dict of limits that the cloud will maintain for a user and/or the project</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_quota">
+<code class="descname">get_quota</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.get_quota"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_quota" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_usage">
+<code class="descname">get_usage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.get_usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.get_usage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.images">
+<code class="descname">images</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.info">
+<code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>obtain some basic information about the cloud</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.keypair_add">
+<code class="descname">keypair_add</code><span class="sig-paren">(</span><em>keyname</em>, <em>keycontent</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.keypair_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.keypair_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.keypair_list">
+<code class="descname">keypair_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.keypair_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.keypair_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.keypair_remove">
+<code class="descname">keypair_remove</code><span class="sig-paren">(</span><em>keyname</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.keypair_remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.keypair_remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.label">
+<code class="descname">label</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.limits">
+<code class="descname">limits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.limits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a dict of limits that the cloud will maintain for a user and/or the project</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.refresh">
+<code class="descname">refresh</code><span class="sig-paren">(</span><em>type=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.refresh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>refreshes the information of the cache for a given type &#8216;images&#8217;, &#8216;flavors&#8217;, &#8216;servers&#8217;, or &#8216;all&#8217; for all of them</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.rename">
+<code class="descname">rename</code><span class="sig-paren">(</span><em>old</em>, <em>new</em>, <em>id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.rename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.rename" title="Permalink to this definition">¶</a></dt>
+<dd><p>rename the firtual machine with the name old to the name new</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.security_groups">
+<code class="descname">security_groups</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.security_groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.servers">
+<code class="descname">servers</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.servers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.set_credentials">
+<code class="descname">set_credentials</code><span class="sig-paren">(</span><em>cred</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.set_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.set_credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets the set_credentials to the dict cred</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.stack_create">
+<code class="descname">stack_create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.stack_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.stack_create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.stack_delete">
+<code class="descname">stack_delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.stack_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.stack_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.stacks">
+<code class="descname">stacks</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.stacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.status">
+<code class="descname">status</code><span class="sig-paren">(</span><em>vm_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns that status of a given virtual machine</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.usage">
+<code class="descname">usage</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>format='dict'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.usage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the usage data between start and end date</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vm_create">
+<code class="descname">vm_create</code><span class="sig-paren">(</span><em>name=None</em>, <em>flavor_name=None</em>, <em>image_id=None</em>, <em>security_groups=None</em>, <em>key_name=None</em>, <em>meta=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.vm_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vm_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a virtual machine with the given parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vm_delete">
+<code class="descname">vm_delete</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.vm_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vm_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete the virtual machine with the id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vms">
+<code class="descname">vms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vms" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the dict of the servers. deprecated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vms_project">
+<code class="descname">vms_project</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.vms_project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.vms_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.ComputeBaseType.ComputeBaseType.wait">
+<code class="descname">wait</code><span class="sig-paren">(</span><em>vm_id</em>, <em>vm_status</em>, <em>seconds=2</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#ComputeBaseType.wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.ComputeBaseType.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>waits a number of seconds and than refreshes information form the cloud</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.iaas.ComputeBaseType.donotchange">
+<code class="descclassname">cloudmesh.iaas.ComputeBaseType.</code><code class="descname">donotchange</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/ComputeBaseType.html#donotchange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.ComputeBaseType.donotchange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.iaas.Ec2SecurityGroup">
+<span id="cloudmesh-iaas-ec2securitygroup-module"></span><h2>cloudmesh.iaas.Ec2SecurityGroup module<a class="headerlink" href="#module-cloudmesh.iaas.Ec2SecurityGroup" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.iaas.Ec2SecurityGroup.Ec2SecurityGroup">
+<em class="property">class </em><code class="descclassname">cloudmesh.iaas.Ec2SecurityGroup.</code><code class="descname">Ec2SecurityGroup</code><span class="sig-paren">(</span><em>name</em>, <em>description='generated via cloudmesh'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/Ec2SecurityGroup.html#Ec2SecurityGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.Ec2SecurityGroup.Ec2SecurityGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="class">
+<dt id="cloudmesh.iaas.Ec2SecurityGroup.Ec2SecurityGroup.Rule">
+<em class="property">class </em><code class="descname">Rule</code><span class="sig-paren">(</span><em>from_port</em>, <em>to_port</em>, <em>ip_protocol='tcp'</em>, <em>cidr='0.0.0.0/0'</em>, <em>parent_group_id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/Ec2SecurityGroup.html#Ec2SecurityGroup.Rule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.Ec2SecurityGroup.Ec2SecurityGroup.Rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.iaas.Ec2SecurityGroup.Ec2SecurityGroup.set_rules">
+<code class="descclassname">Ec2SecurityGroup.</code><code class="descname">set_rules</code><span class="sig-paren">(</span><em>rules</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/iaas/Ec2SecurityGroup.html#Ec2SecurityGroup.set_rules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.iaas.Ec2SecurityGroup.Ec2SecurityGroup.set_rules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.iaas">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudmesh.iaas" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

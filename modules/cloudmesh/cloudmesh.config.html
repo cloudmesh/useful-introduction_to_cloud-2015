@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.config package &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>cloudmesh.config package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/modules/cloudmesh/cloudmesh.config.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cloudmesh-config-package">
+<h1>cloudmesh.config package<a class="headerlink" href="#cloudmesh-config-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloudmesh.config.YAML">
+<span id="cloudmesh-config-yaml-module"></span><h2>cloudmesh.config.YAML module<a class="headerlink" href="#module-cloudmesh.config.YAML" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.config.YAML.YAML">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.YAML.</code><code class="descname">YAML</code><a class="reference internal" href="../../_modules/cloudmesh/config/YAML.html#YAML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.YAML.YAML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Examples:</p>
+<p>test = &#8221;   jjj&#8221;            
+print YAML.leading_spaces(test)</p>
+<p>filename = config_file(&#8220;/cloudmesh.yaml&#8221;)</p>
+<p>print YAML.first_indent(filename)</p>
+<p>print YAML.check_indent(filename)</p>
+<p>print YAML.check_indent(filename, indent=2)</p>
+<dl class="staticmethod">
+<dt id="cloudmesh.config.YAML.YAML.check_indent">
+<em class="property">static </em><code class="descname">check_indent</code><span class="sig-paren">(</span><em>filename</em>, <em>indent=4</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/YAML.html#YAML.check_indent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.YAML.YAML.check_indent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="cloudmesh.config.YAML.YAML.first_indent">
+<em class="property">static </em><code class="descname">first_indent</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/YAML.html#YAML.first_indent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.YAML.YAML.first_indent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="cloudmesh.config.YAML.YAML.leading_spaces">
+<em class="property">static </em><code class="descname">leading_spaces</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/YAML.html#YAML.leading_spaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.YAML.YAML.leading_spaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.config.cm_config">
+<span id="cloudmesh-config-cm-config-module"></span><h2>cloudmesh.config.cm_config module<a class="headerlink" href="#module-cloudmesh.config.cm_config" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.config.cm_config.DBConnFactory">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">DBConnFactory</code><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#DBConnFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.DBConnFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.DBConnFactory.DBCONFIG">
+<code class="descname">DBCONFIG</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.config.cm_config.DBConnFactory.DBCONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.DBConnFactory.TYPE_MONGOCLIENT">
+<code class="descname">TYPE_MONGOCLIENT</code><em class="property"> = 0</em><a class="headerlink" href="#cloudmesh.config.cm_config.DBConnFactory.TYPE_MONGOCLIENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.DBConnFactory.TYPE_MONGOENGINE">
+<code class="descname">TYPE_MONGOENGINE</code><em class="property"> = 1</em><a class="headerlink" href="#cloudmesh.config.cm_config.DBConnFactory.TYPE_MONGOENGINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.DBConnFactory.connectors">
+<code class="descname">connectors</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.config.cm_config.DBConnFactory.connectors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cloudmesh.config.cm_config.DBConnFactory.getconn">
+<em class="property">classmethod </em><code class="descname">getconn</code><span class="sig-paren">(</span><em>dbname</em>, <em>clientType=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#DBConnFactory.getconn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.DBConnFactory.getconn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.config.cm_config.cm_config">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">cm_config</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base/cloudmesh_base.html#cloudmesh_base.ConfigDict.ConfigDict" title="cloudmesh_base.ConfigDict.ConfigDict"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh_base.ConfigDict.ConfigDict</span></code></a></p>
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.active">
+<code class="descname">active</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.active"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.active" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.address">
+<code class="descname">address</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.cloud">
+<code class="descname">cloud</code><span class="sig-paren">(</span><em>cloudname</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.cloud"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.cloud" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.cloud_default">
+<code class="descname">cloud_default</code><span class="sig-paren">(</span><em>cloudname</em>, <em>defname</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.cloud_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.cloud_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.cloudnames">
+<code class="descname">cloudnames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.cloudnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.cloudnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.clouds">
+<code class="descname">clouds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.clouds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.clouds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.credential">
+<code class="descname">credential</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.credential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.credential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>cloudname</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.default_cloud">
+<code class="descname">default_cloud</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.default_cloud" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.email">
+<code class="descname">email</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.export_line">
+<code class="descname">export_line</code><span class="sig-paren">(</span><em>attribute</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.export_line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.export_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.filename">
+<code class="descname">filename</code><em class="property"> = '/home/lee212/.cloudmesh/cloudmesh.yaml'</em><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.firstname">
+<code class="descname">firstname</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.firstname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.get_credential">
+<code class="descname">get_credential</code><span class="sig-paren">(</span><em>cloud=None</em>, <em>expand=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.get_credential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.get_credential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>key=None</em>, <em>expand=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.get_default">
+<code class="descname">get_default</code><span class="sig-paren">(</span><em>'india'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.get_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.get_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_default(&#8216;cloud&#8217;)
+get_default(&#8216;index&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.incr">
+<code class="descname">incr</code><span class="sig-paren">(</span><em>value=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.incr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.incr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.index">
+<code class="descname">index</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.lastname">
+<code class="descname">lastname</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.lastname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.phone">
+<code class="descname">phone</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.phone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.prefix">
+<code class="descname">prefix</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.profile">
+<code class="descname">profile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.profile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.projects">
+<code class="descname">projects</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.projects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.rc">
+<code class="descname">rc</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.rc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.rc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.rc_euca">
+<code class="descname">rc_euca</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.rc_euca"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.rc_euca" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.rc_openstack">
+<code class="descname">rc_openstack</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.rc_openstack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.rc_openstack" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the lines that can be put in an rc file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.set_default">
+<code class="descname">set_default</code><span class="sig-paren">(</span><em>cloudname=None</em>, <em>attribute=None</em>, <em>value=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.set_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.set_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.userkeys">
+<code class="descname">userkeys</code><span class="sig-paren">(</span><em>attribute=None</em>, <em>expand=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.userkeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.userkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_config.cm_config.username">
+<code class="descname">username</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config.username"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config.vmname">
+<code class="descname">vmname</code><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config.vmname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.config.cm_config.cm_config_flavor">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">cm_config_flavor</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config_flavor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config_flavor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base/cloudmesh_base.html#cloudmesh_base.ConfigDict.ConfigDict" title="cloudmesh_base.ConfigDict.ConfigDict"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh_base.ConfigDict.ConfigDict</span></code></a></p>
+<p>reads the information contained in the file
+cloudmesh_flavor.yaml</p>
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config_flavor.filename">
+<code class="descname">filename</code><em class="property"> = '/home/lee212/.cloudmesh/cloudmesh_flavor.yaml'</em><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config_flavor.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.config.cm_config.cm_config_launcher">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">cm_config_launcher</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config_launcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config_launcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base/cloudmesh_base.html#cloudmesh_base.ConfigDict.ConfigDict" title="cloudmesh_base.ConfigDict.ConfigDict"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh_base.ConfigDict.ConfigDict</span></code></a></p>
+<p>reads the information contained in the file
+cloudmesh_launcher.yaml</p>
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config_launcher.filename">
+<code class="descname">filename</code><em class="property"> = '/home/lee212/.cloudmesh/cloudmesh_launcher.yaml'</em><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config_launcher.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.config.cm_config.cm_config_server">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">cm_config_server</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#cm_config_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base/cloudmesh_base.html#cloudmesh_base.ConfigDict.ConfigDict" title="cloudmesh_base.ConfigDict.ConfigDict"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh_base.ConfigDict.ConfigDict</span></code></a></p>
+<p>reads the information contained in the file
+cloudmesh_server.yaml</p>
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_config.cm_config_server.filename">
+<code class="descname">filename</code><em class="property"> = '/home/lee212/.cloudmesh/cloudmesh_server.yaml'</em><a class="headerlink" href="#cloudmesh.config.cm_config.cm_config_server.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_config.get_mongo_db">
+<code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">get_mongo_db</code><span class="sig-paren">(</span><em>mongo_collection</em>, <em>clientType=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#get_mongo_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.get_mongo_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read in the mongo db information from the cloudmesh_server.yaml</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_config.get_mongo_dbname_from_collection">
+<code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">get_mongo_dbname_from_collection</code><span class="sig-paren">(</span><em>mongo_collection</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#get_mongo_dbname_from_collection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.get_mongo_dbname_from_collection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_config.load">
+<code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">load</code><span class="sig-paren">(</span><em>kind='user'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_config.yaml_attribute_replace">
+<code class="descclassname">cloudmesh.config.cm_config.</code><code class="descname">yaml_attribute_replace</code><span class="sig-paren">(</span><em>filename='abc.yaml'</em>, <em>replacements={}</em>, <em>indent_by=4</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_config.html#yaml_attribute_replace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_config.yaml_attribute_replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>example:</p>
+<p>filename = config_file(&#8220;/cloudmesh.yaml&#8221;)
+replacements = {</p>
+<blockquote>
+<div>&#8220;cloudmesh.profile.phone&#8221;: &#8220;hallo&#8221;,
+}</div></blockquote>
+<p>yaml_attribute_replace(filename,replacements)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.config.cm_init">
+<span id="cloudmesh-config-cm-init-module"></span><h2>cloudmesh.config.cm_init module<a class="headerlink" href="#module-cloudmesh.config.cm_init" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.config.cm_init.IgnoreUndefined">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_init.</code><code class="descname">IgnoreUndefined</code><span class="sig-paren">(</span><em>hint=None</em>, <em>obj=missing</em>, <em>name=None</em>, <em>exc=&lt;class 'jinja2.exceptions.UndefinedError'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_init.html#IgnoreUndefined"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_init.IgnoreUndefined" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">jinja2.runtime.Undefined</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_init.find_meta">
+<code class="descclassname">cloudmesh.config.cm_init.</code><code class="descname">find_meta</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_init.html#find_meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_init.find_meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_init.init_shell_command">
+<code class="descclassname">cloudmesh.config.cm_init.</code><code class="descname">init_shell_command</code><span class="sig-paren">(</span><em>arguments</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_init.html#init_shell_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_init.init_shell_command" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre>Usage:
+       init [--force] generate yaml
+       init [--force] generate me
+       init [--force] generate none
+       init [--force] generate FILENAME
+       init list [KIND] [--json]
+       init list clouds [--file=FILENAME] [--json]
+       init inspect --file=FILENAME
+       init fill --file=FILENAME [VALUES]
+
+Initializes cloudmesh from a yaml file
+
+Arguments:
+   generate   generates a yaml file
+   yaml       specifies if a yaml file is used for generation
+              the file is located at me.yaml
+   me         same as yaml
+
+   none       specifies if a yaml file is used for generation
+              the file is located at CONFIG/etc/none.yaml
+   FILENAME   The filename to be generated or from which to read
+              information.
+   VALUES     yaml file with the velues to be sed in the FILENAME
+   KIND       The kind of the yaml file.
+
+Options:
+   --force  force mode does not ask. This may be dangerous as it
+            overwrites the CONFIG/cloudmesh.yaml file
+   --file=FILENAME  The file
+   --json   make the output format json
+   -v       verbose mode
+
+
+Description:
+
+  init list [KIND] [--json]
+     list the versions and types of the yaml files in the
+     CONFIG and CONFIG/etc directories.
+
+  init list clouds [--file=FILENAME]
+     Lists the available clouds in the configuration yaml file.
+
+  init inspect --file=FILENAME
+     print the variables in the yaml template
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_init.main">
+<code class="descclassname">cloudmesh.config.cm_init.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_init.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_init.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.config.cm_keys">
+<span id="cloudmesh-config-cm-keys-module"></span><h2>cloudmesh.config.cm_keys module<a class="headerlink" href="#module-cloudmesh.config.cm_keys" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.config.cm_keys.cm_keys_base">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_keys.</code><code class="descname">cm_keys_base</code><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_base.defined">
+<code class="descname">defined</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_base.defined"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_base.defined" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_base.no_of_keys">
+<code class="descname">no_of_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_base.no_of_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_base.no_of_keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_keys.</code><code class="descname">cm_keys_mongo</code><span class="sig-paren">(</span><em>user</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cloudmesh.config.cm_keys.cm_keys_base" title="cloudmesh.config.cm_keys.cm_keys_base"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh.config.cm_keys.cm_keys_base</span></code></a></p>
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.check_register_key">
+<code class="descname">check_register_key</code><span class="sig-paren">(</span><em>username</em>, <em>cloudname</em>, <em>keyname</em>, <em>keycontent</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.check_register_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.check_register_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.default">
+<code class="descname">default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the default key</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds new key name and value. If name is already present the value is changed.
+The parameter persist being set to true will cause all of the changes made locally to be written to mongo.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.get_default_key">
+<code class="descname">get_default_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.get_default_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.get_default_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns default key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.names">
+<code class="descname">names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all key names in an list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds new key name and value. If name is already present the value is changed.
+The parameter key_type should  be set to file if you want to read the key from a file.
+The parameter persist being set to true will cause all of the changes made locally to be written to mongo.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_mongo.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_mongo.setdefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_mongo.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets the default key.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_keys.</code><code class="descname">cm_keys_yaml</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_yaml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cloudmesh.config.cm_keys.cm_keys_base" title="cloudmesh.config.cm_keys.cm_keys_base"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh.config.cm_keys.cm_keys_base</span></code></a></p>
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml.default">
+<code class="descname">default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_yaml.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the default key</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_yaml.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>deletes the key with the given name. WIll not succeed if the key is the default key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml.filename">
+<code class="descname">filename</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml.filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml.names">
+<code class="descname">names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_yaml.names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all key names in an list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em>, <em>expand=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_yaml.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds new key name and value. If name is already present the value is changed.
+The parameter key_type should  be set to file if you want to read the key from a file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_keys.cm_keys_yaml.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#cm_keys_yaml.setdefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.cm_keys_yaml.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets the default key</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_keys.get_key_from_file">
+<code class="descclassname">cloudmesh.config.cm_keys.</code><code class="descname">get_key_from_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#get_key_from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.get_key_from_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_keys.keytype">
+<code class="descclassname">cloudmesh.config.cm_keys.</code><code class="descname">keytype</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_keys.html#keytype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_keys.keytype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.config.cm_manage">
+<span id="cloudmesh-config-cm-manage-module"></span><h2>cloudmesh.config.cm_manage module<a class="headerlink" href="#module-cloudmesh.config.cm_manage" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cloudmesh.config.cm_manage.DEBUG">
+<code class="descclassname">cloudmesh.config.cm_manage.</code><code class="descname">DEBUG</code><span class="sig-paren">(</span><em>label</em>, <em>var</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_manage.html#DEBUG"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_manage.DEBUG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.config.cm_manage.cm_manage">
+<code class="descclassname">cloudmesh.config.cm_manage.</code><code class="descname">cm_manage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_manage.html#cm_manage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_manage.cm_manage" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Usage:</dt>
+<dd>cm-manage config projects list
+cm-manage config projects
+cm-manage config [-f FILE] [-o OUT] [-p PROJECT] cloud NAME [-]
+cm-manage config dump [&#8211;format=(yaml|dict)]
+cm-manage config init [-o OUT] [-u USER]
+cm-manage config list
+cm-manage config password NAME
+cm-manage config show passwords
+cm-manage config fetch [-u USER] [-r HOST]
+cm-manage &#8211;version
+cm-manage &#8211;help</dd>
+<dt>Arguments:</dt>
+<dd>NAME                 name of the cloud</dd>
+<dt>Options:</dt>
+<dd><p class="first">-h &#8211;help            show this help message and exit</p>
+<p>-v &#8211;version         show version and exit</p>
+<dl class="docutils">
+<dt>-f NAME &#8211;file=NAME  the Name of the cloud to be specified,</dt>
+<dd>if ? a selection is presented</dd>
+</dl>
+<p>-o OUT &#8211;out=OUT     writes the result in the specifide file</p>
+<dl class="docutils">
+<dt>-p PROJECT &#8211;project=PROJECT   selects a project (e.g. for eucalyptus</dt>
+<dd>which has project-specific environments)</dd>
+</dl>
+<p>-u USER &#8211;user=USER  the user (login) name</p>
+<dl class="docutils">
+<dt>-r HOST &#8211;remote=HOST  the host machine on which the yaml file is</dt>
+<dd>located in the CONFIG directory
+[default: india.futuregrid.org]</dd>
+</dl>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--debug</span></kbd></td>
+<td>debug</td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody>
+</table>
+<ul class="last simple">
+<li>this option is a - at the end of the command.
+If data is written to a file it is also put out to stdout</li>
+</ul>
+</dd>
+</dl>
+<p>Description:</p>
+<blockquote>
+<div><p>Command to generate rc files from our cloudmesh configuration files.</p>
+<blockquote>
+<div>This program generates form a YAML file containing the login
+information for a cloud an rc file that can be used to later source
+it.</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd><blockquote class="first">
+<div><p>we assume the yaml file has an entry india-openstack:</p>
+<p>cm-manage config -o novarc india-openstack
+source novarc</p>
+</div></blockquote>
+<p>This will create a novarc file and than you can source it:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm-manage config ? -
+</pre></div>
+</div>
+<p class="last">Presents a selction of cloud choices and writes the choice into a
+file called CONFIG/novarc</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.config.cm_me">
+<span id="cloudmesh-config-cm-me-module"></span><h2>cloudmesh.config.cm_me module<a class="headerlink" href="#module-cloudmesh.config.cm_me" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cloudmesh.config.cm_me.command_me">
+<code class="descclassname">cloudmesh.config.cm_me.</code><code class="descname">command_me</code><span class="sig-paren">(</span><em>arguments</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_me.html#command_me"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_me.command_me" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.config.cm_projects">
+<span id="cloudmesh-config-cm-projects-module"></span><h2>cloudmesh.config.cm_projects module<a class="headerlink" href="#module-cloudmesh.config.cm_projects" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.config.cm_projects.cm_projects">
+<em class="property">class </em><code class="descclassname">cloudmesh.config.cm_projects.</code><code class="descname">cm_projects</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class to manage the project ids for the various clouds.</p>
+<dl class="method">
+<dt id="cloudmesh.config.cm_projects.cm_projects.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>name</em>, <em>status='active'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds a project with given status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_projects.cm_projects.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets the default project</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_projects.cm_projects.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>name</em>, <em>status='active'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds a project with given status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_projects.cm_projects.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects.dump"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the dict in a string representing the project</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.config.cm_projects.cm_projects.get_default">
+<code class="descname">get_default</code><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.get_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the default project</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_projects.cm_projects.names">
+<code class="descname">names</code><span class="sig-paren">(</span><em>status='active'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects.names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all projects in an array with a specified status</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.config.cm_projects.cm_projects.write">
+<code class="descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/config/cm_projects.html#cm_projects.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.config.cm_projects.cm_projects.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>writes the updated dict to the config</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="cloudmesh-config-openstack-grizzly-cloud-module">
+<h2>cloudmesh.config.openstack_grizzly_cloud module<a class="headerlink" href="#cloudmesh-config-openstack-grizzly-cloud-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloudmesh.config">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudmesh.config" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>__all__ = [&#8216;cloudmesh_cloud.py&#8217;,</dt>
+<dd>&#8216;cloudmesh_cloud_handler.py&#8217;,
+&#8216;cm_config.py&#8217;,
+&#8216;cm_keys.py&#8217;,
+&#8216;cm_projects.py&#8217;,
+&#8216;cm_rc.py&#8217;,
+&#8216;cloudmesh_user.py&#8217;,
+&#8216;openstack_grizzly_cloud.py&#8217;]</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

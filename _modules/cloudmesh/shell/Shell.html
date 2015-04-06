@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.shell.Shell &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.shell.Shell</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.shell.Shell</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">sh</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<div class="viewcode-block" id="Shell"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell">[docs]</a><span class="k">class</span> <span class="nc">Shell</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="c">#    @classmethod</span>
+    <span class="c">#    def ls(cls, arguments=None):</span>
+    <span class="c">#        return cls._execute(sh.ls, arguments)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_execute</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="n">kws</span> <span class="o">=</span> <span class="n">kwargs</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+<span class="c">#        args = list(*arguments)</span>
+<span class="c">#        if len(args) == 0:</span>
+<span class="c">#            return f().rstrip(&#39;\n&#39;)</span>
+<span class="c">#       else:</span>
+<span class="c">#           return f(args).rstrip(&#39;\n&#39;)</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.git"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.git">[docs]</a>    <span class="k">def</span> <span class="nf">git</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">git</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.VBoxManage"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.VBoxManage">[docs]</a>    <span class="k">def</span> <span class="nf">VBoxManage</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">VBoxManage</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.blockdiag"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.blockdiag">[docs]</a>    <span class="k">def</span> <span class="nf">blockdiag</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">blockdiag</span>	<span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.cm"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.cm">[docs]</a>    <span class="k">def</span> <span class="nf">cm</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">cm</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.fgmetric"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.fgmetric">[docs]</a>    <span class="k">def</span> <span class="nf">fgmetric</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">fgmetric</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.fgrep"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.fgrep">[docs]</a>    <span class="k">def</span> <span class="nf">fgrep</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">fgrep</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.gchproject"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.gchproject">[docs]</a>    <span class="k">def</span> <span class="nf">gchproject</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">gchproject</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.gchuser"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.gchuser">[docs]</a>    <span class="k">def</span> <span class="nf">gchuser</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">gchuser</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.glusers"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.glusers">[docs]</a>    <span class="k">def</span> <span class="nf">glusers</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">glusers</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                    </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.gmkproject"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.gmkproject">[docs]</a>    <span class="k">def</span> <span class="nf">gmkproject</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">gmkproject</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                    </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.grep"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.grep">[docs]</a>    <span class="k">def</span> <span class="nf">grep</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">grep</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.gstatement"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.gstatement">[docs]</a>    <span class="k">def</span> <span class="nf">gstatement</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">gstatement</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.head"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.head">[docs]</a>    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.keystone"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.keystone">[docs]</a>    <span class="k">def</span> <span class="nf">keystone</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">keystone</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.kill"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.kill">[docs]</a>    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">kill</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.ls"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.ls">[docs]</a>    <span class="k">def</span> <span class="nf">ls</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">ls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.mkdir"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.mkdir">[docs]</a>    <span class="k">def</span> <span class="nf">mkdir</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">newdir</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;works the way a good mkdir should :)</span>
+<span class="sd">        - already exists, silently complete</span>
+<span class="sd">        - regular file in the way, raise an exception</span>
+<span class="sd">        - parent directory(ies) does not exist, make them as well</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;http://code.activestate.com/recipes/82465-a-friendly-mkdir/&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">newdir</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">newdir</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s">&quot;a file with the same name as the desired &quot;</span>
+                          <span class="s">&quot;dir, &#39;</span><span class="si">%s</span><span class="s">&#39;, already exists.&quot;</span> <span class="o">%</span> <span class="n">newdir</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">head</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">newdir</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">head</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+                <span class="n">mkdir</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">tail</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">newdir</span><span class="p">)</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.mongoimport"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.mongoimport">[docs]</a>    <span class="k">def</span> <span class="nf">mongoimport</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">mongoimport</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                    </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.mysql"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.mysql">[docs]</a>    <span class="k">def</span> <span class="nf">mysql</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">mysql</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.nosetests"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.nosetests">[docs]</a>    <span class="k">def</span> <span class="nf">nosetests</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">nosetests</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.nova"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.nova">[docs]</a>    <span class="k">def</span> <span class="nf">nova</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">nova</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.pwd"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.pwd">[docs]</a>    <span class="k">def</span> <span class="nf">pwd</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">pwd</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.rackdiag"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.rackdiag">[docs]</a>    <span class="k">def</span> <span class="nf">rackdiag</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">rackdiag</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.rm"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.rm">[docs]</a>    <span class="k">def</span> <span class="nf">rm</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">rm</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.rsync"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.rsync">[docs]</a>    <span class="k">def</span> <span class="nf">rsync</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">rsync</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                    </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.scp"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.scp">[docs]</a>    <span class="k">def</span> <span class="nf">scp</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">scp</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                    </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.sort"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">sort</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.ssh"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.ssh">[docs]</a>    <span class="k">def</span> <span class="nf">ssh</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">ssh</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.sudo"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.sudo">[docs]</a>    <span class="k">def</span> <span class="nf">sudo</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">sudo</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.tail"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.tail">[docs]</a>    <span class="k">def</span> <span class="nf">tail</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">tail</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                            </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.vagrant"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.vagrant">[docs]</a>    <span class="k">def</span> <span class="nf">vagrant</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">vagrant</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  
+        </div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.mongod"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.Shell.Shell.mongod">[docs]</a>    <span class="k">def</span> <span class="nf">mongod</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">mongod</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                                                                </div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">Shell</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s">&quot;-1&quot;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">Shell</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">Shell</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s">&quot;-A&quot;</span><span class="p">,</span> <span class="s">&quot;-G&quot;</span><span class="p">)</span>    
+
+    <span class="k">print</span> <span class="n">Shell</span><span class="o">.</span><span class="n">pwd</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

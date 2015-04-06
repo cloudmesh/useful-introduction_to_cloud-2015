@@ -32,9 +32,11 @@ We start our program first with importing cloudmesh and the provider
 .. code:: python
 
     import cloudmesh
+
 .. code:: python
 
     from cloudmesh.sh.openstack import nova_provider
+
 Next we decide to load one of the providors. The values are "sh" and
 "simulator". We chose the simulator. we name the function to boot a vm
 nova\_boot.
@@ -42,11 +44,13 @@ nova\_boot.
 .. code:: python
 
     vm_boot = nova_provider("simulator")
+
 Now we can boot a vm with the command
 
 .. code:: python
 
     vm_boot("a", "b", h="k")
+
 
 .. parsed-literal::
 
@@ -59,6 +63,7 @@ provider
 .. code:: python
 
     vm_boot = nova_provider("sh")
+
 .. code:: python
 
     vm_boot(TODO)

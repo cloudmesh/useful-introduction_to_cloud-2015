@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh_common.util &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+    <li>cloudmesh_common.util</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh_common.util</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; Basic Clousmesh finctions.</span>
+
+<span class="sd">.. role:: strikethrough</span>
+
+<span class="sd">This file contains some very basic utility functions that must not</span>
+<span class="sd">need any import from cloudmesh. That is no statement such as</span>
+
+<span class="sd">* :strikethrough:`import cloudmesh`</span>
+
+<span class="sd">must occur in the list of import. If functions are needed hat need to</span>
+<span class="sd">be used they must be decleard without dependencies in::</span>
+
+<span class="sd">  import cloudmesh.util</span>
+
+<span class="sd">The reasonong is that during th einitialization where cloudmesh is not</span>
+<span class="sd">yet installed, the __init__ function for cloudmesh may include some</span>
+<span class="sd">configuration files that are not yet present at the tome of the first</span>
+<span class="sd">instalation.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">path_expand</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="c"># import warnings</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">banner</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">grep</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">progress.bar</span> <span class="kn">import</span> <span class="n">Bar</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;pip install progress&quot;</span><span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">progress.bar</span> <span class="kn">import</span> <span class="n">Bar</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: can not install progress&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;=&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;please make sure that a virtualenv and pip are installed&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PROGRESS"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS">[docs]</a><span class="k">class</span> <span class="nc">PROGRESS</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">defined</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PROGRESS.set"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cls</span><span class="o">.</span><span class="n">defined</span><span class="p">:</span>
+            <span class="n">cls</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">limit</span><span class="p">)</span>
+            <span class="n">cls</span><span class="o">.</span><span class="n">defined</span> <span class="o">=</span> <span class="bp">True</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PROGRESS.next"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.next">[docs]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+</div>
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PROGRESS.finish"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.finish">[docs]</a>    <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+
+</div></div>
+<div class="viewcode-block" id="cat"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.cat">[docs]</a><span class="k">def</span> <span class="nf">cat</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;prints the contents of a file with the given name.</span>
+
+<span class="sd">    :param filename: name of the file, which can include ~ and $</span>
+<span class="sd">                     environment variables</span>
+<span class="sd">    :type: string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">path_expand</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">banner</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+</div>
+<div class="viewcode-block" id="not_implemented"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.not_implemented">[docs]</a><span class="k">def</span> <span class="nf">not_implemented</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;prins simply an error that this is not implemented. This can be</span>
+<span class="sd">    used when you protortype things.&quot;&quot;&quot;</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: not yet implemented&quot;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="check_file_for_tabs"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.check_file_for_tabs">[docs]</a><span class="k">def</span> <span class="nf">check_file_for_tabs</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;identifies if the file contains tabs and returns True if it</span>
+<span class="sd">    does. It also prints the location of the lines and columns. If</span>
+<span class="sd">    verbose is set to False, the location is not printed.</span>
+
+<span class="sd">    :param filename: the filename</span>
+<span class="sd">    :rtype: True if there are tabs in the file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">file_contains_tabs</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">with</span> <span class="nb">file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+
+    <span class="n">line_no</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">file_contains_tabs</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Tab found in line&quot;</span><span class="p">,</span> <span class="n">line_no</span><span class="p">,</span> <span class="s">&quot;and column(s)&quot;</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
+        <span class="n">line_no</span> <span class="o">=</span> <span class="n">line_no</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">file_contains_tabs</span>
+
+</div>
+<div class="viewcode-block" id="deprecated"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.deprecated">[docs]</a><span class="k">def</span> <span class="nf">deprecated</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;This is a decorator which can be used to mark functions</span>
+<span class="sd">    as deprecated. It will result in a warning being emitted</span>
+<span class="sd">    when the function is used. Just use @deprecated before</span>
+<span class="sd">    the definition.::</span>
+
+<span class="sd">        @deprecated</span>
+<span class="sd">        def my_func():</span>
+<span class="sd">          pass</span>
+
+<span class="sd">        @other_decorators_must_be_before</span>
+<span class="sd">        @deprecated</span>
+<span class="sd">        def my_func():</span>
+<span class="sd">          pass</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">new_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        warnings.warn_explicit(</span>
+<span class="sd">            &quot;Call to deprecated function {}.&quot;.format(func.__name__),</span>
+<span class="sd">            category=DeprecationWarning,</span>
+<span class="sd">            filename=func.func_code.co_filename,</span>
+<span class="sd">            lineno=func.func_code.co_firstlineno + 1</span>
+<span class="sd">        )</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">print</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Warning: Call to deprecated function {}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;         filename=&quot;</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_filename</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;         lineno=&quot;</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_firstlineno</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;-&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_func</span>
+
+</div>
+<div class="viewcode-block" id="cond_decorator"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.cond_decorator">[docs]</a><span class="k">def</span> <span class="nf">cond_decorator</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;conditional decorator that is used if the flag is true.</span>
+
+<span class="sd">    :param flag: the boolean flag</span>
+<span class="sd">    :type flag: boolean</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;the internal decorator&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">dec</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="k">if</span> <span class="n">flag</span> <span class="k">else</span> <span class="n">fn</span>
+    <span class="k">return</span> <span class="n">decorate</span>
+
+</div>
+<div class="viewcode-block" id="status_color"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.status_color">[docs]</a><span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns some predefined color values.</span>
+<span class="sd">    * ACTIVE ::= green</span>
+<span class="sd">    * BUILDING ::= blue</span>
+<span class="sd">    * ERROR ::= red</span>
+<span class="sd">    * default ::= black</span>
+
+<span class="sd">    :param status: &#39;ACTIVE&#39;, &#39;BUILDING&#39;, &#39;ERROR&#39;</span>
+<span class="sd">    :rtype: string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&#39;ACTIVE&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;green&quot;</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&#39;BUILDING&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&quot;blue&quot;</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;ERROR&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="s">&quot;red&quot;</span>
+    <span class="k">return</span> <span class="s">&quot;black&quot;</span>
+</div>
+<span class="sd">&#39;&#39;&#39; ref:</span>
+<span class="sd">    http://stackoverflow.com/questions/2257441/python-random-string-generation-with-upper-case-letters-and-digits</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<div class="viewcode-block" id="get_rand_string"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.get_rand_string">[docs]</a><span class="k">def</span> <span class="nf">get_rand_string</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;generates a random string.</span>
+<span class="sd">    :param size: length of the string</span>
+<span class="sd">    :param chars: string of charaters to chese form, by default a-zA-Z0-9</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="get_unique_name"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.get_unique_name">[docs]</a><span class="k">def</span> <span class="nf">get_unique_name</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a UUID without some characters such as &#39;-&#39;, &#39;_&#39;, &#39; &#39;, &#39;.&#39;</span>
+
+<span class="sd">    :param prefix: a prefix added to the UUID</span>
+<span class="sd">    :param **kargs: keyword arguments for additional options</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">]</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s">&#39;change&#39;</span> <span class="ow">in</span> <span class="n">kargs</span><span class="p">:</span>
+        <span class="n">change</span> <span class="o">=</span> <span class="n">kargs</span><span class="p">[</span><span class="s">&#39;change&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">change</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+            <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">character</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">+</span> <span class="n">text</span>
+
+</div>
+<div class="viewcode-block" id="address_string"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.address_string">[docs]</a><span class="k">def</span> <span class="nf">address_string</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;content is a dict of the form::</span>
+
+<span class="sd">       {u&#39;private&#39;: [{u&#39;version&#39;: 4,</span>
+<span class="sd">                      u&#39;addr&#39;: u&#39;10.35.23.30&#39;,</span>
+<span class="sd">                      u&#39;OS-EXT-IPS:kind&#39;:u&#39;fixed&#39;},</span>
+<span class="sd">                     {u&#39;version&#39;: 4,</span>
+<span class="sd">                      u&#39;addr&#39;: u&#39;198.202.120.194&#39;,</span>
+<span class="sd">                      u&#39;OS-EXT-IPS:kind&#39;: u&#39;floating&#39;}]}</span>
+
+<span class="sd">    it will return::</span>
+
+<span class="sd">        &quot;fixed: 10.35.23.30, floating: 198.202.120.194&#39;</span>
+
+<span class="sd">    The &#39;private&#39; could be any other string indicating the vlan.</span>
+<span class="sd">    E.g., HP_east cloud might return result which is not &#39;private&#39;.</span>
+<span class="sd">    Not necessarilly vlan102 either.</span>
+<span class="sd">    For now we will assume an arbitry string exists as the name for vlan.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+        <span class="n">vlan</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">content</span><span class="p">[</span><span class="n">vlan</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">labels</span><span class="p">:</span>
+                <span class="c"># 2/11/15 By Mark X. change &quot;kind&quot; which seems wrong to &quot;type&quot;</span>
+                <span class="c"># address[&#39;OS-EXT-IPS:kind&#39;] =&gt; address[&#39;OS-EXT-IPS:type&#39;]</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">address</span><span class="p">[</span><span class="s">&#39;OS-EXT-IPS:type&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">address</span><span class="p">[</span><span class="s">&#39;addr&#39;</span><span class="p">]</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="c"># THIS SEEMS WRONG</span>
+        <span class="c"># {u&#39;vlan102&#39;: [{u&#39;version&#39;: 4, u&#39;addr&#39;: u&#39;10.1.2.104&#39;}, {</span>
+        <span class="c">#    u&#39;version&#39;: 4, u&#39;addr&#39;: u&#39;149.165.158.34&#39;}]}</span>
+        <span class="c"># try:</span>
+        <span class="c">#    position = 0</span>
+        <span class="c">#    for address in content[&#39;vlan102&#39;]:</span>
+        <span class="c">#        if position == 0:</span>
+        <span class="c">#            kind = &quot;fixed&quot;</span>
+        <span class="c">#        else:</span>
+        <span class="c">#            kind = &quot;floating&quot;</span>
+        <span class="c">#        if labels:</span>
+        <span class="c">#            result = result + kind</span>
+        <span class="c">#        result = result + address[&#39;addr&#39;]</span>
+        <span class="c">#        result = result + &quot;, &quot;</span>
+        <span class="c">#        position = +1</span>
+        <span class="c">#    result = result[:-2]</span>
+        <span class="c"># except:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">content</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+</div>
+<div class="viewcode-block" id="dict_uni_to_ascii"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.dict_uni_to_ascii">[docs]</a><span class="k">def</span> <span class="nf">dict_uni_to_ascii</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    convert mongodb document content from unicode to ascii</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;ascii&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">dict_uni_to_ascii</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                
+            <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">!=</span> <span class="p">[]:</span>
+                <span class="n">v1</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                    <span class="n">v1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_uni_to_ascii</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">v1</span>
+                    
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;ascii&quot;</span><span class="p">)</span>
+            <span class="n">d1</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">d1</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">d1</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                <span class="n">d1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_uni_to_ascii</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">d1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;ascii&quot;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span>
+
+</div>
+<span class="k">def</span> <span class="nf">_getFromDict</span><span class="p">(</span><span class="n">dataDict</span><span class="p">,</span> <span class="n">mapList</span><span class="p">):</span>
+    <span class="c"># ref:</span>
+    <span class="c"># http://stackoverflow.com/questions/14692690/access-python-nested-dictionary-items-via-a-list-of-keys</span>
+    <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">mapList</span><span class="p">,</span> <span class="n">dataDict</span><span class="p">)</span>
+    
+    
+    
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

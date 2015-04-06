@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -88,14 +89,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt> Command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><tt class="docutils literal"><span class="pre">project</span></tt> Command in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_vm-cm.html">CM Console for VM Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
 </ul>
 </li>
@@ -145,7 +146,7 @@
       
           <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
       
-    <li>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt></li>
+    <li>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/cm/_cm-cluster.txt" rel="nofollow"> View page source</a>
@@ -157,13 +158,13 @@
           <div role="main" class="document">
             
   <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
-<h1>Deploying Virtual Cluster with Cloudmesh <tt class="docutils literal"><span class="pre">cm</span></tt><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<h1>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
 <p>To support the creation of a virtual compute cluster (e.g. Hadoop or
-Slurm) on Cloudmesh, <tt class="docutils literal"><span class="pre">cluster</span></tt> command is available to start,
+Slurm) on Cloudmesh, <code class="docutils literal"><span class="pre">cluster</span></code> command is available to start,
 configure, manage or update a number of virtual machines.</p>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">cluster</span></tt> command is available in the cloudmesh shell. There are
+<p><code class="docutils literal"><span class="pre">cluster</span></code> command is available in the cloudmesh shell. There are
 certain steps to make sure you are all set to deploy a new cluster. You
 can SKIP these steps if you have configured Cloudmesh previously.</p>
 <div class="section" id="cloud-activation">
@@ -215,7 +216,7 @@ flavor rather than a smaller one e.g. m1.small or m1.tiny.</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="create-a-virtual-cluster-with-cluster-command">
-<h3>Create a Virtual Cluster with <tt class="docutils literal"><span class="pre">cluster</span></tt> command<a class="headerlink" href="#create-a-virtual-cluster-with-cluster-command" title="Permalink to this headline">¶</a></h3>
+<h3>Create a Virtual Cluster with <code class="docutils literal"><span class="pre">cluster</span></code> command<a class="headerlink" href="#create-a-virtual-cluster-with-cluster-command" title="Permalink to this headline">¶</a></h3>
 <p>Run ‘cluster create’ with the following parameters:</p>
 <p>name cluster name &#8211;count specify amount of VMs in the cluster &#8211;ln
 login name for VMs, e.g. ubuntu</p>
@@ -235,7 +236,7 @@ creating a virtual cluster on Ubuntu 14.04 image with a small flavor:</p>
 </div>
 <div class="section" id="check-status-of-a-virtual-cluster">
 <h3>Check Status of a Virtual Cluster<a class="headerlink" href="#check-status-of-a-virtual-cluster" title="Permalink to this headline">¶</a></h3>
-<p>Use <tt class="docutils literal"><span class="pre">vm`</span> <span class="pre">command</span> <span class="pre">with</span></tt>&#8211;group`` parameter to check the status.</p>
+<p>Use <code class="docutils literal"><span class="pre">vm`</span> <span class="pre">command</span> <span class="pre">with</span></code>&#8211;group`` parameter to check the status.</p>
 <div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=cluster_tutorial1&quot;
 </pre></div>
 </div>
@@ -328,7 +329,7 @@ Options:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="_cm-limits.html" class="btn btn-neutral" title="Metric Commands in Cloudmesh cm"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -344,7 +345,8 @@ Options:
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -369,7 +371,7 @@ Options:
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

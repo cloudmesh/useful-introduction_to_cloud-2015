@@ -82,7 +82,7 @@ Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Starting a new instance is simple. The following command starts a new
-instance named *tutorial1* with a Ubuntu 14.04 base image.  The size
+instance named *$USER-tutorial1* with a Ubuntu 14.04 base image.  The size
 of the machine will be **small**.
 
 .. note::
@@ -117,7 +117,7 @@ Boot the instance using the following command:
 
 ::
 
-  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key tutorial1
+  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key $USER-tutorial1
 
 
 Here are some explanations for the arguments.
@@ -130,7 +130,7 @@ Here are some explanations for the arguments.
 * ``--key_name`` is a key name to use for SSH connection. This key
   should be registered on Nova Compute. Try ``nova keypair-list`` to
   see registered keys.
-* ``tutorial1`` is a name for your vm instance.
+* ``$USER-tutorial1`` is a name for your vm instance.
 
 
 Some useful ``nova`` subcommands are:
@@ -142,6 +142,8 @@ Some useful ``nova`` subcommands are:
 
 You can get more information by executing the ``nova -h`` command.
 
+Floating IP Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If we want our machine to be accessible from outside the private
 network, we need to create a "floating IP address" and associate it
@@ -171,13 +173,62 @@ Now that the ip has been created, associate it with our instance::
   usage: nova floating-ip-associate [--fixed-address <fixed_address>]
                                     <server> <address>
 
-  $ nova floating-ip-associate tutorial1 149.165.158.107
+  $ nova floating-ip-associate $USER-tutorial1 149.165.158.107
 
 
+Access to VM Instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* We login to the VM instance we just created using SSH.::
+
+    $ ssh -i ~/.ssh/$USER-key ubuntu@[IP ADDRESS]
+
+* To find out the ``[IP ADDRESS]``, use ``nova list`` command::
+
+          $ nova list
+          +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
+          | ID                                   | Name                  | Status | Task State | Power State | Networks                             |
+          +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
+          | 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $USER-tutorial1       | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.1   |
+          ...
+
+* Use the internal IP address followed by ``int-net=`` in your VM instance. In
+  this example we have ``10.23.2.182``. You **have to use your IP address** to
+  gain access. So now, we run::
+    
+    $ ssh -i ~/.ssh/$USER-key ubuntu@10.23.2.182
+
+**REPLACE** the IP address ``10.23.2.182`` with one you have.
+
+You expect to see welcome message of your Ubuntu 14.04 VM instance.
+
+::
 
 
+  Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-46-generic x86_64)
 
+  * Documentation:  https://help.ubuntu.com/
 
+  System information as of Mon Apr  6 17:42:15 UTC 2015
+
+  System load:  0.0               Processes:           69
+  Usage of /:   5.2% of 19.65GB   Users logged in:     0
+  Memory usage: 5%                IP address for eth0: 10.23.2.182
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+  https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+  http://www.ubuntu.com/business/services/cloud
+
+  0 packages can be updated.
+  0 updates are security updates.
+
+  Last login: Mon Apr  6 17:42:15 2015 from 149.165.159.252
+  ubuntu@$USER-tutorial1:~$ 
+
+Now you are on the VM instance.
 
 .. _lab-openstack-1:
 
@@ -186,7 +237,7 @@ Lab - OpenStack - Launch an Instance
 
 * Launch a new medium instance with a CentOS image using a different
   key (call it ``openstack-ex1-key``). Name the CentOS instance
-  ``tutorial1-ex1`` and make sure both instances are running using the
+  ``$USER-tutorial1-ex1`` and make sure both instances are running using the
   ``nova list`` command.
 * Allocate a floating ip address to the instance that you just launched.
 

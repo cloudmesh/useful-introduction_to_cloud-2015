@@ -33,7 +33,10 @@
   
         <link rel="author" title="About these documents"
               href="../../../about.html"/>
-    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/> 
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)" href="../../bdossp_sp15/index.html"/>
+        <link rel="next" title="Overview Virtual Cluster (under preparation)" href="overview_vc.html"/>
+        <link rel="prev" title="OpenStack Heat" href="openstack_heat.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -59,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -74,12 +78,36 @@
         
           
           
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-openstack">Basics of OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#basics-of-cloudmesh">Basics of Cloudmesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#advanced-cloudmesh">Advanced Cloudmesh</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../bdossp_sp15/index.html#it-operations-automation-and-orchestration">IT Operations - Automation and Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#virtual-clusters">Virtual Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#other-technologies">Other Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#future">Future</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#to-be-organized-into-the-above">To be Organized into the above</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
@@ -117,6 +145,10 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Cloudmesh in Classes</a> &raquo;</li>
+      
+          <li><a href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a> &raquo;</li>
       
     <li>Ubuntu Juju</li>
       <li class="wy-breadcrumbs-aside">
@@ -227,7 +259,7 @@ services on Juju.</p>
 <div class="section" id="ip-tables-configuration">
 <h3>IP tables Configuration<a class="headerlink" href="#ip-tables-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Since Juju GUI is running with a virtual network in your VM instance, you need
-to configure <tt class="docutils literal"><span class="pre">iptables</span></tt>. Your Juju GUI will be served on your floating IP
+to configure <code class="docutils literal"><span class="pre">iptables</span></code>. Your Juju GUI will be served on your floating IP
 address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo iptables -t nat -A PREROUTING -p tcp -d 0.0.0.0 --dport 443 -j DNAT --to-destination [IP ADDRESS of Juju GUI]:443
 </pre></div>
@@ -236,7 +268,7 @@ address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>juju status
 </pre></div>
 </div>
-<p>You may find <tt class="docutils literal"><span class="pre">public-address</span></tt> under <tt class="docutils literal"><span class="pre">juju-gui</span></tt> section:</p>
+<p>You may find <code class="docutils literal"><span class="pre">public-address</span></code> under <code class="docutils literal"><span class="pre">juju-gui</span></code> section:</p>
 <div class="highlight-python"><div class="highlight"><pre>...
 services:
   juju-gui:
@@ -259,7 +291,7 @@ services:
 <div class="section" id="admin-password">
 <h3>Admin Password<a class="headerlink" href="#admin-password" title="Permalink to this headline">¶</a></h3>
 <p>To login Juju GUI, you need a username and a password.
-When you start a service with <tt class="docutils literal"><span class="pre">juju-quickstart</span></tt>, the username and the
+When you start a service with <code class="docutils literal"><span class="pre">juju-quickstart</span></code>, the username and the
 password will be printed out on your screen. Use them to login.</p>
 <p>An example of output:</p>
 <div class="highlight-python"><div class="highlight"><pre>...
@@ -300,6 +332,15 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview_vc.html" class="btn btn-neutral float-right" title="Overview Virtual Cluster (under preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="openstack_heat.html" class="btn btn-neutral" title="OpenStack Heat"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -309,7 +350,8 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -334,7 +376,7 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

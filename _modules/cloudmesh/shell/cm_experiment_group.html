@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.shell.cm_experiment_group &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../cloudmesh.html">cloudmesh</a> &raquo;</li>
+      
+    <li>cloudmesh.shell.cm_experiment_group</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.shell.cm_experiment_group</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="c"># from cloudmesh.experiment.model_group import ExperimentGroup</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.user.cm_user</span> <span class="kn">import</span> <span class="n">cm_user</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.config.cm_config</span> <span class="kn">import</span> <span class="n">cm_config</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.cm_mongo</span> <span class="kn">import</span> <span class="n">cm_mongo</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.shell.shellutil</span> <span class="kn">import</span> <span class="n">shell_commands_dict_output</span>
+<span class="kn">from</span> <span class="nn">cmd3.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="shell_command_experiment_group"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_experiment_group.shell_command_experiment_group">[docs]</a><span class="k">def</span> <span class="nf">shell_command_experiment_group</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ::</span>
+
+<span class="sd">      Usage:</span>
+<span class="sd">          group list [--format=FORMAT]</span>
+<span class="sd">          group create NAME</span>
+<span class="sd">          group remove NAME</span>
+<span class="sd">          group add item NAME TYPE VALUE</span>
+<span class="sd">          group remove item NAME TYPE VALUE</span>
+<span class="sd">          group show NAME [TYPE] [--format=FORMAT]</span>
+
+<span class="sd">      Arguments:</span>
+
+<span class="sd">          NAME    name of the group</span>
+<span class="sd">          TYPE    type of the item in the group, e.g. vm </span>
+<span class="sd">          VALUE   value of item to add, e.g. vm name</span>
+
+<span class="sd">      Options:</span>
+
+<span class="sd">          -v               verbose mode</span>
+<span class="sd">          --format=FORMAT  output format: table, json, csv</span>
+
+<span class="sd">      Description:</span>
+
+<span class="sd">         group list           lists the groups</span>
+<span class="sd">         group create         creates a new group</span>
+<span class="sd">         group remove         removes a group</span>
+<span class="sd">         group add item       addes an item of a type to a group</span>
+<span class="sd">         group remove item    removes an item of a type from a group</span>
+<span class="sd">         group show           lists items of a group</span>
+
+<span class="sd">      Examples:</span>
+<span class="sd">          group add item sample vm samplevm</span>
+<span class="sd">              add vm named samplevm to group sample</span>
+
+<span class="sd">          group show sample vm --format=json</span>
+<span class="sd">              list all VMs of group sample in json format</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">      Example:</span>
+
+<span class="sd">         group create experiment_1</span>
+<span class="sd">         vm start</span>
+<span class="sd">         last = vm label</span>
+<span class="sd">         group add experiment_1 vm last</span>
+
+<span class="sd">         group create experiment_2</span>
+<span class="sd">         vm start</span>
+<span class="sd">         last = vm info label  # prints the vm label /prefix + number</span>
+<span class="sd">         ipno = vm info ip # prints the ip of the last vm</span>
+<span class="sd">         ipno = vm info ip gvonlasz_1  # get ip of vm with label gvonlasz_1</span>
+
+<span class="sd">         group add expermiment_2 ip ipno</span>
+
+<span class="sd">         groups are just tuples</span>
+
+<span class="sd">         i can have multiple Kinds in the tuple</span>
+
+<span class="sd">      mongoengine</span>
+
+<span class="sd">      class groupObject</span>
+
+<span class="sd">          def add (... name, kind, attribute ...)</span>
+<span class="sd">          def printer ( ... kind, printfunction, name...)</span>
+<span class="sd">          def getter ( .... kind, name)</span>
+
+<span class="sd">      def getter ( .... kind, name ...)</span>
+
+<span class="sd">         if kind == &quot;vm&quot;:</span>
+<span class="sd">            vm = get vm from mongo</span>
+<span class="sd">            return vm</span>
+<span class="sd">         elif kind = &quot;image&quot;</span>
+<span class="sd">            iamge = get image from mongo</span>
+<span class="sd">            return iamge</span>
+<span class="sd">         ....</span>
+
+<span class="sd">      def vmPrinter ( .... vm ...)</span>
+
+<span class="sd">         print vm.ip</span>
+<span class="sd">         print vm.name</span>
+<span class="sd">         ....</span>
+
+<span class="sd">      def imagePrinter ( .... image ...)</span>
+
+<span class="sd">         print image.size</span>
+<span class="sd">         print image.name</span>
+<span class="sd">         ....</span>
+
+
+
+<span class="sd">      g = groupObject()</span>
+<span class="sd">      g.printer(&quot;vm&quot;, cmPrinter)</span>
+<span class="sd">      g.printer(&quot;image&quot;, imagePrinter)</span>
+
+
+
+<span class="sd">       </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># Changed the scope of this import.</span>
+    <span class="kn">from</span> <span class="nn">cloudmesh.experiment.group</span> <span class="kn">import</span> <span class="n">GroupManagement</span>
+    <span class="kn">from</span> <span class="nn">cloudmesh.experiment.group_usage</span> <span class="kn">import</span> <span class="n">add_item_to_group</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;NAME&quot;</span><span class="p">]</span>
+    <span class="n">type_</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;TYPE&quot;</span><span class="p">]</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;VALUE&quot;</span><span class="p">]</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+    <span class="c"># print username</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">cm_user</span><span class="p">()</span>
+
+    <span class="n">GroupManage</span> <span class="o">=</span> <span class="n">GroupManagement</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    if arguments[&quot;info&quot;]:</span>
+
+<span class="sd">        print(&quot;Default experiment group:&quot;, user.get_defaults(username)[&quot;group&quot;])</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;list&quot;</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">GroupManage</span><span class="o">.</span><span class="n">get_groups_names_list</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">d</span><span class="p">[</span><span class="s">&quot;groups&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]:</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="n">shell_commands_dict_output</span><span class="p">(</span><span class="n">username</span><span class="p">,</span>
+                                   <span class="n">d</span><span class="p">,</span>
+                                   <span class="n">print_format</span><span class="o">=</span><span class="n">p_format</span><span class="p">,</span>
+                                   <span class="n">table_format</span><span class="o">=</span><span class="s">&quot;key_list&quot;</span><span class="p">,</span>
+                                   <span class="n">indexed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;create&quot;</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">GroupManage</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;group {0} created&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+    <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;remove&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;item&#39;</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">GroupManage</span><span class="o">.</span><span class="n">delete_group</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;group {0} removed&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+    <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;add&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;item&#39;</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">add_item_to_group</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">refresh</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;item &#39;{0}&#39; of type &#39;{1}&#39; added to group &#39;{2}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">value</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+
+    <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;show&#39;</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">GroupManage</span><span class="o">.</span><span class="n">list_items_of_group</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">_type</span><span class="o">=</span><span class="n">type_</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]:</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--format&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="n">shell_commands_dict_output</span><span class="p">(</span><span class="n">username</span><span class="p">,</span>
+                                   <span class="n">res</span><span class="p">,</span>
+                                   <span class="n">print_format</span><span class="o">=</span><span class="n">p_format</span><span class="p">,</span>
+                                   <span class="n">table_format</span><span class="o">=</span><span class="s">&quot;key_list&quot;</span><span class="p">,</span>
+                                   <span class="n">indexed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&quot;remove&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">arguments</span><span class="p">[</span><span class="s">&#39;item&#39;</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">GroupManage</span><span class="o">.</span><span class="n">delete_item_of_group</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">err</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;item &#39;{0}&#39; of type &#39;{1}&#39; removed from group &#39;{2}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">value</span><span class="p">,</span> <span class="n">type_</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.shell.html#cloudmesh.shell.cm_experiment_group.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c"># cmd3_call(shell_command_experiment_group)</span>
+    <span class="k">pass</span>
+
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
