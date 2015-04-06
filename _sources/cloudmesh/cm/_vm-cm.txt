@@ -104,10 +104,10 @@ set default values for an image or a flavor.
 
 .. code:: python
 
-    cm "cloud set flavor india --name=m1.small"
+    cm "cloud set flavor india --flavor=m1.small"
 .. code:: python
 
-    cm "cloud set image india --name=futuregrid/ubuntu-14.04"
+    cm "cloud set image india --image=futuregrid/ubuntu-14.04"
 Get Flavors or Images
 ---------------------
 
@@ -185,7 +185,7 @@ cloud
 
 .. code:: python
 
-    cm "default cloud india"
+    cm "cloud set default india"
 to select a cloud
 
 .. code:: python
@@ -277,8 +277,8 @@ for example, assign a public ip to a VM named test\_1 on cloud india:
     cm "vm start --cloud=india"
 .. code:: python
 
-    cm "vm ip assign {vmname} --cloud=india"
-``cm "vm ip assign test_1 --cloud=india"``
+    cm "vm ip {vmname} --cloud=india"
+``cm "vm ip test_1 --cloud=india"``
 
 Then you can login to this VM by(note here you need to provide the login
 name for your VM, it varys depend on the image you use while you start

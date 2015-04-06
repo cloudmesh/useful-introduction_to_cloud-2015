@@ -84,7 +84,7 @@ in the yaml file.
 .. note:: If you see here TBD you need to edit the
 ``~/.cloudmesh/cloudmesh.yaml`` file to add first and lastname.
 
-To obtain the futuresystems username use the command ``user.username()``
+To obtain the futuregrid username use the command ``user.username()``
 
 API for cloudmesh\_server.yaml
 ------------------------------

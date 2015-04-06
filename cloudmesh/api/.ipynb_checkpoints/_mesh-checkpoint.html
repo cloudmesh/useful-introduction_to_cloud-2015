@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cloudmesh Mesh &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Cloudmesh Mesh</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../../_sources/cloudmesh/api/.ipynb_checkpoints/_mesh-checkpoint.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cloudmesh-mesh">
+<h1>Cloudmesh Mesh<a class="headerlink" href="#cloudmesh-mesh" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">this example is not yet fully completed</p>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cloudmesh</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">username</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">load</span><span class="p">()</span><span class="o">.</span><span class="n">username</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>One of the most convenient methods to interact in python is to use the
+cloudmesh mesh interface. To activate it use the mesh command. We are
+currently only supporting to run cloudmesh with the mongo db activated.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span> <span class="o">=</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="s">&quot;mongo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After activation we can find out more information with th einfo command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<pre class="literal-block">
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:107:   INFO - 107: The cloud sierra has no admin credential
+INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:107: The cloud sierra has no admin credential
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:159:   INFO - 159: Loading User Credentials
+INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:159: Loading User Credentials
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:182:  DEBUG - 194 - GET CRED {'OS_VERSION': 'grizzly', 'OS_AUTH_URL': '<a class="reference external" href="https://s77r.idp.sdsc.futuregrid.org:5000/v2.0">https://s77r.idp.sdsc.futuregrid.org:5000/v2.0</a>', 'OS_USERNAME': 'gvonlasz', 'OS_PASSWORD': '<strong>****</strong>', 'OS_CACERT': '/Users/flat/.cloudmesh/sierra-cacert.pem', 'OS_TENANT_NAME': 'fg82'}
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:194 - GET CRED {'OS_VERSION': 'grizzly', 'OS_AUTH_URL': '<a class="reference external" href="https://s77r.idp.sdsc.futuregrid.org:5000/v2.0">https://s77r.idp.sdsc.futuregrid.org:5000/v2.0</a>', 'OS_USERNAME': 'gvonlasz', 'OS_PASSWORD': '<strong>****</strong>', 'OS_CACERT': '/Users/flat/.cloudmesh/sierra-cacert.pem', 'OS_TENANT_NAME': 'fg82'}
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:215:  DEBUG - 215: URL <a class="reference external" href="https://s77r.idp.sdsc.futuregrid.org:5000/v2.0/tokens">https://s77r.idp.sdsc.futuregrid.org:5000/v2.0/tokens</a>
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:215: URL <a class="reference external" href="https://s77r.idp.sdsc.futuregrid.org:5000/v2.0/tokens">https://s77r.idp.sdsc.futuregrid.org:5000/v2.0/tokens</a>
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:222:  DEBUG - 222:PARAM {&quot;auth&quot;: {&quot;tenantName&quot;: &quot;fg82&quot;, &quot;passwordCredentials&quot;: {&quot;username&quot;: &quot;gvonlasz&quot;, &quot;password&quot;: &quot;<strong>****</strong>&quot;}}}
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:222:PARAM {&quot;auth&quot;: {&quot;tenantName&quot;: &quot;fg82&quot;, &quot;passwordCredentials&quot;: {&quot;username&quot;: &quot;gvonlasz&quot;, &quot;password&quot;: &quot;<strong>****</strong>&quot;}}}
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:223:  DEBUG - 223:HEADER {'content-type': 'application/json'}
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:223:HEADER {'content-type': 'application/json'}
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:224:  DEBUG - 224:VERIFY /Users/flat/.cloudmesh/sierra-cacert.pem
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:224:VERIFY /Users/flat/.cloudmesh/sierra-cacert.pem
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:167:   INFO - 167: Loading Admin Credentials
+INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:167: Loading Admin Credentials
+</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># ######################################################################</span>
+<span class="c"># CLOUD MESH INFO</span>
+<span class="c"># ######################################################################</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:519:  DEBUG - 519: AUTH URL http://198.202.120.83:8774/v1.1/1ae6813a3a6d4cebbeb1912f6d139ad0/images/detail
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:519: AUTH URL http://198.202.120.83:8774/v1.1/1ae6813a3a6d4cebbeb1912f6d139ad0/images/detail
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:524:  DEBUG - 524: Response &lt;Response [200]&gt;
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:524: Response &lt;Response [200]&gt;
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:519:  DEBUG - 519: AUTH URL http://198.202.120.83:8774/v1.1/1ae6813a3a6d4cebbeb1912f6d139ad0/flavors/detail
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:519: AUTH URL http://198.202.120.83:8774/v1.1/1ae6813a3a6d4cebbeb1912f6d139ad0/flavors/detail
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:524:  DEBUG - 524: Response &lt;Response [200]&gt;
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:524: Response &lt;Response [200]&gt;
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:519:  DEBUG - 519: AUTH URL http://198.202.120.83:8774/v1.1/1ae6813a3a6d4cebbeb1912f6d139ad0/servers/detail
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:519: AUTH URL http://198.202.120.83:8774/v1.1/1ae6813a3a6d4cebbeb1912f6d139ad0/servers/detail
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:524:  DEBUG - 524: Response &lt;Response [200]&gt;
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:524: Response &lt;Response [200]&gt;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre># ######################################################################
+# Info sierra
+# ######################################################################
+Label:
+</pre></div>
+</div>
+<pre class="literal-block">
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:107:   INFO - 107: The cloud hp has no admin credential
+INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:107: The cloud hp has no admin credential
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:159:   INFO - 159: Loading User Credentials
+INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:159: Loading User Credentials
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:182:  DEBUG - 194 - GET CRED {'OS_PASSWORD': '<strong>****</strong>', 'OS_AUTH_URL': '<a class="reference external" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</a>', 'OS_USERNAME': 'TBD', 'OS_CACERT': 'None', 'OS_TENANT_NAME': 'FutureGrid'}
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:194 - GET CRED {'OS_PASSWORD': '<strong>****</strong>', 'OS_AUTH_URL': '<a class="reference external" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/</a>', 'OS_USERNAME': 'TBD', 'OS_CACERT': 'None', 'OS_TENANT_NAME': 'FutureGrid'}
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:215:  DEBUG - 215: URL <a class="reference external" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0//tokens">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0//tokens</a>
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:215: URL <a class="reference external" href="https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0//tokens">https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0//tokens</a>
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:222:  DEBUG - 222:PARAM {&quot;auth&quot;: {&quot;tenantName&quot;: &quot;FutureGrid&quot;, &quot;passwordCredentials&quot;: {&quot;username&quot;: &quot;TBD&quot;, &quot;password&quot;: &quot;<strong>****</strong>&quot;}}}
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:222:PARAM {&quot;auth&quot;: {&quot;tenantName&quot;: &quot;FutureGrid&quot;, &quot;passwordCredentials&quot;: {&quot;username&quot;: &quot;TBD&quot;, &quot;password&quot;: &quot;<strong>****</strong>&quot;}}}
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:223:  DEBUG - 223:HEADER {'content-type': 'application/json'}
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:223:HEADER {'content-type': 'application/json'}
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:224:  DEBUG - 224:VERIFY False
+DEBUG:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:224:VERIFY False
+CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:167:   INFO - 167: Loading Admin Credentials
+INFO:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc:167: Loading Admin Credentials
+</pre>
+<div class="highlight-python"><div class="highlight"><pre> sierra
+Type: openstack
+Flavors: 6
+Servers: 0
+Images: 29
+Security Groups: 0
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>CM ... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mesh.pyc:222:  ERROR - &#39;access&#39;
+ERROR:... site/cloudmesh-1.0-py2.7.egg/cloudmesh/cm_mesh.pyc:&#39;access&#39;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># ######################################################################</span>
+<span class="c"># Info hp</span>
+<span class="c"># ######################################################################</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-6-a24ffb702dc4&gt; in &lt;module&gt;()
+----&gt; 1 mesh.activate(username)
+
+
+AttributeError: cm_mesh instance has no attribute &#39;activate&#39;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">mesh</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-14-6a9ebadaeb63&gt; in &lt;module&gt;()
+----&gt; 1 mesh.refresh()
+
+
+TypeError: refresh() takes at least 2 arguments (1 given)
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

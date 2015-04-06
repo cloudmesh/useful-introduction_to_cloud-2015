@@ -1,8 +1,0 @@
-pbs
-===
-
-.. toctree::
-   :maxdepth: 4
-
-   cloudmesh_pbs
-   setup

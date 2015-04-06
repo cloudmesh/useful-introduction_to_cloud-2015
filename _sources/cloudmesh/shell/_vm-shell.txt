@@ -162,7 +162,7 @@ cloud india
 
 .. code:: python
 
-    print cloudmesh.shell("vm start --cloud=india --image=futuresystems/ubuntu-14.04 --flavor=m1.small")
+    print cloudmesh.shell("vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small")
 
 .. parsed-literal::
 
@@ -179,7 +179,7 @@ cloud india
     Store time: 0.0661771297455
     
     # ######################################################################
-    # Starting vm->gvonlasz_14 on cloud->india using image->futuresystems/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
+    # Starting vm->gvonlasz_14 on cloud->india using image->futuregrid/ubuntu-14.04, flavor->m1.small, key->gvonlasz_flat-key
     # ######################################################################
     job status: PENDING
     
@@ -216,7 +216,7 @@ default values for an image or a flavor.
 
 .. code:: python
 
-    print cloudmesh.shell("cloud set image india --image=futuresystems/ubuntu-14.04")
+    print cloudmesh.shell("cloud set image india --image=futuregrid/ubuntu-14.04")
 
 .. parsed-literal::
 
@@ -228,7 +228,7 @@ default values for an image or a flavor.
     Refreshing gvonlasz images india ->
     Refresh time: 0.689934015274
     Store time: 0.133810043335
-    [32m'futuresystems/ubuntu-14.04' is selected[0m
+    [32m'futuregrid/ubuntu-14.04' is selected[0m
     
 
 
@@ -296,7 +296,7 @@ Available options are:
 
 .. code:: python
 
-    cloudmesh.shell("vm start --cloud=india --flavor=m1.medium --image=futuresystems/ubuntu-12.04")
+    cloudmesh.shell("vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04")
 Set a default cloud
 ~~~~~~~~~~~~~~~~~~~
 
