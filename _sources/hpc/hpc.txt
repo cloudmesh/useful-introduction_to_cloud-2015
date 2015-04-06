@@ -197,7 +197,7 @@ Filesystem Layout
 .. _t-storage-mountpoint:
 
 .. exceltable:: Storage mountpoints on the Clusters
-   :file: ../iu-cluster-details.xls
+   :file: fg-cluster-details.xls
    :header: 1
    :selection: A1:G18
    :sheet: fg-storage

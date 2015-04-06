@@ -148,18 +148,16 @@ Using ``pip`` to install packages
 In order to install package from PyPI, use the ``pip`` command.
 We can search for PyPI for packages::
 
-  $ pip search --trusted-host pypi.python.org autopep8 pylint
+  $ pip search autopep8 pylint
 
 It appears that the top two results are what we want so install them::
 
-  $ pip install --trusted-host pypi.python.org autopep8 pylint
+  $ pip install autopep8 pylint
 
 This will cause ``pip`` to download the packages from PyPI, extract
 them, check their dependencies and install those as needed, then
 install the requested packages.
 
-.. note:: You can skip '--trusted-host pypi.python.org' option if you have a
-        patch on urllib3 on Python 2.7.9.
 
 Using ``autopep8``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

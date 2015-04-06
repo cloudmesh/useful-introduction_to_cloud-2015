@@ -56,7 +56,7 @@ our bare metal provisioning management.  features into this system.
    :width: 80%
    :align: center
       
-   **Figure:** Launching predefined configurations on FutureSystems
+   **Figure:** Launching predefined configurations on FutureGrid
 
 .. figure:: ../../images/provisioning_policy.png
    :width: 80%
@@ -72,7 +72,7 @@ queues to monitor queue based resource reservation for Hadoop jobs (or
 and other HPC job) is conveniently provided in cloudmesh. Launchers
 (under development) can be used to easily interface with the systems
 and conduct customized job creation. Via MyHadoop for example it is
-possible to start Hadoop jobs in queues on FutureSystems.
+possible to start Hadoop jobs in queues on FutureGrid.
 
 .. figure:: ../../images/qinfo.png
    :width: 80%
@@ -92,7 +92,7 @@ Status
 The status of the system will be visible in a status window. Here we
 just show a view of the HPC resources. We already have developed a
 cloud monitoring system that we intend to integrate soon. For
-FutureSystems this system is already deployed via the FG portal.
+FutureGrid this system is already deployed via the FG portal.
 
 .. figure:: ../../images/status_hpc.png
    :width: 80%

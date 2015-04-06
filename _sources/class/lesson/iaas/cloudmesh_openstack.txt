@@ -1,32 +1,40 @@
-Cloudmesh OpenStack
+Cloudmesh OpenStack (under preparation)
 ======================================================================
 
 Overview
 ----------------------------------------------------------------------
 
-Cloudmesh can be installed on a virtual machine running on India. THis
-is convenient for thouse that do not want or cannot run cloudmesh on their
-local machine.
-
-The inforamtion for this is provided in Section
-:ref:`s-cloudmesh-vm-quickstart` of the manual pages
+This lesson will introduce you to a very important topic to ...
 
 .. tip:: Duration: 1 hour
 
 Prerequisite
 ----------------------------------------------------------------------
 
-In order to conduct this lesson you need
+In order to conduct this lesson you should have knowledge of
 
-* a Futuresystems account
-* ssh access to india.futuresystems.org
+* How to .... . Described in lesson
+* Lesson ....
+
+Description
+----------------------------------------------------------------------
+
+put the detailed dscription here
+
   
 Exercises
 ----------------------------------------------------------------------
 
-Exercise CM.OPENSTACK.1
-^^^^^^^^^^^^^^^^^^^^^^^
+Exercise I
+^^^^^^^^^^^^^^^^^^
 
-Set up cloudmesh on a virtual machine on india.
+Exercise II
+^^^^^^^^^^^^^^^^^^
 
+Next Step
+-----------
+
+In the next page, ...
+
+`Link here <link>`_
 
