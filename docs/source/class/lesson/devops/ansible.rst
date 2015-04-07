@@ -65,11 +65,3 @@ On each instance:
      Vary: Accept-Encoding
      Content-Type: text/html
 
-
-Next Step
------------
-
-In the next page, ...
-
-`Link here <link>`_
-
