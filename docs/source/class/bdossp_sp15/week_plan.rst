@@ -248,7 +248,7 @@ Microsoft Azure.
      - 03/30
      - 
    * - **OpenStack for Beginners**
-     - `21 mins <https://mix.office.com/watch/qohooyyk3wa1>`_
+     - `27 mins <https://mix.office.com/watch/1r7zifdtjoa6j>`_
      -
      -
      - 03/30
