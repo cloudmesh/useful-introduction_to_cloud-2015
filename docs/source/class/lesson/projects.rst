@@ -9,7 +9,7 @@ Final Project Guidelines (Draft)
 Sample Projects
 -------------------------------------------------------------------------------
 
-.. include:: project_examples
+.. include:: project_examples.rst
 
 Important Dates
 -------------------------------------------------------------------------------

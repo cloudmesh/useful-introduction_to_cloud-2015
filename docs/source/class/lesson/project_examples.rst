@@ -9,14 +9,13 @@ Project I: Daily Variation of Barometric Pressure
 * Description: Daily variation of barometric pressure (maximum minus minimum
   for each day) in inches, for the past 12 months. For each of the hand-picked
   major cities, the 365 daily ranges for that city are histogrammed.
-
 * Dataset: `Quality Controlled Local Climatological Data
-<http://cdo.ncdc.noaa.gov/qclcd/QCLCD?prior=N>`_
+   <http://cdo.ncdc.noaa.gov/qclcd/QCLCD?prior=N>`_
 * Technologies: 
   - IPython Notebook 2.0 (Pandas, Numpy, matplotlib)
   - d3.js
 
-.. image:: ../../images/projects
+.. figure:: ../../images/projects.png
 
    GeoSparkGrams of Daily Barometric Volatility*
 
