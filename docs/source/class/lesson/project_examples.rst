@@ -15,7 +15,7 @@ Project I: Daily Variation of Barometric Pressure
   - IPython Notebook 2.0 (Pandas, Numpy, matplotlib)
   - d3.js
 
-.. figure:: ../../images/projects.png
+.. figure:: ../../images/projects/GeoSparkGrams.png
 
    GeoSparkGrams of Daily Barometric Volatility*
 
