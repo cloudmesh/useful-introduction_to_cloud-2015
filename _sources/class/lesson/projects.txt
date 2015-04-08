@@ -6,9 +6,6 @@ Final Project Guidelines (Draft)
    .. contents::
       :local:
 
-Sample Projects
--------------------------------------------------------------------------------
-
 .. include:: project_examples.rst
 
 Important Dates
