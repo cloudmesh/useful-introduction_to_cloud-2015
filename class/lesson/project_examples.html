@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Restructured Text &mdash; my Cloudmesh Learning documentation</title>
+  <title>Sample Projects &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -35,8 +35,8 @@
               href="../../about.html"/>
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Lessons" href="../lessons.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="rst.html"/>
-        <link rel="prev" title="Report" href="report.html"/> 
+        <link rel="next" title="Final Project Guidelines (Draft)" href="projects.html"/>
+        <link rel="prev" title="Best Practices for Preservation of IaaS and Data in FutureSystems" href="preservation.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -105,11 +105,11 @@
 <li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying OpenMPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="preservation.html">Best Practices for Preservation of IaaS and Data in FutureSystems</a></li>
-<li class="toctree-l3"><a class="reference internal" href="project_examples.html">Sample Projects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Sample Projects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="projects.html">Final Project Guidelines (Draft)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyton_matlab.html">Calling Python from matlab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="report.html">Report</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Restructured Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">Restructured Text</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../rst2.html">Sphinx Quick Reference Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="shell-access.html">Shell Access</a></li>
@@ -160,10 +160,10 @@
       
           <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       
-    <li>Restructured Text</li>
+    <li>Sample Projects</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/class/lesson/restructuredtext.txt" rel="nofollow"> View page source</a>
+          <a href="../../_sources/class/lesson/project_examples.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -171,38 +171,27 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="restructured-text">
-<h1>Restructured Text<a class="headerlink" href="#restructured-text" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sample-projects">
+<span id="ref-class-lesson-project-examples"></span><h1>Sample Projects<a class="headerlink" href="#sample-projects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-i-daily-variation-of-barometric-pressure">
+<h2>Project I: Daily Variation of Barometric Pressure<a class="headerlink" href="#project-i-daily-variation-of-barometric-pressure" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>find online resource</li>
-<li>find cheat cheat</li>
+<li>Description: Daily variation of barometric pressure (maximum minus minimum
+for each day) in inches, for the past 12 months. For each of the hand-picked
+major cities, the 365 daily ranges for that city are histogrammed.</li>
+<li>Dataset: <a href="#id1"><span class="problematic" id="id2">`</span></a>Quality Controlled Local Climatological Data</li>
 </ul>
-<div class="section" id="rst-for-deployment-instructions">
-<h2>RST for deployment instructions<a class="headerlink" href="#rst-for-deployment-instructions" title="Permalink to this headline">¶</a></h2>
-<p>write about that we do not need 10000 lines of instructions. See Gregors earlier mail on the topic</p>
-<p>Give example on what students need to deliver</p>
-</div>
-<div class="section" id="rst-for-report-generation">
-<h2>RST for Report Generation<a class="headerlink" href="#rst-for-report-generation" title="Permalink to this headline">¶</a></h2>
-<p>some projects may have simple report generation needs and are fulfilled by RST</p>
-</div>
-<div class="section" id="rst-faq">
-<h2>RST FAQ<a class="headerlink" href="#rst-faq" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="can-i-edit-rst-in-word">
-<h3>Can I edit RST in word?<a class="headerlink" href="#can-i-edit-rst-in-word" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="can-i-use-wordpad">
-<h3>Can I use wordpad?<a class="headerlink" href="#can-i-use-wordpad" title="Permalink to this headline">¶</a></h3>
-<p>No. Wordpad introduces in many cases different line end characters. We do not recommend using it</p>
-</div>
-<div class="section" id="which-editors-are-the-best">
-<h3>Which editors are the best?<a class="headerlink" href="#which-editors-are-the-best" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Emacs, aquaemacs (OSX)</li>
-<li>vi/vim</li>
-<li>rsted (can be used online, or installed locally)</li>
+<p>&lt;<a class="reference external" href="http://cdo.ncdc.noaa.gov/qclcd/QCLCD?prior=N">http://cdo.ncdc.noaa.gov/qclcd/QCLCD?prior=N</a>&gt;`_
+* Technologies:</p>
+<blockquote>
+<div><ul class="simple">
+<li>IPython Notebook 2.0 (Pandas, Numpy, matplotlib)</li>
+<li>d3.js</li>
 </ul>
-</div>
+</div></blockquote>
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>Source:
+- <a class="reference external" href="http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb">http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb</a>
+- <a class="reference external" href="http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html">http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html</a></p>
 </div>
 </div>
 
@@ -212,10 +201,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rst.html" class="btn btn-neutral float-right" title="&lt;no title&gt;">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="projects.html" class="btn btn-neutral float-right" title="Final Project Guidelines (Draft)">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="report.html" class="btn btn-neutral" title="Report"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="preservation.html" class="btn btn-neutral" title="Best Practices for Preservation of IaaS and Data in FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
