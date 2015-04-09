@@ -186,52 +186,37 @@ if necessary. Once this is the case you can login to it with::
 
 
 
-Preparation of the VM
+Cloudmesh Installation
 ----------------------------------------------------------------------
 
-Next you have to update the operating system while logging into 
-the VM::
+Systems Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  $ sudo apt-get update
-  $ sudo apt-get upgrade
-  $ sudo apt-get install git python-virtualenv
+Installation of cloudmesh can be complicated. We provide a oneline
+script to install::
 
-To obtain cloudmesh you need to clone it from github::
+  $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | venv=$HOME/ENV bash
 
-  $ git clone https://github.com/cloudmesh/cloudmesh.git
+.. note:: This may take several minutes.
+
+Please see :ref:`ref-cloudmesh-quickstart-system-install-curl` for
+details on what this does.
+
+You now need to activate the virtualenv created::
+
+  $ source $HOME/ENV/bin/activate
 
 
 Cloudmesh Setup
 ----------------------------------------------------------------------
 
-We recommend that you run virtualenv in python which you can 
-enable with::
-
-  $ virtualenv  --no-site-packages ~/ENV
-  $ source ~/ENV/bin/activate
-  $ pip install --upgrade pip
-
-The last command will ensure the pip version is latest in this virtual env.
-  
-To start the installation of cloudmesh we first need to install a 
-number of system packages with::
-
-  $ cd cloudmesh
-  $ ./install system
-
-Now let us install cloudmesh into this virtualenv::
-
-  $ pip install cloudmesh
-  $ ./install new --force
-
-The second command will create a number of template yaml files in the folder::
-
-  $ ~/.cloudmesh
-
-Now we need to populate the cloudmesh.yaml file with your actual cloud credentials. 
-Cloudmesh provides tools for you to retrieve your futuresystems cloud credential 
-and configure the cloudmesh.yaml file properly. Before we can use it however we 
-have to create a key that we upload to the FutureSystems portal::
+As part of its installation, cloudmesh create a ``~/.cloudmesh``
+directory with several yaml files. Now we need to populate the
+cloudmesh.yaml file with your actual cloud credentials.  Cloudmesh
+provides tools for you to retrieve your futuresystems cloud credential
+and configure the cloudmesh.yaml file properly. Before we can use it
+however we have to create a key that we upload to the FutureSystems
+portal::
 
  $ export PORTALNAME=<put your portal name here>
  $ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
