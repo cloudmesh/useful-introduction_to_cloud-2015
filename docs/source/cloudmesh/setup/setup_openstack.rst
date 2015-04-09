@@ -85,6 +85,20 @@ We summarize the following steps::
   $ ssh $PORTALNAME@india.futuresystems.org
   india$ module load openstack
   india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+
+.. important::
+
+   If you are following this as part of a class, make sure you source
+   the appropriate ``rc`` file **after** to the ``openrc.sh``.
+   Check for the available files like so::
+
+     $ ls .cloudmesh/clouds/india/juno/
+     cacert.pem  fg455  fg465  fg82  openrc.sh
+
+   If you are in the ``FG465`` course, load the appropriate settings::
+
+     $ source .cloudmesh/clouds/india/juno/fg465
+
   india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 This assumes such a key exists in the location::
