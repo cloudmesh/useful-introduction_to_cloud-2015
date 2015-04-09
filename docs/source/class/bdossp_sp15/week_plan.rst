@@ -89,7 +89,7 @@ utilities with various exercises.
      - `30 mins <../lesson/git.html>`_
      - `10 mins <../lesson/git.html#exercise>`_
      - 03/23
-     - 03/27 
+     - 04/03 
 
 
 
@@ -108,25 +108,25 @@ utilities with various exercises.
      - `10 mins <../../accounts/ssh.html#s-using-ssh>`_
      - see (a) below
      - 03/23
-     - 03/27 see (a) below
+     - 04/03 see (a) below
    * - **Account Creation**
      - `12 mins <https://www.youtube.com/watch?v=X6zeVEALzTk>`_
      - `10 mins <../../accounts/accounts.html>`_
      - see (a) below
      - 03/23
-     - 03/27 see (a) below
+     - 04/03 see (a) below
    * - **Remote Login**                                                                             
      - `6 mins <https://mix.office.com/watch/eddgjmovoty0>`_ 
      - `10 mins <../lesson/system/futuresystemsuse.html#remote-login>`_
      - see (a) below
      - 03/23
-     - 03/27 see (a) below
+     - 04/03 see (a) below
    * - **Putty for Windows**
      - `11 mins <https://mix.office.com/watch/9z30n7rs67x0>`_
      - `10 mins <../lesson/system/futuresystemsuse.html#putty-under-preparation>`_
      - see (a) below
      - 03/23
-     - 03/27 see (a) below
+     - 04/03 see (a) below
 
 * (a) Create an account on the FutureSystems Portal, upload your ssh
   key and log into india. Dependent on your OS you may or may not need
@@ -158,28 +158,28 @@ utilities with various exercises.
        `10 mins <../lesson/linux/shell.html#id11>`_,
        `10 mins <../lesson/linux/shell.html#id14>`_
      - 03/23
-     - 03/27 all 4 Labs 
+     - 04/03 all 4 Labs 
    * - **Editors**                            
         - Emacs, vi, and nano                                           
      - `5 mins <https://www.youtube.com/watch?v=yHW_qzOzPa0&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=3>`_
      - `30 mins <../lesson/linux/editors.html>`_
      - see (b) below
      - 03/23
-     - 03/27 see (b) below
+     - 04/03 see (b) below
    * - **Python**                             
         - virtualenv, Pypi                                                                                
      - `27 mins <https://www.youtube.com/watch?v=e_RuGr1dL0c&index=7&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
      - `1 hour <../lesson/linux/python.html>`_
      - `30 mins <../lesson/linux/python.html#exercises>`_
      - 03/23
-     - 03/27
+     - 04/03
    * - **Package Managers**                   
         - yum, apt-get, and brew                                                      
      - `3 mins <https://www.youtube.com/watch?v=Onn9SKdUDUc&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=4>`_
      - `10 mins <../lesson/linux/packagemanagement.html>`_
      - see (c) below
      - 03/23
-     - 03/27 see (c) below
+     - 04/03 see (c) below
    * - **Advanced SSH**
         - SSH Config and Tunnel
      - `3 mins <https://www.youtube.com/watch?v=eYanElmtqMo&index=6&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp>`_
@@ -187,13 +187,13 @@ utilities with various exercises.
      - `5 mins <../lesson/linux/advancedssh.html#exercise-i>`_, 
        `5 mins <../lesson/linux/advancedssh.html#exercise-ii>`_
      - 03/23
-     - 03/27 both Labs
+     - 04/03 both Labs
    * - **Modules**
      - `3 mins <https://www.youtube.com/watch?v=0mBERd57pZ8&list=PLLO4AVszo1SOZF0tvCxLfS4AwkAJ1QKyp&index=6>`_
      - `10 mins <../ lesson/linux/modules.html>`_
      - `5 mins <../lesson/linux/modules.html#exercises>`_
      - 03/23
-     - 03/27
+     - 04/03
 
 
 * (b) Find an editor that you will be useing to do your programming
@@ -258,13 +258,13 @@ Microsoft Azure.
      - `1 hour <../lesson/iaas/openstack.html>`_
      - `30 mins <../lesson/iaas/openstack.html#exercises>`_
      - 03/30
-     - 04/03
+     - 04/10
    * - -- Web Dashboard (Horizon)
      - 
      - `15 mins <../lesson/iaas/openstack_horizon.html>`_
      - `15 mins <../lesson/iaas/openstack_horizon.html#exercises>`_
      - 03/30
-     - 04/03
+     - 04/10
    * - **Storage (Swift)**
      - `3 mins <https://mix.office.com/watch/w3rko4itecgc>`_
      - `10 mins <../lesson/iaas/openstack.html#swift-storage>`_
@@ -396,26 +396,26 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - `30 mins <../../cloudmesh/setup/setup_openstack.html>`_
      - follow the text and video
      - 04/06
-     - 04/10
+     - 04/17
    * - **Command Line Tools (CLI)**
      - `12 mins <http://www.youtube.com/watch?v=hdq-t-ggkXA>`_
      - `30 mins <../../cloudmesh/shell/index.html>`_
      - use the previously created VM and follow text and video
        use `cm help` and review man pages
      - 04/06
-     - 04/10
+     - 04/17
    * - **Web Interface (GUI)**
      - `16 mins <http://www.youtube.com/watch?v=l_P4G85rysA>`_
      - `30 mins <../../cloudmesh/gui/index.html>`_
      - `Excersise 4: 20 mins <../../cloudmesh/api/exercises.html#exercise-4>`_ (optional)
      - 04/06
-     - 04/10
+     - 04/17
    * - **Python APIs**
      - `15 mins <http://www.youtube.com/watch?v=xOL_-Sfh9MA>`_ 
      - `30 mins <../../cloudmesh/api/index.html>`_
      - `Excersise 1 (10 mins) <../../cloudmesh/api/exercises.html#exercise-1>`_, `Excersise 2 (10 mins) <../../cloudmesh/api/exercises.html#exercise-2>`_
      - 04/06
-     - 04/10
+     - 04/17
    * - **IPython on Cloudmesh** (optional)
      - `15 mins <http://www.youtube.com/watch?v=1dn_av-zC00>`_
      - `20 mins <../../cloudmesh/ipython.html>`_
@@ -442,14 +442,14 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - `5 mins <http://cloudmesh.github.io/cmd3/manual.html#generating-independent-packages>`_
      - `1 hour <../../cloudmesh/cm/cmd3.html#exercise-1>`_
      - 04/06 
-     - 04/10
+     - 04/17
    * - **Virtual Clusters with Cloudmesh**
         - SSH Connections between nodes, Host Configuration
      - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
      - `20 mins <../../cloudmesh/cm/_cm-cluster.html>`_
      - see text and video
      - 04/06
-     - 04/10
+     - 04/17
 
 ..   * - **Introduction and Overview**
      - Not yet available
@@ -493,7 +493,7 @@ IT Operations - Automation and Orchestration (under preparation)
      - :ref:`1.5 hours <ref-class-lesson-devops-ansible>`
      - :ref:`30 mins <ref-class-lesson-devops-ansible-lab>`
      - 04/13
-     - 04/17
+     - n/a
    * - SaltStack
      -
      -
@@ -505,7 +505,7 @@ IT Operations - Automation and Orchestration (under preparation)
      - :ref:`1 hour <ref-class-lesson-devops-puppet>`
      - :ref:`20 mins <ref-class-lesson-devops-puppet-exercises>`
      - 04/13
-     - 04/17
+     - n/a
    * - Chef
      - `35 mins <https://mix.office.com/watch/1g90jbv8llv0j>`_
      - :ref:`1 hour <ref-class-lesson-devops-chef>`
