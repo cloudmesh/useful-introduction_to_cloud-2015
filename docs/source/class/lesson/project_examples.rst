@@ -128,3 +128,9 @@ Description
 * Source:
    - http://wordaligned.org/articles/longest-common-subsequence
    - http://donniedemuth.s3.amazonaws.com/bioinf_with_python_and_hadoop.pdf
+
+* Tips: You can use Python MapReduce frameworks such as:
+   - `Disco <http://discoproject.org/>`_
+   - `octo.py <https://code.google.com/p/octopy/>`_
+   - `mincemeat.py <https://github.com/michaelfairley/mincemeatpy>`_
+   - `mrjob <https://pythonhosted.org/mrjob/>`_
