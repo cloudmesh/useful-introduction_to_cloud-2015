@@ -6,8 +6,6 @@ Final Project Guidelines (Draft)
    .. contents::
       :local:
 
-.. include:: project_examples.rst
-
 Important Dates
 -------------------------------------------------------------------------------
 
@@ -33,6 +31,7 @@ but you can be more or less ambitious.
 
 For more information, see below.
 
+* :ref:`Sample Projects <ref-class-lesson-project-examples>`
 * :ref:`List of Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Technologies <ref-class-lesson-list-tech>`
 
@@ -97,7 +96,6 @@ Submission
 Questions & Support
 -------------------------------------------------------------------------------
 
-Course TA's email: coursehelp@futuresystems.org
-Office Hours: Wednesday 7pm or Thursday 10am via Adobe Connect
-https://connect.iu.edu/bdossp_sp15/
+* Course TA's email: coursehelp@futuresystems.org
+* Office Hours: Wednesday 7pm or Thursday 10am via `Adobe Connect <https://connect.iu.edu/bdossp_sp15/>`_
 
