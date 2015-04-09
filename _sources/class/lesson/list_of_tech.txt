@@ -38,3 +38,11 @@ Visualization
 * DC.js
 * ...
 * TBD
+
+MapReduce Frameworks
+-------------------------------------------------------------------------------
+
+* `Disco <http://discoproject.org/>`_
+* `octo.py <https://code.google.com/p/octopy/>`_
+* `mincemeat.py <https://github.com/michaelfairley/mincemeatpy>`_
+* `mrjob <https://pythonhosted.org/mrjob/>`_
