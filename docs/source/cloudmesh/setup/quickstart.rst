@@ -291,6 +291,8 @@ For OSX use
   $ cm flavor india --refresh
 
 
+.. _ref-cloudmesh-quickstart-system-install-curl:
+
 One line install with curl
 ----------------------------------------------------------------------
 
