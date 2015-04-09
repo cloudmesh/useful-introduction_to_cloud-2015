@@ -81,7 +81,7 @@ utilities with various exercises.
    * - **Shell Access**                  
      - `3 mins <https://www.youtube.com/watch?v=aJDXfvOrzRE&index=3&list=PLLO4AVszo1SPYLypeUK0uPc4X6GXwWhcx>`_
      - `10 mins <../lesson/shell-access.html>`_
-     - `5 mins <../lesson/shell-access.html#exercise>`_
+     - 
      - 03/23
      - N/A
    * - **GitHub**

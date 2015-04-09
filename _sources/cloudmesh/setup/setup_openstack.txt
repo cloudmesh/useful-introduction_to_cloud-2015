@@ -85,19 +85,42 @@ We summarize the following steps::
   $ ssh $PORTALNAME@india.futuresystems.org
   india$ module load openstack
   india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
-  india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
-This assumes such a key exists in the location::
+.. important::
 
-  $ ~/.ssh/id_rsa.pub
+   If you are following this as part of a class, make sure you source
+   the appropriate ``rc`` file **after** to the ``openrc.sh``.
+   Check for the available files like so::
 
-If you do not have such a key, you can generate it with::
+     $ ls .cloudmesh/clouds/india/juno/
+     cacert.pem  fg455  fg465  fg82  openrc.sh
 
- $ ssh-keygen -t rsa -C $USER-india-key
- 
-Remember to set a passphrase once prompted to secure your private key.
+   If you are in the ``FG465`` course, load the appropriate settings::
 
-.. warning:: You must not use a passphrase less key! Please specify a
+     $ source .cloudmesh/clouds/india/juno/fg465
+
+
+In order to log into the machine (once we start it up later),
+OpenStack needs to have an ssh keypair associated.  You can either
+have OpenStack create a key for you or import your current key.
+
+To **import** a pre-existing key, such as ``~/.ssh/id_rsa.pub``, do the following::
+
+  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+
+This will associate your ``~/.ssh/id_rsa.pub`` key with the name ``$USER-india-key``.
+
+**Alternatively**, to have OpenStack create a key for you, execute the following::
+
+  $ nova keypair-add $USER-india-key >~/.ssh/$USER-india-key
+  $ chmod 600 ~/.ssh/$USER-india-key
+
+This will generate the key, import it into OpenStack, and ``chmod``
+will fix permissions on the file.
+
+.. warning:: Remember to set a passphrase once prompted to secure your private key.
+
+             You must not use a passphrase less key! Please specify a
 	     strong passphrase.
 
 Next step is to open the necessary ports of the VM to be started::
@@ -163,52 +186,37 @@ if necessary. Once this is the case you can login to it with::
 
 
 
-Preparation of the VM
+Cloudmesh Installation
 ----------------------------------------------------------------------
 
-Next you have to update the operating system while logging into 
-the VM::
+Systems Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  $ sudo apt-get update
-  $ sudo apt-get upgrade
-  $ sudo apt-get install git python-virtualenv
+Installation of cloudmesh can be complicated. We provide a oneline
+script to install::
 
-To obtain cloudmesh you need to clone it from github::
+  $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | venv=$HOME/ENV bash
 
-  $ git clone https://github.com/cloudmesh/cloudmesh.git
+.. note:: This may take several minutes.
+
+Please see :ref:`ref-cloudmesh-quickstart-system-install-curl` for
+details on what this does.
+
+You now need to activate the virtualenv created::
+
+  $ source $HOME/ENV/bin/activate
 
 
 Cloudmesh Setup
 ----------------------------------------------------------------------
 
-We recommend that you run virtualenv in python which you can 
-enable with::
-
-  $ virtualenv  --no-site-packages ~/ENV
-  $ source ~/ENV/bin/activate
-  $ pip install --upgrade pip
-
-The last command will ensure the pip version is latest in this virtual env.
-  
-To start the installation of cloudmesh we first need to install a 
-number of system packages with::
-
-  $ cd cloudmesh
-  $ ./install system
-
-Now let us install cloudmesh into this virtualenv::
-
-  $ pip install cloudmesh
-  $ ./install new --force
-
-The second command will create a number of template yaml files in the folder::
-
-  $ ~/.cloudmesh
-
-Now we need to populate the cloudmesh.yaml file with your actual cloud credentials. 
-Cloudmesh provides tools for you to retrieve your futuresystems cloud credential 
-and configure the cloudmesh.yaml file properly. Before we can use it however we 
-have to create a key that we upload to the FutureSystems portal::
+As part of its installation, cloudmesh create a ``~/.cloudmesh``
+directory with several yaml files. Now we need to populate the
+cloudmesh.yaml file with your actual cloud credentials.  Cloudmesh
+provides tools for you to retrieve your futuresystems cloud credential
+and configure the cloudmesh.yaml file properly. Before we can use it
+however we have to create a key that we upload to the FutureSystems
+portal::
 
  $ export PORTALNAME=<put your portal name here>
  $ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key

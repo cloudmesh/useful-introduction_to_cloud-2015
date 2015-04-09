@@ -224,20 +224,40 @@ your machine to the FutureSystems portal so you can log into india.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuresystems.org
 india<span class="nv">$ </span>module load openstack
 india<span class="nv">$ </span><span class="nb">source</span> ~/.cloudmesh/clouds/india/juno/openrc.sh
-india<span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <span class="nv">$USER</span>-india-key
 </pre></div>
 </div>
-<p>This assumes such a key exists in the location:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/.ssh/id_rsa.pub
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>If you are following this as part of a class, make sure you source
+the appropriate <code class="docutils literal"><span class="pre">rc</span></code> file <strong>after</strong> to the <code class="docutils literal"><span class="pre">openrc.sh</span></code>.
+Check for the available files like so:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls .cloudmesh/clouds/india/juno/
+cacert.pem  fg455  fg465  fg82  openrc.sh
 </pre></div>
 </div>
-<p>If you do not have such a key, you can generate it with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$USER</span>-india-key
+<p>If you are in the <code class="docutils literal"><span class="pre">FG465</span></code> course, load the appropriate settings:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> .cloudmesh/clouds/india/juno/fg465
 </pre></div>
 </div>
-<p>Remember to set a passphrase once prompted to secure your private key.</p>
+</div>
+<p>In order to log into the machine (once we start it up later),
+OpenStack needs to have an ssh keypair associated.  You can either
+have OpenStack create a key for you or import your current key.</p>
+<p>To <strong>import</strong> a pre-existing key, such as <code class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></code>, do the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <span class="nv">$USER</span>-india-key
+</pre></div>
+</div>
+<p>This will associate your <code class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></code> key with the name <code class="docutils literal"><span class="pre">$USER-india-key</span></code>.</p>
+<p><strong>Alternatively</strong>, to have OpenStack create a key for you, execute the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova keypair-add <span class="nv">$USER</span>-india-key &gt;~/.ssh/<span class="nv">$USER</span>-india-key
+<span class="nv">$ </span>chmod <span class="m">600</span> ~/.ssh/<span class="nv">$USER</span>-india-key
+</pre></div>
+</div>
+<p>This will generate the key, import it into OpenStack, and <code class="docutils literal"><span class="pre">chmod</span></code>
+will fix permissions on the file.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
+<p>Remember to set a passphrase once prompted to secure your private key.</p>
 <p class="last">You must not use a passphrase less key! Please specify a
 strong passphrase.</p>
 </div>
@@ -302,49 +322,36 @@ state. Repeat the command:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="preparation-of-the-vm">
-<h2>Preparation of the VM<a class="headerlink" href="#preparation-of-the-vm" title="Permalink to this headline">¶</a></h2>
-<p>Next you have to update the operating system while logging into
-the VM:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get update
-<span class="nv">$ </span>sudo apt-get upgrade
-<span class="nv">$ </span>sudo apt-get install git python-virtualenv
+<div class="section" id="cloudmesh-installation">
+<h2>Cloudmesh Installation<a class="headerlink" href="#cloudmesh-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="systems-dependencies">
+<h3>Systems Dependencies<a class="headerlink" href="#systems-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>Installation of cloudmesh can be complicated. We provide a oneline
+script to install:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh <span class="p">|</span> <span class="nv">venv</span><span class="o">=</span><span class="nv">$HOME</span>/ENV bash
 </pre></div>
 </div>
-<p>To obtain cloudmesh you need to clone it from github:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/cloudmesh/cloudmesh.git
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This may take several minutes.</p>
+</div>
+<p>Please see <a class="reference internal" href="quickstart.html#ref-cloudmesh-quickstart-system-install-curl"><span>One line install with curl</span></a> for
+details on what this does.</p>
+<p>You now need to activate the virtualenv created:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> <span class="nv">$HOME</span>/ENV/bin/activate
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="cloudmesh-setup">
 <h2>Cloudmesh Setup<a class="headerlink" href="#cloudmesh-setup" title="Permalink to this headline">¶</a></h2>
-<p>We recommend that you run virtualenv in python which you can
-enable with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>virtualenv  --no-site-packages ~/ENV
-<span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
-<span class="nv">$ </span>pip install --upgrade pip
-</pre></div>
-</div>
-<p>The last command will ensure the pip version is latest in this virtual env.</p>
-<p>To start the installation of cloudmesh we first need to install a
-number of system packages with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>cloudmesh
-<span class="nv">$ </span>./install system
-</pre></div>
-</div>
-<p>Now let us install cloudmesh into this virtualenv:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pip install cloudmesh
-<span class="nv">$ </span>./install new --force
-</pre></div>
-</div>
-<p>The second command will create a number of template yaml files in the folder:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/.cloudmesh
-</pre></div>
-</div>
-<p>Now we need to populate the cloudmesh.yaml file with your actual cloud credentials.
-Cloudmesh provides tools for you to retrieve your futuresystems cloud credential
-and configure the cloudmesh.yaml file properly. Before we can use it however we
-have to create a key that we upload to the FutureSystems portal:</p>
+<p>As part of its installation, cloudmesh create a <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code>
+directory with several yaml files. Now we need to populate the
+cloudmesh.yaml file with your actual cloud credentials.  Cloudmesh
+provides tools for you to retrieve your futuresystems cloud credential
+and configure the cloudmesh.yaml file properly. Before we can use it
+however we have to create a key that we upload to the FutureSystems
+portal:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>&lt;put your portal name here&gt;
 <span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$PORTALNAME</span>-ubuntu-vm-key
 </pre></div>
