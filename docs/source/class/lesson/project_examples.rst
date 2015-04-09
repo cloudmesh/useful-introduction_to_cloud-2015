@@ -7,15 +7,15 @@ Sample Projects
 
    .. contents::
       :local:
-I
+
 Project I: Daily Variation of Barometric Pressure
 -------------------------------------------------------------------------------
 
 Project Idea
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This type of projects gives you some experience of data processing.
-Rich Python modules i.e. Pandas, NumPy or Matplotlib allow us to import and
-manipulate dataset to provide results in a graphical format.
+Rich Python modules i.e. Pandas, NumPy or Matplotlib allow you to import and
+manipulate dataset in order to provide results in a graphical format.
 
 Description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -25,17 +25,17 @@ Description
   major cities, the 365 daily ranges for that city are histogrammed.
 * Dataset: `Quality Controlled Local Climatological Data <http://cdo.ncdc.noaa.gov/qclcd/QCLCD?prior=N>`_
 * Technologies: 
-  - IPython Notebook 2.0 (Pandas, Numpy, matplotlib)
-  - d3.js
+   - IPython Notebook 2.0 (Pandas, Numpy, matplotlib)
+   - d3.js
 
 .. figure:: ../../images/projects/GeoSparkGrams.png
 
-   GeoSparkGrams of Daily Barometric Volatility*
+   Figure 1. GeoSparkGrams of Daily Barometric Volatility*
 
 
 * \*Source: 
-  - http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb
-  - http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html
+   - http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb
+   - http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html
 
 Project II: Data Visualization
 -------------------------------------------------------------------------------
@@ -73,16 +73,16 @@ Description
 
 * Dataset: `Project dataset from DonorsChoose.org <https://s3.amazonaws.com/open_data/csv/opendata_projects.zip>`_
 * Technologies:
-  - D3.js
-  - DC.js
-  - Python
-  - MongoDB
+   - D3.js
+   - DC.js
+   - Python
+   - MongoDB
 
 .. figure:: ../../images/projects/viz_demo.gif
 
-   Interactive Data Visualization for donorschoose.org**
+   Figure 2. Interactive Data Visualization for donorschoose.org**
 
 * \**Source:
-  - http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
+   - http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
 
 Project III: 
