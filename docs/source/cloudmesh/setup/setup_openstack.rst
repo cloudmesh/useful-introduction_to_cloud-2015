@@ -99,19 +99,28 @@ We summarize the following steps::
 
      $ source .cloudmesh/clouds/india/juno/fg465
 
-  india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
-This assumes such a key exists in the location::
+In order to log into the machine (once we start it up later),
+OpenStack needs to have an ssh keypair associated.  You can either
+have OpenStack create a key for you or import your current key.
 
-  $ ~/.ssh/id_rsa.pub
+To **import** a pre-existing key, such as ``~/.ssh/id_rsa.pub``, do the following::
 
-If you do not have such a key, you can generate it with::
+  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
- $ ssh-keygen -t rsa -C $USER-india-key
- 
-Remember to set a passphrase once prompted to secure your private key.
+This will associate your ``~/.ssh/id_rsa.pub`` key with the name ``$USER-india-key``.
 
-.. warning:: You must not use a passphrase less key! Please specify a
+**Alternatively**, to have OpenStack create a key for you, execute the following::
+
+  $ nova keypair-add $USER-india-key >~/.ssh/$USER-india-key
+  $ chmod 600 ~/.ssh/$USER-india-key
+
+This will generate the key, import it into OpenStack, and ``chmod``
+will fix permissions on the file.
+
+.. warning:: Remember to set a passphrase once prompted to secure your private key.
+
+             You must not use a passphrase less key! Please specify a
 	     strong passphrase.
 
 Next step is to open the necessary ports of the VM to be started::
