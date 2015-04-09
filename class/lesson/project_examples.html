@@ -99,8 +99,8 @@
 <li class="toctree-l3"><a class="reference internal" href="google.html">Google</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hands_on_fg465.html">Getting Started with Hands-on Access</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ipynb.html">Deploying IPython Notebook Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_dataset.html">List of Dataset (Under preparation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="list_of_tech.html">List of Technologies (Under Preparation)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lpbs.html">Local PBS Queuing System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html">Environment Modules (modules) on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openmpi.html">Deploying OpenMPI Cluster with Cloudmesh <code class="docutils literal"><span class="pre">launcher</span></code></a></li>
@@ -173,8 +173,31 @@
             
   <div class="section" id="sample-projects">
 <span id="ref-class-lesson-project-examples"></span><h1>Sample Projects<a class="headerlink" href="#sample-projects" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="project-i-daily-variation-of-barometric-pressure">
-<h2>Project I: Daily Variation of Barometric Pressure<a class="headerlink" href="#project-i-daily-variation-of-barometric-pressure" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#project-idea" id="id5">Project Idea</a></li>
+<li><a class="reference internal" href="#description" id="id6">Description</a><ul>
+<li><a class="reference internal" href="#project-ii-data-visualization" id="id7">Project II: Data Visualization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1" id="id8">Project Idea</a></li>
+<li><a class="reference internal" href="#id2" id="id9">Description</a></li>
+</ul>
+</div>
+</div>
+<p>I
+Project I: Daily Variation of Barometric Pressure
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<div class="section" id="project-idea">
+<h2><a class="toc-backref" href="#id5">Project Idea</a><a class="headerlink" href="#project-idea" title="Permalink to this headline">¶</a></h2>
+<p>This type of projects gives you some experience of data processing.
+Rich Python modules i.e. Pandas, NumPy or Matplotlib allow us to import and
+manipulate dataset to provide results in a graphical format.</p>
+</div>
+<div class="section" id="description">
+<h2><a class="toc-backref" href="#id6">Description</a><a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Description: Daily variation of barometric pressure (maximum minus minimum
 for each day) in inches, for the past 12 months. For each of the hand-picked
@@ -188,9 +211,59 @@ major cities, the 365 daily ranges for that city are histogrammed.</li>
 <img alt="../../_images/GeoSparkGrams.png" src="../../_images/GeoSparkGrams.png" />
 <p class="caption"><span class="caption-text">GeoSparkGrams of Daily Barometric Volatility*</span></p>
 </div>
-<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Source:
+<ul class="simple">
+<li>*Source:
 - <a class="reference external" href="http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb">http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb</a>
-- <a class="reference external" href="http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html">http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html</a></p>
+- <a class="reference external" href="http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html">http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html</a></li>
+</ul>
+<div class="section" id="project-ii-data-visualization">
+<h3><a class="toc-backref" href="#id7">Project II: Data Visualization</a><a class="headerlink" href="#project-ii-data-visualization" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id8">Project Idea</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The main goal of this type of projects is visulaizing datasets stored in a
+database.  You may like to use relational databases (SQL based) but this
+example uses document based (JSON like, BSON) structure to store information
+and you gain some experience with document-oriented databases.</p>
+<p>You have open data based on CSV files. The tasks include
+creating a database and automating the loading of the latest open data CSV
+extracts from Amazon Storage (S3) into a database. With D3.js and DC.js
+visualization toolkits, you understand how to provide results in an interactive
+mode.</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">Description</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Description: DonorsChoose.org is a US based nonprofit organization that
+allows individuals to donate money directly to public school classroom
+projects. Public school teachers post classroom project requests on the
+platform, and individuals have the option to donate money directly to fund
+these projects. The classroom projects range from pencils and books to
+computers and other expensive equipments for classrooms. In more than 10
+years of existence, this platform helped teachers in all US states to post
+more than 7700,000 classroom project requests and raise more than
+$280,000,000. DonorsChoose.org is making the platform data open and available
+for making discoveries and building applications. In this tutorial we will be
+using one of the available datasets for building an interactive data
+visualization that represents school donations broken down by different
+attributes.</li>
+<li>Dataset: <a class="reference external" href="https://s3.amazonaws.com/open_data/csv/opendata_projects.zip">Project dataset from DonorsChoose.org</a></li>
+<li>Technologies:
+- D3.js
+- DC.js
+- Python
+- MongoDB</li>
+</ul>
+<div class="figure" id="id4">
+<img alt="../../_images/viz_demo.gif" src="../../_images/viz_demo.gif" />
+<p class="caption"><span class="caption-text">Interactive Data Visualization for donorschoose.org**</span></p>
+</div>
+<ul class="simple">
+<li>**Source:
+- <a class="reference external" href="http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/">http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/</a></li>
+</ul>
+<p>Project III:</p>
 </div>
 </div>
 
