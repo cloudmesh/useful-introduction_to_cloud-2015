@@ -53,8 +53,9 @@ source software. The main topics of your projects may cover one of these:
 Project Proposal
 -------------------------------------------------------------------------------
 
-Please upload your project proposel in a file (either txt, Adobe PDF, or MS
-word). A project proposal is typically 1-2 pages long and should contain in the
+Please submit your project proposal to IU Canvas. The submission format is in a
+file (either txt, Adobe PDF, or MS word). A project proposal is typically 1-2
+pages long and should contain in the
 description section:
 
 * the nature of the project and its context
@@ -100,11 +101,11 @@ Oral Presentation
 Final Report
 -------------------------------------------------------------------------------
 
-* Implementation on Github: https://github.com/futuresystems
+* Source code on Github: https://github.com/futuresystems
 * Written report: 4-6 pages
-* Test instruction (if necessary)
-* List of data source
-* List of technologies used
+   - Test instruction (if necessary)
+   - List of data source
+   - List of technologies used
 
 Submission
 -------------------------------------------------------------------------------
