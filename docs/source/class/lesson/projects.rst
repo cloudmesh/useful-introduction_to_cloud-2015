@@ -10,8 +10,9 @@ Important Dates
 -------------------------------------------------------------------------------
 
 * Project Proposal: May 1st
-* Oral Presentation: May 20, 21th during discussion sessions
-* Final report: May 30th
+* Oral Presentation: May 20, 21th during discussion sessions (each group has 5
+  minutes) 
+* Final report: May 31th
 
 Team Coordination
 -------------------------------------------------------------------------------
@@ -34,6 +35,19 @@ For more information, see below.
 * :ref:`Sample Projects <ref-class-lesson-project-examples>`
 * :ref:`List of Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Technologies <ref-class-lesson-list-tech>`
+
+Project Expectation
+-------------------------------------------------------------------------------
+
+We expect you to deal with one of the challenges from big data using open
+source software. The main topics of your projects may cover one of these:
+
+* parallel data processing on the cloud
+* database on the cloud
+* machine learning: optimization, modeling
+* visualization
+
+*Other technology landscape can be addressed*
 
 Project Proposal
 -------------------------------------------------------------------------------
@@ -78,6 +92,9 @@ Oral Presentation
 * A student will use Adobe Connect to give a presentation.
 
 * 5 minutes per team.
+
+* Oral presentation can be replaced with a 1-2 page progress report(s) upon
+  approval.
 
 Final Report
 -------------------------------------------------------------------------------

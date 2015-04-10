@@ -12,23 +12,28 @@ Development Languages/Scripts
 * Html, Javascript
 * Java
 * C, C++, 
-* Perl, or others
+* Perl
+* or others
 
 Database
 -------------------------------------------------------------------------------
 
 * MongoDB
 * HBase
-* ...
-* TBD
+* or others
 
 Data Processing
 -------------------------------------------------------------------------------
 
 * Apache Hadoop
 * Apache Storm
-* ...
-* TBD
+* Apache Pig
+* Apache Spark
+* Apache Hive
+* scikit-learn
+* ML-Lib
+* Scalding
+* or others
 
 Visualization
 -------------------------------------------------------------------------------
@@ -36,8 +41,9 @@ Visualization
 * D3.js
 * Highcharts
 * DC.js
-* ...
-* TBD
+* R
+* matplotlib 
+* or others
 
 MapReduce Frameworks
 -------------------------------------------------------------------------------
@@ -46,3 +52,10 @@ MapReduce Frameworks
 * `octo.py <https://code.google.com/p/octopy/>`_
 * `mincemeat.py <https://github.com/michaelfairley/mincemeatpy>`_
 * `mrjob <https://pythonhosted.org/mrjob/>`_
+* or others
+
+Etc
+-------------------------------------------------------------------------------
+
+* Ipython Notebook
+* or others
