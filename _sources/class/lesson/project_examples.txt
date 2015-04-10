@@ -9,6 +9,16 @@ Sample Projects
    .. contents::
       :local:
 
+Notice
+-------------------------------------------------------------------------------
+
+These sample projects are only for your reference to give you some idea of a
+final project.  We do not intend to limit your idea of projects. Instead, we
+recommend that you define a problem and find topics and technologies from your
+area of interest.  If you have other topics or concepts from the outside of the
+class, please contact us to discuss your project. It may help find project
+scope in practical.
+
 Predicting Airline Delays with Hadoop
 -------------------------------------------------------------------------------
 
