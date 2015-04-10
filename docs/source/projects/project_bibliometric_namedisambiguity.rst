@@ -1,6 +1,6 @@
 .. _project_namedisambugiuty:
 
-Name Disambiguation of Bibliometric Data
+Author Name Disambiguation for Bibliometric Data
 ======================================================================
 
 Motivation
@@ -21,7 +21,7 @@ contributes to a situation in which it is challanging to gurantee
 accuracy.
 
 Task
-======================================================================
+----------------------------------------------------------------------
 
 Develop a framework that addresses issues in the author disambiguity
 problem. First start with a brief literature review and identify
@@ -54,7 +54,7 @@ Screenshots:
 * https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications2_Clusters.PNG?raw=true
 
 Artifacts
-===================
+----------------------------------------------------------------------
 
 * Working program
 * Detailed instalation instructions
@@ -70,3 +70,12 @@ Artifacts
 Note that the reference of previous work is neither a statement for
 good or bad work of that project. There is always something one can
 improve.
+
+Optional Artifacts
+----------------------------------------------------------------------
+
+Develop a rest service that given two publications and an authorname,
+that returns if the authors are identical. Return also the likelyhood.
+
+This is a minor modification to the above and provides just a rest
+interface to your work.
