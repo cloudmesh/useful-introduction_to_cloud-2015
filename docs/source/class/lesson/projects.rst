@@ -45,6 +45,7 @@ source software. The main topics of your projects may cover one of these:
 * parallel data processing on the cloud
 * database on the cloud
 * machine learning: optimization, modeling
+* data mining
 * visualization
 
 *Other technology landscape can be addressed*
