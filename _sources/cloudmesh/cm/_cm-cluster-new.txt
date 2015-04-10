@@ -27,7 +27,6 @@ following lines.
 .. code:: python
 
     alias cm cm %s
-
 Using Cluster on Cloud IaaS Platform
 ------------------------------------
 

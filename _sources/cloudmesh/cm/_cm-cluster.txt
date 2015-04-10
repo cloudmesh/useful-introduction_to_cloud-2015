@@ -21,18 +21,15 @@ Before starting a cluster, please make sure you activate a cloud:
 .. code:: python
 
     cm "cloud on india"
-
 Activation however does not select the cloud as the default cloud to
 start virtual machines. This can be achieved by the select command.
 
 .. code:: python
 
     cm "cloud select india"
-
 .. code:: python
 
     cm "default cloud india"
-
 Default Key Pair
 ~~~~~~~~~~~~~~~~
 
@@ -43,7 +40,6 @@ to specify which keypair you are going to use for the virtual cluster.
 .. code:: python
 
     cm "key default [username]-india-key"
-
 .. warning:: **REPLACE [username] with your portal id, e.g. albert**
 
 Default VM Image
@@ -55,7 +51,6 @@ image as a default in this tutorial.
 .. code:: python
 
     cm "default image --name=futuresystems/ubuntu-14.04"
-
 Default Flavor
 ~~~~~~~~~~~~~~
 
@@ -66,7 +61,6 @@ flavor rather than a smaller one e.g. m1.small or m1.tiny.
 .. code:: python
 
     cm "default flavor --name=m1.small"
-
 Getting Started
 ---------------
 
@@ -87,14 +81,12 @@ contains 3 virtual machines.
 .. code:: python
 
     cm "cluster create cluster_tutorial1 --count=3 --ln=ubuntu"
-
 You may also provide a flavor or a VM image in the command. For example,
 creating a virtual cluster on Ubuntu 14.04 image with a small flavor:
 
 .. code:: python
 
     cm "cluster create cluster_tutorial2 --count=3 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuresystems/ubuntu-14.04"
-
 Check Status of a Virtual Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -103,7 +95,6 @@ Use ``vm` command with``--group\`\` parameter to check the status.
 .. code:: python
 
     cm "vm list --refresh --group=cluster_tutorial1"
-
 Terminate a Virtual Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -112,11 +103,9 @@ Delete a virtual cluster with the name.
 .. code:: python
 
     cm "cluster remove cluster_tutorial1"
-
 .. code:: python
 
     cm "cluster remove cluster_tutorial2"
-
 Cluster Help Message
 ~~~~~~~~~~~~~~~~~~~~
 

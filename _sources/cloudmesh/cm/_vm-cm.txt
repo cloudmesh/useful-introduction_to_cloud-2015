@@ -15,7 +15,6 @@ CM Console for VM Management
 .. code:: python
 
     alias cm cm %s
-
 .. raw:: html
 
    <div class="alert alert-info" role="alert">
@@ -37,17 +36,14 @@ Preparation
 .. code:: python
 
     cm debug off
-
 .. code:: python
 
     cm loglevel error
-
 Lets get the username
 
 .. code:: python
 
     cm user id
-
 Help
 ----
 
@@ -56,7 +52,6 @@ Let us review the available commands
 .. code:: python
 
     cm help
-
 Activating Clouds
 -----------------
 
@@ -69,7 +64,6 @@ Let us inspect which clouds are available by invoking the list command.
 .. code:: python
 
     cm cloud list
-
 As you see we have a number of clouds, but none of them is already
 active. Thus we need to first activate a cloud. We assume that you have
 an account on FutureGrid. Let us activate the cloud india
@@ -77,7 +71,6 @@ an account on FutureGrid. Let us activate the cloud india
 .. code:: python
 
     cm cloud on india
-
 We also have a conveniet interactive command to select a cloud to work
 with, that however does not work with ipython
 
@@ -93,7 +86,6 @@ To check if the cloud was activated, simply use the list command again.
 .. code:: python
 
     cm cloud list
-
 Start a VM
 ----------
 
@@ -103,7 +95,6 @@ on cloud india.
 .. code:: python
 
     cm "vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small"
-
 Set a default flavor or image
 -----------------------------
 
@@ -114,11 +105,9 @@ set default values for an image or a flavor.
 .. code:: python
 
     cm "cloud set flavor india --name=m1.small"
-
 .. code:: python
 
     cm "cloud set image india --name=futuregrid/ubuntu-14.04"
-
 Get Flavors or Images
 ---------------------
 
@@ -127,21 +116,18 @@ Available flavors can be listed with the following command.
 .. code:: python
 
     cm "list flavor india"
-
 refresh option updates the data from the IaaS cloud. The cached data in
 the mongo database will be updated.
 
 .. code:: python
 
     cm "list flavor india --refresh"
-
 The ``list image`` command provides an available vm images on a selected
 cloud.
 
 .. code:: python
 
     cm "list image india --column=name,updated"
-
 Quick Start a VM
 ----------------
 
@@ -154,11 +140,9 @@ We use ``vmname`` to delete the vm instance later in this tutorial.
 
     _vmname=!cm "label --raw"
     vmname=_vmname[0]
-
 .. code:: python
 
     cm "vm start --name={vmname} --cloud=india"
-
 Delete a VM
 -----------
 
@@ -168,7 +152,6 @@ destroy, *delete* command in cloudmesh simply terminate the instance.
 .. code:: python
 
     cm "vm delete {vmname} --cloud=india --force"
-
 More options to launch a VM instance
 ------------------------------------
 
@@ -192,7 +175,6 @@ Available options are:
 .. code:: python
 
     cm "vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04"
-
 Set default cloud
 -----------------
 
@@ -204,13 +186,11 @@ cloud
 .. code:: python
 
     cm "default cloud india"
-
 to select a cloud
 
 .. code:: python
 
     cm "cloud select india"
-
 You can see a selected cloud as a temporarily default cloud to work
 with.
 
@@ -227,7 +207,6 @@ status. To refresh cloud india's VMs information
 .. code:: python
 
     cm "list vm india --refresh"
-
 Starting multiple VMs
 ---------------------
 
@@ -239,14 +218,12 @@ start. For example, to start 3 VMs on india
 
     import uuid;
     temp_group_name="ipython-tutorial-cm-" + str(uuid.uuid4().get_hex().upper()[0:6])
-
 We use the temporary group name to delete the VMs later in this
 tutorial.
 
 .. code:: python
 
     cm "vm start --cloud=india --count=3 --group={temp_group_name}"
-
 Deleting VMs
 ------------
 
@@ -262,7 +239,6 @@ example. We can delete them with the group name that we used.
 .. code:: python
 
     cm "vm delete --cloud=india --group={temp_group_name} --force"
-
 to delete all VMs of cloud india
 
 ``cm "vm delete --cloud=india --force"``
@@ -296,15 +272,12 @@ for example, assign a public ip to a VM named test\_1 on cloud india:
 
     _vmname=!cm "label --raw"
     vmname=_vmname[0]
-
 .. code:: python
 
     cm "vm start --cloud=india"
-
 .. code:: python
 
     cm "vm ip assign {vmname} --cloud=india"
-
 ``cm "vm ip assign test_1 --cloud=india"``
 
 Then you can login to this VM by(note here you need to provide the login
@@ -319,7 +292,6 @@ may add the commands at the end following '--'(e.g. ls -a)
 .. code:: python
 
     cm "vm login {vmname} --ln=ubuntu --cloud=india -- ls -a"
-
 For more details for command vm
 
 ``cm "vm -h"``
@@ -327,7 +299,6 @@ For more details for command vm
 .. code:: python
 
     cm "vm delete {vmname} --cloud=india"
-
 Stop the vm that we started for this tutorial.
 
 Vitual Machine Name
@@ -340,7 +311,6 @@ modify the VM name as you wish.
 .. code:: python
 
     cm label
-
 ``cm "label --prefix=gregor --id=40"``
 
 If the user doesn’t provide a name while starting VMs, cloudmesh will

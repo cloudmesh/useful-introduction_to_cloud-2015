@@ -26,6 +26,8 @@ is available at |video-cm-intro|.
 
    class/index
 
+   projects/index
+   
    accounts/index
    cloudmesh/index
 

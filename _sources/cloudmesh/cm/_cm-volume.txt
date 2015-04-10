@@ -16,7 +16,6 @@ the following lines.
 .. code:: python
 
     alias cm cm %s
-
 We are using now one of the methods to call the cm commands in the
 following sections.
 
@@ -26,7 +25,6 @@ choosing a cloud using nova command, e.g.:
 .. code:: python
 
     cm "nova set india"
-
 
 .. parsed-literal::
 
@@ -38,7 +36,6 @@ for more detailed descriptions:
 .. code:: python
 
     cm "volume"
-
 
 .. parsed-literal::
 

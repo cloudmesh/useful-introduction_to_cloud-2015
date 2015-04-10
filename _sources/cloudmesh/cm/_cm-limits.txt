@@ -29,7 +29,6 @@ following lines.
 .. code:: python
 
     alias cm cm %s
-
 We are using now one of the methods to call the cm commands in the
 following sections.
 
@@ -44,7 +43,6 @@ vm instances. Other usage data suppressed and can be observed by
 .. code:: python
 
     cm limits
-
 
 .. parsed-literal::
 
@@ -72,7 +70,6 @@ platform. You can choose desired start and end dates of your report.
 .. code:: python
 
     cm usage
-
 
 .. parsed-literal::
 
@@ -107,7 +104,6 @@ project.
 .. code:: python
 
     cm quota
-
 
 .. parsed-literal::
 

@@ -17,7 +17,6 @@ the following lines.
 .. code:: python
 
     alias cm cm %s
-
 We are using now one of the methods to call the cm commands in the
 following sections.
 
@@ -33,44 +32,37 @@ groups. For more information, one can refer to the manual page.
 .. code:: python
 
     cm "group -h"
-
 To create a group with the name sample-group you can use the command:
 
 .. code:: python
 
     cm "group create sample-group"
-
 Then you can list the groups with:
 
 .. code:: python
 
     cm "group list"
-
 To add a VM named sample-vm to the group (make sure the VM exists before
 add it), you can use:
 
 .. code:: python
 
     cm "group add item sample-group vm sample-vm"
-
 To list the elements in a group you can use:
 
 .. code:: python
 
     cm "group show sample-group"
-
 To delete a VM from a group you can use:
 
 .. code:: python
 
     cm "group remove item sample-group vm sample-vm"
-
 To delete a group:
 
 .. code:: python
 
     cm "group remove sample-group"
-
 Please note that deletion of a group does not delete the accociated
 objects in that group. It only removes the object that stores the types
 and objects for that group.
@@ -88,14 +80,12 @@ the group doesn't exist, one will be created:
 .. code:: python
 
     cm "vm start --group=sample"
-
 To delete the virtual machines specified in a group you can use the
 command:
 
 .. code:: python
 
     cm "vm delete --group=sample"
-
 To create multiple vms that are part of a vitual cluster, you need to
 provide a group name. If the group doesn't exist, one will be created.
 If the group exist and it has VMs in it already, the newly created

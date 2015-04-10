@@ -5,14 +5,12 @@ Cloudmesh Shell Boot
 .. code:: python
 
     import cloudmesh
-
 Start VM
 ~~~~~~~~
 
 .. code:: python
 
     print cloudmesh.shell("vm start")
-
 --simulator
 
 print "hallo world"
