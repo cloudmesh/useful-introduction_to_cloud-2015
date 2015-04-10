@@ -30,12 +30,14 @@ in the ``cloudmesh.yaml`` file.
 .. code:: python
 
     import cloudmesh
+
 You can load this file with the load command, while either specifying no
 parameters or using the ``"user"`` string as parameter.
 
 .. code:: python
 
     user = cloudmesh.load()
+
 Once you have loaded it you can inspect the available clouds. Note that
 you must have provided credential information for these clouds in the
 cloudmesh.yaml file prior to starting the program. You also will need to
@@ -44,6 +46,7 @@ activate a cloud befor eyou can use them. This is discussed elsewhere.
 .. code:: python
 
     user.cloudnames()
+
 
 
 
@@ -63,6 +66,7 @@ in the yaml file.
 
 
 
+
 .. parsed-literal::
 
     'TBD'
@@ -72,6 +76,7 @@ in the yaml file.
 .. code:: python
 
     user.lastname
+
 
 
 
@@ -96,9 +101,11 @@ function can get sub dictionaries.
 .. code:: python
 
     config = cloudmesh.load("server")
+
 .. code:: python
 
     print config.keys()
+
 
 .. parsed-literal::
 
@@ -108,6 +115,7 @@ function can get sub dictionaries.
 .. code:: python
 
     config.get('meta').keys()
+
 
 
 
@@ -123,6 +131,7 @@ function can get sub dictionaries.
 
 
 
+
 .. parsed-literal::
 
     '/Users/flat/.cloudmesh/cloudmesh_server.yaml'
@@ -132,6 +141,7 @@ function can get sub dictionaries.
 .. code:: python
 
     print config.get('cloudmesh').keys()
+
 
 .. parsed-literal::
 
@@ -152,9 +162,11 @@ launcher as an example.
 .. code:: python
 
     config = cloudmesh.load("launcher")
+
 .. code:: python
 
     print config.keys()
+
 
 .. parsed-literal::
 
@@ -164,6 +176,7 @@ launcher as an example.
 .. code:: python
 
     config.get('cloudmesh').keys()
+
 
 
 
@@ -179,6 +192,7 @@ launcher as an example.
 
 
 
+
 .. parsed-literal::
 
     ['recipies']
@@ -188,6 +202,7 @@ launcher as an example.
 .. code:: python
 
     config.get('cloudmesh.launcher.recipies').keys()
+
 
 
 
@@ -201,6 +216,7 @@ launcher as an example.
 
     from pprint import pprint 
     pprint (config.get('cloudmesh.launcher.recipies.mooc'))
+
 
 .. parsed-literal::
 

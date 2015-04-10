@@ -493,7 +493,7 @@ IT Operations - Automation and Orchestration (under preparation)
      - :ref:`1.5 hours <ref-class-lesson-devops-ansible>`
      - :ref:`30 mins <ref-class-lesson-devops-ansible-lab>`
      - 04/13
-     - n/a
+     - 04/24
    * - SaltStack
      -
      -
@@ -503,13 +503,13 @@ IT Operations - Automation and Orchestration (under preparation)
    * - Puppet
      -
      - :ref:`1 hour <ref-class-lesson-devops-puppet>`
-     - :ref:`20 mins <ref-class-lesson-devops-puppet-exercises>`
-     - 04/13
-     - n/a
+     - :ref:`20 mins <ref-class-lesson-devops-puppet-exercises>` (optional)
+     - 04/13 
+     - 
    * - Chef
      - `35 mins <https://mix.office.com/watch/1g90jbv8llv0j>`_
      - :ref:`1 hour <ref-class-lesson-devops-chef>`
-     - :ref:`30 mins <ref-class-lesson-devops-chef-exercises>`
+     - :ref:`30 mins <ref-class-lesson-devops-chef-exercises>` (optional)
      -
      -
    * - OpenStack Heat
@@ -517,11 +517,11 @@ IT Operations - Automation and Orchestration (under preparation)
      - :ref:`1 hour <ref-class-lesson-devops-openstack-heat>`
      - :ref:`30 mins <ref-class-lesson-devops-openstack-heat-exercises>`
      -
-     -
+     - 04/24
    * - Ubuntu Juju
      -
      - :ref:`1 hour <ref-class-lesson-devops-juju>`
-     - :ref:`30 mins <ref-class-lesson-devops-juju-exercises>`
+     - :ref:`30 mins <ref-class-lesson-devops-juju-exercises>` (optional)
      -
      -
  

@@ -81,7 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
@@ -738,12 +738,13 @@ will be raised if trying to set on one of these Document / Field types.</p>
 </div></blockquote>
 <p>Alternative syntax for registering delete rules (useful when implementing
 bi-directional delete rules)</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
     <span class="n">foo</span> <span class="o">=</span> <span class="n">ReferenceField</span><span class="p">(</span><span class="s">&#39;Foo&#39;</span><span class="p">)</span>
 
 <span class="n">Bar</span><span class="o">.</span><span class="n">register_delete_rule</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="n">NULLIFY</span><span class="p">)</span>
 </pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><cite>reverse_delete_rule</cite> does not trigger pre / post delete signals to be
