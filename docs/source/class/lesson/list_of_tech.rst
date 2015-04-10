@@ -43,6 +43,8 @@ Visualization
 * DC.js
 * R
 * matplotlib 
+* jQuery
+* Shiny
 * or others
 
 MapReduce Frameworks
