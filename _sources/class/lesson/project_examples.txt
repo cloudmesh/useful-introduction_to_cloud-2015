@@ -4,11 +4,56 @@ Sample Projects
 ===============================================================================
 
 .. sidebar:: Page Contents
+   :maxdepth: 1
 
    .. contents::
       :local:
 
-Project I: Daily Variation of Barometric Pressure
+Predicting Airline Delays with Hadoop
+-------------------------------------------------------------------------------
+
+Project Idea
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One of the main goals is using machine learning algorithms to build predictive
+models with Python packages and data analysis programs. Training the original
+datasets is important to build models with its performance.  Finding a good
+combination of technologies and programming languages would be cruicial to make
+a successful project.
+
+Project Overview
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Description: Every year approximately 20% of airline flights are delayed or
+  cancelled, resulting in significant costs to both travellers and airlines.
+  This project builds a supervised learning model that predicts airline delay
+  from historial flight data and weather information.
+
+* Dataset: `Airline delay dataset 2007, 2008 <http://stat-computing.org/dataexpo/2009/the-data.html>`_
+* Technologies:
+   - Hadoop
+   - Apache Pig
+   - Python
+   - Pandas
+   - HDFS
+   - scikit-learn
+
+.. figure:: ../../images/projects/ml1.png
+
+   Average delays by month
+
+.. figure:: ../../images/projects/ml2.png
+   
+   Average delays during a day
+
+.. figure:: ../../images/projects/ml3.png
+
+   Top 15 airlines for flight delay (Chicago O'Hare airport)
+
+* Source: 
+    - http://nbviewer.ipython.org/github/ofermend/IPython-notebooks/blob/master/blog-part-1.ipynb
+
+Daily Variation of Barometric Pressure
 -------------------------------------------------------------------------------
 
 Project Idea
@@ -17,7 +62,7 @@ This type of projects gives you some experience of data processing.
 Rich Python modules i.e. Pandas, NumPy or Matplotlib allow you to import and
 manipulate dataset in order to provide results in a graphical format.
 
-Description
+Project Overview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Description: Daily variation of barometric pressure (maximum minus minimum
@@ -37,7 +82,7 @@ Description
    - http://nbviewer.ipython.org/urls/gist.githubusercontent.com/michaelmalak/dd5495a605a8b951da43/raw/472b180b46d50726326eda2a4704f7ee0e94f539/GeoSparkGram.ipynb
    - http://technicaltidbit.blogspot.com/2014/05/geosparkgrams-tiny-histograms-on-map.html
 
-Project II: Data Visualization
+Data Visualization
 -------------------------------------------------------------------------------
 
 Project Idea
@@ -54,7 +99,7 @@ extracts from Amazon Storage (S3) into a database. With D3.js and DC.js
 visualization toolkits, you understand how to provide results in an interactive
 mode.
 
-Description
+Project Overview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Description: DonorsChoose.org is a US based nonprofit organization that
@@ -85,7 +130,7 @@ Description
 * \**Source:
    - http://adilmoujahid.com/posts/2015/01/interactive-data-visualization-d3-dc-python-mongodb/
 
-Project III: MapReduce Implementation for Longest Common Substring Problem
+MapReduce Implementation for Longest Common Substring Problem
 -------------------------------------------------------------------------------
 
 Project Idea
@@ -102,7 +147,7 @@ algorithm in Python. Using commercial cloud, e.g. Amazon, Azure or Google is to
 have some experience with the cloud services to utilize computing resources
 available.
 
-Description
+Project Overview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Description: This project aims to measure similarity of genome sequences.
@@ -135,7 +180,7 @@ Description
    - `mincemeat.py <https://github.com/michaelfairley/mincemeatpy>`_
    - `mrjob <https://pythonhosted.org/mrjob/>`_
 
-Project IV: MapReduce Implementation for GFF Parsing
+MapReduce Implementation for GFF Parsing
 -------------------------------------------------------------------------------
 
 Project Idea
@@ -145,7 +190,7 @@ This is similar to the example of the Longest Common Substring Problem. The
 main goals of this project are to define a problem and to implement solutions
 in Python with known frameworks and tools.
 
-Description
+Project Overview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Description: Generic feature format (GFF) is a nice plain text file format
