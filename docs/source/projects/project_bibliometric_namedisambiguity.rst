@@ -49,9 +49,23 @@ Prior work:
 
 Screenshots:
 
+ .. image:: images/Relationship_Authors_Publications.png
+ 
 * https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications.PNG?raw=true
 
 * https://github.com/scienceimpact/bibliometric/blob/master/Project%20Screenshots/Relationship_Authors_Publications2_Clusters.PNG?raw=true
+
+Example of possible useful Technologies for this Project
+----------------------------------------------------------------------
+
+* graphdb
+* neo4j
+* Apache Giraph
+* mongodb
+* d3.js
+* sql
+* REST
+
 
 Artifacts
 ----------------------------------------------------------------------
@@ -62,10 +76,12 @@ Artifacts
 * Integration of the instalation into a cloudmesh command
 * Report written in IEEE format in LaTeX or Word
 * Original images used in the report 
-* The report must either use endnote (for word) or bibtex (for LaTeX)
-  to manage the bibliography. Papers not using bibliography management
-  tools will be rejected without review. Bibliographies must be done
-  in scholarly way.
+* To make citation of scholarly work easier we recommend that you use
+  a bibliography management tool such as endnote for word or bibtex
+  for LaTex. In case of MS Word, if you do not have access to endnote,
+  please use the build in citation manager from Word.
+  
+
 
 Note that the reference of previous work is neither a statement for
 good or bad work of that project. There is always something one can
