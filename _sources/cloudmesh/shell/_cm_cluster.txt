@@ -7,7 +7,6 @@ First import cloudmesh.
 .. code:: python
 
     import cloudmesh
-
 Use command cluster to start a cluster of VMs, and each of them can log
 into all others. please refer to:
 
@@ -17,7 +16,6 @@ set a number of defaults. This includes:
 .. code:: python
 
     print cloudmesh.shell("cluster")
-
 1. select a cloud::
 
 cm cloud select india
@@ -63,13 +61,11 @@ To list the clusters you can use the command
 .. code:: python
 
     print cloudmesh.shell("cluster")
-
 To create a cluster you can use the command
 
 .. code:: python
 
     print cloudmesh.shell("cluster create cm_cluster1 --count=3 --ln=ubuntu")
-
 You may also provide cloud name, flavor or image in the command if you
 don't want to pre-set them. For example:
 

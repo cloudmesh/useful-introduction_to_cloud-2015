@@ -1,0 +1,776 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.experiment package &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>cloudmesh.experiment package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../../../_sources/docs/source/modules/cloudmesh/cloudmesh.experiment.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cloudmesh-experiment-package">
+<h1>cloudmesh.experiment package<a class="headerlink" href="#cloudmesh-experiment-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloudmesh.experiment.cm_experiment_db">
+<span id="cloudmesh-experiment-cm-experiment-db-module"></span><h2>cloudmesh.experiment.cm_experiment_db module<a class="headerlink" href="#module-cloudmesh.experiment.cm_experiment_db" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.experiment.cm_experiment_db.cm_experiment_db">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.cm_experiment_db.</code><code class="descname">cm_experiment_db</code><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/cm_experiment_db.html#cm_experiment_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.cm_experiment_db.cm_experiment_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../../modules/cloudmesh/cloudmesh.html#cloudmesh.cm_mongo.cm_MongoBase" title="cloudmesh.cm_mongo.cm_MongoBase"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh.cm_mongo.cm_MongoBase</span></code></a></p>
+<p>This methods holds some status information that is associated with a web
+page</p>
+<dl class="method">
+<dt id="cloudmesh.experiment.cm_experiment_db.cm_experiment_db.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>user</em>, <em>experiment</em>, <em>attribute</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/cm_experiment_db.html#cm_experiment_db.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.cm_experiment_db.cm_experiment_db.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds the state value for a user and experiment</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user</strong> &#8211; </li>
+<li><strong>experiment</strong> &#8211; </li>
+<li><strong>attribute</strong> &#8211; </li>
+<li><strong>value</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.cm_experiment_db.cm_experiment_db.cm_kind">
+<code class="descname">cm_kind</code><em class="property"> = 'experiment'</em><a class="headerlink" href="#cloudmesh.experiment.cm_experiment_db.cm_experiment_db.cm_kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.cm_experiment_db.cm_experiment_db.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>user</em>, <em>experiment=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/cm_experiment_db.html#cm_experiment_db.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.cm_experiment_db.cm_experiment_db.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the state values associated with a experiment.
+If non is specified for experiment all experiment state
+values are deleted</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user</strong> (<a class="reference external" href="http://docs.python.org/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) &#8211; the user for which the state values are recorded</li>
+<li><strong>experiment</strong> (<em>of the form /uri (string)</em>) &#8211; the experiment base url</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.cm_experiment_db.cm_experiment_db.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>user</em>, <em>experiment</em>, <em>attribute</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/cm_experiment_db.html#cm_experiment_db.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.cm_experiment_db.cm_experiment_db.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the state value for a user and a experiment</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user</strong> &#8211; </li>
+<li><strong>experiment</strong> &#8211; </li>
+<li><strong>attribute</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="cloudmesh-experiment-group-module">
+<h2>cloudmesh.experiment.group module<a class="headerlink" href="#cloudmesh-experiment-group-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-cloudmesh.experiment.group"></span><dl class="class">
+<dt id="cloudmesh.experiment.group.Comment">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.group.</code><code class="descname">Comment</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#Comment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.document.EmbeddedDocument</span></code></p>
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.Comment.content">
+<code class="descname">content</code><a class="headerlink" href="#cloudmesh.experiment.group.Comment.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.Comment.dbname">
+<code class="descname">dbname</code><em class="property"> = 'cloudmeshobj'</em><a class="headerlink" href="#cloudmesh.experiment.group.Comment.dbname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.Comment.name">
+<code class="descname">name</code><a class="headerlink" href="#cloudmesh.experiment.group.Comment.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.group.ExperimentGroup">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.group.</code><code class="descname">ExperimentGroup</code><span class="sig-paren">(</span><em>*args</em>, <em>**values</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#ExperimentGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.document.Document</span></code></p>
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.errors.DoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">ExperimentGroup.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.errors.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.dbname">
+<code class="descclassname">ExperimentGroup.</code><code class="descname">dbname</code><em class="property"> = 'cloudmeshobj'</em><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.dbname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.description">
+<code class="descclassname">ExperimentGroup.</code><code class="descname">description</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.id">
+<code class="descclassname">ExperimentGroup.</code><code class="descname">id</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A field wrapper around MongoDB&#8217;s ObjectIds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.name">
+<code class="descclassname">ExperimentGroup.</code><code class="descname">name</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.tags">
+<code class="descclassname">ExperimentGroup.</code><code class="descname">tags</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+<p>If using with ReferenceFields see: <span class="xref std std-ref">one-to-many-with-listfields</span></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Required means it cannot be empty - as the default for ListFields is []</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.ExperimentGroup.userid">
+<code class="descclassname">ExperimentGroup.</code><code class="descname">userid</code><a class="headerlink" href="#cloudmesh.experiment.group.ExperimentGroup.userid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.group.GroupItem">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.group.</code><code class="descname">GroupItem</code><span class="sig-paren">(</span><em>*args</em>, <em>**values</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.document.Document</span></code></p>
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.GroupItem.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.errors.DoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.GroupItem.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">GroupItem.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.errors.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.GroupItem.comments">
+<code class="descclassname">GroupItem.</code><code class="descname">comments</code><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+<p>If using with ReferenceFields see: <span class="xref std std-ref">one-to-many-with-listfields</span></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Required means it cannot be empty - as the default for ListFields is []</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.GroupItem.dbname">
+<code class="descclassname">GroupItem.</code><code class="descname">dbname</code><em class="property"> = 'cloudmeshobj'</em><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.dbname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.GroupItem.group">
+<code class="descclassname">GroupItem.</code><code class="descname">group</code><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reference to a document that will be automatically dereferenced on
+access (lazily).</p>
+<p>Use the <cite>reverse_delete_rule</cite> to handle what should happen if the document
+the field is referencing is deleted.  EmbeddedDocuments, DictFields and
+MapFields does not support reverse_delete_rule and an <cite>InvalidDocumentError</cite>
+will be raised if trying to set on one of these Document / Field types.</p>
+<p>The options are:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">DO_NOTHING  - don&#8217;t do anything (default).</p>
+</li>
+<li><p class="first">NULLIFY     - Updates the reference to null.</p>
+</li>
+<li><p class="first">CASCADE     - Deletes the documents associated with the reference.</p>
+</li>
+<li><p class="first">DENY        - Prevent the deletion of the reference object.</p>
+</li>
+<li><dl class="first docutils">
+<dt>PULL        - Pull the reference from a <code class="xref py py-class docutils literal"><span class="pre">ListField</span></code></dt>
+<dd><p class="first last">of references</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Alternative syntax for registering delete rules (useful when implementing
+bi-directional delete rules)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">StringField</span><span class="p">()</span>
+    <span class="n">foo</span> <span class="o">=</span> <span class="n">ReferenceField</span><span class="p">(</span><span class="s">&#39;Foo&#39;</span><span class="p">)</span>
+
+<span class="n">Bar</span><span class="o">.</span><span class="n">register_delete_rule</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="n">NULLIFY</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>reverse_delete_rule</cite> does not trigger pre / post delete signals to be
+triggered.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.5: </span>added <cite>reverse_delete_rule</cite></p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.GroupItem.id">
+<code class="descclassname">GroupItem.</code><code class="descname">id</code><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A field wrapper around MongoDB&#8217;s ObjectIds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.GroupItem.tags">
+<code class="descclassname">GroupItem.</code><code class="descname">tags</code><a class="headerlink" href="#cloudmesh.experiment.group.GroupItem.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+<p>If using with ReferenceFields see: <span class="xref std std-ref">one-to-many-with-listfields</span></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Required means it cannot be empty - as the default for ListFields is []</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.group.GroupManagement">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.group.</code><code class="descname">GroupManagement</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.add_item_to_group">
+<code class="descname">add_item_to_group</code><span class="sig-paren">(</span><em>groupname</em>, <em>_type</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.add_item_to_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.add_item_to_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.add_tag_to_group">
+<code class="descname">add_tag_to_group</code><span class="sig-paren">(</span><em>groupname</em>, <em>tag</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.add_tag_to_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.add_tag_to_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.check_type">
+<code class="descname">check_type</code><span class="sig-paren">(</span><em>_type</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.check_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.check_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.create_group">
+<code class="descname">create_group</code><span class="sig-paren">(</span><em>groupname</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.create_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.create_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.delete_group">
+<code class="descname">delete_group</code><span class="sig-paren">(</span><em>groupname</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.delete_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.delete_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.delete_item_of_group">
+<code class="descname">delete_item_of_group</code><span class="sig-paren">(</span><em>groupname</em>, <em>_type</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.delete_item_of_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.delete_item_of_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.get_groups">
+<code class="descname">get_groups</code><span class="sig-paren">(</span><em>groupname=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.get_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.get_groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.get_groups_names_list">
+<code class="descname">get_groups_names_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.get_groups_names_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.get_groups_names_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.get_item_of_group">
+<code class="descname">get_item_of_group</code><span class="sig-paren">(</span><em>groupname</em>, <em>_type</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.get_item_of_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.get_item_of_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.get_same_items_from_all_groups">
+<code class="descname">get_same_items_from_all_groups</code><span class="sig-paren">(</span><em>_type</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.get_same_items_from_all_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.get_same_items_from_all_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all items with same identity value and type from all groups</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.list_items_of_group">
+<code class="descname">list_items_of_group</code><span class="sig-paren">(</span><em>groupname</em>, <em>_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.list_items_of_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.list_items_of_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a dict in which the key is the type and value is a list of items of this type
+if _type is not provided, will return all items in the group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.group.GroupManagement.update_vm_of_group">
+<code class="descname">update_vm_of_group</code><span class="sig-paren">(</span><em>groupname</em>, <em>vmname</em>, <em>tags=None</em>, <em>comments=None</em>, <em>vm_name=None</em>, <em>vm_id=None</em>, <em>vm_accessIPv4=None</em>, <em>vm_accessIPv6=None</em>, <em>vm_created=None</em>, <em>vm_flavor=None</em>, <em>vm_metadata=None</em>, <em>vm_status=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#GroupManagement.update_vm_of_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.GroupManagement.update_vm_of_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.group.VM">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.group.</code><code class="descname">VM</code><span class="sig-paren">(</span><em>*args</em>, <em>**values</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#VM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.VM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../../modules/cloudmesh/cloudmesh.experiment.html#cloudmesh.experiment.group.GroupItem" title="cloudmesh.experiment.group.GroupItem"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.group.GroupItem</span></code></a></p>
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.VM.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.group.DoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.VM.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">VM.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.group.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_accessIPv4">
+<code class="descclassname">VM.</code><code class="descname">vm_accessIPv4</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_accessIPv4" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_accessIPv6">
+<code class="descclassname">VM.</code><code class="descname">vm_accessIPv6</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_accessIPv6" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_created">
+<code class="descclassname">VM.</code><code class="descname">vm_created</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_created" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_flavor">
+<code class="descclassname">VM.</code><code class="descname">vm_flavor</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_flavor" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_id">
+<code class="descclassname">VM.</code><code class="descname">vm_id</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_metadata">
+<code class="descclassname">VM.</code><code class="descname">vm_metadata</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary field that wraps a standard Python dictionary. This is
+similar to an embedded document, but the structure is not defined.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Required means it cannot be empty - as the default for DictFields is {}</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.3.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.5: </span>- Can now handle complex / varying types of data</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_name">
+<code class="descclassname">VM.</code><code class="descname">vm_name</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VM.vm_status">
+<code class="descclassname">VM.</code><code class="descname">vm_status</code><a class="headerlink" href="#cloudmesh.experiment.group.VM.vm_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.group.VOLUME">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.group.</code><code class="descname">VOLUME</code><span class="sig-paren">(</span><em>*args</em>, <em>**values</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group.html#VOLUME"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group.VOLUME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../../modules/cloudmesh/cloudmesh.experiment.html#cloudmesh.experiment.group.GroupItem" title="cloudmesh.experiment.group.GroupItem"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.group.GroupItem</span></code></a></p>
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.VOLUME.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#cloudmesh.experiment.group.VOLUME.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.group.DoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cloudmesh.experiment.group.VOLUME.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">VOLUME.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#cloudmesh.experiment.group.VOLUME.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.group.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.group.VOLUME.volume_name">
+<code class="descclassname">VOLUME.</code><code class="descname">volume_name</code><a class="headerlink" href="#cloudmesh.experiment.group.VOLUME.volume_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.experiment.group_usage">
+<span id="cloudmesh-experiment-group-usage-module"></span><h2>cloudmesh.experiment.group_usage module<a class="headerlink" href="#module-cloudmesh.experiment.group_usage" title="Permalink to this headline">¶</a></h2>
+<p>supporting functions about database side group management</p>
+<dl class="function">
+<dt id="cloudmesh.experiment.group_usage.add_item_to_group">
+<code class="descclassname">cloudmesh.experiment.group_usage.</code><code class="descname">add_item_to_group</code><span class="sig-paren">(</span><em>username</em>, <em>groupname</em>, <em>_type</em>, <em>value</em>, <em>refresh=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group_usage.html#add_item_to_group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group_usage.add_item_to_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>this is a more spicific function to add items to groups, e.g. using command group add item
+NAME VM VALUE, check whether vm exists before add it to group</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.experiment.group_usage.add_vm_to_group_while_creating">
+<code class="descclassname">cloudmesh.experiment.group_usage.</code><code class="descname">add_vm_to_group_while_creating</code><span class="sig-paren">(</span><em>username</em>, <em>groupname</em>, <em>vmname</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group_usage.html#add_vm_to_group_while_creating"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group_usage.add_vm_to_group_while_creating" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a vm to a group while the vm is being created, if the group doesn&#8217;t exist, 
+this will create one</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.experiment.group_usage.get_group_names_list_by_vms_metadata">
+<code class="descclassname">cloudmesh.experiment.group_usage.</code><code class="descname">get_group_names_list_by_vms_metadata</code><span class="sig-paren">(</span><em>username</em>, <em>cloudname</em>, <em>refresh=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group_usage.html#get_group_names_list_by_vms_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group_usage.get_group_names_list_by_vms_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>loops through all VMs of a cloud of a user, returns a list of all unique group 
+names accorrding to the metadata</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.experiment.group_usage.remove_vm_from_group_while_deleting">
+<code class="descclassname">cloudmesh.experiment.group_usage.</code><code class="descname">remove_vm_from_group_while_deleting</code><span class="sig-paren">(</span><em>username</em>, <em>vmname</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/group_usage.html#remove_vm_from_group_while_deleting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.group_usage.remove_vm_from_group_while_deleting" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove a vm from the group, assume there is no duplicate vm names, so
+this function will simplt remove all vms with name vmname from group
+database</p>
+</dd></dl>
+
+</div>
+<div class="section" id="cloudmesh-experiment-model-group-module">
+<h2>cloudmesh.experiment.model_group module<a class="headerlink" href="#cloudmesh-experiment-model-group-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-cloudmesh.experiment.model_group"></span><dl class="class">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.model_group.</code><code class="descname">ExperimentBase</code><span class="sig-paren">(</span><em>*args</em>, <em>**values</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.document.Document</span></code></p>
+<dl class="exception">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.errors.DoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">ExperimentBase.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">mongoengine.errors.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.cm_kind">
+<code class="descclassname">ExperimentBase.</code><code class="descname">cm_kind</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.cm_kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.cm_label">
+<code class="descclassname">ExperimentBase.</code><code class="descname">cm_label</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.cm_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.cm_userid">
+<code class="descclassname">ExperimentBase.</code><code class="descname">cm_userid</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.cm_userid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.dbname">
+<code class="descclassname">ExperimentBase.</code><code class="descname">dbname</code><em class="property"> = 'cloudmeshobj'</em><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.dbname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentBase.id">
+<code class="descclassname">ExperimentBase.</code><code class="descname">id</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentBase.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A field wrapper around MongoDB&#8217;s ObjectIds.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.model_group.ExperimentGroup">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.model_group.</code><code class="descname">ExperimentGroup</code><span class="sig-paren">(</span><em>userid</em>, <em>label</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cloudmesh.experiment.model_group.ExperimentGroup.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>vm</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentGroup.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentGroup.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.model_group.ExperimentGroup.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentGroup.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentGroup.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.model_group.ExperimentGroup.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>label=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentGroup.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentGroup.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.experiment.model_group.ExperimentGroup.to_table">
+<code class="descname">to_table</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentGroup.to_table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentGroup.to_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.experiment.model_group.ExperimentVM">
+<em class="property">class </em><code class="descclassname">cloudmesh.experiment.model_group.</code><code class="descname">ExperimentVM</code><span class="sig-paren">(</span><em>*args</em>, <em>**values</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#ExperimentVM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentVM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../../modules/cloudmesh/cloudmesh.experiment.html#cloudmesh.experiment.model_group.ExperimentBase" title="cloudmesh.experiment.model_group.ExperimentBase"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.model_group.ExperimentBase</span></code></a></p>
+<dl class="exception">
+<dt id="cloudmesh.experiment.model_group.ExperimentVM.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentVM.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.model_group.DoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cloudmesh.experiment.model_group.ExperimentVM.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">ExperimentVM.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentVM.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cloudmesh.experiment.model_group.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentVM.cloud">
+<code class="descclassname">ExperimentVM.</code><code class="descname">cloud</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentVM.cloud" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.experiment.model_group.ExperimentVM.vmid">
+<code class="descclassname">ExperimentVM.</code><code class="descname">vmid</code><a class="headerlink" href="#cloudmesh.experiment.model_group.ExperimentVM.vmid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.experiment.model_group.main">
+<code class="descclassname">cloudmesh.experiment.model_group.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/cloudmesh/experiment/model_group.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.experiment.model_group.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-cloudmesh.experiment">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudmesh.experiment" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

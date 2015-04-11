@@ -29,7 +29,6 @@ line
 
     !echo "hallo"
 
-
 .. parsed-literal::
 
     hallo
@@ -43,7 +42,6 @@ Environment variables can be accessed with $$
 .. code:: python
 
     !echo "$$EDITOR"
-
 
 .. parsed-literal::
 
@@ -59,11 +57,9 @@ Variables
 .. code:: python
 
     a="Hallo"
-
 .. code:: python
 
     !echo "{a}"
-
 
 .. parsed-literal::
 
@@ -81,11 +77,9 @@ functions are documented in the IPython manual
 
     %%capture
     !echo "You can not see me"
-
 .. code:: python
 
     !echo "You can see me"
-
 
 .. parsed-literal::
 

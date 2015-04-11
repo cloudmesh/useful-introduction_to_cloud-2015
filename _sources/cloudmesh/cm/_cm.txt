@@ -35,13 +35,11 @@ following lines.
 .. code:: python
 
     alias cm cm %s
-
 Now let us test the command and lets print the version of cloudmesh cm
 
 .. code:: python
 
     cm version
-
 
 .. parsed-literal::
 
@@ -58,11 +56,9 @@ execute the without !.
 .. code:: python
 
     %rehashx
-
 .. code:: python
 
     cm version
-
 
 .. parsed-literal::
 
@@ -84,7 +80,6 @@ see which options cm has.
 .. code:: python
 
     cm -h
-
 
 .. parsed-literal::
 
@@ -118,7 +113,6 @@ called GUI commands and cloud commands.
 .. code:: python
 
     cm help
-
 
 .. parsed-literal::
 
@@ -169,7 +163,6 @@ Listing Clouds
 
     cm cloud list
 
-
 .. parsed-literal::
 
     +-----------+--------+
@@ -192,7 +185,6 @@ list command.
 .. code:: python
 
     cm help cloud | head -n 10 
-
 
 .. parsed-literal::
 
@@ -219,7 +211,6 @@ command.
 
     cm "cloud list --column=active,label"
 
-
 .. parsed-literal::
 
     +-----------+--------+--------------------+
@@ -245,7 +236,6 @@ previously shown.
 .. code:: python
 
     cm cloud list --column=active,label
-
 
 .. parsed-literal::
 

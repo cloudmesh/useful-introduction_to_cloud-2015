@@ -27,7 +27,6 @@ needs.
 .. code:: python
 
     import uuid
-
 Machine dependent uuid
 ----------------------
 
@@ -37,7 +36,6 @@ uuid1.
 .. code:: python
 
     uuid.uuid1()
-
 
 
 
@@ -58,7 +56,6 @@ uuid4 creates random uuids.
 
 
 
-
 .. parsed-literal::
 
     UUID('cefa66c8-d8a0-4ded-9bf7-9ab3d178dc43')
@@ -75,7 +72,6 @@ use the function get\_unique\_name instaed.
 
 
 
-
 .. parsed-literal::
 
     UUID('ee73224b-3ee7-426b-b3f1-92906afccf66')
@@ -85,7 +81,6 @@ use the function get\_unique\_name instaed.
 .. code:: python
 
     uuid.uuid4().int
-
 
 
 
@@ -104,11 +99,9 @@ we have a convenience function in cloudmesh.
 .. code:: python
 
     from cloudmesh_common.util import get_unique_name
-
 .. code:: python
 
     print get_unique_name()
-
 
 .. parsed-literal::
 
@@ -124,7 +117,6 @@ distinctions. However this is rarely needed.
 .. code:: python
 
     get_unique_name("gregor")
-
 
 
 
@@ -147,11 +139,9 @@ cloudmesh.yaml file.
 .. code:: python
 
     import cloudmesh
-
 .. code:: python
 
     print cloudmesh.vm_name("gregor", 1)
-
 
 .. parsed-literal::
 
@@ -168,19 +158,15 @@ username and activate the user account.
 .. code:: python
 
     mesh = cloudmesh.mesh("mongo")
-
 .. code:: python
 
     username = cloudmesh.load().username()
-
 .. code:: python
 
     mesh.activate(username)
-
 .. code:: python
 
     mesh.vmname()
-
 
 
 
