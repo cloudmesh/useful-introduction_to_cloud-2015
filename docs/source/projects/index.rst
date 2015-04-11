@@ -16,5 +16,5 @@ Links that may inspire projects
    :maxdepth: 1
    :glob:
 
-   links_*
+   links*
 
