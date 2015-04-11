@@ -8,3 +8,13 @@ Possible Projects
 
    project_*
 
+
+Links that may inspire projects
+----------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   links_*
+

@@ -5,6 +5,7 @@ from __future__ import print_function
 import os
 #from cloudmesh_common.util import dotdict
 from cloudmesh.util.youtube import youtube
+#from cloudmesh_base.Shell import grep
 from sh import grep
 from pprint import pprint
 
@@ -14,7 +15,7 @@ from pprint import pprint
 # import sys
 # sys.exit()
     
-result =  grep("-r :youtube: docs/source/.".split(" ")).split("\n")[:-1]
+result =  grep('-r', ':youtube:', 'docs/source/.').split("\n")[:-1]
 
 print ("Generating the index for the following videos")
 print (70 *"=")
