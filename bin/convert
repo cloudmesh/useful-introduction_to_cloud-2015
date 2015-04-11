@@ -33,7 +33,7 @@ def find_files(root, prefix="", ending=""):
 
 
 def execute_all(command, files):
-    with futures.ThreadPoolExecutor(max_workers=1) as e:
+    with futures.ThreadPoolExecutor(max_workers=30) as e:
         for filename in files:
             e.submit(_execute, command, filename)
 
@@ -86,6 +86,7 @@ execute_all("rm", files)
 banner ("convert ipython notebooks")
 files = find_files(root, "", ".ipynb")
 execute_all("ipython nbconvert --to=rst", files)
-      
+
+os.system("wait")
 
 mv ('docs/source/index_notebooks.rst', 'docs/source/_index_notebooks.rst')
