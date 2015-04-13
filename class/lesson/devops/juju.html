@@ -196,10 +196,6 @@ and hooks with some extra support files to provision cloud software.</p>
 <li>Juju GUI</li>
 <li>Media Wiki or WordPress</li>
 <li>iptables for virtual networks</li>
-<li>Configuration with AWS</li>
-<li>Configuration with HP (Helion) Cloud</li>
-<li>Configuration with India OpenStack on FutureSystems</li>
-<li>Hadoop example</li>
 </ul>
 </div>
 <div class="section" id="juju-installation-on-futuresystems">
@@ -210,30 +206,33 @@ and hooks with some extra support files to provision cloud software.</p>
 <p class="last">If you need to know how to create a VM instance on FutureSystems, see
 here: <a class="reference external" href="../iaas/openstack.html#launching-a-new-instance">Launching a New Instance</a></p>
 </div>
+<div class="section" id="installation-on-ubuntu">
+<h3>Installation on Ubuntu<a class="headerlink" href="#installation-on-ubuntu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Start a VM instance with futuresystems/Ubuntu-14.04.</li>
 </ul>
 <p>Once you are in a VM instance, refresh the package lists with the following
 commands:</p>
-<div class="highlight-python"><div class="highlight"><pre>sudo add-apt-repository ppa:juju/stable
+<div class="highlight-python"><div class="highlight"><pre>sudo add-apt-repository ppa:juju/stable -y
 sudo apt-get update
 </pre></div>
 </div>
 <p>Install Juju packages:</p>
-<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install juju-quickstart
-sudo apt-get install juju-core
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install juju-quickstart -y
+sudo apt-get install juju-core -y
 </pre></div>
 </div>
-<div class="section" id="installation-on-osx">
-<h3>Installation on OSX<a class="headerlink" href="#installation-on-osx" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="installation-on-osx-optional">
+<h3>Installation on OSX (Optional)<a class="headerlink" href="#installation-on-osx-optional" title="Permalink to this headline">¶</a></h3>
 <p>Try to use Homebrew for installing Juju on OSX:</p>
 <div class="highlight-python"><div class="highlight"><pre>brew install juju-quickstart
 brew install juju
 </pre></div>
 </div>
 </div>
-<div class="section" id="installation-on-windows">
-<h3>Installation on Windows<a class="headerlink" href="#installation-on-windows" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation-on-windows-optional">
+<h3>Installation on Windows (Optional)<a class="headerlink" href="#installation-on-windows-optional" title="Permalink to this headline">¶</a></h3>
 <p>Download link for Windows 7, 8 (as of 03/31/2015):
 <a class="reference external" href="https://launchpad.net/juju-core/1.21/1.21.3/+download/juju-setup-1.21.3-signed.exe">https://launchpad.net/juju-core/1.21/1.21.3/+download/juju-setup-1.21.3-signed.exe</a></p>
 <div class="admonition warning">
@@ -265,7 +264,7 @@ address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo iptables -t nat -A PREROUTING -p tcp -d 0.0.0.0 --dport 443 -j DNAT --to-destination [IP ADDRESS of Juju GUI]:443
 </pre></div>
 </div>
-<p>You can find a IP affess of your Juju GUI with the following command:</p>
+<p>You can find a IP address of your Juju GUI with the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>juju status
 </pre></div>
 </div>
@@ -277,7 +276,7 @@ services:
   exposed: true
   units:
     juju-gui/0:
-      agent-state: down
+      agent-state: started
       agent-state-info: (started)
       agent-version: 1.22.0.1
       machine: &quot;1&quot;
