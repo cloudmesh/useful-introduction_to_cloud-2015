@@ -557,9 +557,9 @@ IT Operations - Automation and Orchestration
 Length of the lessons in Week 4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Total of video lessons:  hours and  minutes
-* Total of study materials:  hours and  minutes
-* Total of lab sessions:  hour and  minutes
+* Total of video lessons: 1 hours and 12 minutes
+* Total of study materials: 7 hours 
+* Total of lab sessions: 2 hours and 30 minutes
 
 Week 5 
 -------------------------------------------------------------------------------
