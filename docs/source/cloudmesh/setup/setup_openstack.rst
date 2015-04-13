@@ -46,7 +46,7 @@ or the nova command line.
 To set up a machine you could use the either of the following methods:
 
 * **Horizon**: see `our manual page
-  <../../iaas/openstack.html#horizon-gui.html>`_.
+  <../../iaas/openstack.html#horizon-gui>`_.
 
 * **nova**: see the :ref:`s-openstack`
 
