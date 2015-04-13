@@ -515,13 +515,13 @@ IT Operations - Automation and Orchestration
    * - OpenStack Heat
      - `20 mins <https://mix.office.com/watch/1ry7jrkuvkfwh>`_
      - :ref:`1 hour <ref-class-lesson-devops-openstack-heat>`
-     - :ref:`30 mins <ref-class-lesson-devops-openstack-heat-exercises>`
+     - :ref:`1 hour <ref-class-lesson-devops-openstack-heat-exercises>`
      - 04/17
      - 04/24
    * - Ubuntu Juju
      -
-     - :ref:`1 hour <ref-class-lesson-devops-juju>`
-     - :ref:`30 mins <ref-class-lesson-devops-juju-exercises>` (optional)
+     - :ref:`30 mins <ref-class-lesson-devops-juju>`
+     - 
      -
      -
  
@@ -557,9 +557,11 @@ IT Operations - Automation and Orchestration
 Length of the lessons in Week 4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Total of video lessons: 1 hours and 12 minutes
-* Total of study materials: 7 hours 
-* Total of lab sessions: 2 hours and 30 minutes
+* Total of video lessons: 1 hour and 12 minutes
+* Total of study materials: 2.5 hours
+* Total of optional study materials: 4 hours
+* Total of lab sessions: 1 hour and 30 minutes
+* Total of optional lab sessions: 1 hour
 
 Week 5 
 -------------------------------------------------------------------------------
