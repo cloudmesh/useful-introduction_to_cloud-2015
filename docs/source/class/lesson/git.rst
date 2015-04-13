@@ -62,7 +62,8 @@ a report detailing:
 * assignments of tasks to group members
 
 This prerequisite is satisfied if you and other students have formed
-a group and your instructor has approved the project.
+a group.
+.. and your instructor has approved the project.
 
 Obtain a FutureSystems account
 ----------------------------------------------------------------------
