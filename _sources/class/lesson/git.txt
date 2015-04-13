@@ -183,7 +183,7 @@ and include the following information:
 * the email address of each group member
 * the GitHub username of each group member
 * the course number registered for
-* the project proposal approved by the instructor
+.. * the project proposal approved by the instructor
 
 Please adhere to the following template for this email::
 
