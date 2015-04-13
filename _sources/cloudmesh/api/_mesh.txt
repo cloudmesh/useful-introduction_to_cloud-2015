@@ -17,9 +17,11 @@ Cloudmesh Mesh
 .. code:: python
 
     import cloudmesh
+
 .. code:: python
 
     username = cloudmesh.load().username()
+
 One of the most convenient methods to interact in python is to use the
 cloudmesh mesh interface. To activate it use the mesh command. We are
 currently only supporting to run cloudmesh with the mongo db activated.
@@ -27,14 +29,17 @@ currently only supporting to run cloudmesh with the mongo db activated.
 .. code:: python
 
     mesh = cloudmesh.mesh("mongo")
+
 After activation we can find out more information with th einfo command.
 
 .. code:: python
 
     mesh.activate(username)
+
 .. code:: python
 
     mesh.refresh()
+
 
 ::
 
