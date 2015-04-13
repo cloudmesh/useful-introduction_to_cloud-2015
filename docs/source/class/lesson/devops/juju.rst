@@ -132,7 +132,7 @@ You may find ``public-address`` under ``juju-gui`` section::
     exposed: true
     units:
       juju-gui/0:
-        agent-state: down
+        agent-state: started
         agent-state-info: (started)
         agent-version: 1.22.0.1
         machine: "1"
