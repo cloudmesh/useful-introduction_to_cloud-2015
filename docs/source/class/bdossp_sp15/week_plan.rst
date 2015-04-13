@@ -559,8 +559,12 @@ Length of the lessons in Week 4
 
 * Total of video lessons: 1 hour and 12 minutes
 * Total of study materials: 2.5 hours
-* Total of optional study materials: 4 hours
 * Total of lab sessions: 1 hour and 30 minutes
+
+Additional (optional) Lessons
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+* Total of optional study materials: 4 hours
 * Total of optional lab sessions: 1 hour
 
 Week 5 
