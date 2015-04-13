@@ -1,4 +1,4 @@
-.. _ref-class-lesson-devops-exercises:
+.. _ref-class-lesson-devops-saltstack:
 
 SaltStack
 ======================================================================
