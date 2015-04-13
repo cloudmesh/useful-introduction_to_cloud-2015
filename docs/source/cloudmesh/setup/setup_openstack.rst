@@ -43,18 +43,18 @@ This can be done in multiple ways, using the command line, vagrant, or
 the horizon GUI. Let us assume you have set it up via the horizon GUI
 or the nova command line. 
 
-To set up a machine you could use the either of the following methods:
+To set up a machine you could use either of the following methods:
 
 * **Horizon**: see `our manual page
   <../../iaas/openstack.html#horizon-gui>`_.
 
-* **nova**: see the :ref:`s-openstack`
+* **Nova**: see the :ref:`s-openstack`
 
-* **cloudmsh**: see :ref:`s-cloudmesh-quickstart` and the cloudmesh
+* **Cloudmsh**: see :ref:`s-cloudmesh-quickstart` and the Cloudmesh
   shell found elsewhere.
 
 
-.. note:: FutureSystems Portalname and Project ID
+.. note:: FutureSystems Portal Name and Project ID
           For this example we assume you have set the shell variable
 	  PORTALNAME to your FutureSystems portal username. This can
 	  be done as follows. Let us assume your portal name is
