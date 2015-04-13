@@ -36,10 +36,10 @@ This lesson covers for:
 * Juju GUI
 * Media Wiki or WordPress
 * iptables for virtual networks
-* Configuration with AWS
-* Configuration with HP (Helion) Cloud
-* Configuration with India OpenStack on FutureSystems
-* Hadoop example 
+.. * Configuration with AWS
+   * Configuration with HP (Helion) Cloud
+   * Configuration with India OpenStack on FutureSystems
+   * Hadoop example 
 
 Juju Installation on FutureSystems
 -------------------------------------------------------------------------------
@@ -50,6 +50,9 @@ Here we use a OpenStack VM instance to start Juju.
    here: `Launching a New Instance
    <../iaas/openstack.html#launching-a-new-instance>`_
 
+Installation on Ubuntu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 * Start a VM instance with futuresystems/Ubuntu-14.04.
 
 Once you are in a VM instance, refresh the package lists with the following
@@ -57,16 +60,16 @@ commands:
 
 ::
   
-   sudo add-apt-repository ppa:juju/stable
+   sudo add-apt-repository ppa:juju/stable -y
    sudo apt-get update
 
 Install Juju packages::
 
-   sudo apt-get install juju-quickstart
-   sudo apt-get install juju-core
+   sudo apt-get install juju-quickstart -y
+   sudo apt-get install juju-core -y
 
 
-Installation on OSX
+Installation on OSX (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Try to use Homebrew for installing Juju on OSX:
@@ -76,7 +79,7 @@ Try to use Homebrew for installing Juju on OSX:
   brew install juju-quickstart
   brew install juju
 
-Installation on Windows
+Installation on Windows (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download link for Windows 7, 8 (as of 03/31/2015):
@@ -114,7 +117,7 @@ address with the FORWARD rules.
   
   sudo iptables -t nat -A PREROUTING -p tcp -d 0.0.0.0 --dport 443 -j DNAT --to-destination [IP ADDRESS of Juju GUI]:443
 
-You can find a IP affess of your Juju GUI with the following command:
+You can find a IP address of your Juju GUI with the following command:
 
 ::
 
