@@ -521,7 +521,7 @@ IT Operations - Automation and Orchestration
    * - Ubuntu Juju
      -
      - :ref:`30 mins <ref-class-lesson-devops-juju>`
-     - 
+     - :ref:`10 mins <ref-class-lesson-devops-juju-exercises>` (optional)
      -
      -
  
@@ -565,7 +565,7 @@ Additional (optional) Lessons
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 * Total of optional study materials: 4 hours
-* Total of optional lab sessions: 1 hour
+* Total of optional lab sessions: 1 hour and 10 minutes
 
 Week 5 
 -------------------------------------------------------------------------------
