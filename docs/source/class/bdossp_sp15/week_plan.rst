@@ -498,13 +498,13 @@ IT Operations - Automation and Orchestration
      -
      - :ref:`1.5 hours <ref-class-lesson-devops-saltstack>`
      - :ref:`10 mins <ref-class-lesson-devops-saltstack-exercises>` (optional)
-     - 04/17
+     - 
      -
    * - Puppet
      -
      - :ref:`1 hour <ref-class-lesson-devops-puppet>`
      - :ref:`20 mins <ref-class-lesson-devops-puppet-exercises>` (optional)
-     - 04/17 
+     - 
      - 
    * - Chef
      - `35 mins <https://mix.office.com/watch/1g90jbv8llv0j>`_
@@ -516,7 +516,7 @@ IT Operations - Automation and Orchestration
      - `20 mins <https://mix.office.com/watch/1ry7jrkuvkfwh>`_
      - :ref:`1 hour <ref-class-lesson-devops-openstack-heat>`
      - :ref:`30 mins <ref-class-lesson-devops-openstack-heat-exercises>`
-     -
+     - 04/17
      - 04/24
    * - Ubuntu Juju
      -
