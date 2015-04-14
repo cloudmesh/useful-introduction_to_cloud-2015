@@ -1,4 +1,4 @@
-.. _ref-project-airline-delays:
+.. _ref-class-project-airline-delays:
 
 Predicting Airline Delays with Hadoop
 -------------------------------------------------------------------------------

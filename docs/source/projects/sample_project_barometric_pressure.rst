@@ -1,4 +1,4 @@
-.. _ref-project-barometric-pressure:
+.. _ref-class-project-barometric-pressure:
 
 Daily Variation of Barometric Pressure
 -------------------------------------------------------------------------------
