@@ -39,7 +39,7 @@ For more information, see below.
      - Category
      - Data Sets
      - Technologies
-   * - :ref:`Fingerprint Matching <ref-class-project-fingerprint>`
+   * - :ref:`Fingerprint Matching <ref-class-project-fingerprint-matching>`
      - Algorithm
      - NIST Special Database 14, 29, 30
      - - Apache Hadoop
