@@ -42,29 +42,57 @@ For more information, see below.
    * - :ref:`Fingerprint Matching <ref-class-project-fingerprint>`
      - Algorithm
      - NIST Special Database 14, 29, 30
-     - Apache Hadoop, Spark, HBase 
+     - - Apache Hadoop
+       - Spark
+       - HBase 
    * - :ref:`Human and Face Detection from Video (simulated streaming data) <ref-class-project-human-and-face-detection>`
      - Algorithm
      - OpenCV, INRIA Person Dataset
-     - Apache Hadoop, Spark, OpenCV, Mahout, MLlib
+     - - Apache Hadoop
+       - Spark
+       - OpenCV
+       - Mahout
+       - MLlib
    * - :ref:`Live Twitter Analysis <ref-class-project-live-twitter>`
      - Visualization
      - Live Twitter feed
-     - Apache Strom, HBase, Twitter's Search and Streaming APIs, D3.js, Tableau.
+     - - Apache Strom
+       - HBase
+       - Twitter's Search and Streaming APIs, 
+       - D3.js
+       - Tableau
    * - :ref:`Big data Analytics for Healthcare Data/Health informatics <ref-class-project-healthcare>`
      - Analytics
      - Medicare Part-B in 2014
-     - Apache Hadoop, Spark, HBase, Mahout, Lucene/Solr, MLlib
+     - - Apache Hadoop
+       - Spark
+       - HBase
+       - Mahout
+       - Lucene/Solr
+       - MLlib
    * - :ref:`Spatial Big data/Spatial Statistics/Geographic Information Systems <ref-class-project-spatial-bigdata>`
      - Analysis
      - Uber Ride Sharing GPS Data 
-     - Apache Hadoop or Apache Spark, GIS-tools, Apache Mahout, MLlib 
+     - - Apache Hadoop 
+       - Spark
+       - GIS-tools
+       - Mahout
+       - MLlib 
    * - :ref:`Data Warehousing and Data mining <ref-class-project-data-warehousing>`
      - Data mining
      - 2010 Census Data Products: United States
-     - Apache Hadoop, Spark, HBase, MongoDB, Hive, Pig, Mahout, Lucene/Solr, MLlib
+     - - Apache Hadoop
+       - Spark
+       - HBase
+       - MongoDB
+       - Hive
+       - Pig
+       - Mahout
+       - Lucene/Solr
+       - MLlib
 
 Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * BigDataBench: http://prof.ict.ac.cn/BigDataBench/#Benchmarks
 
 .. list-table:: Possible Projects From IU
@@ -75,19 +103,19 @@ Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
      - Category
      - Data Sets
      - Technologies
-   * - :ref:`Author Name Disambiguation for Bibliometric Data <>`
+   * - :ref:`Author Name Disambiguation for Bibliometric Data <project_namedisambugiuty>`
      -
      - https://github.com/scienceimpact/bibliometric
      - graphdb, neo4j, Apache Giraph, mongodb, d3.js, sql, REST
-   * - :ref:`A Paper on Container Technologies for BigData <>`
+   * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty1>`
      -
      - 
      - Docker, CoreOS, Kubernetes, Redhat Atomic, Marathon, Mesos
-   * - :ref:`A Survey of DevOps Frameworks in support of Big Data <>`
+   * - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
      -
      -
      - Any DevOps framework, Any PaaS using DevOps, Supporting services such as code reporsitories
-   * - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <>`
+   * - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <project_namedisambugiuty4>`
      -
      -
      - Any online PaaS framework, Any PaaS used for Big Data, Heroku, CloudLab, ChameleonCloud, AWS, Azure, HP Helion
@@ -108,15 +136,15 @@ Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
      - Data Processing
      - Quality Controlled Local Climatological Data
      - IPython Notebook 2.0 (Pandas, Numpy, matplotlib), d3.js
-   * - `Data Visualization <ref-class-project-visualization>`
+   * - :ref:`Data Visualization <ref-class-project-visualization>`
      - Visualization
      - Project dataset from DonorsChoose.org
      - D3.js, DC.js, Python, MongoDB
-   * - `MapReduce Implementation for Longest Common Substring Problem <ref-class-project-lcs>`
+   * - :ref:`MapReduce Implementation for Longest Common Substring Problem <ref-class-project-lcs>`
      - Parallel Programming
      - Escherichia coli K-12
      - Python, Amazon
-   * - `MapReduce Implementation for GFF Parsing <ref-class-project-gff>`
+   * - :ref:`MapReduce Implementation for GFF Parsing <ref-class-project-gff>`
      - Parallel Programming
      - 
      - Python, Disco, Amazon EC2
