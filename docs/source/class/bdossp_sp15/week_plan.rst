@@ -492,7 +492,7 @@ IT Operations - Automation and Orchestration
      - `17 mins <https://www.youtube.com/watch?v=JTv1QWjTWS8&index=1&list=PLLO4AVszo1SOkNPAv4E824AFScdduO9NF>`_
      - :ref:`1.5 hours <ref-class-lesson-devops-ansible>`
      - :ref:`30 mins <ref-class-lesson-devops-ansible-lab>`
-     - 04/17
+     - 04/21
      - 04/24
    * - SaltStack
      -
@@ -510,13 +510,13 @@ IT Operations - Automation and Orchestration
      - `35 mins <https://mix.office.com/watch/1g90jbv8llv0j>`_
      - :ref:`1 hour <ref-class-lesson-devops-chef>`
      - :ref:`30 mins <ref-class-lesson-devops-chef-exercises>` (optional)
-     -
+     - 04/21
      -
    * - OpenStack Heat
      - `20 mins <https://mix.office.com/watch/1ry7jrkuvkfwh>`_
      - :ref:`1 hour <ref-class-lesson-devops-openstack-heat>`
      - :ref:`1 hour <ref-class-lesson-devops-openstack-heat-exercises>`
-     - 04/17
+     - 04/21
      - 04/24
    * - Ubuntu Juju
      -
