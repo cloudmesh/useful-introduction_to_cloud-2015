@@ -8,6 +8,14 @@ Possible Projects
 
    project_*
 
+From NIST Big Data Public Working Group
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   nist_project_*
 
 Links that may inspire projects
 ----------------------------------------------------------------------
@@ -17,4 +25,13 @@ Links that may inspire projects
    :glob:
 
    links_*
+
+From Other Sources
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   sample_project_*
 
