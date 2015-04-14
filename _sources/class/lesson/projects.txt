@@ -107,7 +107,7 @@ Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
      -
      - https://github.com/scienceimpact/bibliometric
      - graphdb, neo4j, Apache Giraph, mongodb, d3.js, sql, REST
-   * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty1>`
+   * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
      -
      - 
      - Docker, CoreOS, Kubernetes, Redhat Atomic, Marathon, Mesos
