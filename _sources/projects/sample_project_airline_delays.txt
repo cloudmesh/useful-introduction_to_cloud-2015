@@ -20,15 +20,15 @@ Project Overview
   This project builds a supervised learning model that predicts airline delay
   from historial flight data and weather information.
 
-.. figure:: ../../images/projects/ml1.png
+.. figure:: ../images/projects/ml1.png
 
    Average delays by month
 
-.. figure:: ../../images/projects/ml2.png
+.. figure:: ../images/projects/ml2.png
    
    Average delays during a day
 
-.. figure:: ../../images/projects/ml3.png
+.. figure:: ../images/projects/ml3.png
 
    Top 15 airlines for flight delay (Chicago O'Hare airport)
 

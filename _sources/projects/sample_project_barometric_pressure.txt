@@ -16,7 +16,7 @@ Project Overview
   for each day) in inches, for the past 12 months. For each of the hand-picked
   major cities, the 365 daily ranges for that city are histogrammed.
 
-.. figure:: ../../images/projects/GeoSparkGrams.png
+.. figure:: ../images/projects/GeoSparkGrams.png
 
    Figure 1. GeoSparkGrams of Daily Barometric Volatility*
 
