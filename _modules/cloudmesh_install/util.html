@@ -179,7 +179,11 @@
     <span class="n">osx</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;darwin&#39;</span>
     <span class="k">if</span> <span class="n">osx</span><span class="p">:</span>
         <span class="n">os_version</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">mac_ver</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">os_version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;10.9.5&#39;</span><span class="p">,</span> <span class="s">&#39;10.10&#39;</span><span class="p">,</span> <span class="s">&#39;10.10.1&#39;</span><span class="p">,</span> <span class="s">&#39;10.10.2&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">os_version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;10.9.5&#39;</span><span class="p">,</span>
+                              <span class="s">&#39;10.10&#39;</span><span class="p">,</span>
+                              <span class="s">&#39;10.10.1&#39;</span><span class="p">,</span>
+                              <span class="s">&#39;10.10.2&#39;</span><span class="p">,</span>
+                              <span class="s">&#39;10.10.3&#39;</span><span class="p">]:</span>
             <span class="n">osx</span> <span class="o">=</span> <span class="bp">False</span>
             <span class="k">print</span><span class="p">(</span><span class="s">&quot;WARNING: </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> is not tested&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;OSX&#39;</span><span class="p">,</span> <span class="n">os_version</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">osx</span>
