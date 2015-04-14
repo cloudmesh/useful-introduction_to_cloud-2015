@@ -1,3 +1,5 @@
+.. _ref-class-project-spatial-bigdata:
+
 Spatial Big data/Spatial Statistics/Geographic Information Systems
 ===============================================================================
 

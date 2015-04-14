@@ -1,3 +1,5 @@
+.. _ref-class-project-human-and-face-detection:
+
 Human and Face Detection from Video (simulated streaming data)
 ===============================================================================
 

@@ -1,3 +1,5 @@
+.. _ref-class-project-data-warehousing:
+
 Data Warehousing and Data mining
 ===============================================================================
 

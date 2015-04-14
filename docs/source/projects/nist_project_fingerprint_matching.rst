@@ -1,3 +1,5 @@
+.. _ref-class-project-fingerprint-matching:
+
 Fingerprint Matching
 ===============================================================================
 

@@ -1,3 +1,5 @@
+.. _ref-class-project-healthcare:
+
 Big data Analytics for Healthcare Data/Health informatics
 ===============================================================================
 
