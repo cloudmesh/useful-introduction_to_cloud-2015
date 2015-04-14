@@ -34,7 +34,7 @@ Project Overview
   visualization that represents school donations broken down by different
   attributes.
 
-.. figure:: ../../images/projects/viz_demo.gif
+.. figure:: ../images/projects/viz_demo.gif
 
    Figure 2. Interactive Data Visualization for donorschoose.org**
 
