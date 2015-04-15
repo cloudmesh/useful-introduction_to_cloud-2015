@@ -10,9 +10,19 @@ variability of pose, appearance and lighting conditions. Also the algorithms
 have to robust enough to occlusion and clutter present in the backgrounds.
 Figure 1 and Figure 2, shows human and face detection examples.
 
-Figure 1. Human detection
+.. figure:: ../images/projects/human_detection_mikel_rodriguez.png
+  
+.. figure:: ../images/projects/nist_project_human_detection_example.png
+
+   Figure 1. Human detection
  
-Figure 2. Face detection
+.. figure:: ../images/projects/nist_project_face_detection.jpg
+
+.. figure:: ../images/projects/nist_project_face_detection2.jpg
+
+.. figure:: ../images/projects/face-detection-people.jpg
+
+   Figure 2. Face detection
 
 Algorithms One of the most widely used methods for human detection is the HOG
 (Histograms of oriented gradients) [1].  [1] Dalal, Navneet, and Bill Triggs.
