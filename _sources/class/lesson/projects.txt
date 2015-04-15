@@ -2,7 +2,6 @@ Final Project Guidelines
 ===============================================================================
 
 .. sidebar:: Page Contents
-      :maxdepth: 1
 
    .. contents::
       :local:
@@ -24,6 +23,7 @@ List of Possible Projects
 -------------------------------------------------------------------------------
 
 We have a few suggestions on possible projects from NIST, ICT, IU and others.
+See the following lists.
 
 .. list-table:: Possible Projects From NIST* (http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc)
    :widths: 30 10 10 10
