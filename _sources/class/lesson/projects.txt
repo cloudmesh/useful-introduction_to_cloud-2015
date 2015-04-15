@@ -2,9 +2,9 @@ Final Project Guidelines
 ===============================================================================
 
 .. sidebar:: Page Contents
+      :maxdepth: 1
 
    .. contents::
-      :maxdepth: 1
       :local:
 
 Important Dates
