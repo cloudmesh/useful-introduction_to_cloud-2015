@@ -11,6 +11,12 @@ between two fingerprints and that is used to identify individuals and verify
 their identity. Fingerprints (Figure 1.) are the most widely used form of
 biometric used to identify individuals.
 
+.. figure:: ../images/projects/nist_project_fingerprint_loop.jpg
+   
+.. figure:: ../images/projects/nist_project_fingerprint_whorl.jpg
+
+   Figure 1. Shows two sample fingerprints.
+
 The automated fingerprint matching generally required the detection of
 different fingerprint features (aggregate characteristics of ridges, and
 minutia points) and then the use of fingerprint matching algorithm, which can
