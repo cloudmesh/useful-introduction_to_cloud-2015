@@ -1,4 +1,4 @@
-Final Project Guidelines (Draft)
+Final Project Guidelines
 ===============================================================================
 
 .. sidebar:: Page Contents
@@ -10,8 +10,8 @@ Important Dates
 -------------------------------------------------------------------------------
 
 * Project Proposal: May 1st
-* Oral Presentation: May 20, 21th during discussion sessions (each group has 5
-  minutes) 
+* (Tentative) Oral Presentation: May 20, 21th during discussion sessions (each
+  group has 5 minutes) 
 * Final report: May 31th
 
 Team Coordination
@@ -22,16 +22,7 @@ Up to 3 members is recommended.
 List of Possible Projects
 -------------------------------------------------------------------------------
 
-Here is one example. Take data from US Census (you can use GE data on location
-of light bulbs if you want!) such as
-http://www.census.gov/population/www/cen2010/glance/ Injest into Hbase.  Build
-an analytics toolkit e.g. clustering people location with Hadoop/Mahout or
-Spark/MLlib Execute on a virtual cluster Visualize with D3. You can be more or
-less ambitious.
-
-For more information, see below.
-
-.. list-table:: Possible Projects From NIST
+.. list-table:: Possible Projects From NIST (http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc)
    :widths: 30 10 10 10
    :header-rows: 1
 
@@ -91,6 +82,8 @@ For more information, see below.
        - Lucene/Solr
        - MLlib
 
+* Reference URL of the projects: http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc
+
 Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * BigDataBench: http://prof.ict.ac.cn/BigDataBench/#Benchmarks
@@ -106,19 +99,47 @@ Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
    * - :ref:`Author Name Disambiguation for Bibliometric Data <project_namedisambugiuty>`
      -
      - https://github.com/scienceimpact/bibliometric
-     - graphdb, neo4j, Apache Giraph, mongodb, d3.js, sql, REST
+     - - graphdb
+       - neo4j
+       - Apache Giraph
+       - mongodb
+       - d3.js
+       - sql
+       - REST
    * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
      -
      - 
-     - Docker, CoreOS, Kubernetes, Redhat Atomic, Marathon, Mesos
+     - - Docker
+       - CoreOS
+       - Kubernetes
+       - Redhat Atomic
+       - Marathon
+       - Mesos
    * - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
      -
      -
-     - Any DevOps framework, Any PaaS using DevOps, Supporting services such as code reporsitories
+     - - Any DevOps framework
+       - Any PaaS using DevOps
+       - Supporting services such as code reporsitories
    * - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <project_namedisambugiuty4>`
      -
      -
-     - Any online PaaS framework, Any PaaS used for Big Data, Heroku, CloudLab, ChameleonCloud, AWS, Azure, HP Helion
+     - - Any online PaaS framework
+       - Any PaaS used for Big Data
+       - Heroku
+       - CloudLab
+       - ChameleonCloud
+       - AWS
+       - Azure
+       - HP Helion
+   * - Analysis on Census Data
+     -
+     - http://www.census.gov/population/www/cen2010/glance/ 
+     - - HBase
+       - Hadoop
+       - Mahout
+       - Spark/MLlib
+       - D3
 
 .. list-table:: Possible Projects From Ohters
    :widths: 30 10 10 10
@@ -131,25 +152,39 @@ Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
    * - :ref:`Predicting Airline Delays with Hadoop <ref-class-project-airline-delays>`
      - Machine Learning
      - Airline delay dataset 2007, 2008
-     - Hadoop, Apache Pig, Python, Pandas, HDFS, scikit-learn
+     - - Hadoop
+       - Apache Pig
+       - Python
+       - Pandas
+       - HDFS
+       - scikit-learn
    * - :ref:`Daily Variation of Barometric Pressure <ref-class-project-barometric-pressure>`
      - Data Processing
      - Quality Controlled Local Climatological Data
-     - IPython Notebook 2.0 (Pandas, Numpy, matplotlib), d3.js
+     - - IPython Notebook 2.0 
+       - Pandas
+       - Numpy
+       - matplotlib
+       - d3.js
    * - :ref:`Data Visualization <ref-class-project-visualization>`
      - Visualization
      - Project dataset from DonorsChoose.org
-     - D3.js, DC.js, Python, MongoDB
+     - - D3.js
+       - DC.js
+       - Python
+       - MongoDB
    * - :ref:`MapReduce Implementation for Longest Common Substring Problem <ref-class-project-lcs>`
      - Parallel Programming
      - Escherichia coli K-12
-     - Python, Amazon
+     - - Python
+       - Amazon
    * - :ref:`MapReduce Implementation for GFF Parsing <ref-class-project-gff>`
      - Parallel Programming
      - 
-     - Python, Disco, Amazon EC2
+     - - Python
+       - Disco
+       - Amazon EC2
 
-* :ref:`Sample Projects <ref-class-lesson-project-examples>`
 * :ref:`List of Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Technologies <ref-class-lesson-list-tech>`
 
@@ -205,7 +240,7 @@ Sample Project Proposal
                 everything being there, including this description),
                 screenshots, ...  
 
-Oral Presentation
+Oral Presentation (TBD)
 -------------------------------------------------------------------------------
 
 * A student will use Adobe Connect to give a presentation.
