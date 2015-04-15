@@ -223,8 +223,8 @@ You can find more examples in the following link.
        - Disco
        - Amazon EC2
 
-* :ref:`List of Datasets <ref-class-lesson-list-dataset>`
-* :ref:`List of Technologies <ref-class-lesson-list-tech>`
+* :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
+* :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
 
 Project Expectation
 -------------------------------------------------------------------------------
