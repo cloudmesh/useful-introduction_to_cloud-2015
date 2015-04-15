@@ -64,4 +64,4 @@ Possible Tools
 
 * Development: Java, Python, Scala and JavaScript, JQuery
 
-.. include:: nist_footer.st
+.. include:: nist_footer.rst
