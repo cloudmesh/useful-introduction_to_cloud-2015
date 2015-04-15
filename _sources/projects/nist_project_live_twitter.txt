@@ -25,6 +25,11 @@ compare it to other National labs, and many more things. The analysis could
 help NIST, measure and improve our effectiveness in engaging public about our
 work and our outreach effort on Twitter.
 
+
+.. figure:: ../images/projects/nist_project_twitter.png
+
+   Figure 1. Show different Twitter visualizations
+
 We could develop the application based on Apache Storm, a distributed
 computation framework, which adds reliable real-time data processing
 capabilities to Apache Hadoop. It is fast, scalable, reliable and can be
