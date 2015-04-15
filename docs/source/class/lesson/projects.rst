@@ -14,6 +14,11 @@ Important Dates
   group has 5 minutes) 
 * Final report: May 31th
 
+Submission
+-------------------------------------------------------------------------------
+
+* IU Canvas: https://canvas.iu.edu
+
 Team Coordination
 -------------------------------------------------------------------------------
 
@@ -290,11 +295,6 @@ Final Report
    - Test instruction (if necessary)
    - List of data source
    - List of technologies used
-
-Submission
--------------------------------------------------------------------------------
-
-* IU Canvas: https://canvas.iu.edu
 
 Questions & Support
 -------------------------------------------------------------------------------
