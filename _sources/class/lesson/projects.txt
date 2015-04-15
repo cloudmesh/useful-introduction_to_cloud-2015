@@ -4,6 +4,7 @@ Final Project Guidelines
 .. sidebar:: Page Contents
 
    .. contents::
+      :maxdepth: 1
       :local:
 
 Important Dates
@@ -22,7 +23,9 @@ Up to 3 members is recommended.
 List of Possible Projects
 -------------------------------------------------------------------------------
 
-.. list-table:: Possible Projects From NIST (http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc)
+We have a few suggestions on possible projects from NIST, ICT, IU and others.
+
+.. list-table:: Possible Projects From NIST* (http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc)
    :widths: 30 10 10 10
    :header-rows: 1
 
@@ -82,11 +85,40 @@ List of Possible Projects
        - Lucene/Solr
        - MLlib
 
-* Reference URL of the projects: http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc
+* \*Reference URL of these projects: http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc
 
-Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* BigDataBench: http://prof.ict.ac.cn/BigDataBench/#Benchmarks
+.. list-table:: Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences**
+   :widths: 30 10 10 10
+   :header-rows: 1
+
+   * - Title
+     - Category
+     - Data Sets
+     - Technologies
+   * - `Amazon Movie Reviews <http://snap.stanford.edu/data/web-Movies.html>`_
+     - Analytics (Bayes)
+     - `8 million reviews <http://snap.stanford.edu/data/movies.txt.gz>`_
+     - - Hadoop
+       - Spark
+       - MPI
+   * - `Google web graph <http://snap.stanford.edu/data/web-Google.html>`_
+     - Analytics (PageRank)
+     - `Webgraph from Google, 2002 <http://snap.stanford.edu/data/web-Google.txt.gz>`_
+     - - Hadoop
+       - Spark
+       - MPI
+   * - `Facebook Social Network <http://snap.stanford.edu/data/egonets-Facebook.html>`_
+     - Analytics (Kmeans)
+     - `Facebook data <http://snap.stanford.edu/data/facebook.tar.gz>`_
+     - - Hadoop
+       - Spark
+       - MPI
+   * - `Genome sequence data <http://ccl.cse.nd.edu/software/sand/>`_
+     - Analytics
+     - ``.cfa`` sample data
+     - Work Queue
+
+* \**Reference URL of these projects: http://prof.ict.ac.cn/BigDataBench/#Benchmarks
 
 .. list-table:: Possible Projects From IU
    :widths: 30 10 10 10
