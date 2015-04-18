@@ -154,6 +154,8 @@ Possible Projects from IU
        - sql
        - REST
    * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
+        - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
+        - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <project_namedisambugiuty4>`
      - Report style Project
      - 
      - - Docker
@@ -162,20 +164,9 @@ Possible Projects from IU
        - Redhat Atomic
        - Marathon
        - Mesos
-   * - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
-     - Report style Project     
-     -
-     - - Any DevOps framework
-       - Any PaaS using DevOps
-       - Supporting services such as code reporsitories
-   * - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <project_namedisambugiuty4>`
-     - Report style Project     
-     -
-     - - Any online PaaS framework
-       - Any PaaS used for Big Data
        - Heroku
        - CloudLab
-       - ChameleonCloud
+       - Chameleon Cloud
        - AWS
        - Azure
        - HP Helion
