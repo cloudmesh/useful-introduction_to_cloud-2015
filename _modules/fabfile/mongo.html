@@ -639,7 +639,14 @@
 
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;PBS --&gt;&quot;</span>
-        <span class="n">pprint</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="c"># Temporary cure for missing a shell prompt</span></div>
+<span class="k">if</span> <span class="p">(</span><span class="n">PROGRESS</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">PROGRESS</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
 </pre></div>
 
           </div>

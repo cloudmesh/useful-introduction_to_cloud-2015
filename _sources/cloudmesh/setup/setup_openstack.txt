@@ -86,6 +86,12 @@ We summarize the following steps::
   india$ module load openstack
   india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 
+``india$`` stands for a SSH terminal of india.futuresystems.org. If you see the
+``india$`` label, you run a command on ``india (i136)``.  It is like so::
+
+  [$PORTALNAME@i136 ~]$ 
+
+
 .. important::
 
    If you are following this as part of a class, make sure you source
@@ -106,14 +112,14 @@ have OpenStack create a key for you or import your current key.
 
 To **import** a pre-existing key, such as ``~/.ssh/id_rsa.pub``, do the following::
 
-  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+  india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
 
 This will associate your ``~/.ssh/id_rsa.pub`` key with the name ``$USER-india-key``.
 
 **Alternatively**, to have OpenStack create a key for you, execute the following::
 
-  $ nova keypair-add $USER-india-key >~/.ssh/$USER-india-key
-  $ chmod 600 ~/.ssh/$USER-india-key
+  india$ nova keypair-add $USER-india-key >~/.ssh/$USER-india-key
+  india$ chmod 600 ~/.ssh/$USER-india-key
 
 This will generate the key, import it into OpenStack, and ``chmod``
 will fix permissions on the file.
@@ -195,73 +201,111 @@ Systems Dependencies
 Installation of cloudmesh can be complicated. We provide a oneline
 script to install::
 
-  $ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | venv=$HOME/ENV bash
+  vm$ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | venv=$HOME/ENV bash
+
+``vm$`` stands for a SSH terminal of your VM instance. If you see the
+``vm$`` label, you run a command on your VM instance.  It is like so::
+
+  ubuntu@$USER-001:~$ 
+
+If you have a different name instead of ``$USER-001``, you see the name in the
+label.
 
 .. note:: This may take several minutes.
 
 Please see :ref:`ref-cloudmesh-quickstart-system-install-curl` for
 details on what this does.
 
+You may see outputs like so::
+
+    %  Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                      Dload  Upload   Total   Spent    Left  Speed
+    100  1314  100  1314    0     0   3428      0 --:--:-- --:--:-- --:--:--  3439
+
+    ... (skip) ...
+
+    copy etc/user_info.yaml -> /home/ubuntu/.cloudmesh/user_info.yaml
+    copy etc/cloudmesh_country.yaml -> /home/ubuntu/.cloudmesh/cloudmesh_country.yaml
+    copy /home/ubuntu/.cloudmesh/me-none.yaml -> /home/ubuntu/.cloudmesh/me.yaml
+    # Created: /home/ubuntu/.cloudmesh/me.yaml
+
+    # ----------------------------------------------------------------------
+
 You now need to activate the virtualenv created::
 
-  $ source $HOME/ENV/bin/activate
+  vm$ source $HOME/ENV/bin/activate
 
+After this command, you see the ``(ENV)`` label in your prompt.
 
 Cloudmesh Setup
 ----------------------------------------------------------------------
 
-As part of its installation, cloudmesh create a ``~/.cloudmesh``
-directory with several yaml files. Now we need to populate the
-cloudmesh.yaml file with your actual cloud credentials.  Cloudmesh
-provides tools for you to retrieve your futuresystems cloud credential
-and configure the cloudmesh.yaml file properly. Before we can use it
-however we have to create a key that we upload to the FutureSystems
-portal::
+As part of its installation, cloudmesh create a ``~/.cloudmesh`` directory with
+configuration files in YAML format. Now we need to populate the
+``cloudmesh.yaml`` file with your actual cloud credentials.  Cloudmesh provides
+tools for you to retrieve your futuresystems cloud credential and configure the
+``cloudmesh.yaml`` file properly. Before we can use it however we have to
+create a key that we upload to the FutureSystems portal::
 
- $ export PORTALNAME=<put your portal name here>
- $ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
+ vm$ export PORTALNAME=<put your portal name here>
+ vm$ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
 
 Than lets add the key to the ssh agent::
 
-  $ eval `ssh-agent -s`
-  $ ssh-add
+  vm$ eval `ssh-agent -s`
+  vm$ ssh-add
   
 Then you need to add the key to your FutureSystems portal account. 
 Please visit the portal and paste the content of the public
 key in the appropriate field. You can get the content of the key by ::
 
-  $ cat ~/.ssh/id_rsa.pub
+  vm$ cat ~/.ssh/id_rsa.pub
 
 At this point you should be able to connect to india from this VM which is 
 required by the following commands.
 
 Now you can fetch the information you need to acces openstack form india::
 
-  $ cm-iu user fetch
-  $ cm-iu user create
+  vm$ cm-iu user fetch
+  vm$ cm-iu user create
   
 It's also recommended you manually edit the file `~/.cloudmesh/cloudmesh.yaml` 
 either with emacs or vi::
 
-  $ emacs ~/.cloudmesh/cloudmesh.yaml
+  vm$ emacs ~/.cloudmesh/cloudmesh.yaml
 
 or::
 
-  $ vi ~/.cloudmesh/cloudmesh.yaml
+  vm$ vi ~/.cloudmesh/cloudmesh.yaml
 
 In this file, update your user profile, name, project data, etc.
 
+Move into ``cloudmesh`` source directory.::
+
+  vm$ cd ~/cloudmesh
 
 In order to start the cloudmesh web server that is accessible to outside,
 we also need to undertake some changes for the india OpenStack cloud 
 configuration with ::
-  
-  $ fab india.configure
-    
+ 
+  (ENV)vm$ fab india.configure
+
+You may see outputs like so::
+
+  modify -> /home/ubuntu/.cloudmesh/cloudmesh_server.yaml
+  modify -> /home/ubuntu/.cloudmesh/cloudmesh.yaml
+  Configuration changes have been made successfully
+
+``(ENV)$`` means that ``ENV`` virtual environment is enabled on your terminal. 
+This tutorial uses the ``ENV`` virtualenv to install Python packages relevant to Cloudmesh.
+When you run any Cloudmesh-related commands, you must enable ``ENV`` virtualenv by::
+
+  vm$ source ~/ENV/bin/activate
+
 To run cloudmesh you will need to start a number of services. The first
 is to create and initialize the cloudmesh database. Here we will use the command::
 
-  $ fab mongo.reset
+  (ENV)vm$ fab mongo.reset
 
 Please note that this command will erase the previous database and you
 should be carefully considering its use. When you initialize the
@@ -275,7 +319,7 @@ cloudmesh server first this is the best method.
 
 Now you are ready to start all services for cloudmesh with::
 
-  $ fab server.start
+  (ENV)vm$ fab server.start
 
 Then the cloudmesh service should be available via::
 
@@ -283,7 +327,7 @@ Then the cloudmesh service should be available via::
 
 If you forgot your IP, use the command::
 
-  $ echo $MYIP
+  india$ echo $MYIP
 
 
 NOTE:

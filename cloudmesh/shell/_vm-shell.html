@@ -295,7 +295,7 @@ can get a lot easier by performing some setting up...</p>
 <p>Each cloud must have a default image and a default flavor to launch vm
 instances in a simple step. The cloud set command provides a way to set
 default values for an image or a flavor.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud set flavor india --flavorid=2&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud set flavor india --id=2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>* india
@@ -309,7 +309,7 @@ Store time: 0.00973987579346
 [32m&#39;m1.small&#39; is selected[0m
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud set image india --image=futuresystems/ubuntu-14.04&quot;</span><span class="p">)</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;cloud set image india --name=futuresystems/ubuntu-14.04&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>* india

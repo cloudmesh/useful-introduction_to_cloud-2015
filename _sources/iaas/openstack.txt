@@ -267,7 +267,9 @@ Check your floating ip list::
 
 And then, add the IP address to your instance::
 
-       $ nova add-floating-ip $PORTALNAME-001 149.165.158.149
+       $ nova floating-ip-associate $PORTALNAME-001 149.165.158.149
+
+.. note:: nova add-floating-ip is deprecated.
 
 Check your floating ip list again to see if the ip address is added to your 
 instance::
@@ -292,6 +294,42 @@ you need to delete the offending host key from ~/.ssh/known_hosts.
 
 Please do not forget to also delete your 001 vm if you no longer need
 it.
+
+Releasing Floating IP Address
+-------------------------------------------------------------------------------
+
+If you are removing the association with a floating IP address and a VM instance::
+
+  nova  floating-ip-disassociate <server> <address>
+
+It looks like so::
+
+  $ nova floating-ip-disassociate $PORTALNAME-001 149.165.158.149
+
+There is one more step to fully return the lease of IP address. *THIS IS
+IMPORTANT SINCE IP ADDRESSES ARE NOT SUFFICIENT*.
+
+Check your floating ip list::
+
+       $ nova floating-ip-list
+       +-----------------+-----------+----------+---------+
+       | Ip              | Server Id | Fixed Ip | Pool    |
+       +-----------------+-----------+----------+---------+
+       | 149.165.158.149 | -         | -        | ext-net |
+       +-----------------+-----------+----------+---------+
+
+
+The floating IP address is not associated with your VM instance but it is still
+in your pool which means it is reserved for you and others can't use the IP
+address.
+
+We must release the IP address so that others can use it.:: 
+
+  nova floating-ip-delete <address> 
+
+It looks like this::
+
+  $ nova floating-ip-delete 149.165.158.149
 
 Delete your instance
 --------------------

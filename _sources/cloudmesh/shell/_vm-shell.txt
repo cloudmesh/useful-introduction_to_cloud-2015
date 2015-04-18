@@ -206,7 +206,7 @@ default values for an image or a flavor.
 
 .. code:: python
 
-    print cloudmesh.shell("cloud set flavor india --flavorid=2")
+    print cloudmesh.shell("cloud set flavor india --id=2")
 
 
 .. parsed-literal::
@@ -225,7 +225,7 @@ default values for an image or a flavor.
 
 .. code:: python
 
-    print cloudmesh.shell("cloud set image india --image=futuresystems/ubuntu-14.04")
+    print cloudmesh.shell("cloud set image india --name=futuresystems/ubuntu-14.04")
 
 
 .. parsed-literal::

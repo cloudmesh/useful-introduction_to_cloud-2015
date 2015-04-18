@@ -404,8 +404,12 @@ floating IP address.</p>
 </pre></div>
 </div>
 <p>And then, add the IP address to your instance:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova add-floating-ip <span class="nv">$PORTALNAME</span>-001 149.165.158.149
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova floating-ip-associate <span class="nv">$PORTALNAME</span>-001 149.165.158.149
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">nova add-floating-ip is deprecated.</p>
 </div>
 <p>Check your floating ip list again to see if the ip address is added to your
 instance:</p>
@@ -429,6 +433,39 @@ Offending key in ~/.ssh/known_hosts:3
 <p>you need to delete the offending host key from ~/.ssh/known_hosts.</p>
 <p>Please do not forget to also delete your 001 vm if you no longer need
 it.</p>
+</div>
+<div class="section" id="releasing-floating-ip-address">
+<h2>Releasing Floating IP Address<a class="headerlink" href="#releasing-floating-ip-address" title="Permalink to this headline">¶</a></h2>
+<p>If you are removing the association with a floating IP address and a VM instance:</p>
+<div class="highlight-bash"><div class="highlight"><pre>nova  floating-ip-disassociate &lt;server&gt; &lt;address&gt;
+</pre></div>
+</div>
+<p>It looks like so:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova floating-ip-disassociate <span class="nv">$PORTALNAME</span>-001 149.165.158.149
+</pre></div>
+</div>
+<p>There is one more step to fully return the lease of IP address. <em>THIS IS
+IMPORTANT SINCE IP ADDRESSES ARE NOT SUFFICIENT</em>.</p>
+<p>Check your floating ip list:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova floating-ip-list
++-----------------+-----------+----------+---------+
+<span class="p">|</span> Ip              <span class="p">|</span> Server Id <span class="p">|</span> Fixed Ip <span class="p">|</span> Pool    <span class="p">|</span>
++-----------------+-----------+----------+---------+
+<span class="p">|</span> 149.165.158.149 <span class="p">|</span> -         <span class="p">|</span> -        <span class="p">|</span> ext-net <span class="p">|</span>
++-----------------+-----------+----------+---------+
+</pre></div>
+</div>
+<p>The floating IP address is not associated with your VM instance but it is still
+in your pool which means it is reserved for you and others can&#8217;t use the IP
+address.</p>
+<p>We must release the IP address so that others can use it.:</p>
+<div class="highlight-bash"><div class="highlight"><pre>nova floating-ip-delete &lt;address&gt;
+</pre></div>
+</div>
+<p>It looks like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>nova floating-ip-delete 149.165.158.149
+</pre></div>
+</div>
 </div>
 <div class="section" id="delete-your-instance">
 <h2>Delete your instance<a class="headerlink" href="#delete-your-instance" title="Permalink to this headline">¶</a></h2>

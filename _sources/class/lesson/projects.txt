@@ -42,13 +42,13 @@ Possible Projects From NIST
      - Data Sets
      - Technologies
    * - :ref:`Fingerprint Matching <ref-class-project-fingerprint-matching>`
-     - Algorithm
+     - Batch Data Analytics
      - NIST Special Database 14, 29, 30
      - - Apache Hadoop
        - Spark
        - HBase 
    * - :ref:`Human and Face Detection from Video (simulated streaming data) <ref-class-project-human-and-face-detection>`
-     - Algorithm
+     - Streaming Data Analytics
      - OpenCV, INRIA Person Dataset
      - - Apache Hadoop
        - Spark
@@ -56,7 +56,7 @@ Possible Projects From NIST
        - Mahout
        - MLlib
    * - :ref:`Live Twitter Analysis <ref-class-project-live-twitter>`
-     - Visualization
+     - Streaming Data Analytics
      - Live Twitter feed
      - - Apache Strom
        - HBase
@@ -64,7 +64,7 @@ Possible Projects From NIST
        - D3.js
        - Tableau
    * - :ref:`Big data Analytics for Healthcare Data/Health informatics <ref-class-project-healthcare>`
-     - Analytics
+     - Batch Data Analytics
      - Medicare Part-B in 2014
      - - Apache Hadoop
        - Spark
@@ -73,7 +73,7 @@ Possible Projects From NIST
        - Lucene/Solr
        - MLlib
    * - :ref:`Spatial Big data/Spatial Statistics/Geographic Information Systems <ref-class-project-spatial-bigdata>`
-     - Analysis
+     - Batch Data Analytics
      - Uber Ride Sharing GPS Data 
      - - Apache Hadoop 
        - Spark
@@ -81,7 +81,7 @@ Possible Projects From NIST
        - Mahout
        - MLlib 
    * - :ref:`Data Warehousing and Data mining <ref-class-project-data-warehousing>`
-     - Data mining
+     - Batch Data Analytics
      - 2010 Census Data Products: United States
      - - Apache Hadoop
        - Spark
@@ -107,25 +107,25 @@ Possible Projects from BigDataBench
      - Data Sets
      - Technologies
    * - `Amazon Movie Reviews <http://snap.stanford.edu/data/web-Movies.html>`_
-     - Analytics (Bayes)
+     - Batch Data Analytics
      - `8 million reviews <http://snap.stanford.edu/data/movies.txt.gz>`_
      - - Hadoop
        - Spark
        - MPI
    * - `Google web graph <http://snap.stanford.edu/data/web-Google.html>`_
-     - Analytics (PageRank)
+     - Batch Data Analytics
      - `Webgraph from Google, 2002 <http://snap.stanford.edu/data/web-Google.txt.gz>`_
      - - Hadoop
        - Spark
        - MPI
    * - `Facebook Social Network <http://snap.stanford.edu/data/egonets-Facebook.html>`_
-     - Analytics (Kmeans)
+     - Batch Data Analytics
      - `Facebook data <http://snap.stanford.edu/data/facebook.tar.gz>`_
      - - Hadoop
        - Spark
        - MPI
    * - `Genome sequence data <http://ccl.cse.nd.edu/software/sand/>`_
-     - Analytics
+     - Batch Data Analytics
      - ``.cfa`` sample data
      - Work Queue
 
@@ -144,7 +144,7 @@ Possible Projects from IU
      - Data Sets
      - Technologies
    * - :ref:`Author Name Disambiguation for Bibliometric Data <project_namedisambugiuty>`
-     -
+     - Batch Data Analytics
      - https://github.com/scienceimpact/bibliometric
      - - graphdb
        - neo4j
@@ -154,7 +154,7 @@ Possible Projects from IU
        - sql
        - REST
    * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
-     -
+     - Report style Project
      - 
      - - Docker
        - CoreOS
@@ -163,13 +163,13 @@ Possible Projects from IU
        - Marathon
        - Mesos
    * - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
-     -
+     - Report style Project     
      -
      - - Any DevOps framework
        - Any PaaS using DevOps
        - Supporting services such as code reporsitories
    * - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <project_namedisambugiuty4>`
-     -
+     - Report style Project     
      -
      - - Any online PaaS framework
        - Any PaaS used for Big Data
@@ -179,19 +179,32 @@ Possible Projects from IU
        - AWS
        - Azure
        - HP Helion
-   * - Analysis on Census Data
-     -
+   * - Analysis of Census Data Category*
+     - Batch Data Analytics
      - http://www.census.gov/population/www/cen2010/glance/ 
      - - HBase
        - Hadoop
        - Mahout
        - Spark/MLlib
        - D3
+   * - Survey HPC-ABDS 
+     - Report style Project
+     - http://bigdataopensourceprojects.soic.indiana.edu/#section3
+     - - Several topics such as review level 17 (orchestration)
+       - Compare level 6 (DevOps)
+       - level 15B (PaaS Frameworks) 
+       - and level 17
 
-Possible Projects from Others
+* \*Take data from US Census (you can use GE data on location of light bulbs if you want!)
+  such as http://www.census.gov/population/www/cen2010/glance/
+  Injest into Hbase.
+  Build an analytics toolkit e.g. clustering people location with Hadoop/Mahout or Spark/MLlib
+  Execute on a virtual cluster and visualize with D3.js. 
+
+Projects from Other Sources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. list-table:: Possible Projects From Ohters
+.. list-table:: Projects From Ohter Sources
    :widths: 30 10 10 10
    :header-rows: 1
 
@@ -200,7 +213,7 @@ Possible Projects from Others
      - Data Sets
      - Technologies
    * - :ref:`Predicting Airline Delays with Hadoop <ref-class-project-airline-delays>`
-     - Machine Learning
+     - Batch Data Analytics
      - Airline delay dataset 2007, 2008
      - - Hadoop
        - Apache Pig
@@ -209,7 +222,7 @@ Possible Projects from Others
        - HDFS
        - scikit-learn
    * - :ref:`Daily Variation of Barometric Pressure <ref-class-project-barometric-pressure>`
-     - Data Processing
+     - Data Processing Batch Data Analytics
      - Quality Controlled Local Climatological Data
      - - IPython Notebook 2.0 
        - Pandas
@@ -217,23 +230,25 @@ Possible Projects from Others
        - matplotlib
        - d3.js
    * - :ref:`Data Visualization <ref-class-project-visualization>`
-     - Visualization
+     - Big Data Visualization
      - Project dataset from DonorsChoose.org
      - - D3.js
        - DC.js
        - Python
        - MongoDB
    * - :ref:`MapReduce Implementation for Longest Common Substring Problem <ref-class-project-lcs>`
-     - Parallel Programming
+     - Batch Data Analytics
      - Escherichia coli K-12
      - - Python
        - Amazon
+       - MapReduce
    * - :ref:`MapReduce Implementation for GFF Parsing <ref-class-project-gff>`
-     - Parallel Programming
+     - Batch Data Analytics
      - 
      - - Python
        - Disco
        - Amazon EC2
+       - MapReduce
 
 * :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
