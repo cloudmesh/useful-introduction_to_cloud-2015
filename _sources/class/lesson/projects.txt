@@ -153,6 +153,36 @@ Possible Projects from IU
        - d3.js
        - sql
        - REST
+   * - Analysis of Census Data Category*
+     - Batch Data Analytics
+     - http://www.census.gov/population/www/cen2010/glance/ 
+     - - HBase
+       - Hadoop
+       - Mahout
+       - Spark/MLlib
+       - D3
+
+* \*Take data from US Census (you can use GE data on location of light bulbs if you want!)
+  such as http://www.census.gov/population/www/cen2010/glance/
+  Injest into Hbase.
+  Build an analytics toolkit e.g. clustering people location with Hadoop/Mahout or Spark/MLlib
+  Execute on a virtual cluster and visualize with D3.js. 
+
+Report Style Projects
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. list-table:: Report Style Projects
+   :widths: 30 10 10 10
+   :header-rows: 1
+
+   * - Title
+     - Category
+     - Data Sets
+     - Technologies
+   * - Survey HPC-ABDS 
+     - Report style Project
+     - http://bigdataopensourceprojects.soic.indiana.edu/#section3
+     - Several topics such as review level 17 (orchestration), Compare level 6 (DevOps) and level 15B (PaaS Frameworks) and level 17
    * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
         - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
         - :ref:`A Survey of Online PaaS Frameworks and Clouds in support of Big Data <project_namedisambugiuty4>`
@@ -170,27 +200,6 @@ Possible Projects from IU
        - AWS
        - Azure
        - HP Helion
-   * - Analysis of Census Data Category*
-     - Batch Data Analytics
-     - http://www.census.gov/population/www/cen2010/glance/ 
-     - - HBase
-       - Hadoop
-       - Mahout
-       - Spark/MLlib
-       - D3
-   * - Survey HPC-ABDS 
-     - Report style Project
-     - http://bigdataopensourceprojects.soic.indiana.edu/#section3
-     - - Several topics such as review level 17 (orchestration)
-       - Compare level 6 (DevOps)
-       - level 15B (PaaS Frameworks) 
-       - and level 17
-
-* \*Take data from US Census (you can use GE data on location of light bulbs if you want!)
-  such as http://www.census.gov/population/www/cen2010/glance/
-  Injest into Hbase.
-  Build an analytics toolkit e.g. clustering people location with Hadoop/Mahout or Spark/MLlib
-  Execute on a virtual cluster and visualize with D3.js. 
 
 Projects from Other Sources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,19 +253,31 @@ Projects from Other Sources
 * :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
 
-Project Expectation
+Project Expectation (Grade)
 -------------------------------------------------------------------------------
 
-We expect you to deal with one of the challenges from big data using open
-source software. The main topics of your projects may cover one of these:
+Projects are expected to software based and can receive full credit up to a
+grade of A+. Report style projects have a best possible grade of A-.
 
-* parallel data processing on the cloud
-* database on the cloud
-* machine learning: optimization, modeling
-* data mining
-* visualization
+Details on Software based Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Other technology landscape can be addressed*
+* Source code on Github: https://github.com/futuresystems
+* Written report: 4-6 pages
+   - Test instruction (if necessary)
+   - List of data source
+   - List of technologies used
+
+Details on Report Style Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
+pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
+Figures can be included and proper citations must be included.
+*Use IU Canvas to submit your final report.*
+
+Use many examples given above to choose a project. You can follow one of these
+examples or choose your own.
 
 Project Proposal
 -------------------------------------------------------------------------------
@@ -314,6 +335,14 @@ Final Report
    - Test instruction (if necessary)
    - List of data source
    - List of technologies used
+
+Report Style Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* If you've chosen report style projects, you must submit a paper to IU Canvas.
+* Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
+pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
+Figures can be included and proper citations must be included.
 
 Questions & Support
 -------------------------------------------------------------------------------
