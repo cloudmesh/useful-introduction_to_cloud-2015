@@ -152,7 +152,7 @@ You can find more examples in the following link.
 Benchmarking Techniques
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We have other benchmark techniques such as HiBench, Graph 500, BigBench,
+There are other benchmark sets such as HiBench, Graph 500, BigBench,
 LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark, TPCx-HS, and
 CloudSuite.
 
@@ -172,7 +172,7 @@ CloudSuite.
    * - Graph 500
      - Batch Data Analytics
      - http://www.graph500.org/
-     - MPI, etc.
+     - MPI
    * - BigBench 
      - Batch Data Analytics
      - http://www.msrg.org/project/BigBench
