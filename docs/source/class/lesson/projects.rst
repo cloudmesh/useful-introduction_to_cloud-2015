@@ -281,10 +281,12 @@ grade of A+. Report style projects have a best possible grade of A-.
 Details on Software based Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Code submissions should be made at Github including a ``README`` file.
+
 * Source code on Github: https://github.com/futuresystems
 * Written report on IU Canvas : 4-6 pages
 
-The report includes:
+``README`` includes:
 
 - Test instruction (if necessary)
 - List of data source
