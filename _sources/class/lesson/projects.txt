@@ -26,15 +26,41 @@ Up to 3 members is recommended.
 
 .. empty line blocks
 
- |
- |
- |
- |
- |
- |
- |
- |
- |
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ |  
+
+Project Expectation (Grade)
+-------------------------------------------------------------------------------
+
+Projects are expected to software based and can receive full credit up to a
+grade of A+. Report style projects have a best possible grade of A-.
+
+Details on Software based Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Source code on Github: https://github.com/futuresystems
+* Written report: 4-6 pages
+   - Test instruction (if necessary)
+   - List of data source
+   - List of technologies used
+
+Details on Report Style Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
+pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
+Figures can be included and proper citations must be included.
+*Use IU Canvas to submit your final report.*
+
+Use many examples given above to choose a project. You can follow one of these
+examples or choose your own.
 
 List of Possible Projects
 -------------------------------------------------------------------------------
@@ -191,9 +217,10 @@ Report Style Projects
      - Category
      - Data Sets
      - Technologies
-   * - Survey HPC-ABDS 
+   * - Survey HPC-ABDS
+        - http://bigdataopensourceprojects.soic.indiana.edu/#section3
      - Report style Project
-     - http://bigdataopensourceprojects.soic.indiana.edu/#section3
+     - 
      - Several topics such as review level 17 (orchestration), Compare level 6 (DevOps) and level 15B (PaaS Frameworks) and level 17
    * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
         - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
@@ -264,32 +291,6 @@ Projects from Other Sources
 
 * :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
-
-Project Expectation (Grade)
--------------------------------------------------------------------------------
-
-Projects are expected to software based and can receive full credit up to a
-grade of A+. Report style projects have a best possible grade of A-.
-
-Details on Software based Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Source code on Github: https://github.com/futuresystems
-* Written report: 4-6 pages
-   - Test instruction (if necessary)
-   - List of data source
-   - List of technologies used
-
-Details on Report Style Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
-pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
-Figures can be included and proper citations must be included.
-*Use IU Canvas to submit your final report.*
-
-Use many examples given above to choose a project. You can follow one of these
-examples or choose your own.
 
 Project Proposal
 -------------------------------------------------------------------------------
