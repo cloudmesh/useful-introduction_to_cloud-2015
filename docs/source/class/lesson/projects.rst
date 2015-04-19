@@ -191,9 +191,10 @@ Report Style Projects
      - Category
      - Data Sets
      - Technologies
-   * - Survey HPC-ABDS 
+   * - Survey HPC-ABDS
+        - http://bigdataopensourceprojects.soic.indiana.edu/#section3
      - Report style Project
-     - http://bigdataopensourceprojects.soic.indiana.edu/#section3
+     - 
      - Several topics such as review level 17 (orchestration), Compare level 6 (DevOps) and level 15B (PaaS Frameworks) and level 17
    * - :ref:`A Paper on Container Technologies for BigData <project_namedisambugiuty2>`
         - :ref:`A Survey of DevOps Frameworks in support of Big Data <project_namedisambugiuty3>`
