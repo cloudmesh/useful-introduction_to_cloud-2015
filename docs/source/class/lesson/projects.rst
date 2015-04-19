@@ -26,15 +26,41 @@ Up to 3 members is recommended.
 
 .. empty line blocks
 
- |
- |
- |
- |
- |
- |
- |
- |
- |
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ |  
+
+Project Expectation (Grade)
+-------------------------------------------------------------------------------
+
+Projects are expected to software based and can receive full credit up to a
+grade of A+. Report style projects have a best possible grade of A-.
+
+Details on Software based Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Source code on Github: https://github.com/futuresystems
+* Written report: 4-6 pages
+   - Test instruction (if necessary)
+   - List of data source
+   - List of technologies used
+
+Details on Report Style Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
+pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
+Figures can be included and proper citations must be included.
+*Use IU Canvas to submit your final report.*
+
+Use many examples given above to choose a project. You can follow one of these
+examples or choose your own.
 
 List of Possible Projects
 -------------------------------------------------------------------------------
@@ -265,32 +291,6 @@ Projects from Other Sources
 
 * :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
 * :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
-
-Project Expectation (Grade)
--------------------------------------------------------------------------------
-
-Projects are expected to software based and can receive full credit up to a
-grade of A+. Report style projects have a best possible grade of A-.
-
-Details on Software based Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Source code on Github: https://github.com/futuresystems
-* Written report: 4-6 pages
-   - Test instruction (if necessary)
-   - List of data source
-   - List of technologies used
-
-Details on Report Style Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
-pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
-Figures can be included and proper citations must be included.
-*Use IU Canvas to submit your final report.*
-
-Use many examples given above to choose a project. You can follow one of these
-examples or choose your own.
 
 Project Proposal
 -------------------------------------------------------------------------------
