@@ -24,18 +24,6 @@ Team Coordination
 
 Up to 3 members is recommended.
 
-.. empty line blocks
-
- | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
- |  
-
 Project Expectation (Grade)
 -------------------------------------------------------------------------------
 
