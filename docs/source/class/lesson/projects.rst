@@ -269,7 +269,7 @@ Projects from Other Sources
        - MapReduce
 
 * :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
-* :ref:`List of Possible Technologies <http://hpc-abds.org/kaleidoscope/>`_
+* `List of Possible Technologies <http://hpc-abds.org/kaleidoscope/>`_
 .. * :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
 
 Project Expectation (Grade)
