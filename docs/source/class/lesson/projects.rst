@@ -35,9 +35,12 @@ Details on Software based Projects
 
 * Source code on Github: https://github.com/futuresystems
 * Written report: 4-6 pages
-   - Test instruction (if necessary)
-   - List of data source
-   - List of technologies used
+
+The report includes:
+
+- Test instruction (if necessary)
+- List of data source
+- List of technologies used
 
 Details on Report Style Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
