@@ -19,48 +19,24 @@ Submission
 
 * IU Canvas: https://canvas.iu.edu
 
+If materials submitted to Github, please upload a statement as to this action
+on Canvas so we can link to Homework system.
+
 Team Coordination
 -------------------------------------------------------------------------------
 
 Up to 3 members is recommended.
 
-.. empty line blocks
+.. adding empty line breaks
 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
- |  
+.. |br| raw:: html
 
-Project Expectation (Grade)
--------------------------------------------------------------------------------
-
-Projects are expected to software based and can receive full credit up to a
-grade of A+. Report style projects have a best possible grade of A-.
-
-Details on Software based Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Source code on Github: https://github.com/futuresystems
-* Written report: 4-6 pages
-   - Test instruction (if necessary)
-   - List of data source
-   - List of technologies used
-
-Details on Report Style Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
-pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
-Figures can be included and proper citations must be included.
-*Use IU Canvas to submit your final report.*
-
-Use many examples given above to choose a project. You can follow one of these
-examples or choose your own.
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 
 List of Possible Projects
 -------------------------------------------------------------------------------
@@ -131,7 +107,8 @@ Possible Projects From NIST
        - Lucene/Solr
        - MLlib
 
-* \*Reference URL of these projects: http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc
+* \*Reference URL of these projects:
+  http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc
 
 Possible Projects from BigDataBench
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,7 +145,9 @@ Possible Projects from BigDataBench
      - Work Queue
 
 You can find more examples in the following link.
-* \**Reference URL of these projects: http://prof.ict.ac.cn/BigDataBench/#Benchmarks
+
+* \**Reference URL of these projects:
+  http://prof.ict.ac.cn/BigDataBench/#Benchmarks
 
 Possible Projects from IU
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,11 +179,11 @@ Possible Projects from IU
        - Spark/MLlib
        - D3
 
-* \*Take data from US Census (you can use GE data on location of light bulbs if you want!)
-  such as http://www.census.gov/population/www/cen2010/glance/
+* \*Take data from US Census (you can use GE data on location of light bulbs if
+  you want!) such as http://www.census.gov/population/www/cen2010/glance/
   Injest into Hbase.
-  Build an analytics toolkit e.g. clustering people location with Hadoop/Mahout or Spark/MLlib
-  Execute on a virtual cluster and visualize with D3.js. 
+  Build an analytics toolkit e.g. clustering people location with Hadoop/Mahout
+  or Spark/MLlib Execute on a virtual cluster and visualize with D3.js. 
 
 Report Style Projects
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -290,7 +269,41 @@ Projects from Other Sources
        - MapReduce
 
 * :ref:`List of Possible Datasets <ref-class-lesson-list-dataset>`
-* :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
+* :ref:`List of Possible Technologies <http://hpc-abds.org/kaleidoscope/>`_
+.. * :ref:`List of Possible Technologies <ref-class-lesson-list-tech>`
+
+Project Expectation (Grade)
+-------------------------------------------------------------------------------
+
+Projects are expected to software based and can receive full credit up to a
+grade of A+. Report style projects have a best possible grade of A-.
+
+Details on Software based Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Source code on Github: https://github.com/futuresystems
+* Written report on IU Canvas : 4-6 pages
+
+The report includes:
+
+- Test instruction (if necessary)
+- List of data source
+- List of technologies used
+
+Details on Report Style Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
+pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
+Figures can be included and proper citations must be included.
+*Use IU Canvas to submit your final report.*
+if materials submitted to github, please upload a statement as to this action
+on canvas so we can link to homework system.
+
+
+Use many examples given above to choose a project. You can follow one of these
+examples or choose your own.
+
 
 Project Proposal
 -------------------------------------------------------------------------------
@@ -340,26 +353,10 @@ Oral Presentation (TBD)
 * Oral presentation can be replaced with a 1-2 page progress report(s) upon
   approval.
 
-Final Report
--------------------------------------------------------------------------------
-
-* Source code on Github: https://github.com/futuresystems
-* Written report: 4-6 pages
-   - Test instruction (if necessary)
-   - List of data source
-   - List of technologies used
-
-Report Style Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* If you've chosen report style projects, you must submit a paper to IU Canvas.
-* Report should be at least 10 pages (individuals, 15 pages 2 person team, 20
-pages 3 person) long in Time Roman 11 point -- spacing 1.1 in Microsoft Word.
-Figures can be included and proper citations must be included.
-
 Questions & Support
 -------------------------------------------------------------------------------
 
 * Course TA's email: coursehelp@futuresystems.org
-* Office Hours: Wednesday 7pm or Thursday 10am via `Adobe Connect <https://connect.iu.edu/bdossp_sp15/>`_
+* Office Hours: Wednesday 7pm or Thursday 10am via `Adobe Connect
+  <https://connect.iu.edu/bdossp_sp15/>`_
 
