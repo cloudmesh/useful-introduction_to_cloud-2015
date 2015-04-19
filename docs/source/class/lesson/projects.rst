@@ -376,7 +376,7 @@ description section:
 * the technologies used
 * any proprietary issues
 * specific aims you intent to complete
-* and a list of intended deliverables (see also atrifacts)
+* and a list of intended deliverables (atrifacts produced)
 
 Sample Project Proposal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
