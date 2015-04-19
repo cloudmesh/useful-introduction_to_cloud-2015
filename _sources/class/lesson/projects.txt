@@ -141,13 +141,70 @@ Possible Projects from BigDataBench
        - MPI
    * - `Genome sequence data <http://ccl.cse.nd.edu/software/sand/>`_
      - Batch Data Analytics
-     - ``.cfa`` sample data
-     - Work Queue
+     - ``.cfa`` sample data (unstructured text file)
+     - Work Queue (master/worker framework)
 
 You can find more examples in the following link.
 
 * \**Reference URL of these projects:
   http://prof.ict.ac.cn/BigDataBench/#Benchmarks
+
+Benchmarking Techniques
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have other benchmark techniques such as HiBench, Graph 500, BigBench,
+LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark, TPCx-HS, and
+CloudSuite.
+
+.. list-table:: Benchmarking Techniques
+   :header-rows: 1
+
+   * - Title
+     - Category
+     - Data Sets
+     - Technologies
+   * - HiBench
+     - Batch Data Analytics
+     - https://github.com/intel-hadoop/HiBench 
+     - - Hadoop
+       - Mahout
+       - Hive
+   * - Graph 500
+     - Batch Data Analytics
+     - http://www.graph500.org/
+     - MPI, etc.
+   * - BigBench 
+     - Batch Data Analytics
+     - http://www.msrg.org/project/BigBench
+     - - MapReduce
+       - Hadoop 
+   * - LinkBench
+     - Batch Data Analytics
+     - https://github.com/facebook/linkbench 
+     - - Java
+       - MySQL
+   * - BG Benchmark
+     - Batch Data Analytics
+     - http://www.bgbenchmark.org/BG/overview.html
+     - - MongoDB
+       - HBase
+       - VoltDB
+   * - Berkeley Big Data Benchmark
+     - Batch Data Analytics
+     - https://amplab.cs.berkeley.edu/benchmark/#workload
+     - - Redshift
+       - Hive
+       - SparkSQL
+       - Impala
+       - Stinger/Tez
+   * - TPCx-HS
+     - Batch Data Analytics
+     - http://www.tpc.org/tpcx-hs/
+     - Hadoop
+   * - CloudSuite
+     - Batch Data Analytics
+     - http://parsa.epfl.ch/cloudsuite/downloads.html
+     - MapReduce
 
 Possible Projects from IU
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
