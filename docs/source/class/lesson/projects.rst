@@ -24,6 +24,18 @@ Team Coordination
 
 Up to 3 members is recommended.
 
+.. empty line blocks
+
+ |
+ |
+ |
+ |
+ |
+ |
+ |
+ |
+ |
+
 List of Possible Projects
 -------------------------------------------------------------------------------
 
