@@ -1,3 +1,5 @@
+.. _ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh:
+
 Deploying Hadoop Cluster with Cloudmesh ``launcher``
 ====================================================
 

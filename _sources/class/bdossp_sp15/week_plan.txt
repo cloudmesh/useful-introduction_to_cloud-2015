@@ -617,16 +617,27 @@ Virtual Clusters I
      - 
    * - **Deploying Virtual Cluster with Cloudmesh**
      - `22 mins <https://www.youtube.com/watch?v=oSlq0287m1Q>`_
-     - - :ref:`Tutorial I: 30 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh>`
-       - :ref:`Tutorial II: 45 mins <ref-class-lesson-deploying-hadoop-cluster>`
+     - :ref:`30 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh>`
      - :ref:`10 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh-exercise>` (optional)
-     - 04/27 
+     - 04/27
+     -
+   * - **Deploying Hadoop Cluster**
+     -
+     - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-manual>`
+     -
+     - 04/27
+     -
+   * - **Deploying Hadoop Cluster with Cloudmesh**
+     -
+     - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
+     - :ref:`20 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh-exercise>` (optional)
+     - 04/27
      -
    * - **Deploying MongoDB Sharded Cluster**
      -
      - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
      -
-     -
+     - 04/27
      -
 
 ..

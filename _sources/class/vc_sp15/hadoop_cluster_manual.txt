@@ -1,3 +1,6 @@
+.. _ref-class-lesson-deploying-hadoop-cluster-manual:
+
+
 Deploying Hadoop Cluster on India OpenStack
 =================================================
 
@@ -300,6 +303,8 @@ directory structure::
 When these initialization steps are complete, and all the appropriate
 services are running on each node, the Hadoop cluster will be
 operational and ready to run jobs.
+
+.. _ref-class-lesson-deploying-hadoop-cluster-manual-exercise:
 
 Exercise
 ---------
