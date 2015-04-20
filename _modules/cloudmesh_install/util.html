@@ -148,7 +148,7 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 
 
-<div class="viewcode-block" id="get_system"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.util.get_system">[docs]</a><span class="k">def</span> <span class="nf">get_system</span><span class="p">():</span>
+<div class="viewcode-block" id="get_system"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.util.get_system">[docs]</a><span class="k">def</span> <span class="nf">get_system</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">is_ubuntu</span><span class="p">():</span>
         <span class="k">return</span> <span class="s">&quot;ubuntu&quot;</span>
     <span class="k">elif</span> <span class="n">is_centos</span><span class="p">():</span>
@@ -159,7 +159,7 @@
         <span class="k">return</span> <span class="s">&quot;unsupported&quot;</span>
 
 </div>
-<div class="viewcode-block" id="is_ubuntu"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.util.is_ubuntu">[docs]</a><span class="k">def</span> <span class="nf">is_ubuntu</span><span class="p">():</span>
+<div class="viewcode-block" id="is_ubuntu"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.util.is_ubuntu">[docs]</a><span class="k">def</span> <span class="nf">is_ubuntu</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;test sif the platform is ubuntu&quot;&quot;&quot;</span>
     <span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">release</span><span class="p">)</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">dist</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">dist</span> <span class="o">==</span> <span class="s">&quot;ubuntu&quot;</span> <span class="ow">and</span> <span class="n">version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;14.04&quot;</span><span class="p">]:</span>
@@ -167,7 +167,7 @@
     <span class="k">return</span> <span class="n">dist</span> <span class="o">==</span> <span class="s">&#39;Ubuntu&#39;</span>
 
 </div>
-<div class="viewcode-block" id="is_centos"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.util.is_centos">[docs]</a><span class="k">def</span> <span class="nf">is_centos</span><span class="p">():</span>
+<div class="viewcode-block" id="is_centos"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.util.is_centos">[docs]</a><span class="k">def</span> <span class="nf">is_centos</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;test if the platform is centos&quot;&quot;&quot;</span>
     <span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">release</span><span class="p">)</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">dist</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">dist</span> <span class="o">==</span> <span class="s">&quot;centos&quot;</span> <span class="ow">and</span> <span class="n">version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;6.5&quot;</span><span class="p">]:</span>
@@ -175,15 +175,11 @@
     <span class="k">return</span> <span class="n">dist</span> <span class="o">==</span> <span class="s">&quot;centos&quot;</span>
 
 </div>
-<div class="viewcode-block" id="is_osx"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.util.is_osx">[docs]</a><span class="k">def</span> <span class="nf">is_osx</span><span class="p">():</span>
+<div class="viewcode-block" id="is_osx"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.util.is_osx">[docs]</a><span class="k">def</span> <span class="nf">is_osx</span><span class="p">():</span>
     <span class="n">osx</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;darwin&#39;</span>
     <span class="k">if</span> <span class="n">osx</span><span class="p">:</span>
         <span class="n">os_version</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">mac_ver</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">os_version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;10.9.5&#39;</span><span class="p">,</span>
-                              <span class="s">&#39;10.10&#39;</span><span class="p">,</span>
-                              <span class="s">&#39;10.10.1&#39;</span><span class="p">,</span>
-                              <span class="s">&#39;10.10.2&#39;</span><span class="p">,</span>
-                              <span class="s">&#39;10.10.3&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">os_version</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;10.9.5&#39;</span><span class="p">,</span> <span class="s">&#39;10.10&#39;</span><span class="p">,</span> <span class="s">&#39;10.10.1&#39;</span><span class="p">,</span> <span class="s">&#39;10.10.2&#39;</span><span class="p">]:</span>
             <span class="n">osx</span> <span class="o">=</span> <span class="bp">False</span>
             <span class="k">print</span><span class="p">(</span><span class="s">&quot;WARNING: </span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> is not tested&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;OSX&#39;</span><span class="p">,</span> <span class="n">os_version</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">osx</span>

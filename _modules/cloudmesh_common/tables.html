@@ -143,7 +143,7 @@
 <span class="kn">import</span> <span class="nn">hostlist</span>
 
 
-<div class="viewcode-block" id="print_format_dict"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.print_format_dict">[docs]</a><span class="k">def</span> <span class="nf">print_format_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">&#39;table&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="print_format_dict"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.print_format_dict">[docs]</a><span class="k">def</span> <span class="nf">print_format_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">&#39;table&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;kind = json, yaml, table, pprint&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s">&quot;json&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -153,7 +153,7 @@
         <span class="k">return</span> <span class="n">two_column_table</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">header</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="array_dict_table_printer"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.array_dict_table_printer">[docs]</a><span class="k">def</span> <span class="nf">array_dict_table_printer</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="array_dict_table_printer"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.array_dict_table_printer">[docs]</a><span class="k">def</span> <span class="nf">array_dict_table_printer</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints a pretty table from an array of dicts</span>
 <span class="sd">    :param array: A an array with dicts of the same type.</span>
 <span class="sd">                  Each key will be a column</span>
@@ -204,7 +204,7 @@
     <span class="k">return</span> <span class="n">x</span>
 
 </div>
-<div class="viewcode-block" id="column_table"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.column_table">[docs]</a><span class="k">def</span> <span class="nf">column_table</span><span class="p">(</span><span class="n">column_dict</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="column_table"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.column_table">[docs]</a><span class="k">def</span> <span class="nf">column_table</span><span class="p">(</span><span class="n">column_dict</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints a pretty table from data in the dict.</span>
 <span class="sd">    :param column_dict: A dict that has an array for each key in the dict.</span>
 <span class="sd">                        All arrays are of the same length.</span>
@@ -223,7 +223,7 @@
     <span class="k">return</span> <span class="n">x</span>
 
 </div>
-<div class="viewcode-block" id="row_table"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.row_table">[docs]</a><span class="k">def</span> <span class="nf">row_table</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="row_table"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.row_table">[docs]</a><span class="k">def</span> <span class="nf">row_table</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints a pretty table from data in the dict.</span>
 <span class="sd">    :param d: A dict to be printed</span>
 <span class="sd">    :param order: The order in which the columns are printed.XS</span>
@@ -254,7 +254,7 @@
     <span class="k">return</span> <span class="n">x</span>
 
 </div>
-<div class="viewcode-block" id="two_column_table"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.two_column_table">[docs]</a><span class="k">def</span> <span class="nf">two_column_table</span><span class="p">(</span><span class="n">column_dict</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Default&#39;</span><span class="p">,</span> <span class="s">&#39;Value&#39;</span><span class="p">]):</span>
+<div class="viewcode-block" id="two_column_table"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.two_column_table">[docs]</a><span class="k">def</span> <span class="nf">two_column_table</span><span class="p">(</span><span class="n">column_dict</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Default&#39;</span><span class="p">,</span> <span class="s">&#39;Value&#39;</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;prints a table with two columns where the first column are the</span>
 <span class="sd">    attributes, and the second column are the values.</span>
 
@@ -269,7 +269,7 @@
     <span class="k">return</span> <span class="n">x</span>
 
 </div>
-<div class="viewcode-block" id="one_column_table"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.one_column_table">[docs]</a><span class="k">def</span> <span class="nf">one_column_table</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s">&#39;Value&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="one_column_table"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.one_column_table">[docs]</a><span class="k">def</span> <span class="nf">one_column_table</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s">&#39;Value&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints a table with two columns where the first column are the</span>
 <span class="sd">    attributes, and the second column are the values.</span>
 
@@ -281,7 +281,7 @@
     <span class="k">return</span> <span class="n">x</span>
 
 </div>
-<div class="viewcode-block" id="table_printer"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.table_printer">[docs]</a><span class="k">def</span> <span class="nf">table_printer</span><span class="p">(</span><span class="n">the_dict</span><span class="p">,</span> <span class="n">header_info</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="table_printer"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.table_printer">[docs]</a><span class="k">def</span> <span class="nf">table_printer</span><span class="p">(</span><span class="n">the_dict</span><span class="p">,</span> <span class="n">header_info</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    prints recurseively a dict as an html. The header info is simpli</span>
 <span class="sd">    a list with collun names.</span>
@@ -319,7 +319,7 @@
         <span class="k">return</span> <span class="n">the_dict</span>
 
 </div>
-<div class="viewcode-block" id="parse_time_interval"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.parse_time_interval">[docs]</a><span class="k">def</span> <span class="nf">parse_time_interval</span><span class="p">(</span><span class="n">time_start</span><span class="p">,</span> <span class="n">time_end</span><span class="p">):</span>
+<div class="viewcode-block" id="parse_time_interval"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.parse_time_interval">[docs]</a><span class="k">def</span> <span class="nf">parse_time_interval</span><span class="p">(</span><span class="n">time_start</span><span class="p">,</span> <span class="n">time_end</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;created time values for time_start and time_end, while time_end</span>
 <span class="sd">    will be replaced with time_start+ a duration if the duration is</span>
 <span class="sd">    given in time_end. The format of the duration is intuitive through</span>
@@ -347,7 +347,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t_start</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">t_end</span><span class="p">))</span>
 
 </div>
-<div class="viewcode-block" id="dict_key_list_table_printer"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.tables.dict_key_list_table_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_key_list_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="dict_key_list_table_printer"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.tables.dict_key_list_table_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_key_list_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">indexed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    accept a dict in the form:</span>
 <span class="sd">    {key1: [list1],</span>

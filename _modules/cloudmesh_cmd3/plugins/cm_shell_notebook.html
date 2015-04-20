@@ -146,7 +146,7 @@
 <span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="notebook"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook">[docs]</a><span class="k">class</span> <span class="nc">notebook</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="notebook"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook">[docs]</a><span class="k">class</span> <span class="nc">notebook</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -176,7 +176,7 @@
         <span class="k">except</span><span class="p">:</span>
             <span class="k">pass</span>
 
-<div class="viewcode-block" id="notebook.create"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="notebook.create"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;ipython profile create nbserver&quot;</span><span class="p">)</span>
         <span class="n">copyfile</span><span class="p">(</span>
             <span class="s">&#39;{cloudmesh}/etc/ipython_notebook_config.py&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span>
@@ -191,14 +191,14 @@
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout {cert} -out {cert}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;chmod go-rwx {cert}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
 </div>
-<div class="viewcode-block" id="notebook.start"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="notebook.start"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_create_dir</span><span class="p">()</span>
         <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;cd {notebook_dir} &amp;&amp; ipython notebook --certfile={cert} --profile=nbserver&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="c"># self.data[&#39;pid&#39;] = subprocess.Popen(command.split(&quot; &quot;))</span>
         <span class="k">print</span><span class="p">(</span><span class="s">&quot;STARTING:&quot;</span><span class="p">,</span> <span class="n">command</span><span class="p">)</span>
         <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">command</span> <span class="o">+</span> <span class="s">&quot; &amp;&quot;</span><span class="p">)</span>
 </div>
-<div class="viewcode-block" id="notebook.kill"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook.kill">[docs]</a>    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="notebook.kill"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.notebook.kill">[docs]</a>    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c">#</span>
         <span class="c"># this is not working, as we do not jet use subprocess</span>
         <span class="c">#</span>
@@ -218,11 +218,11 @@
                 <span class="n">sh</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="s">&quot;-9&quot;</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span>
 
 </div></div>
-<div class="viewcode-block" id="cm_shell_notebook"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.cm_shell_notebook">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_notebook</span><span class="p">:</span>
+<div class="viewcode-block" id="cm_shell_notebook"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.cm_shell_notebook">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_notebook</span><span class="p">:</span>
 
     <span class="sd">&quot;&quot;&quot;opt_example class&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="cm_shell_notebook.activate_cm_shell_notebook"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.cm_shell_notebook.activate_cm_shell_notebook">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_notebook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="cm_shell_notebook.activate_cm_shell_notebook"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_notebook.cm_shell_notebook.activate_cm_shell_notebook">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_notebook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">register_command_topic</span><span class="p">(</span><span class="s">&#39;ipython&#39;</span><span class="p">,</span> <span class="s">&#39;notebook&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_notebook</span> <span class="o">=</span> <span class="n">notebook</span><span class="p">()</span>
         <span class="k">pass</span>
