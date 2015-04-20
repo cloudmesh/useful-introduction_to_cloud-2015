@@ -1,4 +1,3 @@
-.. _ref-class-lesson-deploying-hadoop-cluster:
 
 Deploying Hadoop Cluster
 =========================
