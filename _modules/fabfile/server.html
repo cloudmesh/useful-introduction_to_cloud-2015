@@ -226,7 +226,7 @@
 <span class="c"># version = open(filename).read()</span>
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="agent"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.agent">[docs]</a><span class="k">def</span> <span class="nf">agent</span><span class="p">():</span>
+<div class="viewcode-block" id="agent"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.agent">[docs]</a><span class="k">def</span> <span class="nf">agent</span><span class="p">():</span>
     <span class="c"># with settings(warn_only=True):</span>
     <span class="c"># local(&quot;killall ssh-agent&quot;)</span>
     <span class="k">print</span> <span class="mi">70</span> <span class="o">*</span> <span class="s">&quot;=&quot;</span>
@@ -237,14 +237,14 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;sma e as the kill command&quot;&quot;&quot;</span>
     <span class="n">kill</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
     <span class="n">cursor_on</span><span class="p">()</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;kills all server processes &quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">settings</span><span class="p">(</span><span class="n">warn_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="n">execute_command</span><span class="p">(</span><span class="s">&quot;STOP MONGO&quot;</span><span class="p">,</span> <span class="s">&quot;fab mongo.stop&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
@@ -258,7 +258,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="quick"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.quick">[docs]</a><span class="k">def</span> <span class="nf">quick</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="quick"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.quick">[docs]</a><span class="k">def</span> <span class="nf">quick</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; starts in dir webgui the program server.py and displays a browser on the given port and link&quot;&quot;&quot;</span>
 
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;INSTALL CLOUDMESH&quot;</span><span class="p">)</span>
@@ -270,7 +270,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; starts in dir webgui the program server.py and displays a browser on the given port and link&quot;&quot;&quot;</span>
 
     <span class="c"># pprint (fabric.state.output)</span>
@@ -321,14 +321,14 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="web"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.web">[docs]</a><span class="k">def</span> <span class="nf">web</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="web"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.web">[docs]</a><span class="k">def</span> <span class="nf">web</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">browser</span><span class="o">=</span><span class="s">&#39;yes&#39;</span><span class="p">):</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;START WEB SERVER&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;cd cloudmesh_web; python {0}.py &amp;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">))</span>
     <span class="c"># view(link)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="view"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.view">[docs]</a><span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="view"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.view">[docs]</a><span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;run the browser&quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">cloudmesh_base.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
 
@@ -345,7 +345,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="clean"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.clean">[docs]</a><span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
+<div class="viewcode-block" id="clean"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.clean">[docs]</a><span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;clean the directory&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;find . -name </span><span class="se">\&quot;</span><span class="s">#*</span><span class="se">\&quot;</span><span class="s"> -exec rm {} </span><span class="se">\\</span><span class="s">;&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;find . -name </span><span class="se">\&quot;</span><span class="s">*~</span><span class="se">\&quot;</span><span class="s"> -exec rm {} </span><span class="se">\\</span><span class="s">;&quot;</span><span class="p">)</span>
@@ -356,7 +356,7 @@
 
 <span class="c"># For production server</span></div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="wsgi"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.server.wsgi">[docs]</a><span class="k">def</span> <span class="nf">wsgi</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">&quot;start&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="wsgi"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.server.wsgi">[docs]</a><span class="k">def</span> <span class="nf">wsgi</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">&quot;start&quot;</span><span class="p">):</span>
     <span class="n">pidfile</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/uwsgi/cloudmesh_uwsgi.pid&quot;</span><span class="p">)</span>
     <span class="n">logfile</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/uwsgi/cloudmesh_uwsgi.log&quot;</span><span class="p">)</span>
     <span class="n">command</span> <span class="o">=</span> <span class="bp">False</span>

@@ -142,7 +142,7 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 
-<div class="viewcode-block" id="ec2secgroup_openport"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.util.ec2secgroup_openport">[docs]</a><span class="k">def</span> <span class="nf">ec2secgroup_openport</span><span class="p">(</span><span class="n">cloudname</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+<div class="viewcode-block" id="ec2secgroup_openport"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.util.ec2secgroup_openport">[docs]</a><span class="k">def</span> <span class="nf">ec2secgroup_openport</span><span class="p">(</span><span class="n">cloudname</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
     <span class="n">cloud</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">portnum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">try</span><span class="p">:</span>
@@ -162,7 +162,7 @@
     <span class="n">cloud</span><span class="o">.</span><span class="n">add_security_group_rules</span><span class="p">(</span><span class="n">groupid</span><span class="p">,</span> <span class="p">[</span><span class="n">rule</span><span class="p">])</span>
 
 </div>
-<div class="viewcode-block" id="yaml_file_replace"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.util.yaml_file_replace">[docs]</a><span class="k">def</span> <span class="nf">yaml_file_replace</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;/cloudmesh_xxx.yaml&#39;</span><span class="p">,</span> <span class="n">replacements</span><span class="o">=</span><span class="p">{}):</span>
+<div class="viewcode-block" id="yaml_file_replace"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.util.yaml_file_replace">[docs]</a><span class="k">def</span> <span class="nf">yaml_file_replace</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;/cloudmesh_xxx.yaml&#39;</span><span class="p">,</span> <span class="n">replacements</span><span class="o">=</span><span class="p">{}):</span>
     <span class="n">filename</span> <span class="o">=</span> <span class="n">config_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>

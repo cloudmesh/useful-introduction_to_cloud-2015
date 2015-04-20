@@ -145,7 +145,7 @@
 
 
 <span class="nd">@git_module.route</span><span class="p">(</span><span class="s">&#39;/git&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="display_git_authors"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.git.display_git_authors">[docs]</a><span class="k">def</span> <span class="nf">display_git_authors</span><span class="p">():</span>
+<div class="viewcode-block" id="display_git_authors"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.git.display_git_authors">[docs]</a><span class="k">def</span> <span class="nf">display_git_authors</span><span class="p">():</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">git</span><span class="p">(</span><span class="s">&quot;shortlog&quot;</span><span class="p">,</span> <span class="s">&quot;-s&quot;</span><span class="p">,</span> <span class="s">&quot;-n&quot;</span><span class="p">,</span>
                  <span class="n">_tty_in</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">_tty_out</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
     <span class="n">authors</span> <span class="o">=</span> <span class="p">{}</span>
@@ -195,7 +195,7 @@
 
 </div>
 <span class="nd">@git_module.route</span><span class="p">(</span><span class="s">&#39;/bugs&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="display_git_bugs"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.git.display_git_bugs">[docs]</a><span class="k">def</span> <span class="nf">display_git_bugs</span><span class="p">():</span>
+<div class="viewcode-block" id="display_git_bugs"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.git.display_git_bugs">[docs]</a><span class="k">def</span> <span class="nf">display_git_bugs</span><span class="p">():</span>
     <span class="n">issues_open</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
         <span class="s">&#39;https://api.github.com/repos/cloudmesh/cloudmesh/issues?state=closed&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="n">issues_closed</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>

@@ -218,7 +218,7 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
+<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">PRODUCTION</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;Installation not enabled in production mode.&quot;</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
@@ -238,7 +238,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="user"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.user">[docs]</a><span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="user"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.user">[docs]</a><span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; create a user in rabbit mq</span>
 
 <span class="sd">    :param name: if the name is ommited it will be queried for it.</span>
@@ -250,14 +250,14 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="host"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.host">[docs]</a><span class="k">def</span> <span class="nf">host</span><span class="p">():</span>
+<div class="viewcode-block" id="host"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.host">[docs]</a><span class="k">def</span> <span class="nf">host</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;adding a host to rabbitmq&quot;&quot;&quot;</span>
     <span class="n">rabbit_env</span><span class="p">[</span><span class="s">&quot;host&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_host</span><span class="p">()</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;{rabbitmqctl} add_vhost {host}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">rabbit_env</span><span class="p">))</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="allow"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.allow">[docs]</a><span class="k">def</span> <span class="nf">allow</span><span class="p">():</span>
+<div class="viewcode-block" id="allow"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.allow">[docs]</a><span class="k">def</span> <span class="nf">allow</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;allow a user to access the host in rabbitmq&quot;&quot;&quot;</span>
     <span class="c"># print(&#39;{rabbitmqctl} set_permissions -p {host} {user} &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;&#39;</span>
     <span class="c">#       .format(**rabbit_env))</span>
@@ -269,7 +269,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="check"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.check">[docs]</a><span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
+<div class="viewcode-block" id="check"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.check">[docs]</a><span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;check if the /etc/hosts file is properly configures&quot;&quot;&quot;</span>
     <span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">&#39;host&#39;</span><span class="p">:</span> <span class="n">platform</span><span class="o">.</span><span class="n">node</span><span class="p">(),</span>
@@ -292,13 +292,13 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="dns"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.dns">[docs]</a><span class="k">def</span> <span class="nf">dns</span><span class="p">():</span>
+<div class="viewcode-block" id="dns"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.dns">[docs]</a><span class="k">def</span> <span class="nf">dns</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;restart the dns server&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;dscacheutil -flushcache&quot;</span><span class="p">)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">():</span>
+<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;print some essential information about the messaging system&quot;&quot;&quot;</span>
     <span class="n">status</span><span class="p">()</span>
     <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;memory&quot;</span><span class="p">,</span> <span class="s">&quot;consumers&quot;</span><span class="p">,</span> <span class="s">&quot;messages&quot;</span><span class="p">,</span>
@@ -311,7 +311,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="status"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.status">[docs]</a><span class="k">def</span> <span class="nf">status</span><span class="p">():</span>
+<div class="viewcode-block" id="status"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.status">[docs]</a><span class="k">def</span> <span class="nf">status</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;print the status of rabbitmq&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">PRODUCTION</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;Run &#39;/etc/init.d/rabbitmq-server status&#39; to check status&quot;</span>
@@ -333,7 +333,7 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">detached</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">detached</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;start the rabbit mq server&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">PRODUCTION</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;Run &#39;/etc/init.d/rabbitmq-server start&#39; to start server&quot;</span>
@@ -349,7 +349,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">():</span>
+<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;stop the rabbit mq server&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">PRODUCTION</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;Run &#39;/etc/init.d/rabbitmq-server stop&#39; to stop server&quot;</span>
@@ -373,7 +373,7 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="menu"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mq.menu">[docs]</a><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+<div class="viewcode-block" id="menu"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mq.menu">[docs]</a><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;open a menu to start some commands with an ascii menu&quot;&quot;&quot;</span>
     <span class="n">ascii_menu</span><span class="p">(</span><span class="s">&quot;RabbitMQ&quot;</span><span class="p">,</span> <span class="n">menu_list</span><span class="p">)</span></div>
 </pre></div>

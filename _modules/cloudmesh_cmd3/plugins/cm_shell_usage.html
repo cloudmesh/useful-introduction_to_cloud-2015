@@ -149,16 +149,16 @@
 <span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="cm_shell_usage"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_usage.cm_shell_usage">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_usage</span><span class="p">:</span>
+<div class="viewcode-block" id="cm_shell_usage"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_usage.cm_shell_usage">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_usage</span><span class="p">:</span>
 
     <span class="sd">&quot;&quot;&quot;opt_example class&quot;&quot;&quot;</span>
     <span class="n">_id</span> <span class="o">=</span> <span class="s">&quot;usage&quot;</span>  <span class="c"># id for usage in cm_mongo</span>
 
-<div class="viewcode-block" id="cm_shell_usage.activate_cm_shell_usage"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_usage.cm_shell_usage.activate_cm_shell_usage">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="cm_shell_usage.activate_cm_shell_usage"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_usage.cm_shell_usage.activate_cm_shell_usage">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_usage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">register_command_topic</span><span class="p">(</span><span class="s">&#39;cloud&#39;</span><span class="p">,</span> <span class="s">&#39;usage&#39;</span><span class="p">)</span>
         <span class="k">pass</span>
 </div>
-<div class="viewcode-block" id="cm_shell_usage.get_cloud_name"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_usage.cm_shell_usage.get_cloud_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_cloud_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cm_user_id</span><span class="p">):</span>
+<div class="viewcode-block" id="cm_shell_usage.get_cloud_name"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_usage.cm_shell_usage.get_cloud_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_cloud_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cm_user_id</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a default cloud name if exists</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>

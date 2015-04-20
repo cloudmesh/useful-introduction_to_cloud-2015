@@ -190,13 +190,13 @@
     <span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
 
 
-<div class="viewcode-block" id="IgnoreUndefined"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.IgnoreUndefined">[docs]</a><span class="k">class</span> <span class="nc">IgnoreUndefined</span><span class="p">(</span><span class="n">Undefined</span><span class="p">):</span>
+<div class="viewcode-block" id="IgnoreUndefined"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.IgnoreUndefined">[docs]</a><span class="k">class</span> <span class="nc">IgnoreUndefined</span><span class="p">(</span><span class="n">Undefined</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s">&quot;None&quot;</span>
 
 </div>
-<div class="viewcode-block" id="install_command"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.install_command">[docs]</a><span class="k">def</span> <span class="nf">install_command</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="install_command"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.install_command">[docs]</a><span class="k">def</span> <span class="nf">install_command</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Usage:</span>
 <span class="sd">        install -h | --help</span>
@@ -268,7 +268,7 @@
         <span class="n">enable_admin_page</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="s">&#39;--username&#39;</span><span class="p">])</span>
 
 </div>
-<div class="viewcode-block" id="new_cloudmesh_yaml"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.new_cloudmesh_yaml">[docs]</a><span class="k">def</span> <span class="nf">new_cloudmesh_yaml</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="new_cloudmesh_yaml"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.new_cloudmesh_yaml">[docs]</a><span class="k">def</span> <span class="nf">new_cloudmesh_yaml</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Generate yaml files from the templates in etc directory</span>
 <span class="sd">        if yaml files exist, this function won&#39;t perform.</span>
 
@@ -355,7 +355,7 @@
     <span class="c"># print &quot;# Backup : {0}&quot;.format(filename_bak)</span>
 
 </div>
-<div class="viewcode-block" id="file_from_template"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.file_from_template">[docs]</a><span class="k">def</span> <span class="nf">file_from_template</span><span class="p">(</span><span class="n">file_template</span><span class="p">,</span> <span class="n">file_out</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="viewcode-block" id="file_from_template"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.file_from_template">[docs]</a><span class="k">def</span> <span class="nf">file_from_template</span><span class="p">(</span><span class="n">file_template</span><span class="p">,</span> <span class="n">file_out</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">content</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_template</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">undefined</span><span class="o">=</span><span class="n">IgnoreUndefined</span><span class="p">)</span>
     <span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
@@ -365,7 +365,7 @@
     <span class="n">out_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="deploy"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.deploy">[docs]</a><span class="k">def</span> <span class="nf">deploy</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="deploy"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.deploy">[docs]</a><span class="k">def</span> <span class="nf">deploy</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Deploys the system.</span>
 <span class="sd">    If &quot;force&quot; is False (default) then deployment will only be done on</span>
@@ -395,22 +395,22 @@
     <span class="c"># install()</span>
 
 </div>
-<div class="viewcode-block" id="download"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.download">[docs]</a><span class="k">def</span> <span class="nf">download</span><span class="p">():</span>
+<div class="viewcode-block" id="download"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.download">[docs]</a><span class="k">def</span> <span class="nf">download</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;downloads cloudmesh&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git clone git@github.com:cloudmesh/cloudmesh.git&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
+<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
     <span class="n">sphinx_updates</span><span class="p">()</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;cloudmesh python install&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;python setup.py install&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="install_mongodb"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.install_mongodb">[docs]</a><span class="k">def</span> <span class="nf">install_mongodb</span><span class="p">():</span>
+<div class="viewcode-block" id="install_mongodb"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.install_mongodb">[docs]</a><span class="k">def</span> <span class="nf">install_mongodb</span><span class="p">():</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;fab mongo.install&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="install_package"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.install_package">[docs]</a><span class="k">def</span> <span class="nf">install_package</span><span class="p">(</span><span class="n">package</span><span class="p">):</span>
+<div class="viewcode-block" id="install_package"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.install_package">[docs]</a><span class="k">def</span> <span class="nf">install_package</span><span class="p">(</span><span class="n">package</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;installes the package.</span>
 <span class="sd">    :param package: lthe package name</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -428,7 +428,7 @@
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="install_packages"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.install_packages">[docs]</a><span class="k">def</span> <span class="nf">install_packages</span><span class="p">(</span><span class="n">packages</span><span class="p">):</span>
+<div class="viewcode-block" id="install_packages"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.install_packages">[docs]</a><span class="k">def</span> <span class="nf">install_packages</span><span class="p">(</span><span class="n">packages</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;installes the packages in the list.</span>
 <span class="sd">    :param packages: list of package names</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -436,7 +436,7 @@
         <span class="n">install_package</span><span class="p">(</span><span class="n">package</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="ubuntu"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.ubuntu">[docs]</a><span class="k">def</span> <span class="nf">ubuntu</span><span class="p">():</span>
+<div class="viewcode-block" id="ubuntu"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.ubuntu">[docs]</a><span class="k">def</span> <span class="nf">ubuntu</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;prepares an system and installs all</span>
 <span class="sd">    needed packages before we install cloudmesh&quot;&quot;&quot;</span>
 
@@ -450,7 +450,7 @@
     <span class="c"># install all needed python packages(as per requiremnts.txt)</span>
 
 </div>
-<div class="viewcode-block" id="centos"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.centos">[docs]</a><span class="k">def</span> <span class="nf">centos</span><span class="p">():</span>
+<div class="viewcode-block" id="centos"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.centos">[docs]</a><span class="k">def</span> <span class="nf">centos</span><span class="p">():</span>
     <span class="n">install_packages</span><span class="p">([</span><span class="s">&quot;git&quot;</span><span class="p">,</span>
                       <span class="s">&quot;mercurial&quot;</span><span class="p">,</span>
                       <span class="s">&quot;wget&quot;</span><span class="p">,</span>
@@ -472,14 +472,14 @@
     <span class="c"># install_mongodb()</span>
 
 </div>
-<div class="viewcode-block" id="safe_install"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.safe_install">[docs]</a><span class="k">def</span> <span class="nf">safe_install</span><span class="p">(</span><span class="n">what</span><span class="p">):</span>
+<div class="viewcode-block" id="safe_install"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.safe_install">[docs]</a><span class="k">def</span> <span class="nf">safe_install</span><span class="p">(</span><span class="n">what</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">local</span><span class="p">(</span><span class="n">what</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;WARNING: could not install:&quot;</span><span class="p">,</span> <span class="n">what</span>
 
 </div>
-<div class="viewcode-block" id="osx"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.osx">[docs]</a><span class="k">def</span> <span class="nf">osx</span><span class="p">():</span>
+<div class="viewcode-block" id="osx"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.osx">[docs]</a><span class="k">def</span> <span class="nf">osx</span><span class="p">():</span>
 
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;export CFLAGS=-Qunused-arguments&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;export CPPFLAGS=-Qunused-arguments&quot;</span><span class="p">)</span>
@@ -511,7 +511,7 @@
     <span class="c"># </span>
 
 </div>
-<div class="viewcode-block" id="sphinx_updates"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.sphinx_updates">[docs]</a><span class="k">def</span> <span class="nf">sphinx_updates</span><span class="p">():</span>
+<div class="viewcode-block" id="sphinx_updates"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.sphinx_updates">[docs]</a><span class="k">def</span> <span class="nf">sphinx_updates</span><span class="p">():</span>
     <span class="c"># *mktemp -d* should be applied to get a unique directory name to a user</span>
     <span class="c"># who runs this function.</span>
     <span class="c"># Otherwise, if there are ohter users who run this command as well,</span>
@@ -533,7 +533,7 @@
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;insall autorun ok&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="vagrant"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.vagrant">[docs]</a><span class="k">def</span> <span class="nf">vagrant</span><span class="p">():</span>
+<div class="viewcode-block" id="vagrant"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.vagrant">[docs]</a><span class="k">def</span> <span class="nf">vagrant</span><span class="p">():</span>
     <span class="c"># applied mktemp like sphinx_updates</span>
     <span class="n">dirname</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span><span class="s">&quot;mktemp -d&quot;</span><span class="p">,</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">dirname</span> <span class="o">=</span> <span class="n">dirname</span> <span class="o">+</span> <span class="s">&quot;/vagrant&quot;</span>
@@ -545,7 +545,7 @@
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;cd </span><span class="si">%s</span><span class="s">; vagrant ssh&quot;</span> <span class="o">%</span> <span class="n">dirname</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="enable_admin_page"><a class="viewcode-back" href="../../modules/cloudmesh_install.html#cloudmesh_install.install.enable_admin_page">[docs]</a><span class="k">def</span> <span class="nf">enable_admin_page</span><span class="p">(</span><span class="n">userid</span><span class="p">):</span>
+<div class="viewcode-block" id="enable_admin_page"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_install.html#cloudmesh_install.install.enable_admin_page">[docs]</a><span class="k">def</span> <span class="nf">enable_admin_page</span><span class="p">(</span><span class="n">userid</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">userid</span><span class="p">:</span>
         <span class="n">userid</span> <span class="o">=</span> <span class="n">_get_username_from_profile</span><span class="p">()</span>
 
