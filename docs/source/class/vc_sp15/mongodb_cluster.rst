@@ -1,3 +1,5 @@
+.. _ref-class-lesson-mongodb-sharded-cluster:
+
 MongoDB Sharded Cluster
 =======================
 

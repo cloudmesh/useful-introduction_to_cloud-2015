@@ -1,3 +1,5 @@
+.. _ref-class-lesson-deploying-virtual-cluster-with-cloudmesh:
+
 Deploying Virtual Cluster with Cloudmesh ``cm``
 ===============================================
 
@@ -78,11 +80,14 @@ If you completed your task on the cluster, you may terminate the virtual cluster
 
 ``cluster remove [name]`` simply shuts down a node(s) of the cluster.
 
+.. _ref-class-lesson-deploying-virtual-cluster-with-cloudmesh-exercise:
+
 Exercise
 ---------
 
-- Try to access a master node of your cluster.
-- Create a Virtual Cluster with 5 VMs
+- Try to access a master node of your cluster. (Make a screenshot)
+- Create a Virtual Cluster with 2 VMs. (Make a screenshot)
+- Submit two screenshots
 
 Cloudmesh ``cluster`` command
 -----------------------------
