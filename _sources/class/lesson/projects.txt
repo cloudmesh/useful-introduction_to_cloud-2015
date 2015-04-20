@@ -156,6 +156,40 @@ There are other benchmark sets such as HiBench, Graph 500, BigBench,
 LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark, TPCx-HS, and
 CloudSuite.
 
+.. list-table:: HiBench
+   :header-rows: 1
+
+   * - Title
+     - Category
+     - Data Sets
+     - Technologies
+   * - Micro Benchmarks
+        - Sort
+        - WordCount
+        - TeraSort
+        - EnhancedDFSIO
+     - Batch Data Analytics
+     - https://github.com/intel-hadoop/HiBench
+     - Hadoop
+   * - Web Search
+        - Nutch Indexing
+        - Page Rank
+     - Batch Data Analytics
+     - https://github.com/intel-hadoop/HiBench
+     - Mahout
+   * - Machine Learning
+        - Bayesian Classification
+        - K-means Clustering
+     - Batch Data Analytics
+     - https://github.com/intel-hadoop/HiBench
+     - Mahout
+   * - OLAP Analytical Query
+        - Hive Join
+        - Hive Aggregation
+     - Batch Data Analytics
+     - https://github.com/intel-hadoop/HiBench
+     - Hive
+
 .. list-table:: Benchmarking Techniques
    :header-rows: 1
 
@@ -163,12 +197,6 @@ CloudSuite.
      - Category
      - Data Sets
      - Technologies
-   * - HiBench
-     - Batch Data Analytics
-     - https://github.com/intel-hadoop/HiBench 
-     - - Hadoop
-       - Mahout
-       - Hive
    * - Graph 500
      - Batch Data Analytics
      - http://www.graph500.org/
@@ -190,7 +218,7 @@ CloudSuite.
        - HBase
        - VoltDB
    * - Berkeley Big Data Benchmark
-     - Batch Data Analytics
+     - Data Systems
      - https://amplab.cs.berkeley.edu/benchmark/#workload
      - - Redshift
        - Hive
@@ -198,13 +226,19 @@ CloudSuite.
        - Impala
        - Stinger/Tez
    * - TPCx-HS
-     - Batch Data Analytics
+     - Data Systems
      - http://www.tpc.org/tpcx-hs/
      - Hadoop
    * - CloudSuite
      - Batch Data Analytics
      - http://parsa.epfl.ch/cloudsuite/downloads.html
      - MapReduce
+   * - MineBench
+     - Batch Data Analytics
+     - http://cucis.ece.northwestern.edu/projects/DMS/MineBench.html
+     - 
+
+.. In the benchmark table, one could add Minebench http://www.cs.binghamton.edu/~mgovinda/papers/hadoopeval-ieee-cloud-12.pdf and http://sortbenchmark.org/
 
 Possible Projects from IU
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
