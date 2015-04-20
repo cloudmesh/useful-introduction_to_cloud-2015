@@ -166,7 +166,7 @@
     <span class="n">progress</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
 
 
-<div class="viewcode-block" id="get_pid"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.get_pid">[docs]</a><span class="k">def</span> <span class="nf">get_pid</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+<div class="viewcode-block" id="get_pid"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.get_pid">[docs]</a><span class="k">def</span> <span class="nf">get_pid</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">hide</span><span class="p">(</span><span class="s">&#39;output&#39;</span><span class="p">,</span> <span class="s">&#39;running&#39;</span><span class="p">,</span> <span class="s">&#39;warnings&#39;</span><span class="p">):</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span>
             <span class="s">&quot;ps -ax |fgrep {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">command</span><span class="p">),</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
@@ -184,7 +184,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="reset"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.reset">[docs]</a><span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="reset"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.reset">[docs]</a><span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;initiating mongo&quot;</span><span class="p">)</span>
     <span class="n">boot</span><span class="p">()</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;initiating user data to mongo&quot;</span><span class="p">)</span>
@@ -201,7 +201,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="install_osx"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.install_osx">[docs]</a><span class="k">def</span> <span class="nf">install_osx</span><span class="p">():</span>
+<div class="viewcode-block" id="install_osx"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.install_osx">[docs]</a><span class="k">def</span> <span class="nf">install_osx</span><span class="p">():</span>
     <span class="c"># local(&#39;ruby -e &quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;&#39;)</span>
     <span class="c"># local(&#39;brew update&#39;)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&#39;brew install mongodb&#39;</span><span class="p">)</span>
@@ -274,7 +274,7 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 
-<div class="viewcode-block" id="version"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.version">[docs]</a><span class="k">def</span> <span class="nf">version</span><span class="p">():</span>
+<div class="viewcode-block" id="version"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.version">[docs]</a><span class="k">def</span> <span class="nf">version</span><span class="p">():</span>
     <span class="n">ver</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">out</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s">&quot;mongod --version&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> \
@@ -288,7 +288,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="admin"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.admin">[docs]</a><span class="k">def</span> <span class="nf">admin</span><span class="p">():</span>
+<div class="viewcode-block" id="admin"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.admin">[docs]</a><span class="k">def</span> <span class="nf">admin</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;creates a password protected user for mongo&quot;&quot;&quot;</span>
 
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;create auth user&quot;</span><span class="p">)</span>
@@ -344,7 +344,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="wipe"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.wipe">[docs]</a><span class="k">def</span> <span class="nf">wipe</span><span class="p">():</span>
+<div class="viewcode-block" id="wipe"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.wipe">[docs]</a><span class="k">def</span> <span class="nf">wipe</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;wipes out all traces from mongo&quot;&quot;&quot;</span>
     <span class="n">kill</span><span class="p">()</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.mongo&quot;</span><span class="p">)</span>
@@ -365,7 +365,7 @@
             <span class="n">local</span><span class="p">(</span><span class="s">&quot;ls {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
 
 </div>
-<div class="viewcode-block" id="isyes"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.isyes">[docs]</a><span class="k">def</span> <span class="nf">isyes</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="isyes"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.isyes">[docs]</a><span class="k">def</span> <span class="nf">isyes</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="n">check</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">check</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;true&#39;</span><span class="p">,</span> <span class="s">&#39;false&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;n&#39;</span><span class="p">,</span> <span class="s">&#39;yes&#39;</span><span class="p">,</span> <span class="s">&#39;no&#39;</span><span class="p">]:</span>
         <span class="k">return</span> <span class="n">check</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;true&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;yes&#39;</span><span class="p">]</span>
@@ -376,7 +376,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="boot"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.boot">[docs]</a><span class="k">def</span> <span class="nf">boot</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="boot"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.boot">[docs]</a><span class="k">def</span> <span class="nf">boot</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="c"># wipe mongo</span>
     <span class="n">wipe</span><span class="p">()</span>
 
@@ -413,7 +413,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="start"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.start">[docs]</a><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    start the mongod service in the location as specified in</span>
 <span class="sd">    cloudmesh_server.yaml</span>
@@ -459,7 +459,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="clean"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.clean">[docs]</a><span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
+<div class="viewcode-block" id="clean"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.clean">[docs]</a><span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
     <span class="n">port</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.mongo.port&quot;</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span>
         <span class="s">&#39;echo &quot;show dbs&quot; | mongo --quiet --port {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">),</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
@@ -470,7 +470,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="inventory"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.inventory">[docs]</a><span class="k">def</span> <span class="nf">inventory</span><span class="p">():</span>
+<div class="viewcode-block" id="inventory"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.inventory">[docs]</a><span class="k">def</span> <span class="nf">inventory</span><span class="p">():</span>
     <span class="n">mesh_inventory</span> <span class="o">=</span> <span class="n">Inventory</span><span class="p">()</span>
     <span class="n">mesh_inventory</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="n">mesh_inventory</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
@@ -478,18 +478,18 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">():</span>
+<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">():</span>
     <span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> <span class="o">=</span> <span class="n">get_pid</span><span class="p">(</span><span class="s">&quot;mongod&quot;</span><span class="p">)</span>
     <span class="k">print</span> <span class="n">line</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">():</span>
+<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">():</span>
     <span class="n">stop</span><span class="p">()</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">():</span>
+<div class="viewcode-block" id="stop"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.stop">[docs]</a><span class="k">def</span> <span class="nf">stop</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    stops the currently running mongod</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -519,14 +519,14 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="vms_find"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.vms_find">[docs]</a><span class="k">def</span> <span class="nf">vms_find</span><span class="p">():</span>
+<div class="viewcode-block" id="vms_find"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.vms_find">[docs]</a><span class="k">def</span> <span class="nf">vms_find</span><span class="p">():</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.hpc.username&quot;</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">cm_mongo</span><span class="p">()</span>
     <span class="n">c</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
     <span class="n">pprint</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">servers</span><span class="p">())</span>
 
 </div>
-<div class="viewcode-block" id="refresh"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.refresh">[docs]</a><span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="n">types</span><span class="p">):</span>
+<div class="viewcode-block" id="refresh"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.refresh">[docs]</a><span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="n">types</span><span class="p">):</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.hpc.username&quot;</span><span class="p">)</span>
 
     <span class="n">c</span> <span class="o">=</span> <span class="n">cm_mongo</span><span class="p">()</span>
@@ -535,7 +535,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="cloud"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.cloud">[docs]</a><span class="k">def</span> <span class="nf">cloud</span><span class="p">():</span>
+<div class="viewcode-block" id="cloud"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.cloud">[docs]</a><span class="k">def</span> <span class="nf">cloud</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    puts a snapshot of users, servers, images, and flavors into mongo</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -545,7 +545,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="simple"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.simple">[docs]</a><span class="k">def</span> <span class="nf">simple</span><span class="p">():</span>
+<div class="viewcode-block" id="simple"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.simple">[docs]</a><span class="k">def</span> <span class="nf">simple</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    puts a snapshot of servers, images, and flavors into mongo (no users)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -558,7 +558,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="users"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.users">[docs]</a><span class="k">def</span> <span class="nf">users</span><span class="p">():</span>
+<div class="viewcode-block" id="users"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.users">[docs]</a><span class="k">def</span> <span class="nf">users</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    puts a snapshot of the users into mongo</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -566,7 +566,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="errormetric"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.errormetric">[docs]</a><span class="k">def</span> <span class="nf">errormetric</span><span class="p">():</span>
+<div class="viewcode-block" id="errormetric"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.errormetric">[docs]</a><span class="k">def</span> <span class="nf">errormetric</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;puts an example of a log file into the mongodb logfile&quot;&quot;&quot;</span>
     <span class="c"># create the mongo object</span>
     <span class="c"># parse the log file</span>
@@ -574,7 +574,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="ldap"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.ldap">[docs]</a><span class="k">def</span> <span class="nf">ldap</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ldap"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.ldap">[docs]</a><span class="k">def</span> <span class="nf">ldap</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    fetches a user list from ldap and displays it</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -599,14 +599,14 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="projects"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.projects">[docs]</a><span class="k">def</span> <span class="nf">projects</span><span class="p">():</span>
+<div class="viewcode-block" id="projects"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.projects">[docs]</a><span class="k">def</span> <span class="nf">projects</span><span class="p">():</span>
     <span class="k">print</span> <span class="s">&quot;NOT IMPLEMENTED YET&quot;</span>
     <span class="k">print</span> <span class="s">&quot;this class will when finished be able to import project titles&quot;</span> \
           <span class="s">&quot; and description from the fg portal&quot;</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="pbs"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.mongo.pbs">[docs]</a><span class="k">def</span> <span class="nf">pbs</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
+<div class="viewcode-block" id="pbs"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.mongo.pbs">[docs]</a><span class="k">def</span> <span class="nf">pbs</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
     <span class="n">_pbs</span> <span class="o">=</span> <span class="n">pbs_mongo</span><span class="p">()</span>
 
     <span class="c"># get hpc user</span>
@@ -639,7 +639,14 @@
 
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;PBS --&gt;&quot;</span>
-        <span class="n">pprint</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="c"># Temporary cure for missing a shell prompt</span></div>
+<span class="k">if</span> <span class="p">(</span><span class="n">PROGRESS</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">PROGRESS</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
 </pre></div>
 
           </div>

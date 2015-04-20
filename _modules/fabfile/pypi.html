@@ -140,14 +140,14 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="upload"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.pypi.upload">[docs]</a><span class="k">def</span> <span class="nf">upload</span><span class="p">():</span>
+<div class="viewcode-block" id="upload"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.pypi.upload">[docs]</a><span class="k">def</span> <span class="nf">upload</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;upload the dist to pypi&quot;&quot;&quot;</span>
     <span class="n">build</span><span class="o">.</span><span class="n">sdist</span><span class="p">()</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;python setup.py sdist upload&quot;</span><span class="p">)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="register"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.pypi.register">[docs]</a><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+<div class="viewcode-block" id="register"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.pypi.register">[docs]</a><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;register with pypi. Needs only to be done once.&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;python setup.py register&quot;</span><span class="p">)</span></div>
 </pre></div>

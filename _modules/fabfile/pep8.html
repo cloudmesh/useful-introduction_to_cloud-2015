@@ -137,14 +137,14 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="stat"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.pep8.stat">[docs]</a><span class="k">def</span> <span class="nf">stat</span><span class="p">():</span>
+<div class="viewcode-block" id="stat"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.pep8.stat">[docs]</a><span class="k">def</span> <span class="nf">stat</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;create statistics for pep8&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span>
         <span class="s">&quot;pep8 --statistics --filename *.py */*.py */*/*.py */*/*/*.py */*/*/*/*.py */*/*/*/*/*.py&quot;</span><span class="p">)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="auto"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.pep8.auto">[docs]</a><span class="k">def</span> <span class="nf">auto</span><span class="p">():</span>
+<div class="viewcode-block" id="auto"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.pep8.auto">[docs]</a><span class="k">def</span> <span class="nf">auto</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;run autopep8 on all python files&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;autopep8 -i */*.py&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;autopep8 -i */*/*.py&quot;</span><span class="p">)</span>
@@ -155,7 +155,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.pep8.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
+<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.pep8.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;install pep8, autopep8, pylint&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;pip install autopep8 --upgrade&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;pip install pep8 --upgrade&quot;</span><span class="p">)</span>

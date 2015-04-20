@@ -231,6 +231,11 @@
 <span class="kn">import</span> <span class="nn">textwrap</span>
 <span class="kn">import</span> <span class="nn">traceback</span>
 <span class="kn">from</span> <span class="nn">cloudmesh_base.ConfigDict</span> <span class="kn">import</span> <span class="n">ConfigDict</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">banner</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">path_expand</span>
+<span class="kn">from</span> <span class="nn">cloudmesh_base.Shell</span> <span class="kn">import</span> <span class="n">Shell</span>
+<span class="kn">from</span> <span class="nn">cmd3.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">import</span> <span class="nn">cmd3</span>
 
 <span class="c"># echo = False</span>
 <span class="n">echo</span> <span class="o">=</span> <span class="bp">False</span>
@@ -257,16 +262,16 @@
 <span class="c"># dynamic CMD that loads from plugin directory</span>
 <span class="c">#</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">def get_version(self):</span>
-<span class="sd">    # import pkg_resources  # part of setuptools</span>
-<span class="sd">    # self.__version__ = pkg_resources.require(&quot;cmd3&quot;)[0].version</span>
-<span class="sd">    import cmd3</span>
-<span class="sd">    self.__version__ = cmd3.version</span>
-<span class="sd">    return cmd3.version</span>
-<span class="sd">&quot;&quot;&quot;</span>
 
 
+<div class="viewcode-block" id="get_version"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.get_version">[docs]</a><span class="k">def</span> <span class="nf">get_version</span><span class="p">():</span>
+    <span class="c"># import pkg_resources  # part of setuptools</span>
+    <span class="c"># self.__version__ = pkg_resources.require(&quot;cmd3&quot;)[0].version</span>
+    <span class="kn">import</span> <span class="nn">cmd3</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">=</span> <span class="n">cmd3</span><span class="o">.</span><span class="n">__version__</span>
+    <span class="k">return</span> <span class="n">cmd3</span><span class="o">.</span><span class="n">__version__</span>
+
+</div>
 <div class="viewcode-block" id="DynamicCmd"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.DynamicCmd">[docs]</a><span class="k">def</span> <span class="nf">DynamicCmd</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">plugins</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a cmd with the added plugins,</span>
@@ -546,6 +551,12 @@
     <span class="n">plugins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">get_plugins_from_dir</span><span class="p">(</span><span class="s">&quot;sys&quot;</span><span class="p">,</span> <span class="s">&quot;cmd3&quot;</span><span class="p">)))</span>
     <span class="c"># plugins.append(dict(get_plugins_from_dir(&quot;~/.cloudmesh&quot;, &quot;cmd3local&quot;)))</span>
 
+
+    
+    <span class="c">#if not os.path.exists(path_expand( &quot;~/.cloudmesh/cmd3.yaml&quot;)):</span>
+    <span class="c">#    from cmd3.plugins.shell_core import create_cmd3_yaml_file</span>
+    <span class="c">#    create_cmd3_yaml_file()</span>
+        
     <span class="k">try</span><span class="p">:</span>
         <span class="n">module_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&quot;~/.cloudmesh/cmd3.yaml&quot;</span><span class="p">)</span>
         <span class="n">modules</span> <span class="o">=</span> <span class="n">module_config</span><span class="p">[</span><span class="s">&quot;cmd3&quot;</span><span class="p">][</span><span class="s">&quot;modules&quot;</span><span class="p">]</span>

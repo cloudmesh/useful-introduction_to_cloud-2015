@@ -170,7 +170,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_inventory"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_inventory">[docs]</a><span class="k">def</span> <span class="nf">display_inventory</span><span class="p">():</span>
+<div class="viewcode-block" id="display_inventory"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_inventory">[docs]</a><span class="k">def</span> <span class="nf">display_inventory</span><span class="p">():</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
 
     <span class="c"># inventory.refresh()</span>
@@ -185,7 +185,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/summary/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="old_display_summary"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.old_display_summary">[docs]</a><span class="k">def</span> <span class="nf">old_display_summary</span><span class="p">():</span>
+<div class="viewcode-block" id="old_display_summary"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.old_display_summary">[docs]</a><span class="k">def</span> <span class="nf">old_display_summary</span><span class="p">():</span>
 
     <span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;bravo&quot;</span><span class="p">,</span> <span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="s">&quot;delta&quot;</span><span class="p">,</span> <span class="s">&quot;echo&quot;</span><span class="p">]</span>
 
@@ -212,7 +212,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/cluster/&lt;cluster&gt;/&lt;name&gt;&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_named_resource"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_named_resource">[docs]</a><span class="k">def</span> <span class="nf">display_named_resource</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="display_named_resource"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_named_resource">[docs]</a><span class="k">def</span> <span class="nf">display_named_resource</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
     <span class="c"># inventory.refresh()</span>
     <span class="n">clusters</span> <span class="o">=</span> <span class="n">inventory</span><span class="o">.</span><span class="n">hostlist</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
@@ -228,7 +228,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/cluster/&lt;cluster&gt;/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_cluster"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster">[docs]</a><span class="k">def</span> <span class="nf">display_cluster</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+<div class="viewcode-block" id="display_cluster"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster">[docs]</a><span class="k">def</span> <span class="nf">display_cluster</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
     <span class="c"># inventory.refresh()</span>
     <span class="n">servers</span> <span class="o">=</span> <span class="n">inventory</span><span class="o">.</span><span class="n">hostlist</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
@@ -243,7 +243,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/cluster-user&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_cluster_for_user"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster_for_user">[docs]</a><span class="k">def</span> <span class="nf">display_cluster_for_user</span><span class="p">():</span>
+<div class="viewcode-block" id="display_cluster_for_user"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster_for_user">[docs]</a><span class="k">def</span> <span class="nf">display_cluster_for_user</span><span class="p">():</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
     <span class="c"># inventory.refresh()</span>
     <span class="n">user</span> <span class="o">=</span> <span class="s">&quot;gvonlasz&quot;</span>
@@ -262,7 +262,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/cluster-proj&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_cluster_for_proj"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster_for_proj">[docs]</a><span class="k">def</span> <span class="nf">display_cluster_for_proj</span><span class="p">():</span>
+<div class="viewcode-block" id="display_cluster_for_proj"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster_for_proj">[docs]</a><span class="k">def</span> <span class="nf">display_cluster_for_proj</span><span class="p">():</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
     <span class="c"># inventory.refresh()</span>
     <span class="n">proj</span> <span class="o">=</span> <span class="s">&quot;fg82fsdfsd&quot;</span>
@@ -279,19 +279,19 @@
                            <span class="n">services</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;openstack&#39;</span><span class="p">,</span> <span class="s">&#39;eucalyptus&#39;</span><span class="p">,</span> <span class="s">&#39;hpc&#39;</span><span class="p">])</span>
 
 </div>
-<div class="viewcode-block" id="get_user_host_list"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_user_host_list">[docs]</a><span class="k">def</span> <span class="nf">get_user_host_list</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+<div class="viewcode-block" id="get_user_host_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_user_host_list">[docs]</a><span class="k">def</span> <span class="nf">get_user_host_list</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span>
     <span class="n">host_lists</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;provisioner.policy.users.&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">host_lists</span>
 
 </div>
-<div class="viewcode-block" id="get_proj_host_list"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_proj_host_list">[docs]</a><span class="k">def</span> <span class="nf">get_proj_host_list</span><span class="p">(</span><span class="n">proj</span><span class="p">):</span>
+<div class="viewcode-block" id="get_proj_host_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_proj_host_list">[docs]</a><span class="k">def</span> <span class="nf">get_proj_host_list</span><span class="p">(</span><span class="n">proj</span><span class="p">):</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span>
     <span class="n">host_lists</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;provisioner.policy.projects.&quot;</span> <span class="o">+</span> <span class="n">proj</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">host_lists</span>
 
 </div>
-<div class="viewcode-block" id="get_servers_for_clusters"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_servers_for_clusters">[docs]</a><span class="k">def</span> <span class="nf">get_servers_for_clusters</span><span class="p">(</span><span class="n">host_lists</span><span class="p">):</span>
+<div class="viewcode-block" id="get_servers_for_clusters"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_servers_for_clusters">[docs]</a><span class="k">def</span> <span class="nf">get_servers_for_clusters</span><span class="p">(</span><span class="n">host_lists</span><span class="p">):</span>
     <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;get server fo closyer&quot;</span><span class="p">)</span>
     <span class="n">cluster_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;i&quot;</span><span class="p">:</span> <span class="s">&quot;india&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">:</span> <span class="s">&quot;bravo&quot;</span><span class="p">,</span>
                     <span class="s">&quot;e&quot;</span><span class="p">:</span> <span class="s">&quot;echo&quot;</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">:</span> <span class="s">&quot;delta&quot;</span><span class="p">}</span>  <span class="c"># move to config at some point</span>
@@ -313,7 +313,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/cluster/table/&lt;cluster&gt;/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_cluster_table"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster_table">[docs]</a><span class="k">def</span> <span class="nf">display_cluster_table</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+<div class="viewcode-block" id="display_cluster_table"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.display_cluster_table">[docs]</a><span class="k">def</span> <span class="nf">display_cluster_table</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
     <span class="c"># inventory.refresh()</span>
 
@@ -343,7 +343,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/info/server/&lt;server&gt;/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="server_info"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.server_info">[docs]</a><span class="k">def</span> <span class="nf">server_info</span><span class="p">(</span><span class="n">server</span><span class="p">):</span>
+<div class="viewcode-block" id="server_info"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.server_info">[docs]</a><span class="k">def</span> <span class="nf">server_info</span><span class="p">(</span><span class="n">server</span><span class="p">):</span>
 
     <span class="n">server</span> <span class="o">=</span> <span class="n">inventory</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;server&quot;</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;info_server.html&#39;</span><span class="p">,</span>
@@ -354,7 +354,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/set/service/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="set_service"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.set_service">[docs]</a><span class="k">def</span> <span class="nf">set_service</span><span class="p">():</span>
+<div class="viewcode-block" id="set_service"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.set_service">[docs]</a><span class="k">def</span> <span class="nf">set_service</span><span class="p">():</span>
     <span class="n">server_name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;server&#39;</span><span class="p">]</span>
     <span class="n">service_name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;provisioned&#39;</span><span class="p">]</span>
 
@@ -368,7 +368,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/set/attribute/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="set_attribute"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.set_attribute">[docs]</a><span class="k">def</span> <span class="nf">set_attribute</span><span class="p">():</span>
+<div class="viewcode-block" id="set_attribute"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.set_attribute">[docs]</a><span class="k">def</span> <span class="nf">set_attribute</span><span class="p">():</span>
     <span class="n">kind</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;kind&#39;</span><span class="p">]</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>
     <span class="n">attribute</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;attribute&#39;</span><span class="p">]</span>
@@ -383,7 +383,7 @@
 <span class="nd">@inventory_module.route</span><span class="p">(</span><span class="s">&#39;/inventory/get/&lt;kind&gt;/&lt;name&gt;/&lt;attribute&gt;&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="get_attribute"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_attribute">[docs]</a><span class="k">def</span> <span class="nf">get_attribute</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribute</span><span class="p">):</span>
+<div class="viewcode-block" id="get_attribute"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.inventory.get_attribute">[docs]</a><span class="k">def</span> <span class="nf">get_attribute</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribute</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">inventory</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span></div>
 </pre></div>

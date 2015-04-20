@@ -124,6 +124,14 @@ cmd3.plugins.timer module
     :undoc-members:
     :show-inheritance:
 
+cmd3.plugins.yaml_setup module
+------------------------------
+
+.. automodule:: cmd3.plugins.yaml_setup
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
