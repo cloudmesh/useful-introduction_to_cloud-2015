@@ -580,18 +580,18 @@ Week 5
 
 This week, you will learn basics of virtual clusters. Typically, analyzing
 large data sets containing unstructured data types requires distributed
-computing resources to perform data processing with performance, scalability,
-and availability. With virtualization technology, cluster computing can be more
+computing resources for data processing with high performance, scalability, and
+availability. With virtualization technology, cluster computing can be more
 flexible, effective and cost-efficient in terms of resource utilization. There
-are three basic tutorials this week about deploying a virtual cluster, Hadoop
-cluster and MongoDB Sharded cluster which give you a chance to gain some
-experience of how to setup virtual clusters manually and configure software
-with Cloudmesh software.
+are three basic tutorials about deploying a virtual cluster, Hadoop cluster and
+MongoDB Sharded cluster which give you a chance to gain some experience of how
+to setup virtual clusters manually and configure software with Cloudmesh
+software. In Week 6, advanced topics of virtual clusters will be discussed.
 
 Virtual Clusters I
 *******************************************************************************
 
-**First Appearance of Hadoop in This Week**
+**First Appearance of Hadoop**
 
 .. list-table:: Virtual Clusters I
    :widths: 30 10 10 10 10 10
@@ -606,13 +606,13 @@ Virtual Clusters I
    * - **Introduction and Overview**
      - `4 mins <https://mix.office.com/watch/eap9zdqfifgp>`_
      - 
-     - 
+     - see video
      - 04/27
      - 
    * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
      - `4 mins <https://mix.office.com/watch/zukoz9wswe7z>`_
      - 
-     - 
+     - see video
      - 04/27
      - 
    * - **Deploying Virtual Cluster with Cloudmesh**
@@ -630,15 +630,22 @@ Virtual Clusters I
    * - **Deploying Hadoop Cluster with Cloudmesh**
      -
      - :ref:`30 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
-     -
+     - see text
      - 04/27
      -
    * - **Deploying MongoDB Sharded Cluster**
      -
      - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
-     -
+     - see text
      - 04/27
      -
+   * - **``cluster`` Cloudmesh Command for Virtual Clusters**
+        - SSH Connections between nodes, Host Configuration
+     - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
+     - `20 mins <../../cloudmesh/cm/_cm-cluster.html>`_ (repeated practice)
+     - `20 mins <../../cloudmesh/cm/_cm-cluster.html#exercise>`_
+     - 04/27
+     - 05/01
 
 ..
    * - **Hadoop Virtual Cluster**
@@ -657,9 +664,9 @@ Virtual Clusters I
 Length of the lessons in Week 5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Total of video lessons:  hour and 30 minutes
-* Total of study materials: 2 hours and 45 minutes
-* Total of lab sessions:  30 minutes
+* Total of video lessons:  hour and 35 minutes
+* Total of study materials: 3 hours and 05 minutes
+* Total of lab sessions:  50 minutes
 
 Week 6
 -------------------------------------------------------------------------------
