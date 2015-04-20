@@ -584,7 +584,7 @@ computing resources to perform data processing with performance, scalability,
 and availability. With virtualization technology, cluster computing can be more
 flexible, effective and cost-efficient in terms of resource utilization. There
 are three basic tutorials this week about deploying a virtual cluster, Hadoop
-cluster and Mongodb Sharded cluster which give you a chance to gain some
+cluster and MongoDB Sharded cluster which give you a chance to gain some
 experience of how to setup virtual clusters manually and configure software
 with Cloudmesh software.
 
@@ -657,9 +657,9 @@ Virtual Clusters I
 Length of the lessons in Week 5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Total of video lessons:  hour and  minutes
-* Total of study materials:  hours
-* Total of lab sessions:  hour and  minutes
+* Total of video lessons:  hour and 30 minutes
+* Total of study materials: 2 hours and 45 minutes
+* Total of lab sessions:  30 minutes
 
 Week 6
 -------------------------------------------------------------------------------
