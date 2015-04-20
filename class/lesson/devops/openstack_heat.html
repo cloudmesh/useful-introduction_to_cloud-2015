@@ -399,33 +399,72 @@ have to <strong>REPLACE</strong> <code class="docutils literal"><span class="pre
 <span id="ref-class-lesson-devops-openstack-heat-exercises"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-i">
 <h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Try to create a two VM instances with the following conditions:</p>
 <ul class="simple">
-<li>Try to create a two VM instances with the following conditions:<ul>
 <li>futuresystems/ubuntu14.04</li>
 <li>m1.small</li>
 <li>Port 22, 80, and 443 are open</li>
 <li>Save your OpenStack Heat template in <code class="docutils literal"><span class="pre">$USERNAME_heat_ex1.yaml</span></code></li>
 </ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>The following documents will be useful:</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec">Heat Orchestration Template (HOT) Specification</a></li>
+<li><a class="reference external" href="http://docs.openstack.org/developer/heat/template_guide/hot_guide.html">Heat Orchestration (HOT) Guide</a></li>
+<li><a class="reference external" href="http://docs.openstack.org/hot-reference/content/openstack-resource-types.html">OpenStack Researce Types</a><ul>
+<li><a class="reference external" href="http://docs.openstack.org/hot-reference/content/OS__Neutron__SecurityGroup.html">OS::Neutron::SecurityGroup</a></li>
+<li><a class="reference external" href="http://docs.openstack.org/hot-reference/content/OS__Neutron__Port.html">OS::Neutron::Port</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="https://github.com/futuresystems/class-bigdata-technology-spring-2015/blob/master/heat-template.yaml">Sample Heat template</a></li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="section" id="exercise-ii">
 <h3>Exercise II<a class="headerlink" href="#exercise-ii" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Start a WordPress web service using Heat template on the web. The required
+conditions are:</p>
 <ul class="simple">
-<li>Start a WordPress web service using Heat template on the web. The required
-conditions are:<ul>
-<li>Run <code class="docutils literal"><span class="pre">script</span> <span class="pre">heat_ex1_$OS_USERNAME.typescript</span></code> on your SSH terminal.</li>
 <li>Use <a class="reference external" href="https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/fedora-21/wordpress.yaml">Template for WordPress on Fedora21</a></li>
-<li>Once you successfully created a WordPress stack, checkout an index page.
-<code class="docutils literal"><span class="pre">curl</span> <span class="pre">http://[IP</span> <span class="pre">ADDRESS]/wordpress</span></code> produces the index page in a text mode.</li>
+<li>Make sure to specify your key using the <code class="docutils literal"><span class="pre">key_name</span></code> parameter</li>
+<li>Once you successfully created a WordPress stack, checkout the index page.
+<code class="docutils literal"><span class="pre">curl</span> <span class="pre">-L</span> <span class="pre">http://[IP</span> <span class="pre">ADDRESS]/wordpress</span></code> produces the index page in a text mode.</li>
 <li>If your web browser opens the page properly, your WordPress is created successfully.</li>
-<li>Stop running your typescript by <code class="docutils literal"><span class="pre">exit</span></code>. (This is not necessary if you did
-not run <code class="docutils literal"><span class="pre">script</span></code> command earlier.</li>
-<li>Submit <code class="docutils literal"><span class="pre">**heat_ex1_$OS_USERNAME.typescript**</span></code> file.</li>
 </ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Examine the documentation for the <code class="docutils literal"><span class="pre">heat</span></code> subcommands
+<code class="docutils literal"><span class="pre">stack-create</span></code> and <code class="docutils literal"><span class="pre">stack-show</span></code> like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ heat help &lt;subcommand&gt;
+</pre></div>
+</div>
+<p class="last">replacing <code class="docutils literal"><span class="pre">&lt;subcommand&gt;</span></code> as appropriate.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The IP address of your instance is listed as an output
+value. Make sure to examine your stack to get the location of the
+instance.</p>
+</div>
 </li>
-<li>If you&#8217;d like to use Horizon web dashboard, you need to find &#8220;Orchestration &gt;
-Stacks&#8221; menu.<ul>
+<li><p class="first">Submission</p>
+<p>You will need to turn in a typescript of your terminal session.
+Do so by executing:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ script heat_ex2_$OS_USERNAME.typescript
+</pre></div>
+</div>
+<p>and then proceed with this exercise. Upon completion, make sure to
+type <code class="docutils literal"><span class="pre">exit</span></code> to end the typescripting. The contents of the session
+will be found in the <code class="docutils literal"><span class="pre">heat_ex2_$OS_USERNAME.typescript</span></code> file.</p>
+</li>
+<li><p class="first">If you&#8217;d like to use Horizon web dashboard, you need to find &#8220;Orchestration &gt;
+Stacks&#8221; menu.</p>
+<ul class="simple">
 <li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Topology</span></code></li>
 <li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Overview</span></code></li>
 <li>Make a screenshot of the page at <code class="docutils literal"><span class="pre">Stacks</span> <span class="pre">&gt;</span> <span class="pre">Resources</span></code></li>

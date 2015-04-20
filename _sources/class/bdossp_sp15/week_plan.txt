@@ -624,13 +624,13 @@ Virtual Clusters I
    * - **Deploying Hadoop Cluster**
      -
      - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-manual>`
-     - :ref:`20 mins <ref-class-lesson-deploying-hadoop-cluster-manual-exercise>` (optional)
+     -
      - 04/27
      -
    * - **Deploying Hadoop Cluster with Cloudmesh**
      -
      - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
-     -
+     - :ref:`20 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh-exercise>` (optional)
      - 04/27
      -
    * - **Deploying MongoDB Sharded Cluster**

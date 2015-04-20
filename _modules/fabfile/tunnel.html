@@ -140,16 +140,16 @@
 <span class="kn">from</span> <span class="nn">cloudmesh_base.locations</span> <span class="kn">import</span> <span class="n">config_file</span>
 
 
-<div class="viewcode-block" id="get_server_config"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.tunnel.get_server_config">[docs]</a><span class="k">def</span> <span class="nf">get_server_config</span><span class="p">():</span>
+<div class="viewcode-block" id="get_server_config"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.tunnel.get_server_config">[docs]</a><span class="k">def</span> <span class="nf">get_server_config</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh_server.yaml&quot;</span><span class="p">))</span>
 
 </div>
-<div class="viewcode-block" id="get_user_config"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.tunnel.get_user_config">[docs]</a><span class="k">def</span> <span class="nf">get_user_config</span><span class="p">():</span>
+<div class="viewcode-block" id="get_user_config"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.tunnel.get_user_config">[docs]</a><span class="k">def</span> <span class="nf">get_user_config</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cloudmesh.yaml&quot;</span><span class="p">))</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="open"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.tunnel.open">[docs]</a><span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">proxyhost</span><span class="p">,</span> <span class="n">proxyuser</span><span class="p">,</span> <span class="n">sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="open"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.tunnel.open">[docs]</a><span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">proxyhost</span><span class="p">,</span> <span class="n">proxyuser</span><span class="p">,</span> <span class="n">sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;clean the dirs&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">sudo</span><span class="p">:</span>
         <span class="n">local</span><span class="p">(</span>
@@ -160,7 +160,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="ldap"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.tunnel.ldap">[docs]</a><span class="k">def</span> <span class="nf">ldap</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ldap"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.tunnel.ldap">[docs]</a><span class="k">def</span> <span class="nf">ldap</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="n">config_server</span> <span class="o">=</span> <span class="n">get_server_config</span><span class="p">()</span>
     <span class="n">config_user</span> <span class="o">=</span> <span class="n">get_user_config</span><span class="p">()</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">config_user</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.hpc.username&quot;</span><span class="p">)</span>
@@ -180,7 +180,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.tunnel.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">():</span>
+<div class="viewcode-block" id="kill"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.tunnel.kill">[docs]</a><span class="k">def</span> <span class="nf">kill</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">settings</span><span class="p">(</span><span class="n">warn_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">hide</span><span class="p">(</span><span class="s">&#39;output&#39;</span><span class="p">,</span> <span class="s">&#39;running&#39;</span><span class="p">,</span> <span class="s">&#39;warnings&#39;</span><span class="p">):</span>
             <span class="n">procs</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span>
@@ -199,7 +199,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="flask"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.tunnel.flask">[docs]</a><span class="k">def</span> <span class="nf">flask</span><span class="p">():</span>
+<div class="viewcode-block" id="flask"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.tunnel.flask">[docs]</a><span class="k">def</span> <span class="nf">flask</span><span class="p">():</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">get_user_config</span><span class="p">()</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.hpc.username&quot;</span><span class="p">)</span>
     <span class="n">server_config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span>

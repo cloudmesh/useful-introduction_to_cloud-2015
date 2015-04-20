@@ -179,30 +179,27 @@
         <span class="k">print</span><span class="p">(</span><span class="s">&quot;please make sure that a virtualenv and pip are installed&quot;</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
-<div class="viewcode-block" id="PROGRESS"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS">[docs]</a><span class="k">class</span> <span class="nc">PROGRESS</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="PROGRESS"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.PROGRESS">[docs]</a><span class="k">class</span> <span class="nc">PROGRESS</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="n">defined</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">bar</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="PROGRESS.set"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+<div class="viewcode-block" id="PROGRESS.set"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">cls</span><span class="o">.</span><span class="n">defined</span><span class="p">:</span>
             <span class="n">cls</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="n">limit</span><span class="p">)</span>
             <span class="n">cls</span><span class="o">.</span><span class="n">defined</span> <span class="o">=</span> <span class="bp">True</span>
 </div>
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="PROGRESS.next"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.next">[docs]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="PROGRESS.next"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.next">[docs]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 </div>
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="PROGRESS.finish"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.finish">[docs]</a>    <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="PROGRESS.finish"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.PROGRESS.finish">[docs]</a>    <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-</div>
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="n">cls</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
-</div>
-<div class="viewcode-block" id="cat"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.cat">[docs]</a><span class="k">def</span> <span class="nf">cat</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+
+</div></div>
+<div class="viewcode-block" id="cat"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.cat">[docs]</a><span class="k">def</span> <span class="nf">cat</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints the contents of a file with the given name.</span>
 
 <span class="sd">    :param filename: name of the file, which can include ~ and $</span>
@@ -215,14 +212,14 @@
         <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 </div>
-<div class="viewcode-block" id="not_implemented"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.not_implemented">[docs]</a><span class="k">def</span> <span class="nf">not_implemented</span><span class="p">():</span>
+<div class="viewcode-block" id="not_implemented"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.not_implemented">[docs]</a><span class="k">def</span> <span class="nf">not_implemented</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;prins simply an error that this is not implemented. This can be</span>
 <span class="sd">    used when you protortype things.&quot;&quot;&quot;</span>
 
     <span class="k">print</span><span class="p">(</span><span class="s">&quot;ERROR: not yet implemented&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="check_file_for_tabs"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.check_file_for_tabs">[docs]</a><span class="k">def</span> <span class="nf">check_file_for_tabs</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="check_file_for_tabs"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.check_file_for_tabs">[docs]</a><span class="k">def</span> <span class="nf">check_file_for_tabs</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;identifies if the file contains tabs and returns True if it</span>
 <span class="sd">    does. It also prints the location of the lines and columns. If</span>
 <span class="sd">    verbose is set to False, the location is not printed.</span>
@@ -246,7 +243,7 @@
     <span class="k">return</span> <span class="n">file_contains_tabs</span>
 
 </div>
-<div class="viewcode-block" id="deprecated"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.deprecated">[docs]</a><span class="k">def</span> <span class="nf">deprecated</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="deprecated"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.deprecated">[docs]</a><span class="k">def</span> <span class="nf">deprecated</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;This is a decorator which can be used to mark functions</span>
 <span class="sd">    as deprecated. It will result in a warning being emitted</span>
 <span class="sd">    when the function is used. Just use @deprecated before</span>
@@ -283,7 +280,7 @@
     <span class="k">return</span> <span class="n">new_func</span>
 
 </div>
-<div class="viewcode-block" id="cond_decorator"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.cond_decorator">[docs]</a><span class="k">def</span> <span class="nf">cond_decorator</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
+<div class="viewcode-block" id="cond_decorator"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.cond_decorator">[docs]</a><span class="k">def</span> <span class="nf">cond_decorator</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;conditional decorator that is used if the flag is true.</span>
 
 <span class="sd">    :param flag: the boolean flag</span>
@@ -295,7 +292,7 @@
     <span class="k">return</span> <span class="n">decorate</span>
 
 </div>
-<div class="viewcode-block" id="status_color"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.status_color">[docs]</a><span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+<div class="viewcode-block" id="status_color"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.status_color">[docs]</a><span class="k">def</span> <span class="nf">status_color</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;returns some predefined color values.</span>
 <span class="sd">    * ACTIVE ::= green</span>
 <span class="sd">    * BUILDING ::= blue</span>
@@ -318,7 +315,7 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 
-<div class="viewcode-block" id="get_rand_string"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.get_rand_string">[docs]</a><span class="k">def</span> <span class="nf">get_rand_string</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">):</span>
+<div class="viewcode-block" id="get_rand_string"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.get_rand_string">[docs]</a><span class="k">def</span> <span class="nf">get_rand_string</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;generates a random string.</span>
 <span class="sd">    :param size: length of the string</span>
 <span class="sd">    :param chars: string of charaters to chese form, by default a-zA-Z0-9</span>
@@ -326,7 +323,7 @@
     <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
 
 </div>
-<div class="viewcode-block" id="get_unique_name"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.get_unique_name">[docs]</a><span class="k">def</span> <span class="nf">get_unique_name</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<div class="viewcode-block" id="get_unique_name"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.get_unique_name">[docs]</a><span class="k">def</span> <span class="nf">get_unique_name</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Make a UUID without some characters such as &#39;-&#39;, &#39;_&#39;, &#39; &#39;, &#39;.&#39;</span>
 
 <span class="sd">    :param prefix: a prefix added to the UUID</span>
@@ -347,7 +344,7 @@
     <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">+</span> <span class="n">text</span>
 
 </div>
-<div class="viewcode-block" id="address_string"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.address_string">[docs]</a><span class="k">def</span> <span class="nf">address_string</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="address_string"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.address_string">[docs]</a><span class="k">def</span> <span class="nf">address_string</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;content is a dict of the form::</span>
 
 <span class="sd">       {u&#39;private&#39;: [{u&#39;version&#39;: 4,</span>
@@ -399,7 +396,7 @@
     <span class="k">return</span> <span class="n">result</span>
 
 </div>
-<div class="viewcode-block" id="dict_uni_to_ascii"><a class="viewcode-back" href="../../modules/cloudmesh/cloudmesh_common.html#cloudmesh_common.util.dict_uni_to_ascii">[docs]</a><span class="k">def</span> <span class="nf">dict_uni_to_ascii</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<div class="viewcode-block" id="dict_uni_to_ascii"><a class="viewcode-back" href="../../modules/cloudmesh_common.html#cloudmesh_common.util.dict_uni_to_ascii">[docs]</a><span class="k">def</span> <span class="nf">dict_uni_to_ascii</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    convert mongodb document content from unicode to ascii</span>
 <span class="sd">    &#39;&#39;&#39;</span>
