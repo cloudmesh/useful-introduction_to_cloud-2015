@@ -4,7 +4,7 @@
 Deploying Hadoop Cluster on India OpenStack
 =================================================
 
-.. tip:: Approximate time: 30 minutes
+.. tip:: Approximate time: 45 minutes
 
 Introduction
 ----------------------------------------------------------------------
