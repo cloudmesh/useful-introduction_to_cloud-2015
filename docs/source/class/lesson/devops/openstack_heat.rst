@@ -273,6 +273,19 @@ Exercise I
 
   - Save your OpenStack Heat template in ``$USERNAME_heat_ex1.yaml``
 
+  .. tip::
+
+     The following documents will be useful:
+
+     - `Heat Orchestration Template (HOT) Specification <http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec>`_
+     - `Heat Orchestration (HOT) Guide <http://docs.openstack.org/developer/heat/template_guide/hot_guide.html>`_
+     - `OpenStack Researce Types <http://docs.openstack.org/hot-reference/content/openstack-resource-types.html>`_
+
+       - `OS::Neutron::SecurityGroup <http://docs.openstack.org/hot-reference/content/OS__Neutron__SecurityGroup.html>`_
+       - `OS::Neutron::Port <http://docs.openstack.org/hot-reference/content/OS__Neutron__Port.html>`_
+
+     - `Sample Heat template <https://github.com/futuresystems/class-bigdata-technology-spring-2015/blob/master/heat-template.yaml>`_
+
 Exercise II
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
