@@ -629,7 +629,7 @@ Virtual Clusters I
      -
    * - **Deploying Hadoop Cluster with Cloudmesh**
      -
-     - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
+     - :ref:`30 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
      -
      - 04/27
      -
