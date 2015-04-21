@@ -210,10 +210,14 @@ Install required cookbooks and setup configuration (.chef).
     knife cookbook site download apt
     knife cookbook site download yum
     knife cookbook site download hadoop
+    knife cookbook site download ohai
+    knife cookbook site download sysctl
     tar -zxf java*
     tar -zxf apt*
     tar -zxf yum*
     tar -zxf hadoop*
+    tar -zxf sysctl*
+    tar -zxf ohai*
     rm *.tar.gz
 
 java.rb
@@ -309,6 +313,20 @@ For the worker node::
 Repeat the worker installation for as many nodes as are available. At
 this point your cluster is deployed and awaiting initialization.
 
+Installation using ``chef-solo`` (``chef-client -z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You must run this command on a master(namenode) and a worker(datanode). If you
+have hadoop1, hadoop2, ... ,and hadoopX, SSH into all and run this command.
+
+::
+
+  chef-solo -j /home/ubuntu/chef-repo/solo.json -c /home/ubuntu/chef-repo/solo.rb
+
+In a newer version of Chef ::
+
+  chef-client -z -j /home/ubuntu/chef-repo/solo.json -c /home/ubuntu/chef-repo/solo.rb
+
 Initializing and Testing
 -------------------------------------------------------------------------------
 
@@ -325,11 +343,22 @@ To initialize the namenode, run::
 
     /etc/init.d/hadoop-hdfs-namenode init
 
+Namenode Initialization and Start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Restart any services installed on the node. There is one more
 initialization step required on the namenode, to create a default
 directory structure::
 
+    service hadoop-hdfs-namenode start
     /usr/lib/hadoop/libexec/init-hdfs.sh
+
+Datanode(s) Service Start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Go to your datanode(s) and start::
+
+   service hadoop-hdfs-datanode start
 
 When these initialization steps are complete, and all the appropriate
 services are running on each node, the Hadoop cluster will be
