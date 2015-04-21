@@ -49,10 +49,13 @@ help:
 clean:
 	rm -rf $(BUILDDIR)
 
-html:
+html: images
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+images:
+	cp -rf source/images build/html
 
 # slides:
 #	$(SPHINXBUILD) -b slides $(ALLSPHINXOPTS) $(BUILDDIR)/slides

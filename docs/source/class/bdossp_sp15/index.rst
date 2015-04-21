@@ -46,6 +46,10 @@ Make sure you are prepared to join the meeting by click on the following links:
 
 You can join the meeting by clicking on `this link <https://connect.iu.edu/bdossp_sp15/>`_.
 
+.. raw:: html
+
+   <a href="https://connect.iu.edu/bdossp_sp15/" target="_blank">
+   <img src="../../images/meeting.png" border="2" style="border:2px solid black;max-width:5%;" alt="Meeting" /></a>
 
 .. note::
 
