@@ -179,10 +179,11 @@ install Chef and download the required cookbooks from the Chef
 repository. As root, and in the /home/ubuntu directory, these commands
 will do that::
 
+    cd /home/ubuntu
     curl -L https://www.opscode.com/chef/install.sh | bash
     wget http://github.com/opscode/chef-repo/tarball/master
     tar -zxf master
-    mv opscode-chef-repo* chef-repo
+    mv *-chef-repo* chef-repo
     rm master
     cd chef-repo/
     mkdir .chef
