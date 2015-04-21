@@ -2,12 +2,12 @@
 
 
 Deploying Hadoop Cluster on India OpenStack
-=================================================
+===============================================================================
 
 .. tip:: Approximate time: 45 minutes
 
 Introduction
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Hadoop Cluster is specialized computational cluster especially for
 MapReduce data analysis applications.  On FutureSystems OpenStack,
@@ -16,7 +16,7 @@ cloud.  The size of Hadoop Cluster can be easily adjustable to provide
 efficient throughput for the computation.
 
 Prerequisite
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This tutorial assumes you already have used OpenStack and know how to
 create multiple virtual machine images. To build a distributed Hadoop
@@ -27,7 +27,8 @@ these tasks manually, to help you better understand the requirements
 and process of building a cluster.
 
 Important Fact
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There are certain things to remember when Hadoop Cluster is started.
 
  - The number of nodes
@@ -40,7 +41,7 @@ but consumes your quota quickly.  Additional cluster nodes may be needed if
 speed-up is possible to your data processing.
 
 Cluster Preparation
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Prior to deploying Hadoop, your nodes must be able to communicate.
 This will require changes to the `/etc/hosts` configuration file, and
@@ -107,7 +108,8 @@ DataNode(s) for the HDFS file system
 -	Stores data files and makes them available to client applications
 
 cm cluster create: a convenient way to create a cluster of VMs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Cloudmesh provides a convenient way to create such a cluster of VMs 
 (each of them can log into all others). Please follow the following 
 steps:
@@ -115,7 +117,7 @@ steps:
 .. important::
     Make sure you update your Cloudmesh and the Cloudmesh server is running.
     Open a terminal, execute the following commands, modify the values of the
-    options according to your own environment and needs. Also you may execute 
+    options according to your own environment and needs. Also you may execute
     these in Cloudmesh CLI 'cm'.
 
 1 select cloud to work on, e.g.::
@@ -142,7 +144,8 @@ steps:
 
     cm default flavor --name=m1.small
 
-Then you may start the cluster with command 'cluster create' by providing the following values:
+Then you may start the cluster with command 'cluster create' by providing the
+following values:
 
 --count: specify amount of VMs in the cluster
 
@@ -153,7 +156,8 @@ e.g.::
 
     cm cluster create --count=3 --group=test --ln=ubuntu
 
-You may also provide cloud name, flavor or image in the command if you don't want to pre-set them. e.g.::
+You may also provide cloud name, flavor or image in the command if you don't
+want to pre-set them. e.g.::
     
     cm cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04
 
@@ -306,7 +310,7 @@ Repeat the worker installation for as many nodes as are available. At
 this point your cluster is deployed and awaiting initialization.
 
 Initializing and Testing
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 On the namenode only, we will have to initialize the file system.
 First check the status of all services and stop any that are running.
@@ -334,45 +338,49 @@ operational and ready to run jobs.
 .. _ref-class-lesson-deploying-hadoop-cluster-manual-exercise:
 
 Exercise
----------
+-------------------------------------------------------------------------------
 
 - Try to run a simple job on your hadoop cluster
 - Create a hadoop cluster with a different number of nodes
 
 FAQ
-----
+-------------------------------------------------------------------------------
 
 - Q. How do I delete a Hadoop Cluster?
 - A. ``cluster delete --group=[name]``
 
 Other resources
----------------
+-------------------------------------------------------------------------------
 
 - `MyHadoop <http://cloudmesh.github.io/introduction_to_cloud_computing/paas/hadoop.html>`_
 
-Other questions?
-----------------
+Questions?
+-------------------------------------------------------------------------------
 
-- Forum via Git Issues: `Git Issues <https://github.com/CourseMaterial/introduction_to_cloud_computing/issues>`_
+- Forum via Git Issues: `Git Issues
+  <https://github.com/CourseMaterial/introduction_to_cloud_computing/issues>`_
+
 - Email: `Contact Us <contact.html>`_
 
-Deploying Hadoop Cluster with Chef (Experimental)
---------------------------------------------------
+.. Deploying Hadoop Cluster with Chef (Experimental)
+.. -------------------------------------------------------------------------------
 
-We are currently developing a new method to deploy Virtual Cluster with Chef recipes and OpenStack Heat.
-As a first tryout, we have developed a deployment of Hadoop Cluster. For detail, see the next page:
+.. We are currently developing a new method to deploy Virtual Cluster with Chef
+.. recipes and OpenStack Heat.  As a first tryout, we have developed a deployment
+.. of Hadoop Cluster. For detail, see the next page:
 
 .. toctree::
    :maxdepth: 1
 
    hadoop_cluster_chef
 
-*Note that this is experimental, some features may not work properly.*
+.. *Note that this is experimental, some features may not work properly.*
 
 Next Step
----------
+-------------------------------------------------------------------------------
 
-In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using Cloudmesh.
+In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using
+Cloudmesh.
 
 `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
 
