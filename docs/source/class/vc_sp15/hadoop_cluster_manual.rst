@@ -170,6 +170,9 @@ but our cluster will be a handful of nodes. For our example, we will
 combine all the management functions on one node, and make the rest
 datanodes.
 
+Chef Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 We will use Chef to install the Hadoop software, and configure our
 nodes, calling different recipes for the manager and worker nodes. In
 addition to Hadoop, we will install Oracle Java, as that is Hadoop’s
@@ -179,8 +182,18 @@ install Chef and download the required cookbooks from the Chef
 repository. As root, and in the /home/ubuntu directory, these commands
 will do that::
 
+    sudo su -
+    apt-get update
     cd /home/ubuntu
     curl -L https://www.opscode.com/chef/install.sh | bash
+
+Chef Configuration and Cookbooks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Install required cookbooks and setup configuration (.chef).
+
+::
+
     wget http://github.com/opscode/chef-repo/tarball/master
     tar -zxf master
     mv *-chef-repo* chef-repo
@@ -199,11 +212,14 @@ will do that::
     tar -zxf hadoop*
     rm *.tar.gz
 
+java.rb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There are four files we will need to create to store our preferences.
 These will need slight customization based on your host names and your
-desired configuration. In `/home/ubuntu/chef-repo/roles` create
-java.rb for our Java preferences. We request Oracle Java version 6,
-and ask to have the `$JAVA_HOME` environment variable set
+desired configuration. In ``/home/ubuntu/chef-repo/roles`` create
+``java.rb`` for our Java preferences. We request Oracle Java version 6,
+and ask to have the ``$JAVA_HOME`` environment variable set
 automatically::
 
     name "java"
@@ -222,7 +238,10 @@ automatically::
       "recipe[java]"
     )
 
-In `/home/ubuntu/chef-repo/roles` create hadoop.rb for our Hadoop
+hadoop.rb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In ``/home/ubuntu/chef-repo/roles`` create ``hadoop.rb`` for our Hadoop
 preferences. These preferences will actually be the same whether we
 are installing a namenode or a datanode, we will just call a different
 recipe. Here we will pass the names of our HDFS and YARN manager
@@ -246,7 +265,11 @@ you named yours differently, change it here to match::
       "recipe[hadoop]"
     )  
 
-In `/home/ubuntu/chef-repo create solo.rb` to store locations and
+
+solo.rb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In ``/home/ubuntu/chef-repo`` create ``solo.rb`` to store locations and
 instructions for Chef to use::
 
     file_cache_path "/home/ubuntu/chef-solo"
@@ -254,7 +277,10 @@ instructions for Chef to use::
     role_path "/home/ubuntu/chef-repo/roles"
     verify_api_cert true
 
-Finally, in `/home/ubuntu/chef-repo` create solo.json for the specific
+solo.json
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, in ``/home/ubuntu/chef-repo`` create ``solo.json`` for the specific
 instructions to Chef on what to install. This is the only file that
 will change between a manager and worker node installation. Both
 versions are shown below. Remember that you could configure
