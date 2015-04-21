@@ -353,6 +353,17 @@ directory structure::
     service hadoop-hdfs-namenode start
     /usr/lib/hadoop/libexec/init-hdfs.sh
 
+The expected output looks liks so::
+
+  + su -s /bin/bash hdfs -c '/usr/bin/hadoop fs -mkdir /tmp'
+  + su -s /bin/bash hdfs -c '/usr/bin/hadoop fs -chmod -R 1777 /tmp'
+
+  ... (skip) ...
+
+  + su -s /bin/bash hdfs -c '/usr/bin/hadoop fs -put /usr/lib/hadoop-mapreduce/hadoop-distcp*.jar /user/oozie/share/lib/distcp'
+  + ls '/usr/lib/pig/lib/*.jar' '/usr/lib/pig/*.jar'
+  + '[' '' = -u ']'
+
 Datanode(s) Service Start
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -360,25 +371,48 @@ Go to your datanode(s) and start::
 
    service hadoop-hdfs-datanode start
 
+You may see the message like this::
+
+ * Started Hadoop datanode (hadoop-hdfs-datanode): 
+
 When these initialization steps are complete, and all the appropriate
 services are running on each node, the Hadoop cluster will be
 operational and ready to run jobs.
+
+
+``jps`` Java Virtual Machine Process Status Tool
+-------------------------------------------------------------------------------
+
+Once you installed namenode and datanode(s), check process using ``jps``
+command.
+
+On **Namenode**, you may see::
+
+  20937 ResourceManager
+  15854 NodeManager
+  22874 Jps
+  20609 NameNode
+
+On **Datanode**, you may see::
+
+ 4137 Jps
+ 4061 DataNode
 
 .. _ref-class-lesson-deploying-hadoop-cluster-manual-exercise:
 
 Exercise
 -------------------------------------------------------------------------------
 
-- Try to run a simple job on your hadoop cluster
-- Create a hadoop cluster with a different number of nodes
+- Try to run a simple job on your hadoop cluster (wordcount)
+.. - Create a hadoop cluster with a different number of nodes
 
 FAQ
 -------------------------------------------------------------------------------
 
-- Q. How do I delete a Hadoop Cluster?
+- Q. How do I delete a Hadoop Cluster on Cloudmesh?
 - A. ``cluster delete --group=[name]``
 
-Other resources
+Other resource
 -------------------------------------------------------------------------------
 
 - `MyHadoop <http://cloudmesh.github.io/introduction_to_cloud_computing/paas/hadoop.html>`_
@@ -386,7 +420,7 @@ Other resources
 Questions?
 -------------------------------------------------------------------------------
 
-- Forum via Git Issues: `Git Issues
+.. - Forum via Git Issues: `Git Issues
   <https://github.com/CourseMaterial/introduction_to_cloud_computing/issues>`_
 
 - Email: `Contact Us <contact.html>`_
@@ -411,7 +445,7 @@ Next Step
 In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using
 Cloudmesh.
 
-`Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
+`Next Tutorial>> Deploying MongoDB Sharded Cluster <mongodb_cluster.html>`_
 
 .. .. toctree::
 ..   :maxdepth: 1
