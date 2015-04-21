@@ -1,7 +1,7 @@
 .. _ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh:
 
 Deploying Hadoop Cluster with Cloudmesh ``launcher``
-====================================================
+===============================================================================
 
 To support a compute cluster (e.g. Hadoop or Slurm) with applications,
 Cloudmesh provides a new command ``launcher`` to start, configure, manage or
@@ -19,7 +19,7 @@ Table of Contents
 `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
 
 Tutorial: Deploying Hadoop Cluster with ``cm launcher``
-------------------------------------------------------
+-------------------------------------------------------------------------------
 
 .. tip:: approximate time 30 minutes
 
@@ -27,7 +27,7 @@ In this tutorial, we are going to deploy a Hadoop cluster using Cloudmesh
 ``launcher`` command.
 
 Start Cluster
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``launcher start`` command deploys a cluster with a selected application.
 
@@ -36,7 +36,7 @@ Start Cluster
         cm launcher start hadoop
 
 Check Status of Cluster
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Initializing a cluster requires some time for installing packages,
 configuring networks, etc.  While it is initiated, you can check the
@@ -61,7 +61,7 @@ You expect the result similar to:
 * CREATE_COMPLETE: cluster has been created and it is ready to use.
 
 Login to Cluster
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``cm vm login`` command to ssh to one of the nodes in the
 cluster.  Issue ``vm list`` first to see the list of virtual
@@ -139,9 +139,18 @@ You expect the result similar to:
 
         sudo su -
 
+MapReduce Example: Word Count
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once you installed a Hadoop cluster, you may want to run a program using the
+cluster.  One of the popular examples of Hadoop is a Word Count MapReduce
+program which counts how often words occur from the input text file. We have a
+separate page for this program here.
+
+:ref:`Word Count Program <ref-class-lesson-hadoop-word-count>`
 
 Terminate Cluster
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you completed your task on the cluster, you can terminate the cluster with
 ``cm launcher stop [name]`` command.
@@ -178,10 +187,12 @@ In this tutorial, we terminate ``launcher-albert-hadoop-DB8JDK`` like this:
 * DELETE_IN_PROGRESS: shutting down instances is in progress.
 * DELETE_COMPLETE: the lease of resources is ended, all resources are returned.
 
-Next Step
----------
 
-In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using Cloudmesh.
+Next Step
+-------------------------------------------------------------------------------
+
+In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using
+Cloudmesh.
 
 `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
 
