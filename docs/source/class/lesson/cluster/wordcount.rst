@@ -41,9 +41,8 @@ WordCount.java
 
 First, create a ``WordCount.java`` file to implement Map and Reduce functions.
 
-::
 
-  .. include:: WordCount.java
+.. literalinclude:: WordCount.java
 
 Or, you can download the file.::
 
