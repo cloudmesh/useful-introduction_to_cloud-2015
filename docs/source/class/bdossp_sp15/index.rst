@@ -44,12 +44,14 @@ Make sure you are prepared to join the meeting by click on the following links:
 #. Testing Connectivity: https://connect.iu.edu/common/help/en/support/meeting_test.htm
 
 
-You can join the meeting by clicking on `this link <https://connect.iu.edu/bdossp_sp15/>`_.
+.. important::
 
-.. raw:: html
+   You can join the meeting by clicking on `this link <https://connect.iu.edu/bdossp_sp15/>`_.
 
-   <a href="https://connect.iu.edu/bdossp_sp15/" target="_blank">
-   <img src="../../images/meeting.png" border="2" style="border:2px solid black;max-width:5%;" alt="Meeting" /></a>
+   .. raw:: html
+
+      <a href="https://connect.iu.edu/bdossp_sp15/" target="_blank">
+      <img src="../../images/meeting.png" border="2" style="border:2px solid black;max-width:5%;" alt="Meeting" /></a>
 
 .. note::
 
