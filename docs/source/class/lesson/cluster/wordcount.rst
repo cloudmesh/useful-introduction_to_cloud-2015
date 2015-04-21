@@ -47,7 +47,7 @@ First, create a ``WordCount.java`` file to implement Map and Reduce functions.
 
 Or, you can download the file.::
 
-  wget http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/cluster/WordCount.java
+  wget https://raw.githubusercontent.com/cloudmesh/introduction_to_cloud_computing/master/docs/source/class/lesson/cluster/WordCount.java
 
 Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
