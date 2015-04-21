@@ -300,10 +300,16 @@ downloaded as they are required by the Hadoop recipe. First we need to
 install Chef and download the required cookbooks from the Chef
 repository. As root, and in the /home/ubuntu directory, these commands
 will do that:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -L https://www.opscode.com/chef/install.sh | bash
-wget http://github.com/opscode/chef-repo/tarball/master
+<div class="highlight-python"><div class="highlight"><pre>sudo su -
+apt-get update
+cd /home/ubuntu
+curl -L https://www.opscode.com/chef/install.sh | bash
+</pre></div>
+</div>
+<p>Install required cookbooks and setup configuration (.chef).</p>
+<div class="highlight-python"><div class="highlight"><pre>wget http://github.com/opscode/chef-repo/tarball/master
 tar -zxf master
-mv opscode-chef-repo* chef-repo
+mv *-chef-repo* chef-repo
 rm master
 cd chef-repo/
 mkdir .chef
@@ -322,9 +328,9 @@ rm *.tar.gz
 </div>
 <p>There are four files we will need to create to store our preferences.
 These will need slight customization based on your host names and your
-desired configuration. In <cite>/home/ubuntu/chef-repo/roles</cite> create
-java.rb for our Java preferences. We request Oracle Java version 6,
-and ask to have the <cite>$JAVA_HOME</cite> environment variable set
+desired configuration. In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></code> create
+<code class="docutils literal"><span class="pre">java.rb</span></code> for our Java preferences. We request Oracle Java version 6,
+and ask to have the <code class="docutils literal"><span class="pre">$JAVA_HOME</span></code> environment variable set
 automatically:</p>
 <div class="highlight-python"><div class="highlight"><pre>name &quot;java&quot;
 description &quot;Install Oracle Java&quot;
@@ -343,7 +349,7 @@ run_list(
 )
 </pre></div>
 </div>
-<p>In <cite>/home/ubuntu/chef-repo/roles</cite> create hadoop.rb for our Hadoop
+<p>In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></code> create <code class="docutils literal"><span class="pre">hadoop.rb</span></code> for our Hadoop
 preferences. These preferences will actually be the same whether we
 are installing a namenode or a datanode, we will just call a different
 recipe. Here we will pass the names of our HDFS and YARN manager
@@ -367,7 +373,7 @@ run_list(
 )
 </pre></div>
 </div>
-<p>In <cite>/home/ubuntu/chef-repo create solo.rb</cite> to store locations and
+<p>In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></code> create <code class="docutils literal"><span class="pre">solo.rb</span></code> to store locations and
 instructions for Chef to use:</p>
 <div class="highlight-python"><div class="highlight"><pre>file_cache_path &quot;/home/ubuntu/chef-solo&quot;
 cookbook_path &quot;/home/ubuntu/chef-repo/cookbooks&quot;
@@ -375,7 +381,7 @@ role_path &quot;/home/ubuntu/chef-repo/roles&quot;
 verify_api_cert true
 </pre></div>
 </div>
-<p>Finally, in <cite>/home/ubuntu/chef-repo</cite> create solo.json for the specific
+<p>Finally, in <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></code> create <code class="docutils literal"><span class="pre">solo.json</span></code> for the specific
 instructions to Chef on what to install. This is the only file that
 will change between a manager and worker node installation. Both
 versions are shown below. Remember that you could configure
