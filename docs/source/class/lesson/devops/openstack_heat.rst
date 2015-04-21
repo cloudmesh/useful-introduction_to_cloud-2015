@@ -273,20 +273,58 @@ Exercise I
 
   - Save your OpenStack Heat template in ``$USERNAME_heat_ex1.yaml``
 
+  .. tip::
+
+     The following documents will be useful:
+
+     - `Heat Orchestration Template (HOT) Specification <http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#hot-spec>`_
+     - `Heat Orchestration (HOT) Guide <http://docs.openstack.org/developer/heat/template_guide/hot_guide.html>`_
+     - `OpenStack Researce Types <http://docs.openstack.org/hot-reference/content/openstack-resource-types.html>`_
+
+       - `OS::Neutron::SecurityGroup <http://docs.openstack.org/hot-reference/content/OS__Neutron__SecurityGroup.html>`_
+       - `OS::Neutron::Port <http://docs.openstack.org/hot-reference/content/OS__Neutron__Port.html>`_
+
+     - `Sample Heat template <https://github.com/futuresystems/class-bigdata-technology-spring-2015/blob/master/heat-template.yaml>`_
+
 Exercise II
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Start a WordPress web service using Heat template on the web. The required
   conditions are:
 
-  - Run ``script heat_ex1_$OS_USERNAME.typescript`` on your SSH terminal.
   - Use `Template for WordPress on Fedora21 <https://raw.githubusercontent.com/cloudmesh/cloudmesh/dev2.0/heat-templates/fedora-21/wordpress.yaml>`_
-  - Once you successfully created a WordPress stack, checkout an index page.
-    ``curl http://[IP ADDRESS]/wordpress`` produces the index page in a text mode.
+  - Make sure to specify your key using the ``key_name`` parameter
+  - Once you successfully created a WordPress stack, checkout the index page.
+    ``curl -L http://[IP ADDRESS]/wordpress`` produces the index page in a text mode.
   - If your web browser opens the page properly, your WordPress is created successfully.
-  - Stop running your typescript by ``exit``. (This is not necessary if you did
-    not run ``script`` command earlier.
-  - Submit ``**heat_ex1_$OS_USERNAME.typescript**`` file.
+
+  .. tip::
+
+     Examine the documentation for the ``heat`` subcommands
+     ``stack-create`` and ``stack-show`` like so::
+
+       $ heat help <subcommand>
+
+     replacing ``<subcommand>`` as appropriate.
+
+  .. tip::
+
+     The IP address of your instance is listed as an output
+     value. Make sure to examine your stack to get the location of the
+     instance.
+
+
+* Submission
+
+  You will need to turn in a typescript of your terminal session.
+  Do so by executing::
+
+    $ script heat_ex2_$OS_USERNAME.typescript
+
+  and then proceed with this exercise. Upon completion, make sure to
+  type ``exit`` to end the typescripting. The contents of the session
+  will be found in the ``heat_ex2_$OS_USERNAME.typescript`` file.
+
 
 
 * If you'd like to use Horizon web dashboard, you need to find "Orchestration >

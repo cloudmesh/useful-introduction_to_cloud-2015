@@ -1,10 +1,13 @@
-Deploying Hadoop Cluster on India OpenStack
-=================================================
+.. _ref-class-lesson-deploying-hadoop-cluster-manual:
 
-.. tip:: Approximate time: 30 minutes
+
+Deploying Hadoop Cluster on India OpenStack
+===============================================================================
+
+.. tip:: Approximate time: 45 minutes
 
 Introduction
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Hadoop Cluster is specialized computational cluster especially for
 MapReduce data analysis applications.  On FutureSystems OpenStack,
@@ -13,7 +16,7 @@ cloud.  The size of Hadoop Cluster can be easily adjustable to provide
 efficient throughput for the computation.
 
 Prerequisite
-~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This tutorial assumes you already have used OpenStack and know how to
 create multiple virtual machine images. To build a distributed Hadoop
@@ -24,7 +27,8 @@ these tasks manually, to help you better understand the requirements
 and process of building a cluster.
 
 Important Fact
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There are certain things to remember when Hadoop Cluster is started.
 
  - The number of nodes
@@ -37,7 +41,7 @@ but consumes your quota quickly.  Additional cluster nodes may be needed if
 speed-up is possible to your data processing.
 
 Cluster Preparation
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 Prior to deploying Hadoop, your nodes must be able to communicate.
 This will require changes to the `/etc/hosts` configuration file, and
@@ -104,7 +108,8 @@ DataNode(s) for the HDFS file system
 -	Stores data files and makes them available to client applications
 
 cm cluster create: a convenient way to create a cluster of VMs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Cloudmesh provides a convenient way to create such a cluster of VMs 
 (each of them can log into all others). Please follow the following 
 steps:
@@ -112,7 +117,7 @@ steps:
 .. important::
     Make sure you update your Cloudmesh and the Cloudmesh server is running.
     Open a terminal, execute the following commands, modify the values of the
-    options according to your own environment and needs. Also you may execute 
+    options according to your own environment and needs. Also you may execute
     these in Cloudmesh CLI 'cm'.
 
 1 select cloud to work on, e.g.::
@@ -139,7 +144,8 @@ steps:
 
     cm default flavor --name=m1.small
 
-Then you may start the cluster with command 'cluster create' by providing the following values:
+Then you may start the cluster with command 'cluster create' by providing the
+following values:
 
 --count: specify amount of VMs in the cluster
 
@@ -150,7 +156,8 @@ e.g.::
 
     cm cluster create --count=3 --group=test --ln=ubuntu
 
-You may also provide cloud name, flavor or image in the command if you don't want to pre-set them. e.g.::
+You may also provide cloud name, flavor or image in the command if you don't
+want to pre-set them. e.g.::
     
     cm cluster create --count=3 --group=test0 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuregrid/ubuntu-14.04
 
@@ -167,6 +174,9 @@ but our cluster will be a handful of nodes. For our example, we will
 combine all the management functions on one node, and make the rest
 datanodes.
 
+Chef Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 We will use Chef to install the Hadoop software, and configure our
 nodes, calling different recipes for the manager and worker nodes. In
 addition to Hadoop, we will install Oracle Java, as that is Hadoop’s
@@ -176,10 +186,21 @@ install Chef and download the required cookbooks from the Chef
 repository. As root, and in the /home/ubuntu directory, these commands
 will do that::
 
+    sudo su -
+    apt-get update
+    cd /home/ubuntu
     curl -L https://www.opscode.com/chef/install.sh | bash
+
+Chef Configuration and Cookbooks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Install required cookbooks and setup configuration (.chef).
+
+::
+
     wget http://github.com/opscode/chef-repo/tarball/master
     tar -zxf master
-    mv opscode-chef-repo* chef-repo
+    mv *-chef-repo* chef-repo
     rm master
     cd chef-repo/
     mkdir .chef
@@ -189,17 +210,24 @@ will do that::
     knife cookbook site download apt
     knife cookbook site download yum
     knife cookbook site download hadoop
+    knife cookbook site download ohai
+    knife cookbook site download sysctl
     tar -zxf java*
     tar -zxf apt*
     tar -zxf yum*
     tar -zxf hadoop*
+    tar -zxf sysctl*
+    tar -zxf ohai*
     rm *.tar.gz
+
+java.rb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are four files we will need to create to store our preferences.
 These will need slight customization based on your host names and your
-desired configuration. In `/home/ubuntu/chef-repo/roles` create
-java.rb for our Java preferences. We request Oracle Java version 6,
-and ask to have the `$JAVA_HOME` environment variable set
+desired configuration. In ``/home/ubuntu/chef-repo/roles`` create
+``java.rb`` for our Java preferences. We request Oracle Java version 6,
+and ask to have the ``$JAVA_HOME`` environment variable set
 automatically::
 
     name "java"
@@ -218,7 +246,10 @@ automatically::
       "recipe[java]"
     )
 
-In `/home/ubuntu/chef-repo/roles` create hadoop.rb for our Hadoop
+hadoop.rb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In ``/home/ubuntu/chef-repo/roles`` create ``hadoop.rb`` for our Hadoop
 preferences. These preferences will actually be the same whether we
 are installing a namenode or a datanode, we will just call a different
 recipe. Here we will pass the names of our HDFS and YARN manager
@@ -242,7 +273,11 @@ you named yours differently, change it here to match::
       "recipe[hadoop]"
     )  
 
-In `/home/ubuntu/chef-repo create solo.rb` to store locations and
+
+solo.rb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In ``/home/ubuntu/chef-repo`` create ``solo.rb`` to store locations and
 instructions for Chef to use::
 
     file_cache_path "/home/ubuntu/chef-solo"
@@ -250,7 +285,10 @@ instructions for Chef to use::
     role_path "/home/ubuntu/chef-repo/roles"
     verify_api_cert true
 
-Finally, in `/home/ubuntu/chef-repo` create solo.json for the specific
+solo.json
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finally, in ``/home/ubuntu/chef-repo`` create ``solo.json`` for the specific
 instructions to Chef on what to install. This is the only file that
 will change between a manager and worker node installation. Both
 versions are shown below. Remember that you could configure
@@ -275,8 +313,22 @@ For the worker node::
 Repeat the worker installation for as many nodes as are available. At
 this point your cluster is deployed and awaiting initialization.
 
+Installation using ``chef-solo`` (``chef-client -z``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You must run this command on a master(namenode) and a worker(datanode). If you
+have hadoop1, hadoop2, ... ,and hadoopX, SSH into all and run this command.
+
+::
+
+  chef-solo -j /home/ubuntu/chef-repo/solo.json -c /home/ubuntu/chef-repo/solo.rb
+
+In a newer version of Chef ::
+
+  chef-client -z -j /home/ubuntu/chef-repo/solo.json -c /home/ubuntu/chef-repo/solo.rb
+
 Initializing and Testing
-----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 On the namenode only, we will have to initialize the file system.
 First check the status of all services and stop any that are running.
@@ -291,56 +343,73 @@ To initialize the namenode, run::
 
     /etc/init.d/hadoop-hdfs-namenode init
 
+Namenode Initialization and Start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Restart any services installed on the node. There is one more
 initialization step required on the namenode, to create a default
 directory structure::
 
+    service hadoop-hdfs-namenode start
     /usr/lib/hadoop/libexec/init-hdfs.sh
+
+Datanode(s) Service Start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Go to your datanode(s) and start::
+
+   service hadoop-hdfs-datanode start
 
 When these initialization steps are complete, and all the appropriate
 services are running on each node, the Hadoop cluster will be
 operational and ready to run jobs.
 
+.. _ref-class-lesson-deploying-hadoop-cluster-manual-exercise:
+
 Exercise
----------
+-------------------------------------------------------------------------------
 
 - Try to run a simple job on your hadoop cluster
 - Create a hadoop cluster with a different number of nodes
 
 FAQ
-----
+-------------------------------------------------------------------------------
 
 - Q. How do I delete a Hadoop Cluster?
 - A. ``cluster delete --group=[name]``
 
 Other resources
----------------
+-------------------------------------------------------------------------------
 
 - `MyHadoop <http://cloudmesh.github.io/introduction_to_cloud_computing/paas/hadoop.html>`_
 
-Other questions?
-----------------
+Questions?
+-------------------------------------------------------------------------------
 
-- Forum via Git Issues: `Git Issues <https://github.com/CourseMaterial/introduction_to_cloud_computing/issues>`_
+- Forum via Git Issues: `Git Issues
+  <https://github.com/CourseMaterial/introduction_to_cloud_computing/issues>`_
+
 - Email: `Contact Us <contact.html>`_
 
-Deploying Hadoop Cluster with Chef (Experimental)
---------------------------------------------------
+.. Deploying Hadoop Cluster with Chef (Experimental)
+.. -------------------------------------------------------------------------------
 
-We are currently developing a new method to deploy Virtual Cluster with Chef recipes and OpenStack Heat.
-As a first tryout, we have developed a deployment of Hadoop Cluster. For detail, see the next page:
+.. We are currently developing a new method to deploy Virtual Cluster with Chef
+.. recipes and OpenStack Heat.  As a first tryout, we have developed a deployment
+.. of Hadoop Cluster. For detail, see the next page:
 
 .. toctree::
    :maxdepth: 1
 
    hadoop_cluster_chef
 
-*Note that this is experimental, some features may not work properly.*
+.. *Note that this is experimental, some features may not work properly.*
 
 Next Step
----------
+-------------------------------------------------------------------------------
 
-In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using Cloudmesh.
+In the next page, we deploy a Sharded MongoDB cluster on FutureSystems using
+Cloudmesh.
 
 `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
 

@@ -1,3 +1,5 @@
+.. _ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh:
+
 Deploying Hadoop Cluster with Cloudmesh ``launcher``
 ====================================================
 
@@ -19,7 +21,7 @@ Table of Contents
 Tutorial: Deploying Hadoop Cluster with ``cm launcher``
 ------------------------------------------------------
 
-.. tip:: approximate time 10-15 minutes
+.. tip:: approximate time 30 minutes
 
 In this tutorial, we are going to deploy a Hadoop cluster using Cloudmesh
 ``launcher`` command.

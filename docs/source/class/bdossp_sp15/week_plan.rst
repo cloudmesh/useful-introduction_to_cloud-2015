@@ -474,6 +474,14 @@ Length of the lessons in Week 3
 Week 4
 -------------------------------------------------------------------------------
 
+In this week, you will learn open-source configuration management (CM)
+software as part of IT automation and orchestration. We focus on Ansible and
+OpenStack Heat to review the system configuration and management but Salt,
+Puppet, Chef, and Juju are introduced to explore other tools as well. With
+different features of these software, you will see which tool is ideal for your
+system environment and understand basic CM techniques. We have a few lab
+sessions to provide hands-on experience about deploying and configuring
+applications on IT infrastructure.
 
 IT Operations - Automation and Orchestration
 *******************************************************************************
@@ -570,11 +578,20 @@ Additional (optional) Lessons
 Week 5 
 -------------------------------------------------------------------------------
 
+This week, you will learn basics of virtual clusters. Typically, analyzing
+large data sets containing unstructured data types requires distributed
+computing resources for data processing with high performance, scalability, and
+availability. With virtualization technology, cluster computing can be more
+flexible, effective and cost-efficient in terms of resource utilization. There
+are three basic tutorials about deploying a virtual cluster, Hadoop cluster and
+MongoDB Sharded cluster which give you a chance to gain some experience of how
+to setup virtual clusters manually and configure software with Cloudmesh
+software. In Week 6, advanced topics of virtual clusters will be discussed.
 
-Virtual Clusters I (under preparation)
+Virtual Clusters I
 *******************************************************************************
 
-**First Appearance of Hadoop in This Week**
+**First Appearance of Hadoop**
 
 .. list-table:: Virtual Clusters I
    :widths: 30 10 10 10 10 10
@@ -587,17 +604,50 @@ Virtual Clusters I (under preparation)
      - Study Material By
      - Lab Session Homework
    * - **Introduction and Overview**
-     - Not yet available
-     - Not yet available
+     - `4 mins <https://mix.office.com/watch/eap9zdqfifgp>`_
      - 
-     - 04/20
-     - 04/24
+     - see video
+     - 04/27
+     - 
    * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
-     - Not yet available
-     - Not yet available
+     - `4 mins <https://mix.office.com/watch/zukoz9wswe7z>`_
      - 
-     - 04/20
-     - 04/24
+     - see video
+     - 04/27
+     - 
+   * - **Deploying Virtual Cluster with Cloudmesh**
+     - `22 mins <https://www.youtube.com/watch?v=oSlq0287m1Q>`_
+     - :ref:`30 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh>`
+     - :ref:`10 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh-exercise>` (optional)
+     - 04/27
+     -
+   * - **Deploying Hadoop Cluster**
+     -
+     - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-manual>`
+     - :ref:`20 mins <ref-class-lesson-deploying-hadoop-cluster-manual-exercise>` (optional)
+     - 04/27
+     -
+   * - **Deploying Hadoop Cluster with Cloudmesh**
+     -
+     - :ref:`30 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
+     - see text
+     - 04/27
+     -
+   * - **Deploying MongoDB Sharded Cluster**
+     -
+     - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
+     - see text
+     - 04/27
+     -
+   * - **``cluster`` Cloudmesh Command for Virtual Clusters**
+        - SSH Connections between nodes, Host Configuration
+     - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
+     - `20 mins <../../cloudmesh/cm/_cm-cluster.html>`_ (repeated practice)
+     - `20 mins <../../cloudmesh/cm/_cm-cluster.html#exercise>`_
+     - 04/27
+     - 05/01
+
+..
    * - **Hadoop Virtual Cluster**
         - Cloudmesh
         - Discussion
@@ -610,6 +660,13 @@ Virtual Clusters I (under preparation)
      - 
      - 04/20
      - 04/24
+
+Length of the lessons in Week 5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Total of video lessons:  hour and 35 minutes
+* Total of study materials: 3 hours and 05 minutes
+* Total of lab sessions:  50 minutes
 
 Week 6
 -------------------------------------------------------------------------------
