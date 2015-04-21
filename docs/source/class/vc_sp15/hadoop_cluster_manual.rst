@@ -398,6 +398,16 @@ On **Datanode**, you may see::
  4137 Jps
  4061 DataNode
 
+MapReduce Example: Word Count
+-------------------------------------------------------------------------------
+
+Once you installed a Hadoop cluster, you may want to run a program using the
+cluster.  One of the popular examples of Hadoop is a Word Count MapReduce
+program which counts how often words occur from the input text file. We have a
+separate page for this program here.
+
+:ref:`Word Count Program <ref-class-lesson-hadoop-word-count>`
+
 .. _ref-class-lesson-deploying-hadoop-cluster-manual-exercise:
 
 Exercise
