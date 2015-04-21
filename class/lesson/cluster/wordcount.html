@@ -168,11 +168,71 @@ node (namenode). Also,  we assume that you run the tutorial commands on <code cl
 <div class="section" id="wordcount-java">
 <h3>WordCount.java<a class="headerlink" href="#wordcount-java" title="Permalink to this headline">¶</a></h3>
 <p>First, create a <code class="docutils literal"><span class="pre">WordCount.java</span></code> file to implement Map and Reduce functions.</p>
-<div class="highlight-python"><div class="highlight"><pre>.. include:: WordCount.java
+<div class="highlight-python"><div class="highlight"><pre>import java.io.IOException;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class WordCount {
+
+  public static class TokenizerMapper
+      extends Mapper&lt;Object, Text, Text, IntWritable&gt;{
+
+      private final static IntWritable one = new IntWritable(1);
+      private Text word = new Text();
+
+      public void map(Object key, Text value, Context context
+		      ) throws IOException, InterruptedException {
+	  StringTokenizer itr = new StringTokenizer(value.toString());
+	  while (itr.hasMoreTokens()) {
+	      word.set(itr.nextToken());
+	      context.write(word, one);
+	  }
+      }
+  }
+
+  public static class IntSumReducer
+      extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; {
+      private IntWritable result = new IntWritable();
+
+      public void reduce(Text key, Iterable&lt;IntWritable&gt; values,
+                       Context context
+			 ) throws IOException, InterruptedException {
+	  int sum = 0;
+	  for (IntWritable val : values) {
+	      sum += val.get();
+	  }
+	  result.set(sum);
+	  context.write(key, result);
+      }
+  }
+
+    public static void main(String[] args) throws Exception {
+	Configuration conf = new Configuration();
+	Job job = Job.getInstance(conf, &quot;word count&quot;);
+	job.setJarByClass(WordCount.class);
+	job.setMapperClass(TokenizerMapper.class);
+	job.setCombinerClass(IntSumReducer.class);
+	job.setReducerClass(IntSumReducer.class);
+	job.setOutputKeyClass(Text.class);
+	job.setOutputValueClass(IntWritable.class);
+	FileInputFormat.addInputPath(job, new Path(args[0]));
+	FileOutputFormat.setOutputPath(job, new Path(args[1]));
+	System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+}
 </pre></div>
 </div>
 <p>Or, you can download the file.:</p>
-<div class="highlight-python"><div class="highlight"><pre>wget http://cloudmesh.github.io/introduction_to_cloud_computing/class/lesson/cluster/WordCount.java
+<div class="highlight-python"><div class="highlight"><pre>wget https://raw.githubusercontent.com/cloudmesh/introduction_to_cloud_computing/master/docs/source/class/lesson/cluster/WordCount.java
 </pre></div>
 </div>
 </div>
