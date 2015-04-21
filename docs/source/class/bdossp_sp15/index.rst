@@ -43,7 +43,9 @@ Make sure you are prepared to join the meeting by click on the following links:
 #. Installing Adobe Connect Plug-In: https://kb.iu.edu/d/bdoc
 #. Testing Connectivity: https://connect.iu.edu/common/help/en/support/meeting_test.htm
 
-
+Meeting
+===========
+   
 .. important::
 
    You can join the meeting by clicking on `this link <https://connect.iu.edu/bdossp_sp15/>`_.
