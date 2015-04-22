@@ -585,8 +585,8 @@ availability. With virtualization technology, cluster computing can be more
 flexible, effective and cost-efficient in terms of resource utilization. There
 are three basic tutorials about deploying a virtual cluster, Hadoop cluster and
 MongoDB Sharded cluster which give you a chance to gain some experience of how
-to setup virtual clusters manually and configure software with Cloudmesh
-software. In Week 6, advanced topics of virtual clusters will be discussed.
+to setup virtual clusters manually and configure software with Cloudmesh. In
+Week 6, advanced topics of virtual clusters will be discussed.
 
 Virtual Clusters I
 *******************************************************************************

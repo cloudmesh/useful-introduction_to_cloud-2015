@@ -290,7 +290,7 @@
 <span id="cloudmesh-pbs-openpbs-module"></span><h2>cloudmesh_pbs.OpenPBS module<a class="headerlink" href="#module-cloudmesh_pbs.OpenPBS" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.OpenPBS.</code><code class="descname">OpenPBS</code><span class="sig-paren">(</span><em>deploy=True</em>, <em>yaml_filename='/cloudmesh_pbs.yaml'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.OpenPBS.</code><code class="descname">OpenPBS</code><span class="sig-paren">(</span><em>deploy=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.create_script">
@@ -310,7 +310,7 @@
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.deploy">
 <code class="descname">deploy</code><span class="sig-paren">(</span><em>force=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.deploy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.deploy" title="Permalink to this definition">¶</a></dt>
-<dd><p>copies the yaml file from etc in the distribution to the .cloudmesh
+<dd><p>copies the yal file from etc in the distribution to the .cloudmesh
 directory. If the file exits it will not be copied and a warning is
 thrown. If the file is the same as in etc no warning is thrown.</p>
 </dd></dl>
@@ -320,9 +320,9 @@ thrown. If the file is the same as in etc no warning is thrown.</p>
 <code class="descname">getid</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.getid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.getid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="cloudmesh_pbs.OpenPBS.OpenPBS.info">
-<code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.info" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="cloudmesh_pbs.OpenPBS.OpenPBS.id_file">
+<code class="descname">id_file</code><em class="property"> = 'id.txt'</em><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.id_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -347,7 +347,7 @@ thrown. If the file is the same as in etc no warning is thrown.</p>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>yaml_filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.load" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -394,31 +394,6 @@ thrown. If the file is the same as in etc no warning is thrown.</p>
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.variable_list">
 <em class="property">classmethod </em><code class="descname">variable_list</code><span class="sig-paren">(</span><em>data</em>, <em>id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.variable_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.variable_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-cloudmesh_pbs.cmd3_check">
-<span id="cloudmesh-pbs-cmd3-check-module"></span><h2>cloudmesh_pbs.cmd3_check module<a class="headerlink" href="#module-cloudmesh_pbs.cmd3_check" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="cloudmesh_pbs.cmd3_check.cmd3_check">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.cmd3_check.</code><code class="descname">cmd3_check</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/cmd3_check.html#cmd3_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.cmd3_check.cmd3_check" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="staticmethod">
-<dt id="cloudmesh_pbs.cmd3_check.cmd3_check.yaml">
-<em class="property">static </em><code class="descname">yaml</code><span class="sig-paren">(</span><em>plugin</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/cmd3_check.html#cmd3_check.yaml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.cmd3_check.cmd3_check.yaml" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function reads in the cloudmesh cmd3.yaml file and tests
-if the requested plugin module is included in the yaml file.</p>
-<p>an example plugin name os &#8220;cloudmesh_pbs&#8221; to which automatically a
-.plugins will be appended if not specified.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the plugin is in the yaml file</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 </dd></dl>
 

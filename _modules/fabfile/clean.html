@@ -140,7 +140,7 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="dir"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.clean.dir">[docs]</a><span class="k">def</span> <span class="nf">dir</span><span class="p">():</span>
+<div class="viewcode-block" id="dir"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.clean.dir">[docs]</a><span class="k">def</span> <span class="nf">dir</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;clean the dirs&quot;&quot;&quot;</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;STOPPING SERVER&quot;</span><span class="p">)</span>
     <span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -156,13 +156,13 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="cmd3"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.clean.cmd3">[docs]</a><span class="k">def</span> <span class="nf">cmd3</span><span class="p">():</span>
+<div class="viewcode-block" id="cmd3"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.clean.cmd3">[docs]</a><span class="k">def</span> <span class="nf">cmd3</span><span class="p">():</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;CLEAN CMD3&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;rm -rf {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">config_file</span><span class="p">(</span><span class="s">&quot;/cmd3local&quot;</span><span class="p">)))</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="all"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.clean.all">[docs]</a><span class="k">def</span> <span class="nf">all</span><span class="p">():</span>
+<div class="viewcode-block" id="all"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.clean.all">[docs]</a><span class="k">def</span> <span class="nf">all</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;clean the dis and uninstall cloudmesh&quot;&quot;&quot;</span>
     <span class="nb">dir</span><span class="p">()</span>
     <span class="n">cmd3</span><span class="p">()</span>
@@ -173,7 +173,7 @@
     <span class="n">delete_package</span><span class="p">(</span><span class="s">&quot;cloudmesh_install&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="delete_package"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.clean.delete_package">[docs]</a><span class="k">def</span> <span class="nf">delete_package</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="delete_package"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.clean.delete_package">[docs]</a><span class="k">def</span> <span class="nf">delete_package</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">banner</span><span class="p">(</span><span class="s">&quot;CLEAN PREVIOUS {0} INSTALLS&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
     <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">local</span><span class="p">(</span><span class="s">&quot;pip freeze |fgrep {0} | wc -l&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">capture</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
     <span class="k">while</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>

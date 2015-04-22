@@ -145,10 +145,10 @@
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
 
-<div class="viewcode-block" id="cm_shell_nova"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_nova.cm_shell_nova">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_nova</span><span class="p">:</span>
+<div class="viewcode-block" id="cm_shell_nova"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_nova.cm_shell_nova">[docs]</a><span class="k">class</span> <span class="nc">cm_shell_nova</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;opt_example class&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="cm_shell_nova.activate_cm_shell_nova"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_nova.cm_shell_nova.activate_cm_shell_nova">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_nova</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="cm_shell_nova.activate_cm_shell_nova"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_nova.cm_shell_nova.activate_cm_shell_nova">[docs]</a>    <span class="k">def</span> <span class="nf">activate_cm_shell_nova</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cm_user_id</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mongodb</span> <span class="o">=</span> <span class="bp">None</span>
@@ -156,7 +156,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">register_command_topic</span><span class="p">(</span><span class="s">&#39;cloud&#39;</span><span class="p">,</span><span class="s">&#39;nova&#39;</span><span class="p">)</span>
         <span class="k">pass</span>
 </div>
-<div class="viewcode-block" id="cm_shell_nova.set_os_environ"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_nova.cm_shell_nova.set_os_environ">[docs]</a>    <span class="k">def</span> <span class="nf">set_os_environ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloudname</span><span class="p">):</span>
+<div class="viewcode-block" id="cm_shell_nova.set_os_environ"><a class="viewcode-back" href="../../../modules/cloudmesh_cmd3.plugins.html#cloudmesh_cmd3.plugins.cm_shell_nova.cm_shell_nova.set_os_environ">[docs]</a>    <span class="k">def</span> <span class="nf">set_os_environ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloudname</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Set os environment variables on a given cloudname&#39;&#39;&#39;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">novars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rcfiles</span><span class="p">[</span><span class="n">cloudname</span><span class="p">]</span>
