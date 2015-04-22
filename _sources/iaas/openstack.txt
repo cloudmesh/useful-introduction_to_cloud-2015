@@ -529,6 +529,30 @@ This can be achieved by either editing your openrc.sh file directly
    requesting help.
 
 
+What to do if you forgot your password
+----------------------------------------------------------------------
+
+In order to reset your password or you need to recreate your openrc.sh
+without knowing your current password you need to send e-mail with the
+following information to help@futuresystems.org and copy it to the
+e-mail that you used in the portal. Below is a template for you to use
+where you replace <username> with your portal name::
+
+  Subject: lost openstack password <username>
+
+  Name: Firstname, Lastname
+  username: <username>
+  e-mail registered in the portal: <portale-mail you used>
+
+  Please seset my openrc file for the Juno cloud. By mistake I have modified it and can not remember the password.
+ 
+  Thanks
+
+  yourname here
+  your email here
+
+
+
 Change of rc file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

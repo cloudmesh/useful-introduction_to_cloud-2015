@@ -153,7 +153,7 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="sdist"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.build.sdist">[docs]</a><span class="k">def</span> <span class="nf">sdist</span><span class="p">():</span>
+<div class="viewcode-block" id="sdist"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.build.sdist">[docs]</a><span class="k">def</span> <span class="nf">sdist</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;create the sdist&quot;&quot;&quot;</span>
     <span class="n">fabric</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">clean</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
@@ -162,7 +162,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="fast"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.build.fast">[docs]</a><span class="k">def</span> <span class="nf">fast</span><span class="p">():</span>
+<div class="viewcode-block" id="fast"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.build.fast">[docs]</a><span class="k">def</span> <span class="nf">fast</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;install cloudmesh&quot;&quot;&quot;</span>
     <span class="n">fabric</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;python setup.py install&quot;</span><span class="p">)</span>
@@ -170,7 +170,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.build.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
+<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.build.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;install cloudmesh&quot;&quot;&quot;</span>
     <span class="n">fabric</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;./install requirements&quot;</span><span class="p">)</span>
@@ -179,7 +179,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="sphinx"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.build.sphinx">[docs]</a><span class="k">def</span> <span class="nf">sphinx</span><span class="p">():</span>
+<div class="viewcode-block" id="sphinx"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.build.sphinx">[docs]</a><span class="k">def</span> <span class="nf">sphinx</span><span class="p">():</span>
     <span class="n">fabric</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;rm -rf  /tmp/sphinx-contrib&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;cd /tmp; hg clone http://bitbucket.org/birkenfeld/sphinx-contrib/&quot;</span><span class="p">)</span>
