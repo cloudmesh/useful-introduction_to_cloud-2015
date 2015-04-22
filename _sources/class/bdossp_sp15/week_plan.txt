@@ -640,9 +640,9 @@ Virtual Clusters I
      - 04/29
      -
    * - **Deploying MongoDB Sharded Cluster**
-     -
+     - `4 mins <https://mix.office.com/watch/1rx90yz48fqpn>`_
      - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
-     - see text
+     - see video and text
      - 04/29
      -
    * - **``cluster`` Cloudmesh Command for Virtual Clusters**
@@ -670,7 +670,7 @@ Virtual Clusters I
 Length of the lessons in Week 5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Total of video lessons: 1 hour and 8 minutes
+* Total of video lessons: 1 hour and 12 minutes
 * Total of study materials: 4 hours and 05 minutes
 * Total of lab sessions:  50 minutes
 
