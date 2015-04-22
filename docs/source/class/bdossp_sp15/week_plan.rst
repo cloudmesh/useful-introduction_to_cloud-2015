@@ -607,44 +607,50 @@ Virtual Clusters I
      - `4 mins <https://mix.office.com/watch/eap9zdqfifgp>`_
      - 
      - see video
-     - 04/27
+     - 04/29
      - 
    * - **Dynamic Deployment of Arbitrary X Software on Virtual Cluster**
      - `4 mins <https://mix.office.com/watch/zukoz9wswe7z>`_
      - 
      - see video
-     - 04/27
+     - 04/29
      - 
    * - **Deploying Virtual Cluster with Cloudmesh**
      - `22 mins <https://www.youtube.com/watch?v=oSlq0287m1Q>`_
      - :ref:`30 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh>`
      - :ref:`10 mins <ref-class-lesson-deploying-virtual-cluster-with-cloudmesh-exercise>` (optional)
-     - 04/27
+     - 04/29
      -
    * - **Deploying Hadoop Cluster**
      -
      - :ref:`45 mins <ref-class-lesson-deploying-hadoop-cluster-manual>`
      - :ref:`20 mins <ref-class-lesson-deploying-hadoop-cluster-manual-exercise>` (optional)
-     - 04/27
+     - 04/29
      -
    * - **Deploying Hadoop Cluster with Cloudmesh**
      -
      - :ref:`30 mins <ref-class-lesson-deploying-hadoop-cluster-with-cloudmesh>`
      - see text
-     - 04/27
+     - 04/29
+     -
+   * - **Hadoop Example: Word Count**
+     - `33 mins <https://mix.office.com/watch/1on4q8t1vcjfh>`_
+     - :ref:`1 hour <ref-class-lesson-hadoop-word-count>`
+     - see video and text
+     - 04/29
      -
    * - **Deploying MongoDB Sharded Cluster**
      -
      - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
      - see text
-     - 04/27
+     - 04/29
      -
    * - **``cluster`` Cloudmesh Command for Virtual Clusters**
         - SSH Connections between nodes, Host Configuration
      - `5 mins <https://mix.office.com/watch/lk39mr08k0ox>`_
      - `20 mins <../../cloudmesh/cm/_cm-cluster.html>`_ (repeated practice)
      - `20 mins <../../cloudmesh/cm/_cm-cluster.html#exercise>`_
-     - 04/27
+     - 04/29
      - 05/01
 
 ..
@@ -664,8 +670,8 @@ Virtual Clusters I
 Length of the lessons in Week 5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Total of video lessons:  hour and 35 minutes
-* Total of study materials: 3 hours and 05 minutes
+* Total of video lessons: 1 hour and 8 minutes
+* Total of study materials: 4 hours and 05 minutes
 * Total of lab sessions:  50 minutes
 
 Week 6
