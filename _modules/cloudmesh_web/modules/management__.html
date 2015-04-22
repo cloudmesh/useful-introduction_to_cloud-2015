@@ -521,12 +521,12 @@
 
 <span class="n">country_choices</span><span class="o">=</span><span class="n">prefered_country_choices</span> <span class="o">+</span> <span class="n">all_country_choices</span> 
 
-<div class="viewcode-block" id="RadioSelectField"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.RadioSelectField">[docs]</a><span class="k">class</span> <span class="nc">RadioSelectField</span><span class="p">(</span><span class="n">RadioField</span><span class="p">):</span>
+<div class="viewcode-block" id="RadioSelectField"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.RadioSelectField">[docs]</a><span class="k">class</span> <span class="nc">RadioSelectField</span><span class="p">(</span><span class="n">RadioField</span><span class="p">):</span>
     <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">multiple</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="n">option_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Select</span>
 
 </div>
-<div class="viewcode-block" id="MultiCheckboxField"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.MultiCheckboxField">[docs]</a><span class="k">class</span> <span class="nc">MultiCheckboxField</span><span class="p">(</span><span class="n">SelectMultipleField</span><span class="p">):</span>
+<div class="viewcode-block" id="MultiCheckboxField"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.MultiCheckboxField">[docs]</a><span class="k">class</span> <span class="nc">MultiCheckboxField</span><span class="p">(</span><span class="n">SelectMultipleField</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A multiple-select, except displays a list of checkboxes.</span>
 
@@ -540,7 +540,7 @@
 
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/m/project/apply&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="project_apply"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.project_apply">[docs]</a><span class="k">def</span> <span class="nf">project_apply</span><span class="p">():</span>
+<div class="viewcode-block" id="project_apply"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.project_apply">[docs]</a><span class="k">def</span> <span class="nf">project_apply</span><span class="p">():</span>
 
     <span class="n">form</span> <span class="o">=</span> <span class="n">ProjectRegistrationForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span> <span class="ow">and</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">():</span>
@@ -579,16 +579,16 @@
                            <span class="n">other_fields</span><span class="o">=</span><span class="n">ProjectRegistrationForm</span><span class="o">.</span><span class="n">other_keys</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="get_choices_for_form"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.get_choices_for_form">[docs]</a><span class="k">def</span> <span class="nf">get_choices_for_form</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
+<div class="viewcode-block" id="get_choices_for_form"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.get_choices_for_form">[docs]</a><span class="k">def</span> <span class="nf">get_choices_for_form</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
     <span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">services</span><span class="p">:</span>
         <span class="n">choices</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">service</span><span class="p">,</span> <span class="n">service</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">choices</span>
 
 </div>
-<div class="viewcode-block" id="ProjectRegistrationForm"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.ProjectRegistrationForm">[docs]</a><span class="k">class</span> <span class="nc">ProjectRegistrationForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectRegistrationForm"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.ProjectRegistrationForm">[docs]</a><span class="k">class</span> <span class="nc">ProjectRegistrationForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
 
-<div class="viewcode-block" id="ProjectRegistrationForm.validate_url_in_form"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.ProjectRegistrationForm.validate_url_in_form">[docs]</a>    <span class="k">def</span> <span class="nf">validate_url_in_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectRegistrationForm.validate_url_in_form"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.ProjectRegistrationForm.validate_url_in_form">[docs]</a>    <span class="k">def</span> <span class="nf">validate_url_in_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">field</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;http&quot;</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s">&#39;The url is not valid&#39;</span><span class="p">)</span>
 </div>
@@ -764,7 +764,7 @@
         <span class="s">&#39;Resource Provisioning&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">get_choices_for_form</span><span class="p">(</span><span class="n">ProjectPROVISIONING</span><span class="p">))</span>
 
 </div>
-<div class="viewcode-block" id="UserRegistrationForm"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.UserRegistrationForm">[docs]</a><span class="k">class</span> <span class="nc">UserRegistrationForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+<div class="viewcode-block" id="UserRegistrationForm"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.UserRegistrationForm">[docs]</a><span class="k">class</span> <span class="nc">UserRegistrationForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    class Meta:</span>
@@ -815,7 +815,7 @@
          <span class="s">&quot;citizenship&quot;</span><span class="p">,</span>
          <span class="s">&quot;bio&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="UserRegistrationForm.validate_email_in_form"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.UserRegistrationForm.validate_email_in_form">[docs]</a>    <span class="k">def</span> <span class="nf">validate_email_in_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<div class="viewcode-block" id="UserRegistrationForm.validate_email_in_form"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.UserRegistrationForm.validate_email_in_form">[docs]</a>    <span class="k">def</span> <span class="nf">validate_email_in_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span><span class="s">&quot;@&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s">&quot;.&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">field</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s">&#39;The email address is not valid&#39;</span><span class="p">)</span>
 
@@ -828,7 +828,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">users</span><span class="o">.</span><span class="n">validate_email</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s">&#39;A user with this email already exists&#39;</span><span class="p">)</span>
 </div>
-<div class="viewcode-block" id="UserRegistrationForm.validate_username_in_form"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.UserRegistrationForm.validate_username_in_form">[docs]</a>    <span class="k">def</span> <span class="nf">validate_username_in_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+<div class="viewcode-block" id="UserRegistrationForm.validate_username_in_form"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.UserRegistrationForm.validate_username_in_form">[docs]</a>    <span class="k">def</span> <span class="nf">validate_username_in_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&quot;^[a-z0-9]*$&quot;</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span>
                 <span class="s">&#39;Only lower case characters a-z and numbers 0-9 allowed.&#39;</span><span class="p">)</span>
@@ -871,7 +871,7 @@
     <span class="n">bio</span> <span class="o">=</span> <span class="n">TextAreaField</span><span class="p">(</span><span class="s">&#39;Bio&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">DataRequired</span><span class="p">()])</span>
 
 </div>
-<div class="viewcode-block" id="print_errors"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.print_errors">[docs]</a><span class="k">def</span> <span class="nf">print_errors</span><span class="p">(</span><span class="n">form</span><span class="p">):</span>
+<div class="viewcode-block" id="print_errors"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.print_errors">[docs]</a><span class="k">def</span> <span class="nf">print_errors</span><span class="p">(</span><span class="n">form</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Flashes form errors&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">errors</span> <span class="ow">in</span> <span class="n">form</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">errors</span><span class="p">:</span>
@@ -883,7 +883,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/m/user/apply&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="user_apply"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.user_apply">[docs]</a><span class="k">def</span> <span class="nf">user_apply</span><span class="p">():</span>
+<div class="viewcode-block" id="user_apply"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.user_apply">[docs]</a><span class="k">def</span> <span class="nf">user_apply</span><span class="p">():</span>
 
     <span class="n">form</span> <span class="o">=</span> <span class="n">UserRegistrationForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">)</span>
 
@@ -918,7 +918,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/project/edit/&lt;projectid&gt;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="project_edit"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.project_edit">[docs]</a><span class="k">def</span> <span class="nf">project_edit</span><span class="p">(</span><span class="n">projectid</span><span class="p">):</span>
+<div class="viewcode-block" id="project_edit"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.project_edit">[docs]</a><span class="k">def</span> <span class="nf">project_edit</span><span class="p">(</span><span class="n">projectid</span><span class="p">):</span>
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -1009,7 +1009,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/project/profile/&lt;projectid&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="project_profile"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.project_profile">[docs]</a><span class="k">def</span> <span class="nf">project_profile</span><span class="p">(</span><span class="n">projectid</span><span class="p">):</span>
+<div class="viewcode-block" id="project_profile"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.project_profile">[docs]</a><span class="k">def</span> <span class="nf">project_profile</span><span class="p">(</span><span class="n">projectid</span><span class="p">):</span>
 
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
@@ -1029,7 +1029,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/m/project/manage&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="management_project_manage"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_project_manage">[docs]</a><span class="k">def</span> <span class="nf">management_project_manage</span><span class="p">():</span>
+<div class="viewcode-block" id="management_project_manage"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_project_manage">[docs]</a><span class="k">def</span> <span class="nf">management_project_manage</span><span class="p">():</span>
 
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
     <span class="n">projects</span> <span class="o">=</span> <span class="n">MongoProject</span><span class="o">.</span><span class="n">objects</span><span class="p">()</span>
@@ -1059,7 +1059,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/m/project/list&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="management_project_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_project_list">[docs]</a><span class="k">def</span> <span class="nf">management_project_list</span><span class="p">():</span>
+<div class="viewcode-block" id="management_project_list"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_project_list">[docs]</a><span class="k">def</span> <span class="nf">management_project_list</span><span class="p">():</span>
 
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
     <span class="n">projects</span> <span class="o">=</span> <span class="n">MongoProject</span><span class="o">.</span><span class="n">objects</span><span class="p">()</span>
@@ -1069,7 +1069,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/m/user/manage&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="management_user_manage"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_manage">[docs]</a><span class="k">def</span> <span class="nf">management_user_manage</span><span class="p">():</span>
+<div class="viewcode-block" id="management_user_manage"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_manage">[docs]</a><span class="k">def</span> <span class="nf">management_user_manage</span><span class="p">():</span>
 
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
     <span class="n">users</span> <span class="o">=</span> <span class="n">MongoUser</span><span class="o">.</span><span class="n">objects</span><span class="p">()</span>
@@ -1106,7 +1106,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/m/user/list&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="management_user_list"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_list">[docs]</a><span class="k">def</span> <span class="nf">management_user_list</span><span class="p">():</span>
+<div class="viewcode-block" id="management_user_list"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_list">[docs]</a><span class="k">def</span> <span class="nf">management_user_list</span><span class="p">():</span>
 
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
     <span class="n">users</span> <span class="o">=</span> <span class="n">MongoUser</span><span class="o">.</span><span class="n">objects</span><span class="p">()</span>
@@ -1115,7 +1115,7 @@
 
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/user/profile/&lt;username&gt;&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="management_user_profile"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_profile">[docs]</a><span class="k">def</span> <span class="nf">management_user_profile</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<div class="viewcode-block" id="management_user_profile"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_profile">[docs]</a><span class="k">def</span> <span class="nf">management_user_profile</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">user</span> <span class="o">=</span> <span class="n">MongoUser</span><span class="o">.</span><span class="n">objects</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
@@ -1142,7 +1142,7 @@
 </div>
 <span class="nd">@management_module.route</span><span class="p">(</span><span class="s">&#39;/user/edit/&lt;username&gt;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="management_user_edit"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_edit">[docs]</a><span class="k">def</span> <span class="nf">management_user_edit</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<div class="viewcode-block" id="management_user_edit"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.management__.management_user_edit">[docs]</a><span class="k">def</span> <span class="nf">management_user_edit</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
     <span class="n">connect</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">27777</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>

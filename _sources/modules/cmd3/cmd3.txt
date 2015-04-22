@@ -6,9 +6,7 @@ Subpackages
 
 .. toctree::
 
-    cmd3.etc
     cmd3.plugins
-    cmd3.scripts
 
 Submodules
 ----------
@@ -33,14 +31,6 @@ cmd3.shell module
 -----------------
 
 .. automodule:: cmd3.shell
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-cmd3.yaml_setup module
-----------------------
-
-.. automodule:: cmd3.yaml_setup
     :members:
     :undoc-members:
     :show-inheritance:

@@ -27,14 +27,6 @@ cloudmesh_pbs.OpenPBS module
     :undoc-members:
     :show-inheritance:
 
-cloudmesh_pbs.cmd3_check module
--------------------------------
-
-.. automodule:: cloudmesh_pbs.cmd3_check
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 cloudmesh_pbs.pbs_config module
 -------------------------------
 

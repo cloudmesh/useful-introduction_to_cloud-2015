@@ -6,12 +6,18 @@ A Paper on Container Technologies for BigData
 Motivation
 ----------------------------------------------------------------------
 
-Containers are enabelinga nwe way of virtualization technologies. It is worth while to (a) survey container technologies (b) tools that sit on top of containers (c) see how they could or coudl not be supportive for big data projects.
+Containers are enabling new virtualization technologies. It is worth while to (a) survey container technologies (b) tools that sit on top of containers (c) see how they could or could not be supportive for big data projects.
 
 Task
 ----------------------------------------------------------------------
 
-In this project wuou will be providing a {\bf extensive} and {\em high quality scholarly survey and review of various container technologies and relate them to big data.  This project will be conducted in co-authorship with Gregor von Laszewski. The document will be using Word. References must be maintained in endnote or Mendeley. If possible Microsoft Live will be used to share the document. Alternatively the paper can be written in LaTeX.
+In this project you will be providing a **extensive** and **high
+quality** scholarly survey and review of various container
+technologies and relate them to big data.  This project will be
+conducted in co-authorship with Gregor von Laszewski. The document
+will be using Word. References must be maintained in endnote or
+Mendeley. If possible Microsoft Live will be used to share the
+document. Alternatively the paper can be written in LaTeX.
 
 THis project is not an easy project as we expect more than just a
 summary, but an evaluation or guidance section that identifies
@@ -22,7 +28,10 @@ Details will be discussed in our meetings in this project. Multiple
 students can participate in the project, but responsibilities will be
 clearly identified.
 
-The authors will not plagearuise. There will be a kick of meeting with the students that select this project. We anticipate the maximum number of students will be three. If more students sign up we may identify a or additional topics to write an additional paper.
+The authors will not plagiarize. There will be a series of meetings
+with the students that select this project. We anticipate the maximum
+number of students will be three. If more students sign up we may
+identify a or additional topics to write an additional paper.
 
 Example of possible useful Technologies for this Project
 ----------------------------------------------------------------------
