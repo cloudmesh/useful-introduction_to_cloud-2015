@@ -113,9 +113,46 @@ Possible Projects From NIST
 Projects Derived from Benchmarking Sets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are many benchmark sets such as HiBench, Graph 500, BigBench,
-LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark, TPCx-HS, and
-CloudSuite. See http://dsc.soic.indiana.edu/publications/OgreFacetsv9.pdf
+There are many benchmark sets such as BigDataBench, HiBench, Graph 500,
+BigBench, LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark,
+TPCx-HS, and CloudSuite. See
+http://dsc.soic.indiana.edu/publications/OgreFacetsv9.pdf
+
+.. list-table:: Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences**
+   :widths: 30 10 10 10
+   :header-rows: 1
+
+   * - Title
+     - Category
+     - Data Sets
+     - Technologies
+   * - `Amazon Movie Reviews <http://snap.stanford.edu/data/web-Movies.html>`_
+     - Batch Data Analytics
+     - `8 million reviews <http://snap.stanford.edu/data/movies.txt.gz>`_
+     - - Hadoop
+       - Spark
+       - MPI
+   * - `Google web graph <http://snap.stanford.edu/data/web-Google.html>`_
+     - Batch Data Analytics
+     - `Webgraph from Google, 2002 <http://snap.stanford.edu/data/web-Google.txt.gz>`_
+     - - Hadoop
+       - Spark
+       - MPI
+   * - `Facebook Social Network <http://snap.stanford.edu/data/egonets-Facebook.html>`_
+     - Batch Data Analytics
+     - `Facebook data <http://snap.stanford.edu/data/facebook.tar.gz>`_
+     - - Hadoop
+       - Spark
+       - MPI
+   * - `Genome sequence data <http://ccl.cse.nd.edu/software/sand/>`_
+     - Batch Data Analytics
+     - ``.cfa`` sample data (unstructured text file)
+     - Work Queue (master/worker framework)
+
+You can find more examples in the following link.
+
+* \**Reference URL of these projects:
+  http://prof.ict.ac.cn/BigDataBench/#Benchmarks
 
 .. list-table:: HiBench
    :header-rows: 1
@@ -201,46 +238,8 @@ CloudSuite. See http://dsc.soic.indiana.edu/publications/OgreFacetsv9.pdf
 
 .. In the benchmark table, one could add Minebench http://www.cs.binghamton.edu/~mgovinda/papers/hadoopeval-ieee-cloud-12.pdf and http://sortbenchmark.org/
 
-Possible Projects from BigDataBench
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table:: Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences**
-   :widths: 30 10 10 10
-   :header-rows: 1
-
-   * - Title
-     - Category
-     - Data Sets
-     - Technologies
-   * - `Amazon Movie Reviews <http://snap.stanford.edu/data/web-Movies.html>`_
-     - Batch Data Analytics
-     - `8 million reviews <http://snap.stanford.edu/data/movies.txt.gz>`_
-     - - Hadoop
-       - Spark
-       - MPI
-   * - `Google web graph <http://snap.stanford.edu/data/web-Google.html>`_
-     - Batch Data Analytics
-     - `Webgraph from Google, 2002 <http://snap.stanford.edu/data/web-Google.txt.gz>`_
-     - - Hadoop
-       - Spark
-       - MPI
-   * - `Facebook Social Network <http://snap.stanford.edu/data/egonets-Facebook.html>`_
-     - Batch Data Analytics
-     - `Facebook data <http://snap.stanford.edu/data/facebook.tar.gz>`_
-     - - Hadoop
-       - Spark
-       - MPI
-   * - `Genome sequence data <http://ccl.cse.nd.edu/software/sand/>`_
-     - Batch Data Analytics
-     - ``.cfa`` sample data (unstructured text file)
-     - Work Queue (master/worker framework)
-
-You can find more examples in the following link.
-
-* \**Reference URL of these projects:
-  http://prof.ict.ac.cn/BigDataBench/#Benchmarks
-
-
+.. Possible Projects from BigDataBench
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Possible Projects from IU
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
