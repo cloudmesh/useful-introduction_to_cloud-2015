@@ -425,7 +425,7 @@ for example, assign a public ip to a VM named test\_1 on cloud india:
 
 .. code:: python
 
-    cloudmesh.shell("vm ip {0} --cloud=india".format(vmname))
+    cloudmesh.shell("vm ip assign {0} --cloud=india".format(vmname))
 
 Then you can login to this VM by(note here you need to provide the login
 name for your VM, it varys depend on the image you use while you start

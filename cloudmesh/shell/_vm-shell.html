@@ -465,7 +465,7 @@ for example, assign a public ip to a VM named test_1 on cloud india:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm start --cloud=india&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm ip {0} --cloud=india&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vmname</span><span class="p">))</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">cloudmesh</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s">&quot;vm ip assign {0} --cloud=india&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vmname</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Then you can login to this VM by(note here you need to provide the login
