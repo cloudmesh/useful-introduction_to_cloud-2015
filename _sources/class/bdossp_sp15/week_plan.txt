@@ -27,17 +27,17 @@ Overview of the schedule
      - 04/03
    * - Week 4
      - **IT Operations - Automation and Orchestration**
-     - 04/10
+     - 04/20
    * - Week 5
      - **Virtual Clusters I (First Appearance of Hadoop)**
-     - 04/17
+     - 04/29
    * - Week 6
      - **Virtual Clusters II (Composite Cluster with Sub-Clusters)**
-     - 04/24
+     - 05/06
    * - Week 7
      - **Other Technologies**
-     - 05/01
-   * - Week 8
+     - 05/13
+..   * - Week 8
      - **Future**
      - N/A
 
@@ -691,14 +691,14 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - Lab sessions
      - Study Material By
      - Lab Session Homework
-   * - **Composite Cluster with Sub-Clusters**
+   * - **Composite Cluster with Sub-Clusters** (Not taught in this class)
         - Introduction and Overview
         - Creating a Cross Resource Virtual Cluster
      - Not yet available
      - Not yet available
      - 
-     - 04/27
-     - 05/01
+     - 05/06
+     - 05/08
    * - **OpenMPI Virtual Cluster**
         - Introduction and Overview
         - HPC Stack - MPI
@@ -706,16 +706,16 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 04/27
-     - 05/01
+     - 05/06
+     - 05/08
    * - **MongoDB Virtual Cluster**
         - Introduction and Overview
         - Sharded MongoDB
      - Not yet available
      - Not yet available
      - 
-     - 04/27
-     - 05/01
+     - 05/06
+     - 05/08
 
 Week 7
 -------------------------------------------------------------------------------
@@ -743,8 +743,8 @@ Other Technologies (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 05/04
-     - 05/06
+     - 05/13
+     - 05/15
    * - **VM Software**
          - Vagrant
          - Oracle VirtualBox
@@ -752,8 +752,8 @@ Other Technologies (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 05/04
-     - 05/06
+     - 05/13
+     - 05/15
    * - **Apache Big Data Stack (ABDS)**
          - Apache Zookeeper
          - Apache Storm
@@ -765,44 +765,46 @@ Other Technologies (under preparation)
      - Not yet available
      - Not yet available
      - 
-     - 05/04
-     - 05/06
+     - 05/13
+     - 05/15
    * - **Glossary**
      - Not yet available
      - Not yet available
      - 
-     - 05/04
-     - 05/06
+     - 05/13
+     - 05/15
 
-Week 8
--------------------------------------------------------------------------------
+.. comment::
+
+        Week 8
+        -------------------------------------------------------------------------------
 
 
-Future (under preparation)
-*******************************************************************************
+        Future (under preparation)
+        *******************************************************************************
 
-.. list-table:: Future
-   :widths: 30 10 10 10 10 10
-   :header-rows: 1
+        .. list-table:: Future
+           :widths: 30 10 10 10 10 10
+           :header-rows: 1
 
-   * - Topic
-     - Video
-     - Text
-     - Lab sessions
-     - Study Material By
-     - Lab Session Homework
-   * - **What will the Future Bring**
-     - Not yet available
-     - Not yet available
-     - 
-     - Not due
-     - Not due
-   * - **GE Industrial Internet of Things (IIoT)**
-     - Not yet available
-     - Not yet available
-     - 
-     - Not due
-     - Not due
+           * - Topic
+             - Video
+             - Text
+             - Lab sessions
+             - Study Material By
+             - Lab Session Homework
+           * - **What will the Future Bring**
+             - Not yet available
+             - Not yet available
+             - 
+             - Not due
+             - Not due
+           * - **GE Industrial Internet of Things (IIoT)**
+             - Not yet available
+             - Not yet available
+             - 
+             - Not due
+             - Not due
 
 
 

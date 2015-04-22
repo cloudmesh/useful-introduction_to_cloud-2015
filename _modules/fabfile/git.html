@@ -137,26 +137,26 @@
 
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="push"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.git.push">[docs]</a><span class="k">def</span> <span class="nf">push</span><span class="p">():</span>
+<div class="viewcode-block" id="push"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.git.push">[docs]</a><span class="k">def</span> <span class="nf">push</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;git push&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git commit -a &quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git push&quot;</span><span class="p">)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="pull"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.git.pull">[docs]</a><span class="k">def</span> <span class="nf">pull</span><span class="p">():</span>
+<div class="viewcode-block" id="pull"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.git.pull">[docs]</a><span class="k">def</span> <span class="nf">pull</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;git pull&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git pull &quot;</span><span class="p">)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="gregor"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.git.gregor">[docs]</a><span class="k">def</span> <span class="nf">gregor</span><span class="p">():</span>
+<div class="viewcode-block" id="gregor"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.git.gregor">[docs]</a><span class="k">def</span> <span class="nf">gregor</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;git config of name and email for gregor&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&#39;git config --global user.name &quot;Gregor von Laszewski&quot;&#39;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&#39;git config --global user.email laszewski@gmail.com&#39;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="up"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.git.up">[docs]</a><span class="k">def</span> <span class="nf">up</span><span class="p">():</span>
+<div class="viewcode-block" id="up"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.git.up">[docs]</a><span class="k">def</span> <span class="nf">up</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;upload the changes to git&quot;&quot;&quot;</span>
     <span class="n">clean</span><span class="p">()</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git add .&quot;</span><span class="p">)</span>
@@ -254,7 +254,7 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 
-<div class="viewcode-block" id="deltag"><a class="viewcode-back" href="../../modules/fabfile.html#fabfile.git.deltag">[docs]</a><span class="k">def</span> <span class="nf">deltag</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+<div class="viewcode-block" id="deltag"><a class="viewcode-back" href="../../modules/cloudmesh/fabfile.html#fabfile.git.deltag">[docs]</a><span class="k">def</span> <span class="nf">deltag</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git tag -d </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;git push origin :refs/tags/</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">tag</span><span class="p">)</span></div>
 </pre></div>

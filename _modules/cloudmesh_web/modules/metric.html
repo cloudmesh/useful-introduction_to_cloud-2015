@@ -156,7 +156,7 @@
 
 <span class="nd">@metric_module.route</span><span class="p">(</span><span class="s">&#39;/metric&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="metric_index"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.metric.metric_index">[docs]</a><span class="k">def</span> <span class="nf">metric_index</span><span class="p">():</span>
+<div class="viewcode-block" id="metric_index"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.metric.metric_index">[docs]</a><span class="k">def</span> <span class="nf">metric_index</span><span class="p">():</span>
 
     <span class="n">metric</span> <span class="o">=</span> <span class="s">&quot;metric-summary&quot;</span>
     <span class="n">term</span> <span class="o">=</span> <span class="s">&quot;last_3_months&quot;</span>
@@ -171,13 +171,13 @@
 </div>
 <span class="nd">@metric_module.route</span><span class="p">(</span><span class="s">&#39;/cm/metric/&lt;cloud&gt;/&lt;instance_id&gt;/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="metric_vm"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.metric.metric_vm">[docs]</a><span class="k">def</span> <span class="nf">metric_vm</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="n">instance_id</span><span class="p">):</span>
+<div class="viewcode-block" id="metric_vm"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.metric.metric_vm">[docs]</a><span class="k">def</span> <span class="nf">metric_vm</span><span class="p">(</span><span class="n">cloud</span><span class="p">,</span> <span class="n">instance_id</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">metric_index</span><span class="p">()</span>
 
 </div>
 <span class="nd">@metric_module.route</span><span class="p">(</span><span class="s">&#39;/cm/metric/project/&lt;project_id&gt;/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="metric_project"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.metric.metric_project">[docs]</a><span class="k">def</span> <span class="nf">metric_project</span><span class="p">(</span><span class="n">project_id</span><span class="p">):</span>
+<div class="viewcode-block" id="metric_project"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.metric.metric_project">[docs]</a><span class="k">def</span> <span class="nf">metric_project</span><span class="p">(</span><span class="n">project_id</span><span class="p">):</span>
 
     <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">config_file</span><span class="p">(</span>
         <span class="s">&quot;/cloudmesh_server.yaml&quot;</span><span class="p">))[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">][</span><span class="s">&quot;server&quot;</span><span class="p">][</span><span class="s">&quot;metric&quot;</span><span class="p">]</span>
