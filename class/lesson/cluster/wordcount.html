@@ -279,9 +279,9 @@ export HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
 </div>
 <p>Create sample text files and upload to HDFS:</p>
 <div class="highlight-python"><div class="highlight"><pre>echo &quot;Welcome Hadoop Enjoy Hadoop&quot; &gt; welcome.txt
-hdfs fs -copyFromLocal welcome.txt /user/root/wordcount/inputs/
+hdfs dfs -copyFromLocal welcome.txt /user/root/wordcount/inputs/
 echo &quot;Mapper and Reducer will be used Enjoy MayReduce&quot; &gt; welcome2.txt
-hdfs fs -copyFromLocal welcome2.txt /user/root/wordcount/inputs/
+hdfs dfs -copyFromLocal welcome2.txt /user/root/wordcount/inputs/
 </pre></div>
 </div>
 </div>

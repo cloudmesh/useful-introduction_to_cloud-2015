@@ -95,9 +95,9 @@ Create a input directory ``input`` where text files stay::
 Create sample text files and upload to HDFS::
 
   echo "Welcome Hadoop Enjoy Hadoop" > welcome.txt
-  hdfs fs -copyFromLocal welcome.txt /user/root/wordcount/inputs/
+  hdfs dfs -copyFromLocal welcome.txt /user/root/wordcount/inputs/
   echo "Mapper and Reducer will be used Enjoy MayReduce" > welcome2.txt
-  hdfs fs -copyFromLocal welcome2.txt /user/root/wordcount/inputs/
+  hdfs dfs -copyFromLocal welcome2.txt /user/root/wordcount/inputs/
 
 Run WordCount
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
