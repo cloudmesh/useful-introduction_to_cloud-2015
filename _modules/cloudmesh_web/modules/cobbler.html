@@ -318,7 +318,7 @@
 
 <span class="nd">@cobbler_module.route</span><span class="p">(</span><span class="s">&#39;/cobbler/&lt;objects&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="display_cobbler"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.display_cobbler">[docs]</a><span class="k">def</span> <span class="nf">display_cobbler</span><span class="p">(</span><span class="n">objects</span><span class="p">):</span>
+<div class="viewcode-block" id="display_cobbler"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.display_cobbler">[docs]</a><span class="k">def</span> <span class="nf">display_cobbler</span><span class="p">(</span><span class="n">objects</span><span class="p">):</span>
     <span class="n">predefined</span> <span class="o">=</span> <span class="n">cobbler_default_data</span><span class="p">[</span><span class="n">objects</span><span class="p">]</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">request_rest_api</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span> <span class="n">predefined</span><span class="p">[</span><span class="s">&quot;get&quot;</span><span class="p">])</span>
     <span class="n">result</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="s">&quot;name&quot;</span><span class="p">])</span>
@@ -341,7 +341,7 @@
 </div>
 <span class="nd">@cobbler_module.route</span><span class="p">(</span><span class="s">&#39;/cobbler/&lt;objects&gt;/&lt;item_name&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;PUT&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">,</span> <span class="s">&#39;DELETE&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="process_cobbler_object"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.process_cobbler_object">[docs]</a><span class="k">def</span> <span class="nf">process_cobbler_object</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
+<div class="viewcode-block" id="process_cobbler_object"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.process_cobbler_object">[docs]</a><span class="k">def</span> <span class="nf">process_cobbler_object</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">item_name</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">objects</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;distros&quot;</span><span class="p">,</span> <span class="s">&quot;profiles&quot;</span><span class="p">,</span> <span class="s">&quot;systems&quot;</span><span class="p">,</span> <span class="s">&quot;kickstarts&quot;</span><span class="p">]:</span>
         <span class="k">return</span>
     <span class="n">predefined</span> <span class="o">=</span> <span class="n">cobbler_default_data</span><span class="p">[</span><span class="n">objects</span><span class="p">]</span>
@@ -386,7 +386,7 @@
 </div>
 <span class="nd">@cobbler_module.route</span><span class="p">(</span><span class="s">&#39;/cobbler/&lt;objects&gt;/&lt;item_name&gt;/&lt;if_name&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;PUT&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">,</span> <span class="s">&#39;DELETE&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="process_cobbler_object_collection"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.process_cobbler_object_collection">[docs]</a><span class="k">def</span> <span class="nf">process_cobbler_object_collection</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">):</span>
+<div class="viewcode-block" id="process_cobbler_object_collection"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.process_cobbler_object_collection">[docs]</a><span class="k">def</span> <span class="nf">process_cobbler_object_collection</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">if_name</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">objects</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;systems&quot;</span><span class="p">,</span> <span class="p">]:</span>
         <span class="k">return</span>
     <span class="n">predefined</span> <span class="o">=</span> <span class="n">cobbler_default_data</span><span class="p">[</span><span class="n">objects</span><span class="p">]</span>
@@ -404,7 +404,7 @@
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="get_all_baremetal_request_users"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.get_all_baremetal_request_users">[docs]</a><span class="k">def</span> <span class="nf">get_all_baremetal_request_users</span><span class="p">():</span>
+<div class="viewcode-block" id="get_all_baremetal_request_users"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.get_all_baremetal_request_users">[docs]</a><span class="k">def</span> <span class="nf">get_all_baremetal_request_users</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">      ONLY for test</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -413,7 +413,7 @@
 </div>
 <span class="nd">@cobbler_module.route</span><span class="p">(</span><span class="s">&#39;/provision/baremetal/users&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;PUT&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="provision_baremetal_allocation"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.provision_baremetal_allocation">[docs]</a><span class="k">def</span> <span class="nf">provision_baremetal_allocation</span><span class="p">():</span>
+<div class="viewcode-block" id="provision_baremetal_allocation"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.provision_baremetal_allocation">[docs]</a><span class="k">def</span> <span class="nf">provision_baremetal_allocation</span><span class="p">():</span>
     <span class="n">bmdb</span> <span class="o">=</span> <span class="n">BaremetalDB</span><span class="p">()</span>
     <span class="n">method</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;get&#39;</span><span class="p">]:</span>
@@ -433,7 +433,7 @@
 </div>
 <span class="nd">@cobbler_module.route</span><span class="p">(</span><span class="s">&#39;/provision/baremetal/computers&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;PUT&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="provision_baremetal_withdraw"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.provision_baremetal_withdraw">[docs]</a><span class="k">def</span> <span class="nf">provision_baremetal_withdraw</span><span class="p">():</span>
+<div class="viewcode-block" id="provision_baremetal_withdraw"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.provision_baremetal_withdraw">[docs]</a><span class="k">def</span> <span class="nf">provision_baremetal_withdraw</span><span class="p">():</span>
     <span class="n">bmdb</span> <span class="o">=</span> <span class="n">BaremetalDB</span><span class="p">()</span>
     <span class="n">method</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;get&#39;</span><span class="p">]:</span>
@@ -458,7 +458,7 @@
 </div>
 <span class="nd">@cobbler_module.route</span><span class="p">(</span><span class="s">&#39;/baremetal/user/request&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;PUT&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="baremetal_user_requests"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.baremetal_user_requests">[docs]</a><span class="k">def</span> <span class="nf">baremetal_user_requests</span><span class="p">():</span>
+<div class="viewcode-block" id="baremetal_user_requests"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.baremetal_user_requests">[docs]</a><span class="k">def</span> <span class="nf">baremetal_user_requests</span><span class="p">():</span>
     <span class="n">bmdb</span> <span class="o">=</span> <span class="n">BaremetalDB</span><span class="p">()</span>
     <span class="n">method</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;get&#39;</span><span class="p">]:</span>
@@ -481,7 +481,7 @@
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">}),</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="append_select_data"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.append_select_data">[docs]</a><span class="k">def</span> <span class="nf">append_select_data</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="append_select_data"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.append_select_data">[docs]</a><span class="k">def</span> <span class="nf">append_select_data</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="n">predefined</span> <span class="o">=</span> <span class="n">cobbler_default_data</span><span class="p">[</span><span class="n">objects</span><span class="p">]</span>
     <span class="n">select_data</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">predefined</span><span class="p">[</span><span class="s">&quot;select_data&quot;</span><span class="p">]:</span>
@@ -491,7 +491,7 @@
         <span class="n">one_data</span><span class="p">[</span><span class="s">&quot;data&quot;</span><span class="p">][</span><span class="s">&quot;select&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">select_data</span>
 
 </div>
-<div class="viewcode-block" id="get_add_data_dict"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.get_add_data_dict">[docs]</a><span class="k">def</span> <span class="nf">get_add_data_dict</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="get_add_data_dict"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.get_add_data_dict">[docs]</a><span class="k">def</span> <span class="nf">get_add_data_dict</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="n">predefined</span> <span class="o">=</span> <span class="n">cobbler_default_data</span><span class="p">[</span><span class="n">objects</span><span class="p">]</span>
     <span class="n">add_data</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">{}}</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">predefined</span><span class="p">[</span><span class="s">&quot;process_vars&quot;</span><span class="p">][</span><span class="s">&quot;add&quot;</span><span class="p">]:</span>
@@ -508,7 +508,7 @@
     <span class="k">return</span> <span class="n">add_data</span>
 
 </div>
-<div class="viewcode-block" id="get_server_url"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.get_server_url">[docs]</a><span class="k">def</span> <span class="nf">get_server_url</span><span class="p">():</span>
+<div class="viewcode-block" id="get_server_url"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.get_server_url">[docs]</a><span class="k">def</span> <span class="nf">get_server_url</span><span class="p">():</span>
     <span class="c"># ONLY for test</span>
     <span class="c"># MUST changed to read info from yml file before commit</span>
     <span class="n">server_config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span>
@@ -518,7 +518,7 @@
     <span class="k">return</span> <span class="s">&quot;{0}://{1}:{2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prot</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="request_rest_api"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.request_rest_api">[docs]</a><span class="k">def</span> <span class="nf">request_rest_api</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="request_rest_api"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.cobbler.request_rest_api">[docs]</a><span class="k">def</span> <span class="nf">request_rest_api</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">      method = [get, post, put, delete]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
