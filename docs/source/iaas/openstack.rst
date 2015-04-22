@@ -521,6 +521,13 @@ Remember, you also have to **UPDATE** your new password in your openrc.sh file.
 This can be achieved by either editing your openrc.sh file directly
 (~/.cloudmesh/clouds/india/juno/openrc.sh), or recreating your openrc.sh file.
 
+.. important::
+
+   In order to reset your password your openrc.sh must be valid or you
+   must know your current password. If you loose your password or your
+   openrc.sh file becomes invalid you need to send an email to support
+   requesting help.
+
 
 Change of rc file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
