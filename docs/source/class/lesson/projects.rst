@@ -118,7 +118,7 @@ BigBench, LinkBench, MineBench, BG Benchmark, Berkeley Big Data Benchmark,
 TPCx-HS, and CloudSuite. See
 http://dsc.soic.indiana.edu/publications/OgreFacetsv9.pdf
 
-.. list-table:: Possible Projects from BigDataBench, ICT, Chinese Academy of Sciences**
+.. list-table:: BigDataBench, ICT, Chinese Academy of Sciences**
    :widths: 30 10 10 10
    :header-rows: 1
 
