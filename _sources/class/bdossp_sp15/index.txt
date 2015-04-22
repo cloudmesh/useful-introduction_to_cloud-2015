@@ -28,7 +28,13 @@ which we will add more content throughout the semester:
    :maxdepth: 1
 	      
    week_plan
-	     
+
+.. raw:: html
+
+   <a href="week_plan.html" target="_blank"><img src="../../images/calendar.png" border="2" style="border:2px solid black;max-width:5%;" alt="Meeting" /></a>
+   
+
+   
 Support
 ======================================================================
 

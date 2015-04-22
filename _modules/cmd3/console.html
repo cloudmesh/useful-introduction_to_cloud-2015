@@ -140,12 +140,13 @@
 
     <span class="n">color</span> <span class="o">=</span> <span class="bp">True</span>
 
-    <span class="n">theme</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">theme_color</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">&#39;HEADER&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[95m&#39;</span><span class="p">,</span>
         <span class="s">&#39;BLACK&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[30m&#39;</span><span class="p">,</span>
         <span class="s">&#39;PURPLE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[35m&#39;</span><span class="p">,</span>
         <span class="s">&#39;CYAN&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[36m&#39;</span><span class="p">,</span>
         <span class="s">&#39;WHITE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[37m&#39;</span><span class="p">,</span>
+        <span class="s">&#39;BLUE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[34m&#39;</span><span class="p">,</span>
         <span class="s">&#39;OKBLUE&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[34m&#39;</span><span class="p">,</span>
         <span class="s">&#39;OKGREEN&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[32m&#39;</span><span class="p">,</span>
         <span class="s">&#39;FAIL&#39;</span><span class="p">:</span> <span class="s">&#39;</span><span class="se">\033</span><span class="s">[31m&#39;</span><span class="p">,</span>
@@ -155,6 +156,33 @@
         <span class="s">&#39;BOLD&#39;</span><span class="p">:</span> <span class="s">&quot;</span><span class="se">\033</span><span class="s">[1m&quot;</span><span class="p">,</span>
     <span class="p">}</span>
 
+
+    <span class="n">theme_bw</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">&#39;HEADER&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;BLACK&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;PURPLE&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;CYAN&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;WHITE&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;BLUE&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;OKBLUE&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;OKGREEN&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;FAIL&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;WARNING&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;RED&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;ENDC&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;BOLD&#39;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">theme</span> <span class="o">=</span> <span class="n">theme_color</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Console.set_theme"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.set_theme">[docs]</a>    <span class="k">def</span> <span class="nf">set_theme</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">color</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">theme_color</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">theme_bw</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+    </div>
     <span class="nd">@staticmethod</span>
 <div class="viewcode-block" id="Console.get"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.console.Console.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">Console</span><span class="o">.</span><span class="n">theme</span><span class="p">:</span>

@@ -21,6 +21,14 @@ cmd3.console module
     :undoc-members:
     :show-inheritance:
 
+cmd3.environment module
+-----------------------
+
+.. automodule:: cmd3.environment
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 cmd3.generate module
 --------------------
 
