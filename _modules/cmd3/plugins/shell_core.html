@@ -146,7 +146,6 @@
 <span class="kn">import</span> <span class="nn">cmd3</span>
 <span class="kn">import</span> <span class="nn">pip</span>
 
-
 <span class="c"># noinspection PyUnusedLocal</span>
 <div class="viewcode-block" id="shell_core"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_core.shell_core">[docs]</a><span class="k">class</span> <span class="nc">shell_core</span><span class="p">:</span>
 
@@ -162,7 +161,7 @@
 <div class="viewcode-block" id="shell_core.info_shell_core"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_core.shell_core.info_shell_core">[docs]</a>    <span class="k">def</span> <span class="nf">info_shell_core</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;prints information about the shell core&quot;&quot;&quot;</span>
         <span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;{:&gt;20} = {:}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;VERSION&quot;</span><span class="p">,</span> <span class="n">version</span><span class="p">))</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%20s</span><span class="s"> = &quot;</span> <span class="o">%</span> <span class="s">&quot;VERSION&quot;</span><span class="p">,</span> <span class="n">version</span>
 </div>
 <div class="viewcode-block" id="shell_core.version"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_core.shell_core.version">[docs]</a>    <span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;prints the version of cmd3&quot;&quot;&quot;</span>
@@ -182,7 +181,7 @@
 
 <span class="sd">        Prints out the version number</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;cmd3: {:}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_version</span><span class="p">())))</span>
+        <span class="k">print</span> <span class="s">&quot;cmd3:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
         <span class="c"># print self.__version__</span>
 
         <span class="c">#</span>
@@ -193,8 +192,8 @@
         <span class="n">python_version</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">python_version_tuple</span><span class="p">)))</span>
         <span class="n">pip_version</span> <span class="o">=</span> <span class="n">pip</span><span class="o">.</span><span class="n">__version__</span>
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;python: {:}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">python_version</span><span class="p">)))</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;pip: {:}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pip_version</span><span class="p">)))</span>
+        <span class="k">print</span> <span class="s">&quot;python:&quot;</span><span class="p">,</span> <span class="n">python_version</span>
+        <span class="k">print</span> <span class="s">&quot;pip:&quot;</span><span class="p">,</span> <span class="n">pip_version</span>
         
         <span class="k">if</span> <span class="n">python_version</span> <span class="o">==</span> <span class="s">&#39;2.7.9&#39;</span><span class="p">:</span>
             <span class="n">Console</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;You are running a supported version of python: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">python_version</span><span class="p">))</span>    
@@ -211,6 +210,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;You are running an unsupported version of pip: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pip_version</span><span class="p">))</span>    
             <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;We recommend you update your pip version: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pip_version</span><span class="p">))</span>    
+
 </div>
 <div class="viewcode-block" id="shell_core.activate_shell_core"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.shell_core.shell_core.activate_shell_core">[docs]</a>    <span class="k">def</span> <span class="nf">activate_shell_core</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;activates the shell_core commands&quot;&quot;&quot;</span>
@@ -301,16 +301,16 @@
 <span class="sd">              FILENAME   The name of the file</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="p">:</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;the command requires a filename as parameter&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="s">&quot;ERROR: the command requires a filename as parameter&quot;</span>
             <span class="k">return</span>
 
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-                    <span class="n">Console</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;&gt; {:}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)))</span>
+                    <span class="k">print</span> <span class="s">&quot;&gt;&quot;</span><span class="p">,</span> <span class="n">line</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">onecmd</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&#39;file &quot;{:}&quot; does not exist.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+            <span class="k">print</span> <span class="s">&#39;ERROR: &quot;</span><span class="si">%s</span><span class="s">&quot; file does not exist.&#39;</span> <span class="o">%</span> <span class="n">filename</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div></div></div>
 
