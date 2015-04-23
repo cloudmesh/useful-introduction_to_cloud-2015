@@ -15,5 +15,6 @@ For development and class users we recommend the local setup.
    setup_openstack
    setup_vagrant
    yaml
+   yaml_cloudmesh
    nosetests
 

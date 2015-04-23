@@ -10,6 +10,7 @@ Cloudmesh
 
    overview
    setup/index
+   yaml_cloudmesh
    cm/index
    api/index
    sh/index
