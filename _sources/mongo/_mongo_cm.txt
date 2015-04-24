@@ -1,0 +1,92 @@
+
+Mongo
+=====
+
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/api/_mongo_cm.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
+In cloudmesh we used and support two kind of mongo client - mongoclient
+from pymongo, and mongoengine. The first one create a connection to
+mongo and raw queries from mongodb are performed directly. The second
+one creates an object and data mapping, so, instead of query directly on
+the database level, the program is supposed to deal with object, while
+the object is mapped to the data layer automatically by the library.
+
+While the first one gives the most flexibility and total power to
+manipulating the db, in practise the second one provides better code
+readability and easier maintenance. In either case, we provide factory
+based connection generator in cloudmesh so it's easy to get a handler to
+deal with the db for cloudmesh developers.
+
+PyMongo
+-------
+
+the preferrable way is to use the cm\_mongo wrapper.
+
+.. code:: python
+
+    from cloudmesh.cm_mongo import cm_mongo
+    cm = cm_mongo()
+
+Then you can utilize the methods defined in cm to easily read/write
+data.
+
+In case the operation you need was not defiend in the cm\_mongo, you can
+either define it and augment the cm\_mongo class (recommended), or
+directly use a connection handler defined as member of the class to
+directly talk to the db. (Not recommended)
+
+If you are clear about which db you only need to connect, you can do
+this also:
+
+.. code:: python
+
+    from cloudmesh.config.cm_config import get_mongo_db    
+    collection = "cloudmesh"
+    dbconn = get_mongo_db(collection)
+
+This will connect you to the db specified by the key 'cloudmesh' in the
+mongodb section in the cloudmesh\_server.yaml. Then dbconn is an object
+of MongoClient from pymongo so you can carry on calls directly to the
+db.
+
+MongoEngine
+-----------
+
+If it's possible, try to define classes for your data structure first
+and then use MongoEngine to map them to the data layer.
+
+.. code:: python
+
+    from cloudmesh.config.cm_config import get_mongo_db, DBConnFactory
+    get_mongo_db("experiment", DBConnFactory.TYPE_MONGOENGINE)
+
+This achieves what the connect() method is supposed to do, which is
+defined in MongoEngine, but with the factory pattern. In this example,
+it connect to the db keyed by 'experiment' in the mongodb section in the
+cloudmesh\_server.yaml.
+
+E.g., you can define a class for a data strucure, inheriting the
+Document class:
+
+.. code:: python
+
+    class ExperimentBase(Document):
+        cm_kind = StringField(default="experiment")
+        cm_label = StringField()
+        cm_userid = StringField()
+        meta = {'allow_inheritance': True}
+        get_mongo_db("experiment", DBConnFactory.TYPE_MONGOENGINE)
+
+Then when you created object for this class, and a call .save() will
+save the object to the specified db.
+
+Please note each different class will be writen into the specified db as
+a separate table/collection.

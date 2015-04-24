@@ -317,7 +317,7 @@ print function. This is especially true when we print data-structures
 such as arrays and dicts. Next we will present the program and explain
 a selected number of features by commenting them in the code. We
 assume you know by now elementary python.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh_task.tasks</span> <span class="kn">import</span> <span class="n">cm_ssh</span>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">cloudmesh_task.tasks</span> <span class="kn">import</span> <span class="n">cm_ssh</span>
 <span class="kn">from</span> <span class="nn">cloudmesh_task.parallel</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">cloudmesh.util.stopwatch</span> <span class="kn">import</span> <span class="n">StopWatch</span>
 <span class="kn">from</span> <span class="nn">cloudmesh_common.util</span> <span class="kn">import</span> <span class="n">banner</span>
@@ -379,7 +379,6 @@ assume you know by now elementary python.</p>
 <span class="k">for</span> <span class="n">timer</span> <span class="ow">in</span> <span class="n">watch</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="k">print</span> <span class="n">timer</span><span class="p">,</span> <span class="n">watch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timer</span><span class="p">),</span> <span class="s">&quot;s&quot;</span>
 </pre></div>
-</div>
 <p>Bug: Before you start the command, you have to start a new window and
 say fab fab manage.mongo in the cloudmesh directory where your
 fabfiles are located. This will give something like:</p>
