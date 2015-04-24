@@ -1,36 +1,33 @@
-.. _ref-cloudmesh-yaml:
-
-Creating YAML Files for Cloudmesh
-===============================================================================
+Creating the yaml file
+======================================================================
 
 .. highlight:: bash
 
-You must have installed Cloudmesh and source directory ``~/cloudmesh``::
-
-  cd ~/cloudmesh
-  
-and run this command::
+You must have installed cloudmesh as discussed in ??? and run::
 
  $ ./install/new
+
 
 This will create a `~/.cloudmesh` directory with some basic yaml files
 that you will need to modify.
 
-Cloud Activation - India Openstack 
--------------------------------------------------------------------------------
+Adding FutureSystems Openstack clouds on sierra and india to the yaml file
+----------------------------------------------------------------------
 
-For FutureSystems we have additionally provided a script that automatically
-creates some yaml files from the installation. In future FutureSystems will
-provide directly a yaml for cloudmesh so that this step is unnecessary. Before
-you can execute this command you must make sure that you can log into india via
-ssh. Once you have verified this for example with::
+For FutureSystems we have additionally provided a script that
+automatically creates some yaml files from the installation. In future
+FutureSystems will provide directly a yaml for cloudmesh so that this
+step is unnecessary. Before you can execute this command you maust
+make sure that you can log into india and sierra via ssh. Once you
+have verified this for example with::
 
   $ ssh $PORTALNAME@india.futuregrid.org hostname
+  $ ssh $PORTALNAME@sierra.futuregrid.org hostname
 
 Now create the yaml file while fetching some information from the
 remote machines::
 
-  $ cm-iu user fetch
+  $ ./install rc fetch
 
 First it will ask you which username you have on FutureSystems. The name
 may be different from your current local machine name. Please enter
@@ -42,13 +39,21 @@ your name when you see::
 After this you can update the yaml files with the data fetched from
 the india and sierra with the command::
 
-  $ cm-iu user create
+  $ ./install rc fill
 
 The reason why we have separated the commands and not just created one
 command is to provide you with the ability to double check overwriting
 possibly an existing rc file.
 
-Adding HP cloud to ``cloudmesh.yaml``
+Adding FutureSystems OpenStack Clouds on alamo and hotel to the yaml file
+--------------------------------------------------------------------------
+
+We do not recommend adding these machines as they use the FG portal
+and password. However if you do so, we have placeholders in the yaml
+file for these clouds. In case you can not find them, simply copy the
+one from india and make appropriate corrections.
+
+Adding HP cloud to the yaml file
 ----------------------------------------------------------------------
 
 The cloud offered from HP is an Openstack cloud and contains the
@@ -81,7 +86,7 @@ own local machine. Make sure that the access to the yaml file is
 properly secured.
 
 
-Adding AWS to ``cloudmesh.yaml``
+Adding AWS to the yaml file
 ----------------------------------------------------------------------
 
 Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
@@ -98,7 +103,7 @@ Note that Amazon offers commercial services, the access key identification and
 the secret key should be kept in a safe place to avoid any unexpected usage
 from someone who you didn't authorize. 
 
-Adding Azure to ``cloudmesh.yaml``
+Adding Azure to the yaml file
 ----------------------------------------------------------------------
 
 Microsoft Windows Azure offers security credentials per a valid
@@ -226,7 +231,7 @@ Test Azure Virtual Machine
 TBD
 
 
-Adding devstack to ``cloudmesh.yaml`` (TBD)
+Adding devstack to the yaml file (TBD)
 ----------------------------------------------------------------------
 
 DevStack offers an easy method to try out Openstack on your machine or
@@ -235,7 +240,7 @@ a setup guide and configuration here: `Configuration
 <http://devstack.org/configuration.html>`_.
 
 
-Adding dreamhost to ``cloudmesh.yaml``
+Adding dreamhost to the yaml file
 ----------------------------------------------------------------------
 
 Dreamhost provides an Openstack cloud that can be accessed through the

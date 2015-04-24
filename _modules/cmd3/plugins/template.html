@@ -134,7 +134,7 @@
             
   <h1>Source code for cmd3.plugins.template</h1><div class="highlight"><pre>
 <span class="kn">import</span> <span class="nn">textwrap</span>
-
+<span class="kn">from</span> <span class="nn">cmd3.console</span> <span class="kn">import</span> <span class="n">Console</span>
 
 <div class="viewcode-block" id="template"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.template.template">[docs]</a><span class="k">class</span> <span class="nc">template</span><span class="p">:</span>
 
@@ -155,7 +155,9 @@
 </div>
 <div class="viewcode-block" id="template.preloop"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.template.template.preloop">[docs]</a>    <span class="k">def</span> <span class="nf">preloop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;adds the banner to the preloop&quot;&quot;&quot;</span>
-        <span class="k">print</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">banner</span><span class="p">)</span></div></div>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">textwrap</span><span class="o">.</span><span class="n">dedent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">banner</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">_print</span><span class="p">(</span><span class="s">&quot;BLUE&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span></div></div>
 </pre></div>
 
           </div>

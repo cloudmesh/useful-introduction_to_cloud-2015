@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating YAML Files for Cloudmesh &mdash; my Cloudmesh Learning documentation</title>
+  <title>Creating the yaml file &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -92,7 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Creating YAML Files for Cloudmesh</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Creating the yaml file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
 </ul>
 </li>
@@ -143,7 +143,7 @@
       
           <li><a href="index.html">Cloudmesh Setup</a> &raquo;</li>
       
-    <li>Creating YAML Files for Cloudmesh</li>
+    <li>Creating the yaml file</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/setup/yaml.txt" rel="nofollow"> View page source</a>
@@ -154,31 +154,29 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="creating-yaml-files-for-cloudmesh">
-<span id="ref-cloudmesh-yaml"></span><h1>Creating YAML Files for Cloudmesh<a class="headerlink" href="#creating-yaml-files-for-cloudmesh" title="Permalink to this headline">¶</a></h1>
-<p>You must have installed Cloudmesh and source directory <code class="docutils literal"><span class="pre">~/cloudmesh</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span> ~/cloudmesh
-</pre></div>
-</div>
-<p>and run this command:</p>
+  <div class="section" id="creating-the-yaml-file">
+<h1>Creating the yaml file<a class="headerlink" href="#creating-the-yaml-file" title="Permalink to this headline">¶</a></h1>
+<p>You must have installed cloudmesh as discussed in ??? and run:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install/new
 </pre></div>
 </div>
 <p>This will create a <cite>~/.cloudmesh</cite> directory with some basic yaml files
 that you will need to modify.</p>
-<div class="section" id="cloud-activation-india-openstack">
-<h2>Cloud Activation - India Openstack<a class="headerlink" href="#cloud-activation-india-openstack" title="Permalink to this headline">¶</a></h2>
-<p>For FutureSystems we have additionally provided a script that automatically
-creates some yaml files from the installation. In future FutureSystems will
-provide directly a yaml for cloudmesh so that this step is unnecessary. Before
-you can execute this command you must make sure that you can log into india via
-ssh. Once you have verified this for example with:</p>
+<div class="section" id="adding-futuresystems-openstack-clouds-on-sierra-and-india-to-the-yaml-file">
+<h2>Adding FutureSystems Openstack clouds on sierra and india to the yaml file<a class="headerlink" href="#adding-futuresystems-openstack-clouds-on-sierra-and-india-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>For FutureSystems we have additionally provided a script that
+automatically creates some yaml files from the installation. In future
+FutureSystems will provide directly a yaml for cloudmesh so that this
+step is unnecessary. Before you can execute this command you maust
+make sure that you can log into india and sierra via ssh. Once you
+have verified this for example with:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@india.futuregrid.org hostname
+<span class="nv">$ </span>ssh <span class="nv">$PORTALNAME</span>@sierra.futuregrid.org hostname
 </pre></div>
 </div>
 <p>Now create the yaml file while fetching some information from the
 remote machines:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm-iu user fetch
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install rc fetch
 </pre></div>
 </div>
 <p>First it will ask you which username you have on FutureSystems. The name
@@ -189,15 +187,22 @@ your name when you see:</p>
 </div>
 <p>After this you can update the yaml files with the data fetched from
 the india and sierra with the command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cm-iu user create
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./install rc fill
 </pre></div>
 </div>
 <p>The reason why we have separated the commands and not just created one
 command is to provide you with the ability to double check overwriting
 possibly an existing rc file.</p>
 </div>
-<div class="section" id="adding-hp-cloud-to-cloudmesh-yaml">
-<h2>Adding HP cloud to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#adding-hp-cloud-to-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-futuresystems-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file">
+<h2>Adding FutureSystems OpenStack Clouds on alamo and hotel to the yaml file<a class="headerlink" href="#adding-futuresystems-openstack-clouds-on-alamo-and-hotel-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>We do not recommend adding these machines as they use the FG portal
+and password. However if you do so, we have placeholders in the yaml
+file for these clouds. In case you can not find them, simply copy the
+one from india and make appropriate corrections.</p>
+</div>
+<div class="section" id="adding-hp-cloud-to-the-yaml-file">
+<h2>Adding HP cloud to the yaml file<a class="headerlink" href="#adding-hp-cloud-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
 <p>The cloud offered from HP is an Openstack cloud and contains the
 ability to conduct project and user based billing. As this cloud is
 Openstack it behaves much the same as the once defined on India and
@@ -226,8 +231,8 @@ would like to run cloudmesh we currently recommend running it on your
 own local machine. Make sure that the access to the yaml file is
 properly secured.</p>
 </div>
-<div class="section" id="adding-aws-to-cloudmesh-yaml">
-<h2>Adding AWS to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#adding-aws-to-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-aws-to-the-yaml-file">
+<h2>Adding AWS to the yaml file<a class="headerlink" href="#adding-aws-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
 <p>Amazon EC2 Cloud requires Secret Access Keys to use Amazon Web Services (AWS).
 To configure Amazon EC2 on Cloudmesh, you need to provide the Secret Access
 Keys of your account. Amazon allows only to download the credentials via their
@@ -241,8 +246,8 @@ Note that Amazon offers commercial services, the access key identification and
 the secret key should be kept in a safe place to avoid any unexpected usage
 from someone who you didn&#8217;t authorize.</p>
 </div>
-<div class="section" id="adding-azure-to-cloudmesh-yaml">
-<h2>Adding Azure to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#adding-azure-to-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-azure-to-the-yaml-file">
+<h2>Adding Azure to the yaml file<a class="headerlink" href="#adding-azure-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
 <p>Microsoft Windows Azure offers security credentials per a valid
 subscription on a user account. Based on the subscription id,
 chargeable usage is going to be applied to your bill. To authenticate
@@ -362,14 +367,14 @@ the file but not others.</p>
 </div>
 </div>
 </div>
-<div class="section" id="adding-devstack-to-cloudmesh-yaml-tbd">
-<h2>Adding devstack to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> (TBD)<a class="headerlink" href="#adding-devstack-to-cloudmesh-yaml-tbd" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-devstack-to-the-yaml-file-tbd">
+<h2>Adding devstack to the yaml file (TBD)<a class="headerlink" href="#adding-devstack-to-the-yaml-file-tbd" title="Permalink to this headline">¶</a></h2>
 <p>DevStack offers an easy method to try out Openstack on your machine or
 in a virtual machine (VM). <a class="reference external" href="http://devstack.org">DevStack</a> provides
 a setup guide and configuration here: <a class="reference external" href="http://devstack.org/configuration.html">Configuration</a>.</p>
 </div>
-<div class="section" id="adding-dreamhost-to-cloudmesh-yaml">
-<h2>Adding dreamhost to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code><a class="headerlink" href="#adding-dreamhost-to-cloudmesh-yaml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-dreamhost-to-the-yaml-file">
+<h2>Adding dreamhost to the yaml file<a class="headerlink" href="#adding-dreamhost-to-the-yaml-file" title="Permalink to this headline">¶</a></h2>
 <p>Dreamhost provides an Openstack cloud that can be accessed through the
 dreamhost panel at:</p>
 <ul class="simple">
