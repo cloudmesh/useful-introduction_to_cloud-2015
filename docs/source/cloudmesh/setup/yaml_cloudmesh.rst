@@ -21,7 +21,7 @@ file which looks like::
 
   cloudmesh:
     active: 
-    - sierra_openstack_grizzly
+    - india
     clouds:
         india:
             cm_heading: India OpenStack, Juno
@@ -121,26 +121,30 @@ Retrieval of rc file by command
    cm-iu user fetch
    cm-iu user create
 
-This will create for you in your $HOME/.cloudmesh directory a tree of the
-following format::
+This will create for you in your $HOME/.cloudmesh directory::
    
-   .cloudmesh/clouds
-        india
+   .cloudmesh/clouds/india/juno
 
 
 
-Retrieval of rc files by Hand
+Retrieval of rc files by Hand (THIS SECTION IS OUTDATED)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+.. warning::
+
+   THIS SECTION IS OUTDATED
 
 Location of rc files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. warning::
+
+   This section is outdated
+   
 ========= ================================== ====================================================
 Host      OpenStack (novarc)                 Eucalyptus (eucarc)
 --------- ---------------------------------- ----------------------------------------------------
-india     $HOME/.cloudmesh/openstack/novarc $HOME/.cloudmesh/eucalyptus/$fgprojectnumber/eucarc*
-hotel     Download EC2 Credentials**         n/a
-alamo     Download EC2 Credentials**         n/a
+india     $HOME/.cloudmesh/clouds/india/juno $HOME/.cloudmesh/eucalyptus/$fgprojectnumber/eucarc*
 ========= ================================== ====================================================
 
 :\*\*: 
@@ -188,8 +192,8 @@ define the cloud on sierra which has the following credentials::
         credentials:
           OS_AUTH_URL: https://s77r.idp.sdsc.futuregrid.org:5000/v2.0
           OS_CACERT: $HOME/.cloudmesh/sierra-cacert.pem
-          OS_PASSWORD: jhdjaTYWUIYBY
-          OS_TENANT_NAME: fg1000
+          OS_PASSWORD: YOURPASSWORDHERE
+          OS_TENANT_NAME: YOURPROJECTIDHERE
           OS_USERNAME: albert
           OS_VERSION: grizzly
 
@@ -338,55 +342,35 @@ Amazon Web Services
 India
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note the endpoint is wrong.
-
 ::
 
-    india:
-      cm_heading: Sierra OpenStack, Grizzly
-      cm_host: india.futuregrid.org
-      cm_label: iosh
-      cm_type: openstack
-      cm_type_version: havana
-      credentials:
-        OS_AUTH_URL: https://i57r.idp.iu.futuregrid.org:5000/v2.0
-        OS_CACERT: $HOME/.cloudmesh/india_cacert.pem
-        OS_PASSWORD: uetruieiuf
-        OS_TENANT_NAME: fg1000
-        OS_USERNAME: albert
-        OS_VERSION: havana
-      default:
-        flavor: m1.tiny
-        image: 4199d988-0833-4497-a473-96fc456fac2f
-
-
-
-
-Sierra
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-    sierra_openstack_grizzly:
-      cm_heading: Sierra OpenStack, Grizzly
-      cm_host: sierra.futuregrid.org
-      cm_label: sos
-      cm_type: openstack
-      cm_type_version: grizzly
-      credentials:
-        OS_AUTH_URL: https://s77r.idp.sdsc.futuregrid.org:5000/v2.0
-        OS_CACERT: $HOME/.cloudmesh/sierra-cacert.pem
-        OS_PASSWORD: 63763876827
-        OS_TENANT_NAME: fg1000
-        OS_USERNAME: albert
-        OS_VERSION: grizzly
-      default:
-        flavor: m1.tiny
-        image: 4199d988-0833-4497-a473-96fc456fac2f
+    clouds:
+        india:
+            cm_heading: India OpenStack, Juno
+            cm_host: india.futuregrid.org
+            cm_label: ios_juno
+            cm_service_url_type: publicURL
+            cm_type: openstack
+            cm_type_version: juno
+            credentials:
+                OS_AUTH_URL: https://i5r.idp.iu.futuregrid.org:5000/v2.0
+                OS_CACERT: $HOME/.cloudmesh/india-juno-cacert.pem
+                OS_PASSWORD: PUT_YOUR OPENSTCK_PASSWORD_HERE look it
+                OS_TENANT_NAME: PUT_YOUR_PROJECTID_HERE
+                OS_USERNAME: PUT_YOUR_PROTALNAME_HERE
+                OS_VERSION: juno
+            default:
+                flavor: None
 
 
 Alamo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+   Alamos is no longer supported, it has been moved to chameleon cloud
+
+   
 Although Alamo on FG is an openstack grizzly cloud, it is not as
 sophisticated configured as the clouds on india and sierra. Instead is
 uses for horizon the username and password from the openstack portal,
