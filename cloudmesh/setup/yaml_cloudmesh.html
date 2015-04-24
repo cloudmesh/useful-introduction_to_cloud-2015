@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuration &mdash; my Cloudmesh Learning documentation</title>
+  <title>Configuration with Yaml Files &mdash; my Cloudmesh Learning documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Cloudmesh Setup" href="index.html"/>
         <link rel="next" title="Nosetests" href="nosetests.html"/>
-        <link rel="prev" title="Creating the yaml file" href="yaml.html"/> 
+        <link rel="prev" title="Creating YAML Files for Cloudmesh" href="yaml.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -92,8 +92,8 @@
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating the yaml file</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating YAML Files for Cloudmesh</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Configuration with Yaml Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
 </ul>
 </li>
@@ -144,7 +144,7 @@
       
           <li><a href="index.html">Cloudmesh Setup</a> &raquo;</li>
       
-    <li>Configuration</li>
+    <li>Configuration with Yaml Files</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="../../_sources/cloudmesh/setup/yaml_cloudmesh.txt" rel="nofollow"> View page source</a>
@@ -155,8 +155,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="configuration-with-yaml-files">
+<h1>Configuration with Yaml Files<a class="headerlink" href="#configuration-with-yaml-files" title="Permalink to this headline">¶</a></h1>
 <p>cloudmesh comes with a set of convenient configuration files in the
 yaml format. Important is that you make sure that prior to saving the
 file, that the indentation is correct and that all tabs are replaced
@@ -173,7 +173,7 @@ just a cloudmesh.yaml file so you run cloudmesh in user mode.</p>
 <p>file which looks like:</p>
 <div class="highlight-python"><div class="highlight"><pre>cloudmesh:
   active:
-  - sierra_openstack_grizzly
+  - india
   clouds:
       india:
           cm_heading: India OpenStack, Juno
@@ -269,18 +269,41 @@ imported in cloudmesh.yaml.</p>
 cm-iu user create
 </pre></div>
 </div>
-<p>This will create for you in your $HOME/.cloudmesh directory a tree of the
-following format:</p>
-<div class="highlight-python"><div class="highlight"><pre>.cloudmesh/clouds
-     india
+<p>This will create for you in your $HOME/.cloudmesh directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>.cloudmesh/clouds/india/juno
 </pre></div>
 </div>
 </div>
-<div class="section" id="retrieval-of-rc-files-by-hand">
-<h3>Retrieval of rc files by Hand<a class="headerlink" href="#retrieval-of-rc-files-by-hand" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="retrieval-of-rc-files-by-hand-this-section-is-outdated">
+<h3>Retrieval of rc files by Hand (THIS SECTION IS OUTDATED)<a class="headerlink" href="#retrieval-of-rc-files-by-hand-this-section-is-outdated" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">THIS SECTION IS OUTDATED</p>
+</div>
 </div>
 <div class="section" id="location-of-rc-files">
 <h3>Location of rc files<a class="headerlink" href="#location-of-rc-files" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This section is outdated</p>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="36%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Host</td>
+<td>OpenStack (novarc)</td>
+<td>Eucalyptus (eucarc)</td>
+</tr>
+<tr class="row-even"><td>india</td>
+<td>$HOME/.cloudmesh/clouds/india/juno</td>
+<td>$HOME/.cloudmesh/eucalyptus/$fgprojectnumber/eucarc*</td>
+</tr>
+</tbody>
+</table>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -326,8 +349,8 @@ define the cloud on sierra which has the following credentials:</p>
 <div class="highlight-python"><div class="highlight"><pre>credentials:
   OS_AUTH_URL: https://s77r.idp.sdsc.futuregrid.org:5000/v2.0
   OS_CACERT: $HOME/.cloudmesh/sierra-cacert.pem
-  OS_PASSWORD: jhdjaTYWUIYBY
-  OS_TENANT_NAME: fg1000
+  OS_PASSWORD: YOURPASSWORDHERE
+  OS_TENANT_NAME: YOURPROJECTIDHERE
   OS_USERNAME: albert
   OS_VERSION: grizzly
 </pre></div>
@@ -467,42 +490,28 @@ hp_east:
     location: us-east-1
 </pre></div>
 </div>
-<p>Note the endpoint is wrong.</p>
-<div class="highlight-python"><div class="highlight"><pre>india:
-  cm_heading: Sierra OpenStack, Grizzly
-  cm_host: india.futuregrid.org
-  cm_label: iosh
-  cm_type: openstack
-  cm_type_version: havana
-  credentials:
-    OS_AUTH_URL: https://i57r.idp.iu.futuregrid.org:5000/v2.0
-    OS_CACERT: $HOME/.cloudmesh/india_cacert.pem
-    OS_PASSWORD: uetruieiuf
-    OS_TENANT_NAME: fg1000
-    OS_USERNAME: albert
-    OS_VERSION: havana
-  default:
-    flavor: m1.tiny
-    image: 4199d988-0833-4497-a473-96fc456fac2f
+<div class="highlight-python"><div class="highlight"><pre>clouds:
+    india:
+        cm_heading: India OpenStack, Juno
+        cm_host: india.futuregrid.org
+        cm_label: ios_juno
+        cm_service_url_type: publicURL
+        cm_type: openstack
+        cm_type_version: juno
+        credentials:
+            OS_AUTH_URL: https://i5r.idp.iu.futuregrid.org:5000/v2.0
+            OS_CACERT: $HOME/.cloudmesh/india-juno-cacert.pem
+            OS_PASSWORD: PUT_YOUR OPENSTCK_PASSWORD_HERE look it
+            OS_TENANT_NAME: PUT_YOUR_PROJECTID_HERE
+            OS_USERNAME: PUT_YOUR_PROTALNAME_HERE
+            OS_VERSION: juno
+        default:
+            flavor: None
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>sierra_openstack_grizzly:
-  cm_heading: Sierra OpenStack, Grizzly
-  cm_host: sierra.futuregrid.org
-  cm_label: sos
-  cm_type: openstack
-  cm_type_version: grizzly
-  credentials:
-    OS_AUTH_URL: https://s77r.idp.sdsc.futuregrid.org:5000/v2.0
-    OS_CACERT: $HOME/.cloudmesh/sierra-cacert.pem
-    OS_PASSWORD: 63763876827
-    OS_TENANT_NAME: fg1000
-    OS_USERNAME: albert
-    OS_VERSION: grizzly
-  default:
-    flavor: m1.tiny
-    image: 4199d988-0833-4497-a473-96fc456fac2f
-</pre></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Alamos is no longer supported, it has been moved to chameleon cloud</p>
 </div>
 <p>Although Alamo on FG is an openstack grizzly cloud, it is not as
 sophisticated configured as the clouds on india and sierra. Instead is
@@ -965,7 +974,7 @@ pxe_prefix: /tftpboot/pxelinux.cfg</li>
         <a href="nosetests.html" class="btn btn-neutral float-right" title="Nosetests">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="yaml.html" class="btn btn-neutral" title="Creating the yaml file"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="yaml.html" class="btn btn-neutral" title="Creating YAML Files for Cloudmesh"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
