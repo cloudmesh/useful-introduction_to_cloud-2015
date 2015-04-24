@@ -31,7 +31,7 @@ which we will add more content throughout the semester:
 
 .. raw:: html
 
-   <a href="week_plan.html" target="_blank"><img src="../../images/calendar.png" border="2" style="border:2px solid black;max-width:5%;" alt="Meeting" /></a>
+   <a href="week_plan.html" target="_blank"><img src="../../images/calendar.png" border="2" style="max-width:10%;" alt="Meeting" /></a>
    
 
    
@@ -59,7 +59,7 @@ Meeting
    .. raw:: html
 
       <a href="https://connect.iu.edu/bdossp_sp15/" target="_blank">
-      <img src="../../images/meeting.png" border="2" style="border:2px solid black;max-width:5%;" alt="Meeting" /></a>
+      <img src="../../images/people.png" border="2" style="max-width:10%;" alt="Meeting" /></a>
 
 .. note::
 
