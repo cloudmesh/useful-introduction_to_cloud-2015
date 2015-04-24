@@ -92,8 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating YAML Files for Cloudmesh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml_cloudmesh.html">Configuration with Yaml Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Configuration with Yaml Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
 </ul>
 </li>
@@ -193,45 +192,58 @@ needs you may decide which way to set it up.</p>
 <li class="toctree-l2"><a class="reference internal" href="setup_vagrant.html#use-cloudmesh">Use cloudmesh</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="yaml.html">Creating YAML Files for Cloudmesh</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="yaml.html">Configuration with Yaml Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#initialization">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yaml.html#cloud-activation-india-openstack">Cloud Activation - India Openstack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml.html#adding-hp-cloud-to-cloudmesh-yaml">Adding HP cloud to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml.html#adding-aws-to-cloudmesh-yaml">Adding AWS to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml.html#adding-azure-to-cloudmesh-yaml">Adding Azure to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html#azure-quickstart">Azure Quickstart</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#azure-account">Azure account</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#download-credentials">Download credentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#install-azure-cli">Install Azure CLI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#import-credentials-via-azure-cli">Import Credentials via Azure CLI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#download-subscription-file-publishsettings">Download Subscription File (.publishsettings)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#place-x-509-certificate-on-cloudmesh">Place X.509 certificate on Cloudmesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#replace-subscription-id">Replace Subscription ID</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml.html#test-azure-virtual-machine">Test Azure Virtual Machine</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#format-of-the-cloudmesh-yaml-file">Format of the cloudmesh.yaml file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#configuration-file-rc-file">Configuration file (rc file)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yaml.html#adding-devstack-to-cloudmesh-yaml-tbd">Adding devstack to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> (TBD)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml.html#adding-dreamhost-to-cloudmesh-yaml">Adding dreamhost to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#adding-dreamhost-to-cloudmesh-yaml">Adding dreamhost to <code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#hp-cloud">HP Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#azure">Azure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="yaml.html#azure-quickstart">Azure Quickstart</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#azure-account">Azure account</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#download-credentials">Download credentials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#install-azure-cli">Install Azure CLI</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#import-credentials-via-azure-cli">Import Credentials via Azure CLI</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#download-subscription-file-publishsettings">Download Subscription File (.publishsettings)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#place-x-509-certificate-on-cloudmesh">Place X.509 certificate on Cloudmesh</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#replace-subscription-id">Replace Subscription ID</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#test-azure-virtual-machine">Test Azure Virtual Machine</a></li>
+<li class="toctree-l5"><a class="reference internal" href="yaml.html#example-azure-cloudmesh-configuration">Example Azure cloudmesh configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="yaml_cloudmesh.html">Configuration with Yaml Files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#cloudmesh-yaml">cloudmesh.yaml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#configuration-file-rc-file">Configuration file (rc file)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="yaml_cloudmesh.html#retrieval-of-rc-file-by-command">Retrieval of rc file by command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml_cloudmesh.html#retrieval-of-rc-files-by-hand-this-section-is-outdated">Retrieval of rc files by Hand (THIS SECTION IS OUTDATED)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml_cloudmesh.html#location-of-rc-files">Location of rc files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="yaml_cloudmesh.html#hp-cloud">HP Cloud</a></li>
-<li class="toctree-l4"><a class="reference internal" href="yaml_cloudmesh.html#azure">Azure</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#amazon-web-services">Amazon Web Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#cloudmesh-server-yaml">cloudmesh-server.yaml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#cloudmesh-cluster-yaml">cloudmesh_cluster.yaml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#other-yaml-files">Other Yaml files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yaml_cloudmesh.html#me-sample">Me Sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#amazon-web-services">Amazon Web Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#india">India</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#alamo">Alamo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#a-complete-example">A complete example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#cloudmesh-server-yaml">cloudmesh-server.yaml</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#debugging">Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#web-ui">Web UI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#ldap-integration">LDAP Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#clusters">Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#roles">Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#keystone-server">Keystone server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#mongo">Mongo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#complete-example">Complete Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#cloudmesh-cluster-yaml">cloudmesh_cluster.yaml</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#id1">Clusters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#a-cluster">A Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html#network">Network:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#other-yaml-files">Other Yaml files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#me-sample">Me Sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html#ec2-credentials-this-secition-is-outdated">EC2 Credentials (THIS SECITION IS OUTDATED)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nosetests.html">Nosetests</a><ul>
