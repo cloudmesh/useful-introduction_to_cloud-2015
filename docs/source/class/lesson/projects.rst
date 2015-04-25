@@ -47,7 +47,7 @@ See the following lists.
 Possible Projects From NIST
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. list-table:: Possible Projects From NIST* (http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc)
+.. list-table:: Possible Projects From NIST* (http://bigdatawg.nist.gov/_uploadfiles/M0399_v2_8471652990.doc)
    :widths: 30 10 10 10
    :header-rows: 1
 
@@ -108,7 +108,7 @@ Possible Projects From NIST
        - MLlib
 
 * \*Reference URL of these projects:
-  http://bigdatawg.nist.gov/_uploadfiles/M0399_v1_6344899314.doc
+  http://bigdatawg.nist.gov/_uploadfiles/M0399_v2_8471652990.doc
 
 Projects Derived from Benchmarking Sets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
