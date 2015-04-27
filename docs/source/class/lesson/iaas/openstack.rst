@@ -1,6 +1,11 @@
 OpenStack for Beginners
 ======================================================================
 
+.. sidebar:: Page Contents
+
+   .. contents::
+      :local:
+
 Overview
 ----------------------------------------------------------------------
 
@@ -96,6 +101,63 @@ to source the appropriate files::
   $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
   $ source ~/.cloudmesh/clouds/india/juno/fg465
 
+
+Adding your SSH key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Access to the machines we will start is authenticated using SSH.
+First, we need to tell openstack about our ssh key.
+This only needs to be done once for each public key you wish to register::
+
+  $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
+
+For instance, in order to log into an openstack virtual machine from india, make sure you created an SSH keypair **on** india first, then add it to nova.
+You can now see that your key is visible to OpenStack::
+
+  $ nova keypair-list
+
+  +-----------------+-------------------------------------------------+
+  | Name            | Fingerprint                                     |
+  +-----------------+-------------------------------------------------+
+  | $PORTALNAME-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
+  +---------------+---------------------------------------------------+
+
+
+
+.. _openstack_manage_keys:
+
+Nova-Generated keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   You can also have nova generate a key for you.
+   We have found that this approach can result in confusion.
+   Please do so only if you know what you are doing.
+
+
+Make sure you have a ``~/.ssh`` directory and created a key for
+OpenStack to use.
+Create the directory if necessary::
+
+  $ test -d ~/.ssh || mkdir ~/.ssh
+
+Generate a key for OpenStack::
+
+  $ nova keypair-add $USER-key > ~/.ssh/$PORTALNAME-key
+
+Ensure the permissions are set correctly::
+
+  $ chmod 600 ~/.ssh/$PORTALNAME-key
+
+
+.. caution:: Using nova to generate a keypair with ``nova
+   keypair-add`` will overwrite any preexisting file in
+   ``~/.ssh/$PORTALNAME-key`` so make sure it does not exist before
+   executing this command.
+
+
+
 Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -103,38 +165,6 @@ Starting a new instance is simple. The following command starts a new
 instance named *$USER-tutorial1* with a Ubuntu 14.04 base image.  The size
 of the machine will be **small**.
 
-First, we need to tell openstack about our ssh key.
-This only needs to be done once::
-
-  $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
-
-.. note::
-
-   Make sure you have a ``~/.ssh`` directory and created a key for
-   OpenStack to use.
-   Create the directory if necessary::
-
-     $ test -d ~/.ssh || mkdir ~/.ssh
-
-   Generate a key for OpenStack::
-
-     $ nova keypair-add $USER-key > ~/.ssh/$USER-key
-
-   Ensure the permissions are set correctly::
-
-     $ chmod 600 ~/.ssh/$USER-key
-
-   You can now see that your key is visible to OpenStack::
-
-     $ nova keypair-list
-
-     +---------------+-------------------------------------------------+
-     | Name          | Fingerprint                                     |
-     +---------------+-------------------------------------------------+
-     | $USER-key     | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
-     +---------------+-------------------------------------------------+
-
-   Where $USER is the username on the machine you run your terminal on.
 
 Boot the instance using the following command:
 
