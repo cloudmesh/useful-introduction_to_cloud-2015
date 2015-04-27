@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -92,7 +91,7 @@
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Quickstart for an Openstack VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Configuration with Yaml Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
 </ul>
 </li>
@@ -185,8 +184,8 @@ or the nova command line.</p>
 <p>To set up a machine you could use either of the following methods:</p>
 <ul class="simple">
 <li><strong>Horizon</strong>: see <a class="reference external" href="../../iaas/openstack.html#horizon-gui">our manual page</a>.</li>
-<li><strong>Nova</strong>: see the <a class="reference internal" href="../../iaas/openstack.html#s-openstack"><span>OpenStack on FutureSystems</span></a></li>
-<li><strong>Cloudmsh</strong>: see <a class="reference internal" href="quickstart.html#s-cloudmesh-quickstart"><span>Quickstart on your desktop</span></a> and the Cloudmesh
+<li><strong>Nova</strong>: see the <a class="reference internal" href="../../iaas/openstack.html#s-openstack"><em>OpenStack on FutureSystems</em></a></li>
+<li><strong>Cloudmsh</strong>: see <a class="reference internal" href="quickstart.html#s-cloudmesh-quickstart"><em>Quickstart on your desktop</em></a> and the Cloudmesh
 shell found elsewhere.</li>
 </ul>
 <div class="admonition note">
@@ -227,21 +226,21 @@ india<span class="nv">$ </span>module load openstack
 india<span class="nv">$ </span><span class="nb">source</span> ~/.cloudmesh/clouds/india/juno/openrc.sh
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">india$</span></code> stands for a SSH terminal of india.futuresystems.org. If you see the
-<code class="docutils literal"><span class="pre">india$</span></code> label, you run a command on <code class="docutils literal"><span class="pre">india</span> <span class="pre">(i136)</span></code>.  It is like so:</p>
+<p><tt class="docutils literal"><span class="pre">india$</span></tt> stands for a SSH terminal of india.futuresystems.org. If you see the
+<tt class="docutils literal"><span class="pre">india$</span></tt> label, you run a command on <tt class="docutils literal"><span class="pre">india</span> <span class="pre">(i136)</span></tt>.  It is like so:</p>
 <div class="highlight-bash"><div class="highlight"><pre>[$PORTALNAME@i136 ~]$
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p>If you are following this as part of a class, make sure you source
-the appropriate <code class="docutils literal"><span class="pre">rc</span></code> file <strong>after</strong> to the <code class="docutils literal"><span class="pre">openrc.sh</span></code>.
+the appropriate <tt class="docutils literal"><span class="pre">rc</span></tt> file <strong>after</strong> to the <tt class="docutils literal"><span class="pre">openrc.sh</span></tt>.
 Check for the available files like so:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls .cloudmesh/clouds/india/juno/
 cacert.pem  fg455  fg465  fg82  openrc.sh
 </pre></div>
 </div>
-<p>If you are in the <code class="docutils literal"><span class="pre">FG465</span></code> course, load the appropriate settings:</p>
+<p>If you are in the <tt class="docutils literal"><span class="pre">FG465</span></tt> course, load the appropriate settings:</p>
 <div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> .cloudmesh/clouds/india/juno/fg465
 </pre></div>
 </div>
@@ -249,17 +248,17 @@ cacert.pem  fg455  fg465  fg82  openrc.sh
 <p>In order to log into the machine (once we start it up later),
 OpenStack needs to have an ssh keypair associated.  You can either
 have OpenStack create a key for you or import your current key.</p>
-<p>To <strong>import</strong> a pre-existing key, such as <code class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></code>, do the following:</p>
+<p>To <strong>import</strong> a pre-existing key, such as <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt>, do the following:</p>
 <div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova keypair-add --pub-key ~/.ssh/id_rsa.pub <span class="nv">$USER</span>-india-key
 </pre></div>
 </div>
-<p>This will associate your <code class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></code> key with the name <code class="docutils literal"><span class="pre">$USER-india-key</span></code>.</p>
+<p>This will associate your <tt class="docutils literal"><span class="pre">~/.ssh/id_rsa.pub</span></tt> key with the name <tt class="docutils literal"><span class="pre">$USER-india-key</span></tt>.</p>
 <p><strong>Alternatively</strong>, to have OpenStack create a key for you, execute the following:</p>
 <div class="highlight-bash"><div class="highlight"><pre>india<span class="nv">$ </span>nova keypair-add <span class="nv">$USER</span>-india-key &gt;~/.ssh/<span class="nv">$USER</span>-india-key
 india<span class="nv">$ </span>chmod <span class="m">600</span> ~/.ssh/<span class="nv">$USER</span>-india-key
 </pre></div>
 </div>
-<p>This will generate the key, import it into OpenStack, and <code class="docutils literal"><span class="pre">chmod</span></code>
+<p>This will generate the key, import it into OpenStack, and <tt class="docutils literal"><span class="pre">chmod</span></tt>
 will fix permissions on the file.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -337,18 +336,18 @@ script to install:</p>
 <div class="highlight-bash"><div class="highlight"><pre>vm<span class="nv">$ </span>curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh <span class="p">|</span> <span class="nv">venv</span><span class="o">=</span><span class="nv">$HOME</span>/ENV bash
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">vm$</span></code> stands for a SSH terminal of your VM instance. If you see the
-<code class="docutils literal"><span class="pre">vm$</span></code> label, you run a command on your VM instance.  It is like so:</p>
+<p><tt class="docutils literal"><span class="pre">vm$</span></tt> stands for a SSH terminal of your VM instance. If you see the
+<tt class="docutils literal"><span class="pre">vm$</span></tt> label, you run a command on your VM instance.  It is like so:</p>
 <div class="highlight-bash"><div class="highlight"><pre>ubuntu@$USER-001:~$
 </pre></div>
 </div>
-<p>If you have a different name instead of <code class="docutils literal"><span class="pre">$USER-001</span></code>, you see the name in the
+<p>If you have a different name instead of <tt class="docutils literal"><span class="pre">$USER-001</span></tt>, you see the name in the
 label.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This may take several minutes.</p>
 </div>
-<p>Please see <a class="reference internal" href="quickstart.html#ref-cloudmesh-quickstart-system-install-curl"><span>One line install with curl</span></a> for
+<p>Please see <a class="reference internal" href="quickstart.html#ref-cloudmesh-quickstart-system-install-curl"><em>One line install with curl</em></a> for
 details on what this does.</p>
 <p>You may see outputs like so:</p>
 <div class="highlight-bash"><div class="highlight"><pre>%  Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -369,16 +368,16 @@ copy /home/ubuntu/.cloudmesh/me-none.yaml -&gt; /home/ubuntu/.cloudmesh/me.yaml
 <div class="highlight-bash"><div class="highlight"><pre>vm<span class="nv">$ </span><span class="nb">source</span> <span class="nv">$HOME</span>/ENV/bin/activate
 </pre></div>
 </div>
-<p>After this command, you see the <code class="docutils literal"><span class="pre">(ENV)</span></code> label in your prompt.</p>
+<p>After this command, you see the <tt class="docutils literal"><span class="pre">(ENV)</span></tt> label in your prompt.</p>
 </div>
 </div>
 <div class="section" id="cloudmesh-setup">
 <h2>Cloudmesh Setup<a class="headerlink" href="#cloudmesh-setup" title="Permalink to this headline">¶</a></h2>
-<p>As part of its installation, cloudmesh create a <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code> directory with
+<p>As part of its installation, cloudmesh create a <tt class="docutils literal"><span class="pre">~/.cloudmesh</span></tt> directory with
 configuration files in YAML format. Now we need to populate the
-<code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file with your actual cloud credentials.  Cloudmesh provides
+<tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file with your actual cloud credentials.  Cloudmesh provides
 tools for you to retrieve your futuresystems cloud credential and configure the
-<code class="docutils literal"><span class="pre">cloudmesh.yaml</span></code> file properly. Before we can use it however we have to
+<tt class="docutils literal"><span class="pre">cloudmesh.yaml</span></tt> file properly. Before we can use it however we have to
 create a key that we upload to the FutureSystems portal:</p>
 <div class="highlight-bash"><div class="highlight"><pre>vm<span class="nv">$ </span><span class="nb">export </span><span class="nv">PORTALNAME</span><span class="o">=</span>&lt;put your portal name here&gt;
 vm<span class="nv">$ </span>ssh-keygen -t rsa -C <span class="nv">$PORTALNAME</span>-ubuntu-vm-key
@@ -412,7 +411,7 @@ either with emacs or vi:</p>
 </pre></div>
 </div>
 <p>In this file, update your user profile, name, project data, etc.</p>
-<p>Move into <code class="docutils literal"><span class="pre">cloudmesh</span></code> source directory.:</p>
+<p>Move into <tt class="docutils literal"><span class="pre">cloudmesh</span></tt> source directory.:</p>
 <div class="highlight-bash"><div class="highlight"><pre>vm<span class="nv">$ </span><span class="nb">cd</span> ~/cloudmesh
 </pre></div>
 </div>
@@ -428,9 +427,9 @@ modify -&gt; /home/ubuntu/.cloudmesh/cloudmesh.yaml
 Configuration changes have been made successfully
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">(ENV)$</span></code> means that <code class="docutils literal"><span class="pre">ENV</span></code> virtual environment is enabled on your terminal.
-This tutorial uses the <code class="docutils literal"><span class="pre">ENV</span></code> virtualenv to install Python packages relevant to Cloudmesh.
-When you run any Cloudmesh-related commands, you must enable <code class="docutils literal"><span class="pre">ENV</span></code> virtualenv by:</p>
+<p><tt class="docutils literal"><span class="pre">(ENV)$</span></tt> means that <tt class="docutils literal"><span class="pre">ENV</span></tt> virtual environment is enabled on your terminal.
+This tutorial uses the <tt class="docutils literal"><span class="pre">ENV</span></tt> virtualenv to install Python packages relevant to Cloudmesh.
+When you run any Cloudmesh-related commands, you must enable <tt class="docutils literal"><span class="pre">ENV</span></tt> virtualenv by:</p>
 <div class="highlight-bash"><div class="highlight"><pre>vm<span class="nv">$ </span><span class="nb">source</span> ~/ENV/bin/activate
 </pre></div>
 </div>
@@ -486,7 +485,7 @@ user secure SSL channel.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup_vagrant.html" class="btn btn-neutral float-right" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup_vagrant.html" class="btn btn-neutral float-right" title="Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="quickstart.html" class="btn btn-neutral" title="Quickstart on your desktop"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -502,8 +501,7 @@ user secure SSL channel.</li>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -528,7 +526,7 @@ user secure SSL channel.</li>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

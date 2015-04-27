@@ -34,7 +34,6 @@ the preferrable way is to use the cm\_mongo wrapper.
 
     from cloudmesh.cm_mongo import cm_mongo
     cm = cm_mongo()
-
 Then you can utilize the methods defined in cm to easily read/write
 data.
 
@@ -51,7 +50,6 @@ this also:
     from cloudmesh.config.cm_config import get_mongo_db    
     collection = "cloudmesh"
     dbconn = get_mongo_db(collection)
-
 This will connect you to the db specified by the key 'cloudmesh' in the
 mongodb section in the cloudmesh\_server.yaml. Then dbconn is an object
 of MongoClient from pymongo so you can carry on calls directly to the
@@ -67,7 +65,6 @@ and then use MongoEngine to map them to the data layer.
 
     from cloudmesh.config.cm_config import get_mongo_db, DBConnFactory
     get_mongo_db("experiment", DBConnFactory.TYPE_MONGOENGINE)
-
 This achieves what the connect() method is supposed to do, which is
 defined in MongoEngine, but with the factory pattern. In this example,
 it connect to the db keyed by 'experiment' in the mongodb section in the
@@ -84,7 +81,6 @@ Document class:
         cm_userid = StringField()
         meta = {'allow_inheritance': True}
         get_mongo_db("experiment", DBConnFactory.TYPE_MONGOENGINE)
-
 Then when you created object for this class, and a call .save() will
 save the object to the specified db.
 

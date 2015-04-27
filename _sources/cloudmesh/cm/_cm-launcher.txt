@@ -28,7 +28,6 @@ following lines.
 .. code:: python
 
     alias cm cm %s
-
 Launcher import command
 -----------------------
 
@@ -38,7 +37,6 @@ Launcher registers local cookbooks from the yaml file
 .. code:: python
 
     cm launcher import
-
 
 .. parsed-literal::
 
@@ -62,7 +60,6 @@ https://github.com/cloudmesh/chef
 .. code:: python
 
     cm launcher menu
-
 
 .. parsed-literal::
 
@@ -93,7 +90,6 @@ use ``bigdata_mooc`` as a desired cookbook.
 
     cm launcher start bigdata_mooc
 
-
 .. parsed-literal::
 
     * india
@@ -111,7 +107,6 @@ list of running launchers with ``list`` command.
 .. code:: python
 
     cm launcher list
-
 Launcher stop command
 ---------------------
 
@@ -120,7 +115,6 @@ Launcher stop command
 .. code:: python
 
     # cm launcher stop launcher-$USERNAME-bigdata_mooc-$RAND
-
 Launcher export command
 -----------------------
 
@@ -132,4 +126,3 @@ cookbooks in the database.
 .. code:: python
 
     cm launcher export /tmp/cloudmesh_launcher.yaml
-

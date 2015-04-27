@@ -60,9 +60,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -135,25 +134,133 @@
   <h1>Source code for cloudmesh_pbs.service</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask.ext</span> <span class="kn">import</span> <span class="n">restful</span>
+<span class="kn">from</span> <span class="nn">flask_restful_swagger</span> <span class="kn">import</span> <span class="n">swagger</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 <span class="n">api</span> <span class="o">=</span> <span class="n">restful</span><span class="o">.</span><span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 <span class="c"># https://flask-restful.readthedocs.org/en/0.3.2/quickstart.html#a-minimal-api</span>
 
-<div class="viewcode-block" id="PbsServer"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.PbsServer">[docs]</a><span class="k">class</span> <span class="nc">PbsServer</span><span class="p">(</span><span class="n">restful</span><span class="o">.</span><span class="n">Resource</span><span class="p">):</span>
-    
-<div class="viewcode-block" id="PbsServer.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.PbsServer.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s">&#39;hello&#39;</span><span class="p">:</span> <span class="s">&#39;world&#39;</span><span class="p">}</span>
+<span class="c"># Develop an informational REST service that uses the OpenPBS</span>
+<span class="c"># class. The routs are as follows</span>
+
+<span class="c"># Informational routes</span>
+
+<span class="c">#/pbs/</span>
+<span class="c">#/pbs/job/id/&lt;id&gt;</span>
+<span class="c">#/pbs/job/user/&lt;user&gt;</span>
+<span class="c">#/pbs/queue/name/&lt;name&gt;</span>
+
+
+<span class="c">#You will be using</span>
+
+<span class="c">#https://flask-restful.readthedocs.org/en/0.3.2/index.html</span>
+
+<span class="c">#see</span>
+
+<span class="c">#https://flask-restful.readthedocs.org/en/0.3.2/quickstart.html#full-example</span>
+
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask.ext.restful</span> <span class="kn">import</span> <span class="n">reqparse</span><span class="p">,</span> <span class="n">abort</span><span class="p">,</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span>
+
+<span class="kn">from</span> <span class="nn">cloudmesh_pbs.OpenPBS</span> <span class="kn">import</span> <span class="n">OpenPBS</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">swagger</span><span class="o">.</span><span class="n">docs</span><span class="p">(</span><span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">),</span> <span class="n">apiVersion</span><span class="o">=</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span>
+                   <span class="n">basePath</span><span class="o">=</span><span class="s">&#39;http://localhost:5000&#39;</span><span class="p">,</span>
+                   <span class="n">resourcePath</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">,</span>
+                   <span class="n">produces</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span> <span class="s">&quot;text/html&quot;</span><span class="p">],</span>
+                   <span class="n">api_spec_url</span><span class="o">=</span><span class="s">&#39;/pbs/api/spec&#39;</span><span class="p">,</span>
+                   <span class="n">description</span><span class="o">=</span><span class="s">&#39;The Cloudmesh PBS REST API&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Job"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.Job">[docs]</a><span class="k">class</span> <span class="nc">Job</span><span class="p">(</span><span class="n">restful</span><span class="o">.</span><span class="n">Resource</span><span class="p">):</span>
+
+<div class="viewcode-block" id="Job.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.Job.get">[docs]</a>   <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+       <span class="sd">&quot;&quot;&quot;gets all jobs&quot;&quot;&quot;</span>
+       <span class="k">return</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;job get &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">)}</span>
+
+<span class="c">#</span>
+<span class="c"># NOTE RESPONSE MSG IS DUMMY I DID NOT WORK ON THAT YET</span>
+<span class="c">#</span></div></div>
+<div class="viewcode-block" id="JobList"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.JobList">[docs]</a><span class="k">class</span> <span class="nc">JobList</span><span class="p">(</span><span class="n">restful</span><span class="o">.</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="nd">@swagger.operation</span><span class="p">(</span>
+        <span class="n">notes</span><span class="o">=</span><span class="s">&#39;Listing of PBS jobs on a host&#39;</span><span class="p">,</span>
+        <span class="n">responseClass</span><span class="o">=</span><span class="n">__name__</span><span class="p">,</span>
+        <span class="n">nickname</span><span class="o">=</span><span class="s">&#39;joblist&#39;</span><span class="p">,</span>
+        <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;host&quot;</span><span class="p">,</span>
+              <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;The name of the host on which we list the jobs&quot;</span><span class="p">,</span>
+              <span class="s">&quot;required&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+              <span class="s">&quot;allowMultiple&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+              <span class="s">&quot;dataType&quot;</span><span class="p">:</span> <span class="s">&quot;String&quot;</span><span class="p">,</span>
+              <span class="s">&quot;paramType&quot;</span><span class="p">:</span> <span class="s">&quot;path&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+        <span class="n">responseMessages</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span>
+              <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Created. The URL of the created blueprint should be in the Location header&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">405</span><span class="p">,</span>
+              <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Invalid input&quot;</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">)</span>
+<div class="viewcode-block" id="JobList.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.JobList.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+       <span class="sd">&quot;&quot;&quot;gets all jobs&quot;&quot;&quot;</span>
+       <span class="n">pbs</span> <span class="o">=</span> <span class="n">OpenPBS</span><span class="p">(</span><span class="n">deploy</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>       
+       <span class="n">manager</span> <span class="o">=</span> <span class="n">pbs</span><span class="o">.</span><span class="n">manager</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+       <span class="n">r</span> <span class="o">=</span> <span class="n">pbs</span><span class="o">.</span><span class="n">qstat</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s">&quot;dict&quot;</span><span class="p">)</span>
+       <span class="k">return</span> <span class="n">r</span>
 </div></div>
-<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">PbsServer</span><span class="p">,</span> <span class="s">&#39;/pbs&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="QueueList"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.QueueList">[docs]</a><span class="k">class</span> <span class="nc">QueueList</span><span class="p">(</span><span class="n">restful</span><span class="o">.</span><span class="n">Resource</span><span class="p">):</span>
+
+    <span class="nd">@swagger.operation</span><span class="p">(</span>
+        <span class="n">notes</span><span class="o">=</span><span class="s">&#39;Listing of the PBS queues on a host&#39;</span><span class="p">,</span>
+        <span class="n">responseClass</span><span class="o">=</span><span class="n">__name__</span><span class="p">,</span>
+        <span class="n">nickname</span><span class="o">=</span><span class="s">&#39;joblist&#39;</span><span class="p">,</span>
+        <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;host&quot;</span><span class="p">,</span>
+              <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;The name of the host on which we list the queues&quot;</span><span class="p">,</span>
+              <span class="s">&quot;required&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+              <span class="s">&quot;allowMultiple&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+              <span class="s">&quot;dataType&quot;</span><span class="p">:</span> <span class="s">&quot;String&quot;</span><span class="p">,</span>
+              <span class="s">&quot;paramType&quot;</span><span class="p">:</span> <span class="s">&quot;path&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+        <span class="n">responseMessages</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span>
+              <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Created. The URL of the created blueprint should be in the Location header&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">405</span><span class="p">,</span>
+              <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Invalid input&quot;</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">)</span>
+<div class="viewcode-block" id="QueueList.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.service.QueueList.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+       <span class="sd">&quot;&quot;&quot;gets all jobs&quot;&quot;&quot;</span>
+       <span class="k">return</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;queue get &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">)}</span>
+</div></div>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">JobList</span><span class="p">,</span> <span class="s">&#39;/pbs/job/&lt;host&gt;&#39;</span><span class="p">)</span>   
+<span class="c"># api.add_resource(Job, &#39;/pbs/job/&lt;id&gt;&#39;)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">QueueList</span><span class="p">,</span> <span class="s">&#39;/pbs/queue/&lt;host&gt;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
     <span class="k">print</span> <span class="s">&quot;test with&quot;</span>
-    <span class="k">print</span> <span class="s">&quot;Window 1-&gt; python service.py&quot;</span>
-    <span class="k">print</span> <span class="s">&quot;Window 2-&gt; curl http://127.0.0.1:5000/&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;Window 1-&gt; python cloudmesh_pbs/service.py&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;Window 2-&gt; curl http://127.0.0.1:5000/pbs/india/job&quot;</span>
+    <span class="k">print</span> 
+    <span class="k">print</span> <span class="s">&quot;Swagger -&gt; http://127.0.0.1:5000/pbs/api/spec&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;  http://127.0.0.1:5000/pbs/api/spec&quot;</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
           </div>
@@ -168,8 +275,7 @@
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -194,7 +300,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

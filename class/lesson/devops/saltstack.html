@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -104,7 +103,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -207,9 +206,9 @@ OpenStack instance on FutureSystems.</p>
 </pre></div>
 </div>
 <p>You <em>should NOT</em> install any program.</p>
-<p>You have to log into <em>your VM instance</em> to install Puppet. <code class="docutils literal"><span class="pre">i136</span></code> is a India
+<p>You have to log into <em>your VM instance</em> to install Puppet. <tt class="docutils literal"><span class="pre">i136</span></tt> is a India
 login node which is like a gateway.  You are supposed not to perform any tasks
-on India, especially if you require <code class="docutils literal"><span class="pre">root</span></code> privileges. Please create a VM
+on India, especially if you require <tt class="docutils literal"><span class="pre">root</span></tt> privileges. Please create a VM
 instance on India OpenStack and SSH into your VM to run and install your
 software. You will have a full access of your virtual machine instance.</p>
 <div class="section" id="quick-instructions">
@@ -229,26 +228,26 @@ software. You will have a full access of your virtual machine instance.</p>
 </div>
 </div>
 <div class="section" id="root-access">
-<h3><code class="docutils literal"><span class="pre">root</span></code> Access<a class="headerlink" href="#root-access" title="Permalink to this headline">¶</a></h3>
-<p>We will install Salt and other software using <code class="docutils literal"><span class="pre">root</span></code> account. Using <code class="docutils literal"><span class="pre">root</span></code>
+<h3><tt class="docutils literal"><span class="pre">root</span></tt> Access<a class="headerlink" href="#root-access" title="Permalink to this headline">¶</a></h3>
+<p>We will install Salt and other software using <tt class="docutils literal"><span class="pre">root</span></tt> account. Using <tt class="docutils literal"><span class="pre">root</span></tt>
 account means that you have a permission to use entire system resources without
 any restriction. Since this lesson includes a couple of examples using Salt, we
 recommend to use OpenStack VM instance on FutureSystems. DON&#8217;T try to
-install Puppet on your local machine or on the <code class="docutils literal"><span class="pre">india.futuresystems.org</span></code> host.
+install Puppet on your local machine or on the <tt class="docutils literal"><span class="pre">india.futuresystems.org</span></tt> host.
 Use a benefit of VM instance which you can easily delete and re-create a new
 one.</p>
 <p>On a VM instance, simply run a switch user command:</p>
 <div class="highlight-python"><div class="highlight"><pre>ubuntu@salt:~$ sudo su -
 </pre></div>
 </div>
-<p>If you see <code class="docutils literal"><span class="pre">root</span></code> label, you are in <code class="docutils literal"><span class="pre">root</span></code> account on your machine:</p>
+<p>If you see <tt class="docutils literal"><span class="pre">root</span></tt> label, you are in <tt class="docutils literal"><span class="pre">root</span></tt> account on your machine:</p>
 <div class="highlight-python"><div class="highlight"><pre>root@salt:~#
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-hostname">
 <h3>Update Hostname<a class="headerlink" href="#update-hostname" title="Permalink to this headline">¶</a></h3>
-<p>If you see <code class="docutils literal"><span class="pre">sudo:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">resolve</span> <span class="pre">host</span></code>, try to add hostname with the
+<p>If you see <tt class="docutils literal"><span class="pre">sudo:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">resolve</span> <span class="pre">host</span></tt>, try to add hostname with the
 following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>echo -e &quot;\n127.0.1.1 $HOSTNAME&quot; &gt;&gt; /etc/hosts
 </pre></div>
@@ -262,7 +261,7 @@ sudo apt-get update
 </pre></div>
 </div>
 <p>Core components will be installed with the following commands. If you run Salt
-in a local mode, install <code class="docutils literal"><span class="pre">salt-minion</span></code> only.  The master, minion, or syndic
+in a local mode, install <tt class="docutils literal"><span class="pre">salt-minion</span></tt> only.  The master, minion, or syndic
 will be installed.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo apt-get install salt-master
 sudo apt-get install salt-minion
@@ -294,7 +293,7 @@ sudo sh install_salt.sh
 <h3>SLS Files<a class="headerlink" href="#sls-files" title="Permalink to this headline">¶</a></h3>
 <p>SaLt State file (SLS) is instructions of tasks in which a system should be in,
 and what applications should be installed and configured. SLS data is written
-in a simple format, YAML file with a <code class="docutils literal"><span class="pre">.sls</span></code> file extension. This is often
+in a simple format, YAML file with a <tt class="docutils literal"><span class="pre">.sls</span></tt> file extension. This is often
 called configuration management. We will create a few files to try a simple
 example of starting a Apache web server so that you can understand basic flows
 in the use case.</p>
@@ -302,7 +301,7 @@ in the use case.</p>
 <div class="section" id="salt-state-tree">
 <h3>Salt State Tree<a class="headerlink" href="#salt-state-tree" title="Permalink to this headline">¶</a></h3>
 <p>Salt state tree is a collection of SLS files that live under the directory
-specified in <code class="docutils literal"><span class="pre">file_roots</span></code>. We use a default directory <code class="docutils literal"><span class="pre">/srv/salt</span></code> to store
+specified in <tt class="docutils literal"><span class="pre">file_roots</span></tt>. We use a default directory <tt class="docutils literal"><span class="pre">/srv/salt</span></tt> to store
 sls files.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo mkdir /srv/salt
 </pre></div>
@@ -310,30 +309,30 @@ sls files.</p>
 </div>
 <div class="section" id="top-file">
 <h3>Top File<a class="headerlink" href="#top-file" title="Permalink to this headline">¶</a></h3>
-<p>The top file (<code class="docutils literal"><span class="pre">top.sls</span></code>) is to map what <strong>SLS modules</strong> get loaded onto what
+<p>The top file (<tt class="docutils literal"><span class="pre">top.sls</span></tt>) is to map what <strong>SLS modules</strong> get loaded onto what
 <strong>minions</strong> via the state system. For example <strong>apache sls module</strong> can be
-loaded to install and run on the target machine using <code class="docutils literal"><span class="pre">top.sls</span></code> file.  The
+loaded to install and run on the target machine using <tt class="docutils literal"><span class="pre">top.sls</span></tt> file.  The
 top file creates a few general abstractions. First it maps what nodes should
 pull from which environments, next it defines which matches systems should draw
 from.</p>
 <ul>
-<li><p class="first">Create <code class="docutils literal"><span class="pre">top.sls</span></code> file for <code class="docutils literal"><span class="pre">webserver</span></code>:</p>
+<li><p class="first">Create <tt class="docutils literal"><span class="pre">top.sls</span></tt> file for <tt class="docutils literal"><span class="pre">webserver</span></tt>:</p>
 <p>nano /srv/salt/top.sls</p>
 </li>
 </ul>
-<p>The <code class="docutils literal"><span class="pre">base</span></code> environment will be loaded. type the following three lines in the
-<code class="docutils literal"><span class="pre">top.sls</span></code> file:</p>
+<p>The <tt class="docutils literal"><span class="pre">base</span></tt> environment will be loaded. type the following three lines in the
+<tt class="docutils literal"><span class="pre">top.sls</span></tt> file:</p>
 <div class="highlight-python"><div class="highlight"><pre>base:
   &#39;*&#39;:
     - webserver
 </pre></div>
 </div>
 <ul>
-<li><p class="first">Create <code class="docutils literal"><span class="pre">webserver.sls</span></code> file to install Apache:</p>
+<li><p class="first">Create <tt class="docutils literal"><span class="pre">webserver.sls</span></tt> file to install Apache:</p>
 <p>nano /srv/salt/webserver.sls</p>
 </li>
 </ul>
-<p>The <code class="docutils literal"><span class="pre">webserver.sls</span></code> content include <code class="docutils literal"><span class="pre">apache2</span></code> package installation:</p>
+<p>The <tt class="docutils literal"><span class="pre">webserver.sls</span></tt> content include <tt class="docutils literal"><span class="pre">apache2</span></tt> package installation:</p>
 <div class="highlight-python"><div class="highlight"><pre>apache2:              # ID declaration
   pkg:                # state declaration
     - installed       # function declaration
@@ -348,11 +347,11 @@ name.</p>
 </div>
 <div class="section" id="salt-call">
 <h2>Salt Call<a class="headerlink" href="#salt-call" title="Permalink to this headline">¶</a></h2>
-<p>We use <code class="docutils literal"><span class="pre">salt-call</span></code> command to try our example of running a Apache web server.
-With <code class="docutils literal"><span class="pre">--local</span></code> option, we can simply run Salt wihtout communicating with a
-Salt master. The <code class="docutils literal"><span class="pre">--local</span></code> option indicates that <em>salt-minion</em> reads the
+<p>We use <tt class="docutils literal"><span class="pre">salt-call</span></tt> command to try our example of running a Apache web server.
+With <tt class="docutils literal"><span class="pre">--local</span></tt> option, we can simply run Salt wihtout communicating with a
+Salt master. The <tt class="docutils literal"><span class="pre">--local</span></tt> option indicates that <em>salt-minion</em> reads the
 state tree in a local file system and does not to connect to a Salt Master for
-instructions. Optionally you can you <code class="docutils literal"><span class="pre">-l</span></code> option for generating debug
+instructions. Optionally you can you <tt class="docutils literal"><span class="pre">-l</span></tt> option for generating debug
 messages:</p>
 <div class="highlight-python"><div class="highlight"><pre>salt-call --local state.highstate
 </pre></div>
@@ -373,11 +372,11 @@ Failed:    0
 Total states run:     1
 </pre></div>
 </div>
-<p><a class="reference internal" href="saltstack-ex1-output.html#ref-class-lesson-devops-saltstack-ex1-output"><span>Full output message</span></a></p>
+<p><a class="reference internal" href="saltstack-ex1-output.html#ref-class-lesson-devops-saltstack-ex1-output"><em>Full output message</em></a></p>
 <p>Now, you have Apache up and running.</p>
 <div class="section" id="test">
 <h3>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h3>
-<p>Check your Apache is running with <code class="docutils literal"><span class="pre">nc</span></code> command.</p>
+<p>Check your Apache is running with <tt class="docutils literal"><span class="pre">nc</span></tt> command.</p>
 <div class="highlight-python"><div class="highlight"><pre>nc -v -z salt 80
 </pre></div>
 </div>
@@ -393,7 +392,7 @@ Total states run:     1
 <li>The Salt minion reads the top.sls file and determines that it is a part of
 the group matched by * glob.</li>
 <li>It reads the webserver SLS and applies.</li>
-<li><code class="docutils literal"><span class="pre">webserver.sls</span></code> file will be loaded and finds the apache state, which
+<li><tt class="docutils literal"><span class="pre">webserver.sls</span></tt> file will be loaded and finds the apache state, which
 installs the Apache package.</li>
 <li>The Salt minion now have Apache web server installed.</li>
 </ul>
@@ -419,7 +418,7 @@ service salt-master start
 service salt-minion start
 </pre></div>
 </div>
-<p>If you don&#8217;t have <code class="docutils literal"><span class="pre">salt-key</span></code> or <code class="docutils literal"><span class="pre">salt-master</span></code> command, you need to run
+<p>If you don&#8217;t have <tt class="docutils literal"><span class="pre">salt-key</span></tt> or <tt class="docutils literal"><span class="pre">salt-master</span></tt> command, you need to run
 these commands.</p>
 </div>
 <div class="section" id="list-of-registered-minions">
@@ -437,8 +436,8 @@ salt
 Rejected Keys:
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">Unaccepted</span> <span class="pre">Keys</span></code> means that there is no registered keys for the hosts,
-in this example, the <code class="docutils literal"><span class="pre">salt</span></code> host is not registered.  What we need to do is
+<p>The <tt class="docutils literal"><span class="pre">Unaccepted</span> <span class="pre">Keys</span></tt> means that there is no registered keys for the hosts,
+in this example, the <tt class="docutils literal"><span class="pre">salt</span></tt> host is not registered.  What we need to do is
 simply registering the host with the following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>salt-key -a &#39;$HOSTNAME&#39;
 </pre></div>
@@ -461,7 +460,7 @@ server first which uses HTTP (80) port.</p>
 <div class="highlight-python"><div class="highlight"><pre>service apache2 stop
 </pre></div>
 </div>
-<p>The following commands install <code class="docutils literal"><span class="pre">nginx</span></code> web server and starts its service.</p>
+<p>The following commands install <tt class="docutils literal"><span class="pre">nginx</span></tt> web server and starts its service.</p>
 <div class="highlight-python"><div class="highlight"><pre>salt &#39;*&#39; pkg.install nginx
 </pre></div>
 </div>
@@ -476,7 +475,7 @@ server first which uses HTTP (80) port.</p>
              1
 </pre></div>
 </div>
-<p>The following command starts a <code class="docutils literal"><span class="pre">nginx</span></code> web server.</p>
+<p>The following command starts a <tt class="docutils literal"><span class="pre">nginx</span></tt> web server.</p>
 <div class="highlight-python"><div class="highlight"><pre>salt &#39;*&#39; service.start nginx
 </pre></div>
 </div>
@@ -488,17 +487,17 @@ server first which uses HTTP (80) port.</p>
 <ul class="simple">
 <li>&#8216;*&#8217;: all hosts
 The ‘*’ refers to all minions whose key is accepted. In this example,
-<code class="docutils literal"><span class="pre">salt</span></code> in only minion targeted to install <code class="docutils literal"><span class="pre">nginx</span></code>.  The particular
-hostname can be speicified, e.g. <code class="docutils literal"><span class="pre">salt</span> <span class="pre">'salt'</span> <span class="pre">...</span></code>.</li>
-<li>pkg.install: Install a package, <code class="docutils literal"><span class="pre">refresh=True</span></code> option can be added to
+<tt class="docutils literal"><span class="pre">salt</span></tt> in only minion targeted to install <tt class="docutils literal"><span class="pre">nginx</span></tt>.  The particular
+hostname can be speicified, e.g. <tt class="docutils literal"><span class="pre">salt</span> <span class="pre">'salt'</span> <span class="pre">...</span></tt>.</li>
+<li>pkg.install: Install a package, <tt class="docutils literal"><span class="pre">refresh=True</span></tt> option can be added to
 update the dpkg database.</li>
 </ul>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>Other Software Installation.</p>
 <p class="last">You may notice that software installation can be done with a name of
-the software.  For example, If you like to install <code class="docutils literal"><span class="pre">Mongo</span> <span class="pre">DB</span></code>, you
-can run <code class="docutils literal"><span class="pre">salt</span> <span class="pre">'*'</span> <span class="pre">pkg.install</span> <span class="pre">mongodb</span></code>. Other software are similar,
+the software.  For example, If you like to install <tt class="docutils literal"><span class="pre">Mongo</span> <span class="pre">DB</span></tt>, you
+can run <tt class="docutils literal"><span class="pre">salt</span> <span class="pre">'*'</span> <span class="pre">pkg.install</span> <span class="pre">mongodb</span></tt>. Other software are similar,
 you need to specify an exact name of the software.</p>
 </div>
 </div>
@@ -510,7 +509,7 @@ didn&#8217;t try other commands.  Salt has many other commands to control remote
 systems in parallel. Let&#8217;s review a few commands.</p>
 <div class="section" id="ping">
 <h3>Ping<a class="headerlink" href="#ping" title="Permalink to this headline">¶</a></h3>
-<p>To check remote machines are alive, we can use <code class="docutils literal"><span class="pre">ping</span></code>.</p>
+<p>To check remote machines are alive, we can use <tt class="docutils literal"><span class="pre">ping</span></tt>.</p>
 <div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt &#39;*&#39; test.ping
 salt:
     True
@@ -519,7 +518,7 @@ salt:
 </div>
 <div class="section" id="system-command">
 <h3>System Command<a class="headerlink" href="#system-command" title="Permalink to this headline">¶</a></h3>
-<p>If you have a system command to execute remotely, you can use <code class="docutils literal"><span class="pre">cmd.run</span></code>
+<p>If you have a system command to execute remotely, you can use <tt class="docutils literal"><span class="pre">cmd.run</span></tt>
 sub-command. Our test result looks like so:</p>
 <div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt &#39;*&#39; cmd.run &#39;ifconfig&#39;
 salt:
@@ -553,15 +552,15 @@ salt:
 </dl>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">If you pipe to <code class="docutils literal"><span class="pre">more</span></code>, it is easier to read. Run <code class="docutils literal"><span class="pre">salt</span> <span class="pre">'*'</span>
-<span class="pre">sys.doc|more</span></code></p>
+<p class="last">If you pipe to <tt class="docutils literal"><span class="pre">more</span></tt>, it is easier to read. Run <tt class="docutils literal"><span class="pre">salt</span> <span class="pre">'*'</span>
+<span class="pre">sys.doc|more</span></tt></p>
 </div>
 </div>
 </div>
 <div class="section" id="grains">
 <h2>Grains<a class="headerlink" href="#grains" title="Permalink to this headline">¶</a></h2>
 <p>One of the interesting features in Salt is Grains. It runs commands when the
-remote machines satisfy the conditions specified with <code class="docutils literal"><span class="pre">-G</span></code> option.  For
+remote machines satisfy the conditions specified with <tt class="docutils literal"><span class="pre">-G</span></tt> option.  For
 example, if you like to view IP address on <em>Ubuntu</em> minions (remote machines),
 run salt like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>root@salt:~# salt -G &#39;os:Ubuntu&#39; grains.get ip_interfaces:eth0
@@ -573,10 +572,10 @@ salt:
 <div class="highlight-python"><div class="highlight"><pre>salt &#39;*&#39; network.interfaces
 </pre></div>
 </div>
-<p>which displays network information of all remote minions. With <code class="docutils literal"><span class="pre">-G</span></code> option,
+<p>which displays network information of all remote minions. With <tt class="docutils literal"><span class="pre">-G</span></tt> option,
 you can apply commands on particular minions.</p>
 <ul>
-<li><p class="first">Available grains can be listed by using the <code class="docutils literal"><span class="pre">grains.ls</span></code> module:</p>
+<li><p class="first">Available grains can be listed by using the <tt class="docutils literal"><span class="pre">grains.ls</span></tt> module:</p>
 <p>salt &#8216;*&#8217; grains.ls</p>
 </li>
 </ul>
@@ -643,19 +642,19 @@ zmqversion:
 <div class="section" id="exercise-i">
 <h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Turn on the type script by <code class="docutils literal"><span class="pre">script</span> <span class="pre">salt_ex1_$USERNAME.txt</span></code>
+<li>Turn on the type script by <tt class="docutils literal"><span class="pre">script</span> <span class="pre">salt_ex1_$USERNAME.txt</span></tt>
 (Replace $USERNAME with your id)</li>
-<li>Install Python <code class="docutils literal"><span class="pre">virtualenv</span></code> using salt.</li>
-<li>Run <code class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">--version</span></code>.</li>
-<li>Type <code class="docutils literal"><span class="pre">exit</span></code> to save the script.</li>
-<li>Submit <code class="docutils literal"><span class="pre">salt_ex1_$USERNAME.txt</span></code> file.</li>
+<li>Install Python <tt class="docutils literal"><span class="pre">virtualenv</span></tt> using salt.</li>
+<li>Run <tt class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">--version</span></tt>.</li>
+<li>Type <tt class="docutils literal"><span class="pre">exit</span></tt> to save the script.</li>
+<li>Submit <tt class="docutils literal"><span class="pre">salt_ex1_$USERNAME.txt</span></tt> file.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="next-step">
 <h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
 <p>In the next page, Puppet will be introduced.</p>
-<p><a class="reference internal" href="puppet.html#ref-class-lesson-devops-puppet"><span>Puppet</span></a></p>
+<p><a class="reference internal" href="puppet.html#ref-class-lesson-devops-puppet"><em>Puppet</em></a></p>
 </div>
 </div>
 
@@ -665,7 +664,7 @@ zmqversion:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="puppet.html" class="btn btn-neutral float-right" title="Puppet">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="puppet.html" class="btn btn-neutral float-right" title="Puppet"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="ansible.html" class="btn btn-neutral" title="Ansible"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -681,8 +680,7 @@ zmqversion:
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -707,7 +705,7 @@ zmqversion:
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

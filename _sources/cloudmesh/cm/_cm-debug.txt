@@ -26,7 +26,6 @@ following lines.
 .. code:: python
 
     alias cm cm %s
-
 ``debug`` Command in Cloudmesh ``cm``
 -------------------------------------
 
@@ -36,11 +35,9 @@ mode, all log messages will print out on the screen.
 .. code:: python
 
     cm debug on
-
 .. code:: python
 
     cm debug off
-
 ``loglevel`` Command in Cloudmesh cm
 ------------------------------------
 
@@ -53,14 +50,12 @@ To view the current log level you can use the command:
 .. code:: python
 
     cm loglevel
-
 To set the log level you simply put the keywords debug, info, warning,
 error, or critical after the loglevel comamnd:
 
 .. code:: python
 
     cm loglevel debug
-
 ``yaml`` Command in Cloudmesh cm
 --------------------------------
 
@@ -75,7 +70,6 @@ change. ``yaml info`` provides a current information of the yaml file
 .. code:: python
 
     cm yaml info
-
 View the value of the selected key in the server yaml file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -87,7 +81,6 @@ below selects *['cloudmesh']['server']['loglevel']* in the yaml file.
 .. code:: python
 
     cm yaml info-server cloudmesh.server.loglevel
-
 
 You can see the *DEBUG* is the current setting of the log level in the
 Cloudmesh server.
@@ -101,11 +94,9 @@ If you desire to change the log level to *ERROR*, you need to call
 .. code:: python
 
     cm yaml replace-server cloudmesh.server.loglevel ERROR
-
 .. code:: python
 
     cm yaml info-server cloudmesh.server.loglevel
-
 Now you can see it has been changed to *ERROR*.
 
 ``color`` Command in Cloudmesh cm
@@ -119,7 +110,6 @@ this feature.
 .. code:: python
 
     cm color on
-
 .. code:: python
 
     cm color off

@@ -28,22 +28,18 @@ file in the example
 .. code:: python
 
     import cloudmesh
-
 .. code:: python
 
     username = cloudmesh.load().username()
-
 .. code:: python
 
     india = cloudmesh.PBS(username, "india.futuresystems.org")
-
 QStat
 ~~~~~
 
 .. code:: python
 
     qstat = india.qstat()
-
 
 ::
 
@@ -72,28 +68,23 @@ deployment
 .. code:: python
 
     qstat.keys()
-
 .. code:: python
 
     qstat["india.futuresystems.org"].keys()
-
 .. code:: python
 
     for jobname in qstat["india.futuresystems.org"]:
         job = qstat["india.futuresystems.org"][jobname]
         print jobname, job["job_state"]
-
 QInfo
 ~~~~~
 
 .. code:: python
 
     qinfo = india.qinfo()
-
 To list the queue names, simply print the keys.
 
 .. code:: python
 
     print qinfo["india.futuresystems.org"].keys()
-
 More information is available when you inspect the dict.

@@ -59,9 +59,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -155,7 +154,6 @@
 <li><a href="cloudmesh/iaas/opencirrus/opencirrus.html">cloudmesh.iaas.opencirrus.opencirrus</a></li>
 <li><a href="cloudmesh/iaas/openstack/cm_compute.html">cloudmesh.iaas.openstack.cm_compute</a></li>
 <li><a href="cloudmesh/iaas/openstack/cm_idm.html">cloudmesh.iaas.openstack.cm_idm</a></li>
-<li><a href="cloudmesh/iaas/vagrant/cm_vagrant.html">cloudmesh.iaas.vagrant.cm_vagrant</a></li>
 <li><a href="cloudmesh/image/cm_image.html">cloudmesh.image.cm_image</a></li>
 <li><a href="cloudmesh/inventory.html">cloudmesh.inventory</a></li>
 <li><a href="cloudmesh/keys/util.html">cloudmesh.keys.util</a></li>
@@ -170,6 +168,7 @@
 <li><a href="cloudmesh/metric/cm_metric.html">cloudmesh.metric.cm_metric</a></li>
 <li><a href="cloudmesh/metric/eucalyptus/cm_metric_eucalyptus.html">cloudmesh.metric.eucalyptus.cm_metric_eucalyptus</a></li>
 <li><a href="cloudmesh/metric/openstack/cm_metric_openstack.html">cloudmesh.metric.openstack.cm_metric_openstack</a></li>
+<li><a href="cloudmesh/metric/openstack/migrating_mysql_to_mongodb.html">cloudmesh.metric.openstack.migrating_mysql_to_mongodb</a></li>
 <li><a href="cloudmesh/metric/rest/cm_metric_rest.html">cloudmesh.metric.rest.cm_metric_rest</a></li>
 <li><a href="cloudmesh/pbs/pbs.html">cloudmesh.pbs.pbs</a></li>
 <li><a href="cloudmesh/pbs/pbs_mongo.html">cloudmesh.pbs.pbs_mongo</a></li>
@@ -303,6 +302,7 @@
 <li><a href="cloudmesh_web/modules/inventory.html">cloudmesh_web.modules.inventory</a></li>
 <li><a href="cloudmesh_web/modules/keys.html">cloudmesh_web.modules.keys</a></li>
 <li><a href="cloudmesh_web/modules/launch.html">cloudmesh_web.modules.launch</a></li>
+<li><a href="cloudmesh_web/modules/management.html">cloudmesh_web.modules.management</a></li>
 <li><a href="cloudmesh_web/modules/management__.html">cloudmesh_web.modules.management__</a></li>
 <li><a href="cloudmesh_web/modules/mesh.html">cloudmesh_web.modules.mesh</a></li>
 <li><a href="cloudmesh_web/modules/mesh_hpc.html">cloudmesh_web.modules.mesh_hpc</a></li>
@@ -314,12 +314,12 @@
 <li><a href="cloudmesh_web/modules/provisioner.html">cloudmesh_web.modules.provisioner</a></li>
 <li><a href="cloudmesh_web/modules/status.html">cloudmesh_web.modules.status</a></li>
 <li><a href="cloudmesh_web/modules/users.html">cloudmesh_web.modules.users</a></li>
+<li><a href="cloudmesh_web/server.html">cloudmesh_web.server</a></li>
 <li><a href="cmd3/console.html">cmd3.console</a></li>
 <li><a href="cmd3/generate.html">cmd3.generate</a></li>
 <li><a href="cmd3/plugins/activate.html">cmd3.plugins.activate</a></li>
 <li><a href="cmd3/plugins/browser.html">cmd3.plugins.browser</a></li>
 <li><a href="cmd3/plugins/clear.html">cmd3.plugins.clear</a></li>
-<li><a href="cmd3/plugins/edit.html">cmd3.plugins.edit</a></li>
 <li><a href="cmd3/plugins/graphviz.html">cmd3.plugins.graphviz</a></li>
 <li><a href="cmd3/plugins/info.html">cmd3.plugins.info</a></li>
 <li><a href="cmd3/plugins/load.html">cmd3.plugins.load</a></li>
@@ -358,18 +358,11 @@
 <li><a href="fabfile/tunnel.html">fabfile.tunnel</a></li>
 <li><a href="fabfile/user.html">fabfile.user</a></li>
 <li><a href="fabfile/util.html">fabfile.util</a></li>
-<li><a href="flask/blueprints.html">flask.blueprints</a></li>
-<li><a href="flask_restful.html">flask_restful</a></li>
-<li><a href="mongoengine/base/fields.html">mongoengine.base.fields</a></li>
-<li><a href="mongoengine/fields.html">mongoengine.fields</a></li>
-<li><a href="progress/bar.html">progress.bar</a></li>
 <li><a href="timestring.html">timestring</a></li>
 <ul><li><a href="timestring/Date.html">timestring.Date</a></li>
 <li><a href="timestring/Range.html">timestring.Range</a></li>
 <li><a href="timestring/text2num.html">timestring.text2num</a></li>
-</ul><li><a href="wtforms/fields/core.html">wtforms.fields.core</a></li>
-<li><a href="wtforms/widgets/core.html">wtforms.widgets.core</a></li>
-</ul>
+</ul></ul>
 
           </div>
           <footer>
@@ -383,8 +376,7 @@
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -409,7 +401,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

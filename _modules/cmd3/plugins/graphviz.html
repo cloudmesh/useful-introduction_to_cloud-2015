@@ -60,9 +60,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -146,7 +145,7 @@
         <span class="k">pass</span>
 </div>
     <span class="nd">@command</span>
-    <span class="k">def</span> <span class="nf">do_graphviz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+<div class="viewcode-block" id="graphviz.do_graphviz"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.graphviz.graphviz.do_graphviz">[docs]</a>    <span class="k">def</span> <span class="nf">do_graphviz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ::</span>
 <span class="sd">        </span>
@@ -163,9 +162,9 @@
         <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;Darwin&#39;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&quot;open -a &#39;</span><span class="se">\&#39;</span><span class="s">&#39;/Applications/Graphviz.app&#39;</span><span class="se">\&#39;</span><span class="s">&#39; &quot;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
-
+</div>
     <span class="nd">@command</span>
-    <span class="k">def</span> <span class="nf">do_dot2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
+<div class="viewcode-block" id="graphviz.do_dot2"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.graphviz.graphviz.do_dot2">[docs]</a>    <span class="k">def</span> <span class="nf">do_dot2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">arguments</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ::</span>
 
@@ -188,7 +187,7 @@
                 <span class="nb">file</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">exec_command</span> <span class="o">=</span> <span class="s">&quot;dot -T</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s"> -o </span><span class="si">%s</span><span class="s"> 2&gt;/tmp/err&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">output_format</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">exec_command</span><span class="p">)</span></div>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">exec_command</span><span class="p">)</span></div></div>
 </pre></div>
 
           </div>
@@ -203,8 +202,7 @@
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -229,7 +227,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

@@ -62,9 +62,8 @@
         
         </a>
 
-        
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -92,7 +91,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="">Quickstart on your desktop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Configuration with Yaml Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
 </ul>
 </li>
@@ -440,12 +439,12 @@ installation script repository. For ubuntu you can use:</p>
 <ul class="simple">
 <li>update package listing</li>
 <li>install <a class="reference external" href="https://github.com/cloudmesh/get/blob/master/cloudmesh/system-dependencies.csv">systems dependencies</a></li>
-<li>create a virtual env in <code class="docutils literal"><span class="pre">$HOME/ENV</span></code> (specify <code class="docutils literal"><span class="pre">venv</span></code> to override
+<li>create a virtual env in <tt class="docutils literal"><span class="pre">$HOME/ENV</span></tt> (specify <tt class="docutils literal"><span class="pre">venv</span></tt> to override
 default)</li>
-<li>installs cloudmesh and python dependencies via <code class="docutils literal"><span class="pre">pip</span></code></li>
-<li>clones the cloudmesh repository into a <code class="docutils literal"><span class="pre">./cloudmesh</span></code> directory
-(specify <code class="docutils literal"><span class="pre">cloudmeshdir</span></code> to override)</li>
-<li>populates <code class="docutils literal"><span class="pre">~/.cloudmesh</span></code></li>
+<li>installs cloudmesh and python dependencies via <tt class="docutils literal"><span class="pre">pip</span></tt></li>
+<li>clones the cloudmesh repository into a <tt class="docutils literal"><span class="pre">./cloudmesh</span></tt> directory
+(specify <tt class="docutils literal"><span class="pre">cloudmeshdir</span></tt> to override)</li>
+<li>populates <tt class="docutils literal"><span class="pre">~/.cloudmesh</span></tt></li>
 </ul>
 </div>
 <div class="section" id="one-line-configure-with-curl">
@@ -461,10 +460,10 @@ following to do the initial configuration.</p>
 </div>
 <p>This will:</p>
 <ul class="simple">
-<li>call <code class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">fetch</span></code></li>
-<li>call <code class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">create</span></code></li>
-<li>generate the database (<code class="docutils literal"><span class="pre">fab</span> <span class="pre">{mongo.boot,user.mongo,mongo.simple}</span></code>)</li>
-<li>set the default project id to <code class="docutils literal"><span class="pre">$projectid</span></code>.</li>
+<li>call <tt class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">fetch</span></tt></li>
+<li>call <tt class="docutils literal"><span class="pre">cm-iu</span> <span class="pre">user</span> <span class="pre">create</span></tt></li>
+<li>generate the database (<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">{mongo.boot,user.mongo,mongo.simple}</span></tt>)</li>
+<li>set the default project id to <tt class="docutils literal"><span class="pre">$projectid</span></tt>.</li>
 </ul>
 </div>
 <div class="section" id="one-line-start-with-curl">
@@ -475,10 +474,10 @@ following to do the initial configuration.</p>
 </div>
 <p>This:</p>
 <ul class="simple">
-<li>assumes that cloudmesh repo is located in <code class="docutils literal"><span class="pre">./cloudmesh</span></code> (specify
-<code class="docutils literal"><span class="pre">cloudmeshdir=path/to/local/repo</span></code> to override)</li>
-<li>starts the cloudmesh server (<code class="docutils literal"><span class="pre">fab</span> <span class="pre">server.start</span></code>)</li>
-<li>updates the clouds from <code class="docutils literal"><span class="pre">india</span></code> (<code class="docutils literal"><span class="pre">cm</span> <span class="pre">{cloud,flavor}</span></code>)</li>
+<li>assumes that cloudmesh repo is located in <tt class="docutils literal"><span class="pre">./cloudmesh</span></tt> (specify
+<tt class="docutils literal"><span class="pre">cloudmeshdir=path/to/local/repo</span></tt> to override)</li>
+<li>starts the cloudmesh server (<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">server.start</span></tt>)</li>
+<li>updates the clouds from <tt class="docutils literal"><span class="pre">india</span></tt> (<tt class="docutils literal"><span class="pre">cm</span> <span class="pre">{cloud,flavor}</span></tt>)</li>
 </ul>
 </div>
 <div class="section" id="tips">
@@ -497,7 +496,7 @@ following to do the initial configuration.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setup_openstack.html" class="btn btn-neutral float-right" title="Quickstart for an Openstack VM">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup_openstack.html" class="btn btn-neutral float-right" title="Quickstart for an Openstack VM"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Cloudmesh Setup"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -513,8 +512,7 @@ following to do the initial configuration.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -539,7 +537,7 @@ following to do the initial configuration.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

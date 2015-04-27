@@ -27,11 +27,9 @@ Python.
 .. code:: python
 
     import cloudmesh
-
 .. code:: python
 
     from pprint import pprint
-
 Activating Clouds
 -----------------
 
@@ -42,7 +40,6 @@ directory, *mongo* retrieves information from the mongo database.
 .. code:: python
 
     mesh = cloudmesh.mesh("mongo")
-
 Get a username
 ~~~~~~~~~~~~~~
 
@@ -52,11 +49,9 @@ server who is going to use cloud services.
 .. code:: python
 
     username = cloudmesh.load().username()
-
 .. code:: python
 
     print username
-
 
 .. parsed-literal::
 
@@ -71,7 +66,6 @@ With the activation, the connection to IaaS cloud is established.
 .. code:: python
 
     mesh.activate(username)
-
 
 .. parsed-literal::
 
@@ -90,7 +84,6 @@ Register a cloud
 
 
 
-
 .. parsed-literal::
 
     * india
@@ -104,7 +97,6 @@ Register a cloud
 .. code:: python
 
     cloudmesh.shell("cloud list")
-
 
 
 
@@ -149,7 +141,6 @@ cache.
 
     mesh.refresh(username,types=['flavors', 'images'],names=["india"])
 
-
 .. parsed-literal::
 
     * india
@@ -166,7 +157,6 @@ Available flavors can be listed with the following function.
 .. code:: python
 
     flavors = mesh.flavors(cm_user_id=username, clouds=["india"])
-
 Let us display the names of the flavors
 
 The functions about vm images provide an available vm images on a
@@ -176,7 +166,6 @@ selected cloud.
 
     for id in flavors["india"]:
         print flavors["india"][id]["name"]
-
 
 .. parsed-literal::
 
@@ -190,12 +179,10 @@ selected cloud.
 .. code:: python
 
     images = mesh.images(clouds=['india'],cm_user_id=username)
-
 .. code:: python
 
     for id in images["india"]:
         print images["india"][id]["name"]
-
 
 .. parsed-literal::
 
@@ -236,7 +223,6 @@ set a default image or a default flavor.
 .. code:: python
 
     flavor = mesh.flavor('india', 'm1.small')
-
 Select an image
 ~~~~~~~~~~~~~~~
 
@@ -246,22 +232,18 @@ user it later. In this example, we choose Ubuntu trusty 14.04 image.
 .. code:: python
 
     image=mesh.image('india','futuresystems/ubuntu-14.04')
-
 Set a default flavor or image
 -----------------------------
 
 .. code:: python
 
     defaults = mesh.default('india', 'image', image)
-
 .. code:: python
 
     defaults = mesh.default('india', 'flavor', flavor)
-
 .. code:: python
 
     pprint(defaults)
-
 
 .. parsed-literal::
 
@@ -284,15 +266,12 @@ Set a default flavor or image
 .. code:: python
 
     image = "futuresystems/ubuntu-14.04"
-
 .. code:: python
 
     flavor = "m1.small"
-
 .. code:: python
 
     cloud = "india"
-
 Quick Start a VM
 ----------------
 
@@ -302,11 +281,9 @@ cloudmesh.
 .. code:: python
 
     result = mesh.start("india", username)
-
 .. code:: python
 
     pprint (result)
-
 
 .. parsed-literal::
 
@@ -334,11 +311,9 @@ Delete VM
 .. code:: python
 
     server = result['server']['id']
-
 .. code:: python
 
     mesh.delete(cloud, server, username)
-
 
 
 
@@ -365,7 +340,6 @@ cloud india.
                         cm_user_id=username,
                         flavor=flavor, 
                         image=image)
-
 You may don’t know what images or flavors are available on the cloud, or
 you don’t want to type a long line every time you start a VM, things can
 get a lot easier by performing some setting up.
@@ -373,7 +347,6 @@ get a lot easier by performing some setting up.
 .. code:: python
 
     pprint (result)
-
 
 .. parsed-literal::
 
@@ -428,7 +401,6 @@ you to manage or modify the VM name as you wish.
 
 
 
-
 .. parsed-literal::
 
     u'gvonlasz_43'
@@ -463,11 +435,9 @@ to the VM.
 .. code:: python
 
     server = result['server']['id']
-
 .. code:: python
 
     pprint (result['name'])
-
 
 .. parsed-literal::
 
@@ -477,11 +447,9 @@ to the VM.
 .. code:: python
 
     ip=mesh.assign_public_ip('india', server, username)
-
 .. code:: python
 
     print ip
-
 
 .. parsed-literal::
 
@@ -499,7 +467,6 @@ Otherwise, you can simply use ssh\_execute() function.
 
     result = mesh.wait(ipaddr=ip, interval=2, retry=10)
 
-
 .. parsed-literal::
 
     0 try to execute via ssh...
@@ -509,7 +476,6 @@ Otherwise, you can simply use ssh\_execute() function.
 
     print result
 
-
 .. parsed-literal::
 
     True
@@ -518,7 +484,6 @@ Otherwise, you can simply use ssh\_execute() function.
 .. code:: python
 
     mesh.ssh_execute(ipaddr=ip, command="uname -a")
-
 
 
 
@@ -542,7 +507,6 @@ function.
 
     mesh.refresh(username, names=["india"],types=["servers"])
 
-
 .. parsed-literal::
 
     * india
@@ -556,7 +520,6 @@ function.
     for serverid in mesh.servers(clouds=["india"],cm_user_id=username)["india"].keys():
         server =  mesh.servers(clouds=["india"],cm_user_id=username)["india"][serverid]
         print server['name']
-
 
 .. parsed-literal::
 

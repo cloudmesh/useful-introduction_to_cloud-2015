@@ -18,7 +18,6 @@ futuresystems.
 
     !cm nova set india
 
-
 .. parsed-literal::
 
     india is set
@@ -35,11 +34,9 @@ selected novarc.
 .. code:: python
 
     !cm nova info
-
 .. code:: python
 
     !cm "nova help"
-
 
 .. parsed-literal::
 
