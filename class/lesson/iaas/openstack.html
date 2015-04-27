@@ -84,11 +84,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../bdossp_sp15/index.html"> Spring 2015 - Big Data Open Source Software Project (BUEX-V 594)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#contact">Contact</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#weekly-plan">Weekly Plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#support">Support</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#meeting">Meeting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#office-hours">Office Hours</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#collaboration-tools">Collaboration Tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#futuresystems-access">FutureSystems Access</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../bdossp_sp15/index.html#linux-basics">Linux Basics</a></li>
@@ -176,8 +176,28 @@ components.</p>
 <div class="section" id="prerequisite">
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">¶</a></h2>
 <p>In order to conduct this lesson you should have knowledge of</p>
-<ul class="simple">
-<li><a class="reference external" href="overview_openstack.html">Overview OpenStack</a></li>
+<ul>
+<li><p class="first"><a class="reference external" href="overview_openstack.html">Overview OpenStack</a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="../../../accounts/ssh.html#s-ssh-generate"><em>Generate a SSH key</em></a></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>OpenStack uses ssh keys for authentication. You need to have a
+keypair in order to access any machines use start with openstack.</p>
+<p>Make sure you have a valid key by using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ file ~/.ssh/id_rsa
+$ ssh-keygen -yf ~/.ssh/id_rsa &gt;~/pub-key-test
+$ ssh-keygen -lf ~/.ssh/id_rsa
+$ ssh-keygen -lf ~/pub-key-test
+</pre></div>
+</div>
+<p>If the fingerprints do not match then something is wrong with your keys.
+Otherwise cleanup with the following command and proceed with this section:</p>
+<div class="last highlight-python"><div class="highlight"><pre>$ rm ~/pub-key-test
+</pre></div>
+</div>
+</div>
+</li>
 </ul>
 </div>
 <div class="section" id="description">
@@ -272,6 +292,11 @@ $ source ~/.cloudmesh/clouds/india/juno/fg465
 <p>Starting a new instance is simple. The following command starts a new
 instance named <em>$USER-tutorial1</em> with a Ubuntu 14.04 base image.  The size
 of the machine will be <strong>small</strong>.</p>
+<p>First, we need to tell openstack about our ssh key.
+This only needs to be done once:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Make sure you have a <tt class="docutils literal"><span class="pre">~/.ssh</span></tt> directory and created a key for
