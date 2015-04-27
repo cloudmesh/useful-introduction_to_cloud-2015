@@ -429,27 +429,72 @@ if the requested plugin module is included in the yaml file.</p>
 <div class="section" id="module-cloudmesh_pbs.service">
 <span id="cloudmesh-pbs-service-module"></span><h2>cloudmesh_pbs.service module<a class="headerlink" href="#module-cloudmesh_pbs.service" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="cloudmesh_pbs.service.PbsServer">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.service.</code><code class="descname">PbsServer</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#PbsServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.PbsServer" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.service.Job">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.service.</code><code class="descname">Job</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#Job"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.Job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">flask_restful.Resource</span></code></p>
+<dl class="method">
+<dt id="cloudmesh_pbs.service.Job.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#Job.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.Job.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets all jobs</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh_pbs.service.Job.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#cloudmesh_pbs.service.Job.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh_pbs.service.JobList">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.service.</code><code class="descname">JobList</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#JobList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.JobList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">flask_restful.Resource</span></code></p>
 <dl class="attribute">
-<dt id="cloudmesh_pbs.service.PbsServer.endpoint">
-<code class="descname">endpoint</code><em class="property"> = 'pbsserver'</em><a class="headerlink" href="#cloudmesh_pbs.service.PbsServer.endpoint" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.service.JobList.endpoint">
+<code class="descname">endpoint</code><em class="property"> = 'joblist'</em><a class="headerlink" href="#cloudmesh_pbs.service.JobList.endpoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.service.PbsServer.get">
-<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#PbsServer.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.PbsServer.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="cloudmesh_pbs.service.JobList.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#JobList.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.JobList.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets all jobs</p>
+</dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.service.PbsServer.mediatypes">
-<code class="descname">mediatypes</code><span class="sig-paren">(</span><em>resource_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh_pbs.service.PbsServer.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.service.JobList.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><em>resource_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh_pbs.service.JobList.mediatypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.service.PbsServer.methods">
-<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#cloudmesh_pbs.service.PbsServer.methods" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.service.JobList.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#cloudmesh_pbs.service.JobList.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh_pbs.service.QueueList">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.service.</code><code class="descname">QueueList</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#QueueList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.QueueList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">flask_restful.Resource</span></code></p>
+<dl class="attribute">
+<dt id="cloudmesh_pbs.service.QueueList.endpoint">
+<code class="descname">endpoint</code><em class="property"> = 'queuelist'</em><a class="headerlink" href="#cloudmesh_pbs.service.QueueList.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.service.QueueList.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/service.html#QueueList.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.service.QueueList.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets all jobs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.service.QueueList.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><em>resource_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh_pbs.service.QueueList.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh_pbs.service.QueueList.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#cloudmesh_pbs.service.QueueList.methods" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

@@ -13,6 +13,27 @@ them  to learn about BigData Software and Technologies.
 * IU Canvas: https://iu.instructure.com/courses/1453783
 * FutureSystems Project Page: https://portal.futuresystems.org/projects/465
   
+
+Office Hours
+==========
+
+**General Discussions**
+
+- Wednesday 8 pm
+- Thursday 9 am
+
+
+**Support Office Hours**
+
+
+Office hours are conducted on appointment onle during the times given
+bellow. Please send mail to coursehelp@futuresystems.org.
+
+- Tuesdays 9-10 am
+- Wednesday 7-8 pm
+- Thursday 10-11 am
+
+
 Contact
 ======================================================================
 
@@ -70,26 +91,6 @@ Additionally, there may be some technical issues when attempting to join a
 meeting, please see the following for guidance.
 
 .. include:: ../adobe-connect-tips.rst
-
-Office Hours
-==========
-
-**Support Office Hours**
-
-
-Office hours are conducted on appointment onle during the times given
-bellow. Please send mail to coursehelp@futuresystems.org.
-
-- Tuesdays 9-10 am
-- Wednesday 7-8 pm
-- Thursday 10-11 am
-
-
-**General Discussions**
-
-- Wednesday 8 pm
-- Thursday 9 am
-
 
 
 Collaboration Tools
