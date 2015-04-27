@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -344,9 +345,9 @@ rm *.tar.gz
 <h3>java.rb<a class="headerlink" href="#java-rb" title="Permalink to this headline">¶</a></h3>
 <p>There are four files we will need to create to store our preferences.
 These will need slight customization based on your host names and your
-desired configuration. In <tt class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></tt> create
-<tt class="docutils literal"><span class="pre">java.rb</span></tt> for our Java preferences. We request Oracle Java version 6,
-and ask to have the <tt class="docutils literal"><span class="pre">$JAVA_HOME</span></tt> environment variable set
+desired configuration. In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></code> create
+<code class="docutils literal"><span class="pre">java.rb</span></code> for our Java preferences. We request Oracle Java version 6,
+and ask to have the <code class="docutils literal"><span class="pre">$JAVA_HOME</span></code> environment variable set
 automatically:</p>
 <div class="highlight-python"><div class="highlight"><pre>name &quot;java&quot;
 description &quot;Install Oracle Java&quot;
@@ -368,7 +369,7 @@ run_list(
 </div>
 <div class="section" id="hadoop-rb">
 <h3>hadoop.rb<a class="headerlink" href="#hadoop-rb" title="Permalink to this headline">¶</a></h3>
-<p>In <tt class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></tt> create <tt class="docutils literal"><span class="pre">hadoop.rb</span></tt> for our Hadoop
+<p>In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo/roles</span></code> create <code class="docutils literal"><span class="pre">hadoop.rb</span></code> for our Hadoop
 preferences. These preferences will actually be the same whether we
 are installing a namenode or a datanode, we will just call a different
 recipe. Here we will pass the names of our HDFS and YARN manager
@@ -395,7 +396,7 @@ run_list(
 </div>
 <div class="section" id="solo-rb">
 <h3>solo.rb<a class="headerlink" href="#solo-rb" title="Permalink to this headline">¶</a></h3>
-<p>In <tt class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></tt> create <tt class="docutils literal"><span class="pre">solo.rb</span></tt> to store locations and
+<p>In <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></code> create <code class="docutils literal"><span class="pre">solo.rb</span></code> to store locations and
 instructions for Chef to use:</p>
 <div class="highlight-python"><div class="highlight"><pre>file_cache_path &quot;/home/ubuntu/chef-solo&quot;
 cookbook_path &quot;/home/ubuntu/chef-repo/cookbooks&quot;
@@ -406,7 +407,7 @@ verify_api_cert true
 </div>
 <div class="section" id="solo-json">
 <h3>solo.json<a class="headerlink" href="#solo-json" title="Permalink to this headline">¶</a></h3>
-<p>Finally, in <tt class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></tt> create <tt class="docutils literal"><span class="pre">solo.json</span></tt> for the specific
+<p>Finally, in <code class="docutils literal"><span class="pre">/home/ubuntu/chef-repo</span></code> create <code class="docutils literal"><span class="pre">solo.json</span></code> for the specific
 instructions to Chef on what to install. This is the only file that
 will change between a manager and worker node installation. Both
 versions are shown below. Remember that you could configure
@@ -431,7 +432,7 @@ manager node prior to creating your worker node.</p>
 this point your cluster is deployed and awaiting initialization.</p>
 </div>
 <div class="section" id="installation-using-chef-solo-chef-client-z">
-<h3>Installation using <tt class="docutils literal"><span class="pre">chef-solo</span></tt> (<tt class="docutils literal"><span class="pre">chef-client</span> <span class="pre">-z</span></tt>)<a class="headerlink" href="#installation-using-chef-solo-chef-client-z" title="Permalink to this headline">¶</a></h3>
+<h3>Installation using <code class="docutils literal"><span class="pre">chef-solo</span></code> (<code class="docutils literal"><span class="pre">chef-client</span> <span class="pre">-z</span></code>)<a class="headerlink" href="#installation-using-chef-solo-chef-client-z" title="Permalink to this headline">¶</a></h3>
 <p>You must run this command on a master(namenode) and a worker(datanode). If you
 have hadoop1, hadoop2, ... ,and hadoopX, SSH into all and run this command.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">chef</span><span class="o">-</span><span class="n">solo</span> <span class="o">-</span><span class="n">j</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">solo</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">solo</span><span class="o">.</span><span class="n">rb</span>
@@ -495,8 +496,8 @@ operational and ready to run jobs.</p>
 </div>
 </div>
 <div class="section" id="jps-java-virtual-machine-process-status-tool">
-<h2><tt class="docutils literal"><span class="pre">jps</span></tt> Java Virtual Machine Process Status Tool<a class="headerlink" href="#jps-java-virtual-machine-process-status-tool" title="Permalink to this headline">¶</a></h2>
-<p>Once you installed namenode and datanode(s), check process using <tt class="docutils literal"><span class="pre">jps</span></tt>
+<h2><code class="docutils literal"><span class="pre">jps</span></code> Java Virtual Machine Process Status Tool<a class="headerlink" href="#jps-java-virtual-machine-process-status-tool" title="Permalink to this headline">¶</a></h2>
+<p>Once you installed namenode and datanode(s), check process using <code class="docutils literal"><span class="pre">jps</span></code>
 command.</p>
 <p>On <strong>Namenode</strong>, you may see:</p>
 <div class="highlight-python"><div class="highlight"><pre>20937 ResourceManager
@@ -517,7 +518,7 @@ command.</p>
 cluster.  One of the popular examples of Hadoop is a Word Count MapReduce
 program which counts how often words occur from the input text file. We have a
 separate page for this program here.</p>
-<p><a class="reference internal" href="../lesson/cluster/wordcount.html#ref-class-lesson-hadoop-word-count"><em>Word Count Program</em></a></p>
+<p><a class="reference internal" href="../lesson/cluster/wordcount.html#ref-class-lesson-hadoop-word-count"><span>Word Count Program</span></a></p>
 </div>
 <div class="section" id="exercise">
 <span id="ref-class-lesson-deploying-hadoop-cluster-manual-exercise"></span><h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
@@ -533,7 +534,7 @@ separate page for this program here.</p>
 </ol>
 </li>
 <li><ol class="first upperalpha">
-<li><tt class="docutils literal"><span class="pre">cluster</span> <span class="pre">delete</span> <span class="pre">--group=[name]</span></tt></li>
+<li><code class="docutils literal"><span class="pre">cluster</span> <span class="pre">delete</span> <span class="pre">--group=[name]</span></code></li>
 </ol>
 </li>
 </ul>
@@ -575,7 +576,8 @@ Cloudmesh.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -600,7 +602,7 @@ Cloudmesh.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

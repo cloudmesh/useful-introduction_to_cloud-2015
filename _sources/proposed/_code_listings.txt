@@ -24,18 +24,23 @@ you may choose cloudmesh API or CLI. For example, boot a VM with API:
 .. code:: python
 
     import cloudmesh
+
 .. code:: python
 
     mesh = cloudmesh.mesh("mongo")
+
 .. code:: python
 
     username = cloudmesh.load().username()
+
 .. code:: python
 
     mesh.activate(username)
+
 .. code:: python
 
     mesh.start(cloud="india", cm_user_id=username flavor="m1.small", image="futuregrid/ubuntu-14.04")
+
 boot a VM with CLI: (note here we use a convenient way to call cloudmesh
 shell commands by using cloudmesh.shell, so that we can illustrate our
 CLI in ipython notebook)
@@ -43,12 +48,14 @@ CLI in ipython notebook)
 .. code:: python
 
     cloudmesh.shell("vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04")
+
 There are other ways to boot VMs with CLI, for more details about CLI
 command vm:
 
 .. code:: python
 
     print cloudmesh.shell("vm -h")
+
 Deleting virtual machines
 -------------------------
 
@@ -64,17 +71,20 @@ first)
 .. code:: python
 
     mesh.delete(cloud="india", server="provvide vm id", username)
+
 delete a VM with CLI:
 
 .. code:: python
 
     cloudmesh.shell("vm delete --id=provvide vm id --cloud=india --force")
+
 There are other ways to delete VMs with CLI, for more details about CLI
 command vm:
 
 .. code:: python
 
     print cloudmesh.shell("vm -h")
+
 Query to Cloud
 --------------
 
@@ -86,11 +96,13 @@ API:
 .. code:: python
 
     mesh.flavors(cm_user_id=username, clouds=["india"])
+
 CLI:
 
 .. code:: python
 
     cloudmesh.shell("list flavor india --refresh")
+
 List Images
 ~~~~~~~~~~~
 
@@ -99,11 +111,13 @@ API:
 .. code:: python
 
     mesh.images(clouds=['india'],cm_user_id=username)
+
 CLI:
 
 .. code:: python
 
     cloudmesh.shell("list image india --refresh")
+
 List Virtual Machines
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -112,6 +126,7 @@ API:
 .. code:: python
 
     mesh.servers(clouds=['india'],cm_user_id=username)
+
 CLI:
 
 .. code:: python

@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -103,7 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../vc_sp15/index.html">Spring 2015 - Big Data Applications to Clouds and HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<tt class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></tt>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../i590.html">Fall 2014 - Big Data Applications and Analytics (<code class="docutils literal"><span class="pre">Info</span> <span class="pre">I590</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../cm-mooc/index.html">VM for Big Data Applications and Analytics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 </ul>
@@ -259,7 +260,7 @@ services on Juju.</p>
 <div class="section" id="ip-tables-configuration">
 <h3>IP tables Configuration<a class="headerlink" href="#ip-tables-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Since Juju GUI is running with a virtual network in your VM instance, you need
-to configure <tt class="docutils literal"><span class="pre">iptables</span></tt>. Your Juju GUI will be served on your floating IP
+to configure <code class="docutils literal"><span class="pre">iptables</span></code>. Your Juju GUI will be served on your floating IP
 address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo iptables -t nat -A PREROUTING -p tcp -d 0.0.0.0 --dport 443 -j DNAT --to-destination [IP ADDRESS of Juju GUI]:443
 </pre></div>
@@ -268,7 +269,7 @@ address with the FORWARD rules.</p>
 <div class="highlight-python"><div class="highlight"><pre>juju status
 </pre></div>
 </div>
-<p>You may find <tt class="docutils literal"><span class="pre">public-address</span></tt> under <tt class="docutils literal"><span class="pre">juju-gui</span></tt> section:</p>
+<p>You may find <code class="docutils literal"><span class="pre">public-address</span></code> under <code class="docutils literal"><span class="pre">juju-gui</span></code> section:</p>
 <div class="highlight-python"><div class="highlight"><pre>...
 services:
   juju-gui:
@@ -291,7 +292,7 @@ services:
 <div class="section" id="admin-password">
 <h3>Admin Password<a class="headerlink" href="#admin-password" title="Permalink to this headline">¶</a></h3>
 <p>To login Juju GUI, you need a username and a password.
-When you start a service with <tt class="docutils literal"><span class="pre">juju-quickstart</span></tt>, the username and the
+When you start a service with <code class="docutils literal"><span class="pre">juju-quickstart</span></code>, the username and the
 password will be printed out on your screen. Use them to login.</p>
 <p>An example of output:</p>
 <div class="highlight-python"><div class="highlight"><pre>...
@@ -312,7 +313,7 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
 <div class="section" id="exercise-i">
 <h3>Exercise I<a class="headerlink" href="#exercise-i" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Try to deploy <tt class="docutils literal"><span class="pre">wordpress</span></tt> using Ubuntu Juju.</li>
+<li>Try to deploy <code class="docutils literal"><span class="pre">wordpress</span></code> using Ubuntu Juju.</li>
 </ul>
 </div>
 </div>
@@ -331,7 +332,7 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview_vc.html" class="btn btn-neutral float-right" title="Overview Virtual Cluster (under preparation)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="overview_vc.html" class="btn btn-neutral float-right" title="Overview Virtual Cluster (under preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="openstack_heat.html" class="btn btn-neutral" title="OpenStack Heat"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -347,7 +348,8 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -372,7 +374,7 @@ password: adm-b908bcba211a1234ac73e732b6e3315d
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

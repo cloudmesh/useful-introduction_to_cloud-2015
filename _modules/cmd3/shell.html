@@ -60,8 +60,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -263,7 +264,7 @@
 
 
 
-<div class="viewcode-block" id="get_version"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.get_version">[docs]</a><span class="k">def</span> <span class="nf">get_version</span><span class="p">():</span>
+<div class="viewcode-block" id="get_version"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.get_version">[docs]</a><span class="k">def</span> <span class="nf">get_version</span><span class="p">():</span>
     <span class="c"># import pkg_resources  # part of setuptools</span>
     <span class="c"># self.__version__ = pkg_resources.require(&quot;cmd3&quot;)[0].version</span>
     <span class="kn">import</span> <span class="nn">cmd3</span>
@@ -271,7 +272,7 @@
     <span class="k">return</span> <span class="n">cmd3</span><span class="o">.</span><span class="n">__version__</span>
 
 </div>
-<div class="viewcode-block" id="DynamicCmd"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.DynamicCmd">[docs]</a><span class="k">def</span> <span class="nf">DynamicCmd</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">plugins</span><span class="p">):</span>
+<div class="viewcode-block" id="DynamicCmd"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.DynamicCmd">[docs]</a><span class="k">def</span> <span class="nf">DynamicCmd</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">plugins</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a cmd with the added plugins,</span>
 <span class="sd">    </span>
@@ -290,11 +291,11 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">exec_command</span><span class="p">,</span> <span class="n">plugin_objects</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="make_cmd_class"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.make_cmd_class">[docs]</a><span class="k">def</span> <span class="nf">make_cmd_class</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">bases</span><span class="p">):</span>
+<div class="viewcode-block" id="make_cmd_class"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.make_cmd_class">[docs]</a><span class="k">def</span> <span class="nf">make_cmd_class</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">bases</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">Cmd</span><span class="p">)(</span><span class="n">name</span><span class="p">,</span> <span class="n">bases</span> <span class="o">+</span> <span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">Cmd</span><span class="p">,),</span> <span class="p">{})</span>
 
 </div>
-<div class="viewcode-block" id="get_plugins"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.get_plugins">[docs]</a><span class="k">def</span> <span class="nf">get_plugins</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+<div class="viewcode-block" id="get_plugins"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.get_plugins">[docs]</a><span class="k">def</span> <span class="nf">get_plugins</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    returns the list of plugins from the specified directory</span>
 <span class="sd">    :param directory: directory that contains the plugins. Files starting with _ will be ignored.</span>
@@ -311,7 +312,7 @@
     <span class="k">return</span> <span class="n">plugins</span>
 
 </div>
-<div class="viewcode-block" id="load_plugins"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.load_plugins">[docs]</a><span class="k">def</span> <span class="nf">load_plugins</span><span class="p">(</span><span class="n">classprefix</span><span class="p">,</span> <span class="n">plugin_list</span><span class="p">):</span>
+<div class="viewcode-block" id="load_plugins"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.load_plugins">[docs]</a><span class="k">def</span> <span class="nf">load_plugins</span><span class="p">(</span><span class="n">classprefix</span><span class="p">,</span> <span class="n">plugin_list</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    loads the plugins specified in the list</span>
 <span class="sd">    :param classprefix: the class prefix</span>
@@ -347,7 +348,7 @@
 <span class="c"># DECORATOR: COMMAND</span>
 <span class="c">#</span>
 </div>
-<div class="viewcode-block" id="command"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.command">[docs]</a><span class="k">def</span> <span class="nf">command</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="command"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.command">[docs]</a><span class="k">def</span> <span class="nf">command</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    A decorator to create a function with docopt arguments. It also generates a help function</span>
 <span class="sd">    </span>
@@ -389,7 +390,7 @@
 <span class="c">#</span>
 
 </div>
-<div class="viewcode-block" id="function_command"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.function_command">[docs]</a><span class="k">def</span> <span class="nf">function_command</span><span class="p">(</span><span class="n">main_func</span><span class="p">):</span>
+<div class="viewcode-block" id="function_command"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.function_command">[docs]</a><span class="k">def</span> <span class="nf">function_command</span><span class="p">(</span><span class="n">main_func</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">_function_command</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        A decorator to create a function with docopt arguments. It also generates a help function</span>
@@ -434,7 +435,7 @@
 <span class="c">#</span>
 
 </div>
-<div class="viewcode-block" id="create_file"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.create_file">[docs]</a><span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="viewcode-block" id="create_file"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.create_file">[docs]</a><span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates a new file if the file name does not exists</span>
 <span class="sd">    :param filename: the name of the file</span>
@@ -445,7 +446,7 @@
         <span class="nb">open</span><span class="p">(</span><span class="n">expanded_filename</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="create_dir"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.create_dir">[docs]</a><span class="k">def</span> <span class="nf">create_dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">):</span>
+<div class="viewcode-block" id="create_dir"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.create_dir">[docs]</a><span class="k">def</span> <span class="nf">create_dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    creates a director at the given path</span>
 <span class="sd">    :param dir_path: the directory path</span>
@@ -454,7 +455,7 @@
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="get_plugins_from_dir"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.get_plugins_from_dir">[docs]</a><span class="k">def</span> <span class="nf">get_plugins_from_dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">classbase</span><span class="p">):</span>
+<div class="viewcode-block" id="get_plugins_from_dir"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.get_plugins_from_dir">[docs]</a><span class="k">def</span> <span class="nf">get_plugins_from_dir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">classbase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;dir_path/classbase/plugins&quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">dir_path</span> <span class="o">==</span> <span class="s">&quot;sys&quot;</span><span class="p">:</span>
@@ -484,7 +485,7 @@
         <span class="k">return</span> <span class="p">{</span><span class="s">&quot;dir&quot;</span><span class="p">:</span> <span class="n">dir_path</span><span class="p">,</span> <span class="s">&quot;plugins&quot;</span><span class="p">:</span> <span class="n">dir_plugins</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">:</span> <span class="n">classbase</span><span class="p">}</span>
 
 </div>
-<div class="viewcode-block" id="get_plugins_from_module"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.get_plugins_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_plugins_from_module</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="get_plugins_from_module"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.get_plugins_from_module">[docs]</a><span class="k">def</span> <span class="nf">get_plugins_from_module</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">cmd3_module</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">location</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">cmd3_module</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span>
     <span class="n">package_location</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
@@ -492,17 +493,17 @@
     <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">get_plugins_from_dir</span><span class="p">(</span><span class="n">package_location</span><span class="p">,</span> <span class="n">class_name</span><span class="p">))</span>
 
 </div>
-<div class="viewcode-block" id="plugin_manager"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.plugin_manager">[docs]</a><span class="k">class</span> <span class="nc">plugin_manager</span><span class="p">:</span>
+<div class="viewcode-block" id="plugin_manager"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.plugin_manager">[docs]</a><span class="k">class</span> <span class="nc">plugin_manager</span><span class="p">:</span>
 
     <span class="c"># TODO: verify, used to be just __init__():</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">plugins</span> <span class="o">=</span> <span class="p">[]</span>
 
-<div class="viewcode-block" id="plugin_manager.add"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.plugin_manager.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">):</span>
+<div class="viewcode-block" id="plugin_manager.add"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.plugin_manager.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">):</span>
         <span class="n">plugins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plugin</span><span class="p">)</span>
 
 </div></div>
-<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;cm.</span>
 
 <span class="sd">    Usage:</span>
@@ -627,7 +628,7 @@
         <span class="n">cmd</span><span class="o">.</span><span class="n">cmdloop</span><span class="p">()</span>
 
 </div>
-<div class="viewcode-block" id="is_subcmd"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.is_subcmd">[docs]</a><span class="k">def</span> <span class="nf">is_subcmd</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="is_subcmd"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.is_subcmd">[docs]</a><span class="k">def</span> <span class="nf">is_subcmd</span><span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;if sys.argv[1:] does not match any getopt options,</span>
 <span class="sd">    we simply assume it is a sub command to execute onecmd()&quot;&quot;&quot;</span>
 
@@ -636,7 +637,7 @@
     <span class="k">return</span> <span class="bp">False</span>
 
 </div>
-<div class="viewcode-block" id="cmd3_call"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cmd3.shell.cmd3_call">[docs]</a><span class="k">def</span> <span class="nf">cmd3_call</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="cmd3_call"><a class="viewcode-back" href="../../modules/cmd3/cmd3.html#cloudmesh_cmd3.plugins.cm_shell_admin.cmd3_call">[docs]</a><span class="k">def</span> <span class="nf">cmd3_call</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; calls a function defined with cmd3 arguments the function must be</span>
 <span class="sd">        defined as f(arguments)&quot;&quot;&quot;</span>
     
@@ -682,7 +683,8 @@
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -707,7 +709,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

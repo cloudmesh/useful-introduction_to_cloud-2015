@@ -15,24 +15,6 @@ Prerequisite
 In order to conduct this lesson you should have knowledge of
 
 * `Overview OpenStack <overview_openstack.html>`_
-* :ref:`s-ssh-generate`
-
-  .. important::
-
-     OpenStack uses ssh keys for authentication. You need to have a
-     keypair in order to access any machines use start with openstack.
-
-     Make sure you have a valid key by using the following commands::
-
-       $ file ~/.ssh/id_rsa
-       $ ssh-keygen -yf ~/.ssh/id_rsa >~/pub-key-test
-       $ ssh-keygen -lf ~/.ssh/id_rsa
-       $ ssh-keygen -lf ~/pub-key-test
-
-     If the fingerprints do not match then something is wrong with your keys.
-     Otherwise cleanup with the following command and proceed with this section::
-
-       $ rm ~/pub-key-test
 
 Description
 ----------------------------------------------------------------------
@@ -102,11 +84,6 @@ Launching a New Instance
 Starting a new instance is simple. The following command starts a new
 instance named *$USER-tutorial1* with a Ubuntu 14.04 base image.  The size
 of the machine will be **small**.
-
-First, we need to tell openstack about our ssh key.
-This only needs to be done once::
-
-  $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
 
 .. note::
 

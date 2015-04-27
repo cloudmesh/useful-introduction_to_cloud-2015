@@ -60,8 +60,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -352,26 +353,26 @@
     <span class="c"># ----------------------------------------------------------------------</span>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="cm_config.vmname"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.vmname">[docs]</a>    <span class="k">def</span> <span class="nf">vmname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">vmname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">-</span><span class="si">%04d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;prefix&#39;</span><span class="p">],</span>
                             <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;index&#39;</span><span class="p">]))</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># default cloud</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">default_cloud</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;cloud&#39;</span><span class="p">]</span>
 
     <span class="nd">@default_cloud.setter</span>
-<div class="viewcode-block" id="cm_config.default_cloud"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.default_cloud">[docs]</a>    <span class="k">def</span> <span class="nf">default_cloud</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">default_cloud</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;cloud&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># generalized set/get default</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
 <div class="viewcode-block" id="cm_config.get_default"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.get_default">[docs]</a>    <span class="k">def</span> <span class="nf">get_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cloudname</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        get_default(&#39;india&#39;)</span>
@@ -401,21 +402,21 @@
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;prefix&#39;</span><span class="p">]</span>
 
     <span class="nd">@prefix.setter</span>
-<div class="viewcode-block" id="cm_config.prefix"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.prefix">[docs]</a>    <span class="k">def</span> <span class="nf">prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># default index</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;index&#39;</span><span class="p">]</span>
 
     <span class="nd">@index.setter</span>
-<div class="viewcode-block" id="cm_config.index"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.index">[docs]</a>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</div>
+
 <div class="viewcode-block" id="cm_config.incr"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.incr">[docs]</a>    <span class="k">def</span> <span class="nf">incr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;default&#39;</span><span class="p">][</span><span class="s">&#39;index&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -430,55 +431,55 @@
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;firstname&#39;</span><span class="p">]</span>
 
     <span class="nd">@firstname.setter</span>
-<div class="viewcode-block" id="cm_config.firstname"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.firstname">[docs]</a>    <span class="k">def</span> <span class="nf">firstname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">firstname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;firstname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># profile lastname</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">lastname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;lastname&#39;</span><span class="p">]</span>
 
     <span class="nd">@lastname.setter</span>
-<div class="viewcode-block" id="cm_config.lastname"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.lastname">[docs]</a>    <span class="k">def</span> <span class="nf">lastname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">lastname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;lastname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># profile phone</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">phone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;phone&#39;</span><span class="p">]</span>
 
     <span class="nd">@phone.setter</span>
-<div class="viewcode-block" id="cm_config.phone"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.phone">[docs]</a>    <span class="k">def</span> <span class="nf">phone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">phone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;phone&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># profile email</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;email&#39;</span><span class="p">]</span>
 
     <span class="nd">@email.setter</span>
-<div class="viewcode-block" id="cm_config.email"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.email">[docs]</a>    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
     <span class="c"># profile address</span>
     <span class="c"># ----------------------------------------------------------------------</span>
-</div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">address</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;address&#39;</span><span class="p">]</span>
 
     <span class="nd">@address.setter</span>
-<div class="viewcode-block" id="cm_config.address"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.address">[docs]</a>    <span class="k">def</span> <span class="nf">address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;profile&#39;</span><span class="p">][</span><span class="s">&#39;address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="c"># ----------------------------------------------------------------------</span>
@@ -487,7 +488,7 @@
 
     <span class="c">#</span>
     <span class="c"># warning we can not name a method default</span>
-    <span class="c">#</span></div>
+    <span class="c">#</span>
 <div class="viewcode-block" id="cm_config.active"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.config.html#cloudmesh.config.cm_config.cm_config.active">[docs]</a>    <span class="k">def</span> <span class="nf">active</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="s">&#39;cloudmesh&#39;</span><span class="p">][</span><span class="s">&#39;active&#39;</span><span class="p">]</span>
 </div>
@@ -701,7 +702,8 @@
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -726,7 +728,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

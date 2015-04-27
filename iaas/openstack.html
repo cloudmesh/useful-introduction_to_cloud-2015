@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -150,7 +151,7 @@ clouds. The interface cloudmesh provides is in regards to
 starting multiple virtual machines more convenient. Please
 try out the nova commands so you can appreciate what
 cloudmesh offers. For more information about cloudmesh see
-the Section <a class="reference internal" href="../cloudmesh/index.html#s-cloudmesh"><em>Cloudmesh</em></a>.</p>
+the Section <a class="reference internal" href="../cloudmesh/index.html#s-cloudmesh"><span>Cloudmesh</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -636,7 +637,7 @@ You can upload the image with the glance client like this:</p>
        --file trusty-server-cloudimg-amd64-disk1.img
 </pre></div>
 </div>
-<p>Now your new image is listed on <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></tt> and will be
+<p>Now your new image is listed on <code class="docutils literal"><span class="pre">nova</span> <span class="pre">image-list</span></code> and will be
 available when the status become &#8220;ACTIVE&#8221;.</p>
 </div>
 <div class="section" id="how-to-change-your-password">
@@ -688,13 +689,13 @@ your email here
 <p>If you want to make a change in your rc file (openrc.sh), follow the
 instructions below.</p>
 <ul>
-<li><p class="first">Open a <tt class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></tt> file</p>
+<li><p class="first">Open a <code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code> file</p>
 </li>
-<li><p class="first">Replace your old password to a new password in a <tt class="docutils literal"><span class="pre">OS_PASSWORD</span></tt> key.</p>
+<li><p class="first">Replace your old password to a new password in a <code class="docutils literal"><span class="pre">OS_PASSWORD</span></code> key.</p>
 </li>
-<li><p class="first">Load your rc file <tt class="docutils literal"><span class="pre">source</span> <span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></tt></p>
+<li><p class="first">Load your rc file <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.cloudmesh/clouds/india/juno/openrc.sh</span></code></p>
 </li>
-<li><p class="first">Try nova command line e.g. <tt class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></tt></p>
+<li><p class="first">Try nova command line e.g. <code class="docutils literal"><span class="pre">nova</span> <span class="pre">list</span></code></p>
 </li>
 <li><p class="first">If you see a message like the below, your change is made incorrectly:</p>
 <p>ERROR (Unauthorized): The request you have made requires authentication. (HTTP 401)</p>
@@ -766,7 +767,7 @@ euca-describe-instances
 starting up VMs and stoping them by hand horizon may be a good
 mechanism to manage your Virtual machines.  We have currently the
 following horizon deployments available. For more detail, see Section
-<a class="reference internal" href="../class/lesson/iaas/openstack_horizon.html#openstack-horizion-lesson"><em>OpenStack Horizion Web Dashboard</em></a>.</p>
+<a class="reference internal" href="../class/lesson/iaas/openstack_horizon.html#openstack-horizion-lesson"><span>OpenStack Horizion Web Dashboard</span></a>.</p>
 <p>The passphrase for horizion is on purpose not the same as the portal
 password to introduce an additional layer of security.</p>
 <p>You can locate the passphrase while looking at the openrc file for the
@@ -780,8 +781,8 @@ the openstack module with:</p>
 <div>$ cat ~/.cloudmesh/clouds/india/juno/openrc.sh</div></blockquote>
 <p>and use the password included here. If you reset your password in Horizon you may
 have to update it in this file after you changed it.</p>
-<table border="1" class="docutils">
-<caption>Horizon endpoints</caption>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Horizon endpoints</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -845,7 +846,7 @@ how you can use OpenStack on FutureSystems. This includes the following:</p>
 <td>Using OpenStack command line tools</td>
 <td><p class="first">This lesson explains you how to use the OpenStack Commandline
 tools on the FutureSystems cluster called sierra.futuregrid.org.
-For written material, see section <a class="reference internal" href="#s-openstack"><em>OpenStack on FutureSystems</em></a>.</p>
+For written material, see section <a class="reference internal" href="#s-openstack"><span>OpenStack on FutureSystems</span></a>.</p>
 <div class="last admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">please replace sierra with india.</p>
@@ -857,7 +858,7 @@ For written material, see section <a class="reference internal" href="#s-opensta
 <td>Using OpenStack horizon GUI</td>
 <td><p class="first">This lesson explains you how to use the OpenStack Horizon to
 access the FutureSystems OpenStack IaaS framework on sierra.futuregrid.org.
-For written material, see section <a class="reference internal" href="openstack-havana.html#s-openstack-horizon"><em>Horizon GUI</em></a>.</p>
+For written material, see section <a class="reference internal" href="#s-openstack-horizon"><span>Horizon GUI</span></a>.</p>
 <div class="last admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">please replace sierra with india.</p>
@@ -885,7 +886,7 @@ volume and attach it to the VM. Assign a public ip and log in.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../paas/index.html" class="btn btn-neutral float-right" title="PaaS"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../paas/index.html" class="btn btn-neutral float-right" title="PaaS">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="IaaS"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -901,7 +902,8 @@ volume and attach it to the VM. Assign a public ip and log in.</li>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -926,7 +928,7 @@ volume and attach it to the VM. Assign a public ip and log in.</li>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

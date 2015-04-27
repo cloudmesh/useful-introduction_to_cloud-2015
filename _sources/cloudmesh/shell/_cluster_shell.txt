@@ -5,12 +5,14 @@ Create a Cluster
 .. code:: python
 
     import cloudmesh
+
 Use command cluster to start a cluster of VMs, and each of them can log
 into all others. please refer to:
 
 .. code:: python
 
     print cloudmesh.shell("cluster")
+
 Before start a cluster, please make sure you do the following settings
 with Cloudmesh CLI:
 
@@ -19,31 +21,37 @@ with Cloudmesh CLI:
 .. code:: python
 
     print cloudmesh.shell("cloud select india")
+
 2 activate the cloud, e.g.
 
 .. code:: python
 
     print cloudmesh.shell("cloud on india")
+
 3 set the default key to start VMs, e.g.
 
 .. code:: python
 
     print cloudmesh.shell("key default test-key")
+
 4 set the start name of VMs, which is prefix and index, e.g.
 
 .. code:: python
 
     print cloudmesh.shell("label --prefix=test --id=1")
+
 5 set image of VMs, e.g.
 
 .. code:: python
 
     print cloudmesh.shell("default image --name=futuresystems/ubuntu-14.04")
+
 6 set flavor of VMs, e.g.
 
 .. code:: python
 
     print cloudmesh.shell("default flavor --name=m1.small")
+
 Then you may start the cluster with command 'cluster create' by
 providing the following values:
 
@@ -61,6 +69,7 @@ for example:
 .. code:: python
 
     print cloudmesh.shell("cluster create --count=3 --group=test --ln=ubuntu")
+
 You may also provide cloud name, flavor or image in the command if you
 don't want to pre-set them. For example:
 

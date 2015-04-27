@@ -60,8 +60,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -150,20 +151,20 @@
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </div>
     <span class="nd">@property</span>
-<div class="viewcode-block" id="BaseClassLauncher.status"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.BaseClassLauncher.status">[docs]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; returns string of status &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</div>
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="BaseClassLauncher.error"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.BaseClassLauncher.error">[docs]</a>    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;returns  the late error msg&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</div>
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="BaseClassLauncher.traceback"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.BaseClassLauncher.traceback">[docs]</a>    <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;returns the trackeback&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</div>
+
 <div class="viewcode-block" id="BaseClassLauncher.run"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.BaseClassLauncher.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">recipie</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;installs the chef stuff&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
@@ -233,25 +234,25 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">states_list</span>
 </div>
     <span class="nd">@property</span>
-<div class="viewcode-block" id="SimulatorLauncher.status"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.SimulatorLauncher.status">[docs]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">None</span>
-</div>
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="SimulatorLauncher.error"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.SimulatorLauncher.error">[docs]</a>    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">error</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">None</span>
-</div>
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="SimulatorLauncher.traceback"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.launcher.html#cloudmesh.launcher.cm_launcher.SimulatorLauncher.traceback">[docs]</a>    <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">traceback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">traceback</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">None</span></div></div>
+            <span class="k">return</span> <span class="bp">None</span></div>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">debug = True</span>
 <span class="sd">if debug:</span>
@@ -277,7 +278,8 @@
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -302,7 +304,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

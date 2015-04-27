@@ -62,8 +62,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -154,7 +155,7 @@ installed. Access to them is provided via a Linux Login node for each
 of the clusters on which these services are installed.</p>
 <p>To access the login nodes you need a FG resource account and an SSH
 public key you have uploaded to FutureGrid (this process is described
-in the section about <a class="reference internal" href="../accounts/details.html#s-accounts"><em>Account and Project Management</em></a>. After you are part of a valid
+in the section about <a class="reference internal" href="../accounts/details.html#s-accounts"><span>Account and Project Management</span></a>. After you are part of a valid
 project and have a FutureGrid account, you can log into the FutureGrid
 resources with ssh. Multiple systems are accessed through the follong
 node:</p>
@@ -232,8 +233,8 @@ Modules package you can consult the <a class="reference external" href="http://m
 </pre></div>
 </div>
 <p>The available command are listed in the next table:</p>
-<table border="1" class="docutils">
-<caption>Module commands</caption>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Module commands</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -331,15 +332,15 @@ data. As a testbed, we do not guarantee data loss.</dd>
 <dt><em>Scratch</em> directories:</dt>
 <dd>Scratch directories are located at different locations on the
 systems. To find out more about the file layout, please see the
-section <a class="reference internal" href="storage.html#s-storage"><em>Storage Services</em></a></dd>
+section <a class="reference internal" href="storage.html#s-storage"><span>Storage Services</span></a></dd>
 <dt><em>System software</em> directories:</dt>
 <dd>System software directories are located at <em>/N/soft</em>. System and
 community software are typically installed here. Table
-<a class="reference internal" href="#t-storage-mountpoint"><em>Storage mountpoints on the Clusters</em></a> provides a summary of the various mount
+<a class="reference internal" href="#t-storage-mountpoint"><span>Storage mountpoints on the Clusters</span></a> provides a summary of the various mount
 points.</dd>
 </dl>
-<table border="1" class="docutils" id="t-storage-mountpoint">
-<caption>Storage mountpoints on the Clusters</caption>
+<table border="1" class="docutils" id="id2">
+<span id="t-storage-mountpoint"></span><caption><span class="caption-text">Storage mountpoints on the Clusters</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="9%" />
 <col width="12%" />
@@ -639,8 +640,8 @@ using message passing. For more information about MPI, please visit:</p>
 <p>Several FutureGrid systems support MPI as part of their HPC services.
 An up to date status about it can be retrieved via our <a class="reference external" href="http://inca.futuregrid.org:8080/inca/jsp/status.jsp?suiteNames=HPC,HPC_Tests,Benchmarks&amp;resourceIds=FG_BATCH">Inca
 status pages</a>.</p>
-<table border="1" class="docutils">
-<caption>MPI versions installed on FutureGrid HPC services</caption>
+<table border="1" class="docutils" id="id3">
+<caption><span class="caption-text">MPI versions installed on FutureGrid HPC services</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="17%" />
 <col width="17%" />
@@ -895,7 +896,7 @@ programs choosing the best performing number of servers and cores may
 be dependent on factors such as memory needs, IO access and other
 resource bounded properties. You may have to experiment with the
 parameters. To identify the number of servers and cores available
-please see Tables <a class="reference internal" href="../hardware/indiana.html#t-clusters"><em>Table: Compute Resources</em></a> and <a class="reference internal" href="../hardware/indiana.html#t-clusters-details"><em>Table: Compute Resource Details</em></a>.
+please see Tables <a class="reference internal" href="../hardware/indiana.html#t-clusters"><span>Table: Compute Resources</span></a> and <a class="reference internal" href="../hardware/indiana.html#t-clusters-details"><span>Table: Compute Resource Details</span></a>.
 For example, India has 8 cores per node,
 thus 4 servers would provide you access to 32 processing units.</p>
 <p>Often you may just want to have the stdout and stderr in one file,
@@ -1174,7 +1175,7 @@ shoudl add.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../hardware/index.html" class="btn btn-neutral float-right" title="Hardware"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../hardware/index.html" class="btn btn-neutral float-right" title="Hardware">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="HPC"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1190,7 +1191,8 @@ shoudl add.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -1215,7 +1217,7 @@ shoudl add.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

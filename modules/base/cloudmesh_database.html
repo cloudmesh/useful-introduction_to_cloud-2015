@@ -59,8 +59,9 @@
         
         </a>
 
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -139,61 +140,61 @@
 <span id="cloudmesh-database-dbconn-module"></span><h2>cloudmesh_database.dbconn module<a class="headerlink" href="#module-cloudmesh_database.dbconn" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cloudmesh_database.dbconn.DBConnFactory">
-<em class="property">class </em><tt class="descclassname">cloudmesh_database.dbconn.</tt><tt class="descname">DBConnFactory</tt><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#DBConnFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">cloudmesh_database.dbconn.</code><code class="descname">DBConnFactory</code><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#DBConnFactory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="attribute">
 <dt id="cloudmesh_database.dbconn.DBConnFactory.DBCONFIG">
-<tt class="descname">DBCONFIG</tt><em class="property"> = None</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.DBCONFIG" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DBCONFIG</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.DBCONFIG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cloudmesh_database.dbconn.DBConnFactory.TYPE_MONGOCLIENT">
-<tt class="descname">TYPE_MONGOCLIENT</tt><em class="property"> = 0</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.TYPE_MONGOCLIENT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TYPE_MONGOCLIENT</code><em class="property"> = 0</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.TYPE_MONGOCLIENT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cloudmesh_database.dbconn.DBConnFactory.TYPE_MONGOENGINE">
-<tt class="descname">TYPE_MONGOENGINE</tt><em class="property"> = 1</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.TYPE_MONGOENGINE" title="Permalink to this definition">¶</a></dt>
+<code class="descname">TYPE_MONGOENGINE</code><em class="property"> = 1</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.TYPE_MONGOENGINE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cloudmesh_database.dbconn.DBConnFactory.connectors">
-<tt class="descname">connectors</tt><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.connectors" title="Permalink to this definition">¶</a></dt>
+<code class="descname">connectors</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.connectors" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="cloudmesh_database.dbconn.DBConnFactory.getconn">
-<em class="property">classmethod </em><tt class="descname">getconn</tt><big>(</big><em>dbname</em>, <em>clientType=0</em><big>)</big><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#DBConnFactory.getconn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.getconn" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">getconn</code><span class="sig-paren">(</span><em>dbname</em>, <em>clientType=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#DBConnFactory.getconn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.DBConnFactory.getconn" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cloudmesh_database.dbconn.dbconf">
-<em class="property">class </em><tt class="descclassname">cloudmesh_database.dbconn.</tt><tt class="descname">dbconf</tt><big>(</big><em>filename=None</em><big>)</big><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#dbconf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.dbconf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cloudmesh_base.html#cloudmesh_base.ConfigDict.ConfigDict" title="cloudmesh_base.ConfigDict.ConfigDict"><tt class="xref py py-class docutils literal"><span class="pre">cloudmesh_base.ConfigDict.ConfigDict</span></tt></a></p>
+<em class="property">class </em><code class="descclassname">cloudmesh_database.dbconn.</code><code class="descname">dbconf</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#dbconf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.dbconf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cloudmesh_base.html#cloudmesh_base.ConfigDict.ConfigDict" title="cloudmesh_base.ConfigDict.ConfigDict"><code class="xref py py-class docutils literal"><span class="pre">cloudmesh_base.ConfigDict.ConfigDict</span></code></a></p>
 <p>reads db config info from cloudmesh_database.yaml</p>
 <dl class="attribute">
 <dt id="cloudmesh_database.dbconn.dbconf.filename">
-<tt class="descname">filename</tt><em class="property"> = '/home/badi/.cloudmesh/cloudmesh_database.yaml'</em><a class="headerlink" href="#cloudmesh_database.dbconn.dbconf.filename" title="Permalink to this definition">¶</a></dt>
+<code class="descname">filename</code><em class="property"> = '/home/lee212/.cloudmesh/cloudmesh_database.yaml'</em><a class="headerlink" href="#cloudmesh_database.dbconn.dbconf.filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="cloudmesh_database.dbconn.get_mongo_db">
-<tt class="descclassname">cloudmesh_database.dbconn.</tt><tt class="descname">get_mongo_db</tt><big>(</big><em>mongo_collection</em>, <em>clientType=0</em><big>)</big><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#get_mongo_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.get_mongo_db" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cloudmesh_database.dbconn.</code><code class="descname">get_mongo_db</code><span class="sig-paren">(</span><em>mongo_collection</em>, <em>clientType=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#get_mongo_db"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.get_mongo_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read in the mongo db information from the cloudmesh_server.yaml</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cloudmesh_database.dbconn.get_mongo_dbname_from_collection">
-<tt class="descclassname">cloudmesh_database.dbconn.</tt><tt class="descname">get_mongo_dbname_from_collection</tt><big>(</big><em>mongo_collection</em><big>)</big><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#get_mongo_dbname_from_collection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.get_mongo_dbname_from_collection" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cloudmesh_database.dbconn.</code><code class="descname">get_mongo_dbname_from_collection</code><span class="sig-paren">(</span><em>mongo_collection</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#get_mongo_dbname_from_collection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.get_mongo_dbname_from_collection" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="cloudmesh_database.dbconn.main">
-<tt class="descclassname">cloudmesh_database.dbconn.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.main" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cloudmesh_database.dbconn.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_database/dbconn.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_database.dbconn.main" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -215,7 +216,8 @@
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
@@ -240,7 +242,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
