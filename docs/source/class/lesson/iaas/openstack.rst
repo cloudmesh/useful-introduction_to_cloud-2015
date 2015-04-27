@@ -144,7 +144,7 @@ Create the directory if necessary::
 
 Generate a key for OpenStack::
 
-  $ nova keypair-add $USER-key > ~/.ssh/$PORTALNAME-key
+  $ nova keypair-add $PORTALNAME-key > ~/.ssh/$PORTALNAME-key
 
 Ensure the permissions are set correctly::
 
@@ -162,7 +162,7 @@ Launching a New Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Starting a new instance is simple. The following command starts a new
-instance named *$USER-tutorial1* with a Ubuntu 14.04 base image.  The size
+instance named *$PORTALNAME-tutorial1* with a Ubuntu 14.04 base image.  The size
 of the machine will be **small**.
 
 
@@ -170,7 +170,7 @@ Boot the instance using the following command:
 
 ::
 
-  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $USER-key $USER-tutorial1
+  $ nova boot --flavor m1.small --image futuresystems/ubuntu-14.04 --key_name $PORTALNAME-key $PORTALNAME-tutorial1
 
 
 Here are some explanations for the arguments.
@@ -183,7 +183,7 @@ Here are some explanations for the arguments.
 * ``--key_name`` is a key name to use for SSH connection. This key
   should be registered on Nova Compute. Try ``nova keypair-list`` to
   see registered keys.
-* ``$USER-tutorial1`` is a name for your vm instance.
+* ``$PORTALNAME-tutorial1`` is a name for your vm instance.
 
 
 Some useful ``nova`` subcommands are:
@@ -226,7 +226,7 @@ Now that the ip has been created, associate it with our instance::
   usage: nova floating-ip-associate [--fixed-address <fixed_address>]
                                     <server> <address>
 
-  $ nova floating-ip-associate $USER-tutorial1 149.165.158.107
+  $ nova floating-ip-associate $PORTALNAME-tutorial1 149.165.158.107
 
 
 Access to VM Instance
@@ -234,7 +234,7 @@ Access to VM Instance
 
 * We login to the VM instance we just created using SSH.::
 
-    $ ssh -i ~/.ssh/$USER-key ubuntu@[IP ADDRESS]
+    $ ssh -i ~/.ssh/$PORTALNAME-key ubuntu@[IP ADDRESS]
 
 * To find out the ``[IP ADDRESS]``, use ``nova list`` command::
 
@@ -242,14 +242,14 @@ Access to VM Instance
           +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
           | ID                                   | Name                  | Status | Task State | Power State | Networks                             |
           +--------------------------------------+-----------------------+--------+------------+-------------+--------------------------------------+
-          | 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $USER-tutorial1       | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.107 |
+          | 7ea44f58-ddd8-49b1-b655-4aa00b819d0c | $PORTALNAME-tutorial1 | ACTIVE | -          | Running     | int-net=10.23.2.182, 149.165.158.107 |
           ...
 
 * Use the internal IP address followed by ``int-net=`` in your VM instance. In
   this example we have ``10.23.2.182``. You **have to use your IP address** to
   gain access. So now, we run::
     
-    $ ssh -i ~/.ssh/$USER-key ubuntu@10.23.2.182
+    $ ssh -i ~/.ssh/$PORTALNAME-key ubuntu@10.23.2.182
 
 **REPLACE** the IP address ``10.23.2.182`` with one you have.
 
@@ -279,7 +279,7 @@ You expect to see welcome message of your Ubuntu 14.04 VM instance.
   0 updates are security updates.
 
   Last login: Mon Apr  6 17:42:15 2015 from 149.165.159.252
-  ubuntu@$USER-tutorial1:~$ 
+  ubuntu@$PORTALNAME-tutorial1:~$ 
 
 Now you are on the VM instance.
 
@@ -290,7 +290,7 @@ You can delete your instance with:
 
 ::
 
-  $ nova delete $USER-tutorial1
+  $ nova delete $PORTALNAME-tutorial1
 
 Returning Floating IP Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -316,7 +316,7 @@ Lab - OpenStack - Launch an Instance
 
 * Launch a new medium instance with a CentOS image using a different
   key (call it ``openstack-ex1-key``). Name the CentOS instance
-  ``$USER-tutorial1-ex1`` and make sure both instances are running using the
+  ``$PORTALNAME-tutorial1-ex1`` and make sure both instances are running using the
   ``nova list`` command.
 * Allocate a floating ip address to the instance that you just launched.
 
@@ -352,7 +352,7 @@ can download cloud images from Ubuntu Cloud.
 ::
 
   $ glance image-create \
-  --name $PROJECT/$USER/myimages/ubuntu-14.04 \
+  --name $PROJECT/$PORTALNAME/myimages/ubuntu-14.04 \
   --disk-format qcow2 \
   --container-format bare \
   --file trusty-server-cloudimg-amd64-disk1.img
