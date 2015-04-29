@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Apache Hadoop YARN &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Apache Hadoop YARN</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../../_sources/class/lesson/cluster/yarn.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="apache-hadoop-yarn">
+<h1>Apache Hadoop YARN<a class="headerlink" href="#apache-hadoop-yarn" title="Permalink to this headline">¶</a></h1>
+<p>YARN is a framework for job scheduling and cluster resource management to
+support Hadoop 2 with generic applications. Upgraded Hadoop is not just simply
+tied with a MapReduce application for data processing. It can support MPI
+(mpich2-yarn), graph processing(Apache Giraph, Google Pregel) in a Hadoop YARN
+cluster.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Duration 1 hour</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Apache Software Foundation (ASF) defines YARN as a next generation of MapReduce
+or MapReduce 2.0 (MRv2). The main change of MRv2 is the resource management
+from the programming model of MapReduce. The MRv2 consists of a single master
+ResourceManager (RM), one slave NodeManager (NM) per cluster-node, and
+ApplicationMaster (AM) per application. Under YARN, MapReduce is independent as
+it behaves like a one type of available application running in a YARN
+container. YARN is an abbreviation for Yet Another Resource Negotiator which
+was addressed in January, 2008 from
+<a class="reference external" href="https://issues.apache.org/jira/browse/MAPREDUCE-279">https://issues.apache.org/jira/browse/MAPREDUCE-279</a></p>
+</div>
+<div class="section" id="hadoop-v1">
+<h2>Hadoop v1<a class="headerlink" href="#hadoop-v1" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="../../../images/lesson/mapreduce1_architecture.pngHadoopv1Architecture(imagesource:http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)" src="../../../images/lesson/mapreduce1_architecture.pngHadoopv1Architecture(imagesource:http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)" />
+</div>
+<ul class="simple">
+<li>JobTracker from MR1 splits up two parts: RM, AM(job scheduling/monitoring).</li>
+<li>ResourceManager (RM) consists of Scheduler, ApplicationsManager (ASM).</li>
+<li>ASM is to manage each MapReduce job and terminated when the job completes.</li>
+<li>JobHistoryServer records completed jobs.</li>
+</ul>
+</div>
+<div class="section" id="hadoop-v2">
+<h2>Hadoop v2<a class="headerlink" href="#hadoop-v2" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="../../../images/lesson/mapreduce1_architecture.pngHadoopv2Architecture(imagesource:http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)" src="../../../images/lesson/mapreduce1_architecture.pngHadoopv2Architecture(imagesource:http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)" />
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>YARN configuration options, which go in yarn-site.xml</li>
+<li>MapReduce configuration options, which go in mapred-site.xml.</li>
+</ul>
+</div>
+<div class="section" id="benefits-of-changing-mr1-to-mr2">
+<h2>Benefits of changing MR1 to MR2<a class="headerlink" href="#benefits-of-changing-mr1-to-mr2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>by breaking up the JobTracker into a few different services, it avoids many
+of the scaling issues facing MR1.</li>
+<li>Most important, it makes it possible to run frameworks other than MapReduce
+on a Hadoop cluster. For example, Impala can also run on YARN and share
+resources on a cluster with MapReduce.</li>
+</ul>
+</div>
+<div class="section" id="resourcemanager-rm">
+<h2>ResourceManager (RM)<a class="headerlink" href="#resourcemanager-rm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scheduler">
+<h3>Scheduler<a class="headerlink" href="#scheduler" title="Permalink to this headline">¶</a></h3>
+<p>The Scheduler is responsible for allocating resources to the various running
+applications subject to familiar constraints of capacities, queues etc.  The
+scheduler is responsible for deciding which tasks get to run where and when to
+run them.  Capacity - Allocates resources to pools, with FIFO scheduling within
+each pool. The CapacityScheduler supports hierarchical queues to allow for more
+predictable sharing of cluster resources Fair - Allocates resources to weighted
+pools, with fair sharing within each pool.  llocates resources based on arrival
+time.</p>
+</div>
+<div class="section" id="applicationsmanager-asm">
+<h3>ApplicationsManager (ASM)<a class="headerlink" href="#applicationsmanager-asm" title="Permalink to this headline">¶</a></h3>
+<p>The second part of the Resource Manager, called the Application Manager,
+receives job submissions and manages launching the Application Master. The
+Application Manager handles failures of the Application Master, while the
+Application Master handles failures of job containers. The Application Master
+then is really an application-specific container charged with management of
+containers running the actual tasks of the job.</p>
+<p>Resource Container  memory, cpu, disk, network etc.</p>
+<div class="section" id="map-reduce-schedulers">
+<h4>Map-Reduce schedulers<a class="headerlink" href="#map-reduce-schedulers" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>CapacityScheduler</li>
+<li>FairScheduler</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="nodemanager-nm">
+<h2>NodeManager (NM)<a class="headerlink" href="#nodemanager-nm" title="Permalink to this headline">¶</a></h2>
+<p>NodeManager (NM) is a YARN service that manages resources and deployment on a
+cluster node. NM is separated from TaskTracker from MR1 and now NM is
+responsible for launching containers, each of which can house a map or reduce
+task.  NM is YARN’s per-node agent, and takes care of the individual compute
+nodes in a Hadoop cluster. This includes keeping up-to date with the
+ResourceManager (RM), overseeing containers’ life-cycle management; monitoring
+resource usage (memory, CPU) of individual containers, tracking node-health,
+log’s management and auxiliary services which may be exploited by different
+YARN applications.</p>
+<ul class="simple">
+<li>Main task: Job life-cycle management</li>
+</ul>
+</div>
+<div class="section" id="applicationmaster-am">
+<h2>ApplicationMaster (AM)<a class="headerlink" href="#applicationmaster-am" title="Permalink to this headline">¶</a></h2>
+<p>ApplicationMaster (AM) is for executing shell commands on a set of launched
+containers using the YARN framework. AM is started on a container by the
+ResourceManager&#8217;s launcher. The first thing that AM needs to do is to connect
+and register itself with the ResourceManager (RM). The registration sets up
+information within RM regarding what host:port AM is listening on to provide
+any form of functionality to a client as well as a tracking url that a client
+can use to keep track of status/job history if needed.  AM needs to send a
+heartbeat to RM at regular intervals to inform RM that it is up and alive.</p>
+<p><a class="reference external" href="https://hadoop.apache.org/docs/current/api/org/apache/hadoop/yarn/applications/distributedshell/ApplicationMaster.html">https://hadoop.apache.org/docs/current/api/org/apache/hadoop/yarn/applications/distributedshell/ApplicationMaster.html</a></p>
+<ul class="simple">
+<li>Main task: job scheduling, monitoring on a container</li>
+</ul>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.sics.se/~amir/files/download/dic/2013%20-%20Apache%20Hadoop%20YARN:%20Yet%20Another%20Resource%20Negotiator%20(SoCC).pdf">Vavilapalli, Vinod Kumar, et al. &#8220;Apache hadoop yarn: Yet another resource
+negotiator.&#8221; Proceedings of the 4th annual Symposium on Cloud Computing. ACM,
+2013.</a></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
