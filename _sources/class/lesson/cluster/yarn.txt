@@ -26,6 +26,7 @@ Hadoop v1
 -------------------------------------------------------------------------------
 
 .. figure:: ../../../images/lesson/mapreduce1_architecture.png
+
    Hadoop v1 Architecture (image source: http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)
 
 * JobTracker from MR1 splits up two parts: RM, AM(job scheduling/monitoring).
@@ -37,6 +38,7 @@ Hadoop v2
 -------------------------------------------------------------------------------
 
 .. figure:: ../../../images/lesson/mapreduce1_architecture.png
+
    Hadoop v2 Architecture (image source: http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)
 
 Configuration
