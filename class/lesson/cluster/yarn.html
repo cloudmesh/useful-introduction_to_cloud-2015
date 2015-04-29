@@ -158,7 +158,7 @@ was addressed in January, 2008 from
 <h2>Hadoop v1<a class="headerlink" href="#hadoop-v1" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id1">
 <img alt="../../../_images/mapreduce1_architecture.png" src="../../../_images/mapreduce1_architecture.png" />
-<p class="caption"><span class="caption-text">Hadoop v1 Architecture (image source: <a class="reference external" href="http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/">http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/</a>)</span></p>
+<p class="caption"><span class="caption-text">Figure1. Hadoop v1 Architecture (image source: <a class="reference external" href="http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/">http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/</a>)</span></p>
 </div>
 <ul class="simple">
 <li>JobTracker from MR1 splits up two parts: RM, AM(job scheduling/monitoring).</li>
@@ -170,8 +170,8 @@ was addressed in January, 2008 from
 <div class="section" id="hadoop-v2">
 <h2>Hadoop v2<a class="headerlink" href="#hadoop-v2" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id2">
-<img alt="../../../_images/mapreduce1_architecture.png" src="../../../_images/mapreduce1_architecture.png" />
-<p class="caption"><span class="caption-text">Hadoop v2 Architecture (image source: <a class="reference external" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a>)</span></p>
+<img alt="../../../_images/mapreduce2_architecture.png" src="../../../_images/mapreduce2_architecture.png" />
+<p class="caption"><span class="caption-text">Figure2. Hadoop v2 Architecture (image source: <a class="reference external" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a>)</span></p>
 </div>
 </div>
 <div class="section" id="configuration">
@@ -193,6 +193,11 @@ resources on a cluster with MapReduce.</li>
 </div>
 <div class="section" id="resourcemanager-rm">
 <h2>ResourceManager (RM)<a class="headerlink" href="#resourcemanager-rm" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<img alt="../../../_images/mapreduce_resourcemanager.gif" src="../../../_images/mapreduce_resourcemanager.gif" />
+<p class="caption"><span class="caption-text">Figure3. ResourceManager Components
+(image source: <a class="reference external" href="http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/">http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/</a>)</span></p>
+</div>
 <div class="section" id="scheduler">
 <h3>Scheduler<a class="headerlink" href="#scheduler" title="Permalink to this headline">¶</a></h3>
 <p>The Scheduler is responsible for allocating resources to the various running
@@ -224,6 +229,11 @@ containers running the actual tasks of the job.</p>
 </div>
 <div class="section" id="nodemanager-nm">
 <h2>NodeManager (NM)<a class="headerlink" href="#nodemanager-nm" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id4">
+<img alt="class/lesson/cluster/../../../images/lesson/mapreduce_nodemanager.gif" src="class/lesson/cluster/../../../images/lesson/mapreduce_nodemanager.gif" />
+<p class="caption"><span class="caption-text">Figure4. NodeManager Components
+(image source: <a class="reference external" href="http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/">http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/</a>)</span></p>
+</div>
 <p>NodeManager (NM) is a YARN service that manages resources and deployment on a
 cluster node. NM is separated from TaskTracker from MR1 and now NM is
 responsible for launching containers, each of which can house a map or reduce
@@ -257,6 +267,25 @@ heartbeat to RM at regular intervals to inform RM that it is up and alive.</p>
 <p><a class="reference external" href="https://www.sics.se/~amir/files/download/dic/2013%20-%20Apache%20Hadoop%20YARN:%20Yet%20Another%20Resource%20Negotiator%20(SoCC).pdf">Vavilapalli, Vinod Kumar, et al. &#8220;Apache hadoop yarn: Yet another resource
 negotiator.&#8221; Proceedings of the 4th annual Symposium on Cloud Computing. ACM,
 2013.</a></p>
+</div>
+<div class="section" id="qnas">
+<h2>QnAs<a class="headerlink" href="#qnas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><ol class="first upperalpha" start="17">
+<li>What if a cluster node goes down for any reason? How resources are relocated?</li>
+</ol>
+</li>
+<li>A. When a node goes down, the corresponding containers including
+ApplicationMaster (AM) also get terminated. ResourceManager automatically
+restarts AM based on application policies and notifies the corresponding AMs to
+containers so that they can take further actions e.g. retry, kill application.</li>
+<li>Q. Is there a monitoring toolkit for resource allocation, cluster node, or
+entire cluster?</li>
+<li>A. There are several ways to monitor resource allocation using the client
+side RPC calls. Similar APIs exist for per node usage, cluster usage. See
+getApplicationReport(), getClusterNodes() and getClusterMetrics() APIs at
+<a class="reference external" href="http://hadoop.apache.org/docs/stable/api/org/apache/hadoop/yarn/api/ApplicationClientProtocol.html">http://hadoop.apache.org/docs/stable/api/org/apache/hadoop/yarn/api/ApplicationClientProtocol.html</a>.</li>
+</ul>
 </div>
 </div>
 
