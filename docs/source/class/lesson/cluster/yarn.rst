@@ -27,7 +27,7 @@ Hadoop v1
 
 .. figure:: ../../../images/lesson/mapreduce1_architecture.png
 
-   Hadoop v1 Architecture (image source: http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)
+   Figure1. Hadoop v1 Architecture (image source: http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)
 
 * JobTracker from MR1 splits up two parts: RM, AM(job scheduling/monitoring).
 * ResourceManager (RM) consists of Scheduler, ApplicationsManager (ASM).
@@ -37,9 +37,9 @@ Hadoop v1
 Hadoop v2
 -------------------------------------------------------------------------------
 
-.. figure:: ../../../images/lesson/mapreduce1_architecture.png
+.. figure:: ../../../images/lesson/mapreduce2_architecture.png
 
-   Hadoop v2 Architecture (image source: http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)
+   Figure2. Hadoop v2 Architecture (image source: http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)
 
 Configuration
 -------------------------------------------------------------------------------
@@ -59,6 +59,11 @@ Benefits of changing MR1 to MR2
 
 ResourceManager (RM)
 -------------------------------------------------------------------------------
+
+.. figure:: ../../../images/lesson/mapreduce_resourcemanager.gif
+
+   Figure3. ResourceManager Components
+   (image source: http://hortonworks.com/blog/apache-hadoop-yarn-resourcemanager/)
 
 Scheduler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,6 +97,12 @@ Map-Reduce schedulers
 
 NodeManager (NM)
 -------------------------------------------------------------------------------
+
+.. figure:: ../../../images/lesson/mapreduce_nodemanager.gif
+
+   Figure4. NodeManager Components
+   (image source: http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/)
+
 
 NodeManager (NM) is a YARN service that manages resources and deployment on a
 cluster node. NM is separated from TaskTracker from MR1 and now NM is
@@ -128,4 +139,20 @@ Citation
 negotiator." Proceedings of the 4th annual Symposium on Cloud Computing. ACM,
 2013.
 <https://www.sics.se/~amir/files/download/dic/2013%20-%20Apache%20Hadoop%20YARN:%20Yet%20Another%20Resource%20Negotiator%20(SoCC).pdf>`_
+
+QnAs
+-------------------------------------------------------------------------------
+
+* Q. What if a cluster node goes down for any reason? How resources are relocated?
+* A. When a node goes down, the corresponding containers including
+  ApplicationMaster (AM) also get terminated. ResourceManager automatically
+  restarts AM based on application policies and notifies the corresponding AMs to
+  containers so that they can take further actions e.g. retry, kill application.
+
+* Q. Is there a monitoring toolkit for resource allocation, cluster node, or
+  entire cluster?
+* A. There are several ways to monitor resource allocation using the client
+  side RPC calls. Similar APIs exist for per node usage, cluster usage. See
+  getApplicationReport(), getClusterNodes() and getClusterMetrics() APIs at
+  http://hadoop.apache.org/docs/stable/api/org/apache/hadoop/yarn/api/ApplicationClientProtocol.html.
 
