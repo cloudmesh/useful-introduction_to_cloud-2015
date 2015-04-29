@@ -98,7 +98,7 @@ Map-Reduce schedulers
 NodeManager (NM)
 -------------------------------------------------------------------------------
 
-.. figure:: ../../../images/lesson/mapreduce_nodemanager.gif
+.. figure:: ../../../images/lesson/mapreduce_nodemanager.png
 
    Figure4. NodeManager Components
    (image source: http://hortonworks.com/blog/apache-hadoop-yarn-nodemanager/)
