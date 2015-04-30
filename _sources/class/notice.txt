@@ -11,24 +11,27 @@ Notice
 Change of OpenStack Group
 -------------------------------------------------------------------------------
 
+* Subject: Change of fg465 tenant to fg465a, fg465b, fg465c
 * Date affected by: April, 30th 2015
 * Affected Group: Entire BDOSSP Class Spring 2015
+* Reason: To avoid a system issue (probably OpenStack bug) on a single large tenant
 * Actions to be taken: Nothing but cautions on your account
 
 Description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ``fg465`` tenant (group) will be replaced with multi-groups in India OpenStack
 Juno. The accounts to the class will be split up into three groups: ``fg465a``,
-``fg465b`` and ``fg465c``. After this change, you may experience with:
+``fg465b`` and ``fg465c``. After this change, you unfortunately experience
+with:
 
 * No access to VM instances on fg465
 * No access to VM images on fg465
 * Re-configuration of Cloudmesh (or re-installation)
 * Multi groups in Horizon (OpenStack GUI)
 
-*This change will be made internally so you may not notice.*
+*This change will be made transparent to you so you may not notice.*
 
-To see your group, run::
+We have assigned each student to a group, to see your group, run::
 
   source ~/.cloudmesh/clouds/india/juno/openrc.sh
   echo $OS_TENANT_NAME
