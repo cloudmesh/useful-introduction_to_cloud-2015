@@ -187,11 +187,10 @@ nova list
 </div>
 <div class="section" id="details-of-the-change">
 <h3><a class="toc-backref" href="#id5">Details of the Change</a><a class="headerlink" href="#details-of-the-change" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/openrc.sh</span></code>
-* <code class="docutils literal"><span class="pre">OS_TENANT_NAME=fg465</span></code> will be replaced with either <code class="docutils literal"><span class="pre">fg465a</span></code>, <code class="docutils literal"><span class="pre">fg465b</span></code></p>
-<blockquote>
-<div>or <code class="docutils literal"><span class="pre">fg465c</span></code></div></blockquote>
+<p><code class="docutils literal"><span class="pre">~/.cloudmesh/clouds/india/openrc.sh</span></code></p>
 <ul class="simple">
+<li><code class="docutils literal"><span class="pre">OS_TENANT_NAME=fg465</span></code> will be replaced with either <code class="docutils literal"><span class="pre">fg465a</span></code>, <code class="docutils literal"><span class="pre">fg465b</span></code>
+or <code class="docutils literal"><span class="pre">fg465c</span></code></li>
 <li>1/3 students will go into fg465a</li>
 <li>1/3 students will go into fg465b</li>
 <li>Rest students will go into fg465c</li>
@@ -210,8 +209,10 @@ nova list
 <h2><a class="toc-backref" href="#id6">Contact</a><a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
 <p>We will try to make this change invisible but if you have any issues, please
 inform us.</p>
-<p>TA Email : <a class="reference external" href="mailto:coursehelp&#37;&#52;&#48;futuresystems&#46;org">coursehelp<span>&#64;</span>futuresystems<span>&#46;</span>org</a>
-Discussion Email: <a class="reference external" href="mailto:DiscussionBDOSSP37186&#37;&#52;&#48;futuresystems&#46;org">DiscussionBDOSSP37186<span>&#64;</span>futuresystems<span>&#46;</span>org</a></p>
+<ul class="simple">
+<li>TA Email : <a class="reference external" href="mailto:coursehelp&#37;&#52;&#48;futuresystems&#46;org">coursehelp<span>&#64;</span>futuresystems<span>&#46;</span>org</a></li>
+<li>Discussion Email: <a class="reference external" href="mailto:DiscussionBDOSSP37186&#37;&#52;&#48;futuresystems&#46;org">DiscussionBDOSSP37186<span>&#64;</span>futuresystems<span>&#46;</span>org</a></li>
+</ul>
 </div>
 <div class="section" id="faqs">
 <h2><a class="toc-backref" href="#id7">FAQs</a><a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h2>
@@ -229,6 +230,9 @@ Discussion Email: <a class="reference external" href="mailto:DiscussionBDOSSP371
 <img alt="../_images/horizon_changing_groups.png" src="../_images/horizon_changing_groups.png" />
 <p class="caption"><span class="caption-text">Changing Group in Horizon</span></p>
 </div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <ul class="simple">
 <li><ol class="first upperalpha" start="17">
 <li>I have data to be saved on fg465. How can I make a backup?</li>
@@ -236,6 +240,11 @@ Discussion Email: <a class="reference external" href="mailto:DiscussionBDOSSP371
 </li>
 <li>A. If you can get access to your VM instance, try to make a copy of your
 data.  And move to a new instance.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
 <li><ol class="first upperalpha" start="17">
 <li>Can I use my keypairs?</li>
 </ol>
@@ -244,6 +253,11 @@ data.  And move to a new instance.</li>
 <li>You will continue use the keypairs registered on fg465 in your new group.</li>
 </ol>
 </li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
 <li><ol class="first upperalpha" start="17">
 <li>How do I know which group I am in?</li>
 </ol>
@@ -252,21 +266,41 @@ data.  And move to a new instance.</li>
 <li><code class="docutils literal"><span class="pre">echo</span> <span class="pre">$OS_TENANT_NAME</span></code> in a ssh terminal.</li>
 </ol>
 </li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
 <li>Q. I see <code class="docutils literal"><span class="pre">ERROR</span> <span class="pre">(Unauthorized):</span> <span class="pre">The</span> <span class="pre">request</span> <span class="pre">you</span> <span class="pre">have</span> <span class="pre">made</span> <span class="pre">requires</span>
 <span class="pre">authentication.</span> <span class="pre">(HTTP</span> <span class="pre">401)</span></code> message.</li>
 <li>A. You have either a broken credential or in a wrong project group. Please
 contact us.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
 <li>Q. I see <code class="docutils literal"><span class="pre">ERROR</span> <span class="pre">(CommandError):</span> <span class="pre">You</span> <span class="pre">must</span> <span class="pre">provide</span> <span class="pre">an</span> <span class="pre">auth</span> <span class="pre">url</span> <span class="pre">via</span> <span class="pre">either</span>
 <span class="pre">--os-auth-url</span> <span class="pre">or</span> <span class="pre">env[OS_AUTH_URL]</span> <span class="pre">or</span> <span class="pre">specify</span> <span class="pre">an</span> <span class="pre">auth_system</span> <span class="pre">which</span> <span class="pre">defines</span> <span class="pre">a</span>
 <span class="pre">default</span> <span class="pre">url</span> <span class="pre">with</span> <span class="pre">--os-auth-system</span> <span class="pre">or</span> <span class="pre">env[OS_AUTH_SYSTEM]</span></code> message.</li>
 <li>A. You have not enabled your credential. Run <code class="docutils literal"><span class="pre">source</span>
 <span class="pre">~/.cloudmesh/clouds/india/openrc.sh</span></code></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
 <li><ol class="first upperalpha" start="17">
 <li>I see <code class="docutils literal"><span class="pre">Permission</span> <span class="pre">denied</span> <span class="pre">(publickey).</span></code> message on my ssh command.</li>
 </ol>
 </li>
 <li>A. It is related to your ssh keypair, not related to this change of
 <code class="docutils literal"><span class="pre">fg465</span></code>. Please confirm you have a right key pair with your VM instance.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
 <li>Q. I see <code class="docutils literal"><span class="pre">ssh:</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">host</span> <span class="pre">xx.xx.xx.xx</span> <span class="pre">port</span> <span class="pre">22:</span> <span class="pre">No</span> <span class="pre">route</span> <span class="pre">to</span> <span class="pre">host</span></code>
 message.</li>
 <li>A. It is because that your VM is not ready or you&#8217;re trying to connect a

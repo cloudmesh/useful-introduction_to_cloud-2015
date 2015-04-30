@@ -51,6 +51,7 @@ Details of the Change
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``~/.cloudmesh/clouds/india/openrc.sh``
+
 * ``OS_TENANT_NAME=fg465`` will be replaced with either ``fg465a``, ``fg465b``
   or ``fg465c``
 
@@ -68,8 +69,8 @@ Contact
 We will try to make this change invisible but if you have any issues, please
 inform us.
 
-TA Email : coursehelp@futuresystems.org
-Discussion Email: DiscussionBDOSSP37186@futuresystems.org
+* TA Email : coursehelp@futuresystems.org
+* Discussion Email: DiscussionBDOSSP37186@futuresystems.org
 
 FAQs
 -------------------------------------------------------------------------------
@@ -81,24 +82,32 @@ FAQs
 
    Changing Group in Horizon
 
+|  
 
 * Q. I have data to be saved on fg465. How can I make a backup?
 * A. If you can get access to your VM instance, try to make a copy of your
   data.  And move to a new instance.
 
+| 
+
 
 * Q. Can I use my keypairs?
 * A. You will continue use the keypairs registered on fg465 in your new group.
 
+|  
 
 * Q. How do I know which group I am in?
 * A. ``echo $OS_TENANT_NAME`` in a ssh terminal.
+
+|  
+
 
 * Q. I see ``ERROR (Unauthorized): The request you have made requires
   authentication. (HTTP 401)`` message.
 * A. You have either a broken credential or in a wrong project group. Please
   contact us.
 
+|  
 
 * Q. I see ``ERROR (CommandError): You must provide an auth url via either
   --os-auth-url or env[OS_AUTH_URL] or specify an auth_system which defines a
@@ -106,11 +115,13 @@ FAQs
 * A. You have not enabled your credential. Run ``source
   ~/.cloudmesh/clouds/india/openrc.sh``
 
+|  
 
 * Q. I see ``Permission denied (publickey).`` message on my ssh command.
 * A. It is related to your ssh keypair, not related to this change of
   ``fg465``. Please confirm you have a right key pair with your VM instance.
 
+| 
 
 * Q. I see ``ssh: connect to host xx.xx.xx.xx port 22: No route to host``
   message.
