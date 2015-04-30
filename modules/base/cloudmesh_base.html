@@ -815,6 +815,11 @@ format is specified as an argument.</p>
 <div class="section" id="module-cloudmesh_base.locations">
 <span id="cloudmesh-base-locations-module"></span><h2>cloudmesh_base.locations module<a class="headerlink" href="#module-cloudmesh_base.locations" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
+<dt id="cloudmesh_base.locations.config_dir_setup">
+<code class="descclassname">cloudmesh_base.locations.</code><code class="descname">config_dir_setup</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/locations.html#config_dir_setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.locations.config_dir_setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="cloudmesh_base.locations.config_file">
 <code class="descclassname">cloudmesh_base.locations.</code><code class="descname">config_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/locations.html#config_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.locations.config_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>The location of the config file: ~/.cloudmesh/filename. ~ will be expanded
@@ -1081,7 +1086,7 @@ The order is specified by the key names of the dict.</td>
 
 <dl class="function">
 <dt id="cloudmesh_base.tables.dict_csv_printer">
-<code class="descclassname">cloudmesh_base.tables.</code><code class="descname">dict_csv_printer</code><span class="sig-paren">(</span><em>d</em>, <em>order=None</em>, <em>header=None</em>, <em>output='table'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/tables.html#dict_csv_printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.tables.dict_csv_printer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cloudmesh_base.tables.</code><code class="descname">dict_csv_printer</code><span class="sig-paren">(</span><em>d</em>, <em>order=None</em>, <em>header=None</em>, <em>output='table'</em>, <em>sort_keys=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/tables.html#dict_csv_printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.tables.dict_csv_printer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -1100,12 +1105,12 @@ The order is specified by the key names of the dict.</td>
 
 <dl class="function">
 <dt id="cloudmesh_base.tables.dict_printer">
-<code class="descclassname">cloudmesh_base.tables.</code><code class="descname">dict_printer</code><span class="sig-paren">(</span><em>d</em>, <em>order=None</em>, <em>header=None</em>, <em>output='table'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/tables.html#dict_printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.tables.dict_printer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cloudmesh_base.tables.</code><code class="descname">dict_printer</code><span class="sig-paren">(</span><em>d</em>, <em>order=None</em>, <em>header=None</em>, <em>output='table'</em>, <em>sort_keys=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/tables.html#dict_printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.tables.dict_printer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="cloudmesh_base.tables.dict_table_printer">
-<code class="descclassname">cloudmesh_base.tables.</code><code class="descname">dict_table_printer</code><span class="sig-paren">(</span><em>d</em>, <em>order=None</em>, <em>header=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/tables.html#dict_table_printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.tables.dict_table_printer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cloudmesh_base.tables.</code><code class="descname">dict_table_printer</code><span class="sig-paren">(</span><em>d</em>, <em>order=None</em>, <em>header=None</em>, <em>sort_keys=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_base/tables.html#dict_table_printer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_base.tables.dict_table_printer" title="Permalink to this definition">¶</a></dt>
 <dd><p>prints a pretty table from an dict of dicts
 :param d: A a dict with dicts of the same type.</p>
 <blockquote>

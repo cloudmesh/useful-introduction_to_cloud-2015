@@ -69,8 +69,8 @@ Termination of ``fg465`` **IMPORTANT**
 Contact
 -------------------------------------------------------------------------------
 
-We will try to make this change invisible but if you have any issues, please
-inform us.
+We will try to make this change transparent to you but if you have any issues,
+please inform us.
 
 * TA Email : coursehelp@futuresystems.org
 * Discussion Email: DiscussionBDOSSP37186@futuresystems.org
