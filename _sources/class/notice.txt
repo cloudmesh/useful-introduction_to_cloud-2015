@@ -65,8 +65,8 @@ Termination of ``fg465`` **IMPORTANT**
 Contact
 -------------------------------------------------------------------------------
 
-We will try to make this change invisible but if you have any issues, please i
-nform us.
+We will try to make this change invisible but if you have any issues, please
+inform us.
 
 TA Email : coursehelp@futuresystems.org
 Discussion Email: DiscussionBDOSSP37186@futuresystems.org
@@ -81,12 +81,15 @@ FAQs
 
    Changing Group in Horizon
 
+
 * Q. I have data to be saved on fg465. How can I make a backup?
-* A. If you can get access to your VM instance, try to make a copy of your data.
-     And move to a new instance.
+* A. If you can get access to your VM instance, try to make a copy of your
+  data.  And move to a new instance.
+
 
 * Q. Can I use my keypairs?
 * A. You will continue use the keypairs registered on fg465 in your new group.
+
 
 * Q. How do I know which group I am in?
 * A. ``echo $OS_TENANT_NAME`` in a ssh terminal.
@@ -96,17 +99,21 @@ FAQs
 * A. You have either a broken credential or in a wrong project group. Please
   contact us.
 
+
 * Q. I see ``ERROR (CommandError): You must provide an auth url via either
   --os-auth-url or env[OS_AUTH_URL] or specify an auth_system which defines a
   default url with --os-auth-system or env[OS_AUTH_SYSTEM]`` message.
 * A. You have not enabled your credential. Run ``source
   ~/.cloudmesh/clouds/india/openrc.sh``
 
+
 * Q. I see ``Permission denied (publickey).`` message on my ssh command.
 * A. It is related to your ssh keypair, not related to this change of
   ``fg465``. Please confirm you have a right key pair with your VM instance.
- 
-* Q. I see ``ssh: connect to host xx.xx.xx.xx port 22: No route to host`` message.
+
+
+* Q. I see ``ssh: connect to host xx.xx.xx.xx port 22: No route to host``
+  message.
 * A. It is because that your VM is not ready or you're trying to connect a
   wrong address. This message is not related to the change of ``fg465``.
 
