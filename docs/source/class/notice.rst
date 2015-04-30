@@ -58,9 +58,9 @@ Details of the Change
 * 1/3 students will go into fg465b
 * Rest students will go into fg465c
 
-* Termination of ``fg465`` **IMPORTANT**
-  - All VM instances will be terminated and cleaned.
-  - Any work left on the instances will be deleted.
+Termination of ``fg465`` **IMPORTANT**
+   - All VM instances will be terminated and cleaned.
+   - Any work left on the instances will be deleted.
 
 Contact
 -------------------------------------------------------------------------------
