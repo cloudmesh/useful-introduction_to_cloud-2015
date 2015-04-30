@@ -18,8 +18,8 @@ Change of OpenStack Group
 Description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ``fg465`` tenant (group) will be replaced with multi-groups in India OpenStack
-Juno. The accounts to the class will be split up into three groups: fg465a,
-fg465b and fg465c. After this change, you may experience with:
+Juno. The accounts to the class will be split up into three groups: ``fg465a``,
+``fg465b`` and ``fg465c``. After this change, you may experience with:
 
 * No access to VM instances on fg465
 * No access to VM images on fg465
@@ -27,6 +27,11 @@ fg465b and fg465c. After this change, you may experience with:
 * Multi groups in Horizon (OpenStack GUI)
 
 *This change will be made internally so you may not notice.*
+
+To see your group, run::
+
+  source ~/.cloudmesh/clouds/india/juno/openrc.sh
+  echo $OS_TENANT_NAME
 
 Possible Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
