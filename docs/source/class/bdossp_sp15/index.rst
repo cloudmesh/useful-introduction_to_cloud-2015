@@ -12,10 +12,14 @@ them  to learn about BigData Software and Technologies.
 * Course Page: http://bigdataopensourceprojects.soic.indiana.edu/
 * IU Canvas: https://iu.instructure.com/courses/1453783
 * FutureSystems Project Page: https://portal.futuresystems.org/projects/465
-  
+
+Notice
+===============================================================================
+
+:ref:`System Notice <ref-class-notice>`
 
 Office Hours
-==========
+===============================================================================
 
 **General Discussions**
 
