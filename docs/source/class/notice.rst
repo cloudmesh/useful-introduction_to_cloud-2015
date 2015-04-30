@@ -50,8 +50,8 @@ For the other issues, you may find answers in the FAQs below.
 Details of the Change
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* ~/.cloudmesh/clouds/india/openrc.sh
-  ``OS_TENANT_NAME=fg465`` will be replaced with either ``fg465a``, ``fg465b``
+``~/.cloudmesh/clouds/india/openrc.sh``
+* ``OS_TENANT_NAME=fg465`` will be replaced with either ``fg465a``, ``fg465b``
   or ``fg465c``
 
 * 1/3 students will go into fg465a
