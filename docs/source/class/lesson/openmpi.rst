@@ -1,11 +1,11 @@
 .. _ref-class-lesson-openmpi-with-cloudmesh:
 
-Deploying OpenMPI Cluster with Cloudmesh ``launcher``
+Deploying Open MPI Cluster with Cloudmesh ``launcher``
 ======================================================
 
 To support Message Passing Interface (MPI) programs with a cluster, Cloudmesh
 provides a new command ``launcher`` to start, configure, manage or update
-compute nodes (VMs) with OpenMPI. ``launcher`` command applies default settings
+compute nodes (VMs) with Open MPI. ``launcher`` command applies default settings
 to configure clusters with applications so users can avoid hassles of building
 clusters.
 
@@ -18,12 +18,12 @@ Table of Contents
 
 .. `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
 
-Tutorial: Deploying OpenMPI Cluster with ``cm launcher``
+Tutorial: Deploying Open MPI Cluster with ``cm launcher``
 ---------------------------------------------------------
 
 .. tip:: approximate time 10-15 minutes
 
-In this tutorial, we are going to deploy a OpenMPI cluster using Cloudmesh
+In this tutorial, we are going to deploy a Open MPI cluster using Cloudmesh
 ``launcher`` command.
 
 Start Cluster
@@ -53,7 +53,7 @@ You expect the result similar to:
         +--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
         | launcher_id                          | stack_name                     | description                         | stack_status       | creation_time        | cm_cloud |
         +--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
-        | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-openmpi-DB8JDK | OpenMPI cluster with OpenStack Heat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
+        | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | launcher-albert-openmpi-DB8JDK | Open MPI cluster with OpenStackHeat | CREATE_IN_PROGRESS | 2015-01-22T16:25:23Z | india    |
         +--------------------------------------+--------------------------------+-------------------------------------+--------------------+----------------------+----------+
 
 * CREATE_IN_PROGRESS: cluster is not available because creating the cluster is
@@ -249,7 +249,7 @@ You expect the result similar to:
         +--------------------------------------+--------------------------------+-------------------------------------+-----------------+----------------------+----------+
         | launcher_id                          | stack_name                     | description                         | stack_status    | creation_time        | cm_cloud |
         +--------------------------------------+--------------------------------+-------------------------------------+-----------------+----------------------+----------+
-        | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | **launcher-albert-openmpi-DB8JDK** | OpenMPI cluster with OpenStack Heat | CREATE_COMPLETE | 2015-01-22T16:25:23Z | india    |
+        | 14ec7ceb-ce12-4b18-9c31-d398c6e76b78 | **launcher-albert-openmpi-DB8JDK** | Open MPI cluster with OpenStackHeat | CREATE_COMPLETE | 2015-01-22T16:25:23Z | india    |
         +--------------------------------------+--------------------------------+-------------------------------------+-----------------+----------------------+----------+
 
 * Terminate a cluster

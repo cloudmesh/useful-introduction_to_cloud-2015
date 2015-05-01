@@ -718,6 +718,9 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - 
      - 05/06
      - 05/08
+   * - **HPC Queuing System** (optional)
+     - `8 mins <https://www.youtube.com/watch?v=6oUsMyDt7gU>`_
+     - :ref:`1 hour <s-hpc>`
    * - **MongoDB Virtual Cluster**
         - Introduction and Overview
         - Sharded MongoDB
