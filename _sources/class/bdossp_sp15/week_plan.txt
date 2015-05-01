@@ -703,6 +703,12 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - 
      - 05/06
      - 05/08
+   * - **Apache Hadoop YARN**
+     - `34 mins <https://mix.office.com/watch/1eopy3tfq6kim>`_
+     - :ref:`1 hour <ref-class-lesson-hadoop-yarn>`
+     -
+     - 05/06
+     - 05/08
    * - **OpenMPI Virtual Cluster**
         - Introduction and Overview
         - HPC Stack - MPI
