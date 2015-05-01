@@ -154,7 +154,7 @@ Check Status
 Web Interface
 -------------------------------------------------------------------------------
 
-* YARN ResourceManager: 8088
+* YARN ResourceManager: ``8088``
 
   Try to open a web browser with a master node address (IP or hostname):
   ::
@@ -165,6 +165,10 @@ Web Interface
 
    Figure 4. Overview of YARN GUI
 
+* YARN NodeManager: ``50060``
+
+  This is for all slaves.
+ 
 Citation
 -------------------------------------------------------------------------------
 
@@ -197,3 +201,10 @@ Useful Links
 * Hadoop 2.x installation: http://www.highlyscalablesystems.com/3597/hadoop-installation-tutorial-hadoop-2-x/
 * pi Estimator: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-sample-pi-estimator/
 * Examples on Hadoop YARN: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.3/bk_using-apache-hadoop/content/running_mapreduce_examples_on_yarn.html
+
+YARN Vendors
+-------------------------------------------------------------------------------
+
+*Cloudera* and *Hortonworks* are major vendors of Hadoop. They provide
+helpful documentation about Hadoop developments.
+
