@@ -1,3 +1,5 @@
+.. _ref-class-lesson-openmpi-with-cloudmesh:
+
 Deploying OpenMPI Cluster with Cloudmesh ``launcher``
 ======================================================
 
@@ -266,9 +268,5 @@ In this tutorial, we terminate ``launcher-albert-openmpi-DB8JDK`` like this:
 * DELETE_IN_PROGRESS: shutting down instances is in progress.
 * DELETE_COMPLETE: the lease of resources is ended, all resources are returned.
 
-Next Step
----------
-
-In the next page, we deploy a [] cluster on FutureSystems using Cloudmesh.
 
 .. `Next Tutorial>> Deploying MongoDB Shard Cluster <mongodb_cluster.html>`_
