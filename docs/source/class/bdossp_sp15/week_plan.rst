@@ -709,12 +709,12 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      -
      - 05/06
      - 05/08
-   * - **OpenMPI Virtual Cluster**
+   * - **Open MPI Virtual Cluster**
         - Introduction and Overview
         - HPC Stack - MPI
         - Cloudmesh HPC
      - Not yet available
-     - Not yet available
+     - :ref:`1 hour <ref-class-lesson-openmpi-with-cloudmesh>`
      - 
      - 05/06
      - 05/08
