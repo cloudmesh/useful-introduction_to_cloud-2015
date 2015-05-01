@@ -151,6 +151,20 @@ Check Status
 
     yarn node -list
 
+Web Interface
+-------------------------------------------------------------------------------
+
+* YARN ResourceManager: 8088
+
+  Try to open a web browser with a master node address (IP or hostname):
+  ::
+
+    http://[node address]:8088
+
+.. figure:: ../../../images/lesson/yarn-resourcemanager-gui.png
+
+   Figure 4. Overview of YARN GUI
+
 Citation
 -------------------------------------------------------------------------------
 
