@@ -24,12 +24,16 @@ container. YARN is an abbreviation for Yet Another Resource Negotiator which
 was addressed in January, 2008 from
 https://issues.apache.org/jira/browse/MAPREDUCE-279
 
+.. figure:: ../../../images/lesson/yarn.png
+
+   Figure 1. Changes of Hadoop v1 to v2 (image source: http://media.bestofmicro.com/X/8/430172/original/yarn.png)
+
 Hadoop v1
 -------------------------------------------------------------------------------
 
 .. figure:: ../../../images/lesson/mapreduce1_architecture.png
 
-   Figure1. Hadoop v1 Architecture (image source: http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)
+   Figure 2. Hadoop v1 Architecture (image source: http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/)
 
 * JobTracker from MR1 splits up two parts: RM, AM(job scheduling/monitoring).
 * ResourceManager (RM) consists of Scheduler, ApplicationsManager (ASM).
@@ -41,7 +45,7 @@ Hadoop v2
 
 .. figure:: ../../../images/lesson/mapreduce2_architecture.png
 
-   Figure2. Hadoop v2 Architecture (image source: http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)
+   Figure 3. Hadoop v2 Architecture (image source: http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)
 
 Configuration
 -------------------------------------------------------------------------------
@@ -134,6 +138,19 @@ https://hadoop.apache.org/docs/current/api/org/apache/hadoop/yarn/applications/d
 
 * Main task: job scheduling, monitoring on a container
 
+Check Status
+-------------------------------------------------------------------------------
+
+* HDFS:
+  ::
+
+    hdfs dfsadmin -report
+
+* YARN:
+  ::
+
+    yarn node -list
+
 Citation
 -------------------------------------------------------------------------------
 
@@ -158,3 +175,11 @@ QnAs
   getApplicationReport(), getClusterNodes() and getClusterMetrics() APIs at
   http://hadoop.apache.org/docs/stable/api/org/apache/hadoop/yarn/api/ApplicationClientProtocol.html.
 
+Useful Links
+-------------------------------------------------------------------------------
+
+* Hadoop Cluster Setup: http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html
+* WordCount v1.0: http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html#Example:_WordCount_v1.0
+* Hadoop 2.x installation: http://www.highlyscalablesystems.com/3597/hadoop-installation-tutorial-hadoop-2-x/
+* pi Estimator: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-sample-pi-estimator/
+* Examples on Hadoop YARN: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.3/bk_using-apache-hadoop/content/running_mapreduce_examples_on_yarn.html
