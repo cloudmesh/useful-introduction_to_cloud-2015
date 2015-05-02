@@ -78,7 +78,7 @@ Ubuntu
 
 ::
 
-  sudo apt-get install hadoop-zookeeper-server
+  sudo apt-get install zookeeper
 
 * Ensemble setup (multi-server)
   http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup
