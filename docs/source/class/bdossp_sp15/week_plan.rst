@@ -709,6 +709,12 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      -
      - 05/06
      - 
+   * - **Apache ZooKeeper** 
+     - 
+     - :ref:`1 hour <ref-class-lesson-zookeeper>`
+     -
+     - 05/06
+     - 
    * - **Open MPI Virtual Cluster**
         - Introduction and Overview
         - HPC Stack - MPI
