@@ -155,14 +155,14 @@ bindings for both Java and C. (as quoted in ZooKeeper overview:
 <h3>Key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Data replication</li>
-<li>Started by Yahoo</li>
 <li>Ensemble is a group of ZooKeeper servers to use replication to achieve high
 availability and performance</li>
 <li>Odd number of servers due to simple majority voting</li>
 <li>Single (Standalone) installation is not for a production model</li>
 <li>Leader election</li>
-<li>Configuration</li>
-<li>No Locking, wait-free for fault tolerance, performance (compared to Chubby)</li>
+<li>Configuration, Name Service, Group Membership</li>
+<li>Wait-free for fault tolerance, performance (compared to Chubby)</li>
+<li>Started by Yahoo</li>
 </ul>
 <p>Chubby is a locking service with strong synchronization guarantees.</p>
 </div>
