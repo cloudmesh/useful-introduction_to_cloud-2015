@@ -158,7 +158,7 @@ bindings for both Java and C. (as quoted in ZooKeeper overview:
 <li>Started by Yahoo</li>
 <li>Ensemble is a group of ZooKeeper servers to use replication to achieve high
 availability and performance</li>
-<li>Odd number of servers</li>
+<li>Odd number of servers due to simple majority voting</li>
 <li>Single (Standalone) installation is not for a production model</li>
 <li>Leader election</li>
 <li>Configuration</li>
@@ -197,14 +197,79 @@ management with retries and easy development of new ZooKeeper recipes.</p>
 </div>
 <div class="section" id="zookeeper-installation">
 <h2>ZooKeeper Installation<a class="headerlink" href="#zookeeper-installation" title="Permalink to this headline">¶</a></h2>
-<p>Ubuntu</p>
-<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install zookeeper
+<p>Download latest here: <a class="reference external" href="http://www.apache.org/dyn/closer.cgi/zookeeper/">http://www.apache.org/dyn/closer.cgi/zookeeper/</a></p>
+<p>Download 3.4.6</p>
+<div class="highlight-python"><div class="highlight"><pre>wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
+tar xzf zookeeper*.tar.gz
+</pre></div>
+</div>
+<div class="section" id="configuration-zoo-cfg">
+<h3>Configuration <code class="docutils literal"><span class="pre">zoo.cfg</span></code><a class="headerlink" href="#configuration-zoo-cfg" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>cp zookeeper-*/conf/zoo_sample.cfg zookeeper-*/conf/zoo.cfg
+nano zookeeper-*/conf/zoo.cfg
+</pre></div>
+</div>
+<p>Confirm the settings and update with:</p>
+<div class="highlight-python"><div class="highlight"><pre>tickTime=2000
+dataDir=/var/lib/zookeeper
+clientPort=2181
 </pre></div>
 </div>
 <ul class="simple">
-<li>Ensemble setup (multi-server)
-<a class="reference external" href="http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup">http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup</a></li>
+<li>tickTime: the basic time unit in milliseconds used by ZooKeeper. It is used
+to do heartbeats and the minimum session timeout will be twice the tickTime.</li>
+<li>dataDir: the location to store the in-memory database snapshots and, unless
+specified otherwise, the transaction log of updates to the database.</li>
+<li>clientPort: the port to listen for client connections</li>
 </ul>
+<p>If you have multiple severs, <code class="docutils literal"><span class="pre">zoo.cfg</span></code> has more values, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>server.1=10.0.0.2:2888:3888
+server.2=10.0.0.3:2888:3888
+server.3=10.0.0.4:2888:3888
+</pre></div>
+</div>
+<p>It is <code class="docutils literal"><span class="pre">server.id=host:port:port</span></code></p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Ensemble setup (multi-server)
+<a class="reference external" href="http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup">http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup</a></p>
+</div>
+</div>
+<div class="section" id="myid-in-var-lib-zookeeper-for-multi-server">
+<h3>myid in <code class="docutils literal"><span class="pre">var/lib/zookeeper</span></code> (For multi-server)<a class="headerlink" href="#myid-in-var-lib-zookeeper-for-multi-server" title="Permalink to this headline">¶</a></h3>
+<p>The myid file which stays in <code class="docutils literal"><span class="pre">dataDir</span></code> contains a machine&#8217;s id. If you have 3
+servers, first server has 1 in the myid, and second one has 2.  The id must be
+unique within the ensemble and should have a value between 1 and 255.</p>
+<p>node 1</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -r /var/lib/zookeeper
+echo &quot;1&quot; &gt; /var/lib/zookeeper/myid
+</pre></div>
+</div>
+<p>node 2</p>
+<div class="highlight-python"><div class="highlight"><pre>mkdir -r /var/lib/zookeeper
+echo &quot;2&quot; &gt; /var/lib/zookeeper/myid
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-zookeeper-server">
+<h3>Start ZooKeeper Server<a class="headerlink" href="#start-zookeeper-server" title="Permalink to this headline">¶</a></h3>
+<p>Now that you created the configuration file, you can start ZooKeeper:</p>
+<div class="highlight-python"><div class="highlight"><pre>bin/zkServer.sh start
+</pre></div>
+</div>
+</div>
+<div class="section" id="zookeeper-client">
+<h3>ZooKeeper Client<a class="headerlink" href="#zookeeper-client" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>bin/zkCli.sh
+...
+[zk: localhost:2181(CONNECTED) 0]
+</pre></div>
+</div>
+<p>If you get access to other nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>bin/zkCli.sh -server [node ip address]:2181
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>

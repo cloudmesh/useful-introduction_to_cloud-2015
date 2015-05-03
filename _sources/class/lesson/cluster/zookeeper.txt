@@ -31,7 +31,7 @@ Key points
 * Started by Yahoo
 * Ensemble is a group of ZooKeeper servers to use replication to achieve high
   availability and performance
-* Odd number of servers
+* Odd number of servers due to simple majority voting
 * Single (Standalone) installation is not for a production model
 * Leader election
 * Configuration
@@ -74,14 +74,89 @@ Github: https://github.com/apache/curator
 ZooKeeper Installation
 -------------------------------------------------------------------------------
 
-Ubuntu
+Download latest here: http://www.apache.org/dyn/closer.cgi/zookeeper/
+
+Download 3.4.6 
 
 ::
 
-  sudo apt-get install zookeeper
+  wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
+  tar xzf zookeeper*.tar.gz
+  
+Configuration ``zoo.cfg``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Ensemble setup (multi-server)
-  http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup
+::
+
+  cp zookeeper-*/conf/zoo_sample.cfg zookeeper-*/conf/zoo.cfg
+  nano zookeeper-*/conf/zoo.cfg
+
+Confirm the settings and update with::
+
+  tickTime=2000
+  dataDir=/var/lib/zookeeper
+  clientPort=2181
+
+* tickTime: the basic time unit in milliseconds used by ZooKeeper. It is used
+  to do heartbeats and the minimum session timeout will be twice the tickTime.
+
+* dataDir: the location to store the in-memory database snapshots and, unless
+  specified otherwise, the transaction log of updates to the database.
+
+* clientPort: the port to listen for client connections
+
+If you have multiple severs, ``zoo.cfg`` has more values, for example::
+
+  server.1=10.0.0.2:2888:3888  
+  server.2=10.0.0.3:2888:3888  
+  server.3=10.0.0.4:2888:3888
+
+It is ``server.id=host:port:port``
+
+.. tip:: Ensemble setup (multi-server)
+    http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkMulitServerSetup
+
+myid in ``var/lib/zookeeper`` (For multi-server)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The myid file which stays in ``dataDir`` contains a machine's id. If you have 3
+servers, first server has 1 in the myid, and second one has 2.  The id must be
+unique within the ensemble and should have a value between 1 and 255.
+
+node 1
+
+::
+  
+  mkdir -r /var/lib/zookeeper
+  echo "1" > /var/lib/zookeeper/myid  
+
+node 2
+
+::
+  
+  mkdir -r /var/lib/zookeeper
+  echo "2" > /var/lib/zookeeper/myid  
+
+
+Start ZooKeeper Server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now that you created the configuration file, you can start ZooKeeper::
+
+  bin/zkServer.sh start
+
+ZooKeeper Client
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+  bin/zkCli.sh
+  ...
+  [zk: localhost:2181(CONNECTED) 0]
+
+If you get access to other nodes::
+
+  bin/zkCli.sh -server [node ip address]:2181  
 
 Citation
 -------------------------------------------------------------------------------
