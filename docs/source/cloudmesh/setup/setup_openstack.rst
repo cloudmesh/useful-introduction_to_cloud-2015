@@ -321,7 +321,7 @@ Now you are ready to start all services for cloudmesh with::
 
   (ENV)vm$ fab server.start
 
-.. tip:: Press ``Enter`` or ``Return`` key after seeing the ... **Loading module pie_chart_fg380** message on your screen. ``fab server.start`` launches ``Flask`` web service by using a linux background command '&'. This makes that your screen is frozen after starting Cloudmesh web server but your shell is returned back to you.
+.. tip:: Press ``Enter`` or ``Return`` key after seeing the ... **Loading module pie_chart_fg380** message on your screen. ``fab server.start`` launches ``Flask`` web service by using a linux background command '&'. This makes that your screen looks frozen but your shell is available to you.
 
 .. figure:: ../../images/hanging_after_fab_server_start.png
 
