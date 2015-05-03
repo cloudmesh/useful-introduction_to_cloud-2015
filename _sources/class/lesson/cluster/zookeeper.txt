@@ -170,7 +170,7 @@ Reading List
 
 * Reed, Benjamin, and Flavio P. Junqueira. "A simple totally ordered broadcast
   protocol." proceedings of the 2nd Workshop on Large-Scale Distributed Systems
-  and Middleware. ACM, 2008. `[pdf
+  and Middleware. ACM, 2008. `[pdf] 
   <http://diyhpl.us/~bryan/papers2/distributed/distributed-systems/zab.totally-ordered-broadcast-protocol.2008.pdf>`_
 * Junqueira, Flavio Paiva, Benjamin C. Reed, and Marco Serafini. "Zab:
   High-performance broadcast for primary-backup systems." Dependable Systems &
