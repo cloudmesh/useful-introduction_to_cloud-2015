@@ -92,7 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart on your desktop</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Quickstart for an Openstack VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="yaml.html">Creating the yaml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yaml.html">Configuration with Yaml Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nosetests.html">Nosetests</a></li>
 </ul>
 </li>
@@ -452,6 +452,14 @@ although it may run multiple minutes.</p>
 <p>Now you are ready to start all services for cloudmesh with:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="o">(</span>ENV<span class="o">)</span>vm<span class="nv">$ </span>fab server.start
 </pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Press <code class="docutils literal"><span class="pre">Enter</span></code> or <code class="docutils literal"><span class="pre">Return</span></code> key after seeing the ... <strong>Loading module pie_chart_fg380</strong> message on your screen. <code class="docutils literal"><span class="pre">fab</span> <span class="pre">server.start</span></code> launches <code class="docutils literal"><span class="pre">Flask</span></code> web service by using a linux background command &#8216;&amp;&#8217;. This makes that your screen is frozen after starting Cloudmesh web server but your shell is returned back to you.</p>
+</div>
+<div class="figure" id="id1">
+<img alt="../../_images/hanging_after_fab_server_start.png" src="../../_images/hanging_after_fab_server_start.png" />
+<p class="caption"><span class="caption-text">Success Message of <code class="docutils literal"><span class="pre">fab</span> <span class="pre">server.start</span></code></span></p>
 </div>
 <p>Then the cloudmesh service should be available via:</p>
 <div class="highlight-bash"><div class="highlight"><pre>http://PUBLIC_IP_OF_THE_VM:5000
