@@ -28,14 +28,14 @@ Key points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Data replication
-* Started by Yahoo
 * Ensemble is a group of ZooKeeper servers to use replication to achieve high
   availability and performance
 * Odd number of servers due to simple majority voting
 * Single (Standalone) installation is not for a production model
 * Leader election
-* Configuration
-* No Locking, wait-free for fault tolerance, performance (compared to Chubby)
+* Configuration, Name Service, Group Membership
+* Wait-free for fault tolerance, performance (compared to Chubby)
+* Started by Yahoo
 
 Chubby is a locking service with strong synchronization guarantees.
 
