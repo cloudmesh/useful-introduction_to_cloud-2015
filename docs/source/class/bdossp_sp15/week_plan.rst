@@ -730,11 +730,11 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      -
      - 05/06
      -
-   * - **MongoDB Virtual Cluster**
+   * - **MongoDB Virtual Cluster** (repeated lesson)
         - Introduction and Overview
         - Sharded MongoDB
-     - Not yet available
-     - Not yet available
+     - `4 mins <https://mix.office.com/watch/1rx90yz48fqpn>`_
+     - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
      - 
      - 05/06
      - 05/08
