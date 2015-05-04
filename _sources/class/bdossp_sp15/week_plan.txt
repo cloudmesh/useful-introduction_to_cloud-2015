@@ -698,8 +698,8 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
    * - **Composite Cluster with Sub-Clusters** (Not taught in this class)
         - Introduction and Overview
         - Creating a Cross Resource Virtual Cluster
-     - Not yet available
-     - Not yet available
+     - Not taught in this class
+     - Not taught in this class
      - 
      - 05/06
      - 05/08
