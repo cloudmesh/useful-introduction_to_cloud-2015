@@ -1,5 +1,7 @@
+.. _ref-virtualization-tools:
+
 Virtualization Tools (Under Preparation)
 ======================================================================
 
-Vargrant
-----------------------------------------------------------------------
+
+.. include:: vagrant.rst
