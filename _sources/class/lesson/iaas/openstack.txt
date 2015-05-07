@@ -96,6 +96,12 @@ This only needs to be done once for each public key you wish to register::
 
   $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $PORTALNAME-key
 
+.. note::
+
+   In order for this to work you **must** have an ssh key.  Please see
+   the section :ref:`Generate an SSH Key <s-ssh-generate>` to do so.
+
+
 For instance, in order to log into an openstack virtual machine from india, make sure you created an SSH keypair **on** india first, then add it to nova.
 You can now see that your key is visible to OpenStack::
 
@@ -107,11 +113,6 @@ You can now see that your key is visible to OpenStack::
   | $PORTALNAME-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
   +---------------+---------------------------------------------------+
 
-
-.. note::
-
-   In order for this to work you **must** have an ssh key.  Please see
-   the section :ref:`Generate an SSH Key <s-ssh-generate>` to do so.
 
 .. note::
 

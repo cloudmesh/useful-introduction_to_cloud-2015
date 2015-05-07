@@ -321,6 +321,11 @@ This only needs to be done once for each public key you wish to register:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $PORTALNAME-key
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order for this to work you <strong>must</strong> have an ssh key.  Please see
+the section <a class="reference internal" href="../../../accounts/ssh.html#s-ssh-generate"><span>Generate an SSH Key</span></a> to do so.</p>
+</div>
 <p>For instance, in order to log into an openstack virtual machine from india, make sure you created an SSH keypair <strong>on</strong> india first, then add it to nova.
 You can now see that your key is visible to OpenStack:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ nova keypair-list
@@ -331,11 +336,6 @@ You can now see that your key is visible to OpenStack:</p>
 | $PORTALNAME-key | 35:74:ee:be:14:4b:43:dd:ed:d8:cf:8e:de:13:ea:ce |
 +---------------+---------------------------------------------------+
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In order for this to work you <strong>must</strong> have an ssh key.  Please see
-the section <a class="reference internal" href="../../../accounts/ssh.html#s-ssh-generate"><span>Generate an SSH Key</span></a> to do so.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
