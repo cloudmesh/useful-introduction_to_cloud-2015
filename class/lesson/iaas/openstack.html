@@ -717,23 +717,6 @@ $ nova secgroup-add-rule default tcp 8080 8080 0.0.0.0/0
 <p class="last">Return your leased resources after your practice is completed. 1)
 Terminate your instance, 2) Deallocate IP address</p>
 </div>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p>OpenStack uses ssh keys for authentication. You need to have a
-keypair in order to access any machines use start with openstack.</p>
-<p>Make sure you have a valid key by using the following commands:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ file ~/.ssh/id_rsa
-$ ssh-keygen -yf ~/.ssh/id_rsa &gt;~/pub-key-test
-$ ssh-keygen -lf ~/.ssh/id_rsa
-$ ssh-keygen -lf ~/pub-key-t
-</pre></div>
-</div>
-<p>If the fingerprints do not match then something is wrong with your keys.
-Otherwise cleanup with the following command and proceed with this section:</p>
-<div class="last highlight-python"><div class="highlight"><pre>$ rm ~/pub-key-test
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="next-step">
 <h2><a class="toc-backref" href="#id22">Next Step</a><a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>

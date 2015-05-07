@@ -511,25 +511,6 @@ Exercises
         Terminate your instance, 2) Deallocate IP address
 
 
-.. important::
-
-   OpenStack uses ssh keys for authentication. You need to have a
-   keypair in order to access any machines use start with openstack.
-
-   Make sure you have a valid key by using the following commands::
-
-     $ file ~/.ssh/id_rsa
-     $ ssh-keygen -yf ~/.ssh/id_rsa >~/pub-key-test
-     $ ssh-keygen -lf ~/.ssh/id_rsa
-     $ ssh-keygen -lf ~/pub-key-t
-
-   If the fingerprints do not match then something is wrong with your keys.
-   Otherwise cleanup with the following command and proceed with this section::
-
-     $ rm ~/pub-key-test
-
-
-
 
 Next Step
 -----------
