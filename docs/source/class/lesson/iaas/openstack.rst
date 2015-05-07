@@ -109,7 +109,7 @@ Access to the machines we will start is authenticated using SSH.
 First, we need to tell openstack about our ssh key.
 This only needs to be done once for each public key you wish to register::
 
-  $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub $PORTALNAME-key
+  $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $PORTALNAME-key
 
 For instance, in order to log into an openstack virtual machine from india, make sure you created an SSH keypair **on** india first, then add it to nova.
 You can now see that your key is visible to OpenStack::
