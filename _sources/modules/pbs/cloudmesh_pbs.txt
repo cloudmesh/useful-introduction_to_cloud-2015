@@ -11,6 +11,14 @@ Subpackages
 Submodules
 ----------
 
+cloudmesh_pbs.Database module
+-----------------------------
+
+.. automodule:: cloudmesh_pbs.Database
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 cloudmesh_pbs.DbPBS module
 --------------------------
 

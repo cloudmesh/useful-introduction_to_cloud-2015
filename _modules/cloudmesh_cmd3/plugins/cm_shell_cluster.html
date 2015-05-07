@@ -395,14 +395,28 @@
                 <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">h</span><span class="p">:</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
             
             <span class="k">def</span> <span class="nf">check_public_ip_existence</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-                <span class="n">temp</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">][</span><span class="s">&#39;private&#39;</span><span class="p">]</span>
+                <span class="c"># Patch for #208</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">][</span><span class="s">&#39;private&#39;</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">][</span><span class="s">&#39;int-net&#39;</span><span class="p">]</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+
                 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s">&quot;OS-EXT-IPS:type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;floating&quot;</span><span class="p">:</span>
                         <span class="k">return</span> <span class="bp">True</span>
                 <span class="k">return</span> <span class="bp">False</span>
             
             <span class="k">def</span> <span class="nf">get_ip</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s">&quot;floating&quot;</span><span class="p">):</span> <span class="c"># kind is either floating or fixed</span>
-                <span class="n">temp</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">][</span><span class="s">&#39;private&#39;</span><span class="p">]</span>
+                <span class="c"># Patch for #208</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">][</span><span class="s">&#39;private&#39;</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;addresses&#39;</span><span class="p">][</span><span class="s">&#39;int-net&#39;</span><span class="p">]</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+
                 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s">&quot;OS-EXT-IPS:type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">kind</span><span class="p">:</span>
                         <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="s">&#39;addr&#39;</span><span class="p">]</span><span class="c">#.encode(&#39;ascii&#39;)</span>

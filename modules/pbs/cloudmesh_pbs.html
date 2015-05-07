@@ -149,6 +149,9 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="cloudmesh-pbs-database-module">
+<h2>cloudmesh_pbs.Database module<a class="headerlink" href="#cloudmesh-pbs-database-module" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-cloudmesh_pbs.DbPBS">
 <span id="cloudmesh-pbs-dbpbs-module"></span><h2>cloudmesh_pbs.DbPBS module<a class="headerlink" href="#module-cloudmesh_pbs.DbPBS" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -293,6 +296,11 @@
 <em class="property">class </em><code class="descclassname">cloudmesh_pbs.OpenPBS.</code><code class="descname">OpenPBS</code><span class="sig-paren">(</span><em>deploy=True</em>, <em>yaml_filename='/cloudmesh_pbs.yaml'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="method">
+<dt id="cloudmesh_pbs.OpenPBS.OpenPBS.anodes">
+<code class="descname">anodes</code><span class="sig-paren">(</span><em>host</em>, <em>refresh=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.anodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.anodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.create_script">
 <code class="descname">create_script</code><span class="sig-paren">(</span><em>name</em>, <em>script</em>, <em>template=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.create_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.create_script" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -300,19 +308,30 @@
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.database_filename">
 <code class="descname">database_filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.database_filename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.database_filename" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The name of the database file
+:return:</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.db_jobstatus">
 <code class="descname">db_jobstatus</code><span class="sig-paren">(</span><em>host</em>, <em>jobid</em>, <em>kind='dict'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.db_jobstatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.db_jobstatus" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>This method is not yet implemented</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.deploy">
 <code class="descname">deploy</code><span class="sig-paren">(</span><em>force=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.deploy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.deploy" title="Permalink to this definition">¶</a></dt>
-<dd><p>copies the yaml file from etc in the distribution to the .cloudmesh
+<dd><p>Copies the yaml file from etc in the distribution to the .cloudmesh
 directory. If the file exits it will not be copied and a warning is
 thrown. If the file is the same as in etc no warning is thrown.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>force</strong> &#8211; Forgot what this does, please document.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -323,57 +342,191 @@ thrown. If the file is the same as in etc no warning is thrown.</p>
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.info">
 <code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Prints some elementary information about the configuration of the
+OpenPBS instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.jobid">
 <code class="descname">jobid</code><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.jobid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The job id
+:return: The string of the job id</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.jobid_incr">
 <code class="descname">jobid_incr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.jobid_incr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.jobid_incr" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>increments the job id by 1</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.jobstatus">
 <code class="descname">jobstatus</code><span class="sig-paren">(</span><em>host</em>, <em>jobid</em>, <em>kind='dict'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.jobstatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.jobstatus" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The status of a specific job</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>host</strong> &#8211; The host on which the job is running</li>
+<li><strong>jobid</strong> &#8211; The jobid as specified by the queing system</li>
+<li><strong>kind</strong> &#8211; The output can be returned as dict, xml, and yaml</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.list">
 <em class="property">classmethod </em><code class="descname">list</code><span class="sig-paren">(</span><em>data</em>, <em>attributes</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Internal function to lists the information in the data dict
+:param data: The data directory
+:param attributes: the attribute to return
+:return: the content found for he specified attribute</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.load">
 <code class="descname">load</code><span class="sig-paren">(</span><em>yaml_filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.load" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Loads the cloudmesh pbs yaml file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>yaml_filename</strong> &#8211; The filename of the yaml file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.manager">
 <code class="descname">manager</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>In some cases a queue of another machine is hosted through a
+management node different from that machine. The manager command
+allows us to specify on which machine the qstat command is issued.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>host</strong> &#8211; The name of the host</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The name of the management host</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.OpenPBS.OpenPBS.nodes">
+<code class="descname">nodes</code><span class="sig-paren">(</span><em>host</em>, <em>refresh=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the information from the command pbsnodes in a dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>host</strong> &#8211; the name of the host as specified in the .ssh/config file</li>
+<li><strong>refresh</strong> &#8211; if False, reads returns a cached value
+if True, issues a new command and refreshes the cach</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">information of the pbsnodes command in a dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.OpenPBS.OpenPBS.nodes_distribution">
+<code class="descname">nodes_distribution</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.nodes_distribution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.nodes_distribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints the distribution of services</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.OpenPBS.OpenPBS.nodes_sum">
+<code class="descname">nodes_sum</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.nodes_sum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.nodes_sum" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.qstat">
 <code class="descname">qstat</code><span class="sig-paren">(</span><em>host</em>, <em>user=True</em>, <em>format='dict'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.qstat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.qstat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>executes the qstat command on a particular host and returns
+the information as dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>host</strong> &#8211; The host as specified in ~/.ssh/config</li>
+<li><strong>user</strong> &#8211; If True, only retirns information for the user
+If False, all jobs for all users are returned</li>
+<li><strong>format</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.qstat_xml_to_dict">
 <em class="property">classmethod </em><code class="descname">qstat_xml_to_dict</code><span class="sig-paren">(</span><em>xmldata</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.qstat_xml_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.qstat_xml_to_dict" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Internal method that converst a qsta xml representation to a dict.
+:param xmldata: The xml data from qstat -x
+:return: a dict representation of the data</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.qsub">
 <code class="descname">qsub</code><span class="sig-paren">(</span><em>name</em>, <em>host</em>, <em>script</em>, <em>template=None</em>, <em>kind='dict'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.qsub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.qsub" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Executes the qsub command on a given host.
+NOTE this method may not yet be fully implemented</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; name of the script</li>
+<li><strong>host</strong> &#8211; host on which the script is to be run</li>
+<li><strong>script</strong> &#8211; The name of the script</li>
+<li><strong>template</strong> &#8211; The script is wrapped into a template</li>
+<li><strong>kind</strong> &#8211; The return is passed as dict, yaml, xml</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.queues">
 <code class="descname">queues</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.queues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.queues" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>List the queues dict of the given server
+:param server:
+:return:</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.read_script">
@@ -383,17 +536,39 @@ thrown. If the file is the same as in etc no warning is thrown.</p>
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.servers">
 <code class="descname">servers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.servers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.servers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>List of the servers as defined in the .ssh/config file as dict
+:return: the dict representing the servers</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.username">
 <code class="descname">username</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.username"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.username" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>The username of the host as specified in ~/.ssh/conf
+:param host: The name of the host
+:return: The username</p>
+</dd></dl>
 
 <dl class="classmethod">
 <dt id="cloudmesh_pbs.OpenPBS.OpenPBS.variable_list">
 <em class="property">classmethod </em><code class="descname">variable_list</code><span class="sig-paren">(</span><em>data</em>, <em>id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/OpenPBS.html#OpenPBS.variable_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.OpenPBS.OpenPBS.variable_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Internal function to list the variables of a qstat job
+which is &#8216;Variable_List&#8217;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; The input data value</li>
+<li><strong>id</strong> &#8211; The id of the job</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 

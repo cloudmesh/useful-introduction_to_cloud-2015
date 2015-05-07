@@ -772,7 +772,7 @@ Other Technologies (under preparation)
          - Oracle VirtualBox
          - VMWare
      - Not yet available
-     - Not yet available
+     - :ref:`30 min (In preparation) <ref-virtualization-tools>` 
      - 
      - 05/13
      - 05/15
