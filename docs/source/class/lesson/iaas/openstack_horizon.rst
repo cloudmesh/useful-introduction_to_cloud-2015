@@ -84,6 +84,11 @@ Exercises
    - Attach a floating ip address to your virtual server and confirm it is
      accessible.
 
+.. important::
+
+   To find your password, find the ``OS_PASSWORD`` field in your openrc.sh.
+   See the comment above for details.
+
 Next Step
 -------------------------------------------------------------------------------
 

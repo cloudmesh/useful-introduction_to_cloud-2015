@@ -20,24 +20,10 @@ Prerequisite
 In order to conduct this lesson you should have knowledge of
 
 * `Overview OpenStack <overview_openstack.html>`_
-* :ref:`s-ssh-generate`
+* Create an ssh key by following :ref:`s-ssh-generate`
+* Make sure to set the ``PORTALNAME`` appropriatly (``albert`` is just an example)::
 
-  .. important::
-
-     OpenStack uses ssh keys for authentication. You need to have a
-     keypair in order to access any machines use start with openstack.
-
-     Make sure you have a valid key by using the following commands::
-
-       $ file ~/.ssh/id_rsa
-       $ ssh-keygen -yf ~/.ssh/id_rsa >~/pub-key-test
-       $ ssh-keygen -lf ~/.ssh/id_rsa
-       $ ssh-keygen -lf ~/pub-key-test
-
-     If the fingerprints do not match then something is wrong with your keys.
-     Otherwise cleanup with the following command and proceed with this section::
-
-       $ rm ~/pub-key-test
+    $ export PORTALNAME=albert
 
 Description
 ----------------------------------------------------------------------
@@ -96,10 +82,9 @@ necessary commands.::
 
 Next, you need to set up your environment correctly to use some
 OpenStack commands. This has been configured for you so you just need
-to source the appropriate files::
+to source the appropriate file::
 
   $ source ~/.cloudmesh/clouds/india/juno/openrc.sh
-  $ source ~/.cloudmesh/clouds/india/juno/fg465
 
 
 Adding your SSH key
@@ -123,38 +108,25 @@ You can now see that your key is visible to OpenStack::
   +---------------+---------------------------------------------------+
 
 
+.. note::
 
-.. _openstack_manage_keys:
-
-Nova-Generated keys
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   In order for this to work you **must** have an ssh key.  Please see
+   the section :ref:`Generate an SSH Key <s-ssh-generate>` to do so.
 
 .. note::
 
-   You can also have nova generate a key for you.
-   We have found that this approach can result in confusion.
-   Please do so only if you know what you are doing.
+   You can check that the key registered with OpenStack (as shown by
+   ``nova keypair-list``) is valid by comparing the fingerprint with
+   that of your public key. Run the following to get your public key's
+   fingerprint::
 
+     $ ssh-keygen -lf ~/.ssh/id_rsa.pub
 
-Make sure you have a ``~/.ssh`` directory and created a key for
-OpenStack to use.
-Create the directory if necessary::
+   The fingerprint is displayed as the colon-seperated two-digit
+   hexadecimal values. Compare this with the fingerprint shown by::
 
-  $ test -d ~/.ssh || mkdir ~/.ssh
+     $ nova keypair-list
 
-Generate a key for OpenStack::
-
-  $ nova keypair-add $PORTALNAME-key > ~/.ssh/$PORTALNAME-key
-
-Ensure the permissions are set correctly::
-
-  $ chmod 600 ~/.ssh/$PORTALNAME-key
-
-
-.. caution:: Using nova to generate a keypair with ``nova
-   keypair-add`` will overwrite any preexisting file in
-   ``~/.ssh/$PORTALNAME-key`` so make sure it does not exist before
-   executing this command.
 
 
 
@@ -234,7 +206,7 @@ Access to VM Instance
 
 * We login to the VM instance we just created using SSH.::
 
-    $ ssh -i ~/.ssh/$PORTALNAME-key ubuntu@[IP ADDRESS]
+    $ ssh ubuntu@[IP ADDRESS]
 
 * To find out the ``[IP ADDRESS]``, use ``nova list`` command::
 
@@ -249,7 +221,7 @@ Access to VM Instance
   this example we have ``10.23.2.182``. You **have to use your IP address** to
   gain access. So now, we run::
     
-    $ ssh -i ~/.ssh/$PORTALNAME-key ubuntu@10.23.2.182
+    $ ssh ubuntu@10.23.2.182
 
 **REPLACE** the IP address ``10.23.2.182`` with one you have.
 
@@ -509,8 +481,54 @@ Exercises
 - HTTP, HTTPs ports open using security groups
 - Floating IP allocation 
 
+.. note::
+
+   Make sure to open ports 80 and 8080 in the openstack security group::
+
+     $ nova secgroup-list-rules default
+     +-------------+-----------+---------+-----------+--------------+
+     | IP Protocol | From Port | To Port | IP Range  | Source Group |
+     +-------------+-----------+---------+-----------+--------------+
+     | tcp         | 8888      | 8888    | 0.0.0.0/0 |              |
+     | tcp         | 22        | 22      | 0.0.0.0/0 |              |
+     | icmp        | -1        | -1      | 0.0.0.0/0 |              |
+     |             |           |         |           | default      |
+     | tcp         | 8080      | 8080    | 0.0.0.0/0 |              |
+     | tcp         | 80        | 80      | 0.0.0.0/0 |              |
+     |             |           |         |           | default      |
+     | tcp         | 5000      | 5000    | 0.0.0.0/0 |              |
+     +-------------+-----------+---------+-----------+--------------+
+
+   If you do not see ports 80 and 8080 present, add them like so::
+
+     $ nova secgroup-add-rule default tcp 80 80 0.0.0.0/0
+     $ nova secgroup-add-rule default tcp 8080 8080 0.0.0.0/0
+   
+
+
 .. note:: Return your leased resources after your practice is completed. 1)
         Terminate your instance, 2) Deallocate IP address
+
+
+.. important::
+
+   OpenStack uses ssh keys for authentication. You need to have a
+   keypair in order to access any machines use start with openstack.
+
+   Make sure you have a valid key by using the following commands::
+
+     $ file ~/.ssh/id_rsa
+     $ ssh-keygen -yf ~/.ssh/id_rsa >~/pub-key-test
+     $ ssh-keygen -lf ~/.ssh/id_rsa
+     $ ssh-keygen -lf ~/pub-key-t
+
+   If the fingerprints do not match then something is wrong with your keys.
+   Otherwise cleanup with the following command and proceed with this section::
+
+     $ rm ~/pub-key-test
+
+
+
 
 Next Step
 -----------
