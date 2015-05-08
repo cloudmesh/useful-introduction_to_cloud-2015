@@ -11,10 +11,10 @@ Subpackages
 Submodules
 ----------
 
-cloudmesh_pbs.Database module
------------------------------
+cloudmesh_pbs.DatabaseMongo module
+----------------------------------
 
-.. automodule:: cloudmesh_pbs.Database
+.. automodule:: cloudmesh_pbs.DatabaseMongo
     :members:
     :undoc-members:
     :show-inheritance:
@@ -35,18 +35,18 @@ cloudmesh_pbs.OpenPBS module
     :undoc-members:
     :show-inheritance:
 
-cloudmesh_pbs.cmd3_check module
--------------------------------
+cloudmesh_pbs.PBSDeploy module
+------------------------------
 
-.. automodule:: cloudmesh_pbs.cmd3_check
+.. automodule:: cloudmesh_pbs.PBSDeploy
     :members:
     :undoc-members:
     :show-inheritance:
 
-cloudmesh_pbs.pbs_config module
+cloudmesh_pbs.cmd3_check module
 -------------------------------
 
-.. automodule:: cloudmesh_pbs.pbs_config
+.. automodule:: cloudmesh_pbs.cmd3_check
     :members:
     :undoc-members:
     :show-inheritance:

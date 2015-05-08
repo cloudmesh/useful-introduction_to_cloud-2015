@@ -5,4 +5,7 @@ pbs
    :maxdepth: 4
 
    cloudmesh_pbs
+   cloudmesh_yamlplugin
+   fabfile
+   flask_pbs
    setup

@@ -1,0 +1,29 @@
+cloudmesh_yamlplugin package
+============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    cloudmesh_yamlplugin.plugins
+
+Submodules
+----------
+
+cloudmesh_yamlplugin.command_yamlplugin module
+----------------------------------------------
+
+.. automodule:: cloudmesh_yamlplugin.command_yamlplugin
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cloudmesh_yamlplugin
+    :members:
+    :undoc-members:
+    :show-inheritance:
