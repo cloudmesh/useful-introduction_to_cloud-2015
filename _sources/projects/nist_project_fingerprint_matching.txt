@@ -39,6 +39,7 @@ Datasets
 -------------------------------------------------------------------------------
 We start with one of the following datasets for the study:
 
+* Special Database 27a (Free Sample Data) http://www.nist.gov/itl/iad/ig/sd27a.cfm
 * Special Database 14 - NIST Mated Fingerprint Card Pairs 2.
 * Special Database 29 - Plain and Rolled Images from Paired Fingerprint Cards. 
 * Special Database 30 - Dual Resolution Images from Paired Fingerprint Cards.
