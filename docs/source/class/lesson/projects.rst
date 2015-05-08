@@ -57,7 +57,8 @@ Possible Projects From NIST
      - Technologies
    * - :ref:`Fingerprint Matching <ref-class-project-fingerprint-matching>`
      - Batch Data Analytics
-     - NIST Special Database 14, 29, 30
+     - - NIST Special Database 27a (Free)
+       - NIST Special Database 14, 29, 30 (non-Free)
      - - Apache Hadoop
        - Spark
        - HBase 
