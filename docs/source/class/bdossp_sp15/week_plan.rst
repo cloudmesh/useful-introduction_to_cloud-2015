@@ -710,7 +710,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - 05/06
      - 
    * - **Apache ZooKeeper** 
-     - 
+     - `40 mins <https://mix.office.com/watch/1ptxm2uj2s7y3>`_
      - :ref:`1 hour <ref-class-lesson-zookeeper>`
      -
      - 05/06
@@ -719,7 +719,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
         - Introduction and Overview
         - HPC Stack - MPI
         - Cloudmesh HPC
-     - Not yet available
+     - 
      - :ref:`1 hour <ref-class-lesson-openmpi-with-cloudmesh>`
      - 
      - 05/06
@@ -738,6 +738,12 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
      - 
      - 05/06
      - 05/08
+
+Length of the lessons in Week 6
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Total of video lessons: 1 hour and 26 minutes
+* Total of study materials: 5 hours
 
 Week 7
 -------------------------------------------------------------------------------
