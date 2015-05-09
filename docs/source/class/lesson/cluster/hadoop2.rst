@@ -3,18 +3,20 @@
 Hadoop v2 (Under Preparation)
 ===============================================================================
 
+.. tip:: Approximate time: 1 hour 
+
 Quick Guide
 -------------------------------------------------------------------------------
 
 In this tutorial, remember a few things below.
 
-* **REPLACE** ``albert`` with your portal id.
+* REPLACE ``albert`` with your portal id.
 * Distinguish ``Master`` and ``Slaves`` for different installation.
 * ``Master`` contains HDFS NameNode and YARN ResourceManager.
 * ``Slaves`` contain HDFS DataNode and YARN NodeManager.
 * Internal IPs (private) are used. You can use Floating IPs, if you have.
 
-Installation
+Deploying Virtual Cluster
 -------------------------------------------------------------------------------
 
 Virtual Cluster (VC) with ``cluster`` CM command
@@ -43,7 +45,7 @@ You expect to see outputs like:
   albert_3 100.200.1.3, 10.20.30.3
   albert_4 100.200.1.4, 10.20.30.4
 
-There are **1 MASTER** and **3 SLAVES** in this tutorial.
+There will be **1 MASTER** and **3 SLAVES** in this tutorial using these four VM instances.
 
 SSH to a Node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,10 +56,10 @@ on Cloudmesh::
 
 **REPLACE** ``albert`` with your vm name.
 
-System Configuration
+Operating System Configuration
 -------------------------------------------------------------------------------
 
-From here, You SHOULD be **on a VC node.**
+From here, You SHOULD be **on a VC node** which is one of your VM instances.
 
 
 Switch to ``root`` Account
@@ -71,10 +73,10 @@ Switch to ``root`` Account
 Update of ``/etc/hostname`` File (Master)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Define a master and slaves.** In this tutorial, we have 4 VM instances
-(nodes) from ``albert_1`` to ``albert_4``. One of the nodes is going to be a
-master and rest of them are going to be slaves. ``albert_1`` is selected as a
-master.
+We will update $HOSTNAME in a master and slaves. In this tutorial, we have 4 VM
+instances (nodes) from ``albert_1`` to ``albert_4``. One of the nodes is going
+to be a master and rest of them are going to be slaves. ``albert_1`` is
+selected as a master.
 
 ::
 
@@ -83,8 +85,8 @@ master.
   logout
   logout
 
-.. tip:: two logout(s) will move your shell back to ``cm>`` shell. This is
-         required to see a updated hostname.
+.. tip:: The last two logout(s) will move your shell back to ``cm>`` shell.
+        To use a updated hostname, your shell need to be re-established.
 
 Remember, we make changes to:
 
@@ -97,10 +99,8 @@ Remember, we make changes to:
 
 .. note:: ``albert_1 - 4`` are VM names. Actual $HOSTNAME(s) will be like
    ``albert-1``.  Underscore(_) is replaced to hypen(-) in $HOSTNAME. Dont' get
-   confused.
-
-.. tip:: VM name is a name OpenStack uses. $HOSTNAME is a name Operating System
-   uses.
+   confused. VM name is a name OpenStack uses. $HOSTNAME is a name Operating
+   System e.g. Linux uses.
 
 SSH to a Node 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,14 +120,15 @@ You expect to see::
 
   ubuntu@hc-master:~$
 
-Let's update ``hostname`` in slaves which are from ``albert_2`` to
-``albert_4``. Note that, this is a same task you did on ``hc-master`` which was
-``albert_1``. 
-
 Update of ``/etc/hostname`` Files (Slaves)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since you are probably in ``hc-master``, let's update hostname(s) from the
+Let's update ``hostname`` in slaves which are from ``albert_2`` to
+``albert_4``. Note that, this is a same task you did above on ``hc-master``
+which was ``albert_1``. 
+
+
+Since you are in ``hc-master``, let's update hostname(s) from the
 master node.
 
 ::
@@ -154,13 +155,14 @@ Now, be careful for the naming. Typical mistake is a typo or mismatch of
 numbering.
 
 ::
+
   echo hc-slave1 > /etc/hostname
   hostname hc-slave1
   logout
   logout
 
 do the same thing on ``albert_3`` and ``albert_4``.
-**REPLACE** ``albert`` with your vm name (i.e. userid).
+**REPLACE** ``albert_3`` and ``albert_4`` with your vm names.
 
 ::
 
@@ -174,6 +176,7 @@ do the same thing on ``albert_3`` and ``albert_4``.
 This is for ``albert_4``.
 
 ::
+
    ssh -o StrictHostKeyChecking=no albert_4
    sudo su -
    echo hc-slave3 > /etc/hostname
@@ -201,8 +204,8 @@ Your ``/etc/hosts/`` file must have all VC nodes and looks like so::
   10.20.30.3 hc-slave2
   10.20.30.4 hc-slave3
 
-Remember the **last four lines** which contain all VC nodes. You probably should
-delete other hostnames to your VM nodes, if exist.
+Remember the **last four lines** which contain all VC nodes. You should
+probably delete other hostnames to your VM nodes, if exist.
 
 Sed for replacing Hostname (Optional)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -220,12 +223,10 @@ This is an optional guide to update ``/etc/hosts`` file using ``sed``.
 
 .. tip:: 
         ``sed`` is string editor we will use, 
-          ``sudo sed -i 's/\b[original word]\b/[new word]/' [filename]``
-        It replaces ``[original word]`` to ``[new word]`` in a ``[filename]`` file, if
-        there is a matched string(s).
-
-.. tip:: -i option edits a file in place, starting \b and ending \b stand for
-         an exact match.
+        ``sudo sed -i 's/\b[original word]\b/[new word]/' [filename]`` It
+        replaces ``[original word]`` to ``[new word]`` in a ``[filename]``
+        file, if there is a matched string(s).  ``-i`` option edits a file in
+        place, starting ``\b`` and ending ``\b`` works with an exact match.
 
 
 
@@ -253,6 +254,7 @@ Run these commands on ``Master`` and ``Slaves`` both.
 ``Master`` Only
 
 ::
+
   sudo apt-get install openjdk-7-jdk -y
 
 ENV configuration
@@ -305,7 +307,7 @@ Hadoop Configuration
 Do the following steps on ``Master``. We will use ``rsync`` to propagate these
 configuration files to ``Slaves``.
 
-``core-site.xml``
+core-site.xml
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your ``~/hadoop/etc/hadoop/core-site.xml`` should look like this::
@@ -322,7 +324,7 @@ Important line is::
 
         <value>hdfs://hc-master/</value>
 
-``yarn-site.xml``
+yarn-site.xml
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your ``~/hadoop/etc/hadoop/yarn-site.xml`` should look like this::
@@ -340,7 +342,7 @@ Your ``~/hadoop/etc/hadoop/yarn-site.xml`` should look like this::
         </property>
         </configuration>
 
-``mapred-site.xml``
+mapred-site.xml
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Copy a template to a real file.
@@ -360,7 +362,7 @@ Your ``~/hadoop/etc/hadoop/mapred-site.xml`` should look like this::
         </configuration>
 
 
-``slaves``
+slaves
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your ``~/hadoop/etc/hadoop/slaves`` should look like this::
@@ -377,7 +379,7 @@ Run this command::
    hc-slave3
    EOF
 
-``rync``
+Configuration Slaves using rync
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These four configuration files will be copied to ``Slaves``.
@@ -391,6 +393,7 @@ These four configuration files will be copied to ``Slaves``.
 HDFS Initialization (Master)
 -------------------------------------------------------------------------------
 
+This is one-time command to format HDFS at first use.
 
 ::
 
@@ -399,15 +402,19 @@ HDFS Initialization (Master)
 Start Hadoop Cluster
 -------------------------------------------------------------------------------
 
-``Master`` has
+You have to start Hadoop processes on ``Master`` and ``Slaves`` individually.
+
+Remember, ``Master`` has
 
 * HDFS NameNode
 * YARN ResourceManager
  
-``Slaves`` have
+And ``Slaves`` have
 
 * HDFS DataNode
 * YARN NodeManager
+
+We will start these applications.
 
 Start Master
 -------------------------------------------------------------------------------
@@ -431,11 +438,13 @@ If NameNode is started, you will see::
 YARN ResourceManager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Run this command on ``Master``.
+
 ::
 
   yarn-daemon.sh start resourcemanager
 
-If ResourceManager started, you will see:
+If ResourceManager is started, you will see:
 
 ::
 
@@ -466,6 +475,9 @@ YARN NodeManager
 
 Status Check
 -------------------------------------------------------------------------------
+
+Once you started the Hadoop software on ``Master`` and ``Slaves``, you can
+check wheter it is working or not.
 
 * HDFS: ``hdfs dfsadmin -report``
 * YARN: ``yarn node -list``
@@ -504,10 +516,11 @@ Example of ``hdfs`` report::
 
   Name: 10.20.30.2:50010 (hc-slave2)
   Hostname: hc-slave2
-  ...
+  ...(supressed)...
 
   Name: 10.20.30.3:50010 (hc-slave2)
   Hostname: hc-slave2
+  ...(supressed)...
  
 
 Example of ``yarn`` list::
@@ -533,7 +546,7 @@ FAQs
 -------------------------------------------------------------------------------
 
 Q. How to stop Masters or Slaves?
-A. Use the commands::
+A. Use the commands below::
 
    (On Master)
    yarn-daemon.sh stop resourcemanager
@@ -550,7 +563,7 @@ A. ``~/hadoop/logs/`` contains log files.
 
 Q. DataNode won't start. If I remove data storage, would it help?
 A. Probably, yes. Stop datanode and remove the storage. If you used default
-configuration, the HDFS directory is under ``/tmp``.  ::
+configuration, the HDFS storage is located under ``/tmp``.  ::
 
    hadoop-daemon.sh --script hdfs stop datanode
    rm -rf /tmp/hadoop-*
