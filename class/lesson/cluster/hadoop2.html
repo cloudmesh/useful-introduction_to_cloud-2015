@@ -133,19 +133,23 @@
             
   <div class="section" id="hadoop-v2-under-preparation">
 <span id="ref-class-lesson-hadoop2"></span><h1>Hadoop v2 (Under Preparation)<a class="headerlink" href="#hadoop-v2-under-preparation" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Approximate time: 1 hour</p>
+</div>
 <div class="section" id="quick-guide">
 <h2>Quick Guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h2>
 <p>In this tutorial, remember a few things below.</p>
 <ul class="simple">
-<li><strong>REPLACE</strong> <code class="docutils literal"><span class="pre">albert</span></code> with your portal id.</li>
+<li>REPLACE <code class="docutils literal"><span class="pre">albert</span></code> with your portal id.</li>
 <li>Distinguish <code class="docutils literal"><span class="pre">Master</span></code> and <code class="docutils literal"><span class="pre">Slaves</span></code> for different installation.</li>
 <li><code class="docutils literal"><span class="pre">Master</span></code> contains HDFS NameNode and YARN ResourceManager.</li>
 <li><code class="docutils literal"><span class="pre">Slaves</span></code> contain HDFS DataNode and YARN NodeManager.</li>
 <li>Internal IPs (private) are used. You can use Floating IPs, if you have.</li>
 </ul>
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deploying-virtual-cluster">
+<h2>Deploying Virtual Cluster<a class="headerlink" href="#deploying-virtual-cluster" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="virtual-cluster-vc-with-cluster-cm-command">
 <h3>Virtual Cluster (VC) with <code class="docutils literal"><span class="pre">cluster</span></code> CM command<a class="headerlink" href="#virtual-cluster-vc-with-cluster-cm-command" title="Permalink to this headline">¶</a></h3>
 <p>Create Virtual Cluster with 4 VM instances.</p>
@@ -169,7 +173,7 @@ albert_3 100.200.1.3, 10.20.30.3
 albert_4 100.200.1.4, 10.20.30.4
 </pre></div>
 </div>
-<p>There are <strong>1 MASTER</strong> and <strong>3 SLAVES</strong> in this tutorial.</p>
+<p>There will be <strong>1 MASTER</strong> and <strong>3 SLAVES</strong> in this tutorial using these four VM instances.</p>
 </div>
 <div class="section" id="ssh-to-a-node">
 <h3>SSH to a Node<a class="headerlink" href="#ssh-to-a-node" title="Permalink to this headline">¶</a></h3>
@@ -180,9 +184,9 @@ albert_4 100.200.1.4, 10.20.30.4
 <p><strong>REPLACE</strong> <code class="docutils literal"><span class="pre">albert</span></code> with your vm name.</p>
 </div>
 </div>
-<div class="section" id="system-configuration">
-<h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
-<p>From here, You SHOULD be <strong>on a VC node.</strong></p>
+<div class="section" id="operating-system-configuration">
+<h2>Operating System Configuration<a class="headerlink" href="#operating-system-configuration" title="Permalink to this headline">¶</a></h2>
+<p>From here, You SHOULD be <strong>on a VC node</strong> which is one of your VM instances.</p>
 <div class="section" id="switch-to-root-account">
 <h3>Switch to <code class="docutils literal"><span class="pre">root</span></code> Account<a class="headerlink" href="#switch-to-root-account" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre>ubuntu@:~$ sudo su -
@@ -191,10 +195,10 @@ albert_4 100.200.1.4, 10.20.30.4
 </div>
 <div class="section" id="update-of-etc-hostname-file-master">
 <h3>Update of <code class="docutils literal"><span class="pre">/etc/hostname</span></code> File (Master)<a class="headerlink" href="#update-of-etc-hostname-file-master" title="Permalink to this headline">¶</a></h3>
-<p><strong>Define a master and slaves.</strong> In this tutorial, we have 4 VM instances
-(nodes) from <code class="docutils literal"><span class="pre">albert_1</span></code> to <code class="docutils literal"><span class="pre">albert_4</span></code>. One of the nodes is going to be a
-master and rest of them are going to be slaves. <code class="docutils literal"><span class="pre">albert_1</span></code> is selected as a
-master.</p>
+<p>We will update $HOSTNAME in a master and slaves. In this tutorial, we have 4 VM
+instances (nodes) from <code class="docutils literal"><span class="pre">albert_1</span></code> to <code class="docutils literal"><span class="pre">albert_4</span></code>. One of the nodes is going
+to be a master and rest of them are going to be slaves. <code class="docutils literal"><span class="pre">albert_1</span></code> is
+selected as a master.</p>
 <div class="highlight-python"><div class="highlight"><pre>echo hc-master &gt; /etc/hostname
 hostname hc-master
 logout
@@ -203,8 +207,8 @@ logout
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">two logout(s) will move your shell back to <code class="docutils literal"><span class="pre">cm&gt;</span></code> shell. This is
-required to see a updated hostname.</p>
+<p class="last">The last two logout(s) will move your shell back to <code class="docutils literal"><span class="pre">cm&gt;</span></code> shell.
+To use a updated hostname, your shell need to be re-established.</p>
 </div>
 <p>Remember, we make changes to:</p>
 <ul class="simple">
@@ -218,12 +222,8 @@ required to see a updated hostname.</p>
 <p class="first admonition-title">Note</p>
 <p class="last"><code class="docutils literal"><span class="pre">albert_1</span> <span class="pre">-</span> <span class="pre">4</span></code> are VM names. Actual $HOSTNAME(s) will be like
 <code class="docutils literal"><span class="pre">albert-1</span></code>.  Underscore(_) is replaced to hypen(-) in $HOSTNAME. Dont&#8217; get
-confused.</p>
-</div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">VM name is a name OpenStack uses. $HOSTNAME is a name Operating System
-uses.</p>
+confused. VM name is a name OpenStack uses. $HOSTNAME is a name Operating
+System e.g. Linux uses.</p>
 </div>
 </div>
 <div class="section" id="id1">
@@ -244,13 +244,13 @@ System.</p>
 <div class="highlight-python"><div class="highlight"><pre>ubuntu@hc-master:~$
 </pre></div>
 </div>
-<p>Let&#8217;s update <code class="docutils literal"><span class="pre">hostname</span></code> in slaves which are from <code class="docutils literal"><span class="pre">albert_2</span></code> to
-<code class="docutils literal"><span class="pre">albert_4</span></code>. Note that, this is a same task you did on <code class="docutils literal"><span class="pre">hc-master</span></code> which was
-<code class="docutils literal"><span class="pre">albert_1</span></code>.</p>
 </div>
 <div class="section" id="update-of-etc-hostname-files-slaves">
 <h3>Update of <code class="docutils literal"><span class="pre">/etc/hostname</span></code> Files (Slaves)<a class="headerlink" href="#update-of-etc-hostname-files-slaves" title="Permalink to this headline">¶</a></h3>
-<p>Since you are probably in <code class="docutils literal"><span class="pre">hc-master</span></code>, let&#8217;s update hostname(s) from the
+<p>Let&#8217;s update <code class="docutils literal"><span class="pre">hostname</span></code> in slaves which are from <code class="docutils literal"><span class="pre">albert_2</span></code> to
+<code class="docutils literal"><span class="pre">albert_4</span></code>. Note that, this is a same task you did above on <code class="docutils literal"><span class="pre">hc-master</span></code>
+which was <code class="docutils literal"><span class="pre">albert_1</span></code>.</p>
+<p>Since you are in <code class="docutils literal"><span class="pre">hc-master</span></code>, let&#8217;s update hostname(s) from the
 master node.</p>
 <div class="highlight-python"><div class="highlight"><pre>ubuntu@hc-master:~$ ssh albert_2
 The authenticity of host &#39;albert_2 (xxx.xxx.xxx.xx)&#39; can&#39;t be established.
@@ -269,15 +269,14 @@ root@albert-2:~#
 </div>
 <p>Now, be careful for the naming. Typical mistake is a typo or mismatch of
 numbering.</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>echo hc-slave1 &gt; /etc/hostname
+<div class="highlight-python"><div class="highlight"><pre>echo hc-slave1 &gt; /etc/hostname
 hostname hc-slave1
 logout
-logout</dd>
-</dl>
+logout
+</pre></div>
+</div>
 <p>do the same thing on <code class="docutils literal"><span class="pre">albert_3</span></code> and <code class="docutils literal"><span class="pre">albert_4</span></code>.
-<strong>REPLACE</strong> <code class="docutils literal"><span class="pre">albert</span></code> with your vm name (i.e. userid).</p>
+<strong>REPLACE</strong> <code class="docutils literal"><span class="pre">albert_3</span></code> and <code class="docutils literal"><span class="pre">albert_4</span></code> with your vm names.</p>
 <div class="highlight-python"><div class="highlight"><pre>ssh -o StrictHostKeyChecking=no albert_3
 sudo su -
 echo hc-slave2 &gt; /etc/hostname
@@ -287,15 +286,14 @@ logout
 </pre></div>
 </div>
 <p>This is for <code class="docutils literal"><span class="pre">albert_4</span></code>.</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>ssh -o StrictHostKeyChecking=no albert_4
+<div class="highlight-python"><div class="highlight"><pre>ssh -o StrictHostKeyChecking=no albert_4
 sudo su -
 echo hc-slave3 &gt; /etc/hostname
 hostname hc-slave3
 logout
-logout</dd>
-</dl>
+logout
+</pre></div>
+</div>
 </div>
 <div class="section" id="update-of-etc-hosts">
 <h3>Update of <code class="docutils literal"><span class="pre">/etc/hosts</span></code><a class="headerlink" href="#update-of-etc-hosts" title="Permalink to this headline">¶</a></h3>
@@ -315,8 +313,8 @@ ff02::2 ip6-allrouters
 10.20.30.4 hc-slave3
 </pre></div>
 </div>
-<p>Remember the <strong>last four lines</strong> which contain all VC nodes. You probably should
-delete other hostnames to your VM nodes, if exist.</p>
+<p>Remember the <strong>last four lines</strong> which contain all VC nodes. You should
+probably delete other hostnames to your VM nodes, if exist.</p>
 <div class="section" id="sed-for-replacing-hostname-optional">
 <h4>Sed for replacing Hostname (Optional)<a class="headerlink" href="#sed-for-replacing-hostname-optional" title="Permalink to this headline">¶</a></h4>
 <p>This is an optional guide to update <code class="docutils literal"><span class="pre">/etc/hosts</span></code> file using <code class="docutils literal"><span class="pre">sed</span></code>.</p>
@@ -329,17 +327,11 @@ sudo sed -i &quot;s/\balbert_4-i\b/hc-slave3/&quot; /etc/hosts
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">sed</span></code> is string editor we will use,</dt>
-<dd><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'s/\b[original</span> <span class="pre">word]\b/[new</span> <span class="pre">word]/'</span> <span class="pre">[filename]</span></code></dd>
-</dl>
-<p class="last">It replaces <code class="docutils literal"><span class="pre">[original</span> <span class="pre">word]</span></code> to <code class="docutils literal"><span class="pre">[new</span> <span class="pre">word]</span></code> in a <code class="docutils literal"><span class="pre">[filename]</span></code> file, if
-there is a matched string(s).</p>
-</div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">-i option edits a file in place, starting b and ending b stand for
-an exact match.</p>
+<p class="last"><code class="docutils literal"><span class="pre">sed</span></code> is string editor we will use,
+<code class="docutils literal"><span class="pre">sudo</span> <span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'s/\b[original</span> <span class="pre">word]\b/[new</span> <span class="pre">word]/'</span> <span class="pre">[filename]</span></code> It
+replaces <code class="docutils literal"><span class="pre">[original</span> <span class="pre">word]</span></code> to <code class="docutils literal"><span class="pre">[new</span> <span class="pre">word]</span></code> in a <code class="docutils literal"><span class="pre">[filename]</span></code>
+file, if there is a matched string(s).  <code class="docutils literal"><span class="pre">-i</span></code> option edits a file in
+place, starting <code class="docutils literal"><span class="pre">\b</span></code> and ending <code class="docutils literal"><span class="pre">\b</span></code> works with an exact match.</p>
 </div>
 </div>
 </div>
@@ -351,10 +343,9 @@ sudo apt-get install default-jre -y
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">Master</span></code> Only</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd>sudo apt-get install openjdk-7-jdk -y</dd>
-</dl>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install openjdk-7-jdk -y
+</pre></div>
+</div>
 </div>
 <div class="section" id="env-configuration">
 <h3>ENV configuration<a class="headerlink" href="#env-configuration" title="Permalink to this headline">¶</a></h3>
@@ -397,7 +388,7 @@ ln -s hadoop-2.7.0 hadoop
 <p>Do the following steps on <code class="docutils literal"><span class="pre">Master</span></code>. We will use <code class="docutils literal"><span class="pre">rsync</span></code> to propagate these
 configuration files to <code class="docutils literal"><span class="pre">Slaves</span></code>.</p>
 <div class="section" id="core-site-xml">
-<h3><code class="docutils literal"><span class="pre">core-site.xml</span></code><a class="headerlink" href="#core-site-xml" title="Permalink to this headline">¶</a></h3>
+<h3>core-site.xml<a class="headerlink" href="#core-site-xml" title="Permalink to this headline">¶</a></h3>
 <p>Your <code class="docutils literal"><span class="pre">~/hadoop/etc/hadoop/core-site.xml</span></code> should look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;configuration&gt;
 &lt;property&gt;
@@ -414,7 +405,7 @@ configuration files to <code class="docutils literal"><span class="pre">Slaves</
 </div>
 </div>
 <div class="section" id="yarn-site-xml">
-<h3><code class="docutils literal"><span class="pre">yarn-site.xml</span></code><a class="headerlink" href="#yarn-site-xml" title="Permalink to this headline">¶</a></h3>
+<h3>yarn-site.xml<a class="headerlink" href="#yarn-site-xml" title="Permalink to this headline">¶</a></h3>
 <p>Your <code class="docutils literal"><span class="pre">~/hadoop/etc/hadoop/yarn-site.xml</span></code> should look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;configuration&gt;
 &lt;property&gt;
@@ -432,7 +423,7 @@ configuration files to <code class="docutils literal"><span class="pre">Slaves</
 </div>
 </div>
 <div class="section" id="mapred-site-xml">
-<h3><code class="docutils literal"><span class="pre">mapred-site.xml</span></code><a class="headerlink" href="#mapred-site-xml" title="Permalink to this headline">¶</a></h3>
+<h3>mapred-site.xml<a class="headerlink" href="#mapred-site-xml" title="Permalink to this headline">¶</a></h3>
 <p>Copy a template to a real file.</p>
 <div class="highlight-python"><div class="highlight"><pre>cp ~/hadoop/etc/hadoop/mapred-site.xml.template ~/hadoop/etc/hadoop/mapred-site.xml
 </pre></div>
@@ -449,7 +440,7 @@ configuration files to <code class="docutils literal"><span class="pre">Slaves</
 </div>
 </div>
 <div class="section" id="slaves">
-<h3><code class="docutils literal"><span class="pre">slaves</span></code><a class="headerlink" href="#slaves" title="Permalink to this headline">¶</a></h3>
+<h3>slaves<a class="headerlink" href="#slaves" title="Permalink to this headline">¶</a></h3>
 <p>Your <code class="docutils literal"><span class="pre">~/hadoop/etc/hadoop/slaves</span></code> should look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">hc</span><span class="o">-</span><span class="n">slave1</span>
 <span class="n">hc</span><span class="o">-</span><span class="n">slave2</span>
@@ -465,8 +456,8 @@ EOF
 </pre></div>
 </div>
 </div>
-<div class="section" id="rync">
-<h3><code class="docutils literal"><span class="pre">rync</span></code><a class="headerlink" href="#rync" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="configuration-slaves-using-rync">
+<h3>Configuration Slaves using rync<a class="headerlink" href="#configuration-slaves-using-rync" title="Permalink to this headline">¶</a></h3>
 <p>These four configuration files will be copied to <code class="docutils literal"><span class="pre">Slaves</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre>for slave in `cat ~/hadoop/etc/hadoop/slaves`; do \
   echo $slave; rsync -avxP --exclude=logs ~/hadoop/etc/hadoop/ $i:~/hadoop/etc/hadoop/; \
@@ -477,22 +468,25 @@ done
 </div>
 <div class="section" id="hdfs-initialization-master">
 <h2>HDFS Initialization (Master)<a class="headerlink" href="#hdfs-initialization-master" title="Permalink to this headline">¶</a></h2>
+<p>This is one-time command to format HDFS at first use.</p>
 <div class="highlight-python"><div class="highlight"><pre>hdfs namenode -format
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-hadoop-cluster">
 <h2>Start Hadoop Cluster<a class="headerlink" href="#start-hadoop-cluster" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">Master</span></code> has</p>
+<p>You have to start Hadoop processes on <code class="docutils literal"><span class="pre">Master</span></code> and <code class="docutils literal"><span class="pre">Slaves</span></code> individually.</p>
+<p>Remember, <code class="docutils literal"><span class="pre">Master</span></code> has</p>
 <ul class="simple">
 <li>HDFS NameNode</li>
 <li>YARN ResourceManager</li>
 </ul>
-<p><code class="docutils literal"><span class="pre">Slaves</span></code> have</p>
+<p>And <code class="docutils literal"><span class="pre">Slaves</span></code> have</p>
 <ul class="simple">
 <li>HDFS DataNode</li>
 <li>YARN NodeManager</li>
 </ul>
+<p>We will start these applications.</p>
 </div>
 <div class="section" id="start-master">
 <h2>Start Master<a class="headerlink" href="#start-master" title="Permalink to this headline">¶</a></h2>
@@ -511,10 +505,11 @@ ubuntu    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/j
 </div>
 <div class="section" id="yarn-resourcemanager">
 <h3>YARN ResourceManager<a class="headerlink" href="#yarn-resourcemanager" title="Permalink to this headline">¶</a></h3>
+<p>Run this command on <code class="docutils literal"><span class="pre">Master</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre>yarn-daemon.sh start resourcemanager
 </pre></div>
 </div>
-<p>If ResourceManager started, you will see:</p>
+<p>If ResourceManager is started, you will see:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ps -ef|grep resourcemanager
 ubuntu    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/java -Dproc_resourcemanager -Xmx1000m -Dhadoop.log.dir=/home/ubuntu/hadoop-2.7.0/logs ...
 ... org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
@@ -540,6 +535,8 @@ ubuntu    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/j
 </div>
 <div class="section" id="status-check">
 <h2>Status Check<a class="headerlink" href="#status-check" title="Permalink to this headline">¶</a></h2>
+<p>Once you started the Hadoop software on <code class="docutils literal"><span class="pre">Master</span></code> and <code class="docutils literal"><span class="pre">Slaves</span></code>, you can
+check wheter it is working or not.</p>
 <ul class="simple">
 <li>HDFS: <code class="docutils literal"><span class="pre">hdfs</span> <span class="pre">dfsadmin</span> <span class="pre">-report</span></code></li>
 <li>YARN: <code class="docutils literal"><span class="pre">yarn</span> <span class="pre">node</span> <span class="pre">-list</span></code></li>
@@ -577,10 +574,11 @@ Last contact: Sat May 09 08:45:39 UTC 2015
 
 Name: 10.20.30.2:50010 (hc-slave2)
 Hostname: hc-slave2
-...
+...(supressed)...
 
 Name: 10.20.30.3:50010 (hc-slave2)
 Hostname: hc-slave2
+...(supressed)...
 </pre></div>
 </div>
 <p>Example of <code class="docutils literal"><span class="pre">yarn</span></code> list:</p>
@@ -604,7 +602,7 @@ separate page for this program here.</p>
 <div class="section" id="faqs">
 <h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h2>
 <p>Q. How to stop Masters or Slaves?
-A. Use the commands:</p>
+A. Use the commands below:</p>
 <div class="highlight-python"><div class="highlight"><pre>(On Master)
 yarn-daemon.sh stop resourcemanager
 hadoop-daemon.sh --script hdfs stop namenode
@@ -621,7 +619,7 @@ A. <code class="docutils literal"><span class="pre">~/hadoop/logs/</span></code>
 <code class="docutils literal"><span class="pre">hadoop-ubuntu-namenode-hc-master.log</span></code></div></blockquote>
 <p>Q. DataNode won&#8217;t start. If I remove data storage, would it help?
 A. Probably, yes. Stop datanode and remove the storage. If you used default
-configuration, the HDFS directory is under <code class="docutils literal"><span class="pre">/tmp</span></code>.</p>
+configuration, the HDFS storage is located under <code class="docutils literal"><span class="pre">/tmp</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre>hadoop-daemon.sh --script hdfs stop datanode
 rm -rf /tmp/hadoop-*
 </pre></div>
