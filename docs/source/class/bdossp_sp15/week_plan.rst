@@ -779,6 +779,12 @@ Other Technologies (under preparation)
      - 
      - 05/13
      - 05/15
+   * - **Hadoop MRv2**
+     -
+     - :ref:`1 hour <ref-class-lesson-hadoop2>`
+     -
+     -
+     -
    * - **Apache Big Data Stack (ABDS)**
          - Apache Zookeeper
          - Apache Storm
