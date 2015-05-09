@@ -682,7 +682,7 @@ Week 6
 -------------------------------------------------------------------------------
 
 
-Virtual Cluster II: Composite Cluster with Sub-Clusters (under preparation)
+Virtual Cluster II: Composite Cluster with Sub-Clusters
 *******************************************************************************
 
 .. list-table:: Virtual Cluster II
