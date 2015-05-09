@@ -718,7 +718,7 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters
    * - **Open MPI Virtual Cluster**
         - Introduction and Overview
         - HPC Stack - MPI
-        - Cloudmesh HPC
+        - Cloudmesh HPC (Not taught in this class)
      - 
      - :ref:`1 hour <ref-class-lesson-openmpi-with-cloudmesh>`
      - 
