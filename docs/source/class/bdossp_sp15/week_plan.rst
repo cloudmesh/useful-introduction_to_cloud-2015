@@ -33,7 +33,7 @@ Overview of the schedule
      - 04/29
    * - Week 6
      - **Virtual Clusters II (Composite Cluster with Sub-Clusters)**
-     - 05/06
+     - 05/14
    * - Week 7
      - **Other Technologies**
      - 05/13
@@ -701,19 +701,19 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters
      - Not taught in this class
      - Not taught in this class
      - 
-     - 05/06
-     - 05/08
+     - 
+     - 
    * - **Apache Hadoop YARN**
      - `34 mins <https://mix.office.com/watch/1eopy3tfq6kim>`_
      - :ref:`1 hour <ref-class-lesson-hadoop-yarn>`
      -
-     - 05/06
+     - 05/14
      - 
    * - **Apache ZooKeeper** 
      - `40 mins <https://mix.office.com/watch/1ptxm2uj2s7y3>`_
      - :ref:`1 hour <ref-class-lesson-zookeeper>`
      -
-     - 05/06
+     - 05/14
      - 
    * - **Open MPI Virtual Cluster**
         - Introduction and Overview
@@ -722,13 +722,13 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters
      - 
      - :ref:`1 hour <ref-class-lesson-openmpi-with-cloudmesh>`
      - 
-     - 05/06
+     - 05/14
      - 
    * - **HPC Queuing System** (optional)
      - `8 mins <https://www.youtube.com/watch?v=6oUsMyDt7gU>`_ (optional)
      - :ref:`1 hour <s-hpc>` (optional)
      -
-     - 05/06
+     - 05/14
      -
    * - **MongoDB Virtual Cluster** (repeated lesson)
         - Introduction and Overview
@@ -736,8 +736,8 @@ Virtual Cluster II: Composite Cluster with Sub-Clusters
      - `4 mins <https://mix.office.com/watch/1rx90yz48fqpn>`_
      - :ref:`1 hour <ref-class-lesson-mongodb-sharded-cluster>`
      - 
-     - 05/06
-     - 05/08
+     - 05/14
+     - 
 
 Length of the lessons in Week 6
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -773,10 +773,7 @@ Other Technologies (under preparation)
      - 
      - 05/13
      - 05/15
-   * - **VM Software**
-         - Vagrant
-         - Oracle VirtualBox
-         - VMWare
+   * - **VM Software - Vagrant**
      - Not yet available
      - :ref:`30 min (In preparation) <ref-virtualization-tools>` 
      - 
@@ -801,6 +798,9 @@ Other Technologies (under preparation)
      - 
      - 05/13
      - 05/15
+
+..       - Oracle VirtualBox
+         - VMWare
 
 .. comment::
 
