@@ -768,12 +768,6 @@ Other Technologies (under preparation)
      -
      - 05/21
      -
-   * - **Docker with Cloudmesh**
-     -
-     - :ref:`1 hour <ref-class-lesson-docker-with-cloudmesh>`
-     -
-     - 05/21
-     -
    * - **VM Software - Vagrant**
      - Not yet available
      - :ref:`30 min (In preparation) <ref-virtualization-tools>` 
