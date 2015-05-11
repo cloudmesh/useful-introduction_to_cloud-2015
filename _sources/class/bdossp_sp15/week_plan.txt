@@ -780,6 +780,12 @@ Other Technologies (under preparation)
      -
      -
      -
+   * - **Apache ZooKeeper** (repeated lesson)
+     - `40 mins <https://mix.office.com/watch/1ptxm2uj2s7y3>`_
+     - :ref:`1 hour <ref-class-lesson-zookeeper>`
+     -
+     - 05/21
+     - 
    * - **Apache Big Data Stack (ABDS)**
          - Apache Zookeeper
          - Apache Storm
