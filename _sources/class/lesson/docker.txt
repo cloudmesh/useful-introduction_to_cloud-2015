@@ -189,10 +189,13 @@ Reference
 The main tutorial from Docker is here:
 https://docs.docker.com/installation/ubuntulinux/
 
-Next Step
--------------------------------------------------------------------------------
 
-In the next lesson, we learn how to deploy Cloudmesh using Docker.
+.. comment::
 
-:ref:`Next Tutorial- Deploying Cloudmesh using Docker <ref-class-lesson-docker-with-cloudmesh>`
+        Next Step
+        -------------------------------------------------------------------------------
+
+        In the next lesson, we learn how to deploy Cloudmesh using Docker.
+
+        :ref:`Next Tutorial- Deploying Cloudmesh using Docker <ref-class-lesson-docker-with-cloudmesh>`
 
