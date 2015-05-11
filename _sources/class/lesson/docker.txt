@@ -1,27 +1,35 @@
 .. _ref-class-lesson-docker:
 
-Try Docker Basic on FutureSystems
-===============================================================
+Docker Basics on FutureSystems
+===============================================================================
 
 Docker is an image-based resource isolation software by using operating system
 level virtualization.  Docker host runs software containers which deploy
 applications with its environments. You can easily share your application using
 Docker container across different platforms or operating systems.  This
-section, we introduce basic commands of ``docker`` to introduce Docker software
+section, we introduce basic commands of ``docker`` to explore Docker software
 on FutureSystems.  In the next section, we will explore advanced use of
-``docker`` on FutureSystems.
+``docker`` with Cloudmesh on FutureSystems.
 
-Tutorial: Docker Basic commands
---------------------------------------------------------------------
+Overview
+-------------------------------------------------------------------------------
 
-.. tip:: approximate time 30 minutes
+.. tip:: approximate time 1 hour
 
-In this tutorial, we are going to learn basic commands of Docker software.
+In this tutorial, we are going to learn basic commands of Docker.
 Keep in mind that ``docker`` is a main program and ``container`` is an image
 that you would like to use. You may have several containers in your docker.
 
-Install Docker 
-~~~~~~~~~~~~~~
+The commands will be covered:
+
+* Start a container (run)
+* List containers (ps)
+* Logs (logs)
+* Search containers (search)
+* Stop and delete a container (stop, rm)
+
+Docker Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use Ubuntu package tool `apt-get` to download and install Docker.
 
@@ -39,8 +47,8 @@ We use Ubuntu package tool `apt-get` to download and install Docker.
     sudo apt-get update
     sudo apt-get install lxc-docker
 
-Test Docker
-~~~~~~~~~~~
+Example I: "Hello, World"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run a simple command "Hello, World".
 
@@ -48,8 +56,8 @@ Run a simple command "Hello, World".
 
   sudo docker run -it ubuntu echo "Hello, World"
 
-Obtain Shell Prompt in Docker Container
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Shell Prompt in Docker Container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Docker command has a sub-command ``run`` to execute containers with a few
 parameters.  In this example, we use Ubuntu 14.04 image to get bash shell
@@ -60,7 +68,7 @@ prompt.
   sudo docker run -i -t ubuntu:14.04 /bin/bash
 
 
-Expected result looks like this:
+You expect to see results like so: 
 
 ::
   
@@ -68,8 +76,8 @@ Expected result looks like this:
 
 Type ``exit`` to quit the shell and return to Docker host.
 
-Run Apache Tomcat Server
-~~~~~~~~~~~~~~~~~~~~~~~~
+Example II: Apache Tomcat Server on Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It's easy to deploy Apache Tomcat using Docker. Please run the following
 command: (sudo is suppressed)
@@ -88,8 +96,8 @@ daemonizes the container.
          your local.
 
 
-List Containers
-~~~~~~~~~~~~~~~~~
+Listing Containers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We use ``ps`` sub command to list available containers.
 
@@ -97,13 +105,13 @@ We use ``ps`` sub command to list available containers.
 
   docker ps
 
-Expected result looks like this::
+You expect to see results like so::
 
   CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS              PORTS                    NAMES
   4690a7973fef        tomcat:8.0                   "catalina.sh run"   8 seconds ago       Up 5 seconds        0.0.0.0:8888->8080/tcp   adoring_lalande
 
-See Logs
-~~~~~~~~
+Logs of Container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can find out details of your container by looking at log messages. Use
 ``NAMES`` from previous command.  This example we use ``adoring_lalande`` for
@@ -113,7 +121,7 @@ your tomcat:8.0 container.
 
    docker logs -f adoring_lalande
 
-Logs look like::
+Logs look like so::
 
   13-Feb-2015 03:02:57.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.18
   13-Feb-2015 03:02:57.526 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2015 11:56:07 UTC
@@ -123,7 +131,7 @@ Logs look like::
   ...
 
 Search Containers
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you are looking for other containers, ``search`` command is useful to find.
 
@@ -133,7 +141,7 @@ For example, try to find ``ipython`` containers.
 
   docker search ipython
   
-Expected result looks like this::
+You expect to see results like so:: 
 
         NAME                                DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
         ipython/scipyserver                 IPython notebook server with the full SciP...   36                   [OK]
@@ -144,7 +152,7 @@ Expected result looks like this::
 .. tip:: ``STARS`` indicates popular containers.
 
 Stop and Delete Container
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Like stopping and terminating a virtual instance, docker stops and deletes its
 container with two commands: ``stop`` and ``rm`` We use ``NAMES`` from ``docker
@@ -162,7 +170,7 @@ After stopping the container, you can delete it.
   docker rm adoring_lalande
 
 Review Docker Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------
 
 We have learned some Docker commands. These are basic commands for Docker
 software.
@@ -176,14 +184,15 @@ software.
 * ``docker rm``: deletes your container image.
 
 Reference
-~~~~~~~~~~
+-------------------------------------------------------------------------------
 
 The main tutorial from Docker is here:
 https://docs.docker.com/installation/ubuntulinux/
 
 Next Step
----------
+-------------------------------------------------------------------------------
 
-In the next page, we deploy Cloudmesh on FutureSystems using Docker.
+In the next lesson, we learn how to deploy Cloudmesh using Docker.
 
-`Next Tutorial>> Deploying Cloudmesh using Docker <docker_cloudmesh.html>`_
+:ref:`Next Tutorial- Deploying Cloudmesh using Docker <ref-class-lesson-docker-with-cloudmesh>`
+

@@ -36,7 +36,7 @@
     <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
         <link rel="up" title="Lessons" href="../lessons.html"/>
         <link rel="next" title="FAQ (Under Preparation)" href="faq.html"/>
-        <link rel="prev" title="Try Docker Basic on FutureSystems" href="docker.html"/> 
+        <link rel="prev" title="Docker Basics on FutureSystems" href="docker.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -92,7 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="ansible.html">Ansible</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ansible.html#tutorial-ansible-basic-commands">Tutorial: Ansible Basic commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ansible_playbook.html">Ansible Playbooks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docker.html">Try Docker Basic on FutureSystems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docker.html">Docker Basics on FutureSystems</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Deploying Cloudmesh using Docker on FutureSystems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faq.html">FAQ (Under Preparation)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="git.html">Using Git and GitHub for collaboration</a></li>
@@ -180,23 +180,24 @@ level virtualization.  Docker host runs software containers which deploy
 applications with its environments. You can easily share your application using
 Docker container across different platforms or operating systems.  This
 section, we introduce basic commands of <code class="docutils literal"><span class="pre">docker</span></code> to introduce Docker software
-on FutureSystems.  In the next section, we will explore advanced use of
-<code class="docutils literal"><span class="pre">docker</span></code> on FutureSystems.</p>
+on FutureSystems.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Need a basic tutorial for Docker? <a class="reference external" href="docker.html">Tutorial: Docker Basic commands</a></p>
+<p class="last">Need a basic tutorial for Docker? <a class="reference internal" href="docker.html#ref-class-lesson-docker"><span>Tutorial: Docker Basic commands</span></a></p>
 </div>
-<div class="section" id="tutorial-deploying-cloudmesh-using-docker">
-<h2>Tutorial: Deploying Cloudmesh using Docker<a class="headerlink" href="#tutorial-deploying-cloudmesh-using-docker" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">approximate time 10 minutes</p>
+<p class="last">approximate time 1 hour</p>
 </div>
 <p>In this tutorial, we are going to deploy Cloudmesh using Docker software.
 Keep in mind that <code class="docutils literal"><span class="pre">docker</span></code> is a main program and <code class="docutils literal"><span class="pre">container</span></code> is an image
-that you would like to use. We use Cloudmesh container to deploy.</p>
+that you will use on Docker. We use Cloudmesh container to deploy in this
+tutorial.</p>
+</div>
 <div class="section" id="run-cloudmesh">
-<h3>Run Cloudmesh<a class="headerlink" href="#run-cloudmesh" title="Permalink to this headline">¶</a></h3>
+<h2>Run Cloudmesh<a class="headerlink" href="#run-cloudmesh" title="Permalink to this headline">¶</a></h2>
 <p>It&#8217;s easy to deploy Cloudmesh using Docker. Please run the following
 command: (sudo is suppressed)</p>
 <div class="highlight-python"><div class="highlight"><pre>docker run -d -p 80:8888 cloudmesh
@@ -211,7 +212,6 @@ daemonizes the container.</p>
 <p class="last">Did you see <code class="docutils literal"><span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">find</span> <span class="pre">image</span> <span class="pre">'cloudmesh'</span> <span class="pre">locally</span></code>?
 Your Docker will find <code class="docutils literal"><span class="pre">cloudmesh</span></code> from Docker Hub and download it to
 your local.</p>
-</div>
 </div>
 <div class="section" id="stop-and-delete-container">
 <h3>Stop and Delete Container<a class="headerlink" href="#stop-and-delete-container" title="Permalink to this headline">¶</a></h3>
@@ -228,10 +228,6 @@ container.</p>
 </div>
 </div>
 </div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h2>
-<p>In the next page, we explore [] on FutureSystems.</p>
-</div>
 </div>
 
 
@@ -243,7 +239,7 @@ container.</p>
         <a href="faq.html" class="btn btn-neutral float-right" title="FAQ (Under Preparation)">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="docker.html" class="btn btn-neutral" title="Try Docker Basic on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="docker.html" class="btn btn-neutral" title="Docker Basics on FutureSystems"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
