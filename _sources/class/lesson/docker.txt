@@ -1,3 +1,5 @@
+.. _ref-class-lesson-docker:
+
 Try Docker Basic on FutureSystems
 ===============================================================
 

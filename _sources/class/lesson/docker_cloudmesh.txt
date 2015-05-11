@@ -1,3 +1,5 @@
+.. _ref-class-lesson-docker-with-cloudmesh:
+
 Deploying Cloudmesh using Docker on FutureSystems
 ===============================================================
 
