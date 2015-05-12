@@ -26,6 +26,20 @@ In order to conduct this lesson you should have knowledge of
 * Accessing FutureSystems
 
 
+.. tip::
+
+   Ansible uses ssh to access many machines.
+   To simplify your life, start an ssh agent and add your credentials::
+
+     $ eval $(ssh-agent -s)
+     $ ssh-add ~/.ssh/id_rsa
+
+   Make sure that the fingerprint matches with the key you boot the OpenStack instance with::
+
+     $ nova keypair-list
+     $ ssh-keygen -lf ~/.ssh/id_rsa.pub
+
+
 .. include:: ../ansible.rst
 
 .. include:: ../ansible_playbook.rst
