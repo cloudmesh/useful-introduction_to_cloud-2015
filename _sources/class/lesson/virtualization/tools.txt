@@ -1,6 +1,6 @@
 .. _ref-virtualization-tools:
 
-Virtualization Tools (Under Preparation)
+Virtualization Tools
 ======================================================================
 
 

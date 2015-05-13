@@ -770,7 +770,7 @@ Other Technologies (under preparation)
      -
    * - **VM Software - Vagrant**
      - Not yet available
-     - :ref:`30 min (In preparation) <ref-virtualization-tools>` 
+     - :ref:`30 min <ref-virtualization-tools>` 
      - 
      - 05/13
      - 05/15
