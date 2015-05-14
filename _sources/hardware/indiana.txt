@@ -41,7 +41,7 @@ overview of some important information about these clusters.
 
 .. _t-clusters-details:
 
-.. table:: **Table**: Compute Resources
+.. table:: **Table**: Compute Resources Details
 
    +------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+------------------------------+
    | Attribute                    | India                      | Echo                       | Bravo                      | Delta                      | Madrid                      | Tempest                     | Juliet                       |
