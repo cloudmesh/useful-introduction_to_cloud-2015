@@ -387,7 +387,7 @@ These four configuration files will be copied to ``Slaves``.
 ::
   
   for slave in `cat ~/hadoop/etc/hadoop/slaves`; do \
-    echo $slave; rsync -avxP --exclude=logs ~/hadoop/etc/hadoop/ $i:~/hadoop/etc/hadoop/; \
+    echo $slave; rsync -avxP --exclude=logs ~/hadoop/etc/hadoop/ $slave:~/hadoop/etc/hadoop/; \
   done
 
 HDFS Initialization (Master)
