@@ -675,135 +675,157 @@ which is &#8216;Variable_List&#8217;</p>
 <div class="section" id="cloudmesh-pbs-pbsdeploy-module">
 <h2>cloudmesh_pbs.PBSDeploy module<a class="headerlink" href="#cloudmesh-pbs-pbsdeploy-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-cloudmesh_pbs.PDSScriptWrapper">
-<span id="cloudmesh-pbs-pdsscriptwrapper-module"></span><h2>cloudmesh_pbs.PDSScriptWrapper module<a class="headerlink" href="#module-cloudmesh_pbs.PDSScriptWrapper" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh_pbs.PBSScriptWrapper">
+<span id="cloudmesh-pbs-pbsscriptwrapper-module"></span><h2>cloudmesh_pbs.PBSScriptWrapper module<a class="headerlink" href="#module-cloudmesh_pbs.PBSScriptWrapper" title="Permalink to this headline">¶</a></h2>
 <p>Wrap the PBS script with another script that captures stdout and
 stderr, and provides support for checking the status of the job.</p>
 <dl class="class">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PDSScriptWrapper.</code><code class="descname">PBSScriptParser</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PBSScriptWrapper.</code><code class="descname">PBSScriptParser</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.handle_directive">
-<code class="descname">handle_directive</code><span class="sig-paren">(</span><em>line</em>, <em>prefix='#PBS'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser.handle_directive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.handle_directive" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.handle_directive">
+<code class="descname">handle_directive</code><span class="sig-paren">(</span><em>line</em>, <em>prefix='#PBS'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.handle_directive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.handle_directive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.handle_script">
-<code class="descname">handle_script</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser.handle_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.handle_script" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.handle_script">
+<code class="descname">handle_script</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.handle_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.handle_script" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.is_directive">
-<code class="descname">is_directive</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser.is_directive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.is_directive" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.handle_shebang">
+<code class="descname">handle_shebang</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.handle_shebang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.handle_shebang" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.parse">
-<code class="descname">parse</code><span class="sig-paren">(</span><em>path_or_file</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.parse" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.is_directive">
+<code class="descname">is_directive</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.is_directive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.is_directive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.parses">
-<code class="descname">parses</code><span class="sig-paren">(</span><em>script_string</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser.parses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.parses" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.is_shebang">
+<code class="descname">is_shebang</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.is_shebang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.is_shebang" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#PBSScriptParser.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParser.result" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>path_or_file</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.parses">
+<code class="descname">parses</code><span class="sig-paren">(</span><em>script_string</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.parses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.parses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.result">
+<code class="descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#PBSScriptParser.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParser.result" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PDSScriptWrapper.</code><code class="descname">PBSScriptParserResult</code><span class="sig-paren">(</span><em>shebang</em>, <em>directives</em>, <em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PBSScriptWrapper.</code><code class="descname">PBSScriptParserResult</code><span class="sig-paren">(</span><em>shebang</em>, <em>directives</em>, <em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></p>
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult.directives">
-<code class="descname">directives</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult.directives" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult.directives">
+<code class="descname">directives</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult.directives" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult.script">
-<code class="descname">script</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult.script" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult.script">
+<code class="descname">script</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult.script" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult.shebang">
-<code class="descname">shebang</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.PBSScriptParserResult.shebang" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult.shebang">
+<code class="descname">shebang</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.PBSScriptParserResult.shebang" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Script">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PDSScriptWrapper.</code><code class="descname">Script</code><span class="sig-paren">(</span><em>name</em>, <em>contents</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#Script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Script" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Script">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PBSScriptWrapper.</code><code class="descname">Script</code><span class="sig-paren">(</span><em>name</em>, <em>contents</em>, <em>mode=492</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#Script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Script" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Script.name">
-<code class="descname">name</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Script.name" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Script.mode">
+<code class="descname">mode</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Script.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The script execution bits (passed to <cite>os.chmod</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Script.name">
+<code class="descname">name</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Script.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name (or path) of the script</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Script.script">
-<code class="descname">script</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Script.script" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Script.script">
+<code class="descname">script</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Script.script" title="Permalink to this definition">¶</a></dt>
 <dd><p>The script body</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Script.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>directory</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#Script.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Script.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the script into a file name <code class="docutils literal"><span class="pre">name</span></code> in the directory</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Status">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PDSScriptWrapper.</code><code class="descname">Status</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#Status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Status" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Status">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PBSScriptWrapper.</code><code class="descname">Status</code><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#Status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>The various states of a job</p>
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Status.failure">
-<code class="descname">failure</code><em class="property"> = 'failure'</em><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Status.failure" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Status.failure">
+<code class="descname">failure</code><em class="property"> = 'failure'</em><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Status.failure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Status.started">
-<code class="descname">started</code><em class="property"> = 'started'</em><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Status.started" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Status.started">
+<code class="descname">started</code><em class="property"> = 'started'</em><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Status.started" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Status.success">
-<code class="descname">success</code><em class="property"> = 'success'</em><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Status.success" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Status.success">
+<code class="descname">success</code><em class="property"> = 'success'</em><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Status.success" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.WrappedScript">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PDSScriptWrapper.</code><code class="descname">WrappedScript</code><span class="sig-paren">(</span><em>entrypoint</em>, <em>wrapped</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#WrappedScript"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.WrappedScript" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.WrappedScript">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PBSScriptWrapper.</code><code class="descname">WrappedScript</code><span class="sig-paren">(</span><em>entrypoint</em>, <em>wrapped</em>, <em>status='STATUS.txt'</em>, <em>stdout='STDOUT.txt'</em>, <em>stderr='STDERR.txt'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#WrappedScript"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.WrappedScript" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.WrappedScript.entrypoint">
-<code class="descname">entrypoint</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.WrappedScript.entrypoint" title="Permalink to this definition">¶</a></dt>
-<dd><p>The <a class="reference internal" href="#cloudmesh_pbs.PDSScriptWrapper.Script" title="cloudmesh_pbs.PDSScriptWrapper.Script"><code class="xref py py-class docutils literal"><span class="pre">Script</span></code></a> that is the main entrypoint (the wrapper)</p>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.WrappedScript.entrypoint">
+<code class="descname">entrypoint</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.WrappedScript.entrypoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#cloudmesh_pbs.PBSScriptWrapper.Script" title="cloudmesh_pbs.PBSScriptWrapper.Script"><code class="xref py py-class docutils literal"><span class="pre">Script</span></code></a> that is the main entrypoint (the wrapper)</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.WrappedScript.wrapped">
-<code class="descname">wrapped</code><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.WrappedScript.wrapped" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.WrappedScript.wrapped">
+<code class="descname">wrapped</code><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.WrappedScript.wrapped" title="Permalink to this definition">¶</a></dt>
 <dd><p>The wrapped script</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Wrapper">
-<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PDSScriptWrapper.</code><code class="descname">Wrapper</code><span class="sig-paren">(</span><em>bash_location='/bin/bash'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#Wrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Wrapper" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Wrapper">
+<em class="property">class </em><code class="descclassname">cloudmesh_pbs.PBSScriptWrapper.</code><code class="descname">Wrapper</code><span class="sig-paren">(</span><em>bash_location='/bin/bash'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#Wrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Wrapper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <dl class="method">
-<dt id="cloudmesh_pbs.PDSScriptWrapper.Wrapper.wrap">
-<code class="descname">wrap</code><span class="sig-paren">(</span><em>path_to_script</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PDSScriptWrapper.html#Wrapper.wrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PDSScriptWrapper.Wrapper.wrap" title="Permalink to this definition">¶</a></dt>
+<dt id="cloudmesh_pbs.PBSScriptWrapper.Wrapper.wrap">
+<code class="descname">wrap</code><span class="sig-paren">(</span><em>path_to_script</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_pbs/PBSScriptWrapper.html#Wrapper.wrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_pbs.PBSScriptWrapper.Wrapper.wrap" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

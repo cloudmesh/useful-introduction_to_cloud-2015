@@ -460,7 +460,7 @@ EOF
 <h3>Configuration Slaves using rync<a class="headerlink" href="#configuration-slaves-using-rync" title="Permalink to this headline">¶</a></h3>
 <p>These four configuration files will be copied to <code class="docutils literal"><span class="pre">Slaves</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre>for slave in `cat ~/hadoop/etc/hadoop/slaves`; do \
-  echo $slave; rsync -avxP --exclude=logs ~/hadoop/etc/hadoop/ $i:~/hadoop/etc/hadoop/; \
+  echo $slave; rsync -avxP --exclude=logs ~/hadoop/etc/hadoop/ $slave:~/hadoop/etc/hadoop/; \
 done
 </pre></div>
 </div>

@@ -43,10 +43,10 @@ cloudmesh_pbs.PBSDeploy module
     :undoc-members:
     :show-inheritance:
 
-cloudmesh_pbs.PDSScriptWrapper module
+cloudmesh_pbs.PBSScriptWrapper module
 -------------------------------------
 
-.. automodule:: cloudmesh_pbs.PDSScriptWrapper
+.. automodule:: cloudmesh_pbs.PBSScriptWrapper
     :members:
     :undoc-members:
     :show-inheritance:
