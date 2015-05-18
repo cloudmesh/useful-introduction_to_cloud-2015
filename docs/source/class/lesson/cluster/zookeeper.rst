@@ -82,14 +82,15 @@ Download 3.4.6
 
   wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
   tar xzf zookeeper*.tar.gz
+  ln -s zookeeper* zookeeper
   
 Configuration ``zoo.cfg``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-  cp zookeeper-*/conf/zoo_sample.cfg zookeeper-*/conf/zoo.cfg
-  nano zookeeper-*/conf/zoo.cfg
+  cp zookeeper/conf/zoo_sample.cfg zookeeper/conf/zoo.cfg
+  nano zookeeper/conf/zoo.cfg
 
 Confirm the settings and update with::
 
