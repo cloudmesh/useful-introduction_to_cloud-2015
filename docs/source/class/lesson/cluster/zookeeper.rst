@@ -82,7 +82,7 @@ Download 3.4.6
 
   wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
   tar xzf zookeeper*.tar.gz
-  ln -s zookeeper* zookeeper
+  ln -s zookeeper-3.4.6 zookeeper
   
 Configuration ``zoo.cfg``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
