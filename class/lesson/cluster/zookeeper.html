@@ -197,16 +197,31 @@ management with retries and easy development of new ZooKeeper recipes.</p>
 </div>
 <div class="section" id="zookeeper-installation">
 <h2>ZooKeeper Installation<a class="headerlink" href="#zookeeper-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="required-packages">
+<h3>Required Packages<a class="headerlink" href="#required-packages" title="Permalink to this headline">¶</a></h3>
+<p>ZooKeeper runs in Java, release 1.6 or greater (JDK 6 or greater).</p>
+<p>Java JDK</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get update
+sudo apt-get install openjdk-7-jdk
+</pre></div>
+</div>
+<p>You can find other installation packages here:
+<a class="reference external" href="http://java.sun.com/javase/downloads/index.jsp">http://java.sun.com/javase/downloads/index.jsp</a></p>
+</div>
+<div class="section" id="zookeeper-server-package">
+<h3>ZooKeeper Server Package<a class="headerlink" href="#zookeeper-server-package" title="Permalink to this headline">¶</a></h3>
 <p>Download latest here: <a class="reference external" href="http://www.apache.org/dyn/closer.cgi/zookeeper/">http://www.apache.org/dyn/closer.cgi/zookeeper/</a></p>
 <p>Download 3.4.6</p>
 <div class="highlight-python"><div class="highlight"><pre>wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
 tar xzf zookeeper*.tar.gz
+ln -s zookeeper-3.4.6 zookeeper
 </pre></div>
+</div>
 </div>
 <div class="section" id="configuration-zoo-cfg">
 <h3>Configuration <code class="docutils literal"><span class="pre">zoo.cfg</span></code><a class="headerlink" href="#configuration-zoo-cfg" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre>cp zookeeper-*/conf/zoo_sample.cfg zookeeper-*/conf/zoo.cfg
-nano zookeeper-*/conf/zoo.cfg
+<div class="highlight-python"><div class="highlight"><pre>cp zookeeper/conf/zoo_sample.cfg zookeeper/conf/zoo.cfg
+nano zookeeper/conf/zoo.cfg
 </pre></div>
 </div>
 <p>Confirm the settings and update with:</p>
@@ -254,19 +269,19 @@ echo &quot;2&quot; &gt; /var/lib/zookeeper/myid
 <div class="section" id="start-zookeeper-server">
 <h3>Start ZooKeeper Server<a class="headerlink" href="#start-zookeeper-server" title="Permalink to this headline">¶</a></h3>
 <p>Now that you created the configuration file, you can start ZooKeeper:</p>
-<div class="highlight-python"><div class="highlight"><pre>bin/zkServer.sh start
+<div class="highlight-python"><div class="highlight"><pre>zookeeper/bin/zkServer.sh start
 </pre></div>
 </div>
 </div>
 <div class="section" id="zookeeper-client">
 <h3>ZooKeeper Client<a class="headerlink" href="#zookeeper-client" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre>bin/zkCli.sh
+<div class="highlight-python"><div class="highlight"><pre>zookeeper/bin/zkCli.sh
 ...
 [zk: localhost:2181(CONNECTED) 0]
 </pre></div>
 </div>
 <p>If you get access to other nodes:</p>
-<div class="highlight-python"><div class="highlight"><pre>bin/zkCli.sh -server [node ip address]:2181
+<div class="highlight-python"><div class="highlight"><pre>zookeeper/bin/zkCli.sh -server [node ip address]:2181
 </pre></div>
 </div>
 </div>

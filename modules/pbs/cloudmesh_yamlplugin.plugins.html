@@ -136,90 +136,11 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin">
-<span id="cloudmesh-yamlplugin-plugins-cm-shell-yamlplugin-module"></span><h2>cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin module<a class="headerlink" href="#module-cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.cm_shell_yamlplugin">
-<em class="property">class </em><code class="descclassname">cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.</code><code class="descname">cm_shell_yamlplugin</code><a class="reference internal" href="../../_modules/cloudmesh_yamlplugin/plugins/cm_shell_yamlplugin.html#cm_shell_yamlplugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.cm_shell_yamlplugin" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.cm_shell_yamlplugin.activate_cm_shell_yamlplugin">
-<code class="descname">activate_cm_shell_yamlplugin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh_yamlplugin/plugins/cm_shell_yamlplugin.html#cm_shell_yamlplugin.activate_cm_shell_yamlplugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.cm_shell_yamlplugin.activate_cm_shell_yamlplugin" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.cm_shell_yamlplugin.do_yamlplugin">
-<code class="descname">do_yamlplugin</code><span class="sig-paren">(</span><em>instance</em>, <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin.cm_shell_yamlplugin.do_yamlplugin" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre>Usage:
-
-    yamlplugin add --command COMMAND
-    yamlplugin add --package PACKAGE
-
-    yamlplugin delete --command COMMAND
-    yamlplugin delete --package PACKAGE
-
-    yamlplugin disable --command COMMAND
-    yamlplugin disable --package PACKAGE
-
-    yamlplugin list
-
-    yamlplugin view
-
-Description:
-
-    Please note that adding and deleting plugins requires restarting
-    cm to activate them
-
-    yamlplugin list
-
-        lists the plugins in the yaml file
-
-    yamlplugin list
-
-        lists the plugins in the yaml file
-
-    yamlplugin --command add/delete COMMAND
-    yamlplugin delete --command COMMAND
-
-        cmd3 contains a ~/.cloudmesh/cmd3.yaml file.
-        This command will add/delete a plugin for a given command
-        that has been generated with cm-generate-command
-        To the yaml this command will add to the modules
-
-            - cloudmesh_COMMAND.plugins
-
-        where COMMAND is the name of the command. In case we add
-        a command and the command is out commented the comment
-        will be removed so the command is enabled.
-
-    yamlplugin add --package PACKAGE
-    yamlplugin delete --package PACKAGE
-
-        This command adds/delete the package name
-
-            - PACKAGE.plugins
-
-        To the cmd3.yaml file
-
-    yamlplugin disable --command COMMAND
-    yamlplugin disable --package PACKAGE
-
-        sometimes it is beneficial to actually not delete the module
-        from the yaml file but out comment. THis way it can using add
-        will first check if it it out commended and remove the comment
-        to enable it
-
-Example:
-
-    yamlplugin add pbs
-</pre></div>
+<div class="section" id="cloudmesh-yamlplugin-plugins-cm-shell-yamlplugin-module">
+<h2>cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin module<a class="headerlink" href="#cloudmesh-yamlplugin-plugins-cm-shell-yamlplugin-module" title="Permalink to this headline">¶</a></h2>
 </div>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-cloudmesh_yamlplugin.plugins">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudmesh_yamlplugin.plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

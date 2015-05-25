@@ -780,6 +780,12 @@ Other Technologies (under preparation)
      -
      -
      -
+   * - **Hadoop MRv2 with Cloudmesh ``launcher``**
+     -
+     - :ref:`30 mins <ref-class-lesson-hadoop2-launcher>`
+     -
+     -
+     -
    * - **Apache ZooKeeper** (repeated lesson)
      - `40 mins <https://mix.office.com/watch/1ptxm2uj2s7y3>`_
      - :ref:`1 hour <ref-class-lesson-zookeeper>`
