@@ -144,6 +144,7 @@
 <li>REPLACE <code class="docutils literal"><span class="pre">albert</span></code> with your portal id.</li>
 <li>Cloudmesh installation is required.</li>
 <li><code class="docutils literal"><span class="pre">dev2.0</span></code> branch is a main repository for Cloudmesh</li>
+<li>One Hadoop cluster per user <strong>TERMINATE AFTER USE</strong></li>
 </ul>
 </div>
 <div class="section" id="overview">
@@ -494,7 +495,7 @@ hc-slave1:43613                RUNNING    hc-slave1:8042                        
 <h3>HDFS NameNode<a class="headerlink" href="#hdfs-namenode" title="Permalink to this headline">¶</a></h3>
 <p>If NameNode is started on Master, you will see:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ps -ef|grep namenode
-ubuntu    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/java -Dproc_namenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/home/ubuntu/hadoop-2.7.0/logs ...
+root    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/java -Dproc_namenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/root/hadoop-2.7.0/logs ...
 ...  org.apache.hadoop.hdfs.server.namenode.NameNode
 </pre></div>
 </div>
@@ -503,7 +504,7 @@ ubuntu    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/j
 <h3>YARN ResourceManager<a class="headerlink" href="#yarn-resourcemanager" title="Permalink to this headline">¶</a></h3>
 <p>If ResourceManager is started on Master, you will see:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ps -ef|grep resourcemanager
-ubuntu    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/java -Dproc_resourcemanager -Xmx1000m -Dhadoop.log.dir=/home/ubuntu/hadoop-2.7.0/logs ...
+root    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/java -Dproc_resourcemanager -Xmx1000m -Dhadoop.log.dir=/root/hadoop-2.7.0/logs ...
 ... org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
 </pre></div>
 </div>
@@ -516,6 +517,42 @@ cluster. One of the popular examples of Hadoop is a Word Count MapReduce
 program which counts how often words occur from the input text file. We have a
 separate page for this program here.</p>
 <p><a class="reference internal" href="wordcount.html#ref-class-lesson-hadoop-word-count"><span>Word Count Program</span></a></p>
+</div>
+<div class="section" id="launcher-termination">
+<h2>Launcher Termination<a class="headerlink" href="#launcher-termination" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;ve completed your tasks or jobs on Hadoop 2.7.0 cluster, you need to
+terminate your hadoop stack on launcher.</p>
+<p>Check your existing launcher stack.</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
+</pre></div>
+</div>
+<p>My example is:</p>
+<div class="highlight-python"><div class="highlight"><pre>+--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| 7881c97f-5ce8-4c25-9a80-a6bec9299869 | launcher-albert-hadoop2.7-image-NOAO5A | Hadoop cluster with OpenStack Heat | CREATE_COMPLETE | 2015-01-25T14:16:34Z | india    |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+</pre></div>
+</div>
+<p>Terminate it with the stack_name:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher stop launcher-albert-hadoop2.7-image-NOAO5A
+</pre></div>
+</div>
+<p>You expect to see like so:</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:684:  DEBUG - 684: AUTH URL http://i5r.idp.iu.futuregrid.org:8004/v1/c713809dee494dccac34fcd02e012acb/stacks/launcher-hrlee-hadoop2.7-image-NOAO5A
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:690:  DEBUG - 690: Response &lt;Response [200]&gt;
+CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_launcher.pyc... site:241:  DEBUG - {&#39;msg&#39;: &#39;success&#39;}
+</pre></div>
+</div>
+<p>Confirm that your launcher stack is deleted:</p>
+<div class="highlight-python"><div class="highlight"><pre>cm launcher list
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+| launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
++--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+</pre></div>
+</div>
 </div>
 <div class="section" id="faqs">
 <h2>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h2>
