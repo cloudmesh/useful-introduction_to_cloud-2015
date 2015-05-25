@@ -1,6 +1,6 @@
 .. _ref-class-lesson-hadoop2:
 
-Hadoop v2 (Under Preparation)
+Hadoop v2 (Under Development)
 ===============================================================================
 
 .. tip:: Approximate time: 1 hour 
