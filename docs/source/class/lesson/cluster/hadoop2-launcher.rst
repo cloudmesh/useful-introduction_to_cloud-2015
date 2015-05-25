@@ -13,6 +13,7 @@ There are a few things to keep in mind during this tutorial.
 * REPLACE ``albert`` with your portal id.
 * Cloudmesh installation is required.
 * ``dev2.0`` branch is a main repository for Cloudmesh
+* One Hadoop cluster per user **TERMINATE AFTER USE**
 
 Overview
 -------------------------------------------------------------------------------
@@ -373,7 +374,7 @@ HDFS NameNode
 If NameNode is started on Master, you will see::
 
   $ ps -ef|grep namenode
-  ubuntu    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/java -Dproc_namenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/home/ubuntu/hadoop-2.7.0/logs ...
+  root    8443     1  0 05:07 ?        00:00:25 /usr/lib/jvm/default-java//bin/java -Dproc_namenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/root/hadoop-2.7.0/logs ...
   ...  org.apache.hadoop.hdfs.server.namenode.NameNode
 
 
@@ -385,7 +386,7 @@ If ResourceManager is started on Master, you will see:
 ::
 
   $ ps -ef|grep resourcemanager
-  ubuntu    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/java -Dproc_resourcemanager -Xmx1000m -Dhadoop.log.dir=/home/ubuntu/hadoop-2.7.0/logs ... 
+  root    8675     1  0 05:07 ?        00:01:07 /usr/lib/jvm/default-java//bin/java -Dproc_resourcemanager -Xmx1000m -Dhadoop.log.dir=/root/hadoop-2.7.0/logs ... 
   ... org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
 
 MapReduce Example: Word Count
@@ -397,6 +398,46 @@ program which counts how often words occur from the input text file. We have a
 separate page for this program here.
 
 :ref:`Word Count Program <ref-class-lesson-hadoop-word-count>`
+
+Launcher Termination
+-------------------------------------------------------------------------------
+
+If you've completed your tasks or jobs on Hadoop 2.7.0 cluster, you need to
+terminate your hadoop stack on launcher.
+
+Check your existing launcher stack.
+
+:: 
+
+  cm launcher list
+
+My example is::
+
+        +--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+        | launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
+        +--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+        | 7881c97f-5ce8-4c25-9a80-a6bec9299869 | launcher-albert-hadoop2.7-image-NOAO5A | Hadoop cluster with OpenStack Heat | CREATE_COMPLETE | 2015-01-25T14:16:34Z | india    |
+        +--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+
+Terminate it with the stack_name::
+
+  cm launcher stop launcher-albert-hadoop2.7-image-NOAO5A
+
+You expect to see like so::
+
+  ...
+  CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:684:  DEBUG - 684: AUTH URL http://i5r.idp.iu.futuregrid.org:8004/v1/c713809dee494dccac34fcd02e012acb/stacks/launcher-hrlee-hadoop2.7-image-NOAO5A
+  CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh/iaas/openstack/cm_compute.pyc... site:690:  DEBUG - 690: Response <Response [200]>
+  CM /cloudmesh-2.3.0-py2.7.egg/cloudmesh_cmd3/plugins/cm_shell_launcher.pyc... site:241:  DEBUG - {'msg': 'success'}
+
+Confirm that your launcher stack is deleted::
+
+  cm launcher list
+  +--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+  | launcher_id                          | stack_name                             | description                        | stack_status    | creation_time        | cm_cloud |
+  +--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+  +--------------------------------------+----------------------------------------+------------------------------------+-----------------+----------------------+----------+
+
 
 FAQs
 -------------------------------------------------------------------------------
