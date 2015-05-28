@@ -138,43 +138,48 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">build</span> <span class="kn">import</span> <span class="n">cursor_on</span>
 
+<span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">banner</span>
+
 <span class="n">browser</span> <span class="o">=</span> <span class="s">&quot;firefox&quot;</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&#39;darwin&#39;</span><span class="p">:</span>
     <span class="n">browser</span> <span class="o">=</span> <span class="s">&quot;open&quot;</span>
 
+<span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span>    
 
 <span class="nd">@task</span>
-<div class="viewcode-block" id="view"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.doc.view">[docs]</a><span class="k">def</span> <span class="nf">view</span><span class="p">():</span>
+<div class="viewcode-block" id="view"><a class="viewcode-back" href="../../modules/pbs/fabfile.html#fabfile.doc.view">[docs]</a><span class="k">def</span> <span class="nf">view</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;view the documentation in a browser&quot;&quot;&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;{browser} docs/build/html/index.html&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">browser</span><span class="o">=</span><span class="n">browser</span><span class="p">))</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="html"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.doc.html">[docs]</a><span class="k">def</span> <span class="nf">html</span><span class="p">():</span>
+<div class="viewcode-block" id="html"><a class="viewcode-back" href="../../modules/pbs/fabfile.html#fabfile.doc.html">[docs]</a><span class="k">def</span> <span class="nf">html</span><span class="p">():</span>
     <span class="c"># disable Flask RSTPAGES due to sphins incompatibility</span>
     <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;RSTPAGES&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;FALSE&#39;</span>
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;API Generation&quot;</span><span class="p">)</span>
     <span class="n">api</span><span class="p">()</span>
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;Manual Pages&quot;</span><span class="p">)</span>
     <span class="n">man</span><span class="p">()</span>
     <span class="c"># build the docs locally and view</span>
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;Make the sphinx documentation&quot;</span><span class="p">)</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&quot;cd docs; make html&quot;</span><span class="p">)</span>
     <span class="n">cursor_on</span><span class="p">()</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="publish"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.doc.publish">[docs]</a><span class="k">def</span> <span class="nf">publish</span><span class="p">():</span>
+<div class="viewcode-block" id="publish"><a class="viewcode-back" href="../../modules/pbs/fabfile.html#fabfile.doc.publish">[docs]</a><span class="k">def</span> <span class="nf">publish</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;deploy the documentation on gh-pages&quot;&quot;&quot;</span>
-    <span class="c"># html()</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&#39;cd docs/build/html &#39;</span>
-          <span class="s">&#39;&amp;&amp; git add .  &#39;</span>
-          <span class="s">&#39;&amp;&amp; git commit -m &quot;site generated&quot;&#39;</span>
-          <span class="s">&#39;&amp;&amp; git push origin gh-pages&#39;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&#39;git commit -a -m &quot;build site&quot;&#39;</span><span class="p">)</span>
-    <span class="n">local</span><span class="p">(</span><span class="s">&quot;git push origin master&quot;</span><span class="p">)</span>
+    <span class="n">banner</span><span class="p">(</span><span class="s">&quot;publish doc to github&quot;</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s">&quot;ghp-import -n -p docs/build/html&quot;</span><span class="p">)</span>
+    <span class="c">#html()</span>
+    <span class="c">#local(&#39;cd docs/build/html &amp;&amp; git add .  &amp;&amp; git commit -m &quot;site generated&quot; &amp;&amp; git push origin gh-pages&#39;)</span>
+    <span class="c">#local(&#39;git commit -a -m &quot;build site&quot;&#39;)</span>
+    <span class="c">#local(&quot;git push origin master&quot;)</span>
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="man"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.doc.man">[docs]</a><span class="k">def</span> <span class="nf">man</span><span class="p">():</span>
+<div class="viewcode-block" id="man"><a class="viewcode-back" href="../../modules/pbs/fabfile.html#fabfile.doc.man">[docs]</a><span class="k">def</span> <span class="nf">man</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;deploy the documentation on gh-pages&quot;&quot;&quot;</span>
     <span class="c"># TODO: match on &quot;Commands&quot;</span>
     <span class="n">local</span><span class="p">(</span><span class="s">&#39;cm debug off&#39;</span><span class="p">)</span>
@@ -183,7 +188,7 @@
 
 </div>
 <span class="nd">@task</span>
-<div class="viewcode-block" id="api"><a class="viewcode-back" href="../../modules/cmd3/fabfile.html#fabfile.doc.api">[docs]</a><span class="k">def</span> <span class="nf">api</span><span class="p">():</span>
+<div class="viewcode-block" id="api"><a class="viewcode-back" href="../../modules/pbs/fabfile.html#fabfile.doc.api">[docs]</a><span class="k">def</span> <span class="nf">api</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">modulename</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;cloudmesh&quot;</span><span class="p">,</span>
                        <span class="s">&quot;cloudmesh_admin&quot;</span><span class="p">,</span>
                        <span class="s">&quot;cloudmesh_common&quot;</span><span class="p">,</span>
