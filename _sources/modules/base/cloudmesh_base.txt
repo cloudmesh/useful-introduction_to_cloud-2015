@@ -108,14 +108,6 @@ cloudmesh_base.util module
     :undoc-members:
     :show-inheritance:
 
-cloudmesh_base.version_incr module
-----------------------------------
-
-.. automodule:: cloudmesh_base.version_incr
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 cloudmesh_base.xshellutil module
 --------------------------------
 

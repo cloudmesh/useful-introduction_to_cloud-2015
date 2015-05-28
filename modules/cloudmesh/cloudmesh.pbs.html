@@ -136,26 +136,414 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="cloudmesh-pbs-celery-module">
-<h2>cloudmesh.pbs.celery module<a class="headerlink" href="#cloudmesh-pbs-celery-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh.pbs.celery">
+<span id="cloudmesh-pbs-celery-module"></span><h2>cloudmesh.pbs.celery module<a class="headerlink" href="#module-cloudmesh.pbs.celery" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="cloudmesh-pbs-pbs-module">
-<h2>cloudmesh.pbs.pbs module<a class="headerlink" href="#cloudmesh-pbs-pbs-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh.pbs.pbs">
+<span id="cloudmesh-pbs-pbs-module"></span><h2>cloudmesh.pbs.pbs module<a class="headerlink" href="#module-cloudmesh.pbs.pbs" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.pbs.pbs.PBS">
+<em class="property">class </em><code class="descclassname">cloudmesh.pbs.pbs.</code><code class="descname">PBS</code><span class="sig-paren">(</span><em>user</em>, <em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.cluster_queues">
+<code class="descname">cluster_queues</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.cluster_queues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.convert_into_json">
+<code class="descname">convert_into_json</code><span class="sig-paren">(</span><em>qstat</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.convert_into_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.convert_into_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.create_node">
+<code class="descname">create_node</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.create_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.create_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>create node</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.exists">
+<code class="descname">exists</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.exists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints true if the host is in the node list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.get_machine_name">
+<code class="descname">get_machine_name</code><span class="sig-paren">(</span><em>qname</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.get_machine_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.get_machine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.get_uniq_users">
+<code class="descname">get_uniq_users</code><span class="sig-paren">(</span><em>refresh=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.get_uniq_users"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.get_uniq_users" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.host">
+<code class="descname">host</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.host" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.merge_queues">
+<code class="descname">merge_queues</code><span class="sig-paren">(</span><em>machines</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.merge_queues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.merge_queues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.pbs_nodes_data">
+<code class="descname">pbs_nodes_data</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.pbs_nodes_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.pbs_qinfo_data">
+<code class="descname">pbs_qinfo_data</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.pbs_qinfo_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.pbs_qinfo_default_data">
+<code class="descname">pbs_qinfo_default_data</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.pbs_qinfo_default_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.pbs_qstat_data">
+<code class="descname">pbs_qstat_data</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.pbs_qstat_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.pbsnodes">
+<code class="descname">pbsnodes</code><span class="sig-paren">(</span><em>refresh=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.pbsnodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.pbsnodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the pbs node infor from an pbs_nodes_raw_data is a string see above for example</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.qinfo">
+<code class="descname">qinfo</code><span class="sig-paren">(</span><em>refresh=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.qinfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.qinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns qstat -Q -f in dict format</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.qinfo_extract">
+<code class="descname">qinfo_extract</code><span class="sig-paren">(</span><em>cluster_queues</em>, <em>qinfo_data</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.qinfo_extract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.qinfo_extract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.qinfo_user">
+<code class="descname">qinfo_user</code><span class="sig-paren">(</span><em>refresh=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.qinfo_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.qinfo_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of user from qstat</p>
+<p>example line is:
+873664.i136 ...549.sh xcguser  0   Q long
+$3 indicates an user id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.qstat">
+<code class="descname">qstat</code><span class="sig-paren">(</span><em>refresh=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.qstat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.qstat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.qstat_extract">
+<code class="descname">qstat_extract</code><span class="sig-paren">(</span><em>cluster_queues</em>, <em>qstat_data</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.qstat_extract"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.qstat_extract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.requister_joint_queues">
+<code class="descname">requister_joint_queues</code><span class="sig-paren">(</span><em>cluster_queues</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.requister_joint_queues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.requister_joint_queues" title="Permalink to this definition">¶</a></dt>
+<dd><p>allows the registration of queues for multiple clusters managed through the same queuing server</p>
+<dl class="docutils">
+<dt>cluster_queues = {</dt>
+<dd>&#8216;india.futuregrid.org&#8217;: [&#8216;batch&#8217;, &#8216;long&#8217;, &#8216;b534&#8217;, &#8216;systest&#8217;, &#8216;reserved&#8217;, &#8216;interactive&#8217;],
+&#8216;delta.futuregrid.org&#8217;: [&#8216;delta&#8217;, &#8216;delta-long&#8217;],
+&#8216;echo.futuregrid.org&#8217;: [&#8216;echo&#8217;],
+&#8216;bravo.futuregrid.org&#8217;: [&#8216;bravo&#8217;, &#8216;bravo-long&#8217;],</dd>
+</dl>
+<p>}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.service_distribution">
+<code class="descname">service_distribution</code><span class="sig-paren">(</span><em>simple=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.service_distribution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.service_distribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints the distribution of services</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>spec</em>, <em>attribute</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an attribute for the specified hosts in the format
+i[1-20]. which would set the attribute for all hosts in i1 to
+i20</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.set_note">
+<code class="descname">set_note</code><span class="sig-paren">(</span><em>name</em>, <em>note</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.set_note"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.set_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>set node % note %</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.set_np">
+<code class="descname">set_np</code><span class="sig-paren">(</span><em>name</em>, <em>np</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.set_np"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.set_np" title="Permalink to this definition">¶</a></dt>
+<dd><p>set node %name np %np | qmgr</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs.PBS.set_properties">
+<code class="descname">set_properties</code><span class="sig-paren">(</span><em>name</em>, <em>properties</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs.html#PBS.set_properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.set_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>set node % properties %</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs.PBS.user">
+<code class="descname">user</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs.PBS.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="cloudmesh-pbs-pbs-mongo-module">
-<h2>cloudmesh.pbs.pbs_mongo module<a class="headerlink" href="#cloudmesh-pbs-pbs-mongo-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh.pbs.pbs_mongo">
+<span id="cloudmesh-pbs-pbs-mongo-module"></span><h2>cloudmesh.pbs.pbs_mongo module<a class="headerlink" href="#module-cloudmesh.pbs.pbs_mongo" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cloudmesh.pbs.pbs_mongo.main">
+<code class="descclassname">cloudmesh.pbs.pbs_mongo.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo">
+<em class="property">class </em><code class="descclassname">cloudmesh.pbs.pbs_mongo.</code><code class="descname">pbs_mongo</code><span class="sig-paren">(</span><em>collections=['qstat', 'pbsnodes', 'qinfo']</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.activate">
+<code class="descname">activate</code><span class="sig-paren">(</span><em>host</em>, <em>user</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.activate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>activates a specific host to be queried</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>NOT IMPLEMENTED. clears the mongo db data for pbs and qstat</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.client">
+<code class="descname">client</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.client" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.config">
+<code class="descname">config</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.db_pbsnodes">
+<code class="descname">db_pbsnodes</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.db_pbsnodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.db_qstat">
+<code class="descname">db_qstat</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.db_qstat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.delete_pbsnodes">
+<code class="descname">delete_pbsnodes</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.delete_pbsnodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.delete_pbsnodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the pbsnodes information from mongodb
+:param host:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.delete_qstat">
+<code class="descname">delete_qstat</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.delete_qstat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.delete_qstat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the qstat information from mongodb
+:param host:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>host</em>, <em>type</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>refreshes the specified data from the given host</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.get_pbsnodes">
+<code class="descname">get_pbsnodes</code><span class="sig-paren">(</span><em>host=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.get_pbsnodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.get_pbsnodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>retrieves the pbsnodes data for the ost from mongodb. the data can be put with a refresh method into mongo db.
+:param host:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.get_qinfo">
+<code class="descname">get_qinfo</code><span class="sig-paren">(</span><em>host=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.get_qinfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.get_qinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the qstat data from the mongo db. The data can be put into the mongo db via refresh
+:param host:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.get_qstat">
+<code class="descname">get_qstat</code><span class="sig-paren">(</span><em>host=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.get_qstat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.get_qstat" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the qstat data from the mongo db. The data can be put into the mongo db via refresh
+:param host:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.hosts">
+<code class="descname">hosts</code><em class="property"> = {}</em><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.hosts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.pbs_client">
+<code class="descname">pbs_client</code><em class="property"> = None</em><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.pbs_client" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh">
+<code class="descname">refresh</code><span class="sig-paren">(</span><em>host</em>, <em>type</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.refresh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>refreshes the specified data from the given host</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh_pbsnodes">
+<code class="descname">refresh_pbsnodes</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.refresh_pbsnodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh_pbsnodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>retrieves the qstat data from the host and puts it into mongodb
+:param host:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh_qinfo">
+<code class="descname">refresh_qinfo</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.refresh_qinfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh_qinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>obtains a refreshed qstat data set from the specified host. The result is written into the mongo db.
+:param host: The host on which to execute qstat</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh_qstat">
+<code class="descname">refresh_qstat</code><span class="sig-paren">(</span><em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_mongo.html#pbs_mongo.refresh_qstat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_mongo.pbs_mongo.refresh_qstat" title="Permalink to this definition">¶</a></dt>
+<dd><p>obtains a refreshed qstat data set from the specified host. The result is written into the mongo db.
+:param host: The host on which to execute qstat</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="cloudmesh-pbs-pbs-note-module">
-<h2>cloudmesh.pbs.pbs_note module<a class="headerlink" href="#cloudmesh-pbs-pbs-note-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh.pbs.pbs_note">
+<span id="cloudmesh-pbs-pbs-note-module"></span><h2>cloudmesh.pbs.pbs_note module<a class="headerlink" href="#module-cloudmesh.pbs.pbs_note" title="Permalink to this headline">¶</a></h2>
+<p>A wrap python class of &#8216;pbsnodes -N &#8220;note&#8221; node&#8217; command
+The purpose of this class is to provide a simple API
+to write some attribute and its value pairs to note attribute of cluster nodes.</p>
+<dl class="class">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder">
+<em class="property">class </em><code class="descclassname">cloudmesh.pbs.pbs_note.</code><code class="descname">pbs_note_builder</code><span class="sig-paren">(</span><em>user</em>, <em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.check_node_validation">
+<code class="descname">check_node_validation</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.check_node_validation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.check_node_validation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.fetch_pbs_nodes_info">
+<code class="descname">fetch_pbs_nodes_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.fetch_pbs_nodes_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.fetch_pbs_nodes_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.get_note">
+<code class="descname">get_note</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.get_note"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.get_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.set_note">
+<code class="descname">set_note</code><span class="sig-paren">(</span><em>node</em>, <em>note</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.set_note"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.set_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.set_one_note">
+<code class="descname">set_one_note</code><span class="sig-paren">(</span><em>node</em>, <em>attr</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.set_one_note"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.set_one_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.set_service_note">
+<code class="descname">set_service_note</code><span class="sig-paren">(</span><em>node</em>, <em>service</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.set_service_note"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.set_service_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.pbs_note.pbs_note_builder.set_temperature_note">
+<code class="descname">set_temperature_note</code><span class="sig-paren">(</span><em>node</em>, <em>temp</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/pbs_note.html#pbs_note_builder.set_temperature_note"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.pbs_note.pbs_note_builder.set_temperature_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="cloudmesh-pbs-rest-module">
-<h2>cloudmesh.pbs.rest module<a class="headerlink" href="#cloudmesh-pbs-rest-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh.pbs.rest">
+<span id="cloudmesh-pbs-rest-module"></span><h2>cloudmesh.pbs.rest module<a class="headerlink" href="#module-cloudmesh.pbs.rest" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>terminal1&gt;
+$ python rest.py
+
+terminal2&gt;
+$ curl &quot;http://localhost:5000/v1.0/queue?resource=india.futuregrid.org&quot;
+$ curl &quot;http://localhost:5000/v1.0/queue?resource=india.futuregrid.org&amp;id=1902410.i136&quot;
+$ curl &quot;http://localhost:5000/v1.0/queue/info?resource=india.futuregrid.org&amp;queue=systest&quot;
+</pre></div>
 </div>
-<div class="section" id="cloudmesh-pbs-tasks-module">
-<h2>cloudmesh.pbs.tasks module<a class="headerlink" href="#cloudmesh-pbs-tasks-module" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudmesh.pbs.rest.rest_queue_info">
+<em class="property">class </em><code class="descclassname">cloudmesh.pbs.rest.</code><code class="descname">rest_queue_info</code><a class="reference internal" href="../../_modules/cloudmesh/pbs/rest.html#rest_queue_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">flask_restful.Resource</span></code></p>
+<dl class="attribute">
+<dt id="cloudmesh.pbs.rest.rest_queue_info.endpoint">
+<code class="descname">endpoint</code><em class="property"> = 'rest_queue_info'</em><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_info.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.rest.rest_queue_info.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/rest.html#rest_queue_info.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_info.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.rest.rest_queue_info.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><em>resource_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_info.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.rest.rest_queue_info.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_info.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudmesh.pbs.rest.rest_queue_stat">
+<em class="property">class </em><code class="descclassname">cloudmesh.pbs.rest.</code><code class="descname">rest_queue_stat</code><a class="reference internal" href="../../_modules/cloudmesh/pbs/rest.html#rest_queue_stat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">flask_restful.Resource</span></code></p>
+<dl class="attribute">
+<dt id="cloudmesh.pbs.rest.rest_queue_stat.endpoint">
+<code class="descname">endpoint</code><em class="property"> = 'rest_queue_stat'</em><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_stat.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.rest.rest_queue_stat.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/rest.html#rest_queue_stat.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_stat.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudmesh.pbs.rest.rest_queue_stat.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><em>resource_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_stat.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudmesh.pbs.rest.rest_queue_stat.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#cloudmesh.pbs.rest.rest_queue_stat.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.pbs.rest.simple_error">
+<code class="descclassname">cloudmesh.pbs.rest.</code><code class="descname">simple_error</code><span class="sig-paren">(</span><em>kind</em>, <em>attribute</em>, <em>help='does not exist'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/rest.html#simple_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.rest.simple_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cloudmesh.pbs.rest.versioned_url">
+<code class="descclassname">cloudmesh.pbs.rest.</code><code class="descname">versioned_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cloudmesh/pbs/rest.html#versioned_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudmesh.pbs.rest.versioned_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudmesh.pbs.tasks">
+<span id="cloudmesh-pbs-tasks-module"></span><h2>cloudmesh.pbs.tasks module<a class="headerlink" href="#module-cloudmesh.pbs.tasks" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloudmesh.pbs">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudmesh.pbs" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
