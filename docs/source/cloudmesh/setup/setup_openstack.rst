@@ -92,20 +92,6 @@ We summarize the following steps::
   [$PORTALNAME@i136 ~]$ 
 
 
-.. important::
-
-   If you are following this as part of a class, make sure you source
-   the appropriate ``rc`` file **after** to the ``openrc.sh``.
-   Check for the available files like so::
-
-     $ ls .cloudmesh/clouds/india/juno/
-     cacert.pem  fg455  fg465  fg82  openrc.sh
-
-   If you are in the ``FG465`` course, load the appropriate settings::
-
-     $ source .cloudmesh/clouds/india/juno/fg465
-
-
 In order to log into the machine (once we start it up later),
 OpenStack needs to have an ssh keypair associated.  You can either
 have OpenStack create a key for you or import your current key.
