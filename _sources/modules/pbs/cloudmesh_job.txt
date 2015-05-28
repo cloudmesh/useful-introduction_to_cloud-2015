@@ -19,6 +19,14 @@ cloudmesh_job.cm_jobdb module
     :undoc-members:
     :show-inheritance:
 
+cloudmesh_job.job_server module
+-------------------------------
+
+.. automodule:: cloudmesh_job.job_server
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 cloudmesh_job.test module
 -------------------------
 
