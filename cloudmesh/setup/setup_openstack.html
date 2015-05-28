@@ -232,6 +232,20 @@ india<span class="nv">$ </span><span class="nb">source</span> ~/.cloudmesh/cloud
 <div class="highlight-bash"><div class="highlight"><pre>[$PORTALNAME@i136 ~]$
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>If you are following this as part of a class, make sure you source
+the appropriate <code class="docutils literal"><span class="pre">rc</span></code> file <strong>after</strong> to the <code class="docutils literal"><span class="pre">openrc.sh</span></code>.
+Check for the available files like so:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls .cloudmesh/clouds/india/juno/
+cacert.pem  fg455  fg465  fg82  openrc.sh
+</pre></div>
+</div>
+<p>If you are in the <code class="docutils literal"><span class="pre">FG465</span></code> course, load the appropriate settings:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source</span> .cloudmesh/clouds/india/juno/fg465
+</pre></div>
+</div>
+</div>
 <p>In order to log into the machine (once we start it up later),
 OpenStack needs to have an ssh keypair associated.  You can either
 have OpenStack create a key for you or import your current key.</p>

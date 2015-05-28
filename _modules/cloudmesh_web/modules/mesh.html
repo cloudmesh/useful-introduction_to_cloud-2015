@@ -161,12 +161,12 @@
 <span class="c"># ============================================================</span>
 
 
-<div class="viewcode-block" id="getCurrentUserinfo"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.getCurrentUserinfo">[docs]</a><span class="k">def</span> <span class="nf">getCurrentUserinfo</span><span class="p">():</span>
+<div class="viewcode-block" id="getCurrentUserinfo"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.getCurrentUserinfo">[docs]</a><span class="k">def</span> <span class="nf">getCurrentUserinfo</span><span class="p">():</span>
     <span class="n">userinfo</span> <span class="o">=</span> <span class="n">cm_user</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">userinfo</span>
 
 </div>
-<div class="viewcode-block" id="with_active_clouds"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.with_active_clouds">[docs]</a><span class="k">def</span> <span class="nf">with_active_clouds</span><span class="p">():</span>
+<div class="viewcode-block" id="with_active_clouds"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.with_active_clouds">[docs]</a><span class="k">def</span> <span class="nf">with_active_clouds</span><span class="p">():</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">userinfo</span> <span class="o">=</span> <span class="n">getCurrentUserinfo</span><span class="p">()</span>
     <span class="k">if</span> <span class="s">&quot;activeclouds&quot;</span> <span class="ow">in</span> <span class="n">userinfo</span><span class="p">[</span><span class="s">&quot;defaults&quot;</span><span class="p">]</span> <span class="ow">and</span>\
@@ -177,7 +177,7 @@
 </div>
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/register/clouds&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="mesh_register_clouds"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mesh_register_clouds">[docs]</a><span class="k">def</span> <span class="nf">mesh_register_clouds</span><span class="p">():</span>
+<div class="viewcode-block" id="mesh_register_clouds"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mesh_register_clouds">[docs]</a><span class="k">def</span> <span class="nf">mesh_register_clouds</span><span class="p">():</span>
 
     <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
     <span class="n">userdata</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">user</span>
@@ -414,7 +414,7 @@
 </div>
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/images/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="mongo_images"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_images">[docs]</a><span class="k">def</span> <span class="nf">mongo_images</span><span class="p">():</span>
+<div class="viewcode-block" id="mongo_images"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_images">[docs]</a><span class="k">def</span> <span class="nf">mongo_images</span><span class="p">():</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">with_active_clouds</span><span class="p">():</span>
         <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;No Active Clouds set!&quot;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Please &lt;a href=&#39;/mesh/register/clouds&#39;&gt;Register and Activate&lt;/a&gt; a Cloud First&quot;</span>
@@ -566,7 +566,7 @@
 </div>
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/flavors/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="mongo_flavors"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_flavors">[docs]</a><span class="k">def</span> <span class="nf">mongo_flavors</span><span class="p">():</span>
+<div class="viewcode-block" id="mongo_flavors"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_flavors">[docs]</a><span class="k">def</span> <span class="nf">mongo_flavors</span><span class="p">():</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">with_active_clouds</span><span class="p">():</span>
         <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;No Active Clouds set!&quot;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Please &lt;a href=&#39;/mesh/register/clouds&#39;&gt;Register and Activate&lt;/a&gt; a Cloud First&quot;</span>
@@ -628,7 +628,7 @@
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/users/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="mongo_users"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_users">[docs]</a><span class="k">def</span> <span class="nf">mongo_users</span><span class="p">():</span>
+<div class="viewcode-block" id="mongo_users"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_users">[docs]</a><span class="k">def</span> <span class="nf">mongo_users</span><span class="p">():</span>
     <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M&quot;</span><span class="p">)</span>
     <span class="c"># filter()</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span>
@@ -688,7 +688,7 @@
 </div>
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/servers/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="mongo_table"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_table">[docs]</a><span class="k">def</span> <span class="nf">mongo_table</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="mongo_table"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_table">[docs]</a><span class="k">def</span> <span class="nf">mongo_table</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">with_active_clouds</span><span class="p">():</span>
         <span class="n">error</span> <span class="o">=</span> <span class="s">&quot;No Active Clouds set!&quot;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Please &lt;a href=&#39;/mesh/register/clouds&#39;&gt;Register and Activate&lt;/a&gt; a Cloud First&quot;</span>
@@ -915,7 +915,7 @@
 <span class="c"># NOT USED</span>
 <span class="c"># since Nov. 8, 2013</span>
 <span class="c"># init page status of users, open or close</span>
-<div class="viewcode-block" id="init_user_pagestatus"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.init_user_pagestatus">[docs]</a><span class="k">def</span> <span class="nf">init_user_pagestatus</span><span class="p">(</span><span class="n">cloud_list</span><span class="p">):</span>
+<div class="viewcode-block" id="init_user_pagestatus"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.init_user_pagestatus">[docs]</a><span class="k">def</span> <span class="nf">init_user_pagestatus</span><span class="p">(</span><span class="n">cloud_list</span><span class="p">):</span>
     <span class="n">page_status_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">cloud_list</span><span class="p">:</span>
         <span class="n">page_status_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;false&quot;</span>
@@ -925,7 +925,7 @@
 </div>
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/savepagestatus/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="mongo_save_pagestatus"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_save_pagestatus">[docs]</a><span class="k">def</span> <span class="nf">mongo_save_pagestatus</span><span class="p">():</span>
+<div class="viewcode-block" id="mongo_save_pagestatus"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.mongo_save_pagestatus">[docs]</a><span class="k">def</span> <span class="nf">mongo_save_pagestatus</span><span class="p">():</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">id</span>
     <span class="n">user_obj</span> <span class="o">=</span> <span class="n">cm_user</span><span class="p">()</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
@@ -971,7 +971,7 @@
     <span class="k">return</span> <span class="s">&quot;ok&quot;</span>
 
 </div>
-<div class="viewcode-block" id="prepJqTreeObj"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.prepJqTreeObj">[docs]</a><span class="k">def</span> <span class="nf">prepJqTreeObj</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="prepJqTreeObj"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.prepJqTreeObj">[docs]</a><span class="k">def</span> <span class="nf">prepJqTreeObj</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">jsonList</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">if</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">):</span>
@@ -994,7 +994,7 @@
 </div>
 <span class="nd">@mesh_module.route</span><span class="p">(</span><span class="s">&#39;/mesh/test/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
 <span class="nd">@login_required</span>
-<div class="viewcode-block" id="test_experiment"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.test_experiment">[docs]</a><span class="k">def</span> <span class="nf">test_experiment</span><span class="p">():</span>
+<div class="viewcode-block" id="test_experiment"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.mesh.test_experiment">[docs]</a><span class="k">def</span> <span class="nf">test_experiment</span><span class="p">():</span>
 
     <span class="n">experiment</span> <span class="o">=</span> <span class="n">cm_experiment_db</span><span class="p">()</span>
     <span class="n">exptData</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">getUserData</span><span class="p">()</span>

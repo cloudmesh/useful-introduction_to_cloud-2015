@@ -161,6 +161,14 @@
 <span class="c">#           return f(args).rstrip(&#39;\n&#39;)</span>
 
     <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Shell.bash"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.Shell.Shell.bash">[docs]</a>    <span class="k">def</span> <span class="nf">bash</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        the bash command</span>
+<span class="sd">        :param cls:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_execute</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">bash</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+    <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="Shell.cat"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.Shell.Shell.cat">[docs]</a>    <span class="k">def</span> <span class="nf">cat</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        the cat command</span>

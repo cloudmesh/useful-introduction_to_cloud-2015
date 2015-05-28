@@ -175,7 +175,7 @@
 <span class="nd">@provisioner_module.route</span><span class="p">(</span><span class="s">&#39;/provision/policy&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_provisioner_policy"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provisioner_policy">[docs]</a><span class="k">def</span> <span class="nf">display_provisioner_policy</span><span class="p">():</span>
+<div class="viewcode-block" id="display_provisioner_policy"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provisioner_policy">[docs]</a><span class="k">def</span> <span class="nf">display_provisioner_policy</span><span class="p">():</span>
 
     <span class="n">policy</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.provisioner.policy&quot;</span><span class="p">)</span>
 
@@ -186,7 +186,7 @@
 <span class="nd">@provisioner_module.route</span><span class="p">(</span><span class="s">&#39;/provision/summary/&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_provisioner_summary"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provisioner_summary">[docs]</a><span class="k">def</span> <span class="nf">display_provisioner_summary</span><span class="p">():</span>
+<div class="viewcode-block" id="display_provisioner_summary"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provisioner_summary">[docs]</a><span class="k">def</span> <span class="nf">display_provisioner_summary</span><span class="p">():</span>
 
     <span class="n">queue</span> <span class="o">=</span> <span class="n">celery_provisiner_queue</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">inspect</span><span class="p">()</span>
 
@@ -211,7 +211,7 @@
 <span class="nd">@provisioner_module.route</span><span class="p">(</span><span class="s">&#39;/provision/tasks/&lt;cluster&gt;/&lt;spec&gt;/&lt;service&gt;&#39;</span><span class="p">)</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_provision_host_summary"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provision_host_summary">[docs]</a><span class="k">def</span> <span class="nf">display_provision_host_summary</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">service</span><span class="p">):</span>
+<div class="viewcode-block" id="display_provision_host_summary"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provision_host_summary">[docs]</a><span class="k">def</span> <span class="nf">display_provision_host_summary</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">service</span><span class="p">):</span>
 
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">hosts</span> <span class="o">=</span> <span class="n">expand_hostlist</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
@@ -279,7 +279,7 @@
                            <span class="n">updated</span><span class="o">=</span><span class="n">time_now</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="ProvisionForm"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.ProvisionForm">[docs]</a><span class="k">class</span> <span class="nc">ProvisionForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+<div class="viewcode-block" id="ProvisionForm"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.ProvisionForm">[docs]</a><span class="k">class</span> <span class="nc">ProvisionForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
 
     <span class="c"># clusters = [cluster.name for cluster in inventory.get(&quot;cluster&quot;)]</span>
 
@@ -291,7 +291,7 @@
     <span class="c"># provision_choices = zip(PROVISIONING_CHOICES, PROVISIONING_CHOICES)</span>
     <span class="c"># service = SelectField(&quot;Service&quot;, choices=provision_choices)</span>
 
-<div class="viewcode-block" id="ProvisionForm.validate"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.ProvisionForm.validate">[docs]</a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ProvisionForm.validate"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.ProvisionForm.validate">[docs]</a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c">#cluster = inventory.get(&quot;cluster&quot;, self.cluster.data)</span>
         <span class="n">posibilities</span> <span class="o">=</span> <span class="n">expand_hostlist</span><span class="p">(</span><span class="n">cluster</span><span class="o">.</span><span class="n">definition</span><span class="p">)</span>
         <span class="n">choice</span> <span class="o">=</span> <span class="n">expand_hostlist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodespec</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
@@ -306,7 +306,7 @@
 <span class="nd">@provisioner_module.route</span><span class="p">(</span><span class="s">&quot;/provision/&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">(</span><span class="s">&quot;GET&quot;</span><span class="p">,</span> <span class="s">&quot;POST&quot;</span><span class="p">))</span>
 <span class="nd">@login_required</span>
 <span class="nd">@admin_permission.require</span><span class="p">(</span><span class="n">http_exception</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
-<div class="viewcode-block" id="display_provision_form"><a class="viewcode-back" href="../../../modules/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provision_form">[docs]</a><span class="k">def</span> <span class="nf">display_provision_form</span><span class="p">():</span>
+<div class="viewcode-block" id="display_provision_form"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh_web.modules.html#cloudmesh_web.modules.provisioner.display_provision_form">[docs]</a><span class="k">def</span> <span class="nf">display_provision_form</span><span class="p">():</span>
 
     <span class="n">clusters</span> <span class="o">=</span> <span class="n">cm_config_server</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cloudmesh.server.provisioner.clusters&quot;</span><span class="p">)</span>
 

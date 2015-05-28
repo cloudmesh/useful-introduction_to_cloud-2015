@@ -145,21 +145,20 @@
 <span class="kn">from</span> <span class="nn">cloudmesh_base.util</span> <span class="kn">import</span> <span class="n">convert_from_unicode</span>
 
 
-<div class="viewcode-block" id="dict_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">):</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s">&quot;PPP&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+<div class="viewcode-block" id="dict_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;table&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;csv&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;dict&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;yaml&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">convert_from_unicode</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s">&quot;UNKOWN FORMAT&quot;</span>
 
 </div>
-<div class="viewcode-block" id="dict_csv_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_csv_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="dict_csv_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_csv_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
 
     <span class="n">table</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
     <span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
@@ -178,7 +177,7 @@
     <span class="k">return</span> <span class="n">table</span>
 
 </div>
-<div class="viewcode-block" id="dict_table_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_table_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="dict_table_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_table_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints a pretty table from an dict of dicts</span>
 <span class="sd">    :param d: A a dict with dicts of the same type.</span>
 <span class="sd">                  Each key will be a column</span>
@@ -212,7 +211,12 @@
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sort_keys</span><span class="p">:</span>
+        <span class="n">sorted_list</span>  <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sorted_list</span> <span class="o">=</span> <span class="n">d</span>
+
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sorted_list</span><span class="p">:</span>
         <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
             <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
