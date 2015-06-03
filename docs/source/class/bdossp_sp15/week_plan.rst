@@ -389,7 +389,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - Lab sessions
      - Study Material By
      - Lab Session Homework
-   * - **Installation on a local machine**
+   * - **Installation on a local machine** (optional)
      - `18 mins <http://www.youtube.com/watch?v=lGiJifD0VgU>`_
      - `30 mins <../../cloudmesh/setup/quickstart.html>`_
      - (not required, only read the text and watch the video)
@@ -777,6 +777,12 @@ Other Technologies (under preparation)
    * - **Hadoop MRv2**
      -
      - :ref:`1 hour <ref-class-lesson-hadoop2>`
+     -
+     -
+     -
+   * - **Hadoop MRv2 with Cloudmesh ``launcher``**
+     -
+     - :ref:`30 mins <ref-class-lesson-hadoop2-launcher>`
      -
      -
      -

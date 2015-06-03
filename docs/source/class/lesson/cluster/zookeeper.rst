@@ -74,6 +74,24 @@ Github: https://github.com/apache/curator
 ZooKeeper Installation
 -------------------------------------------------------------------------------
 
+Required Packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ZooKeeper runs in Java, release 1.6 or greater (JDK 6 or greater).
+
+Java JDK
+
+::
+
+  sudo apt-get update
+  sudo apt-get install openjdk-7-jdk
+
+You can find other installation packages here:
+http://java.sun.com/javase/downloads/index.jsp
+
+ZooKeeper Server Package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Download latest here: http://www.apache.org/dyn/closer.cgi/zookeeper/
 
 Download 3.4.6 
@@ -82,14 +100,15 @@ Download 3.4.6
 
   wget http://supergsego.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
   tar xzf zookeeper*.tar.gz
+  ln -s zookeeper-3.4.6 zookeeper
   
 Configuration ``zoo.cfg``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-  cp zookeeper-*/conf/zoo_sample.cfg zookeeper-*/conf/zoo.cfg
-  nano zookeeper-*/conf/zoo.cfg
+  cp zookeeper/conf/zoo_sample.cfg zookeeper/conf/zoo.cfg
+  nano zookeeper/conf/zoo.cfg
 
 Confirm the settings and update with::
 
@@ -143,20 +162,20 @@ Start ZooKeeper Server
 
 Now that you created the configuration file, you can start ZooKeeper::
 
-  bin/zkServer.sh start
+  zookeeper/bin/zkServer.sh start
 
 ZooKeeper Client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-  bin/zkCli.sh
+  zookeeper/bin/zkCli.sh
   ...
   [zk: localhost:2181(CONNECTED) 0]
 
 If you get access to other nodes::
 
-  bin/zkCli.sh -server [node ip address]:2181  
+  zookeeper/bin/zkCli.sh -server [node ip address]:2181  
 
 Citation
 -------------------------------------------------------------------------------
