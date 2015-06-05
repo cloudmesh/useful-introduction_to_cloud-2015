@@ -20,7 +20,7 @@ A video about the contents of this page is available on |video-cm-openstack-setu
 
 Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
-cloudmesh in a VM running Ubuntu 14.04 on FutureSystems `India`
+Cloudmesh in a VM running Ubuntu 14.04 on FutureSystems `India`
 OpenStack. The instructions have been tested on a small instance 
 and the whole process could take about half an hour before you 
 can access the running server.
@@ -184,7 +184,7 @@ Cloudmesh Installation
 Systems Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installation of cloudmesh can be complicated. We provide a oneline
+Installation of Cloudmesh can be complicated. We provide a one-liner
 script to install::
 
   vm$ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | venv=$HOME/ENV bash
@@ -226,7 +226,7 @@ After this command, you see the ``(ENV)`` label in your prompt.
 Cloudmesh Setup
 ----------------------------------------------------------------------
 
-As part of its installation, cloudmesh create a ``~/.cloudmesh`` directory with
+As part of its installation, Cloudmesh creates a ``~/.cloudmesh`` directory with
 configuration files in YAML format. Now we need to populate the
 ``cloudmesh.yaml`` file with your actual cloud credentials.  Cloudmesh provides
 tools for you to retrieve your futuresystems cloud credential and configure the
