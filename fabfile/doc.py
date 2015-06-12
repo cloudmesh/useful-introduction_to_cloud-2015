@@ -134,7 +134,7 @@ def clone():
     for package in cloudmesh_dirs:
         banner("Installing and Building: " + package)
         if not os.path.isdir("../{0}".format(package)):
-            local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
+            local("cd ..; git clone https://github.com/cloudmesh/{0}.git".format(package))
         else:
             #local("cd ..; git pull")
             local("cd ../{0}; git pull".format(package))
