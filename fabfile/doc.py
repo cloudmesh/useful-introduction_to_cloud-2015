@@ -38,7 +38,16 @@ def cmd_exists(cmd):
 for cmd in ['pandoc','ipython']:    
     if not cmd_exists(cmd):
         print "ERROR: {} is not installed.".format(cmd)
-        sys.exit()
+        # sys.exit()
+        # Workaround
+        if sys.platform == 'darwin':
+            local("brew install ipython")
+            local("brew install haskell-platform")
+            local("cabal update")
+            local("cabal install pandoc")
+        elif sys.platform[:5] == "linux":
+            local("sudo apt-get update")
+            local("sudo apt-get install -y pandoc ipython")
     else:
         print cmd, "found. ok."
 
@@ -134,7 +143,7 @@ def clone():
     for package in cloudmesh_dirs:
         banner("Installing and Building: " + package)
         if not os.path.isdir("../{0}".format(package)):
-            local("cd ..; git clone git@github.com:cloudmesh/{0}.git".format(package))
+            local("cd ..; git clone https://github.com/cloudmesh/{0}.git".format(package))
         else:
             #local("cd ..; git pull")
             local("cd ../{0}; git pull".format(package))
