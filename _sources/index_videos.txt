@@ -11,7 +11,7 @@ Table
    :header: Status, Title, Page, Youtube ID
    :widths: 10, 60, 20, 10
 
-   ok, `https://youtube.com/devicesupport <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__, `paas/hadoop.rst <paas/hadoop.html>`__, `PC8h1CtVzH4 <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__
+   -, `None <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__, `paas/hadoop.rst <paas/hadoop.html>`__, `PC8h1CtVzH4 <https://www.youtube.com/watch?v=PC8h1CtVzH4>`__
 
 
 .. _videos_detail:
@@ -19,11 +19,10 @@ Table
 Details
 ======================================================================
 
-https://youtube.com/devicesupport
+None
 ----------------------------------------------------------------------
 
-https://youtube.com/devicesupport
-http://m.youtube.com
+None
 
-Updated: 2015-05-26T17:52:35.000Z
+Updated: None
 

@@ -7,3 +7,4 @@ cmd3
    cmd3
    fabfile
    setup
+   setup-orig

@@ -11,3 +11,4 @@ pbs
    fabfile
    flask_pbs
    setup
+   tests

@@ -1,0 +1,7 @@
+setup-orig module
+=================
+
+.. automodule:: setup-orig
+    :members:
+    :undoc-members:
+    :show-inheritance:

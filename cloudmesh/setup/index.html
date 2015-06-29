@@ -144,7 +144,9 @@
     <li>Cloudmesh Setup</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../../_sources/cloudmesh/setup/index.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../../_sources/cloudmesh/setup/index.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -174,12 +176,34 @@ needs you may decide which way to set it up.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup_openstack.html">Quickstart for an Openstack VM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#starting-the-vm">Starting the VM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#cloudmesh-installation">Cloudmesh Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#systems-dependencies">Systems Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#navigator">Navigator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#india"><code class="docutils literal"><span class="pre">india$</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#vm"><code class="docutils literal"><span class="pre">vm$</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#cloudmesh-setup">Cloudmesh Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#starting-the-vm">Starting the VM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#create-a-new-ssh-key">Create a new SSH Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#import-existing-ssh-key">Import Existing SSH Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#update-security-groups">Update Security Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#boot-a-vm">Boot a VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#login-to-vm">Login to VM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#cloudmesh-installation">Cloudmesh Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#one-liner-by-curl">One-liner by <code class="docutils literal"><span class="pre">curl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#virtualenv-activation">Virtualenv Activation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup_openstack.html#cloudmesh-setup">Cloudmesh Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#new-ssh-key-for-vm">New SSH Key for VM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#register-to-futuresystems-portal">Register to FutureSystems Portal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#credential-setup">Credential Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#india-configuration-by-fabric-fab-command-tool">India Configuration by Fabric <code class="docutils literal"><span class="pre">fab</span></code> Command Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#virtualenv-env">Virtualenv <code class="docutils literal"><span class="pre">ENV</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#mongodb-initialization">MongoDB Initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup_openstack.html#cloudmesh-start">Cloudmesh Start</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup_vagrant.html">Setup Cloudmesh in an VirtualBox VM with Vagrant for Testing</a><ul>
@@ -265,10 +289,10 @@ needs you may decide which way to set it up.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quickstart on your desktop">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quickstart on your desktop" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../overview.html" class="btn btn-neutral" title="Cloudmesh Overview"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../overview.html" class="btn btn-neutral" title="Cloudmesh Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -281,9 +305,8 @@ needs you may decide which way to set it up.</p>
     </p>
   </div>
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 
