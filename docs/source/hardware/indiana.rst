@@ -30,7 +30,7 @@ overview of some important information about these clusters.
    | echo    | SuperMicro ScaleMP Cluster      | 16      | 32     | 192     | 2      | 6144     | 192          | IU       |
    +---------+---------------------------------+---------+--------+---------+--------+----------+--------------+----------+
    | madrid  | Dell HPC Cluster                | 8       | 32     | 128     |        | 384      | 28.8 HDD;    | IU       |
-   |         |                                 |         |        |         |        |          | 6.8 SDD;     | Internal |
+   |         |                                 |         |        |         |        |          | 6.8 SSD;     | Internal |
    +---------+---------------------------------+---------+--------+---------+--------+----------+--------------+----------+
    | tempest | HP Proliant HPC Custer          | 32      | 128    | 768     |        | 1536     | 25           | IU       |
    |         |                                 |         |        |         |        |          |              | Internal |
