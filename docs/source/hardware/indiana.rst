@@ -35,7 +35,7 @@ overview of some important information about these clusters.
    | tempest | HP Proliant HPC Custer          | 32      | 128    | 768     |        | 1536     | 25           | IU       |
    |         |                                 |         |        |         |        |          |              | Internal |
    +---------+---------------------------------+---------+--------+---------+--------+----------+--------------+----------+
-   | juliet  | SuperMicro HPC Cluster          | 128     | 256    | 3456    |        | 16384    | 512 HDD;     | IU       |
+   | juliet  | SuperMicro HPC Cluster          | 128     | 256    | 3456    |        | 16384    | 1024 HDD;    | IU       |
    |         | (available Summer 2015)         |         |        |         |        |          | 50 SSD       | Internal |
    +---------+---------------------------------+---------+--------+---------+--------+----------+--------------+----------+
 
