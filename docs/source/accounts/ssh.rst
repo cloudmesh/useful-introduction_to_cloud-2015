@@ -118,11 +118,20 @@ to protect it appropriately.
 
 In case you already have a ssh key in your machine, you can reuse it and skip this whole section.
 
+.. sidebar:: |info-image| Hint
+
+   For security, you must use at least 2048 bits in your key. This is
+   the default on most modern systems, but if your key is not using at
+   least 2048 bits it may be administratively removed and you will
+   lose access to resources. You can add the argument ``-b 2048`` to
+   the ssh-keygen command if it is not generating 2048-bit keys by
+   default.
+
 To generate the key, please type::
 
 Example::
 
-    ssh-keygen -t rsa -C localname@indiana.edu
+    ssh-keygen -b 2048 -t rsa -C localname@indiana.edu
 
 This command requires the interaction of the user. The first question is::
 

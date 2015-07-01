@@ -540,10 +540,13 @@ Upload a SSH Public Key
 ======================================================================
 
 In order to be able to log into the started VMs, among other purposes,
-you need to provide FG with a secure-shell (ssh) public key. If you are
-already a frequent user of ssh, and have a private and public key pair,
-it is perfectly reasonable to provide your public key. It's *public*,
-after all.
+you need to provide a secure-shell (ssh) public key. If you are
+already a frequent user of ssh, and have a private and public key
+pair, it is perfectly reasonable to provide your public key. It's
+*public*, after all. We do require that a minimum 2048-bit key is
+used. This is the default on most up-to-date systems but if your key
+pair is older it might be less. If it is, you will need to generate a
+new key pair for use with FutureSystems.
 
 To upload the chosen public key:
 
