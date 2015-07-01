@@ -15,11 +15,12 @@ import sys, os
 
 #bootstrap = True
 bootstrap = False
-rtd = True
+rtd = False
 basicstrap = False
 readable = False
 better_theme = False
 kr = False
+foundation_theme = True
 
 if bootstrap: 
     import sphinx_bootstrap_theme
@@ -33,7 +34,9 @@ elif better_theme:
     from better import better_theme_path
 elif kr:
     import sphinx_kr_theme
-        
+elif foundation_theme:
+    import foundation
+    
 #try:
 #    theme = os.environ['SPHINX_THEME']
 #except:
@@ -77,6 +80,10 @@ if basicstrap:
 
     html_theme = 'basicstrap'
 
+if foundation_theme:
+    extensions += ['foundation']
+    
+    
 if readable:
     html_theme_path = [sphinx_readable_theme.get_html_theme_path()]
     html_theme = 'readable'
@@ -223,7 +230,32 @@ if bootstrap:
 elif rtd:
     html_theme = 'sphinx_rtd_theme'
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+elif foundation_theme:
+    print "CCCC"
+    sys.path[0:0] = [os.path.abspath('_themes/foundation-sphinx-theme')]
+    html_theme_path = ['_themes/foundation-sphinx-theme']
+    html_theme = 'foundation'
+    html_theme_options = {
+        'stylesheet': 'foundation/css/basic.css',
+        'motto': 'Lorem ipsum dolor sit amet, magna offendit similique ne nec. Ex doming sanctus labores pro, est ne dico simul laboramus.',
+        #'google_analytics_id': 'UA-40554445-2',
+        #'social_buttons': True,
+        #'base_url': 'html',
+        #'facebook_app_id': '245101572296049',
+        #'twitter_id': 'FoundationSphinx',
+        # 'author': 'Gregor von Laszewski',
+        # 'author_link': 'http://gregor.cyberaide.org',
+        #'google_plus_id': '117034840853387702598',
+        # 'copyright_year': '2013',
+        #'github_ribbon_image': 'github-ribbon.png',
+        'seo_description': 'This is an example of the Foundation Sphinx Theme output.',
+        # 'github_user': 'peterhudec',
+        # 'github_repo': 'foundation-sphinx-theme',
+        #'flattr_id': 'peterhudec',
+    }
 
+
+    
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 #html_title = None
