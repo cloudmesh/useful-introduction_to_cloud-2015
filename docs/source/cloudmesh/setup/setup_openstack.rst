@@ -3,8 +3,8 @@
 Quickstart for an Openstack VM 
 ======================================================================
 
-A video about the contents of this page is available on
-|video-cm-openstack-setup|.
+
+A video about the contents of this page is available on |video-cm-openstack-setup|.
 
 .. |video-image| image:: /images/glyphicons_402_youtube.png 
 .. |video-cm-openstack-setup| replace:: |video-image| :youtube:`rcecpgm-47g`
@@ -20,7 +20,7 @@ A video about the contents of this page is available on
 
 Setting up Cloudmesh on a VM is an especially convenient way during
 development and testing. To do so, you can follow the steps to run
-Cloudmesh in a VM running Ubuntu 14.04 on FutureSystems `India`
+cloudmesh in a VM running Ubuntu 14.04 on FutureSystems `India`
 OpenStack. The instructions have been tested on a small instance 
 and the whole process could take about half an hour before you 
 can access the running server.
@@ -28,43 +28,11 @@ can access the running server.
 Requirements
 ----------------------------------------------------------------------
 
-* FutureSystems Account
-* SSH Access to india.futuresystems.org
-
 We assume that you have set up an account on FutureSystems and are
 able to log into the machine with the name india.
 
 If you use a different cloud, you can adapt the instructions
 accordingly.
-
-Navigator
--------------------------------------------------------------------------------
-
-This tutorial uses different labels to distinguish SSH Terminals.
-
-* ``india$``: SSH terminal for india.futuresystems.org
-* ``vm$``: SSH terminal for a vm
-
-``india$``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``india$`` stands for a SSH terminal of india.futuresystems.org. If you see the
-``india$`` label, you are logged on ``india (i136)`` to run your command.  It
-is like so::
-
-  [$PORTALNAME@i136 ~]$ 
-
-``vm$``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``vm$`` stands for a SSH terminal of your VM instance. If you see the
-``vm$`` label, you run a command on your VM instance.  It is like so::
-
-  ubuntu@$USER-001:~$ 
-
-If you have a different name instead of ``$USER-001``, you see the name in the
-label.
-
 
 Starting the VM
 ----------------------------------------------------------------------
@@ -118,41 +86,48 @@ We summarize the following steps::
   india$ module load openstack
   india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 
+``india$`` stands for a SSH terminal of india.futuresystems.org. If you see the
+``india$`` label, you run a command on ``india (i136)``.  It is like so::
+
+  [$PORTALNAME@i136 ~]$ 
+
+
+.. important::
+
+   If you are following this as part of a class, make sure you source
+   the appropriate ``rc`` file **after** to the ``openrc.sh``.
+   Check for the available files like so::
+
+     $ ls .cloudmesh/clouds/india/juno/
+     cacert.pem  fg455  fg465  fg82  openrc.sh
+
+   If you are in the ``FG465`` course, load the appropriate settings::
+
+     $ source .cloudmesh/clouds/india/juno/fg465
+
+
 In order to log into the machine (once we start it up later),
 OpenStack needs to have an ssh keypair associated.  You can either
 have OpenStack create a key for you or import your current key.
 
-Create a new SSH Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To **import** a pre-existing key, such as ``~/.ssh/id_rsa.pub``, do the following::
 
-OpenStack Nova creates a new key with the following command::
+  india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
+
+This will associate your ``~/.ssh/id_rsa.pub`` key with the name ``$USER-india-key``.
+
+**Alternatively**, to have OpenStack create a key for you, execute the following::
 
   india$ nova keypair-add $USER-india-key >~/.ssh/$USER-india-key
   india$ chmod 600 ~/.ssh/$USER-india-key
 
 This will generate the key, import it into OpenStack, and ``chmod``
-updates a permission (600 - owner read, write only) of the file.
+will fix permissions on the file.
 
-.. warning:: Remember to set a passphrase once prompted to secure your private
-             key.
+.. warning:: Remember to set a passphrase once prompted to secure your private key.
 
              You must not use a passphrase less key! Please specify a
 	     strong passphrase.
-
-
-Import Existing SSH Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To **import** a pre-existing key, such as ``~/.ssh/id_rsa.pub``, do the
-following::
-
-  india$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub $USER-india-key
-
-This will associate your ``~/.ssh/id_rsa.pub`` key with the name
-``$USER-india-key``.
-
-Update Security Groups 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Next step is to open the necessary ports of the VM to be started::
 
@@ -161,9 +136,6 @@ Next step is to open the necessary ports of the VM to be started::
   india$ nova secgroup-add-rule default tcp 8888 8888 0.0.0.0/0
   india$ nova secgroup-add-rule default tcp 5000 5000 0.0.0.0/0
   india$ nova secgroup-list-rules default
-
-Boot a VM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now you can boot a VM and set public ip for external access::
 
@@ -208,34 +180,38 @@ You should see a table similar to this::
     | user_id                              | 433181ac60be4115a51axxxxxxxxxxxx                                  |
     +--------------------------------------+-------------------------------------------------------------------+
 
+
 Looking at the status you will see if the VM is in ACTIVE
 state. Repeat the command::
 
     india$ nova show $USER-001
 
-if necessary. 
-
-Login to VM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Once this is the case you can login to it with::
+if necessary. Once this is the case you can login to it with::
 
   india$ ssh -i ~/.ssh/id_rsa -l ubuntu $MYIP
 
-.. note:: Alternative login: ``nova ssh $USER-001 --login ubuntu``, if a floating ip address is linked. 
+
 
 Cloudmesh Installation
 ----------------------------------------------------------------------
 
-One-liner by ``curl``
+Systems Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installation of Cloudmesh can be complicated. We provide a one-liner
+Installation of cloudmesh can be complicated. We provide a oneline
 script to install::
 
   vm$ curl https://raw.githubusercontent.com/cloudmesh/get/master/cloudmesh/ubuntu/14.04.sh | venv=$HOME/ENV bash
 
-.. note:: This may take several minutes. (approximate 15 minutes)
+``vm$`` stands for a SSH terminal of your VM instance. If you see the
+``vm$`` label, you run a command on your VM instance.  It is like so::
+
+  ubuntu@$USER-001:~$ 
+
+If you have a different name instead of ``$USER-001``, you see the name in the
+label.
+
+.. note:: This may take several minutes.
 
 Please see :ref:`ref-cloudmesh-quickstart-system-install-curl` for
 details on what this does.
@@ -255,78 +231,38 @@ You may see outputs like so::
 
     # ----------------------------------------------------------------------
 
-Virtualenv Activation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 You now need to activate the virtualenv created::
 
   vm$ source $HOME/ENV/bin/activate
 
-After this command, you see the ``(ENV)`` label in your prompt like so::
-
-  (ENV)ubuntu@$USER-001:~$
-
+After this command, you see the ``(ENV)`` label in your prompt.
 
 Cloudmesh Setup
 ----------------------------------------------------------------------
 
-As part of its installation, Cloudmesh creates a ``~/.cloudmesh`` directory
-with configuration files in YAML format. Now we need to populate the
+As part of its installation, cloudmesh create a ``~/.cloudmesh`` directory with
+configuration files in YAML format. Now we need to populate the
 ``cloudmesh.yaml`` file with your actual cloud credentials.  Cloudmesh provides
 tools for you to retrieve your futuresystems cloud credential and configure the
 ``cloudmesh.yaml`` file properly. Before we can use it however we have to
-create a key that we upload to the FutureSystems portal.
-
-New SSH Key for VM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This is a **new** SSH key for your VM instance. Be sure that you create a new
-key on your instance. If you terminate your instance, you may loose your ssh
-key.
-
-SSH Key Generation for VM instance::
+create a key that we upload to the FutureSystems portal::
 
  vm$ export PORTALNAME=<put your portal name here>
  vm$ ssh-keygen -t rsa -C $PORTALNAME-ubuntu-vm-key
 
-Cache the key by a session based command ``ssh-agent``::
+Than lets add the key to the ssh agent::
 
   vm$ eval `ssh-agent -s`
   vm$ ssh-add
- 
-Register to FutureSystems Portal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+  
 Then you need to add the key to your FutureSystems portal account. 
 Please visit the portal and paste the content of the public
 key in the appropriate field. You can get the content of the key by ::
 
   vm$ cat ~/.ssh/id_rsa.pub
 
-The key string is similar to::
-
-  ssh-rsa
-  AAAAB3NzaC1yc2EAAAADAQAB.... ubuntu@albert-001
-
-You will register this key string to the portal with the following steps:
-
-* Open a web browser: https://portal.futuresystems.org/manage-my-portal-account
-* Find ``SSH Keys`` > ``Add a public key``
-* Paste your key string to ``Key`` text box
-* Add a title and submit
-
-At this point you should be able to connect to india from your VM instance. Try
-a ssh command on VM and find ``i136`` hostname::
-
-  vm$ ssh $PORTALNAME@india.futuresystems.org hostname
-  Python version 2.7.9 loaded
-  OpenStack Clients loaded
-  i136
-
-If you see ``i136`` hostname, your VM has access to india.
-
-Credential Setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+At this point you should be able to connect to india from this VM which is 
+required by the following commands.
 
 Now you can fetch the information you need to acces openstack form india::
 
@@ -334,7 +270,7 @@ Now you can fetch the information you need to acces openstack form india::
   vm$ cm-iu user create
   
 It's also recommended you manually edit the file `~/.cloudmesh/cloudmesh.yaml` 
-either with emacs or vim::
+either with emacs or vi::
 
   vm$ emacs ~/.cloudmesh/cloudmesh.yaml
 
@@ -342,11 +278,7 @@ or::
 
   vm$ vi ~/.cloudmesh/cloudmesh.yaml
 
-Update your profile such as name, email, or address. Find ``profile:`` section
-and update ``TBD`` value to real value.
-
-India Configuration by Fabric ``fab`` Command Tool 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this file, update your user profile, name, project data, etc.
 
 Move into ``cloudmesh`` source directory.::
 
@@ -364,22 +296,14 @@ You may see outputs like so::
   modify -> /home/ubuntu/.cloudmesh/cloudmesh.yaml
   Configuration changes have been made successfully
 
-Virtualenv ``ENV``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``(ENV)$`` means that ``ENV`` virtual environment is enabled on your terminal.
-This tutorial uses the ``ENV`` virtualenv to install Python packages relevant
-to Cloudmesh.  When you run any Cloudmesh-related commands, you must enable
-``ENV`` virtualenv by::
+``(ENV)$`` means that ``ENV`` virtual environment is enabled on your terminal. 
+This tutorial uses the ``ENV`` virtualenv to install Python packages relevant to Cloudmesh.
+When you run any Cloudmesh-related commands, you must enable ``ENV`` virtualenv by::
 
   vm$ source ~/ENV/bin/activate
 
-MongoDB Initialization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 To run cloudmesh you will need to start a number of services. The first
-is to create and initialize the cloudmesh database. Here we will use the
-command::
+is to create and initialize the cloudmesh database. Here we will use the command::
 
   (ENV)vm$ fab mongo.reset
 
@@ -393,17 +317,11 @@ cloudmesh server first this is the best method.
 	  although it may run multiple minutes.
 
 
-Cloudmesh Start
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Now you are ready to start all services for cloudmesh with::
 
   (ENV)vm$ fab server.start
 
-.. tip:: Press ``Enter`` or ``Return`` key after seeing the ... **Loading
-   module pie_chart_fg380** message on your screen. ``fab server.start``
-   launches ``Flask`` web service by using a linux background command '&'. This
-   makes that your screen looks frozen but your shell is available to you.
+.. tip:: Press ``Enter`` or ``Return`` key after seeing the ... **Loading module pie_chart_fg380** message on your screen. ``fab server.start`` launches ``Flask`` web service by using a linux background command '&'. This makes that your screen looks frozen but your shell is available to you.
 
 .. figure:: ../../images/hanging_after_fab_server_start.png
 
@@ -411,18 +329,11 @@ Now you are ready to start all services for cloudmesh with::
 
 Then the cloudmesh service should be available via::
 
-   http://MYIP:5000
+   http://PUBLIC_IP_OF_THE_VM:5000
 
-If you forgot your IP, use Nova command on India::
+If you forgot your IP, use the command::
 
-   india$ nova list --name $USER-001
-   +--------------------------------------+-----------------------------------------------+---------+------------+-------------+--------------------------------------+
-   | ID                                   | Name                                          | Status  | Task State | Power State | Networks                             |
-   +--------------------------------------+-----------------------------------------------+---------+------------+-------------+--------------------------------------+
-   | 5f62f7f6-1bdc-406e-bb4b-1eecccd133fe | albert-001                                    | ACTIVE  | -          | Running     | int-net=10.23.1.xxx, 149.165.xxx.xxx |
-   +--------------------------------------+-----------------------------------------------+---------+------------+-------------+--------------------------------------+
-
-The address starts with ``149.165`` is your public IP address.
+  india$ echo $MYIP
 
 
 NOTE:

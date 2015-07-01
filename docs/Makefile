@@ -55,7 +55,6 @@ html: images
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 images:
-	mkdir -p build/html
 	cp -rf source/images build/html
 
 # slides:

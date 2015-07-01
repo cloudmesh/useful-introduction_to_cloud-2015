@@ -389,7 +389,7 @@ Sphinx. Command Line Tools and Rest APIs are also supported.
      - Lab sessions
      - Study Material By
      - Lab Session Homework
-   * - **Installation on a local machine** (optional)
+   * - **Installation on a local machine**
      - `18 mins <http://www.youtube.com/watch?v=lGiJifD0VgU>`_
      - `30 mins <../../cloudmesh/setup/quickstart.html>`_
      - (not required, only read the text and watch the video)
