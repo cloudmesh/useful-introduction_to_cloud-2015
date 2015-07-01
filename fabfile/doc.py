@@ -4,7 +4,7 @@ import os
 import time
 import subprocess
 
-
+branch = "master"
 
 try:
     from cloudmesh_base.util import banner
@@ -18,7 +18,7 @@ from cloudmesh_base.Shell import Shell
 
 if Shell.which("cm") is None:
     clone()
-    local("cd ../cloudmesh; git checkout dev2.0")    
+    local("cd ../cloudmesh; git checkout {:}".format(branch))    
     local("cd ../cloudmesh; ./install system")
     local("cd ../cloudmesh; ./install requirements")
     local("cd ../cloudmesh; ./install cloudmesh")    
@@ -147,7 +147,7 @@ def clone():
         else:
             #local("cd ..; git pull")
             local("cd ../{0}; git pull".format(package))
-        local ("cd ../{0}; git checkout dev2.0". format("cloudmesh"))
+        # local ("cd ../{0}; git checkout {1}". format("cloudmesh", branch))
     
 @task
 def compile():
@@ -158,7 +158,7 @@ def compile():
         else:
             #local("cd ..; git pull")
             local("cd ../{0}; git pull".format(package))
-        local ("cd ../{0}; git checkout dev2.0; python setup.py install". format(package))
+        # local ("cd ../{0}; git checkout {1}; python setup.py install". format(package, branch))
     
     
 @task
