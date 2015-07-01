@@ -5,6 +5,6 @@ cmd3
    :maxdepth: 4
 
    cmd3
+   deprecated
    fabfile
    setup
-   setup-orig

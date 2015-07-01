@@ -23,7 +23,7 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
   
 
   
@@ -63,13 +63,19 @@
         </a>
 
         
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
 
         
       </div>
@@ -119,17 +125,8 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li></li>
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
+          breadcrumbs
+
           <div role="main" class="document">
             
 
@@ -645,7 +642,27 @@
      <tr class="cg-1">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.base_cluster_map"><code class="xref">cloudmesh.rack.base_cluster_map</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.base_progress"><code class="xref">cloudmesh.rack.base_progress</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.cluster_map_heat"><code class="xref">cloudmesh.rack.cluster_map_heat</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.cluster_map_service"><code class="xref">cloudmesh.rack.cluster_map_service</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.fetch_cluster_info"><code class="xref">cloudmesh.rack.fetch_cluster_info</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -665,12 +682,22 @@
      <tr class="cg-1">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh.rack.queue.html#module-cloudmesh.rack.queue.tasks"><code class="xref">cloudmesh.rack.queue.tasks</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.rack_data"><code class="xref">cloudmesh.rack.rack_data</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.rack_progress"><code class="xref">cloudmesh.rack.rack_progress</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh.rack.html#module-cloudmesh.rack.rack_work"><code class="xref">cloudmesh.rack.rack_work</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -1057,11 +1084,6 @@
      <tr class="cg-3">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/base/cloudmesh_base.html#module-cloudmesh_base.version_incr"><code class="xref">cloudmesh_base.version_incr</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-3">
-       <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/base/cloudmesh_base.html#module-cloudmesh_base.xshellutil"><code class="xref">cloudmesh_base.xshellutil</code></a></td><td>
        <em></em></td></tr>
      <tr>
@@ -1317,11 +1339,6 @@
      <tr class="cg-8">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/cloudmesh_pbs.html#module-cloudmesh_pbs.DatabaseMongo"><code class="xref">cloudmesh_pbs.DatabaseMongo</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-8">
-       <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/pbs/cloudmesh_pbs.html#module-cloudmesh_pbs.DbPBS"><code class="xref">cloudmesh_pbs.DbPBS</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-8">
@@ -1332,17 +1349,17 @@
      <tr class="cg-8">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/cloudmesh_pbs.html#module-cloudmesh_pbs.PBSScriptWrapper"><code class="xref">cloudmesh_pbs.PBSScriptWrapper</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-8">
-       <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/pbs/cloudmesh_pbs.plugins.html#module-cloudmesh_pbs.plugins"><code class="xref">cloudmesh_pbs.plugins</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-8">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/pbs/cloudmesh_pbs.plugins.html#module-cloudmesh_pbs.plugins.cm_shell_pbs"><code class="xref">cloudmesh_pbs.plugins.cm_shell_pbs</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-8">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/pbs/cloudmesh_pbs.html#module-cloudmesh_pbs.s"><code class="xref">cloudmesh_pbs.s</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-8">
        <td></td>
@@ -1389,6 +1406,11 @@
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/cloudmesh_web.modules.html#module-cloudmesh_web.modules.launch"><code class="xref">cloudmesh_web.modules.launch</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-9">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh_web.modules.html#module-cloudmesh_web.modules.management"><code class="xref">cloudmesh_web.modules.management</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-9">
        <td></td>
@@ -1443,6 +1465,11 @@
      <tr class="cg-9">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh_web.modules.html#module-cloudmesh_web.modules.rack"><code class="xref">cloudmesh_web.modules.rack</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-9">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/cloudmesh_web.modules.html#module-cloudmesh_web.modules.status"><code class="xref">cloudmesh_web.modules.status</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-9">
@@ -1450,149 +1477,133 @@
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/cloudmesh_web.modules.html#module-cloudmesh_web.modules.users"><code class="xref">cloudmesh_web.modules.users</code></a></td><td>
        <em></em></td></tr>
+     <tr class="cg-9">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
+       <a href="modules/cloudmesh/cloudmesh_web.html#module-cloudmesh_web.server"><code class="xref">cloudmesh_web.server</code></a></td><td>
+       <em></em></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
               id="toggle-10" style="display: none" alt="-" /></td>
        <td>
-       <a href="modules/pbs/cloudmesh_yamlplugin.html#module-cloudmesh_yamlplugin"><code class="xref">cloudmesh_yamlplugin</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-10">
-       <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/cloudmesh_yamlplugin.html#module-cloudmesh_yamlplugin.command_yamlplugin"><code class="xref">cloudmesh_yamlplugin.command_yamlplugin</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-10">
-       <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/cloudmesh_yamlplugin.plugins.html#module-cloudmesh_yamlplugin.plugins"><code class="xref">cloudmesh_yamlplugin.plugins</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-10">
-       <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/cloudmesh_yamlplugin.plugins.html#module-cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin"><code class="xref">cloudmesh_yamlplugin.plugins.cm_shell_yamlplugin</code></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-11" style="display: none" alt="-" /></td>
-       <td>
        <a href="modules/cmd3/cmd3.html#module-cmd3"><code class="xref">cmd3</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.html#module-cmd3.console"><code class="xref">cmd3.console</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.etc.html#module-cmd3.etc"><code class="xref">cmd3.etc</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.etc.cmd3_template.html#module-cmd3.etc.cmd3_template"><code class="xref">cmd3.etc.cmd3_template</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.etc.cmd3_template.cmd3_template.html#module-cmd3.etc.cmd3_template.cmd3_template"><code class="xref">cmd3.etc.cmd3_template.cmd3_template</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.html#module-cmd3.generate"><code class="xref">cmd3.generate</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins"><code class="xref">cmd3.plugins</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.activate"><code class="xref">cmd3.plugins.activate</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.browser"><code class="xref">cmd3.plugins.browser</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.clear"><code class="xref">cmd3.plugins.clear</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.edit"><code class="xref">cmd3.plugins.edit</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.graphviz"><code class="xref">cmd3.plugins.graphviz</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.info"><code class="xref">cmd3.plugins.info</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.load"><code class="xref">cmd3.plugins.load</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.pause"><code class="xref">cmd3.plugins.pause</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.py"><code class="xref">cmd3.plugins.py</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.rst"><code class="xref">cmd3.plugins.rst</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.script"><code class="xref">cmd3.plugins.script</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.shell_core"><code class="xref">cmd3.plugins.shell_core</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.shell_scope"><code class="xref">cmd3.plugins.shell_scope</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.template"><code class="xref">cmd3.plugins.template</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.timer"><code class="xref">cmd3.plugins.timer</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.plugins.html#module-cmd3.plugins.yaml_setup"><code class="xref">cmd3.plugins.yaml_setup</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.html#module-cmd3.shell"><code class="xref">cmd3.shell</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-11">
+     <tr class="cg-10">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/cmd3.html#module-cmd3.yaml_setup"><code class="xref">cmd3.yaml_setup</code></a></td><td>
@@ -1602,142 +1613,142 @@
        <strong>f</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-12" style="display: none" alt="-" /></td>
+              id="toggle-11" style="display: none" alt="-" /></td>
        <td>
-       <a href="modules/pbs/fabfile.html#module-fabfile"><code class="xref">fabfile</code></a></td><td>
+       <a href="modules/cmd3/fabfile.html#module-fabfile"><code class="xref">fabfile</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.build"><code class="xref">fabfile.build</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cmd3/fabfile.html#module-fabfile.clean"><code class="xref">fabfile.clean</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/fabfile.html#module-fabfile.doc"><code class="xref">fabfile.doc</code></a></td><td>
+       <a href="modules/cmd3/fabfile.html#module-fabfile.doc"><code class="xref">fabfile.doc</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.git"><code class="xref">fabfile.git</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.hpc"><code class="xref">fabfile.hpc</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.india"><code class="xref">fabfile.india</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.iptable"><code class="xref">fabfile.iptable</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.ipython"><code class="xref">fabfile.ipython</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.manage"><code class="xref">fabfile.manage</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.mongo"><code class="xref">fabfile.mongo</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.mooc"><code class="xref">fabfile.mooc</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.mq"><code class="xref">fabfile.mq</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.nose"><code class="xref">fabfile.nose</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.pep8"><code class="xref">fabfile.pep8</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.progress"><code class="xref">fabfile.progress</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.pypi"><code class="xref">fabfile.pypi</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.qc"><code class="xref">fabfile.qc</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.queue"><code class="xref">fabfile.queue</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
-       <a href="modules/pbs/fabfile.html#module-fabfile.security"><code class="xref">fabfile.security</code></a></td><td>
+       <a href="modules/cmd3/fabfile.html#module-fabfile.security"><code class="xref">fabfile.security</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.server"><code class="xref">fabfile.server</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.test"><code class="xref">fabfile.test</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.tunnel"><code class="xref">fabfile.tunnel</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.user"><code class="xref">fabfile.user</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-12">
+     <tr class="cg-11">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/fabfile.html#module-fabfile.util"><code class="xref">fabfile.util</code></a></td><td>
        <em></em></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-13" style="display: none" alt="-" /></td>
+              id="toggle-12" style="display: none" alt="-" /></td>
        <td>
        <a href="modules/pbs/flask_pbs.html#module-flask_pbs"><code class="xref">flask_pbs</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-13">
+     <tr class="cg-12">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/pbs/flask_pbs.views.html#module-flask_pbs.views"><code class="xref">flask_pbs.views</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-13">
+     <tr class="cg-12">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/pbs/flask_pbs.views.html#module-flask_pbs.views.pbs"><code class="xref">flask_pbs.views.pbs</code></a></td><td>
@@ -1747,16 +1758,16 @@
        <strong>s</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-14" style="display: none" alt="-" /></td>
+              id="toggle-13" style="display: none" alt="-" /></td>
        <td>
        <a href="modules/cloudmesh/simple.html#module-simple"><code class="xref">simple</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-14">
+     <tr class="cg-13">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/simple.html#module-simple.celery"><code class="xref">simple.celery</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-14">
+     <tr class="cg-13">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/cloudmesh/simple.html#module-simple.tasks"><code class="xref">simple.tasks</code></a></td><td>
@@ -1771,26 +1782,26 @@
        <em></em></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-15" style="display: none" alt="-" /></td>
+              id="toggle-14" style="display: none" alt="-" /></td>
        <td>
        <a href="modules/timestring/timestring.html#module-timestring"><code class="xref">timestring</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-15">
+     <tr class="cg-14">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/timestring/timestring.html#module-timestring.Date"><code class="xref">timestring.Date</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-15">
+     <tr class="cg-14">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/timestring/timestring.html#module-timestring.Range"><code class="xref">timestring.Range</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-15">
+     <tr class="cg-14">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/timestring/timestring.html#module-timestring.text2num"><code class="xref">timestring.text2num</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-15">
+     <tr class="cg-14">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
        <a href="modules/timestring/timestring.html#module-timestring.timestring_re"><code class="xref">timestring.timestring_re</code></a></td><td>
@@ -1799,28 +1810,14 @@
 
 
           </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2013, myCloudmesh.org/learning.
-    </p>
-  </div>
-
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
-</footer>
+          fotter
         </div>
       </div>
 
     </section>
 
   </div>
-  
-
+  fotter
 
   
 
@@ -1846,12 +1843,6 @@
   
 
   
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
    
 
 </body>

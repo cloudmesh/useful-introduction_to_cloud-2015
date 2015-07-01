@@ -1,11 +1,10 @@
 .. _s-hardware:
 
 **********************************************************************
-Hardware at Indiana University
+FutureSystems Hardware in Digital Science Center
 **********************************************************************
 
-In this section we describe the hardware that is available at Indiana
-University. Hardware noted as *Internal* is not available to all users.
+In this section we describe the hardware that is available at Indiana Universities Digital Sciene Center. Hardware noted as *Internal* is not available to all users.
 
 
 Compute Resources
@@ -46,7 +45,7 @@ overview of some important information about these clusters.
    +------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+------------------------------+
    | Attribute                    | India                      | Echo                       | Bravo                      | Delta                      | Madrid                      | Tempest                     | Juliet                       |
    +==============================+============================+============================+============================+============================+=============================+=============================+==============================+
-   | Site                         | Indiana University         | Indiana University         | Indiana University         | Indiana University         | Indiana University Internal | Indiana University Internal | Indiana University Internal  |
+   | Site                         | DSC         | DSC         | DSC         | DSC         | DSC Internal | DSC Internal | DSC Internal  |
    +------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+------------------------------+
    | Host Name                    | india                      | echo                       | bravo                      | delta                      | madrid                      | tempest                     | juliet                       |
    +------------------------------+----------------------------+----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+------------------------------+

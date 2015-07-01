@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh_pbs.s &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          breadcrumbs
+
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh_pbs.s</h1><div class="highlight"><pre>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Running:</span>
+
+<span class="sd">  PYTHONPATH=. python examples/basic.py</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">redirect</span>
+<span class="kn">from</span> <span class="nn">flask.ext.restful</span> <span class="kn">import</span> <span class="n">reqparse</span><span class="p">,</span> <span class="n">abort</span><span class="p">,</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span>\
+    <span class="n">marshal_with</span>
+<span class="kn">from</span> <span class="nn">flask_restful_swagger</span> <span class="kn">import</span> <span class="n">swagger</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">,</span> <span class="n">static_folder</span><span class="o">=</span><span class="s">&#39;../static&#39;</span><span class="p">)</span>
+
+<span class="c">###################################</span>
+<span class="c"># This is important:</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">swagger</span><span class="o">.</span><span class="n">docs</span><span class="p">(</span><span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">),</span> <span class="n">apiVersion</span><span class="o">=</span><span class="s">&#39;0.1&#39;</span><span class="p">,</span>
+                   <span class="n">basePath</span><span class="o">=</span><span class="s">&#39;http://localhost:5000&#39;</span><span class="p">,</span>
+                   <span class="n">resourcePath</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">,</span>
+                   <span class="n">produces</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span> <span class="s">&quot;text/html&quot;</span><span class="p">],</span>
+                   <span class="n">api_spec_url</span><span class="o">=</span><span class="s">&#39;/pbs/api/spec&#39;</span><span class="p">,</span>
+                   <span class="n">description</span><span class="o">=</span><span class="s">&#39;The Cloudmesh PBS REST API&#39;</span><span class="p">)</span>
+<span class="c">###################################</span>
+
+<span class="n">JOBS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;job1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;task&#39;</span><span class="p">:</span> <span class="s">&#39;build an API&#39;</span><span class="p">},</span>
+    <span class="s">&#39;job2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;task&#39;</span><span class="p">:</span> <span class="s">&#39;?????&#39;</span><span class="p">},</span>
+    <span class="s">&#39;job3&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;task&#39;</span><span class="p">:</span> <span class="s">&#39;profit!&#39;</span><span class="p">},</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="abort_if_job_doesnt_exist"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.abort_if_job_doesnt_exist">[docs]</a><span class="k">def</span> <span class="nf">abort_if_job_doesnt_exist</span><span class="p">(</span><span class="n">job_id</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">job_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">JOBS</span><span class="p">:</span>
+    <span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">&quot;Job {} doesn&#39;t exist&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_id</span><span class="p">))</span>
+</div>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">reqparse</span><span class="o">.</span><span class="n">RequestParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;task&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nd">@swagger.model</span>
+<div class="viewcode-block" id="JobItem"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.JobItem">[docs]</a><span class="k">class</span> <span class="nc">JobItem</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;This is an example of a model class that has parameters in its constructor</span>
+<span class="sd">  and the fields in the swagger spec are derived from the parameters</span>
+<span class="sd">  to __init__.</span>
+<span class="sd">  In this case we would have args, arg2 as required parameters and arg3 as</span>
+<span class="sd">  optional parameter.&quot;&quot;&quot;</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="s">&#39;123&#39;</span><span class="p">):</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="Job"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.Job">[docs]</a><span class="k">class</span> <span class="nc">Job</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+  <span class="s">&quot;Cloudmesh Job API&quot;</span>
+  <span class="nd">@swagger.operation</span><span class="p">(</span>
+      <span class="n">notes</span><span class="o">=</span><span class="s">&#39;get a job item by ID&#39;</span><span class="p">,</span>
+      <span class="n">nickname</span><span class="o">=</span><span class="s">&#39;get&#39;</span><span class="p">,</span>
+      <span class="c"># Parameters can be automatically extracted from URLs (e.g. &lt;string:id&gt;)</span>
+      <span class="c"># but you could also override them here, or add other parameters.</span>
+      <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;job_id_x&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;The ID of the JOB item&quot;</span><span class="p">,</span>
+            <span class="s">&quot;required&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">&quot;allowMultiple&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">&quot;dataType&quot;</span><span class="p">:</span> <span class="s">&#39;string&#39;</span><span class="p">,</span>
+            <span class="s">&quot;paramType&quot;</span><span class="p">:</span> <span class="s">&quot;path&quot;</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;a_bool&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;The ID of the JOB item&quot;</span><span class="p">,</span>
+            <span class="s">&quot;required&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">&quot;allowMultiple&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">&quot;dataType&quot;</span><span class="p">:</span> <span class="s">&#39;boolean&#39;</span><span class="p">,</span>
+            <span class="s">&quot;paramType&quot;</span><span class="p">:</span> <span class="s">&quot;path&quot;</span>
+          <span class="p">}</span>
+      <span class="p">])</span>
+<div class="viewcode-block" id="Job.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.Job.get">[docs]</a>  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="p">):</span>
+    <span class="c"># This goes into the summary</span>
+    <span class="sd">&quot;&quot;&quot;Get a pbs job</span>
+
+<span class="sd">    Returns the job based on finding it by jobid on the specified host</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">abort_if_job_doesnt_exist</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">JOBS</span><span class="p">[</span><span class="n">job_id</span><span class="p">],</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">}</span>
+</div>
+  <span class="nd">@swagger.operation</span><span class="p">(</span>
+      <span class="n">notes</span><span class="o">=</span><span class="s">&#39;delete a pbs job by ID&#39;</span><span class="p">,</span>
+  <span class="p">)</span>
+<div class="viewcode-block" id="Job.delete"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.Job.delete">[docs]</a>  <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">job_id</span><span class="p">):</span>
+    <span class="n">abort_if_job_doesnt_exist</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">JOBS</span><span class="p">[</span><span class="n">job_id</span><span class="p">]</span>
+    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">}</span>
+</div>
+  <span class="nd">@swagger.operation</span><span class="p">(</span>
+      <span class="n">notes</span><span class="o">=</span><span class="s">&#39;edit a pbs job by ID&#39;</span><span class="p">,</span>
+  <span class="p">)</span>
+<div class="viewcode-block" id="Job.put"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.Job.put">[docs]</a>  <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">job_id</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">task</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;task&#39;</span><span class="p">:</span> <span class="n">args</span><span class="p">[</span><span class="s">&#39;task&#39;</span><span class="p">]}</span>
+    <span class="n">JOBS</span><span class="p">[</span><span class="n">job_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">task</span>
+    <span class="k">return</span> <span class="n">task</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">}</span>
+</div>
+<div class="viewcode-block" id="Job.options"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.Job.options">[docs]</a>  <span class="k">def</span> <span class="nf">options</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+    <span class="c"># since this method is not decorated with @swagger.operation it does not</span>
+    <span class="c"># get added to the swagger docs</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s">&#39;Allow&#39;</span> <span class="p">:</span> <span class="s">&#39;GET,PUT,POST,DELETE&#39;</span> <span class="p">},</span> <span class="mi">200</span><span class="p">,</span> \
+    <span class="p">{</span> <span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">,</span> \
+      <span class="s">&#39;Access-Control-Allow-Methods&#39;</span><span class="p">:</span> <span class="s">&#39;GET,PUT,POST,DELETE&#39;</span><span class="p">,</span> \
+      <span class="s">&#39;Access-Control-Allow-Headers&#39;</span><span class="p">:</span> <span class="s">&#39;Content-Type&#39;</span> <span class="p">}</span>
+
+<span class="c"># JobList</span>
+<span class="c">#   shows a list of all jobs, and lets you POST to add new tasks</span></div></div>
+<div class="viewcode-block" id="JobList"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.JobList">[docs]</a><span class="k">class</span> <span class="nc">JobList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+
+<div class="viewcode-block" id="JobList.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.JobList.get">[docs]</a>  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">JOBS</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">}</span>
+</div>
+  <span class="nd">@swagger.operation</span><span class="p">(</span>
+      <span class="n">notes</span><span class="o">=</span><span class="s">&#39;Creates a new JOB item&#39;</span><span class="p">,</span>
+      <span class="n">responseClass</span><span class="o">=</span><span class="n">JobItem</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+      <span class="n">nickname</span><span class="o">=</span><span class="s">&#39;create&#39;</span><span class="p">,</span>
+      <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;body&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;A JOB item&quot;</span><span class="p">,</span>
+            <span class="s">&quot;required&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">&quot;allowMultiple&quot;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+            <span class="s">&quot;dataType&quot;</span><span class="p">:</span> <span class="n">JobItem</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+            <span class="s">&quot;paramType&quot;</span><span class="p">:</span> <span class="s">&quot;body&quot;</span>
+          <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="n">responseMessages</span><span class="o">=</span><span class="p">[</span>
+          <span class="p">{</span>
+              <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span>
+              <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Created. The URL of the created blueprint should &quot;</span> <span class="o">+</span>
+              <span class="s">&quot;be in the Location header&quot;</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+              <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">405</span><span class="p">,</span>
+              <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;Invalid input&quot;</span>
+          <span class="p">}</span>
+      <span class="p">])</span>
+<div class="viewcode-block" id="JobList.post"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.JobList.post">[docs]</a>  <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">job_id</span> <span class="o">=</span> <span class="s">&#39;job</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">JOBS</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">JOBS</span><span class="p">[</span><span class="n">job_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;task&#39;</span><span class="p">:</span> <span class="n">args</span><span class="p">[</span><span class="s">&#39;task&#39;</span><span class="p">]}</span>
+    <span class="k">return</span> <span class="n">JOBS</span><span class="p">[</span><span class="n">job_id</span><span class="p">],</span> <span class="mi">201</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">}</span>
+</div></div>
+<span class="nd">@swagger.model</span>
+<div class="viewcode-block" id="ModelWithResourceFields"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.ModelWithResourceFields">[docs]</a><span class="k">class</span> <span class="nc">ModelWithResourceFields</span><span class="p">:</span>
+  <span class="n">resource_fields</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s">&#39;a_string&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">()</span>
+  <span class="p">}</span>
+</div>
+<span class="nd">@swagger.model</span>
+<span class="nd">@swagger.nested</span><span class="p">(</span>
+   <span class="n">a_nested_attribute</span><span class="o">=</span><span class="n">ModelWithResourceFields</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+   <span class="n">a_list_of_nested_types</span><span class="o">=</span><span class="n">ModelWithResourceFields</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">JobItemWithResourceFields</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;This is an example of how Output Fields work</span>
+<span class="sd">  (http://flask-restful.readthedocs.org/en/latest/fields.html).</span>
+<span class="sd">  Output Fields lets you add resource_fields to your model in which you specify</span>
+<span class="sd">  the output of the model when it gets sent as an HTTP response.</span>
+<span class="sd">  flask-restful-swagger takes advantage of this to specify the fields in</span>
+<span class="sd">  the model&quot;&quot;&quot;</span>
+  <span class="n">resource_fields</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s">&#39;a_string&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="s">&#39;a_string_field_name&#39;</span><span class="p">),</span>
+      <span class="s">&#39;a_formatted_string&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">FormattedString</span><span class="p">,</span>
+      <span class="s">&#39;an_enum&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">,</span>
+      <span class="s">&#39;an_int&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span>
+      <span class="s">&#39;a_bool&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">,</span>
+      <span class="s">&#39;a_url&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Url</span><span class="p">,</span>
+      <span class="s">&#39;a_float&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">,</span>
+      <span class="s">&#39;an_float_with_arbitrary_precision&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Arbitrary</span><span class="p">,</span>
+      <span class="s">&#39;a_fixed_point_decimal&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Fixed</span><span class="p">,</span>
+      <span class="s">&#39;a_datetime&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">DateTime</span><span class="p">,</span>
+      <span class="s">&#39;a_list_of_strings&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">),</span>
+      <span class="s">&#39;a_nested_attribute&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Nested</span><span class="p">(</span><span class="n">ModelWithResourceFields</span><span class="o">.</span><span class="n">resource_fields</span><span class="p">),</span>
+      <span class="s">&#39;a_list_of_nested_types&#39;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">fields</span><span class="o">.</span><span class="n">Nested</span><span class="p">(</span><span class="n">ModelWithResourceFields</span><span class="o">.</span><span class="n">resource_fields</span><span class="p">)),</span>
+  <span class="p">}</span>
+
+  <span class="c"># Specify which of the resource fields are required</span>
+  <span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a_string&#39;</span><span class="p">]</span>
+
+  <span class="n">swagger_metadata</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s">&#39;an_enum&#39;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&#39;enum&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">]</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+<div class="viewcode-block" id="MarshalWithExample"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.MarshalWithExample">[docs]</a><span class="k">class</span> <span class="nc">MarshalWithExample</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+  <span class="nd">@swagger.operation</span><span class="p">(</span>
+      <span class="n">notes</span><span class="o">=</span><span class="s">&#39;get something&#39;</span><span class="p">,</span>
+      <span class="n">responseClass</span><span class="o">=</span><span class="n">JobItemWithResourceFields</span><span class="p">,</span>
+      <span class="n">nickname</span><span class="o">=</span><span class="s">&#39;get&#39;</span><span class="p">)</span>
+  <span class="nd">@marshal_with</span><span class="p">(</span><span class="n">JobItemWithResourceFields</span><span class="o">.</span><span class="n">resource_fields</span><span class="p">)</span>
+<div class="viewcode-block" id="MarshalWithExample.get"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.MarshalWithExample.get">[docs]</a>  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{},</span> <span class="mi">200</span><span class="p">,</span>  <span class="p">{</span><span class="s">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s">&#39;*&#39;</span><span class="p">}</span>
+
+
+<span class="c">##</span>
+<span class="c">## Actually setup the Api resource routing here</span>
+<span class="c">##</span></div></div>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">JobList</span><span class="p">,</span> <span class="s">&#39;/pbs&#39;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Job</span><span class="p">,</span> <span class="s">&#39;/pbs/&lt;string:host&gt;/&lt;string:job_id&gt;&#39;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">MarshalWithExample</span><span class="p">,</span> <span class="s">&#39;/marshal_with&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/docs&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="docs"><a class="viewcode-back" href="../../modules/pbs/cloudmesh_pbs.html#cloudmesh_pbs.s.docs">[docs]</a><span class="k">def</span> <span class="nf">docs</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">&#39;/static/docs.html&#39;</span><span class="p">)</span>
+
+</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">JobItemWithResourceFields</span><span class="p">()</span>
+  <span class="n">JobItem</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;3&#39;</span><span class="p">)</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          fotter
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  fotter
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

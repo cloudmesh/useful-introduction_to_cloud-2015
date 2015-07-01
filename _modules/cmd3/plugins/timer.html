@@ -117,24 +117,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-      
-    <li>cmd3.plugins.timer</li>
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
+          breadcrumbs
+
           <div role="main" class="document">
             
   <h1>Source code for cmd3.plugins.timer</h1><div class="highlight"><pre>
 <span class="kn">from</span> <span class="nn">cmd3.shell</span> <span class="kn">import</span> <span class="n">command</span>
-
+<span class="kn">from</span> <span class="nn">cmd3.console</span> <span class="kn">import</span> <span class="n">Console</span>
 
 <div class="viewcode-block" id="timer"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.timer.timer">[docs]</a><span class="k">class</span> <span class="nc">timer</span><span class="p">:</span>
 
@@ -186,13 +175,13 @@
 <span class="sd">                Implementation note: we have a stopwatch in cloudmesh,</span>
 <span class="sd">                                     that we could copy into cmd3</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">print</span> <span class="n">arguments</span>
-        <span class="k">print</span> <span class="s">&quot;args&quot;</span><span class="p">,</span> <span class="n">args</span>
+        <span class="c"># print arguments</span>
+        <span class="c"># print &quot;args&quot;, args</span>
         <span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">args</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;on&quot;</span><span class="p">,</span> <span class="s">&quot;off&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">with_timers</span> <span class="o">=</span> <span class="p">(</span><span class="n">args</span> <span class="o">==</span> <span class="s">&quot;on&quot;</span><span class="p">)</span>
-            <span class="k">print</span> <span class="s">&quot;Timers are now:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_timers</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">ok</span> <span class="p">(</span><span class="s">&quot;Timers are now: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">args</span> <span class="o">==</span> <span class="s">&#39;list&#39;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">list_timers</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
@@ -200,33 +189,19 @@
 
 <div class="viewcode-block" id="timer.list_timers"><a class="viewcode-back" href="../../../modules/cmd3/cmd3.plugins.html#cmd3.plugins.timer.timer.list_timers">[docs]</a>    <span class="k">def</span> <span class="nf">list_timers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;list of all timers&quot;&quot;&quot;</span>
-        <span class="k">print</span> <span class="s">&quot;TODO&quot;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;TODO: not implemented&quot;</span><span class="p">)</span>
         <span class="k">pass</span></div></div>
 </pre></div>
 
           </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2013, myCloudmesh.org/learning.
-    </p>
-  </div>
-
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
-</footer>
+          fotter
         </div>
       </div>
 
     </section>
 
   </div>
-  
-
+  fotter
 
   
 

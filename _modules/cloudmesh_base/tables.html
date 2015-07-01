@@ -117,19 +117,8 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../../index.html">Docs</a> &raquo;</li>
-      
-          <li><a href="../index.html">Module code</a> &raquo;</li>
-      
-    <li>cloudmesh_base.tables</li>
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
+          breadcrumbs
+
           <div role="main" class="document">
             
   <h1>Source code for cloudmesh_base.tables</h1><div class="highlight"><pre>
@@ -147,9 +136,9 @@
 
 <div class="viewcode-block" id="dict_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;table&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;csv&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;dict&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">output</span> <span class="o">==</span> <span class="s">&quot;yaml&quot;</span><span class="p">:</span>
@@ -158,7 +147,7 @@
         <span class="k">return</span> <span class="s">&quot;UNKOWN FORMAT&quot;</span>
 
 </div>
-<div class="viewcode-block" id="dict_csv_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_csv_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="dict_csv_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_csv_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_csv_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">):</span>
 
     <span class="n">table</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
     <span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
@@ -177,7 +166,7 @@
     <span class="k">return</span> <span class="n">table</span>
 
 </div>
-<div class="viewcode-block" id="dict_table_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_table_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="dict_table_printer"><a class="viewcode-back" href="../../modules/base/cloudmesh_base.html#cloudmesh_base.tables.dict_table_printer">[docs]</a><span class="k">def</span> <span class="nf">dict_table_printer</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;prints a pretty table from an dict of dicts</span>
 <span class="sd">    :param d: A a dict with dicts of the same type.</span>
 <span class="sd">                  Each key will be a column</span>
@@ -211,12 +200,7 @@
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">sort_keys</span><span class="p">:</span>
-        <span class="n">sorted_list</span>  <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">sorted_list</span> <span class="o">=</span> <span class="n">d</span>
-
-    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sorted_list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
         <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
             <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
@@ -466,28 +450,14 @@
 </pre></div>
 
           </div>
-          <footer>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2013, myCloudmesh.org/learning.
-    </p>
-  </div>
-
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
-</footer>
+          fotter
         </div>
       </div>
 
     </section>
 
   </div>
-  
-
+  fotter
 
   
 

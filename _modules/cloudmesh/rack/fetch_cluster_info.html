@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cloudmesh.rack.fetch_cluster_info &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../../index.html"/>
+        <link rel="up" title="cloudmesh" href="../../cloudmesh.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cloudmesh/index.html">Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          breadcrumbs
+
+          <div role="main" class="document">
+            
+  <h1>Source code for cloudmesh.rack.fetch_cluster_info</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Fetch cluster&#39;s information, for example: temperature, service type and etc.</span>
+<span class="sd">Currently, FetchCluster only knows existing cluster,</span>
+<span class="sd">that is [&#39;india&#39;, &#39;bravo&#39;, &#39;echo&#39;, &#39;delta&#39;]</span>
+<span class="sd">If more cluster are added later, this class MUST be modified carefully</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.rack.rack_data</span> <span class="kn">import</span> <span class="n">RackData</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.rack.rack_work</span> <span class="kn">import</span> <span class="n">RackWork</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.rack.queue.tasks</span> <span class="kn">import</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">pbs_service</span>
+<span class="kn">from</span> <span class="nn">cloudmesh.rack.rack_progress</span> <span class="kn">import</span> <span class="n">get_temperature_progress</span><span class="p">,</span> <span class="n">get_service_progress</span>
+
+<span class="kn">from</span> <span class="nn">cloudmesh_base.logger</span> <span class="kn">import</span> <span class="n">LOGGER</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">LOGGER</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="FetchClusterInfo"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo">[docs]</a><span class="k">class</span> <span class="nc">FetchClusterInfo</span><span class="p">:</span>
+    <span class="n">map_progress</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">data_valid_time</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c"># default data valid time is set to 1800 seconds</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valid_time</span><span class="o">=</span><span class="mi">1800</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_data_valid_time</span><span class="p">(</span><span class="n">valid_time</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span> <span class="o">=</span> <span class="n">RackData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_valid_time</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rackwork</span> <span class="o">=</span> <span class="n">RackWork</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+
+    <span class="c"># get/set data valid time in mongo db</span>
+<div class="viewcode-block" id="FetchClusterInfo.get_data_valid_time"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.get_data_valid_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_valid_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_valid_time</span>
+</div>
+<div class="viewcode-block" id="FetchClusterInfo.set_data_valid_time"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.set_data_valid_time">[docs]</a>    <span class="k">def</span> <span class="nf">set_data_valid_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valid_time</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_valid_time</span> <span class="o">=</span> <span class="n">valid_time</span> <span class="k">if</span> <span class="n">valid_time</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="c"># start async call to refresh racks</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.start_async_refresh"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.start_async_refresh">[docs]</a>    <span class="k">def</span> <span class="nf">start_async_refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="n">server</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">TEMPERATURE_NAME</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">mydebug</span><span class="p">(</span>
+                <span class="s">&quot;start_async_refresh, BEGIN delay start server {2} of {1}-{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="n">server</span><span class="p">))</span>
+            <span class="n">temperature</span><span class="o">.</span><span class="n">apply_async</span><span class="p">((</span><span class="n">server</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">),</span> <span class="n">queue</span><span class="o">=</span><span class="s">&#39;rack&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">mydebug</span><span class="p">(</span>
+                <span class="s">&quot;start_async_refresh, END delay start server {2} of {1}-{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="n">server</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">SERVICE_NAME</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">mydebug</span><span class="p">(</span>
+                <span class="s">&quot;start_async_refresh, BEGIN delay start pbs_service of {1}-{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">))</span>
+            <span class="n">pbs_service</span><span class="o">.</span><span class="n">apply_async</span><span class="p">([</span><span class="n">rack_name</span><span class="p">],</span> <span class="n">queue</span><span class="o">=</span><span class="s">&#39;rack&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">mydebug</span><span class="p">(</span>
+                <span class="s">&quot;start_async_refresh, END delay start pbs_service of {1}-{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="s">&quot;NOT Supported to refresh {0} status of {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">))</span>
+
+    <span class="c"># refresh rack status data</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.refresh_rack_data"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.refresh_rack_data">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_rack_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">mydebug</span><span class="p">(</span>
+            <span class="s">&quot;enter into refresh_rack_data of {0}-{1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rack_name</span><span class="p">,</span> <span class="nb">type</span><span class="p">))</span>
+        <span class="c"># check the status of &#39;rack_status&#39;</span>
+        <span class="n">refresh_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">can_start_refresh</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">set_check_refresh_condition</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">refresh_dict</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="n">total_hosts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">TEMPERATURE_NAME</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">rack_name</span> <span class="ow">in</span> <span class="n">refresh_dict</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">refresh_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">]:</span>
+                    <span class="n">total_hosts</span><span class="p">[</span><span class="n">rack_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&quot;total&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;updated&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;ratio&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+                    <span class="c"># change the status of &#39;rack_status&#39; to &#39;refresh&#39;</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">set_status_start_refresh</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+                    <span class="n">hosts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">hostlist</span><span class="p">(</span><span class="n">rack_name</span><span class="p">)</span>
+                    <span class="n">total_hosts</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;total&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">update_data</span><span class="p">(</span>
+                        <span class="s">&quot;temperature_data&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">rack_name</span><span class="p">:</span> <span class="n">total_hosts</span><span class="p">[</span><span class="n">rack_name</span><span class="p">]})</span>
+                    <span class="c"># fetch data for each host</span>
+                    <span class="k">for</span> <span class="n">server</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">start_async_refresh</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">SERVICE_NAME</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">refresh_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">refresh_dict</span><span class="p">],</span> <span class="bp">False</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">rack_name</span> <span class="ow">in</span> <span class="n">refresh_dict</span><span class="p">:</span>
+                    <span class="n">total_hosts</span><span class="p">[</span><span class="n">rack_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&quot;total&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;updated&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;ratio&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+                    <span class="c"># change the status of &#39;rack_status&#39; to &#39;refresh&#39;</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">set_status_start_refresh</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+                    <span class="n">hosts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">hostlist</span><span class="p">(</span><span class="n">rack_name</span><span class="p">)</span>
+                    <span class="n">total_hosts</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;total&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hosts</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">update_data</span><span class="p">(</span><span class="s">&quot;service_data&quot;</span><span class="p">,</span> <span class="n">total_hosts</span><span class="p">)</span>
+                <span class="c"># service refresh operation can update all rack ONLY once</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">start_async_refresh</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">mydebug</span><span class="p">(</span>
+            <span class="s">&quot;exit from refresh_rack_data of {0}-{1} with refresh data {2}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rack_name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">refresh_dict</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="c"># refresh rack temperature</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.refresh_rack_temperature"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.refresh_rack_temperature">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_rack_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_rack_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">TEMPERATURE_NAME</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+
+    <span class="c"># refresh rack service</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.refresh_rack_service"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.refresh_rack_service">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_rack_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_rack_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">SERVICE_NAME</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+
+    <span class="c"># API of generate map</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.start_gen_map"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.start_gen_map">[docs]</a>    <span class="k">def</span> <span class="nf">start_gen_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+            <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gen_map_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">])</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="c"># API of refresh map</span>
+    <span class="c"># return True means start refresh process</span>
+    <span class="c"># False means NOT start refresh process, &quot;fresh&quot; gives the reason</span>
+    <span class="c">#               if &quot;fresh&quot; is True, that means the data in db is fresh, does NOT need a refresh</span>
+    <span class="c">#                             Flase, means ERROR occured in db</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.start_refresh_map"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.start_refresh_map">[docs]</a>    <span class="k">def</span> <span class="nf">start_refresh_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">flag_fresh</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">refresh_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">can_start_refresh</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">refresh_dict</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">refresh_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">refresh_dict</span><span class="p">],</span> <span class="bp">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+                    <span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refresh_map_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">])</span>
+                <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">flag_fresh</span> <span class="o">=</span> <span class="bp">True</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s">&quot;fresh&quot;</span><span class="p">:</span> <span class="n">flag_fresh</span><span class="p">}</span>
+
+    <span class="c"># refresh map thread</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.refresh_map_thread"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.refresh_map_thread">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_map_thread</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_map_progress</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+        <span class="c"># self.map_progress.set_refresh_map()</span>
+        <span class="n">flag_data_ready</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_rack_data</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+            <span class="n">flag_data_ready</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_rack_refresh_status</span><span class="p">(</span>
+                <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">flag_data_ready</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rackwork</span><span class="o">.</span><span class="n">generate_map</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># refresh error, return to user</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">set_error_status</span><span class="p">()</span>
+
+    <span class="c"># generate map thread</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.gen_map_thread"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.gen_map_thread">[docs]</a>    <span class="k">def</span> <span class="nf">gen_map_thread</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_map_progress</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+
+        <span class="n">flag_read_refresh_data</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">flag_data_ready</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">is_rack_data_ready</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+            <span class="n">flag_data_ready</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">set_load_refresh_map</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_rack_data</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+                <span class="n">flag_read_refresh_data</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="n">flag_data_ready</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_rack_refresh_status</span><span class="p">(</span>
+                    <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">flag_data_ready</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rackwork</span><span class="o">.</span><span class="n">generate_map</span><span class="p">(</span>
+                <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="n">flag_read_refresh_data</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># read db error, return to user</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">set_error_status</span><span class="p">()</span>
+
+    <span class="c"># update the status of async  data refresh</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.update_data_refresh_status"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.update_data_refresh_status">[docs]</a>    <span class="k">def</span> <span class="nf">update_data_refresh_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">):</span>
+        <span class="n">data_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s">&quot;{0}_data&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">service</span><span class="p">))</span>
+        <span class="n">total_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total_updated</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">rack_name</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;updated&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;total&quot;</span><span class="p">]:</span>
+                <span class="c"># query db to get recent update status</span>
+                <span class="n">query_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">get_rack_query_dict</span><span class="p">(</span>
+                    <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">LOCATION_TEMP</span><span class="p">)</span>
+                <span class="n">result_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">partly_query</span><span class="p">(</span>
+                    <span class="n">query_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">],</span> <span class="p">{</span><span class="s">&quot;updated_node&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;updated&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result_dict</span><span class="p">[</span><span class="s">&quot;updated_node&quot;</span><span class="p">]</span>
+            <span class="n">total_count</span> <span class="o">+=</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;total&quot;</span><span class="p">]</span>
+            <span class="n">total_updated</span> <span class="o">+=</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">rack_name</span><span class="p">][</span><span class="s">&quot;updated&quot;</span><span class="p">]</span>
+        <span class="n">ratio</span> <span class="o">=</span> <span class="n">total_updated</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">total_count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">set_async_refresh</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c"># check mongo db refresh status</span>
+    <span class="c"># default interval time is 200ms, and the max check count is 10000</span></div>
+<div class="viewcode-block" id="FetchClusterInfo.check_rack_refresh_status"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.check_rack_refresh_status">[docs]</a>    <span class="k">def</span> <span class="nf">check_rack_refresh_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">max_count</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">curr_count</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>  <span class="c"># default is 200 ms</span>
+            <span class="c"># check and update async data refresh status</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_data_refresh_status</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">is_refresh_rack_data_ready</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">rack_name</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span><span class="o">.</span><span class="n">set_async_refresh</span><span class="p">()</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="k">break</span>
+            <span class="n">curr_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">curr_count</span> <span class="o">&gt;</span> <span class="n">max_count</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">result</span>
+</div>
+<div class="viewcode-block" id="FetchClusterInfo.get_map_progress"><a class="viewcode-back" href="../../../modules/cloudmesh/cloudmesh.rack.html#cloudmesh.rack.fetch_cluster_info.FetchClusterInfo.get_map_progress">[docs]</a>    <span class="k">def</span> <span class="nf">get_map_progress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">service</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">TEMPERATURE_NAME</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span> <span class="o">=</span> <span class="n">get_temperature_progress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">service</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rackdata</span><span class="o">.</span><span class="n">SERVICE_NAME</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span> <span class="o">=</span> <span class="n">get_service_progress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map_progress</span>
+
+
+<span class="c"># debug</span></div></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">cm_config</span><span class="p">()</span>
+    <span class="n">mytest</span> <span class="o">=</span> <span class="n">FetchClusterInfo</span><span class="p">()</span>
+    <span class="c"># data = mytest.fetch_temperature_ipmi()</span>
+    <span class="c"># print &quot;=&quot; * 30</span>
+    <span class="c"># print data</span>
+    <span class="c"># print &quot;-&quot; * 30</span>
+    <span class="n">mytest</span><span class="o">.</span><span class="n">refresh_rack_temperature</span><span class="p">(</span><span class="s">&quot;echo&quot;</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          fotter
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  fotter
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
