@@ -60,14 +60,6 @@ cloudmesh_base.hostlist module
     :undoc-members:
     :show-inheritance:
 
-cloudmesh_base.iso module
--------------------------
-
-.. automodule:: cloudmesh_base.iso
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 cloudmesh_base.locations module
 -------------------------------
 

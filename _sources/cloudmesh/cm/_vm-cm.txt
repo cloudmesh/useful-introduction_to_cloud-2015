@@ -1,0 +1,350 @@
+
+CM Console for VM Management
+============================
+
+.. raw:: html
+
+   <button type="button" class="btn btn-default navbar-btn">
+
+`Notebook <http://localhost:8888/notebooks/docs/source/cloudmesh/cm/_vm-cm.ipynb>`__
+
+.. raw:: html
+
+   </button>
+
+.. code:: python
+
+    alias cm cm %s
+
+.. raw:: html
+
+   <div class="alert alert-info" role="alert">
+
+The alias command is only needed when executing the commands in this in
+IPython.
+
+.. raw:: html
+
+   </div>
+
+First let us set the error reporting to a minimal. If you like to see
+more output you can switch it on by setting different debug and
+loglevels.
+
+Preparation
+-----------
+
+.. code:: python
+
+    cm debug off
+
+.. code:: python
+
+    cm loglevel error
+
+Lets get the username
+
+.. code:: python
+
+    cm user id
+
+Help
+----
+
+Let us review the available commands
+
+.. code:: python
+
+    cm help
+
+Activating Clouds
+-----------------
+
+In order for cloudmesh to work with multiple clouds, we need to find out
+first which clouds are available. Users can add their own clouds later
+which we describe in the registration section.
+
+Let us inspect which clouds are available by invoking the list command.
+
+.. code:: python
+
+    cm cloud list
+
+As you see we have a number of clouds, but none of them is already
+active. Thus we need to first activate a cloud. We assume that you have
+an account on FutureGrid. Let us activate the cloud india
+
+.. code:: python
+
+    cm cloud on india
+
+We also have a conveniet interactive command to select a cloud to work
+with, that however does not work with ipython
+
+::
+
+    "cloud select"
+
+or you may also input "cloud select india" to select a specific cloud
+india.
+
+To check if the cloud was activated, simply use the list command again.
+
+.. code:: python
+
+    cm cloud list
+
+Start a VM
+----------
+
+Now let us see how to start a VM on a cloud, here is how to start a VM
+on cloud india.
+
+.. code:: python
+
+    cm "vm start --cloud=india --image=futuregrid/ubuntu-14.04 --flavor=m1.small"
+
+Set a default flavor or image
+-----------------------------
+
+Each cloud must have a default image and a default flavor to launch vm
+instances in a simple step. The ``cloud set`` command provides a way to
+set default values for an image or a flavor.
+
+.. code:: python
+
+    cm "cloud set flavor india --name=m1.small"
+
+.. code:: python
+
+    cm "cloud set image india --name=futuregrid/ubuntu-14.04"
+
+Get Flavors or Images
+---------------------
+
+Available flavors can be listed with the following command.
+
+.. code:: python
+
+    cm "list flavor india"
+
+refresh option updates the data from the IaaS cloud. The cached data in
+the mongo database will be updated.
+
+.. code:: python
+
+    cm "list flavor india --refresh"
+
+The ``list image`` command provides an available vm images on a selected
+cloud.
+
+.. code:: python
+
+    cm "list image india --column=name,updated"
+
+Quick Start a VM
+----------------
+
+The ``vm start`` command provides a quick launch of a vm instance in
+cloudmesh.
+
+We use ``vmname`` to delete the vm instance later in this tutorial.
+
+.. code:: python
+
+    _vmname=!cm "label --raw"
+    vmname=_vmname[0]
+
+.. code:: python
+
+    cm "vm start --name={vmname} --cloud=india"
+
+Delete a VM
+-----------
+
+If you know the id or name of the virtual machine that you want to
+destroy, *delete* command in cloudmesh simply terminate the instance.
+
+.. code:: python
+
+    cm "vm delete {vmname} --cloud=india --force"
+
+More options to launch a VM instance
+------------------------------------
+
+When you create a new VM instance, you can also choose multiple options
+such as a flavor, an image associated with the instance. The
+``vm start`` command accepts optional parameters as a user input of
+these options. To see a brief description of the command, try
+``cm "vm --help"`` in the IPython Notebook cell.
+
+Available options are:
+
+-  --``cloud=<CloudName>    :`` give a cloud to work on, if not given,
+   selected or default cloud will be used
+-  --``count=<count>        :`` give the number of servers to start
+-  --``flavor=<flavorName>  :`` give the name of the flavor
+-  --``flavorid=<flavorId>  :`` give the id of the flavor
+-  --``group=<group>        :`` give the group name of server
+-  --``image=<imgName>      :`` give the name of the image
+-  --``imageid=<imgId>      :`` give the id of the image
+
+.. code:: python
+
+    cm "vm start --cloud=india --flavor=m1.medium --image=futuregrid/ubuntu-12.04"
+
+Set default cloud
+-----------------
+
+If you want to make things even more convenient, you can set a default
+cloud or select a cloud to work with so that you don't have to type in a
+cloud everytime you need to specify a cloud, to set india as default
+cloud
+
+.. code:: python
+
+    cm "default cloud india"
+
+to select a cloud
+
+.. code:: python
+
+    cm "cloud select india"
+
+You can see a selected cloud as a temporarily default cloud to work
+with.
+
+For more details of using command cloud to set up a cloud
+
+cm "cloud -h"
+
+Refreshing VM status
+--------------------
+
+After you have started or deleted VMs, you may want to check clouds' VMs
+status. To refresh cloud india's VMs information
+
+.. code:: python
+
+    cm "list vm india --refresh"
+
+Starting multiple VMs
+---------------------
+
+Sometimes we want to start more than one VM at the same time, we can
+choose the option --count=int where int is the number of VMs you want to
+start. For example, to start 3 VMs on india
+
+.. code:: python
+
+    import uuid;
+    temp_group_name="ipython-tutorial-cm-" + str(uuid.uuid4().get_hex().upper()[0:6])
+
+We use the temporary group name to delete the VMs later in this
+tutorial.
+
+.. code:: python
+
+    cm "vm start --cloud=india --count=3 --group={temp_group_name}"
+
+Deleting VMs
+------------
+
+To delete one VM is easy, what if we want to delete 1000 VMs, we need a
+more convenient way to do it. Cloudmesh shell provides several methods
+to find the VMs and delete them, you may think there are two phases of
+VM deletion, searching and deleting. Here are some examples:
+
+Let's start with deleting the VMs that we started in the previous
+example. We can delete them with the group name that we used.
+``temp_group_name``
+
+.. code:: python
+
+    cm "vm delete --cloud=india --group={temp_group_name} --force"
+
+to delete all VMs of cloud india
+
+``cm "vm delete --cloud=india --force"``
+
+Note here we use the option "--force", without it the shell will give
+you a list of VMs to delete and ask for your confirmation.
+
+to delete a VM by giving its name (you may always provide a cloud unless
+you have specified a default cloud or have selected a cloud)
+
+``cm "vm delete --cloud=india sample_vm --force"``
+
+to delete a VM by group
+
+``cm "vm delete --cloud=india --goup=testgroup --force"``
+
+We can also narrow the search result by giving more search conditions.
+For example, to delete VMs of cloud india that they are also in the
+group 'testgroup' and they have the prefix name 'abc' and their indices'
+range is no greater than 100
+
+``cm "vm delete --cloud=india --goup=testgroup --prefix=sample --range=,100 --force"``
+
+Login to a VM
+-------------
+
+To login to a VM, you need to assign a public id to the VM you started,
+for example, assign a public ip to a VM named test\_1 on cloud india:
+
+.. code:: python
+
+    _vmname=!cm "label --raw"
+    vmname=_vmname[0]
+
+.. code:: python
+
+    cm "vm start --cloud=india"
+
+.. code:: python
+
+    cm "vm ip assign {vmname} --cloud=india"
+
+``cm "vm ip assign test_1 --cloud=india"``
+
+Then you can login to this VM by(note here you need to provide the login
+name for your VM, it varys depend on the image you use while you start
+the VM, e.g. for ubuntu, you may type --ln=ubuntu):
+
+``cm "vm login test_1 --ln=ubuntu --cloud=india"``
+
+If you just want to run some commands and get the return on the VM, you
+may add the commands at the end following '--'(e.g. ls -a)
+
+.. code:: python
+
+    cm "vm login {vmname} --ln=ubuntu --cloud=india -- ls -a"
+
+For more details for command vm
+
+``cm "vm -h"``
+
+.. code:: python
+
+    cm "vm delete {vmname} --cloud=india"
+
+Stop the vm that we started for this tutorial.
+
+Vitual Machine Name
+-------------------
+
+In Cloudmesh, the default name of VM consists of your username and a
+number, for example, alex\_1. ``label`` command allows you to manage or
+modify the VM name as you wish.
+
+.. code:: python
+
+    cm label
+
+``cm "label --prefix=gregor --id=40"``
+
+If the user doesn’t provide a name while starting VMs, cloudmesh will
+generate labels for them. The default form to name VMs is prefix\_index,
+where prefix is a string and index is an non-negative integer. If a
+index is used, the index value will be automatically added by one
+waiting to be used for next VM. To check your current prefix and index

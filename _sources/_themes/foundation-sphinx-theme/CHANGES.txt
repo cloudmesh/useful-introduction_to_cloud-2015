@@ -1,1 +1,0 @@
-* Added the ``..seo-description::`` directive.

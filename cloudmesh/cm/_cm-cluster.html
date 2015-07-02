@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deploying Virtual Cluster with Cloudmesh cm &mdash; my Cloudmesh Learning documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/my_theme.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="my Cloudmesh Learning documentation" href="../../index.html"/>
+        <link rel="up" title="Cloudmesh cm" href="index.html"/>
+        <link rel="next" title="Managing multiple VMs with Cloudmesh cm" href="_cm-group.html"/>
+        <link rel="prev" title="Metric Commands in Cloudmesh cm" href="_cm-limits.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> my Cloudmesh
+        
+
+        
+          
+          <img src="../../_static/cm-logo-24.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources from the Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class/index.html">Cloudmesh in Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/index.html">Possible Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../accounts/index.html">Cloud Accounts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Cloudmesh</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Cloudmesh Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">Cloudmesh Setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cloudmesh cm</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_cm.html">Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code> Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-project.html"><code class="docutils literal"><span class="pre">project</span></code> Command in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-debug.html">Command Shell Output Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_vm-cm.html">CM Console for VM Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-limits.html">Metric Commands in Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-group.html">Managing multiple VMs with Cloudmesh cm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_cm-volume.html">Managing Volumes with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipython.html">Install IPython Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">Cloudmesh API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/index.html">Cloudmesh Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui/index.html">Cloudmesh GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Cloudmesh FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../parallel.html">Parallel Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../iaas/index.html">IaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paas/index.html">PaaS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hpc/index.html">HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devops/index.html">DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ipython/index.html">IPython</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst.html">reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../management/index.html">Create Cloudmesh Development Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to Cloudmesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../archived.html">Archived</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../todo.html">ToDos</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">my Cloudmesh</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Cloudmesh</a> &raquo;</li>
+      
+          <li><a href="index.html">Cloudmesh cm</a> &raquo;</li>
+      
+    <li>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/cloudmesh/cm/_cm-cluster.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="deploying-virtual-cluster-with-cloudmesh-cm">
+<h1>Deploying Virtual Cluster with Cloudmesh <code class="docutils literal"><span class="pre">cm</span></code><a class="headerlink" href="#deploying-virtual-cluster-with-cloudmesh-cm" title="Permalink to this headline">¶</a></h1>
+<p>To support the creation of a virtual compute cluster (e.g. Hadoop or
+Slurm) on Cloudmesh, <code class="docutils literal"><span class="pre">cluster</span></code> command is available to start,
+configure, manage or update a number of virtual machines.</p>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">cluster</span></code> command is available in the cloudmesh shell. There are
+certain steps to make sure you are all set to deploy a new cluster. You
+can SKIP these steps if you have configured Cloudmesh previously.</p>
+<div class="section" id="cloud-activation">
+<h3>Cloud Activation<a class="headerlink" href="#cloud-activation" title="Permalink to this headline">¶</a></h3>
+<p>Before starting a cluster, please make sure you activate a cloud:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud on india
+</pre></div>
+</div>
+<p>Activation however does not select the cloud as the default cloud to
+start virtual machines. This can be achieved by the select command.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm cloud select india
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm default cloud india
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-key-pair">
+<h3>Default Key Pair<a class="headerlink" href="#default-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>To gain access to a virtual cluster, you need a key registered on
+OpenStack. If you don’t have a default keypair, you need to set or need
+to specify which keypair you are going to use for the virtual cluster.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;key default [username]-india-key&quot;
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>REPLACE [username] with your portal id, e.g. albert</strong></p>
+</div>
+</div>
+<div class="section" id="default-vm-image">
+<h3>Default VM Image<a class="headerlink" href="#default-vm-image" title="Permalink to this headline">¶</a></h3>
+<p>You need that a default VM image is configured. We use ubuntu-14.04
+image as a default in this tutorial.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default image --name=futuresystems/ubuntu-14.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="default-flavor">
+<h3>Default Flavor<a class="headerlink" href="#default-flavor" title="Permalink to this headline">¶</a></h3>
+<p>You need that a default flavor is configured. Make sure that the flavor
+works with the default image. Some images require a larger size of a
+flavor rather than a smaller one e.g. m1.small or m1.tiny.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;default flavor --name=m1.small&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-virtual-cluster-with-cluster-command">
+<h3>Create a Virtual Cluster with <code class="docutils literal"><span class="pre">cluster</span></code> command<a class="headerlink" href="#create-a-virtual-cluster-with-cluster-command" title="Permalink to this headline">¶</a></h3>
+<p>Run ‘cluster create’ with the following parameters:</p>
+<p>name cluster name &#8211;count specify amount of VMs in the cluster &#8211;ln
+login name for VMs, e.g. ubuntu</p>
+</div>
+<div class="section" id="create-a-virtual-cluster-with-3-virtual-machines">
+<h3>Create a Virtual Cluster with 3 virtual machines<a class="headerlink" href="#create-a-virtual-cluster-with-3-virtual-machines" title="Permalink to this headline">¶</a></h3>
+<p>Let us create a cluster with the group name cluster_tutorial that
+contains 3 virtual machines.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create cluster_tutorial1 --count=3 --ln=ubuntu&quot;
+</pre></div>
+</div>
+<p>You may also provide a flavor or a VM image in the command. For example,
+creating a virtual cluster on Ubuntu 14.04 image with a small flavor:</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster create cluster_tutorial2 --count=3 --ln=ubuntu --cloud=india --flavor=m1.small --image=futuresystems/ubuntu-14.04&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-status-of-a-virtual-cluster">
+<h3>Check Status of a Virtual Cluster<a class="headerlink" href="#check-status-of-a-virtual-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal"><span class="pre">vm`</span> <span class="pre">command</span> <span class="pre">with</span></code>&#8211;group`` parameter to check the status.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;vm list --refresh --group=cluster_tutorial1&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="terminate-a-virtual-cluster">
+<h3>Terminate a Virtual Cluster<a class="headerlink" href="#terminate-a-virtual-cluster" title="Permalink to this headline">¶</a></h3>
+<p>Delete a virtual cluster with the name.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster remove cluster_tutorial1&quot;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre>cm &quot;cluster remove cluster_tutorial2&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="cluster-help-message">
+<h3>Cluster Help Message<a class="headerlink" href="#cluster-help-message" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>Usage:
+   cluster list [--format=FORMAT]
+   cluster create &lt;name&gt;
+                  [--count=&lt;count&gt;]
+                  [--ln=&lt;LoginName&gt;]
+                  [--cloud=&lt;CloudName&gt;]
+                  [--image=&lt;imgName&gt;|--imageid=&lt;imgId&gt;]
+                  [--flavor=&lt;flavorName&gt;|--flavorid=&lt;flavorId&gt;]
+                  [--force]
+   cluster show &lt;name&gt;
+                [--format=FORMAT]
+                [--column=COLUMN]
+                [--detail]
+   cluster remove &lt;name&gt;
+                  [--grouponly]
+
+Description:
+  Cluster Management
+
+  cluster list
+      list the clusters
+
+  cluster create &lt;name&gt; --count=&lt;count&gt; --ln=&lt;LoginName&gt; [options...]
+      Start a cluster of VMs, and each of them can log into all others.
+      CAUTION: you sould do some default setting before using this command:
+      1. select cloud to work on, e.g. cloud select india
+      2. activate the cloud, e.g. cloud on india
+      3. set the default key to start VMs, e.g. key default [NAME]
+      4. set the start name of VMs, which is prefix and index, e.g. label --prefix=test --id=1
+      5. set image of VMs, e.g. default image
+      6. set flavor of VMs, e.g. default flavor
+      Also, it is better to choose a unused group name
+
+  cluster show &lt;name&gt;
+      show the detailed information about the cluster VMs
+
+  cluster remove &lt;name&gt; [--grouponly]
+      remove the cluster and its VMs, if you want to remove the cluster(group name)
+      without removing the VMs, use --grouponly flag
+
+Arguments:
+  &lt;name&gt;        cluster name or group name
+
+Options:
+  --count=&lt;count&gt;            give the number of VMs to add into the cluster
+  --ln=&lt;LoginName&gt;           give a login name for the VMs, e.g. ubuntu
+  --cloud=&lt;CloudName&gt;        give a cloud to work on
+  --flavor=&lt;flavorName&gt;      give the name of the flavor
+  --flavorid=&lt;flavorId&gt;      give the id of the flavor
+  --image=&lt;imgName&gt;          give the name of the image
+  --imageid=&lt;imgId&gt;          give the id of the image
+  --force                    if a group exists and there are VMs in it, the program will
+                             ask user to proceed or not, use this flag to respond yes as
+                             default(if there are VMs in the group before creating this
+                             cluster, the program will include the exist VMs into the cluster)
+  --grouponly                remove the group only without removing the VMs, otherwise
+                             cluster remove command will remove all the VMs of this cluster
+  FORMAT                     output format: table, json, csv
+  COLUMN                     customize what information to display, for example:
+                             --column=status,addresses prints the columns status
+                             and addresses
+  --detail                   for table print format, a brief version
+                             is used as default, use this flag to print
+                             detailed table
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Create a Virtual Cluster with 2 virtual machine instances</li>
+<li>Use m1.small flavor</li>
+<li>Use ubuntu 14.04 image</li>
+<li>Login to the first VM instance using <code class="docutils literal"><span class="pre">cm</span> <span class="pre">vm</span> <span class="pre">login</span></code> command</li>
+<li>On your first VM, login to other VM instance (i.e. slave)</li>
+<li>Make a screenshot or save outputs in a text file</li>
+<li>Submit your screenshots or text files</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="_cm-group.html" class="btn btn-neutral float-right" title="Managing multiple VMs with Cloudmesh cm" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="_cm-limits.html" class="btn btn-neutral" title="Metric Commands in Cloudmesh cm" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'Learning',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

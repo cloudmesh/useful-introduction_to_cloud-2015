@@ -14,10 +14,7 @@ A video bout the quickstart instalation is available on |video-cm-install|
 
 .. role:: pink
 
-.. important::
-
-   This quickstart will guide you on installing Cloudmesh on your
-   local workstation running Ubuntu 14.04 or OSX
+:red:`This quickstart is designed for Ubuntu 14.04 and OSX`.
 
 
 .. note:: FutureSystems Portalname and Project ID

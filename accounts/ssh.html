@@ -116,8 +116,21 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          breadcrumbs
-
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Using SSH Keys</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/accounts/ssh.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
           <div role="main" class="document">
             
   <div class="section" id="using-ssh-keys">
@@ -243,18 +256,9 @@ allows someone that gains access to your computer to also gain access to
 all resources that have the public key. Also, please use a strong passphrase
 to protect it appropriately.</p>
 <p>In case you already have a ssh key in your machine, you can reuse it and skip this whole section.</p>
-<div class="sidebar">
-<p class="first sidebar-title"><img alt="info-image" src="../_images/glyphicons_195_circle_info.png" /> Hint</p>
-<p class="last">For security, you must use at least 2048 bits in your key. This is
-the default on most modern systems, but if your key is not using at
-least 2048 bits it may be administratively removed and you will
-lose access to resources. You can add the argument <code class="docutils literal"><span class="pre">-b</span> <span class="pre">2048</span></code> to
-the ssh-keygen command if it is not generating 2048-bit keys by
-default.</p>
-</div>
 <p>To generate the key, please type:</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -b 2048 -t rsa -C localname@indiana.edu
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa -C localname@indiana.edu
 </pre></div>
 </div>
 <p>This command requires the interaction of the user. The first question is:</p>
@@ -407,14 +411,27 @@ FutureSystems resource name.</p>
 
 
           </div>
-          fotter
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, myCloudmesh.org/learning.
+    </p>
+  </div>
+
+</footer>
+
         </div>
       </div>
 
     </section>
 
   </div>
-  fotter
+  
+
 
   
 

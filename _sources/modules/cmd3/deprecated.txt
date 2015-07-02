@@ -12,14 +12,6 @@ deprecated.setup-orig module
     :undoc-members:
     :show-inheritance:
 
-deprecated.setup module
------------------------
-
-.. automodule:: deprecated.setup
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 
 Module contents
 ---------------
