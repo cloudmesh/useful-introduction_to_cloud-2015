@@ -164,7 +164,7 @@ Let's try to run 'echo Hello World' over the nodes.
 
 ::
 
-  ansible all -i inventory.txt -u ubuntu -c ssh -a "echo Hello World"
+  ansible all -i inventory.txt -u ubuntu -a "echo Hello World"
 
 An explanation of the flags:
 
