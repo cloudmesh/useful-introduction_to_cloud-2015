@@ -50,8 +50,9 @@ Make sure your image is downloaded successfully::
 Step 3. Setup OpenStack Juno environment
 ----------------------------------------
 
-Load ``openstack`` (Juno) module::
+Unload the Havana module and Load ``openstack`` (Juno) module::
 
+    $ module unload openstack-havana
     $ module load openstack
 
 Setup environment variables for OpenStack Juno::
