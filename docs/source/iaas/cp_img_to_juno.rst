@@ -98,6 +98,13 @@ Make sure the image is on the list::
     $ nova image-list|grep normanrockwell/custom-ubuntu-14.04
     | xxxxxxxx-yyyy-zzzz-wwww-zzzzzzzzzzzz | normanrockwell/custom-ubuntu-14.04 | ACTIVE |       |
 
+If you like to make the image public::
+
+   $ glance image-update normanrockwell/custom-ubuntu-14.04 --is-public true
+   ...
+   | is_public    | True                    |
+   ...
+   
 You should `try the image <http://cloudmesh.github.io/introduction_to_cloud_computing/iaas/openstack.html#booting-an-image>`_,
 and if everything looks good, then delete the image file::
 
