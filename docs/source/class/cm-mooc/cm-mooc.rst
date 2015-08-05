@@ -84,7 +84,7 @@ numbers.
 
 ::
 
-	  india$ source ~/.futuregrid/openstack_havana/novarc
+	  india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 	  india$ nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
 	  india$ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
 	  india$ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
