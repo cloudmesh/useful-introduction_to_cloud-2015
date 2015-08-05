@@ -39,7 +39,7 @@ the image you want to copy to Juno.::
 I'll pick ``normanrockwell/custom-ubuntu-14.04`` as an example, so the command to
 download the image is like this::
 
-    $ glance download-image normanrockwell/custom-ubuntu-14.04 \
+    $ glance image-download normanrockwell/custom-ubuntu-14.04 \
         --file custom-ubuntu-14.04.img
 
 Make sure your image is downloaded successfully::
