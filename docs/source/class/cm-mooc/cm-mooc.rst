@@ -108,7 +108,7 @@ You can check the status of the VM by the following command::
 The status may report to you active, but that does not mean that all
 the software is installed yet. So please be patient and wait for some minutes.
 
-Loggin in to the VM
+Login to the VM
 ----------------------------------------------------------------------
 
 After you have waited for 5 minutes you can execute::
