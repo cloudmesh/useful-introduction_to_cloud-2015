@@ -85,6 +85,20 @@ numbers.
 ::
 
 	  india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
+	  india$ nova secgroup-list-rules cloudmesh
+	  +-------------+-----------+---------+-----------+--------------+
+	  | IP Protocol | From Port | To Port | IP Range  | Source Group |
+	  +-------------+-----------+---------+-----------+--------------+
+	  | tcp         | 5000      | 5000    | 0.0.0.0/0 |              |
+	  | tcp         | 8888      | 8888    | 0.0.0.0/0 |              |
+	  +-------------+-----------+---------+-----------+--------------+
+
+If you see the message above, the rules for 5000 and 8888 ports exist. You don't need to add rules. Just skip the next ``nova secgroup-...`` commands and start a new instance with ``cm-mooc`` command.
+
+*Adding rules if not exist*
+
+::
+
 	  india$ nova secgroup-create cloudmesh "cloudmesh ports 5000, 8888"
 	  india$ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
 	  india$ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
