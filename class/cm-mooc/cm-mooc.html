@@ -233,7 +233,7 @@ numbers.</p>
 <p class="last">If you already have <cite>cloudmesh</cite> in your security group, you
 can skip this step.</p>
 </div>
-<div class="highlight-python"><div class="highlight"><pre>india$ source ~/.futuregrid/openstack_havana/novarc
+<div class="highlight-python"><div class="highlight"><pre>india$ source ~/.cloudmesh/clouds/india/juno/openrc.sh
 india$ nova secgroup-create cloudmesh &quot;cloudmesh ports 5000, 8888&quot;
 india$ nova secgroup-add-rule cloudmesh tcp 8888 8888 0.0.0.0/0
 india$ nova secgroup-add-rule cloudmesh tcp 5000 5000 0.0.0.0/0
