@@ -48,7 +48,7 @@ This setp has to be executed every time yo log into india.
 .. note:: You can also place the lines into your ~/.bash_profile in
 	  case you do not want to add the lines by hand every time.
 
-Managing you Key on india
+Managing your Key on india
 ----------------------------------------------------------------------
 
 If you have not registered your ssh key to the cloud, you will need to
