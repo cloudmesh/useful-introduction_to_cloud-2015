@@ -21,7 +21,7 @@ First you need to have an account on the FutureSystems portal at
 * http://portal.futuresystems.org
 
 We have discussed this in a previous session and you can find out more
-information in Sthe Section :ref:`s-accounts`.
+information in the Section :ref:`s-accounts`.
 
 .. note:: FutureSystems Portalname and Project ID
           For this example we assume you have set the shell variable
